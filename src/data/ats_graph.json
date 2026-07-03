@@ -1,0 +1,11 @@
+{
+ "nodes":[
+ {"id":"durkheim","label":"Durkheim"},
+ {"id":"weber","label":"Weber"},
+ {"id":"bourdieu","label":"Bourdieu"}
+ ],
+ "links":[
+ {"source":"durkheim","target":"bourdieu","type":"heritage"},
+ {"source":"weber","target":"bourdieu","type":"dialogue"}
+ ]
+}

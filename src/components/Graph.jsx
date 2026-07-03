@@ -2,62 +2,64 @@ export default function Graph() {
   const zones = [
     {
       name: "Durkheimiens",
-      x: 40,
-      y: 90,
-      width: 240,
-      height: 180,
-      color: "#dbe9f6",
+      color: "#8FBCEB",
+      path: "M70 180 C40 120,120 70,210 100 C280 120,300 200,240 250 C170 290,90 270,70 180 Z",
+      labelX: 90,
+      labelY: 120,
     },
     {
       name: "Bourdieusiens",
-      x: 270,
-      y: 250,
-      width: 280,
-      height: 220,
-      color: "#e9f3d2",
+      color: "#BDD97A",
+      path: "M300 390 C260 320,340 250,470 280 C570 300,600 420,500 500 C420 540,320 500,300 390 Z",
+      labelX: 340,
+      labelY: 320,
     },
     {
       name: "Wébériens",
-      x: 560,
-      y: 70,
-      width: 260,
-      height: 180,
-      color: "#f8dddd",
+      color: "#E6A1A1",
+      path: "M620 170 C600 90,700 60,810 110 C860 150,850 240,760 260 C670 270,620 240,620 170 Z",
+      labelX: 660,
+      labelY: 120,
     },
   ];
 
   const nodes = [
-    { name: "Durkheim", x: 160, y: 180, color: "#4F81BD" },
-    { name: "Bourdieu", x: 410, y: 360, color: "#9BBB59" },
-    { name: "Weber", x: 680, y: 160, color: "#C0504D" },
+    { name: "Durkheim", x: 165, y: 185, color: "#2E6DB4" },
+    { name: "Bourdieu", x: 420, y: 405, color: "#86B53F" },
+    { name: "Weber", x: 720, y: 180, color: "#B53B3B" },
   ];
 
   return (
     <svg
-      width="900"
-      height="600"
+      width="950"
+      height="620"
       style={{
-        background: "#fafafa",
+        background: "#f8f8f5",
         border: "1px solid #ddd",
-        borderRadius: "8px",
+        borderRadius: "10px",
       }}
     >
+      {/* texture légère */}
+      <defs>
+        <filter id="shadow">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.15" />
+        </filter>
+      </defs>
+
       {zones.map((z) => (
         <g key={z.name}>
-          <rect
-            x={z.x}
-            y={z.y}
-            width={z.width}
-            height={z.height}
-            rx="20"
+          <path
+            d={z.path}
             fill={z.color}
-            opacity="0.6"
+            opacity="0.28"
+            stroke={z.color}
+            strokeWidth="2"
           />
           <text
-            x={z.x + 15}
-            y={z.y + 28}
-            fontSize="20"
-            fontWeight="bold"
+            x={z.labelX}
+            y={z.labelY}
+            fontSize="22"
+            fontWeight="600"
             fill="#444"
           >
             {z.name}
@@ -65,23 +67,24 @@ export default function Graph() {
         </g>
       ))}
 
-      {nodes.map((node) => (
-        <g key={node.name}>
+      {nodes.map((n) => (
+        <g key={n.name} filter="url(#shadow)">
           <circle
-            cx={node.x}
-            cy={node.y}
-            r="26"
-            fill={node.color}
+            cx={n.x}
+            cy={n.y}
+            r="24"
+            fill={n.color}
             stroke="white"
             strokeWidth="3"
           />
           <text
-            x={node.x}
-            y={node.y + 45}
+            x={n.x}
+            y={n.y + 42}
             textAnchor="middle"
             fontSize="16"
+            fill="#333"
           >
-            {node.name}
+            {n.name}
           </text>
         </g>
       ))}

@@ -1,3 +1,4 @@
+import Background from "../layers/Background";
 export default function Graph() {
   const zones = [
     {

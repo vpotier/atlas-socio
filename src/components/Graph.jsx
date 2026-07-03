@@ -30,15 +30,16 @@ export default function Graph() {
     { name: "Weber", x: 720, y: 180, color: "#B53B3B" },
   ];
 
-  return (
-    <svg
-      width="950"
-      height="620"
- style={{
-  border: "1px solid #ddd",
-  borderRadius: "10px",
-}}
-    >
+    return (
+      <svg
+        width="950"
+        height="620"
+   style={{
+    border: "1px solid #ddd",
+    borderRadius: "10px",
+  }}
+      >
+<Background />
       {/* texture légère */}
       <defs>
         <filter id="shadow">

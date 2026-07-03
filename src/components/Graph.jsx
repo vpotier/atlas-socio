@@ -34,11 +34,10 @@ export default function Graph() {
     <svg
       width="950"
       height="620"
-      style={{
-        background: "#f8f8f5",
-        border: "1px solid #ddd",
-        borderRadius: "10px",
-      }}
+ style={{
+  border: "1px solid #ddd",
+  borderRadius: "10px",
+}}
     >
       {/* texture légère */}
       <defs>

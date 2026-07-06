@@ -5,6 +5,7 @@ import Graph from "./components/Graph";
 
 export default function App() {
   const [selectedAuthor, setSelectedAuthor] = useState(null);
+  const [selectedConcept, setSelectedConcept] = useState(null);
 
   return (
     <div className="app">
@@ -12,12 +13,22 @@ export default function App() {
         <Graph
           selectedAuthor={selectedAuthor}
           setSelectedAuthor={setSelectedAuthor}
+          selectedConcept={selectedConcept}
+          setSelectedConcept={setSelectedConcept}
         />
       </main>
 
       <aside className="sidebar">
         <div className="card">
-          {selectedAuthor ? (
+          {selectedConcept ? (
+            <>
+              <h2>{selectedConcept.label}</h2>
+              <p>Concept sociologique</p>
+              <p style={{ color: "#666" }}>
+                (bientôt : auteurs associés + relations)
+              </p>
+            </>
+          ) : selectedAuthor ? (
             <>
               <h2>{selectedAuthor.name}</h2>
 
@@ -26,8 +37,7 @@ export default function App() {
               </span>
 
               <section className="concepts">
-                <h3>Concepts principaux</h3>
-
+                <h3>Concepts</h3>
                 <ul>
                   {selectedAuthor.concepts.map((c) => (
                     <li key={c}>{c}</li>
@@ -38,25 +48,7 @@ export default function App() {
           ) : (
             <>
               <h2>Atlas de la théorie sociologique</h2>
-
-              <p>
-                Sélectionnez un auteur sur la carte pour afficher
-                ses principaux concepts et, bientôt, ses relations
-                théoriques.
-              </p>
-
-              <hr />
-
-              <h3>Feuille de route</h3>
-
-              <ul>
-                <li>✓ Navigation dans la carte</li>
-                <li>✓ Sélection d'un auteur</li>
-                <li>⏳ Compatibilités théoriques</li>
-                <li>⏳ Incompatibilités</li>
-                <li>⏳ Généalogies</li>
-                <li>⏳ GPS théorique</li>
-              </ul>
+              <p>Clique sur un auteur ou un concept.</p>
             </>
           )}
         </div>

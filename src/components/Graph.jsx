@@ -1,49 +1,51 @@
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
 import Background from "../layers/Background";
 import Territories from "./Territories";
 import Authors from "./Authors";
+import Toolbar from "./Toolbar";
 
 export default function Graph({
   selectedAuthor,
   setSelectedAuthor,
 }) {
   return (
-    <TransformWrapper
-      initialScale={1}
-      minScale={0.5}
-      maxScale={3}
-      centerOnInit
-    >
-      <TransformComponent>
-        <svg
-          width="950"
-          height="620"
-          style={{
-            border: "1px solid #ddd",
-            borderRadius: "10px",
-          }}
-        >
-          <Background />
+    <>
+      <Toolbar />
 
-          <defs>
-            <filter id="shadow">
-              <feDropShadow
-                dx="0"
-                dy="2"
-                stdDeviation="2"
-                floodOpacity="0.15"
-              />
-            </filter>
-          </defs>
+      <TransformWrapper
+        initialScale={1}
+        minScale={0.5}
+        maxScale={3}
+        centerOnInit
+      >
+        <TransformComponent>
+          <svg
+            width="1100"
+            height="700"
+          >
+            <Background />
 
-          <Territories />
+            <defs>
+              <filter id="shadow">
+                <feDropShadow
+                  dx="0"
+                  dy="2"
+                  stdDeviation="2"
+                  floodOpacity="0.15"
+                />
+              </filter>
+            </defs>
 
-          <Authors
-            selectedAuthor={selectedAuthor}
-            setSelectedAuthor={setSelectedAuthor}
-          />
-        </svg>
-      </TransformComponent>
-    </TransformWrapper>
+            <Territories />
+
+            <Authors
+              selectedAuthor={selectedAuthor}
+              setSelectedAuthor={setSelectedAuthor}
+            />
+          </svg>
+        </TransformComponent>
+      </TransformWrapper>
+    </>
   );
 }

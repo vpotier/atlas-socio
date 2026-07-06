@@ -17,6 +17,7 @@ export default function Graph({
   setSelectedAuthor,
   selectedConcept,
   setSelectedConcept,
+  selectedRelation,
   setSelectedRelation,
 }) {
   const [hoveredRelation, setHoveredRelation] = useState(null);
@@ -26,6 +27,11 @@ export default function Graph({
   const conceptRelatedAuthors = selectedConcept
     ? new Set(selectedConcept.authors)
     : null;
+
+  // 🔥 FILTRE: on garde uniquement les relations "importantes"
+  const visibleRelations = relations.filter((r) =>
+    ["heritage", "dialogue", "tension"].includes(r.type)
+  );
 
   const getLineStyle = (r) => {
     let color;
@@ -83,14 +89,13 @@ export default function Graph({
         <div
           style={{
             position: "absolute",
-            top: 90,
+            top: 80,
             left: 20,
-            padding: "10px 14px",
             background: "#fff",
             border: "1px solid #ddd",
-            borderRadius: 8,
+            padding: "10px 12px",
             fontSize: 13,
-            zIndex: 20,
+            zIndex: 10,
           }}
         >
           <strong>{hoveredRelation.type}</strong>
@@ -100,56 +105,56 @@ export default function Graph({
         </div>
       )}
 
-      <TransformWrapper initialScale={1} minScale={0.5} maxScale={3} centerOnInit>
+      <TransformWrapper
+        initialScale={1}
+        minScale={0.5}
+        maxScale={3}
+        centerOnInit
+      >
         <TransformComponent>
           <svg
             width="1100"
             height="700"
-            style={{ border: "1px solid #ddd", borderRadius: "10px" }}
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "10px",
+            }}
           >
             <Background />
-
-            <defs>
-              <filter id="shadow">
-                <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.15" />
-              </filter>
-            </defs>
 
             <Clusters />
             <Blends />
 
-            {relations
-              .filter((r) => r.type === "heritage" || r.type === "dialogue" || r.type === "tension")
-              .map((r, i) => {
-                const a = getAuthor(r.source);
-                const b = getAuthor(r.target);
-                if (!a || !b) return null;
+            {visibleRelations.map((r, i) => {
+              const a = getAuthor(r.source);
+              const b = getAuthor(r.target);
+              if (!a || !b) return null;
 
-                const style = getLineStyle(r);
-                if (!style) return null;
+              const style = getLineStyle(r);
+              if (!style) return null;
 
-                const isHovered =
-                  hoveredRelation?.source === r.source &&
-                  hoveredRelation?.target === r.target;
+              const isHovered =
+                hoveredRelation?.source === r.source &&
+                hoveredRelation?.target === r.target;
 
-                return (
-                  <line
-                    key={i}
-                    x1={a.x}
-                    y1={a.y}
-                    x2={b.x}
-                    y2={b.y}
-                    stroke={style.color}
-                    strokeWidth={isHovered ? style.width + 1 : style.width}
-                    strokeDasharray={style.dash}
-                    opacity={isHovered ? 1 : style.opacity}
-                    onMouseEnter={() => setHoveredRelation(r)}
-                    onMouseLeave={() => setHoveredRelation(null)}
-                    onClick={() => setSelectedRelation?.(r)}
-                    style={{ cursor: "pointer" }}
-                  />
-                );
-              })}
+              return (
+                <line
+                  key={i}
+                  x1={a.x}
+                  y1={a.y}
+                  x2={b.x}
+                  y2={b.y}
+                  stroke={style.color}
+                  strokeWidth={isHovered ? style.width + 1 : style.width}
+                  strokeDasharray={style.dash}
+                  opacity={isHovered ? 1 : style.opacity}
+                  style={{ cursor: "pointer" }}
+                  onMouseEnter={() => setHoveredRelation(r)}
+                  onMouseLeave={() => setHoveredRelation(null)}
+                  onClick={() => setSelectedRelation?.(r)}
+                />
+              );
+            })}
 
             <Territories />
 

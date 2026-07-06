@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import Background from "../layers/Background";
@@ -8,6 +9,7 @@ import Toolbar from "./Toolbar";
 
 import { relations } from "../data/relations";
 import { authors } from "../data/authors";
+import { clusters } from "../engine/clusters";
 
 export default function Graph({
   selectedAuthor,
@@ -15,15 +17,30 @@ export default function Graph({
   selectedConcept,
   setSelectedConcept,
 }) {
+  let transformRef = null;
+
   const getAuthor = (id) =>
     authors.find((a) => a.id === id);
+
+  const focusCluster = (cluster, zoomTo) => {
+    if (!cluster || !zoomTo) return;
+
+    const { center } = cluster;
+
+    zoomTo(
+      center.x - 400,
+      center.y - 250,
+      1.8,
+      300
+    );
+  };
 
   const conceptRelatedAuthors = selectedConcept
     ? new Set(selectedConcept.authors)
     : null;
 
   const getLineStyle = (r, activeAuthor, activeConcept) => {
-    const isAuthorActive =
+    const isActive =
       activeAuthor &&
       (r.source === activeAuthor || r.target === activeAuthor);
 
@@ -35,9 +52,9 @@ export default function Graph({
 
     let color = "#aaa";
     let width = 1;
-    let opacity = 0.15;
+    let opacity = 0.12;
 
-    if (isAuthorActive || isConceptActive) {
+    if (isActive || isConceptActive) {
       opacity = 0.7;
 
       switch (r.type) {
@@ -69,66 +86,85 @@ export default function Graph({
         maxScale={3}
         centerOnInit
       >
-        <TransformComponent>
-          <svg width="1100" height="700">
-            <Background />
+        {(utils) => {
+          const { zoomToElement } = utils;
 
-            <defs>
-              <filter id="shadow">
-                <feDropShadow
-                  dx="0"
-                  dy="2"
-                  stdDeviation="2"
-                  floodOpacity="0.15"
-                />
-              </filter>
-            </defs>
+          useEffect(() => {
+            if (!selectedAuthor) return;
 
-            {/* RELATIONS */}
-            {relations.map((r, i) => {
-              const a = getAuthor(r.source);
-              const b = getAuthor(r.target);
-              if (!a || !b) return null;
-
-              const style = getLineStyle(
-                r,
-                selectedAuthor?.id,
-                selectedConcept?.id
+            const cluster =
+              Object.values(clusters).find((c) =>
+                c.authors.includes(selectedAuthor.id)
               );
 
-              return (
-                <line
-                  key={i}
-                  x1={a.x}
-                  y1={a.y}
-                  x2={b.x}
-                  y2={b.y}
-                  stroke={style.color}
-                  strokeWidth={style.width}
-                  strokeDasharray={style.dash}
-                  opacity={style.opacity}
+            if (cluster) {
+              focusCluster(cluster, zoomToElement);
+            }
+          }, [selectedAuthor]);
+
+          return (
+            <TransformComponent>
+              <svg width="1100" height="700">
+                <Background />
+
+                <defs>
+                  <filter id="shadow">
+                    <feDropShadow
+                      dx="0"
+                      dy="2"
+                      stdDeviation="2"
+                      floodOpacity="0.15"
+                    />
+                  </filter>
+                </defs>
+
+                {/* RELATIONS */}
+                {relations.map((r, i) => {
+                  const a = getAuthor(r.source);
+                  const b = getAuthor(r.target);
+                  if (!a || !b) return null;
+
+                  const style = getLineStyle(
+                    r,
+                    selectedAuthor?.id,
+                    selectedConcept?.id
+                  );
+
+                  return (
+                    <line
+                      key={i}
+                      x1={a.x}
+                      y1={a.y}
+                      x2={b.x}
+                      y2={b.y}
+                      stroke={style.color}
+                      strokeWidth={style.width}
+                      strokeDasharray={style.dash}
+                      opacity={style.opacity}
+                    />
+                  );
+                })}
+
+                <Territories />
+
+                <Concepts
+                  selectedConcept={selectedConcept}
+                  setSelectedConcept={setSelectedConcept}
                 />
-              );
-            })}
 
-            <Territories />
-
-            <Concepts
-              selectedConcept={selectedConcept}
-              setSelectedConcept={setSelectedConcept}
-            />
-
-            <Authors
-              selectedAuthor={selectedAuthor}
-              setSelectedAuthor={setSelectedAuthor}
-              dimByConcept={
-                selectedConcept
-                  ? conceptRelatedAuthors
-                  : null
-              }
-            />
-          </svg>
-        </TransformComponent>
+                <Authors
+                  selectedAuthor={selectedAuthor}
+                  setSelectedAuthor={setSelectedAuthor}
+                  dimByConcept={
+                    selectedConcept
+                      ? conceptRelatedAuthors
+                      : null
+                  }
+                />
+              </svg>
+            </TransformComponent>
+          );
+        }}
       </TransformWrapper>
     </>
   );

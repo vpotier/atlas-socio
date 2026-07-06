@@ -1,38 +1,13 @@
+import { authors as authorData } from "../data/authors";
+
 export default function Authors({
   selectedAuthor,
   setSelectedAuthor,
   dimByConcept,
 }) {
-  const authors = [
-    {
-      id: "durkheim",
-      name: "Durkheim",
-      x: 140,
-      y: 200,
-      color: "#7fb3e8",
-      weight: 3,
-    },
-    {
-      id: "weber",
-      name: "Weber",
-      x: 720,
-      y: 200,
-      color: "#d88b8b",
-      weight: 3,
-    },
-    {
-      id: "bourdieu",
-      name: "Bourdieu",
-      x: 420,
-      y: 420,
-      color: "#b8d87d",
-      weight: 4,
-    },
-  ];
-
   return (
     <>
-      {authors.map((a) => {
+      {authorData.map((a) => {
         const isSelected = selectedAuthor?.id === a.id;
         const isDimmed =
           dimByConcept && !dimByConcept.has(a.id);
@@ -46,18 +21,18 @@ export default function Authors({
             <circle
               cx={a.x}
               cy={a.y}
-              r={18 + a.weight * 2}
+              r="24"
               fill={a.color}
               opacity={isDimmed ? 0.15 : 1}
-              stroke={isSelected ? "#000" : "#fff"}
-              strokeWidth="2"
+              stroke={isSelected ? "#111" : "#fff"}
+              strokeWidth="3"
             />
 
             <text
               x={a.x}
-              y={a.y + 38}
+              y={a.y + 40}
               textAnchor="middle"
-              fontSize="13"
+              fontSize="14"
               fill="#333"
               opacity={isDimmed ? 0.2 : 1}
             >

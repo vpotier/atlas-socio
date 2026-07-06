@@ -41,37 +41,39 @@ export default function Graph({
       (conceptRelatedAuthors.has(r.source) ||
         conceptRelatedAuthors.has(r.target));
 
-    let color = "#aaa";
-    let width = 1.5;
-    let opacity = 0.15;
+    const isHighlighted = isActive || isConceptActive;
+
+    let color;
+    let width;
     let dash = "";
 
-    if (r.type === "heritage") {
-      color = "#4CAF50";
-      width = 2.5;
+    switch (r.type) {
+      case "heritage":
+        color = "#4CAF50";
+        width = 2.5;
+        break;
+
+      case "dialogue":
+        color = "#F1C232";
+        width = 2.5;
+        break;
+
+      case "tension":
+        color = "#D32F2F";
+        width = 3;
+        dash = "6 4";
+        break;
+
+      default:
+        return null;
     }
 
-    if (r.type === "dialogue") {
-      color = "#F1C232";
-      width = 2.5;
-    }
-
-    if (r.type === "tension") {
-      color = "#D32F2F";
-      width = 3;
-      dash = "6 4";
-    }
-
-    if (isActive || isConceptActive) {
-      opacity = 0.9;
-    }
-
-    if (hoveredRelation?.source === r.source && hoveredRelation?.target === r.target) {
-      width += 1.5;
-      opacity = 1;
-    }
-
-    return { color, width, opacity, dash };
+    return {
+      color,
+      width,
+      dash,
+      opacity: isHighlighted ? 0.9 : 0.15,
+    };
   };
 
   return (
@@ -83,15 +85,15 @@ export default function Graph({
         <div
           style={{
             position: "absolute",
-            top: 80,
+            top: 90,
             left: 20,
             padding: "10px 14px",
             background: "#fff",
             border: "1px solid #ddd",
             borderRadius: 8,
             fontSize: 13,
-            zIndex: 10,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            zIndex: 20,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
           }}
         >
           <strong>{hoveredRelation.type}</strong>
@@ -111,13 +113,21 @@ export default function Graph({
           <svg
             width="1100"
             height="700"
-            style={{ border: "1px solid #ddd", borderRadius: "10px" }}
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "10px",
+            }}
           >
             <Background />
 
             <defs>
               <filter id="shadow">
-                <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.15" />
+                <feDropShadow
+                  dx="0"
+                  dy="2"
+                  stdDeviation="2"
+                  floodOpacity="0.15"
+                />
               </filter>
             </defs>
 
@@ -127,9 +137,15 @@ export default function Graph({
             {relations.map((r, i) => {
               const a = getAuthor(r.source);
               const b = getAuthor(r.target);
+
               if (!a || !b) return null;
 
               const style = getLineStyle(r);
+              if (!style) return null;
+
+              const isHovered =
+                hoveredRelation?.source === r.source &&
+                hoveredRelation?.target === r.target;
 
               return (
                 <line
@@ -139,9 +155,9 @@ export default function Graph({
                   x2={b.x}
                   y2={b.y}
                   stroke={style.color}
-                  strokeWidth={style.width}
+                  strokeWidth={isHovered ? style.width + 1 : style.width}
                   strokeDasharray={style.dash}
-                  opacity={style.opacity}
+                  opacity={isHovered ? 1 : style.opacity}
                   style={{ cursor: "pointer" }}
                   onMouseEnter={() => setHoveredRelation(r)}
                   onMouseLeave={() => setHoveredRelation(null)}

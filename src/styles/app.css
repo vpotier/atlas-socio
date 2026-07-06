@@ -1,1 +1,76 @@
+:root {
+  --bg: #f7f6f2;
+  --panel: #fcfcfb;
+  --border: #d8d8d8;
+  --text: #2f2f2f;
+  --muted: #666;
+  --shadow: 0 6px 18px rgba(0,0,0,.08);
 
+  --durkheim: #7fb3e8;
+  --weber: #d88b8b;
+  --bourdieu: #b8d87d;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+h1,h2,h3{
+  margin-top:0;
+}
+
+.app{
+  display:flex;
+  height:100vh;
+}
+
+.map{
+  flex:1;
+  padding:24px;
+}
+
+.sidebar{
+  width:340px;
+  background:var(--panel);
+  border-left:1px solid var(--border);
+  padding:24px;
+  overflow:auto;
+  box-shadow:var(--shadow);
+}
+
+.card{
+  background:white;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.badge{
+  display:inline-block;
+  margin-top:8px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#ececec;
+  font-size:13px;
+}
+
+.concepts{
+  margin-top:18px;
+}
+
+.concepts li{
+  margin-bottom:8px;
+}
+
+svg{
+  background:#faf9f5;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+}

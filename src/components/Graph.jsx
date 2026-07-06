@@ -25,10 +25,42 @@ export default function Graph({
     ? new Set(selectedConcept.authors)
     : null;
 
-  const getLineStyle = (r, activeAuthor, activeConcept) => {
-    const isActive =
-      activeAuthor &&
-      (r.source === activeAuthor || r.target === activeAuthor);
+const getLineStyle = (r, activeAuthor, activeConcept) => {
+  const isActive =
+    activeAuthor &&
+    (r.source === activeAuthor || r.target === activeAuthor);
+
+  const isConceptActive =
+    activeConcept &&
+    conceptRelatedAuthors &&
+    (conceptRelatedAuthors.has(r.source) ||
+      conceptRelatedAuthors.has(r.target));
+
+  let baseWidth = 1;
+
+  // 🔥 intensité structurelle
+  if (r.type === "heritage") baseWidth = 2.5;
+  if (r.type === "dialogue") baseWidth = 2;
+  if (r.type === "tension") baseWidth = 3;
+
+  let color = "#aaa";
+  let opacity = 0.1;
+
+  if (isActive || isConceptActive) {
+    opacity = 0.75;
+
+    if (r.type === "heritage") color = "#4CAF50";
+    if (r.type === "dialogue") color = "#f1c232";
+    if (r.type === "tension") color = "#d32f2f";
+  }
+
+  return {
+    color,
+    width: baseWidth,
+    opacity,
+    dash: r.type === "tension" ? "6 4" : "",
+  };
+};
 
     const isConceptActive =
       activeConcept &&

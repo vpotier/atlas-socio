@@ -1,58 +1,66 @@
 import { useState } from "react";
+import "./styles/app.css";
+
 import Graph from "./components/Graph";
 
 export default function App() {
   const [selectedAuthor, setSelectedAuthor] = useState(null);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      <div style={{ flex: 1, padding: 20 }}>
+    <div className="app">
+      <main className="map">
         <Graph
           selectedAuthor={selectedAuthor}
           setSelectedAuthor={setSelectedAuthor}
         />
-      </div>
+      </main>
 
-      <div
-        style={{
-          width: "320px",
-          borderLeft: "1px solid #ddd",
-          padding: 20,
-          background: "#fafafa",
-        }}
-      >
-        {selectedAuthor ? (
-          <>
-            <h2>{selectedAuthor.name}</h2>
+      <aside className="sidebar">
+        <div className="card">
+          {selectedAuthor ? (
+            <>
+              <h2>{selectedAuthor.name}</h2>
 
-            <p>
-              <strong>Courant</strong><br />
-              {selectedAuthor.school}
-            </p>
+              <span className="badge">
+                {selectedAuthor.school}
+              </span>
 
-            <p>
-              <strong>Concepts</strong>
-            </p>
+              <section className="concepts">
+                <h3>Concepts principaux</h3>
 
-            <ul>
-              {selectedAuthor.concepts.map((c) => (
-                <li key={c}>{c}</li>
-              ))}
-            </ul>
-          </>
-        ) : (
-          <>
-            <h2>Atlas de la théorie sociologique</h2>
-            <p>Clique sur un auteur.</p>
-          </>
-        )}
-      </div>
+                <ul>
+                  {selectedAuthor.concepts.map((c) => (
+                    <li key={c}>{c}</li>
+                  ))}
+                </ul>
+              </section>
+            </>
+          ) : (
+            <>
+              <h2>Atlas de la théorie sociologique</h2>
+
+              <p>
+                Sélectionnez un auteur sur la carte pour afficher
+                ses principaux concepts et, bientôt, ses relations
+                théoriques.
+              </p>
+
+              <hr />
+
+              <h3>Feuille de route</h3>
+
+              <ul>
+                <li>✓ Navigation dans la carte</li>
+                <li>✓ Sélection d'un auteur</li>
+                <li>⏳ Compatibilités théoriques</li>
+                <li>⏳ Incompatibilités</li>
+                <li>⏳ Généalogies</li>
+                <li>⏳ GPS théorique</li>
+              </ul>
+            </>
+          )}
+        </div>
+      </aside>
     </div>
   );
 }

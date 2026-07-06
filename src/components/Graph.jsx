@@ -16,6 +16,8 @@ export default function Graph({
   setSelectedAuthor,
   selectedConcept,
   setSelectedConcept,
+  selectedRelation,
+  setSelectedRelation,
 }) {
   const getAuthor = (id) => authors.find((a) => a.id === id);
 
@@ -23,56 +25,45 @@ export default function Graph({
     ? new Set(selectedConcept.authors)
     : null;
 
-  const getLineStyle = (relation) => {
-    const activeAuthorId = selectedAuthor?.id;
+  const getLineStyle = (r) => {
+    const activeAuthor = selectedAuthor?.id;
 
-    const isAuthorActive =
-      activeAuthorId &&
-      (relation.source === activeAuthorId ||
-        relation.target === activeAuthorId);
+    const isActive =
+      activeAuthor &&
+      (r.source === activeAuthor || r.target === activeAuthor);
 
     const isConceptActive =
       selectedConcept &&
       conceptRelatedAuthors &&
-      (conceptRelatedAuthors.has(relation.source) ||
-        conceptRelatedAuthors.has(relation.target));
+      (conceptRelatedAuthors.has(r.source) ||
+        conceptRelatedAuthors.has(r.target));
 
-    let color = "#b5b5b5";
+    let color = "#aaa";
     let width = 1.5;
-    let opacity = 0.12;
+    let opacity = 0.15;
     let dash = "";
 
-    switch (relation.type) {
-      case "heritage":
-        color = "#4CAF50";
-        width = 2.5;
-        break;
-
-      case "dialogue":
-        color = "#F1C232";
-        width = 2.5;
-        break;
-
-      case "tension":
-        color = "#D32F2F";
-        width = 3;
-        dash = "6 4";
-        break;
-
-      default:
-        break;
+    if (r.type === "heritage") {
+      color = "#4CAF50";
+      width = 2.5;
     }
 
-    if (isAuthorActive || isConceptActive) {
+    if (r.type === "dialogue") {
+      color = "#F1C232";
+      width = 2.5;
+    }
+
+    if (r.type === "tension") {
+      color = "#D32F2F";
+      width = 3;
+      dash = "6 4";
+    }
+
+    if (isActive || isConceptActive) {
       opacity = 0.85;
     }
 
-    return {
-      color,
-      width,
-      opacity,
-      dash,
-    };
+    return { color, width, opacity, dash };
   };
 
   return (
@@ -89,47 +80,40 @@ export default function Graph({
           <svg
             width="1100"
             height="700"
-            style={{
-              border: "1px solid #ddd",
-              borderRadius: "10px",
-            }}
+            style={{ border: "1px solid #ddd", borderRadius: "10px" }}
           >
             <Background />
 
             <defs>
               <filter id="shadow">
-                <feDropShadow
-                  dx="0"
-                  dy="2"
-                  stdDeviation="2"
-                  floodOpacity="0.15"
-                />
+                <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.15" />
               </filter>
             </defs>
 
             <Clusters />
-
             <Blends />
 
-            {relations.map((relation, index) => {
-              const source = getAuthor(relation.source);
-              const target = getAuthor(relation.target);
+            {/* RELATIONS CLICKABLES */}
+            {relations.map((r, i) => {
+              const a = getAuthor(r.source);
+              const b = getAuthor(r.target);
+              if (!a || !b) return null;
 
-              if (!source || !target) return null;
-
-              const style = getLineStyle(relation);
+              const style = getLineStyle(r);
 
               return (
                 <line
-                  key={index}
-                  x1={source.x}
-                  y1={source.y}
-                  x2={target.x}
-                  y2={target.y}
+                  key={i}
+                  x1={a.x}
+                  y1={a.y}
+                  x2={b.x}
+                  y2={b.y}
                   stroke={style.color}
                   strokeWidth={style.width}
                   strokeDasharray={style.dash}
                   opacity={style.opacity}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setSelectedRelation?.(r)}
                 />
               );
             })}

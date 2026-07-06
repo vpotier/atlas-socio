@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 
-import { relations } from "../data/relations";
-
-export default function Graph() {
+export default function Graph(props) {
   useEffect(() => {
-    console.log("Graph mounted OK");
-    console.log("relations:", relations);
+    console.log("GRAPH MOUNT OK", props);
   }, []);
 
-  return <div style={{ padding: 20 }}>GRAPH OK</div>;
+  return (
+    <div style={{ padding: 20, background: "red", color: "white" }}>
+      GRAPH MOUNTED
+    </div>
+  );
 }

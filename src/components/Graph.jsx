@@ -12,6 +12,8 @@ import { authors } from "../data/authors";
 export default function Graph({
   selectedAuthor,
   setSelectedAuthor,
+  selectedConcept,
+  setSelectedConcept,
 }) {
   const getAuthor = (id) =>
     authors.find((a) => a.id === id);
@@ -103,7 +105,10 @@ export default function Graph({
 
             <Territories />
 
-            <Concepts />
+            <Concepts
+              selectedConcept={selectedConcept}
+              setSelectedConcept={setSelectedConcept}
+            />
 
             <Authors
               selectedAuthor={selectedAuthor}

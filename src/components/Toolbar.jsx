@@ -29,18 +29,6 @@ export default function Toolbar() {
           Prototype v0.2
         </div>
       </div>
-
-      <input
-        type="text"
-        placeholder="Rechercher un auteur…"
-        style={{
-          width: "260px",
-          padding: "10px 14px",
-          borderRadius: "12px",
-          border: "1px solid #ddd",
-          fontSize: "15px",
-        }}
-      />
     </header>
   );
 }

@@ -16,6 +16,7 @@ export default function App() {
         display: "flex",
         height: "100vh",
         fontFamily: "Arial, sans-serif",
+        position: "relative",
       }}
     >
       <SearchBar setSelectedAuthor={setSelectedAuthor} />
@@ -31,44 +32,18 @@ export default function App() {
         />
       </div>
 
-      <aside
+      <div
         style={{
-          width: "360px",
+          width: "320px",
           borderLeft: "1px solid #ddd",
+          padding: 20,
           background: "#fafafa",
-          padding: 24,
           overflowY: "auto",
         }}
       >
-        {selectedRelation ? (
+        {selectedAuthor ? (
           <>
-            <h2>Relation</h2>
-
-            <p>
-              <strong>Type</strong>
-              <br />
-              {selectedRelation.type}
-            </p>
-
-            <p>
-              <strong>Source</strong>
-              <br />
-              {selectedRelation.source}
-            </p>
-
-            <p>
-              <strong>Cible</strong>
-              <br />
-              {selectedRelation.target}
-            </p>
-
-            <button onClick={() => setSelectedRelation(null)}>
-              Fermer
-            </button>
-          </>
-        ) : selectedAuthor ? (
-          <>
-            <h1>{selectedAuthor.name}</h1>
+            <h2>{selectedAuthor.name}</h2>
 
             <p>
               <strong>Courant</strong>
@@ -76,32 +51,23 @@ export default function App() {
               {selectedAuthor.school}
             </p>
 
-            <hr />
+            <p>
+              <strong>Concepts</strong>
+            </p>
 
-            <h3>Résumé</h3>
-            <p>{selectedAuthor.summary}</p>
-
-            <h3>Concepts</h3>
             <ul>
               {selectedAuthor.concepts.map((c) => (
                 <li key={c}>{c}</li>
-              ))}
-            </ul>
-
-            <h3>Œuvres</h3>
-            <ul>
-              {selectedAuthor.works.map((w) => (
-                <li key={w}>{w}</li>
               ))}
             </ul>
           </>
         ) : (
           <>
             <h2>Atlas de la théorie sociologique</h2>
-            <p>Cliquer sur un auteur ou une relation.</p>
+            <p>Recherche ou clique sur un auteur.</p>
           </>
         )}
-      </aside>
+      </div>
     </div>
   );
 }

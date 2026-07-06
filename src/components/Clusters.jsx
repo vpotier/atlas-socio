@@ -5,7 +5,7 @@ export default function Clusters() {
     <>
       {Object.values(clusters).map((c) => (
         <g key={c.id}>
-          {/* zone du cluster */}
+          {/* zone visuelle uniquement */}
           <circle
             cx={c.center.x}
             cy={c.center.y}
@@ -14,7 +14,7 @@ export default function Clusters() {
             opacity="0.08"
           />
 
-          {/* contour doux */}
+          {/* contour léger */}
           <circle
             cx={c.center.x}
             cy={c.center.y}
@@ -22,7 +22,7 @@ export default function Clusters() {
             fill="none"
             stroke={c.color}
             strokeWidth="1"
-            opacity="0.25"
+            opacity="0.2"
           />
 
           {/* label */}

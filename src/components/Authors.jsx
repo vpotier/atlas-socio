@@ -1,36 +1,50 @@
-import { authors } from "../data/authors";
+export default function Authors({
+  selectedAuthor,
+  setSelectedAuthor,
+  dimByConcept,
+}) {
+  const authors = [
+    { id: "durkheim", name: "Durkheim", x: 140, y: 200, color: "#7fb3e8", concepts: ["anomie"] },
+    { id: "weber", name: "Weber", x: 720, y: 200, color: "#d88b8b", concepts: ["action-sociale"] },
+    { id: "bourdieu", name: "Bourdieu", x: 420, y: 420, color: "#b8d87d", concepts: ["habitus", "champ"] },
+  ];
 
-export default function Authors({ selectedAuthor, setSelectedAuthor }) {
   return (
     <>
-      {authors.map((a) => (
-        <g
-          key={a.id}
-          onClick={() => setSelectedAuthor(a)}
-          style={{
-            cursor: "pointer",
-          }}
-        >
-          <circle
-            cx={a.x}
-            cy={a.y}
-            r={selectedAuthor?.id === a.id ? 28 : 24}
-            fill={a.color}
-            stroke="white"
-            strokeWidth="3"
-          />
+      {authors.map((a) => {
+        const isSelected = selectedAuthor?.id === a.id;
+        const isDimmed =
+          dimByConcept && !dimByConcept.has(a.id);
 
-          <text
-            x={a.x}
-            y={a.y + 42}
-            textAnchor="middle"
-            fontSize="16"
-            fill="#333"
+        return (
+          <g
+            key={a.id}
+            onClick={() => setSelectedAuthor(a)}
+            style={{ cursor: "pointer" }}
           >
-            {a.name}
-          </text>
-        </g>
-      ))}
+            <circle
+              cx={a.x}
+              cy={a.y}
+              r={isSelected ? 28 : 22}
+              fill={a.color}
+              opacity={isDimmed ? 0.15 : 1}
+              stroke={isSelected ? "#000" : "#fff"}
+              strokeWidth="2"
+            />
+
+            <text
+              x={a.x}
+              y={a.y + 38}
+              textAnchor="middle"
+              fontSize="13"
+              fill="#333"
+              opacity={isDimmed ? 0.2 : 1}
+            >
+              {a.name}
+            </text>
+          </g>
+        );
+      })}
     </>
   );
 }

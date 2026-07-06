@@ -8,7 +8,6 @@ export default function Blends() {
       {list.map((cluster) =>
         (cluster.blend || []).map((targetId) => {
           const target = list.find((c) => c.id === targetId);
-
           if (!target) return null;
 
           return (
@@ -21,11 +20,10 @@ export default function Blends() {
                   ${target.center.x}
                   ${target.center.y}
               `}
-              stroke="#999"
+              stroke={cluster.color}
               strokeWidth="2"
-              strokeDasharray="6 6"
               fill="none"
-              opacity="0.15"
+              opacity="0.25"
             />
           );
         })

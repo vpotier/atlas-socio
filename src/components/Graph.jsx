@@ -6,12 +6,11 @@ import Territories from "./Territories";
 import Authors from "./Authors";
 import Concepts from "./Concepts";
 import Clusters from "./Clusters";
-import Toolbar from "./Toolbar";
 import Blends from "./Blends";
+import Toolbar from "./Toolbar";
 
 import { relations } from "../data/relations";
 import { authors } from "../data/authors";
-import { clusters } from "../engine/clusters";
 
 export default function Graph({
   selectedAuthor,
@@ -60,7 +59,12 @@ export default function Graph({
       }
     }
 
-    return { color, width, opacity, dash: r.type === "tension" ? "6 4" : "" };
+    return {
+      color,
+      width,
+      opacity,
+      dash: r.type === "tension" ? "6 4" : "",
+    };
   };
 
   return (
@@ -88,8 +92,10 @@ export default function Graph({
               </filter>
             </defs>
 
-            {/* CLUSTERS (NOUVEAU) */}
+            {/* CLUSTERS */}
             <Clusters />
+
+            {/* ZONES HYBRIDES */}
             <Blends />
 
             {/* RELATIONS */}

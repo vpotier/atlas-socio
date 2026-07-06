@@ -1,58 +1,70 @@
 import { useState } from "react";
-import "./styles/app.css";
 
 import Graph from "./components/Graph";
+import SearchBar from "./components/SearchBar";
+
+import "./styles/app.css";
 
 export default function App() {
   const [selectedAuthor, setSelectedAuthor] = useState(null);
   const [selectedConcept, setSelectedConcept] = useState(null);
 
   return (
-    <div className="app">
-      <main className="map">
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        fontFamily: "Arial, sans-serif",
+        position: "relative",
+      }}
+    >
+      <SearchBar setSelectedAuthor={setSelectedAuthor} />
+
+      <div style={{ flex: 1, padding: 20 }}>
         <Graph
           selectedAuthor={selectedAuthor}
           setSelectedAuthor={setSelectedAuthor}
           selectedConcept={selectedConcept}
           setSelectedConcept={setSelectedConcept}
         />
-      </main>
+      </div>
 
-      <aside className="sidebar">
-        <div className="card">
-          {selectedConcept ? (
-            <>
-              <h2>{selectedConcept.label}</h2>
-              <p>Concept sociologique</p>
-              <p style={{ color: "#666" }}>
-                (bientôt : auteurs associés + relations)
-              </p>
-            </>
-          ) : selectedAuthor ? (
-            <>
-              <h2>{selectedAuthor.name}</h2>
+      <div
+        style={{
+          width: "320px",
+          borderLeft: "1px solid #ddd",
+          padding: 20,
+          background: "#fafafa",
+          overflowY: "auto",
+        }}
+      >
+        {selectedAuthor ? (
+          <>
+            <h2>{selectedAuthor.name}</h2>
 
-              <span className="badge">
-                {selectedAuthor.school}
-              </span>
+            <p>
+              <strong>Courant</strong>
+              <br />
+              {selectedAuthor.school}
+            </p>
 
-              <section className="concepts">
-                <h3>Concepts</h3>
-                <ul>
-                  {selectedAuthor.concepts.map((c) => (
-                    <li key={c}>{c}</li>
-                  ))}
-                </ul>
-              </section>
-            </>
-          ) : (
-            <>
-              <h2>Atlas de la théorie sociologique</h2>
-              <p>Clique sur un auteur ou un concept.</p>
-            </>
-          )}
-        </div>
-      </aside>
+            <p>
+              <strong>Concepts</strong>
+            </p>
+
+            <ul>
+              {selectedAuthor.concepts.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <>
+            <h2>Atlas de la théorie sociologique</h2>
+            <p>Recherche ou clique sur un auteur.</p>
+          </>
+        )}
+      </div>
     </div>
   );
 }

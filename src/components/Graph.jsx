@@ -3,6 +3,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Background from "../layers/Background";
 import Territories from "./Territories";
 import Authors from "./Authors";
+import Concepts from "./Concepts";
 import Toolbar from "./Toolbar";
 
 import { relations } from "../data/relations";
@@ -14,14 +15,6 @@ export default function Graph({
 }) {
   const getAuthor = (id) =>
     authors.find((a) => a.id === id);
-
-  const isRelated = (aId, bId) => {
-    return relations.some(
-      (r) =>
-        (r.source === aId && r.target === bId) ||
-        (r.source === bId && r.target === aId)
-    );
-  };
 
   const getLineStyle = (r, activeId) => {
     const isActive =
@@ -109,6 +102,8 @@ export default function Graph({
             })}
 
             <Territories />
+
+            <Concepts />
 
             <Authors
               selectedAuthor={selectedAuthor}

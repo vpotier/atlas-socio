@@ -1,14 +1,9 @@
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Background from "../layers/Background";
 import Territories from "./Territories";
+import Authors from "./Authors";
 
 export default function Graph() {
-  const nodes = [
-    { name: "Durkheim", x: 165, y: 185, color: "#2E6DB4" },
-    { name: "Bourdieu", x: 420, y: 405, color: "#86B53F" },
-    { name: "Weber", x: 720, y: 180, color: "#B53B3B" },
-  ];
-
   return (
     <TransformWrapper
       initialScale={1}
@@ -40,27 +35,7 @@ export default function Graph() {
 
           <Territories />
 
-          {nodes.map((n) => (
-            <g key={n.name} filter="url(#shadow)">
-              <circle
-                cx={n.x}
-                cy={n.y}
-                r="24"
-                fill={n.color}
-                stroke="white"
-                strokeWidth="3"
-              />
-              <text
-                x={n.x}
-                y={n.y + 42}
-                textAnchor="middle"
-                fontSize="16"
-                fill="#333"
-              >
-                {n.name}
-              </text>
-            </g>
-          ))}
+          <Authors />
         </svg>
       </TransformComponent>
     </TransformWrapper>

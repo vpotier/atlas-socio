@@ -18,34 +18,45 @@ export default function Graph({
   const getAuthor = (id) =>
     authors.find((a) => a.id === id);
 
-  const getLineStyle = (r, activeId) => {
-    const isActive =
-      activeId &&
-      (r.source === activeId || r.target === activeId);
+  const conceptRelatedAuthors = selectedConcept
+    ? new Set(selectedConcept.authors)
+    : null;
 
-    switch (r.type) {
-      case "heritage":
-        return {
-          color: isActive ? "#4CAF50" : "#9ccc9c",
-          width: isActive ? 2.5 : 1.5,
-        };
-      case "dialogue":
-        return {
-          color: isActive ? "#f1c232" : "#e6d48a",
-          width: isActive ? 2.5 : 1.5,
-        };
-      case "tension":
-        return {
-          color: isActive ? "#d32f2f" : "#e0a0a0",
-          width: isActive ? 2.5 : 1.5,
-          dash: "6 4",
-        };
-      default:
-        return {
-          color: "#aaa",
-          width: 1,
-        };
+  const getLineStyle = (r, activeAuthor, activeConcept) => {
+    const isAuthorActive =
+      activeAuthor &&
+      (r.source === activeAuthor || r.target === activeAuthor);
+
+    const isConceptActive =
+      activeConcept &&
+      conceptRelatedAuthors &&
+      (conceptRelatedAuthors.has(r.source) ||
+        conceptRelatedAuthors.has(r.target));
+
+    let color = "#aaa";
+    let width = 1;
+    let opacity = 0.15;
+
+    if (isAuthorActive || isConceptActive) {
+      opacity = 0.7;
+
+      switch (r.type) {
+        case "heritage":
+          color = "#4CAF50";
+          width = 2.5;
+          break;
+        case "dialogue":
+          color = "#f1c232";
+          width = 2.5;
+          break;
+        case "tension":
+          color = "#d32f2f";
+          width = 2.5;
+          break;
+      }
     }
+
+    return { color, width, opacity, dash: r.type === "tension" ? "6 4" : "" };
   };
 
   return (
@@ -79,14 +90,11 @@ export default function Graph({
               const b = getAuthor(r.target);
               if (!a || !b) return null;
 
-              const style = getLineStyle(r, selectedAuthor?.id);
-
-              const dim =
-                selectedAuthor &&
-                !(
-                  r.source === selectedAuthor.id ||
-                  r.target === selectedAuthor.id
-                );
+              const style = getLineStyle(
+                r,
+                selectedAuthor?.id,
+                selectedConcept?.id
+              );
 
               return (
                 <line
@@ -97,8 +105,8 @@ export default function Graph({
                   y2={b.y}
                   stroke={style.color}
                   strokeWidth={style.width}
-                  strokeDasharray={style.dash || ""}
-                  opacity={dim ? 0.15 : 0.7}
+                  strokeDasharray={style.dash}
+                  opacity={style.opacity}
                 />
               );
             })}
@@ -113,6 +121,11 @@ export default function Graph({
             <Authors
               selectedAuthor={selectedAuthor}
               setSelectedAuthor={setSelectedAuthor}
+              dimByConcept={
+                selectedConcept
+                  ? conceptRelatedAuthors
+                  : null
+              }
             />
           </svg>
         </TransformComponent>

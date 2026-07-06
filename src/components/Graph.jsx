@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import Background from "../layers/Background";
@@ -19,6 +20,8 @@ export default function Graph({
   selectedRelation,
   setSelectedRelation,
 }) {
+  const [hoveredRelation, setHoveredRelation] = useState(null);
+
   const getAuthor = (id) => authors.find((a) => a.id === id);
 
   const conceptRelatedAuthors = selectedConcept
@@ -60,7 +63,12 @@ export default function Graph({
     }
 
     if (isActive || isConceptActive) {
-      opacity = 0.85;
+      opacity = 0.9;
+    }
+
+    if (hoveredRelation?.source === r.source && hoveredRelation?.target === r.target) {
+      width += 1.5;
+      opacity = 1;
     }
 
     return { color, width, opacity, dash };
@@ -69,6 +77,29 @@ export default function Graph({
   return (
     <>
       <Toolbar />
+
+      {/* TOOLTIP */}
+      {hoveredRelation && (
+        <div
+          style={{
+            position: "absolute",
+            top: 80,
+            left: 20,
+            padding: "10px 14px",
+            background: "#fff",
+            border: "1px solid #ddd",
+            borderRadius: 8,
+            fontSize: 13,
+            zIndex: 10,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+          }}
+        >
+          <strong>{hoveredRelation.type}</strong>
+          <div>
+            {hoveredRelation.source} → {hoveredRelation.target}
+          </div>
+        </div>
+      )}
 
       <TransformWrapper
         initialScale={1}
@@ -93,7 +124,6 @@ export default function Graph({
             <Clusters />
             <Blends />
 
-            {/* RELATIONS CLICKABLES */}
             {relations.map((r, i) => {
               const a = getAuthor(r.source);
               const b = getAuthor(r.target);
@@ -113,6 +143,8 @@ export default function Graph({
                   strokeDasharray={style.dash}
                   opacity={style.opacity}
                   style={{ cursor: "pointer" }}
+                  onMouseEnter={() => setHoveredRelation(r)}
+                  onMouseLeave={() => setHoveredRelation(null)}
                   onClick={() => setSelectedRelation?.(r)}
                 />
               );

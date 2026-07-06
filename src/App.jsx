@@ -29,42 +29,78 @@ export default function App() {
         />
       </div>
 
-      <div
+      <aside
         style={{
-          width: "320px",
+          width: "340px",
           borderLeft: "1px solid #ddd",
-          padding: 20,
+          padding: "24px",
           background: "#fafafa",
           overflowY: "auto",
         }}
       >
-        {selectedAuthor ? (
+        {!selectedAuthor ? (
           <>
-            <h2>{selectedAuthor.name}</h2>
+            <h2>Atlas de la théorie sociologique</h2>
 
             <p>
-              <strong>Courant</strong>
-              <br />
-              {selectedAuthor.school}
+              Cliquez sur un auteur ou utilisez la barre de recherche.
+            </p>
+
+            <hr />
+
+            <p>
+              <strong>Auteurs :</strong> 3
             </p>
 
             <p>
-              <strong>Concepts</strong>
+              <strong>Concepts :</strong> 4
             </p>
+
+            <p>
+              <strong>Relations :</strong> 3
+            </p>
+          </>
+        ) : (
+          <>
+            <h1>{selectedAuthor.name}</h1>
+
+            <hr />
+
+            <h3>Courant</h3>
+
+            <p>{selectedAuthor.school}</p>
+
+            <h3>Concepts</h3>
 
             <ul>
               {selectedAuthor.concepts.map((c) => (
                 <li key={c}>{c}</li>
               ))}
             </ul>
-          </>
-        ) : (
-          <>
-            <h2>Atlas de la théorie sociologique</h2>
-            <p>Recherche ou clique sur un auteur.</p>
+
+            <h3>Position</h3>
+
+            <p>
+              x : {selectedAuthor.x}
+              <br />
+              y : {selectedAuthor.y}
+            </p>
+
+            <hr />
+
+            <p
+              style={{
+                color: "#666",
+                fontSize: "14px",
+                lineHeight: 1.5,
+              }}
+            >
+              Cette fiche sera progressivement enrichie avec les œuvres,
+              influences, héritiers, controverses et concepts détaillés.
+            </p>
           </>
         )}
-      </div>
+      </aside>
     </div>
   );
 }

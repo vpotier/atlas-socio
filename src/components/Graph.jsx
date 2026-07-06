@@ -7,6 +7,7 @@ import Authors from "./Authors";
 import Concepts from "./Concepts";
 import Clusters from "./Clusters";
 import Toolbar from "./Toolbar";
+import Blends from "./Blends";
 
 import { relations } from "../data/relations";
 import { authors } from "../data/authors";
@@ -89,6 +90,7 @@ export default function Graph({
 
             {/* CLUSTERS (NOUVEAU) */}
             <Clusters />
+            <Blends />
 
             {/* RELATIONS */}
             {relations.map((r, i) => {

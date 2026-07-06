@@ -4,6 +4,7 @@ import Background from "../layers/Background";
 import Territories from "./Territories";
 import Authors from "./Authors";
 import Toolbar from "./Toolbar";
+
 import { relations } from "../data/relations";
 import { authors } from "../data/authors";
 
@@ -14,16 +15,41 @@ export default function Graph({
   const getAuthor = (id) =>
     authors.find((a) => a.id === id);
 
-  const getStyle = (type) => {
-    switch (type) {
+  const isRelated = (aId, bId) => {
+    return relations.some(
+      (r) =>
+        (r.source === aId && r.target === bId) ||
+        (r.source === bId && r.target === aId)
+    );
+  };
+
+  const getLineStyle = (r, activeId) => {
+    const isActive =
+      activeId &&
+      (r.source === activeId || r.target === activeId);
+
+    switch (r.type) {
       case "heritage":
-        return { color: "#6aa84f", width: 2 };
+        return {
+          color: isActive ? "#4CAF50" : "#9ccc9c",
+          width: isActive ? 2.5 : 1.5,
+        };
       case "dialogue":
-        return { color: "#f1c232", width: 2 };
+        return {
+          color: isActive ? "#f1c232" : "#e6d48a",
+          width: isActive ? 2.5 : 1.5,
+        };
       case "tension":
-        return { color: "#cc0000", width: 2, dash: "6 4" };
+        return {
+          color: isActive ? "#d32f2f" : "#e0a0a0",
+          width: isActive ? 2.5 : 1.5,
+          dash: "6 4",
+        };
       default:
-        return { color: "#999", width: 1 };
+        return {
+          color: "#aaa",
+          width: 1,
+        };
     }
   };
 
@@ -58,7 +84,14 @@ export default function Graph({
               const b = getAuthor(r.target);
               if (!a || !b) return null;
 
-              const style = getStyle(r.type);
+              const style = getLineStyle(r, selectedAuthor?.id);
+
+              const dim =
+                selectedAuthor &&
+                !(
+                  r.source === selectedAuthor.id ||
+                  r.target === selectedAuthor.id
+                );
 
               return (
                 <line
@@ -70,7 +103,7 @@ export default function Graph({
                   stroke={style.color}
                   strokeWidth={style.width}
                   strokeDasharray={style.dash || ""}
-                  opacity="0.6"
+                  opacity={dim ? 0.15 : 0.7}
                 />
               );
             })}

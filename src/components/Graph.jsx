@@ -152,7 +152,8 @@ const getLineStyle = (r, activeAuthor, activeConcept) => {
                   stroke={style.color}
                   strokeWidth={style.width}
                   strokeDasharray={style.dash}
-                  opacity={style.opacity}
+                 opacity={style.opacity}
+                strokeWidth={style.width}
                 />
               );
             })}

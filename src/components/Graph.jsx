@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import Background from "../layers/Background";
@@ -18,84 +17,61 @@ export default function Graph({
   selectedConcept,
   setSelectedConcept,
 }) {
-  const getAuthor = (id) =>
-    authors.find((a) => a.id === id);
+  const getAuthor = (id) => authors.find((a) => a.id === id);
 
   const conceptRelatedAuthors = selectedConcept
     ? new Set(selectedConcept.authors)
     : null;
 
-const getLineStyle = (r, activeAuthor, activeConcept) => {
-  const isActive =
-    activeAuthor &&
-    (r.source === activeAuthor || r.target === activeAuthor);
+  const getLineStyle = (relation) => {
+    const activeAuthorId = selectedAuthor?.id;
 
-  const isConceptActive =
-    activeConcept &&
-    conceptRelatedAuthors &&
-    (conceptRelatedAuthors.has(r.source) ||
-      conceptRelatedAuthors.has(r.target));
-
-  let baseWidth = 1;
-
-  // 🔥 intensité structurelle
-  if (r.type === "heritage") baseWidth = 2.5;
-  if (r.type === "dialogue") baseWidth = 2;
-  if (r.type === "tension") baseWidth = 3;
-
-  let color = "#aaa";
-  let opacity = 0.1;
-
-  if (isActive || isConceptActive) {
-    opacity = 0.75;
-
-    if (r.type === "heritage") color = "#4CAF50";
-    if (r.type === "dialogue") color = "#f1c232";
-    if (r.type === "tension") color = "#d32f2f";
-  }
-
-  return {
-    color,
-    width: baseWidth,
-    opacity,
-    dash: r.type === "tension" ? "6 4" : "",
-  };
-};
+    const isAuthorActive =
+      activeAuthorId &&
+      (relation.source === activeAuthorId ||
+        relation.target === activeAuthorId);
 
     const isConceptActive =
-      activeConcept &&
+      selectedConcept &&
       conceptRelatedAuthors &&
-      (conceptRelatedAuthors.has(r.source) ||
-        conceptRelatedAuthors.has(r.target));
+      (conceptRelatedAuthors.has(relation.source) ||
+        conceptRelatedAuthors.has(relation.target));
 
-    let color = "#aaa";
-    let width = 1;
+    let color = "#b5b5b5";
+    let width = 1.5;
     let opacity = 0.12;
+    let dash = "";
 
-    if (isActive || isConceptActive) {
-      opacity = 0.7;
+    switch (relation.type) {
+      case "heritage":
+        color = "#4CAF50";
+        width = 2.5;
+        break;
 
-      switch (r.type) {
-        case "heritage":
-          color = "#4CAF50";
-          width = 2.5;
-          break;
-        case "dialogue":
-          color = "#f1c232";
-          width = 2.5;
-          break;
-        case "tension":
-          color = "#d32f2f";
-          width = 2.5;
-          break;
-      }
+      case "dialogue":
+        color = "#F1C232";
+        width = 2.5;
+        break;
+
+      case "tension":
+        color = "#D32F2F";
+        width = 3;
+        dash = "6 4";
+        break;
+
+      default:
+        break;
+    }
+
+    if (isAuthorActive || isConceptActive) {
+      opacity = 0.85;
     }
 
     return {
       color,
       width,
       opacity,
-      dash: r.type === "tension" ? "6 4" : "",
+      dash,
     };
   };
 
@@ -110,7 +86,14 @@ const getLineStyle = (r, activeAuthor, activeConcept) => {
         centerOnInit
       >
         <TransformComponent>
-          <svg width="1100" height="700">
+          <svg
+            width="1100"
+            height="700"
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "10px",
+            }}
+          >
             <Background />
 
             <defs>
@@ -124,36 +107,29 @@ const getLineStyle = (r, activeAuthor, activeConcept) => {
               </filter>
             </defs>
 
-            {/* CLUSTERS */}
             <Clusters />
 
-            {/* ZONES HYBRIDES */}
             <Blends />
 
-            {/* RELATIONS */}
-            {relations.map((r, i) => {
-              const a = getAuthor(r.source);
-              const b = getAuthor(r.target);
-              if (!a || !b) return null;
+            {relations.map((relation, index) => {
+              const source = getAuthor(relation.source);
+              const target = getAuthor(relation.target);
 
-              const style = getLineStyle(
-                r,
-                selectedAuthor?.id,
-                selectedConcept?.id
-              );
+              if (!source || !target) return null;
+
+              const style = getLineStyle(relation);
 
               return (
                 <line
-                  key={i}
-                  x1={a.x}
-                  y1={a.y}
-                  x2={b.x}
-                  y2={b.y}
+                  key={index}
+                  x1={source.x}
+                  y1={source.y}
+                  x2={target.x}
+                  y2={target.y}
                   stroke={style.color}
                   strokeWidth={style.width}
                   strokeDasharray={style.dash}
-                 opacity={style.opacity}
-                strokeWidth={style.width}
+                  opacity={style.opacity}
                 />
               );
             })}
@@ -168,11 +144,7 @@ const getLineStyle = (r, activeAuthor, activeConcept) => {
             <Authors
               selectedAuthor={selectedAuthor}
               setSelectedAuthor={setSelectedAuthor}
-              dimByConcept={
-                selectedConcept
-                  ? conceptRelatedAuthors
-                  : null
-              }
+              dimByConcept={conceptRelatedAuthors}
             />
           </svg>
         </TransformComponent>

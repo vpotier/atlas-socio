@@ -2,7 +2,6 @@ import { useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import Background from "../layers/Background";
-import Territories from "./Territories";
 import Authors from "./Authors";
 import Concepts from "./Concepts";
 import Clusters from "./Clusters";
@@ -17,7 +16,6 @@ export default function Graph({
   setSelectedAuthor,
   selectedConcept,
   setSelectedConcept,
-  selectedRelation,
   setSelectedRelation,
 }) {
   const [hoveredRelation, setHoveredRelation] = useState(null);
@@ -28,10 +26,15 @@ export default function Graph({
     ? new Set(selectedConcept.authors)
     : null;
 
-  // 🔥 FILTRE: on garde uniquement les relations "importantes"
-  const visibleRelations = relations.filter((r) =>
-    ["heritage", "dialogue", "tension"].includes(r.type)
-  );
+  // 🔥 FOCUS LOGIC
+  const visibleRelations = relations.filter((r) => {
+    if (!selectedAuthor) return true;
+
+    return (
+      r.source === selectedAuthor.id ||
+      r.target === selectedAuthor.id
+    );
+  });
 
   const getLineStyle = (r) => {
     let color;
@@ -59,25 +62,18 @@ export default function Graph({
         return null;
     }
 
-    const activeAuthor = selectedAuthor?.id;
-
     const isActive =
-      activeAuthor &&
-      (r.source === activeAuthor || r.target === activeAuthor);
+      selectedAuthor &&
+      (r.source === selectedAuthor.id ||
+        r.target === selectedAuthor.id);
 
-    const isConceptActive =
-      selectedConcept &&
-      conceptRelatedAuthors &&
-      (conceptRelatedAuthors.has(r.source) ||
-        conceptRelatedAuthors.has(r.target));
-
-    const highlighted = isActive || isConceptActive;
+    const highlighted = isActive;
 
     return {
       color,
       width,
       dash,
-      opacity: highlighted ? 0.9 : 0.12,
+      opacity: highlighted ? 0.95 : 0.15,
     };
   };
 
@@ -155,8 +151,6 @@ export default function Graph({
                 />
               );
             })}
-
-            <Territories />
 
             <Concepts
               selectedConcept={selectedConcept}

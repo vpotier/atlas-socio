@@ -2,9 +2,9 @@ import { useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import Background from "../layers/Background";
+import Clusters from "./Clusters";
 import Authors from "./Authors";
 import Concepts from "./Concepts";
-import Clusters from "./Clusters";
 import Blends from "./Blends";
 import Toolbar from "./Toolbar";
 
@@ -16,6 +16,7 @@ export default function Graph({
   setSelectedAuthor,
   selectedConcept,
   setSelectedConcept,
+  selectedRelation,
   setSelectedRelation,
 }) {
   const [hoveredRelation, setHoveredRelation] = useState(null);
@@ -26,20 +27,14 @@ export default function Graph({
     ? new Set(selectedConcept.authors)
     : null;
 
-  // 🔥 FOCUS LOGIC
-  const visibleRelations = relations.filter((r) => {
-    if (!selectedAuthor) return true;
-
-    return (
-      r.source === selectedAuthor.id ||
-      r.target === selectedAuthor.id
-    );
-  });
+  // Filtre de base (évite undefined + garde structure propre)
+  const visibleRelations = relations.filter((r) => r?.source && r?.target);
 
   const getLineStyle = (r) => {
-    let color;
-    let width;
+    let color = "#aaa";
+    let width = 1.5;
     let dash = "";
+    let opacity = 0.15;
 
     switch (r.type) {
       case "heritage":
@@ -59,22 +54,26 @@ export default function Graph({
         break;
 
       default:
-        return null;
+        break;
     }
 
+    const activeAuthor = selectedAuthor?.id;
+
     const isActive =
-      selectedAuthor &&
-      (r.source === selectedAuthor.id ||
-        r.target === selectedAuthor.id);
+      activeAuthor &&
+      (r.source === activeAuthor || r.target === activeAuthor);
 
-    const highlighted = isActive;
+    const isConceptActive =
+      selectedConcept &&
+      conceptRelatedAuthors &&
+      (conceptRelatedAuthors.has(r.source) ||
+        conceptRelatedAuthors.has(r.target));
 
-    return {
-      color,
-      width,
-      dash,
-      opacity: highlighted ? 0.95 : 0.15,
-    };
+    if (isActive || isConceptActive) {
+      opacity = 0.85;
+    }
+
+    return { color, width, dash, opacity };
   };
 
   return (
@@ -127,7 +126,6 @@ export default function Graph({
               if (!a || !b) return null;
 
               const style = getLineStyle(r);
-              if (!style) return null;
 
               const isHovered =
                 hoveredRelation?.source === r.source &&
@@ -147,7 +145,7 @@ export default function Graph({
                   style={{ cursor: "pointer" }}
                   onMouseEnter={() => setHoveredRelation(r)}
                   onMouseLeave={() => setHoveredRelation(null)}
-                  onClick={() => if (setSelectedRelation) setSelectedRelation(r);
+                  onClick={() => setSelectedRelation?.(r)}
                 />
               );
             })}

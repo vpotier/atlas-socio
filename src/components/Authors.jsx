@@ -4,9 +4,30 @@ export default function Authors({
   dimByConcept,
 }) {
   const authors = [
-    { id: "durkheim", name: "Durkheim", x: 140, y: 200, color: "#7fb3e8", concepts: ["anomie"] },
-    { id: "weber", name: "Weber", x: 720, y: 200, color: "#d88b8b", concepts: ["action-sociale"] },
-    { id: "bourdieu", name: "Bourdieu", x: 420, y: 420, color: "#b8d87d", concepts: ["habitus", "champ"] },
+    {
+      id: "durkheim",
+      name: "Durkheim",
+      x: 140,
+      y: 200,
+      color: "#7fb3e8",
+      weight: 3,
+    },
+    {
+      id: "weber",
+      name: "Weber",
+      x: 720,
+      y: 200,
+      color: "#d88b8b",
+      weight: 3,
+    },
+    {
+      id: "bourdieu",
+      name: "Bourdieu",
+      x: 420,
+      y: 420,
+      color: "#b8d87d",
+      weight: 4,
+    },
   ];
 
   return (
@@ -25,7 +46,7 @@ export default function Authors({
             <circle
               cx={a.x}
               cy={a.y}
-              r={isSelected ? 28 : 22}
+              r={18 + a.weight * 2}
               fill={a.color}
               opacity={isDimmed ? 0.15 : 1}
               stroke={isSelected ? "#000" : "#fff"}

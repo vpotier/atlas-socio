@@ -1,14 +1,20 @@
 import { authors } from "../data/authors";
 
-export default function Authors() {
+export default function Authors({ selectedAuthor, setSelectedAuthor }) {
   return (
     <>
       {authors.map((a) => (
-        <g key={a.id}>
+        <g
+          key={a.id}
+          onClick={() => setSelectedAuthor(a)}
+          style={{
+            cursor: "pointer",
+          }}
+        >
           <circle
             cx={a.x}
             cy={a.y}
-            r="24"
+            r={selectedAuthor?.id === a.id ? 28 : 24}
             fill={a.color}
             stroke="white"
             strokeWidth="3"

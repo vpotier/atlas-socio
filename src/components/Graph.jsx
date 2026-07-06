@@ -9,7 +9,7 @@ import Toolbar from "./Toolbar";
 
 import { relations } from "../data/relations";
 import { authors } from "../data/authors";
-import { clusters } from "../engine/clusters";
+import { clusters } from "../engine/clusters.js";
 
 export default function Graph({
   selectedAuthor,

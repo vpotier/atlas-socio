@@ -1,13 +1,13 @@
 import { clusters } from "../engine/clusters";
 
 export default function Blends() {
-  const values = Object.values(clusters);
+  const list = Object.values(clusters);
 
   return (
     <>
-      {values.map((c, i) =>
-        c.blend?.map((targetId) => {
-          const target = values.find((v) => v.id === targetId);
+      {list.map((c) =>
+        (c.blend || []).map((targetId) => {
+          const target = list.find((v) => v.id === targetId);
           if (!target) return null;
 
           return (

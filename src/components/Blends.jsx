@@ -5,24 +5,27 @@ export default function Blends() {
 
   return (
     <>
-      {list.map((c) =>
-        (c.blend || []).map((targetId) => {
-          const target = list.find((v) => v.id === targetId);
+      {list.map((cluster) =>
+        (cluster.blend || []).map((targetId) => {
+          const target = list.find((c) => c.id === targetId);
+
           if (!target) return null;
 
           return (
             <path
-              key={`${c.id}-${targetId}`}
+              key={`${cluster.id}-${target.id}`}
               d={`
-                M ${c.center.x} ${c.center.y}
-                Q ${(c.center.x + target.center.x) / 2} ${(c.center.y + target.center.y) / 2 - 80}
-                ${target.center.x} ${target.center.y}
+                M ${cluster.center.x} ${cluster.center.y}
+                Q ${(cluster.center.x + target.center.x) / 2}
+                  ${(cluster.center.y + target.center.y) / 2 - 80}
+                  ${target.center.x}
+                  ${target.center.y}
               `}
               stroke="#999"
               strokeWidth="2"
+              strokeDasharray="6 6"
               fill="none"
               opacity="0.15"
-              strokeDasharray="6 6"
             />
           );
         })

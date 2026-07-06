@@ -31,10 +31,10 @@ export default function App() {
 
       <aside
         style={{
-          width: "340px",
+          width: "360px",
           borderLeft: "1px solid #ddd",
-          padding: "24px",
           background: "#fafafa",
+          padding: 24,
           overflowY: "auto",
         }}
       >
@@ -42,33 +42,23 @@ export default function App() {
           <>
             <h2>Atlas de la théorie sociologique</h2>
 
-            <p>
-              Cliquez sur un auteur ou utilisez la barre de recherche.
-            </p>
-
-            <hr />
-
-            <p>
-              <strong>Auteurs :</strong> 3
-            </p>
-
-            <p>
-              <strong>Concepts :</strong> 4
-            </p>
-
-            <p>
-              <strong>Relations :</strong> 3
-            </p>
+            <p>Sélectionnez un auteur sur la carte.</p>
           </>
         ) : (
           <>
             <h1>{selectedAuthor.name}</h1>
 
+            <p>
+              <strong>Courant</strong>
+              <br />
+              {selectedAuthor.school}
+            </p>
+
             <hr />
 
-            <h3>Courant</h3>
+            <h3>Résumé</h3>
 
-            <p>{selectedAuthor.school}</p>
+            <p>{selectedAuthor.summary}</p>
 
             <h3>Concepts</h3>
 
@@ -78,26 +68,29 @@ export default function App() {
               ))}
             </ul>
 
-            <h3>Position</h3>
+            <h3>Œuvres majeures</h3>
 
-            <p>
-              x : {selectedAuthor.x}
-              <br />
-              y : {selectedAuthor.y}
-            </p>
+            <ul>
+              {selectedAuthor.works.map((w) => (
+                <li key={w}>{w}</li>
+              ))}
+            </ul>
 
-            <hr />
+            <h3>Influences</h3>
 
-            <p
-              style={{
-                color: "#666",
-                fontSize: "14px",
-                lineHeight: 1.5,
-              }}
-            >
-              Cette fiche sera progressivement enrichie avec les œuvres,
-              influences, héritiers, controverses et concepts détaillés.
-            </p>
+            <ul>
+              {selectedAuthor.influences.map((i) => (
+                <li key={i}>{i}</li>
+              ))}
+            </ul>
+
+            <h3>Héritiers</h3>
+
+            <ul>
+              {selectedAuthor.heirs.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ul>
           </>
         )}
       </aside>

@@ -1,6 +1,11 @@
 import { concepts } from "../data/concepts";
 
-export default function Concepts({ selectedConcept, setSelectedConcept }) {
+export default function Concepts({
+  selectedConcept,
+  setSelectedConcept,
+}) {
+  if (!Array.isArray(concepts)) return null;
+
   return (
     <>
       {concepts.map((c) => {
@@ -9,7 +14,7 @@ export default function Concepts({ selectedConcept, setSelectedConcept }) {
         return (
           <g
             key={c.id}
-            onClick={() => setSelectedConcept(c)}
+            onClick={() => setSelectedConcept?.(c)}
             style={{ cursor: "pointer" }}
           >
             <circle

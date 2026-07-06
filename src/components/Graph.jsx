@@ -3,7 +3,10 @@ import Background from "../layers/Background";
 import Territories from "./Territories";
 import Authors from "./Authors";
 
-export default function Graph() {
+export default function Graph({
+  selectedAuthor,
+  setSelectedAuthor,
+}) {
   return (
     <TransformWrapper
       initialScale={1}
@@ -35,7 +38,10 @@ export default function Graph() {
 
           <Territories />
 
-          <Authors />
+          <Authors
+            selectedAuthor={selectedAuthor}
+            setSelectedAuthor={setSelectedAuthor}
+          />
         </svg>
       </TransformComponent>
     </TransformWrapper>

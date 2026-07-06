@@ -147,7 +147,7 @@ export default function Graph({
                   style={{ cursor: "pointer" }}
                   onMouseEnter={() => setHoveredRelation(r)}
                   onMouseLeave={() => setHoveredRelation(null)}
-                  onClick={() => setSelectedRelation?.(r)}
+                  onClick={() => if (setSelectedRelation) setSelectedRelation(r);
                 />
               );
             })}

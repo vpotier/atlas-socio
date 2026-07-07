@@ -25,6 +25,17 @@ export default function Graph({
     ? new Set(selectedConcept.authors)
     : null;
 
+  const neighbourIds = selectedAuthor
+    ? new Set([
+        selectedAuthor.id,
+        ...relations.flatMap((r) => {
+          if (r.source === selectedAuthor.id) return [r.target];
+          if (r.target === selectedAuthor.id) return [r.source];
+          return [];
+        }),
+      ])
+    : null;
+
   const getLineStyle = (relation) => {
     let color = "#999";
     let width = 1.5;
@@ -47,27 +58,28 @@ export default function Graph({
         width = 3;
         dash = "6 4";
         break;
-
-      default:
-        break;
     }
 
-    const selected =
+    const isSelectedRelation =
       selectedRelation &&
       selectedRelation.source === relation.source &&
       selectedRelation.target === relation.target;
 
-    const authorActive =
+    const touchesSelectedAuthor =
       selectedAuthor &&
       (relation.source === selectedAuthor.id ||
         relation.target === selectedAuthor.id);
 
-    const hovered =
+    const isHovered =
       hoveredRelation &&
       hoveredRelation.source === relation.source &&
       hoveredRelation.target === relation.target;
 
-    if (selected || authorActive || hovered) {
+    if (selectedAuthor && !touchesSelectedAuthor) {
+      opacity = 0.05;
+    }
+
+    if (isSelectedRelation || touchesSelectedAuthor || isHovered) {
       opacity = 1;
       width += 1;
     }
@@ -121,14 +133,10 @@ export default function Graph({
                 opacity={style.opacity}
                 style={{
                   cursor: "pointer",
-                  transition: "all .2s",
+                  transition: "all .25s",
                 }}
-                onMouseEnter={() =>
-                  setHoveredRelation(relation)
-                }
-                onMouseLeave={() =>
-                  setHoveredRelation(null)
-                }
+                onMouseEnter={() => setHoveredRelation(relation)}
+                onMouseLeave={() => setHoveredRelation(null)}
                 onClick={() => {
                   setSelectedAuthor(null);
 
@@ -156,7 +164,11 @@ export default function Graph({
               setSelectedRelation(null);
               setSelectedAuthor(author);
             }}
-            dimByConcept={conceptRelatedAuthors}
+            dimByConcept={
+              selectedAuthor
+                ? neighbourIds
+                : conceptRelatedAuthors
+            }
           />
         </svg>
       </TransformComponent>

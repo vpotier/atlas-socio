@@ -16,6 +16,7 @@ export default function Authors({
         return (
           <g
             key={author.id}
+            id={author.id}
             style={{
               cursor: "pointer",
               transition: "all .25s",

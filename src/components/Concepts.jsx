@@ -1,37 +1,50 @@
-import { concepts } from "../data/concepts";
-
 export default function Concepts({
+  concepts,
   selectedConcept,
-  setSelectedConcept,
+  setSelectedItem,
 }) {
-  if (!Array.isArray(concepts)) return null;
-
   return (
     <>
-      {concepts.map((c) => {
-        const isActive = selectedConcept?.id === c.id;
+      {concepts.map((concept) => {
+        const isSelected =
+          selectedConcept?.id === concept.id;
 
         return (
           <g
-            key={c.id}
-            onClick={() => setSelectedConcept?.(c)}
-            style={{ cursor: "pointer" }}
+            key={concept.id}
+            style={{
+              cursor: "pointer",
+              transition: "all .25s",
+            }}
+            onClick={() =>
+              setSelectedItem({
+                type: "concept",
+                data: concept,
+              })
+            }
           >
             <circle
-              cx={c.x}
-              cy={c.y}
-              r={isActive ? 12 : 9}
-              fill={isActive ? "#111" : "#444"}
-              opacity={isActive ? 1 : 0.6}
+              cx={concept.x}
+              cy={concept.y}
+              r={isSelected ? 12 : 9}
+              fill={isSelected ? "#111" : "#444"}
+              opacity={isSelected ? 1 : 0.65}
+              style={{
+                transition: "all .25s",
+              }}
             />
 
             <text
-              x={c.x + 14}
-              y={c.y + 4}
+              x={concept.x + 14}
+              y={concept.y + 4}
               fontSize="12"
-              fill={isActive ? "#111" : "#444"}
+              fill={isSelected ? "#111" : "#444"}
+              style={{
+                userSelect: "none",
+                pointerEvents: "none",
+              }}
             >
-              {c.label}
+              {concept.label}
             </text>
           </g>
         );

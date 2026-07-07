@@ -112,7 +112,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                
+                <a
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";
 import Breadcrumbs from "./components/Breadcrumbs";
+import { formatPerson, workSearchUrl } from "./utils/format";
 
 import "./styles/app.css";
 
@@ -86,13 +87,6 @@ export default function App() {
 
           <h3>Classification</h3>
 
-          <p>
-            <strong>Consensus</strong>
-            <br />
-            {"★".repeat(a.consensus)}
-            {"☆".repeat(5 - a.consensus)}
-          </p>
-
           <p>{a.classificationNote}</p>
 
           <p>
@@ -117,7 +111,15 @@ export default function App() {
 
           <ul>
             {a.works.map((w) => (
-              <li key={w}>{w}</li>
+              <li key={w}>
+                
+                  href={workSearchUrl(w, a.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {w}
+                </a>
+              </li>
             ))}
           </ul>
 
@@ -125,7 +127,7 @@ export default function App() {
 
           <ul>
             {a.influences.map((i) => (
-              <li key={i}>{i}</li>
+              <li key={i}>{formatPerson(i)}</li>
             ))}
           </ul>
 
@@ -133,7 +135,7 @@ export default function App() {
 
           <ul>
             {a.heirs.map((h) => (
-              <li key={h}>{h}</li>
+              <li key={h}>{formatPerson(h)}</li>
             ))}
           </ul>
         </>

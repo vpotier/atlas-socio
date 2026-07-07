@@ -1,47 +1,58 @@
-import { authors } from "../data/authors";
-
 export default function Authors({
+  authors,
   selectedAuthor,
-  setSelectedAuthor,
-  dimByConcept,
+  setSelectedItem,
+  dimIds,
 }) {
   return (
     <>
-      {authors.map((a) => {
-        const isSelected = selectedAuthor?.id === a.id;
+      {authors.map((author) => {
+        const isSelected =
+          selectedAuthor?.id === author.id;
 
         const isDimmed =
-          dimByConcept && !dimByConcept.has(a.id);
-
-        const opacity = isDimmed ? 0.15 : 1;
-
-        const radius = isSelected ? 26 : 20;
+          dimIds && !dimIds.has(author.id);
 
         return (
           <g
-            key={a.id}
-            onClick={() => setSelectedAuthor(a)}
-            style={{ cursor: "pointer" }}
+            key={author.id}
+            style={{
+              cursor: "pointer",
+              transition: "all .25s",
+            }}
+            onClick={() =>
+              setSelectedItem({
+                type: "author",
+                data: author,
+              })
+            }
           >
             <circle
-              cx={a.x}
-              cy={a.y}
-              r={radius}
-              fill={a.color}
-              opacity={opacity}
-              stroke={isSelected ? "#000" : "#fff"}
-              strokeWidth="2"
+              cx={author.x}
+              cy={author.y}
+              r={isSelected ? 25 : 20}
+              fill={author.color}
+              stroke={isSelected ? "#111" : "#fff"}
+              strokeWidth={isSelected ? 4 : 2}
+              opacity={isDimmed ? 0.18 : 1}
+              style={{
+                transition: "all .25s",
+              }}
             />
 
             <text
-              x={a.x}
-              y={a.y + 36}
+              x={author.x}
+              y={author.y + 38}
               textAnchor="middle"
               fontSize="13"
               fill="#333"
-              opacity={opacity}
+              opacity={isDimmed ? 0.25 : 1}
+              style={{
+                userSelect: "none",
+                pointerEvents: "none",
+              }}
             >
-              {a.name}
+              {author.name}
             </text>
           </g>
         );

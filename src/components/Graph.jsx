@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import Background from "../layers/Background";
@@ -15,6 +15,7 @@ export default function Graph({
   setSelectedItem,
 }) {
   const [hoveredRelation, setHoveredRelation] = useState(null);
+  const transformRef = useRef(null);
 
   const selectedAuthor =
     selectedItem?.type === "author"
@@ -50,6 +51,16 @@ export default function Graph({
 
   const getAuthor = (id) =>
     authors.find((a) => a.id === id);
+
+  useEffect(() => {
+    if (selectedAuthor && transformRef.current) {
+      transformRef.current.zoomToElement(
+        selectedAuthor.id,
+        1.3,
+        600
+      );
+    }
+  }, [selectedAuthor]);
 
   const getLineStyle = (relation) => {
     let color = "#999";
@@ -116,6 +127,7 @@ export default function Graph({
 
   return (
     <TransformWrapper
+      ref={transformRef}
       initialScale={1}
       minScale={0.5}
       maxScale={3}

@@ -84,6 +84,27 @@ export default function App() {
 
           <p>{a.summary}</p>
 
+          <h3>Classification</h3>
+
+          <p>
+            <strong>Consensus</strong>
+            <br />
+            {"★".repeat(a.consensus)}
+            {"☆".repeat(5 - a.consensus)}
+          </p>
+
+          <p>{a.classificationNote}</p>
+
+          <p>
+            <strong>Sources</strong>
+          </p>
+
+          <ul>
+            {a.sources.map((s) => (
+              <li key={s}>{s}</li>
+            ))}
+          </ul>
+
           <h3>Concepts</h3>
 
           <ul>
@@ -165,8 +186,28 @@ export default function App() {
           </p>
 
           <p>
-            Cette relation sera documentée dans le sprint Contenu.
+            <strong>Force du lien</strong>
+            <br />
+            {r.strength}/5
           </p>
+
+          <p>
+            <strong>Consensus</strong>
+            <br />
+            {r.consensus}
+          </p>
+
+          <p>{r.justification}</p>
+
+          <p>
+            <strong>Sources</strong>
+          </p>
+
+          <ul>
+            {r.sources.map((s) => (
+              <li key={s}>{s}</li>
+            ))}
+          </ul>
         </>
       );
     }

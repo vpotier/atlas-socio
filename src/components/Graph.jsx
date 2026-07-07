@@ -25,94 +25,141 @@ export default function Graph({
     ? new Set(selectedConcept.authors)
     : null;
 
-  const visibleRelations = relations;
-
-  const getLineStyle = (r) => {
-    let color = "#aaa";
+  const getLineStyle = (relation) => {
+    let color = "#999";
     let width = 1.5;
     let dash = "";
-    let opacity = 0.2;
+    let opacity = 0.18;
 
-    if (r.type === "heritage") {
-      color = "#4CAF50";
-      width = 2.5;
+    switch (relation.type) {
+      case "heritage":
+        color = "#4CAF50";
+        width = 2.5;
+        break;
+
+      case "dialogue":
+        color = "#F1C232";
+        width = 2.5;
+        break;
+
+      case "tension":
+        color = "#D32F2F";
+        width = 3;
+        dash = "6 4";
+        break;
+
+      default:
+        break;
     }
 
-    if (r.type === "dialogue") {
-      color = "#F1C232";
-      width = 2.5;
+    const selected =
+      selectedRelation &&
+      selectedRelation.source === relation.source &&
+      selectedRelation.target === relation.target;
+
+    const authorActive =
+      selectedAuthor &&
+      (relation.source === selectedAuthor.id ||
+        relation.target === selectedAuthor.id);
+
+    const hovered =
+      hoveredRelation &&
+      hoveredRelation.source === relation.source &&
+      hoveredRelation.target === relation.target;
+
+    if (selected || authorActive || hovered) {
+      opacity = 1;
+      width += 1;
     }
 
-    if (r.type === "tension") {
-      color = "#D32F2F";
-      width = 3;
-      dash = "6 4";
-    }
-
-    const active = selectedAuthor &&
-      (r.source === selectedAuthor.id || r.target === selectedAuthor.id);
-
-    if (active) opacity = 0.9;
-
-    return { color, width, dash, opacity };
+    return {
+      color,
+      width,
+      dash,
+      opacity,
+    };
   };
 
   return (
-    <>
-      <TransformWrapper
-        initialScale={1}
-        minScale={0.5}
-        maxScale={3}
-        centerOnInit
-      >
-        <TransformComponent>
-          <svg
-            width="1100"
-            height="700"
-            style={{
-              border: "1px solid #ddd",
-              borderRadius: "10px",
+    <TransformWrapper
+      initialScale={1}
+      minScale={0.5}
+      maxScale={3}
+      centerOnInit
+    >
+      <TransformComponent>
+        <svg
+          width="1100"
+          height="700"
+          style={{
+            border: "1px solid #ddd",
+            borderRadius: "12px",
+          }}
+        >
+          <Background />
+
+          <Clusters />
+
+          {relations.map((relation, index) => {
+            const source = getAuthor(relation.source);
+            const target = getAuthor(relation.target);
+
+            if (!source || !target) return null;
+
+            const style = getLineStyle(relation);
+
+            return (
+              <line
+                key={index}
+                x1={source.x}
+                y1={source.y}
+                x2={target.x}
+                y2={target.y}
+                stroke={style.color}
+                strokeWidth={style.width}
+                strokeDasharray={style.dash}
+                opacity={style.opacity}
+                style={{
+                  cursor: "pointer",
+                  transition: "all .2s",
+                }}
+                onMouseEnter={() =>
+                  setHoveredRelation(relation)
+                }
+                onMouseLeave={() =>
+                  setHoveredRelation(null)
+                }
+                onClick={() => {
+                  setSelectedAuthor(null);
+
+                  setSelectedRelation({
+                    ...relation,
+                    sourceName: source.name,
+                    targetName: target.name,
+                  });
+                }}
+              />
+            );
+          })}
+
+          <Concepts
+            selectedConcept={selectedConcept}
+            setSelectedConcept={(concept) => {
+              setSelectedRelation(null);
+              setSelectedConcept(concept);
             }}
-          >
-            <Background />
+          />
 
-            <Clusters />
-
-            {visibleRelations.map((r, i) => {
-              const a = getAuthor(r.source);
-              const b = getAuthor(r.target);
-              if (!a || !b) return null;
-
-              const style = getLineStyle(r);
-
-              return (
-                <line
-                  key={i}
-                  x1={a.x}
-                  y1={a.y}
-                  x2={b.x}
-                  y2={b.y}
-                  stroke={style.color}
-                  strokeWidth={style.width}
-                  strokeDasharray={style.dash}
-                  opacity={style.opacity}
-                />
-              );
-            })}
-
-            <Concepts
-              selectedConcept={selectedConcept}
-              setSelectedConcept={setSelectedConcept}
-            />
-
-            <Authors
-              selectedAuthor={selectedAuthor}
-              setSelectedAuthor={setSelectedAuthor}
-              dimByConcept={conceptRelatedAuthors}
-            />
-          </svg>
-        </TransformComponent>
-      </TransformWrapper>
-    </>
+          <Authors
+            selectedAuthor={selectedAuthor}
+            setSelectedAuthor={(author) => {
+              setSelectedRelation(null);
+              setSelectedAuthor(author);
+            }}
+            dimByConcept={conceptRelatedAuthors}
+          />
+        </svg>
+      </TransformComponent>
+    </TransformWrapper>
   );
 }

@@ -3,7 +3,7 @@ import { useState } from "react";
 import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";
 import Breadcrumbs from "./components/Breadcrumbs";
-import { formatPerson, workSearchUrl } from "./utils/format";
+import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
 
 import "./styles/app.css";
 
@@ -122,7 +122,7 @@ export default function App() {
               </li>
             ))}
           </ul>
-          
+
           <h3>Influences</h3>
 
           <ul>
@@ -149,13 +149,13 @@ export default function App() {
         <>
           <h2>{c.label}</h2>
 
-          <p>
-            <strong>Auteurs concernés</strong>
-          </p>
+          <p>{c.definition}</p>
+
+          <h3>Auteurs concernés</h3>
 
           <ul>
-            {c.authors.map((a) => (
-              <li key={a}>{a}</li>
+            {c.authors.map((id) => (
+              <li key={id}>{formatAuthorById(id)}</li>
             ))}
           </ul>
         </>

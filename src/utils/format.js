@@ -39,3 +39,15 @@ export function workSearchUrl(title, authorName) {
   const query = encodeURIComponent(`${title} ${authorName}`);
   return `https://fr.wikipedia.org/w/index.php?search=${query}`;
 }
+
+export function formatAuthorById(id) {
+  const author = authors.find((a) => a.id === id);
+
+  if (!author) return id;
+
+  return formatWithDates(
+    author.name,
+    author.birthYear,
+    author.deathYear
+  );
+}

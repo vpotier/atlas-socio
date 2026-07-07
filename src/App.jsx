@@ -122,7 +122,7 @@ export default function App() {
               </li>
             ))}
           </ul>
-
+          
           <h3>Influences</h3>
 
           <ul>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import Background from "../layers/Background";
@@ -6,82 +6,104 @@ import Clusters from "./Clusters";
 import Authors from "./Authors";
 import Concepts from "./Concepts";
 
-import { relations } from "../data/relations";
 import { authors } from "../data/authors";
+import { concepts } from "../data/concepts";
+import { relations } from "../data/relations";
 
 export default function Graph({
-  selectedAuthor,
-  setSelectedAuthor,
-  selectedConcept,
-  setSelectedConcept,
-  selectedRelation,
-  setSelectedRelation,
+  selectedItem,
+  setSelectedItem,
 }) {
   const [hoveredRelation, setHoveredRelation] = useState(null);
 
-  const getAuthor = (id) => authors.find((a) => a.id === id);
+  const selectedAuthor =
+    selectedItem?.type === "author"
+      ? selectedItem.data
+      : null;
 
-  const conceptRelatedAuthors = selectedConcept
-    ? new Set(selectedConcept.authors)
-    : null;
+  const selectedConcept =
+    selectedItem?.type === "concept"
+      ? selectedItem.data
+      : null;
 
-  const neighbourIds = selectedAuthor
-    ? new Set([
-        selectedAuthor.id,
-        ...relations.flatMap((r) => {
-          if (r.source === selectedAuthor.id) return [r.target];
-          if (r.target === selectedAuthor.id) return [r.source];
-          return [];
-        }),
-      ])
-    : null;
+  const neighbourIds = useMemo(() => {
+    if (!selectedAuthor) return null;
+
+    const ids = new Set([selectedAuthor.id]);
+
+    relations.forEach((r) => {
+      if (r.source === selectedAuthor.id)
+        ids.add(r.target);
+
+      if (r.target === selectedAuthor.id)
+        ids.add(r.source);
+    });
+
+    return ids;
+  }, [selectedAuthor]);
+
+  const conceptAuthors = useMemo(() => {
+    if (!selectedConcept) return null;
+
+    return new Set(selectedConcept.authors);
+  }, [selectedConcept]);
+
+  const getAuthor = (id) =>
+    authors.find((a) => a.id === id);
 
   const getLineStyle = (relation) => {
     let color = "#999";
-    let width = 1.5;
+    let width = 2;
     let dash = "";
     let opacity = 0.18;
 
     switch (relation.type) {
       case "heritage":
         color = "#4CAF50";
-        width = 2.5;
         break;
 
       case "dialogue":
         color = "#F1C232";
-        width = 2.5;
         break;
 
       case "tension":
         color = "#D32F2F";
-        width = 3;
         dash = "6 4";
+        break;
+
+      default:
         break;
     }
 
-    const isSelectedRelation =
-      selectedRelation &&
-      selectedRelation.source === relation.source &&
-      selectedRelation.target === relation.target;
+    if (selectedAuthor) {
+      const linked =
+        relation.source === selectedAuthor.id ||
+        relation.target === selectedAuthor.id;
 
-    const touchesSelectedAuthor =
-      selectedAuthor &&
-      (relation.source === selectedAuthor.id ||
-        relation.target === selectedAuthor.id);
-
-    const isHovered =
-      hoveredRelation &&
-      hoveredRelation.source === relation.source &&
-      hoveredRelation.target === relation.target;
-
-    if (selectedAuthor && !touchesSelectedAuthor) {
-      opacity = 0.05;
+      opacity = linked ? 1 : 0.05;
+      width = linked ? 4 : 1;
     }
 
-    if (isSelectedRelation || touchesSelectedAuthor || isHovered) {
+    if (selectedConcept) {
+      const linked =
+        selectedConcept.authors.includes(
+          relation.source
+        ) ||
+        selectedConcept.authors.includes(
+          relation.target
+        );
+
+      opacity = linked ? 1 : 0.05;
+      width = linked ? 4 : 1;
+    }
+
+    if (
+      hoveredRelation &&
+      hoveredRelation.source === relation.source &&
+      hoveredRelation.target === relation.target
+    ) {
       opacity = 1;
-      width += 1;
+      width = 5;
     }
 
     return {
@@ -103,26 +125,28 @@ export default function Graph({
         <svg
           width="1100"
           height="700"
-          style={{
-            border: "1px solid #ddd",
-            borderRadius: "12px",
-          }}
         >
           <Background />
 
           <Clusters />
 
-          {relations.map((relation, index) => {
-            const source = getAuthor(relation.source);
-            const target = getAuthor(relation.target);
+          {relations.map((relation, i) => {
+            const source = getAuthor(
+              relation.source
+            );
+
+            const target = getAuthor(
+              relation.target
+            );
 
             if (!source || !target) return null;
 
-            const style = getLineStyle(relation);
+            const style =
+              getLineStyle(relation);
 
             return (
               <line
-                key={index}
+                key={i}
                 x1={source.x}
                 y1={source.y}
                 x2={target.x}
@@ -135,39 +159,51 @@ export default function Graph({
                   cursor: "pointer",
                   transition: "all .25s",
                 }}
-                onMouseEnter={() => setHoveredRelation(relation)}
-                onMouseLeave={() => setHoveredRelation(null)}
-                onClick={() => {
-                  setSelectedAuthor(null);
-
-                  setSelectedRelation({
-                    ...relation,
-                    sourceName: source.name,
-                    targetName: target.name,
-                  });
-                }}
+                onMouseEnter={() =>
+                  setHoveredRelation(
+                    relation
+                  )
+                }
+                onMouseLeave={() =>
+                  setHoveredRelation(null)
+                }
+                onClick={() =>
+                  setSelectedItem({
+                    type: "relation",
+                    data: {
+                      ...relation,
+                      sourceName:
+                        source.name,
+                      targetName:
+                        target.name,
+                    },
+                  })
+                }
               />
             );
           })}
 
           <Concepts
-            selectedConcept={selectedConcept}
-            setSelectedConcept={(concept) => {
-              setSelectedRelation(null);
-              setSelectedConcept(concept);
-            }}
+            concepts={concepts}
+            selectedConcept={
+              selectedConcept
+            }
+            setSelectedItem={
+              setSelectedItem
+            }
           />
 
           <Authors
-            selectedAuthor={selectedAuthor}
-            setSelectedAuthor={(author) => {
-              setSelectedRelation(null);
-              setSelectedAuthor(author);
-            }}
-            dimByConcept={
+            authors={authors}
+            selectedAuthor={
               selectedAuthor
-                ? neighbourIds
-                : conceptRelatedAuthors
+            }
+            setSelectedItem={
+              setSelectedItem
+            }
+            dimIds={
+              neighbourIds ||
+              conceptAuthors
             }
           />
         </svg>

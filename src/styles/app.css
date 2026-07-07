@@ -1,76 +1,132 @@
-:root {
-  --bg: #f7f6f2;
-  --panel: #fcfcfb;
-  --border: #d8d8d8;
-  --text: #2f2f2f;
-  --muted: #666;
-  --shadow: 0 6px 18px rgba(0,0,0,.08);
+import { useState } from "react";
 
-  --durkheim: #7fb3e8;
-  --weber: #d88b8b;
-  --bourdieu: #b8d87d;
-}
+import Graph from "./components/Graph";
+import SearchBar from "./components/SearchBar";
 
-*{
-  box-sizing:border-box;
-}
+import "./styles/app.css";
 
-body{
-  margin:0;
-  font-family:Inter,system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+export default function App() {
+  const [selectedAuthor, setSelectedAuthor] = useState(null);
+  const [selectedConcept, setSelectedConcept] = useState(null);
+  const [selectedRelation, setSelectedRelation] = useState(null);
 
-h1,h2,h3{
-  margin-top:0;
-}
+  const clearRelation = () => setSelectedRelation(null);
 
-.app{
-  display:flex;
-  height:100vh;
-}
+  return (
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        fontFamily: "Arial, sans-serif",
+        position: "relative",
+      }}
+    >
+      <SearchBar
+        setSelectedAuthor={(author) => {
+          clearRelation();
+          setSelectedAuthor(author);
+        }}
+      />
 
-.map{
-  flex:1;
-  padding:24px;
-}
+      <div style={{ flex: 1, padding: 20 }}>
+        <Graph
+          selectedAuthor={selectedAuthor}
+          setSelectedAuthor={(author) => {
+            clearRelation();
+            setSelectedAuthor(author);
+          }}
+          selectedConcept={selectedConcept}
+          setSelectedConcept={setSelectedConcept}
+          selectedRelation={selectedRelation}
+          setSelectedRelation={setSelectedRelation}
+        />
+      </div>
 
-.sidebar{
-  width:340px;
-  background:var(--panel);
-  border-left:1px solid var(--border);
-  padding:24px;
-  overflow:auto;
-  box-shadow:var(--shadow);
-}
+      <div
+        style={{
+          width: "340px",
+          borderLeft: "1px solid #ddd",
+          padding: 20,
+          background: "#fafafa",
+          overflowY: "auto",
+        }}
+      >
+        {selectedRelation ? (
+          <>
+            <h2>Relation</h2>
 
-.card{
-  background:white;
-  border-radius:14px;
-  padding:18px;
-  box-shadow:0 3px 10px rgba(0,0,0,.05);
-}
+            <p>
+              <strong>Source</strong>
+              <br />
+              {selectedRelation.sourceName}
+            </p>
 
-.badge{
-  display:inline-block;
-  margin-top:8px;
-  padding:5px 10px;
-  border-radius:999px;
-  background:#ececec;
-  font-size:13px;
-}
+            <p>
+              <strong>Cible</strong>
+              <br />
+              {selectedRelation.targetName}
+            </p>
 
-.concepts{
-  margin-top:18px;
-}
+            <p>
+              <strong>Nature</strong>
+              <br />
+              {selectedRelation.type}
+            </p>
+          </>
+        ) : selectedAuthor ? (
+          <>
+            <h2>{selectedAuthor.name}</h2>
 
-.concepts li{
-  margin-bottom:8px;
-}
+            <p>
+              <strong>École</strong>
+              <br />
+              {selectedAuthor.school}
+            </p>
 
-svg{
-  background:#faf9f5;
-  border-radius:18px;
-  box-shadow:var(--shadow);
+            <p>{selectedAuthor.summary}</p>
+
+            <h3>Concepts</h3>
+
+            <ul>
+              {selectedAuthor.concepts.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+
+            <h3>Œuvres</h3>
+
+            <ul>
+              {selectedAuthor.works.map((w) => (
+                <li key={w}>{w}</li>
+              ))}
+            </ul>
+
+            <h3>Influences</h3>
+
+            <ul>
+              {selectedAuthor.influences.map((i) => (
+                <li key={i}>{i}</li>
+              ))}
+            </ul>
+
+            <h3>Héritiers</h3>
+
+            <ul>
+              {selectedAuthor.heirs.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <>
+            <h2>Atlas de la théorie sociologique</h2>
+
+            <p>
+              Sélectionnez un auteur, un concept ou une relation.
+            </p>
+          </>
+        )}
+      </div>
+    </div>
+  );
 }

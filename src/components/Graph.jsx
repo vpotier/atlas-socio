@@ -64,7 +64,9 @@ export default function Graph({
 
   const getLineStyle = (relation) => {
     let color = "#999";
-    let width = 2;
+    let width = relation.strength
+      ? 1 + relation.strength
+      : 2;
     let dash = "";
     let opacity = 0.18;
 

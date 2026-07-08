@@ -80,7 +80,7 @@ export default function Graph({
     }
 
     const index = group.indexOf(relation);
-    const offsetStep = 28;
+    const offsetStep = 40;
     const offset =
       (index - (group.length - 1) / 2) * offsetStep;
 
@@ -190,6 +190,44 @@ export default function Graph({
         >
           <Background />
 
+          <defs>
+            <marker
+              id="arrow-heritage"
+              viewBox="0 0 10 10"
+              refX="9"
+              refY="5"
+              markerWidth="7"
+              markerHeight="7"
+              orient="auto-start-reverse"
+            >
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#4CAF50" />
+            </marker>
+
+            <marker
+              id="arrow-dialogue"
+              viewBox="0 0 10 10"
+              refX="9"
+              refY="5"
+              markerWidth="7"
+              markerHeight="7"
+              orient="auto-start-reverse"
+            >
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#F1C232" />
+            </marker>
+
+            <marker
+              id="arrow-tension"
+              viewBox="0 0 10 10"
+              refX="9"
+              refY="5"
+              markerWidth="7"
+              markerHeight="7"
+              orient="auto-start-reverse"
+            >
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#D32F2F" />
+            </marker>
+          </defs>
+
           <Clusters />
 
           {relations.map((relation, i) => {
@@ -215,6 +253,7 @@ export default function Graph({
                 strokeWidth={style.width}
                 strokeDasharray={style.dash}
                 opacity={style.opacity}
+                markerEnd={`url(#arrow-${relation.type})`}
                 style={{
                   cursor: "pointer",
                   transition: "all .25s",

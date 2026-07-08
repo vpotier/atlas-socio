@@ -11,8 +11,10 @@ function formatWithDates(fullName, birthYear, deathYear) {
   return `${fullName} (${birthYear} - ${deathYear})`;
 }
 
-export function formatPerson(shortName) {
-  const author = authors.find((a) => a.name.endsWith(shortName));
+export function formatPerson(shortNameOrId) {
+  const author =
+    authors.find((a) => a.id === shortNameOrId) ||
+    authors.find((a) => a.name.endsWith(shortNameOrId));
 
   if (author) {
     return formatWithDates(
@@ -22,7 +24,7 @@ export function formatPerson(shortName) {
     );
   }
 
-  const person = people[shortName];
+  const person = people[shortNameOrId];
 
   if (person) {
     return formatWithDates(
@@ -32,7 +34,7 @@ export function formatPerson(shortName) {
     );
   }
 
-  return shortName;
+  return shortNameOrId;
 }
 
 export function workSearchUrl(title, authorName) {

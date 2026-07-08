@@ -52,6 +52,54 @@ export default function Graph({
   const getAuthor = (id) =>
     authors.find((a) => a.id === id);
 
+  const relationGroups = useMemo(() => {
+    const groups = {};
+
+    relations.forEach((relation) => {
+      const key = [relation.source, relation.target]
+        .sort()
+        .join("--");
+
+      if (!groups[key]) groups[key] = [];
+
+      groups[key].push(relation);
+    });
+
+    return groups;
+  }, []);
+
+  const getPathD = (relation, source, target) => {
+    const key = [relation.source, relation.target]
+      .sort()
+      .join("--");
+
+    const group = relationGroups[key];
+
+    if (group.length === 1) {
+      return `M ${source.x} ${source.y} L ${target.x} ${target.y}`;
+    }
+
+    const index = group.indexOf(relation);
+    const offsetStep = 28;
+    const offset =
+      (index - (group.length - 1) / 2) * offsetStep;
+
+    const midX = (source.x + target.x) / 2;
+    const midY = (source.y + target.y) / 2;
+
+    const dx = target.x - source.x;
+    const dy = target.y - source.y;
+    const length = Math.sqrt(dx * dx + dy * dy) || 1;
+
+    const normalX = -dy / length;
+    const normalY = dx / length;
+
+    const controlX = midX + normalX * offset;
+    const controlY = midY + normalY * offset;
+
+    return `M ${source.x} ${source.y} Q ${controlX} ${controlY}, ${target.x} ${target.y}`;
+  };
+
   useEffect(() => {
     if (selectedAuthor && transformRef.current) {
       transformRef.current.zoomToElement(
@@ -159,12 +207,10 @@ export default function Graph({
               getLineStyle(relation);
 
             return (
-              <line
+              <path
                 key={i}
-                x1={source.x}
-                y1={source.y}
-                x2={target.x}
-                y2={target.y}
+                d={getPathD(relation, source, target)}
+                fill="none"
                 stroke={style.color}
                 strokeWidth={style.width}
                 strokeDasharray={style.dash}

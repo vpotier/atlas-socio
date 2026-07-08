@@ -84,11 +84,19 @@ export default function Graph({
     const offset =
       (index - (group.length - 1) / 2) * offsetStep;
 
-    const midX = (source.x + target.x) / 2;
-    const midY = (source.y + target.y) / 2;
+    const [idA, idB] = [
+      relation.source,
+      relation.target,
+    ].sort();
 
-    const dx = target.x - source.x;
-    const dy = target.y - source.y;
+    const nodeA = getAuthor(idA);
+    const nodeB = getAuthor(idB);
+
+    const midX = (nodeA.x + nodeB.x) / 2;
+    const midY = (nodeA.y + nodeB.y) / 2;
+
+    const dx = nodeB.x - nodeA.x;
+    const dy = nodeB.y - nodeA.y;
     const length = Math.sqrt(dx * dx + dy * dy) || 1;
 
     const normalX = -dy / length;

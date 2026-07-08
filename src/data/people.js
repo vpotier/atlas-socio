@@ -23,4 +23,23 @@ export const people = {
   Lahire: { fullName: "Bernard Lahire", birthYear: 1963, deathYear: null },
   Boltanski: { fullName: "Luc Boltanski", birthYear: 1940, deathYear: null },
   Wacquant: { fullName: "Loïc Wacquant", birthYear: 1960, deathYear: null },
+  Frazer: {
+    fullName: "James George Frazer",
+    birthYear: 1854,
+    deathYear: 1941,
+  },
+  "Radcliffe-Brown": {
+    fullName: "Alfred Radcliffe-Brown",
+    birthYear: 1881,
+    deathYear: 1955,
+  },
+  Pareto: { fullName: "Vilfredo Pareto", birthYear: 1848, deathYear: 1923 },
+  Sorokin: { fullName: "Pitirim Sorokin", birthYear: 1889, deathYear: 1968 },
+  Alexander: {
+    fullName: "Jeffrey C. Alexander",
+    birthYear: 1947,
+    deathYear: null,
+  },
+  Luhmann: { fullName: "Niklas Luhmann", birthYear: 1927, deathYear: 1998 },
+  Coleman: { fullName: "James S. Coleman", birthYear: 1926, deathYear: 1995 },
 };

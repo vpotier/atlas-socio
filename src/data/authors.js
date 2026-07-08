@@ -105,4 +105,110 @@ export const authors = [
       "Lahire (dir.), 1999, Le travail sociologique de Pierre Bourdieu",
     ],
   },
+
+  {
+    id: "bronislaw-malinowski",
+    name: "Bronisław Malinowski",
+    school: "Fonctionnalisme anthropologique",
+    period: "1884–1942",
+    birthYear: 1884,
+    deathYear: 1942,
+    x: 880,
+    y: 500,
+    color: "#E67E22",
+
+    concepts: ["Besoin fondamental", "Institution"],
+
+    works: [
+      "Les Argonautes du Pacifique occidental (1922)",
+      "Une théorie scientifique de la culture (1944)",
+    ],
+
+    influences: ["Durkheim", "Frazer"],
+    heirs: ["Radcliffe-Brown", "talcott-parsons"],
+
+    summary:
+      "Anthropologue d'origine polonaise, il pose les bases du fonctionnalisme en postulant que chaque élément d'une culture répond à un besoin biologique ou psychologique humain fondamental. Sa méthode d'observation participante a profondément renouvelé l'analyse des institutions sociales.",
+
+    constellation: "fonctionnalisme",
+    consensus: 4,
+    classificationNote:
+      "Dans la majorité des manuels transdisciplinaires (Ritzer, Cuche), Malinowski est classé comme le père du fonctionnalisme absolu. Bien que certains classements stricts en sciences politiques ou en anthropologie pure l'excluent de la sociologie, l'Atlas choisit de l'intégrer comme point d'ancrage méthodologique et conceptuel de la constellation fonctionnaliste.",
+    sources: [
+      "Ritzer, 2011, Sociological Theory",
+      "Cuche, 2010, La notion de culture dans les sciences sociales",
+    ],
+  },
+
+  {
+    id: "talcott-parsons",
+    name: "Talcott Parsons",
+    school: "Structuralo-fonctionnalisme",
+    period: "1902–1979",
+    birthYear: 1902,
+    deathYear: 1979,
+    x: 980,
+    y: 440,
+    color: "#D35400",
+
+    concepts: ["Modèle AGIL", "Action sociale"],
+
+    works: [
+      "The Structure of Social Action (1937)",
+      "The Social System (1951)",
+    ],
+
+    influences: ["Durkheim", "Weber", "Pareto"],
+    heirs: ["robert-k-merton", "Alexander", "Luhmann"],
+
+    summary:
+      "Figure centrale de la sociologie américaine du XXe siècle, il élabore une théorie générale de l'action sociale à visée systémique et universelle. Son modèle AGIL formalise les quatre impératifs fonctionnels indispensables à l'équilibre de tout système social.",
+
+    constellation: "fonctionnalisme",
+    consensus: 5,
+    classificationNote:
+      "Le consensus est total à travers les manuels de référence (Aron, Rocher, Ritzer) pour situer Parsons au sommet du structuralo-fonctionnalisme. Même si le néo-fonctionnalisme porté par Jeffrey Alexander en propose des lectures révisées, l'Atlas maintient Parsons comme l'idéal-type du fonctionnalisme systémique global.",
+    sources: [
+      "Rocher, 1972, Talcott Parsons et la sociologie américaine",
+      "Ritzer, 2011, Sociological Theory",
+    ],
+  },
+
+  {
+    id: "robert-k-merton",
+    name: "Robert K. Merton",
+    school: "Fonctionnalisme de moyenne portée",
+    period: "1910–2003",
+    birthYear: 1910,
+    deathYear: 2003,
+    x: 900,
+    y: 610,
+    color: "#F39C12",
+
+    concepts: [
+      "Fonction manifeste et latente",
+      "Théorie de moyenne portée",
+      "Équivalent fonctionnel",
+    ],
+
+    works: [
+      "Social Theory and Social Structure (1949)",
+      "Science, Technology and Society in Seventeenth-Century England (1938)",
+    ],
+
+    influences: ["Durkheim", "talcott-parsons", "Sorokin"],
+    heirs: ["Boudon", "Coleman"],
+
+    summary:
+      "Sociologue américain majeur, il assouplit le cadre fonctionnaliste parsonien en rejetant les postulats d'unité et de fonctionnalisme universel. Il introduit la distinction entre fonctions manifestes et latentes, et plaide pour des théories de moyenne portée.",
+
+    constellation: "fonctionnalisme",
+    consensus: 5,
+    classificationNote:
+      "Merton est universellement répertorié comme le théoricien du fonctionnalisme tempéré ou relativisé (Boudon & Bourricaud, Ansart). Si les sociologues de la déviance l'associent parfois à leur propre champ thématique en raison de ses écrits sur l'anomie, l'Atlas valide son inclusion dans la constellation fonctionnaliste pour sa refondation interne du paradigme.",
+    sources: [
+      "Boudon & Bourricaud, 1982, Dictionnaire critique de la sociologie",
+      "Ansart, 1990, Les sociologies contemporaines",
+    ],
+  },
 ];

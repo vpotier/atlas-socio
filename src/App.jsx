@@ -2,60 +2,12 @@ import { useState } from "react";
 
 import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";
-import Breadcrumbs from "./components/Breadcrumbs";
 import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
 
 import "./styles/app.css";
 
-function getLabel(item) {
-  if (item.type === "author") return item.data.name;
-
-  if (item.type === "concept") return item.data.label;
-
-  if (item.type === "relation") {
-    const labels = {
-      heritage: "Héritage",
-      dialogue: "Dialogue",
-      tension: "Tension",
-    };
-
-    return `${labels[item.data.type]} : ${item.data.sourceName} → ${item.data.targetName}`;
-  }
-
-  return "";
-}
-
 export default function App() {
-  const [selectedItem, setSelectedItemState] = useState(null);
-  const [history, setHistory] = useState([]);
-
-  const selectItem = (item) => {
-    setSelectedItemState(item);
-
-    if (!item) return;
-
-    const key =
-      item.type === "relation"
-        ? `relation-${item.data.source}-${item.data.target}-${history.length}`
-        : `${item.type}-${item.data.id}-${history.length}`;
-
-    setHistory((prev) => [
-      ...prev,
-      {
-        key,
-        label: getLabel(item),
-        item,
-      },
-    ]);
-  };
-
-  const goToHistoryIndex = (index) => {
-    setHistory((prev) => {
-      const next = prev.slice(0, index + 1);
-      setSelectedItemState(next[index].item);
-      return next;
-    });
-  };
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const renderSidebar = () => {
     if (!selectedItem) {
@@ -112,7 +64,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                <a
+                
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -228,19 +180,17 @@ export default function App() {
     >
       <SearchBar
         setSelectedAuthor={(author) =>
-          selectItem({
+          setSelectedItem({
             type: "author",
             data: author,
           })
         }
       />
 
-      <Breadcrumbs items={history} onSelect={goToHistoryIndex} />
-
       <div style={{ flex: 1, padding: 20 }}>
         <Graph
           selectedItem={selectedItem}
-          setSelectedItem={selectItem}
+          setSelectedItem={setSelectedItem}
         />
       </div>
 

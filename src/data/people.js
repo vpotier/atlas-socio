@@ -42,4 +42,20 @@ export const people = {
   },
   Luhmann: { fullName: "Niklas Luhmann", birthYear: 1927, deathYear: 1998 },
   Coleman: { fullName: "James S. Coleman", birthYear: 1926, deathYear: 1995 },
+  Simmel: { fullName: "Georg Simmel", birthYear: 1858, deathYear: 1918 },
+  "Mohamed Cherkaoui": {
+    fullName: "Mohamed Cherkaoui",
+    birthYear: 1945,
+    deathYear: null,
+  },
+  "Bernard Valade": {
+    fullName: "Bernard Valade",
+    birthYear: 1942,
+    deathYear: null,
+  },
+  "Peter Hedström": {
+    fullName: "Peter Hedström",
+    birthYear: 1955,
+    deathYear: null,
+  },
 };

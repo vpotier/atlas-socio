@@ -51,4 +51,26 @@ export const relations = [
       "Boudon & Bourricaud, 1982, Dictionnaire critique de la sociologie",
     ],
   },
+  {
+    source: "raymond-boudon",
+    target: "james-coleman",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Boudon et Coleman partagent une même ambition de fonder la sociologie sur l'analyse de l'action individuelle et ont entretenu des échanges nourris, notamment autour de la sociologie de l'éducation et de la formalisation mathématique.",
+    sources: [
+      "Cherkaoui, 2006, Le paradoxe des conséquences : l'individualisme méthodologique",
+    ],
+  },
+  {
+    source: "raymond-boudon",
+    target: "james-coleman",
+    type: "tension",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Une divergence conceptuelle oppose les deux auteurs concernant les limites de la rationalité : Coleman reste fidèle à l'optimisation économique utilitariste tandis que Boudon rejette ce réductionnisme au profit d'une rationalité cognitive.",
+    sources: ["Boudon, 2002, Les méthodes en sociologie"],
+  },
 ];

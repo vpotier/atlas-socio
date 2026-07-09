@@ -211,4 +211,73 @@ export const authors = [
       "Ansart, 1990, Les sociologies contemporaines",
     ],
   },
+
+  {
+    id: "raymond-boudon",
+    name: "Raymond Boudon",
+    school: "Individualisme méthodologique",
+    period: "1934–2013",
+    birthYear: 1934,
+    deathYear: 2013,
+    x: 200,
+    y: 550,
+    color: "#8E44AD",
+
+    concepts: ["Effet pervers", "Rationalité cognitive", "Effet d'agrégation"],
+
+    works: [
+      "L'Inégalité des chances (1973)",
+      "Effets pervers et ordre social (1977)",
+      "Dictionnaire critique de la sociologie (1982)",
+    ],
+
+    influences: ["Weber", "Simmel", "robert-k-merton"],
+    heirs: ["Mohamed Cherkaoui", "Bernard Valade"],
+
+    summary:
+      "Chef de file de l'individualisme méthodologique en France, il démontre que les phénomènes collectifs résultent de l'agrégation d'actions individuelles. Il développe le concept d'effet pervers pour expliquer comment des choix rationnels produisent des résultats collectifs non intentionnels et souvent indésirables. Son approche défend une conception élargie de la rationalité, dite cognitive ou axiologique.",
+
+    constellation: "l-individualisme-methodologique",
+    consensus: 5,
+    classificationNote:
+      "Le positionnement de Boudon comme figure de proue francophone de l'individualisme méthodologique fait l'objet d'un consensus absolu dans l'ensemble des manuels universitaires (Dubar, Ansart, Lallement). Bien que certains courants économiques libéraux tentent de réduire son œuvre à la théorie des choix rationnels, l'Atlas maintient sa classification sociologique spécifique basée sur sa critique du réductionnisme utilitariste.",
+    sources: [
+      "Ansart, 1990, Les sociologies contemporaines",
+      "Lallement, 2000, Histoire des idées sociologiques",
+    ],
+  },
+
+  {
+    id: "james-coleman",
+    name: "James Coleman",
+    school: "Théorie du choix rationnel",
+    period: "1926–1995",
+    birthYear: 1926,
+    deathYear: 1995,
+    x: 320,
+    y: 610,
+    color: "#9B59B6",
+
+    concepts: ["Diagramme de Coleman", "Acteur rationnel"],
+
+    works: [
+      "The Asymmetric Society (1982)",
+      "Foundations of Social Theory (1990)",
+    ],
+
+    influences: ["Weber", "robert-k-merton"],
+    heirs: ["Peter Hedström"],
+
+    summary:
+      "Sociologue américain majeur, il formalise le passage du niveau micro-sociologique au niveau macro-sociologique à l'aide de sa célèbre « formule du bateau » (diagramme de Coleman). Il utilise la théorie mathématique des choix rationnels pour modéliser le comportement des acteurs au sein des structures sociales. Ses travaux ont directement inspiré la fondation de la sociologie analytique, courant contemporain qui formalise l'étude des mécanismes sociaux.",
+
+    constellation: "l-individualisme-methodologique",
+    consensus: 5,
+    classificationNote:
+      "Coleman est unanimement classé par les manuels internationaux (Ritzer, Collins) comme le principal importateur de la théorie économique de l'action rationnelle en sociologie. L'Atlas le rattache fermement à l'individualisme méthodologique pour sa contribution décisive à l'articulation micro-macro.",
+    sources: [
+      "Ritzer, 2011, Sociological Theory",
+      "Collins, 1994, Four Sociological Traditions",
+    ],
+  },
 ];

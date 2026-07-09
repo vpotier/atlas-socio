@@ -62,4 +62,31 @@ export const concepts = [
     x: 940,
     y: 650,
   },
+  {
+    id: "effet-pervers",
+    label: "Effet pervers",
+    definition:
+      "Résultat collectif non intentionnel, indésirable ou paradoxal, né de la simple agrégation d'actions individuelles pourtant rationnelles et orientées vers d'autres objectifs.",
+    authors: ["raymond-boudon"],
+    x: 150,
+    y: 610,
+  },
+  {
+    id: "diagramme-de-coleman",
+    label: "Diagramme de Coleman",
+    definition:
+      "Modèle conceptuel en forme de trapèze explicitant comment les conditions macro-sociales influencent les orientations micro-individuelles, lesquelles génèrent des actions dont l'agrégation produit un nouveau phénomène macro-social.",
+    authors: ["james-coleman"],
+    x: 350,
+    y: 650,
+  },
+  {
+    id: "rationalite-cognitive",
+    label: "Rationalité cognitive",
+    definition:
+      "Postulat sociologique élargissant la rationalité utilitaire, selon lequel un acteur adopte un comportement ou une croyance parce qu'il a des raisons valides et cohérentes d'y souscrire, compte tenu de son contexte et de ses informations.",
+    authors: ["raymond-boudon"],
+    x: 230,
+    y: 660,
+  },
 ];

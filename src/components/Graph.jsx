@@ -192,9 +192,9 @@ export default function Graph({
       centerOnInit
     >
       <TransformComponent>
-        <svg
-          width="1100"
-          height="700"
+      <svg
+          width="1400"
+          height="850"
         >
           <Background />
 

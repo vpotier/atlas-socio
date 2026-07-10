@@ -58,4 +58,50 @@ export const people = {
     birthYear: 1955,
     deathYear: null,
   },
+  Mead: {
+    fullName: "George Herbert Mead",
+    birthYear: 1863,
+    deathYear: 1931,
+  },
+  Thomas: {
+    fullName: "William I. Thomas",
+    birthYear: 1863,
+    deathYear: 1947,
+  },
+  Hughes: {
+    fullName: "Everett C. Hughes",
+    birthYear: 1897,
+    deathYear: 1983,
+  },
+  "Lévi-Strauss": {
+    fullName: "Claude Lévi-Strauss",
+    birthYear: 1908,
+    deathYear: 2009,
+  },
+  Schütz: { fullName: "Alfred Schütz", birthYear: 1899, deathYear: 1959 },
+  "Barry Wellman": {
+    fullName: "Barry Wellman",
+    birthYear: 1942,
+    deathYear: 2024,
+  },
+  "Aaron Cicourel": {
+    fullName: "Aaron Cicourel",
+    birthYear: 1928,
+    deathYear: 2023,
+  },
+  "Emanuel Schegloff": {
+    fullName: "Emanuel Schegloff",
+    birthYear: 1937,
+    deathYear: 2024,
+  },
+  "Louis Quéré": {
+    fullName: "Louis Quéré",
+    birthYear: null,
+    deathYear: null,
+  },
+  "Deirdre Boden": {
+    fullName: "Deirdre Boden",
+    birthYear: null,
+    deathYear: null,
+  },
 };

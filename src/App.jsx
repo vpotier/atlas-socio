@@ -83,13 +83,17 @@ export default function App() {
             ))}
           </ul>
 
-          <h3>Héritiers</h3>
+          {a.heirs.length > 0 && (
+            <>
+              <h3>Héritiers</h3>
 
-          <ul>
-            {a.heirs.map((h) => (
-              <li key={h}>{formatPerson(h)}</li>
-            ))}
-          </ul>
+              <ul>
+                {a.heirs.map((h) => (
+                  <li key={h}>{formatPerson(h)}</li>
+                ))}
+              </ul>
+            </>
+          )}
         </>
       );
     }

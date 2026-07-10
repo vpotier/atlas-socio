@@ -89,4 +89,85 @@ export const concepts = [
     x: 230,
     y: 660,
   },
+  {
+    id: "approche-dramaturgique",
+    label: "Approche dramaturgique",
+    definition:
+      "Métaphore sociologique assimilant la vie sociale à un théâtre, où les acteurs de passage mettent en scène leur comportement sur une « scène » pour produire une impression conforme aux attentes, tout en se relâchant dans les « coulisses ».",
+    authors: ["erving-goffman"],
+    x: 650,
+    y: 730,
+  },
+  {
+    id: "institution-totale",
+    label: "Institution totale",
+    definition:
+      "Lieu de résidence et de travail où un grand nombre d'individus, placés dans une même situation, coupés du monde extérieur pour une période relativement longue, mènent une vie recluse et explicitement réglée par l'administration.",
+    authors: ["erving-goffman"],
+    x: 600,
+    y: 730,
+  },
+  {
+    id: "carriere-deviante",
+    label: "Carrière déviante",
+    definition:
+      "Processus séquentiel au cours duquel un individu s'engage progressivement dans des pratiques réprouvées, traverse des étapes d'apprentissage technique et de modification des perceptions, et finit par intégrer une identité sociale spécifique suite à un étiquetage public.",
+    authors: ["becker"],
+    x: 470,
+    y: 740,
+  },
+  {
+    id: "force-des-liens-faibles",
+    label: "Force des liens faibles",
+    definition:
+      "Proposition théorique démontrant que les relations sociales distantes ou superficielles (liens faibles) sont plus efficaces pour faire circuler des informations inédites et ouvrir des opportunités d'emploi que les relations de l'entourage proche (liens forts), qui forment des réseaux redondants.",
+    authors: ["mark-granovetter"],
+    x: 1300,
+    y: 200,
+  },
+  {
+    id: "encastrement-social",
+    label: "Encastrement social",
+    definition:
+      "Concept stipulant que l'action économique n'est pas le produit d'individus atomisés ou de motifs purement utilitaires, mais qu'elle demeure profondément insérée dans des réseaux de relations sociales personnelles et continues.",
+    authors: ["harrison-white", "mark-granovetter"],
+    x: 1220,
+    y: 240,
+  },
+  {
+    id: "equivalence-structurale",
+    label: "Équivalence structurale",
+    definition:
+      "Propriété de deux acteurs d'un réseau social possédant le même profil de relations avec l'ensemble des autres membres du réseau, occupant ainsi des positions identiques ou substituables dans la structure sociale sans être nécessairement liés entre eux.",
+    authors: ["harrison-white"],
+    x: 1100,
+    y: 270,
+  },
+  {
+    id: "indexicalite",
+    label: "Indexicalité",
+    definition:
+      "Propriété d'une expression, d'un concept ou d'un comportement dont le sens dépend entièrement du contexte spécifique (temporel, spatial, relationnel) dans lequel il est produit par les acteurs.",
+    authors: ["harold-garfinkel"],
+    x: 720,
+    y: 690,
+  },
+  {
+    id: "reflexivite",
+    label: "Réflexivité",
+    definition:
+      "Processus par lequel les activités quotidiennes des individus décrivent, commentent et justifient en même temps l'ordre social qu'elles sont en train de fabriquer, rendant les situations immédiatement intelligibles et explicables.",
+    authors: ["harold-garfinkel"],
+    x: 790,
+    y: 570,
+  },
+  {
+    id: "analyse-de-conversation",
+    label: "Analyse de conversation",
+    definition:
+      "Approche empirique et rigoureuse visant à isoler les structures séquentielles et les règles implicites (telles que la gestion des tours de parole) qui régissent les interactions verbales naturelles en face-à-face ou au téléphone.",
+    authors: ["harvey-sacks"],
+    x: 870,
+    y: 750,
+  },
 ];

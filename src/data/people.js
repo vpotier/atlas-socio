@@ -104,4 +104,85 @@ export const people = {
     birthYear: null,
     deathYear: null,
   },
+  "Ian Hacking": {
+    fullName: "Ian Hacking",
+    birthYear: 1936,
+    deathYear: 2023,
+  },
+  Corcuff: { fullName: "Philippe Corcuff", birthYear: null, deathYear: null },
+  Knoblauch: {
+    fullName: "Hubert Knoblauch",
+    birthYear: null,
+    deathYear: null,
+  },
+  "Axel Honneth": {
+    fullName: "Axel Honneth",
+    birthYear: 1949,
+    deathYear: null,
+  },
+  "Nancy Fraser": {
+    fullName: "Nancy Fraser",
+    birthYear: 1947,
+    deathYear: null,
+  },
+  "David Harvey": {
+    fullName: "David Harvey",
+    birthYear: 1935,
+    deathYear: null,
+  },
+  "Manuel Castells": {
+    fullName: "Manuel Castells",
+    birthYear: 1942,
+    deathYear: null,
+  },
+  "Jean Baudrillard": {
+    fullName: "Jean Baudrillard",
+    birthYear: 1929,
+    deathYear: 2007,
+  },
+  "Bob Jessop": { fullName: "Bob Jessop", birthYear: null, deathYear: null },
+  "Philippe Descola": {
+    fullName: "Philippe Descola",
+    birthYear: 1949,
+    deathYear: null,
+  },
+  "Donald MacKenzie": {
+    fullName: "Donald MacKenzie",
+    birthYear: null,
+    deathYear: null,
+  },
+  "Geoffrey Bowker": {
+    fullName: "Geoffrey Bowker",
+    birthYear: null,
+    deathYear: null,
+  },
+  "Paul Dourish": {
+    fullName: "Paul Dourish",
+    birthYear: null,
+    deathYear: null,
+  },
+  "Wanda Orlikowski": {
+    fullName: "Wanda Orlikowski",
+    birthYear: null,
+    deathYear: null,
+  },
+  "Rob Stones": { fullName: "Rob Stones", birthYear: null, deathYear: null },
+  Hegel: {
+    fullName: "Georg Wilhelm Friedrich Hegel",
+    birthYear: 1770,
+    deathYear: 1831,
+  },
+  Freud: { fullName: "Sigmund Freud", birthYear: 1856, deathYear: 1939 },
+  Serres: { fullName: "Michel Serres", birthYear: 1930, deathYear: 2019 },
+  Greimas: {
+    fullName: "Algirdas Julien Greimas",
+    birthYear: 1917,
+    deathYear: 1992,
+  },
+  Althusser: {
+    fullName: "Louis Althusser",
+    birthYear: 1918,
+    deathYear: 1990,
+  },
+  Gramsci: { fullName: "Antonio Gramsci", birthYear: 1891, deathYear: 1937 },
 };

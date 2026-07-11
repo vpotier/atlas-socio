@@ -545,4 +545,412 @@ export const authors = [
       "Heritage, 1984, Garfinkel and Ethnomethodology",
     ],
   },
+
+  {
+    id: "peter-berger",
+    name: "Peter L. Berger",
+    school: "Constructivisme social / Sociologie de la connaissance",
+    period: "1929–2017",
+    birthYear: 1929,
+    deathYear: 2017,
+    x: 1000,
+    y: 650,
+    color: "#C2185B",
+
+    concepts: ["Objectivation", "Institutionnalisation", "Socialisation secondaire"],
+
+    works: [
+      "La Construction sociale de la réalité (1966)",
+      "Le Rumeur des anges (1969)",
+    ],
+
+    influences: ["Schütz", "Weber", "Marx", "Durkheim"],
+    heirs: ["Dubar", "Corcuff", "Ian Hacking"],
+
+    summary:
+      "Sociologue américain d'origine autrichienne, il co-écrit un ouvrage fondateur qui révolutionne la sociologie de la connaissance en l'orientant vers la vie quotidienne. Avec Thomas Luckmann, il démontre comment la réalité sociale se construit à travers un processus dialectique permanent en trois étapes : l'extériorisation, l'objectivation et l'intériorisation. Ses travaux ultérieurs ont grandement enrichi la sociologie des religions et de la sécularisation.",
+
+    constellation: "le-constructivisme-social",
+    consensus: 5,
+    classificationNote:
+      "Peter Berger est universellement classé avec Luckmann comme le père du constructivisme social phénoménologique (Ritzer, Lallement). Bien que le terme 'constructivisme' englobe aujourd'hui des courants épistémologiques très divers (comme le constructivisme structuraliste de Bourdieu), l'Atlas le maintient au cœur de cette constellation pour sa modélisation précise de la dialectique individu-société.",
+    sources: [
+      "Lallement, 2000, Histoire des idées sociologiques",
+      "Ritzer, 2011, Sociological Theory",
+    ],
+  },
+
+  {
+    id: "thomas-luckmann",
+    name: "Thomas Luckmann",
+    school: "Constructivisme social / Sociologie phénoménologique",
+    period: "1927–2016",
+    birthYear: 1927,
+    deathYear: 2016,
+    x: 1060,
+    y: 690,
+    color: "#D81B60",
+
+    concepts: ["Univers symbolique", "Intériorisation"],
+
+    works: [
+      "La Construction sociale de la réalité (1966)",
+      "The Structures of the Life-World (1973)",
+    ],
+
+    influences: ["Schütz", "Weber", "durkheim"],
+    heirs: ["Knoblauch"],
+
+    summary:
+      "Sociologue germano-slovène, il a jeté les bases du constructivisme social en prolongeant l'œuvre phénoménologique d'Alfred Schütz. En collaboration avec Peter Berger, il décrit comment les représentations subjectives des acteurs se cristallisent en structures sociales objectives perçues comme naturelles. Il s'est également illustré par ses analyses fines de la communication, de l'identité et de la recomposition des formes religieuses modernes. Ses travaux continuent d'irriguer la sociologie de la connaissance contemporaine.",
+
+    constellation: "le-constructivisme-social",
+    consensus: 5,
+    classificationNote:
+      "Le consensus intellectuel fusionne presque systématiquement le nom de Luckmann avec celui de Berger dans la genèse du constructivisme social. Les manuels francophones (Ansart, Corcuff) le créditent d'une rigueur phénoménologique accrue issue de sa filiation directe avec Schütz, justifiant sa place indissociable au sein de l'Atlas.",
+    sources: [
+      "Corcuff, 2007, Les nouvelles sociologies",
+      "Ansart, 1990, Les sociologies contemporaines",
+    ],
+  },
+
+  {
+    id: "claude-dubar",
+    name: "Claude Dubar",
+    school: "Sociologie des identités et du travail",
+    period: "1945–2015",
+    birthYear: 1945,
+    deathYear: 2015,
+    x: 950,
+    y: 720,
+    color: "#EC407A",
+
+    concepts: ["Identité pour soi / pour autrui", "Crise des identités", "Forme identitaire"],
+
+    works: [
+      "La Socialisation : Construction des identités sociales et professionnelles (1991)",
+      "La Crise des identités (2000)",
+    ],
+
+    influences: ["peter-berger", "thomas-luckmann", "Bourdieu", "Hughes"],
+    heirs: [],
+
+    summary:
+      "Sociologue français majeur, il applique et approfondit la matrice théorique constructiviste au champ du travail, de la formation et des trajectoires professionnelles. Il conceptualise l'identité comme un processus dynamique issu de la dualité entre 'l'identité pour autrui' (les définitions institutionnelles) et 'l'identité pour soi' (l'histoire vécue). Ses travaux articulent magistralement les dimensions biographiques et structurelles du changement social. Son approche a durablement structuré la recherche francophone en sociologie du travail et de l'éducation.",
+
+    constellation: "le-constructivisme-social",
+    consensus: 4,
+    classificationNote:
+      "Dubar est unanimement salué dans le contexte universitaire francophone comme le grand passeur et l'adaptateur de l'œuvre de Berger et Luckmann pour la sociologie de la socialisation. Si certains classements thématiques le cantonnent à la sociologie du travail, l'Atlas choisit de l'inscrire dans le constructivisme social pour la portée transversale et processuelle de sa théorie de l'identité.",
+    sources: [
+      "Dubar, 1991, La Socialisation",
+      "Demazière, 2016, Hommage à Claude Dubar",
+    ],
+  },
+
+  {
+    id: "max-horkheimer",
+    name: "Max Horkheimer",
+    school: "École de Francfort (Première génération)",
+    period: "1895–1973",
+    birthYear: 1895,
+    deathYear: 1973,
+    x: 1450,
+    y: 180,
+    color: "#4A235A",
+
+    concepts: ["Théorie critique", "Raison instrumentale"],
+
+    works: [
+      "Théorie traditionnelle et théorie critique (1937)",
+      "La Dialectique de la Raison (1944)",
+    ],
+
+    influences: ["Marx", "Hegel", "Freud", "Weber"],
+    heirs: ["jürgen-habermas", "Axel Honneth"],
+
+    summary:
+      "Philosophe et sociologue allemand, il prend la direction de l'Institut de recherche sociale de Francfort en 1930 et jette les bases théoriques de l'École. Il formalise le projet d'une « théorie critique » en rupture avec la « théorie traditionnelle » positiviste, assignant aux sciences sociales l'objectif de libérer les êtres humains des structures de domination. Ses écrits co-signés avec Adorno dénoncent l'asservissement de la raison par le capitalisme monopolistique sous la forme de l'aliénation culturelle.",
+
+    constellation: "la-theorie-critique",
+    consensus: 5,
+    classificationNote:
+      "Le positionnement de Horkheimer comme le père fondateur et le directeur institutionnel de la première École de Francfort fait l'objet d'un consensus absolu dans l'ensemble des manuels d'histoire de la sociologie (Ritzer, Lallement, Assoun). L'Atlas le retient comme la figure tutélaire de cette constellation.",
+    sources: [
+      "Lallement, 2000, Histoire des idées sociologiques",
+      "Ritzer, 2011, Sociological Theory",
+    ],
+  },
+
+  {
+    id: "theodor-w-adorno",
+    name: "Theodor W. Adorno",
+    school: "École de Francfort (Première génération)",
+    period: "1903–1969",
+    birthYear: 1903,
+    deathYear: 1969,
+    x: 1520,
+    y: 140,
+    color: "#6C3483",
+
+    concepts: ["Industrie culturelle", "Personnalité autoritaire"],
+
+    works: [
+      "La Dialectique de la Raison (1944)",
+      "Minima Moralia (1951)",
+      "Études sur la personnalité autoritaire (1950)",
+    ],
+
+    influences: ["Marx", "Hegel", "Freud", "Weber"],
+    heirs: ["jürgen-habermas"],
+
+    summary:
+      "Philosophe, sociologue et musicologue allemand, il est l'une des figures de proue de la première génération de l'École de Francfort. À travers une critique radicale de la modernité, il théorise le concept d'industrie culturelle pour démontrer comment la culture de masse standardise les consciences et désamorce tout potentiel de révolte politique. Ses enquêtes empiriques sur la personnalité autoritaire lient psychologie sociale et structures politiques pour expliquer les racines du fascisme. Son analyse critique de la culture continue d'irriguer la sociologie de la culture critique contemporaine.",
+
+    constellation: "la-theorie-critique",
+    consensus: 5,
+    classificationNote:
+      "Adorno est indiscutablement classé comme le cœur analytique et esthétique de la première théorie critique (Aron, Ritzer). Bien que ses travaux ultérieurs soient très philosophiques, son intégration au sein de l'Atlas est indispensable pour sa sociologie de la culture et des médias.",
+    sources: [
+      "Aron, 1967, Les étapes de la pensée sociologique",
+      "Ritzer, 2011, Sociological Theory",
+    ],
+  },
+
+  {
+    id: "jürgen-habermas",
+    name: "Jürgen Habermas",
+    school: "École de Francfort (Deuxième génération)",
+    period: "1929–présent",
+    birthYear: 1929,
+    deathYear: null,
+    x: 1480,
+    y: 260,
+    color: "#884EA0",
+
+    concepts: ["Agir communicationnel", "Espace public", "Monde vécu / Système"],
+
+    works: [
+      "L'Espace public (1962)",
+      "Théorie de l'agir communicationnel (1981)",
+    ],
+
+    influences: ["max-horkheimer", "theodor-w-adorno", "Weber", "Mead"],
+    heirs: ["Axel Honneth", "Nancy Fraser"],
+
+    summary:
+      "Chef de file de la deuxième génération de l'École de Francfort, il opère un tournant langagier majeur en substituant à la critique de la raison instrumentale une théorie de l'agir communicationnel. Il modélise la modernité comme une tension dialectique entre le 'système' (régulé par l'argent et le pouvoir administratifs) et le 'monde vécu' (structuré par la communication interconnectée). Il défend le projet inachevé des Lumières à travers le concept d'un espace public démocratique fondé sur l'éthique de la discussion. Son œuvre a directement nourri la sociologie politique délibérative contemporaine.",
+
+    constellation: "la-theorie-critique",
+    consensus: 5,
+    classificationNote:
+      "Habermas fait l'objet d'un consensus parfait à travers la littérature mondiale (Collins, Ansart, Keucheyan) en tant que reconstructeur de la théorie critique. Bien qu'il se détache du pessimisme anthropologique de ses maîtres pour intégrer des éléments de pragmatisme et de fonctionnalisme, l'Atlas le positionne au sommet de cette constellation pour sa refondation émancipatrice de l'école.",
+    sources: [
+      "Ansart, 1990, Les sociologies contemporaines",
+      "Collins, 1994, Four Sociological Traditions",
+    ],
+  },
+
+  {
+    id: "henri-lefebvre",
+    name: "Henri Lefebvre",
+    school: "Marxisme hétérodoxe / Sociologie urbaine",
+    period: "1901–1991",
+    birthYear: 1901,
+    deathYear: 1991,
+    x: 50,
+    y: 420,
+    color: "#922B21",
+
+    concepts: ["Critique de la vie quotidienne", "Production de l'espace", "Droit à la ville"],
+
+    works: [
+      "Critique de la vie quotidienne (1947)",
+      "La Production de l'espace (1974)",
+      "Le Droit à la ville (1968)",
+    ],
+
+    influences: ["Marx", "Hegel", "Nietzsche"],
+    heirs: ["David Harvey", "Manuel Castells", "Jean Baudrillard"],
+
+    summary:
+      "Intellectuel et sociologue français, il rompt avec l'orthodoxie du Parti communiste pour développer une critique humaniste de la modernité. Pionnier de la sociologie de la vie quotidienne, il analyse comment le capitalisme colonise l'existence ordinaire à travers la marchandisation du temps et de l'espace. Son concept de « droit à la ville » a profondément influencé les mouvements urbains et la géographie critique mondiale en repensant la ville comme œuvre collective.",
+
+    constellation: "la-sociologie-marxiste",
+    consensus: 4,
+    classificationNote:
+      "Dans les manuels d'histoire des idées (Lallement, Ansart), Lefebvre est classé comme une figure majeure du marxisme critique francophone. Bien que certains sociologues anglo-saxons l'associent prioritairement à la géographie radicale ou aux études urbaines, l'Atlas le maintient dans la constellation marxiste pour sa fidélité à la dialectique et à la critique de l'aliénation marchande.",
+    sources: [
+      "Lallement, 2000, Histoire des idées sociologiques",
+      "Ansart, 1990, Les sociologies contemporaines",
+    ],
+  },
+
+  {
+    id: "nicos-poulantzas",
+    name: "Nicos Poulantzas",
+    school: "Marxisme structuraliste",
+    period: "1936–1979",
+    birthYear: 1936,
+    deathYear: 1979,
+    x: 90,
+    y: 480,
+    color: "#B03A2E",
+
+    concepts: ["Autonomie relative de l'État", "Condensation matérielle"],
+
+    works: [
+      "Pouvoir politique et classes sociales (1968)",
+      "L'État, le pouvoir, le socialisme (1978)",
+    ],
+
+    influences: ["Marx", "Althusser", "Gramsci"],
+    heirs: ["Bob Jessop"],
+
+    summary:
+      "Sociologue politique d'origine grecque ayant fait l'essentiel de sa carrière en France, il applique le structuralisme marxiste à l'analyse de l'État moderne. Opposé aux visions instrumentalistes, il théorise l'autonomie relative de l'État, qu'il définit non comme un simple outil de la bourgeoisie, mais comme la condensation matérielle d'un rapport de forces entre les classes. Ses débats avec Ralph Miliband ont marqué l'âge d'or de la théorie de l'État. Ses travaux ont durablement structuré les théories contemporaines de l'État.",
+
+    constellation: "la-sociologie-marxiste",
+    consensus: 5,
+    classificationNote:
+      "Poulantzas est universellement répertorié par les manuels de sociologie politique (Ritzer, Collins) comme le théoricien le plus influent du structuralisme marxiste appliqué aux institutions politiques. L'Atlas valide son intégration dans cette constellation en raison de son rôle pivot dans la formalisation macro-sociologique des structures de pouvoir.",
+    sources: [
+      "Ritzer, 2011, Sociological Theory",
+      "Collins, 1994, Four Sociological Traditions",
+    ],
+  },
+
+  {
+    id: "bruno-latour",
+    name: "Bruno Latour",
+    school: "Théorie de l'acteur-réseau (ANT) / STS",
+    period: "1947–2022",
+    birthYear: 1947,
+    deathYear: 2022,
+    x: 1300,
+    y: 600,
+    color: "#0B5345",
+
+    concepts: ["Actant", "Principe de symétrie généralisée", "Traduction"],
+
+    works: [
+      "La Vie de laboratoire (1979)",
+      "Nous n'avons jamais été modernes (1991)",
+      "Changer de société - Refaire de la sociologie (2005)",
+    ],
+
+    influences: ["Serres", "Greimas", "harold-garfinkel", "harrison-white"],
+    heirs: ["michel-callon", "susan-leigh-star", "Philippe Descola"],
+
+    summary:
+      "Sociologue et anthropologue des sciences français, il est l'un des principaux fondateurs de la théorie de l'acteur-réseau. Il révolutionne les sciences sociales en introduisant le principe de symétrie généralisée, qui accorde une capacité d'action (agency) aux non-humains au même titre qu'aux humains. Ses enquêtes de laboratoire redéfinissent l'activité scientifique non comme une pure découverte de faits objectifs, mais comme une construction de réseaux d'associations de plus en plus vastes. Son approche a directement inspiré le courant de l'écologie politique contemporaine.",
+
+    constellation: "theorie-de-l-acteur-reseau-et-sts",
+    consensus: 5,
+    classificationNote:
+      "Dans les manuels récents (Corcuff, Ritzer, Keucheyan), Latour est classé comme le chef de file du tournant constructiviste radical ou de la sociologie des associations. Si certains manuels classiques l'oublient ou le cantonnent à la sociologie des sciences sectorielle, l'Atlas choisit d'ouvrir une constellation dédiée pour acter sa rupture épistémologique majeure avec le social pur.",
+    sources: [
+      "Corcuff, 2007, Les nouvelles sociologies",
+      "Ritzer, 2011, Sociological Theory",
+    ],
+  },
+
+  {
+    id: "michel-callon",
+    name: "Michel Callon",
+    school: "École des Mines / STS",
+    period: "1945–2025",
+    birthYear: 1945,
+    deathYear: 2025,
+    x: 1370,
+    y: 650,
+    color: "#117864",
+
+    concepts: ["Performativité de l'économie", "Enrôlement", "Controverse sociotechnique"],
+
+    works: [
+      "Éléments pour une sociologie de la traduction (1986)",
+      "L'Emprise des marchés (2017)",
+    ],
+
+    influences: ["bruno-latour", "harrison-white"],
+    heirs: ["Donald MacKenzie"],
+
+    summary:
+      "Sociologue et ingénieur français, il co-développe la théorie de l'acteur-réseau en insistant sur les processus de problématisation et d'intéressement à travers lesquels les innovateurs enrôlent des alliés humains et matériels. Ses travaux ultérieurs sur la sociologie des marchés et la performativité de l'économie démontrent que l'économie ne se contente pas de décrire les marchés, mais qu'elle les configure techniquement. Il a également grandement contribué à l'étude des controverses sociotechniques et de la démocratie technique. Ses travaux ont fondé un pan entier de la sociologie économique des agencements marchands.",
+
+    constellation: "theorie-de-l-acteur-reseau-et-sts",
+    consensus: 5,
+    classificationNote:
+      "Callon est indissociable de Latour dans la fondation de l'ANT (Grossetti, Lallement). Bien que parfois capté par la sociologie économique contemporaine pour ses travaux sur les marchés, l'Atlas le maintient dans la constellation ANT/STS en raison de sa conceptualisation fondamentale de la traduction et du réseau hétérogène.",
+    sources: [
+      "Lallement, 2000, Histoire des idées sociologiques",
+      "Grossetti, 2004, Sociologie de l'imprévisibilité",
+    ],
+  },
+
+  {
+    id: "susan-leigh-star",
+    name: "Susan Leigh Star",
+    school: "Infrastructure Studies / École de San Francisco",
+    period: "1954–2010",
+    birthYear: 1954,
+    deathYear: 2010,
+    x: 1330,
+    y: 720,
+    color: "#45B39D",
+
+    concepts: ["Objet-frontière", "Inversion infrastructurale"],
+
+    works: ["Sorting Things Out: Classification and Its Consequences (1999)"],
+
+    influences: ["Hughes", "becker", "bruno-latour"],
+    heirs: ["Geoffrey Bowker", "Paul Dourish"],
+
+    summary:
+      "Sociologue américaine s'inscrivant à l'intersection des STS, du pragmatisme et du féminisme, elle est une figure clé des Infrastructure Studies. Elle étudie les structures invisibles, les standards et les classifications qui soutiennent notre monde matériel, révélant la dimension politique et morale logée dans le design technique. Son concept de « objet-frontière » explique comment des groupes hétérogènes parviennent à coopérer sans pour autant partager le même point de vue. Son approche continue d'irriguer aujourd'hui le champ des Design Studies.",
+
+    constellation: "theorie-de-l-acteur-reseau-et-sts",
+    consensus: 4,
+    classificationNote:
+      "Star est souvent classée par la littérature anglophone comme une figure pivot liant l'interactionnisme symbolique de l'école de Chicago (via Becker et Hughes) aux théories des réseaux et des infrastructures matérielles. L'Atlas choisit de l'insérer dans la constellation ANT/STS pour montrer le pont organique qu'elle jette entre la microsociologie du travail et l'analyse de la matérialité.",
+    sources: [
+      "Ritzer, 2011, Sociological Theory",
+      "Star, 2010, Infrastructure and Ethnography",
+    ],
+  },
+
+  {
+    id: "anthony-giddens",
+    name: "Anthony Giddens",
+    school: "Théorie de la structuration",
+    period: "1938–présent",
+    birthYear: 1938,
+    deathYear: null,
+    x: 600,
+    y: 350,
+    color: "#B7950B",
+
+    concepts: ["Dualité du structurel", "Double herméneutique", "Conscience pratique"],
+
+    works: [
+      "La Constitution de la société (1984)",
+      "Les Conséquences de la modernité (1990)",
+    ],
+
+    influences: ["Durkheim", "Weber", "Marx", "Schütz"],
+    heirs: ["Wanda Orlikowski", "Rob Stones"],
+
+    summary:
+      "Sociologue britannique incontournable, il formule la théorie de la structuration pour dépasser l'opposition traditionnelle entre objectivisme structural et subjectivisme individuel. Il introduit le concept central de « dualité du structurel », postulant que les structures sociales sont à la fois le moyen et le résultat des pratiques des acteurs. Son œuvre propose également une analyse profonde de la modernité avancée et de la réflexivité institutionnelle. Sa théorie continue de structurer un large pan des sociologies contemporaines de la modernité.",
+
+    constellation: "la-theorie-de-la-structuration",
+    consensus: 5,
+    classificationNote:
+      "Anthony Giddens est reconnu de manière unanime par les manuels de référence (Ritzer, Lallement, Corcuff) comme l'architecte unique et le théoricien exclusif de la théorie de la structuration. L'Atlas le classe comme la figure centrale de cette constellation synthétique.",
+    sources: [
+      "Lallement, 2000, Histoire des idées sociologiques",
+      "Corcuff, 2007, Les nouvelles sociologies",
+    ],
+  },
 ];

@@ -9,11 +9,7 @@ import Concepts from "./Concepts";
 import { authors as rawAuthors } from "../data/authors";
 import { concepts as rawConcepts } from "../data/concepts";
 import { relations } from "../data/relations";
-import {
-  computeLayout,
-  CANVAS_WIDTH,
-  CANVAS_HEIGHT,
-} from "../engine/layout";
+import { computeLayout } from "../engine/layout";
 
 export default function Graph({
   selectedItem,
@@ -214,15 +210,15 @@ export default function Graph({
   return (
     <TransformWrapper
       ref={transformRef}
-      initialScale={0.7}
-      minScale={0.3}
+      initialScale={0.5}
+      minScale={0.15}
       maxScale={3}
       centerOnInit
     >
       <TransformComponent>
         <svg
-          width={CANVAS_WIDTH}
-          height={CANVAS_HEIGHT}
+          width={layout.width}
+          height={layout.height}
         >
           <Background />
 

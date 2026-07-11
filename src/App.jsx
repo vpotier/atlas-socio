@@ -191,7 +191,7 @@ export default function App() {
         }
       />
 
-      <div style={{ flex: 1, padding: 20 }}>
+  <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
         <Graph
           selectedItem={selectedItem}
           setSelectedItem={setSelectedItem}
@@ -201,6 +201,7 @@ export default function App() {
       <aside
         style={{
           width: "340px",
+          flexShrink: 0,
           borderLeft: "1px solid #ddd",
           padding: 20,
           background: "#fafafa",

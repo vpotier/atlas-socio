@@ -163,4 +163,108 @@ export const relations = [
       "Garfinkel a rédigé sa thèse sous la direction de Parsons, mais il a construit l'ethnométhodologie en opposition frontale avec la conception parsonienne d'un acteur passif ayant intériorisé des normes globales préexistantes.",
     sources: ["Ansart, 1990, Les sociologies contemporaines"],
   },
+  {
+    source: "peter-berger",
+    target: "thomas-luckmann",
+    type: "dialogue",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Berger et Luckmann ont co-écrit l'un des livres les plus influents du XXe siècle, unifiant leurs perspectives pour forger le paradigme du constructivisme social dans une complicité intellectuelle totale.",
+    sources: ["Ritzer, 2011, Sociological Theory"],
+  },
+  {
+    source: "peter-berger",
+    target: "claude-dubar",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Dubar s'approprie explicitement la théorie de la socialisation primaire et secondaire formalisée par Berger et Luckmann, en l'utilisant comme socle conceptuel pour bâtir son modèle de la socialisation professionnelle.",
+    sources: ["Dubar, 1991, La Socialisation"],
+  },
+  {
+    source: "max-horkheimer",
+    target: "theodor-w-adorno",
+    type: "dialogue",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Compagnons d'exil et collaborateurs intimes pendant plus de trois décennies, Horkheimer et Adorno ont co-écrit les textes les plus emblématiques de l'École de Francfort, fusionnant leurs pensées au point de rendre leurs contributions souvent indissociables.",
+    sources: ["Assoun, 1987, L'École de Francfort"],
+  },
+  {
+    source: "max-horkheimer",
+    target: "jürgen-habermas",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Habermas a été l'assistant de formation de Horkheimer à l'Institut de Francfort, héritant de l'ambition de construire une science sociale interdisciplinaire ancrée dans la critique sociale malgré des frictions quant au radicalisme politique du jeune Habermas.",
+    sources: ["Ritzer, 2011, Sociological Theory"],
+  },
+  {
+    source: "theodor-w-adorno",
+    target: "jürgen-habermas",
+    type: "tension",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Tout en revendiquant la filiation, Habermas rompt avec le pessimisme radical et l'impasse esthétique d'Adorno concernant la modernité. Il reproche à la première génération de ne pas proposer de fondement normatif positif pour l'émancipation réelle des institutions.",
+    sources: [
+      "Keucheyan, 2010, Hémisphère gauche : Une cartographie des nouvelles pensées critiques",
+    ],
+  },
+  {
+    source: "henri-lefebvre",
+    target: "nicos-poulantzas",
+    type: "tension",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Une opposition épistémologique profonde sépare la sociologie humaniste et existentielle de Lefebvre du structuralisme antihumaniste et rigide incarné par Poulantzas (et Althusser) au cours des années 1960 et 1970.",
+    sources: [
+      "Keucheyan, 2010, Hémisphère gauche : Une cartographie des nouvelles pensées critiques",
+    ],
+  },
+  {
+    source: "bruno-latour",
+    target: "michel-callon",
+    type: "dialogue",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Partenaires de recherche historiques au Centre de sociologie de l'innovation (CSI) de l'École des Mines, Latour et Callon ont co-écrit les textes fondateurs de la théorie de l'acteur-réseau, articulant ensemble la sociologie des sciences.",
+    sources: ["Corcuff, 2007, Les nouvelles sociologies"],
+  },
+  {
+    source: "harold-garfinkel",
+    target: "bruno-latour",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Latour s'est massivement inspiré de l'ethnométhodologie de Garfinkel pour mener ses premières enquêtes de laboratoire, adoptant une posture d'anthropologue naïf qui refuse d'expliquer les pratiques scientifiques par des structures sociales a priori.",
+    sources: ["Ritzer, 2011, Sociological Theory"],
+  },
+  {
+    source: "becker",
+    target: "susan-leigh-star",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Formée dans la lignée de la tradition de Chicago, Star applique la méthode ethnographique fine de la sociologie des professions et du travail (proche de Becker) à l'étude technique des ordinateurs et des classifications d'infrastructures.",
+    sources: ["Star, 1999, Sorting Things Out"],
+  },
+  {
+    source: "bruno-latour",
+    target: "susan-leigh-star",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Tout en partageant l'intérêt de Latour pour les réseaux techniques et la matérialité, Star nuance l'ANT en y réintroduisant l'étude des exclus, des échecs d'alignement et de la souffrance silencieuse causée par les standards rigides.",
+    sources: ["Star, 2010, Infrastructure and Ethnography"],
+  },
 ];

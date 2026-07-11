@@ -1,22 +1,29 @@
 import * as d3 from "d3";
 
-export const CANVAS_WIDTH = 1800;
-export const CANVAS_HEIGHT = 950;
+// Espace de travail utilisé pendant la simulation (large pour laisser
+// aux constellations la place de se répartir sans se chevaucher).
+const SIM_WIDTH = 2600;
+const SIM_HEIGHT = 1700;
+
+// Marge laissée autour du contenu final calculé.
+const PADDING = 160;
 
 // Calcule les positions des auteurs et des concepts avec un algorithme
-// force-directed : les auteurs liés se rapprochent, les nœuds se repoussent
-// pour éviter les chevauchements, et chaque constellation est attirée
-// vers un centre qui lui est propre (répartis en cercle) pour former
-// des zones visuellement cohérentes.
+// force-directed : les auteurs liés se rapprochent, les nœuds (et leurs
+// labels) se repoussent pour éviter les chevauchements, et chaque
+// constellation est attirée vers un centre qui lui est propre (répartis
+// en cercle) pour former des zones visuellement cohérentes. Le canevas
+// final est dimensionné exactement sur l'étendue réelle du résultat,
+// pour éviter à la fois le vide et les débordements.
 export function computeLayout(authors, concepts, relations) {
-  const center = { x: CANVAS_WIDTH / 2, y: CANVAS_HEIGHT / 2 };
+  const center = { x: SIM_WIDTH / 2, y: SIM_HEIGHT / 2 };
 
   const constellationIds = [
     ...new Set(authors.map((a) => a.constellation)),
   ];
 
   const ringRadius =
-    Math.min(CANVAS_WIDTH, CANVAS_HEIGHT) / 2 - 160;
+    Math.min(SIM_WIDTH, SIM_HEIGHT) / 2 - 120;
 
   const constellationCenters = {};
 
@@ -34,8 +41,8 @@ export function computeLayout(authors, concepts, relations) {
     id: a.id,
     kind: "author",
     constellation: a.constellation,
-    x: center.x + (Math.random() - 0.5) * 200,
-    y: center.y + (Math.random() - 0.5) * 200,
+    x: center.x + (Math.random() - 0.5) * 300,
+    y: center.y + (Math.random() - 0.5) * 300,
   }));
 
   const authorConstellation = new Map(
@@ -45,10 +52,11 @@ export function computeLayout(authors, concepts, relations) {
   const conceptNodes = concepts.map((c) => ({
     id: `concept:${c.id}`,
     kind: "concept",
+    labelLength: c.label.length,
     constellation:
       authorConstellation.get(c.authors[0]) ?? null,
-    x: center.x + (Math.random() - 0.5) * 200,
-    y: center.y + (Math.random() - 0.5) * 200,
+    x: center.x + (Math.random() - 0.5) * 300,
+    y: center.y + (Math.random() - 0.5) * 300,
   }));
 
   const nodes = [...authorNodes, ...conceptNodes];
@@ -81,18 +89,25 @@ export function computeLayout(authors, concepts, relations) {
         .forceLink(links)
         .id((d) => d.id)
         .distance((l) =>
-          l.kind === "concept-link" ? 70 : 150
+          l.kind === "concept-link" ? 95 : 190
         )
         .strength((l) =>
-          l.kind === "concept-link" ? 0.9 : 0.25
+          l.kind === "concept-link" ? 0.9 : 0.2
         )
     )
-    .force("charge", d3.forceManyBody().strength(-220))
+    .force("charge", d3.forceManyBody().strength(-420))
     .force(
       "collide",
       d3
         .forceCollide()
-        .radius((d) => (d.kind === "author" ? 48 : 30))
+        .radius((d) =>
+          d.kind === "author"
+            ? 75
+            // Les labels de concepts s'affichent à droite du point ;
+            // on approxime leur largeur avec le nombre de caractères.
+            : 40 + Math.min(d.labelLength ?? 10, 26) * 3
+        )
+        .strength(0.9)
     )
     .force(
       "clusterX",
@@ -101,7 +116,7 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.x : center.x;
         })
-        .strength(0.15)
+        .strength(0.1)
     )
     .force(
       "clusterY",
@@ -110,11 +125,30 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.y : center.y;
         })
-        .strength(0.15)
+        .strength(0.1)
     )
     .stop();
 
-  simulation.tick(400);
+  simulation.tick(500);
+
+  // Recadrage : on calcule l'étendue réelle du résultat et on
+  // dimensionne le canevas final dessus, pour éliminer le vide
+  // et garder tout le monde visible sans chevauchement de halo.
+  const xs = nodes.map((n) => n.x);
+  const ys = nodes.map((n) => n.y);
+
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+
+  nodes.forEach((n) => {
+    n.x = n.x - minX + PADDING;
+    n.y = n.y - minY + PADDING;
+  });
+
+  const width = maxX - minX + PADDING * 2;
+  const height = maxY - minY + PADDING * 2;
 
   const authorPositions = new Map();
   const conceptPositions = new Map();
@@ -133,6 +167,7 @@ export function computeLayout(authors, concepts, relations) {
   return {
     authorPositions,
     conceptPositions,
-    constellationCenters,
+    width,
+    height,
   };
 }

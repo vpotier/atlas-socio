@@ -102,7 +102,7 @@ export default function App() {
       const c = selectedItem.data;
 
       return (
-        <>
+       <>
           <h2>{c.label}</h2>
 
           <p>{c.definition}</p>

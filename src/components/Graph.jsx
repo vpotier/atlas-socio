@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import Background from "../layers/Background";
@@ -131,16 +131,6 @@ export default function Graph({
 
     return `M ${source.x} ${source.y} Q ${controlX} ${controlY}, ${target.x} ${target.y}`;
   };
-
-  useEffect(() => {
-    if (selectedAuthor && transformRef.current) {
-      transformRef.current.zoomToElement(
-        selectedAuthor.id,
-        1.3,
-        600
-      );
-    }
-  }, [selectedAuthor]);
 
   const getLineStyle = (relation) => {
     let color = "#999";

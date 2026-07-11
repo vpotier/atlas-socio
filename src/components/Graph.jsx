@@ -6,9 +6,14 @@ import Clusters from "./Clusters";
 import Authors from "./Authors";
 import Concepts from "./Concepts";
 
-import { authors } from "../data/authors";
-import { concepts } from "../data/concepts";
+import { authors as rawAuthors } from "../data/authors";
+import { concepts as rawConcepts } from "../data/concepts";
 import { relations } from "../data/relations";
+import {
+  computeLayout,
+  CANVAS_WIDTH,
+  CANVAS_HEIGHT,
+} from "../engine/layout";
 
 export default function Graph({
   selectedItem,
@@ -16,6 +21,29 @@ export default function Graph({
 }) {
   const [hoveredRelation, setHoveredRelation] = useState(null);
   const transformRef = useRef(null);
+
+  const layout = useMemo(
+    () => computeLayout(rawAuthors, rawConcepts, relations),
+    []
+  );
+
+  const authors = useMemo(
+    () =>
+      rawAuthors.map((a) => ({
+        ...a,
+        ...layout.authorPositions.get(a.id),
+      })),
+    [layout]
+  );
+
+  const concepts = useMemo(
+    () =>
+      rawConcepts.map((c) => ({
+        ...c,
+        ...layout.conceptPositions.get(c.id),
+      })),
+    [layout]
+  );
 
   const selectedAuthor =
     selectedItem?.type === "author"
@@ -186,15 +214,15 @@ export default function Graph({
   return (
     <TransformWrapper
       ref={transformRef}
-      initialScale={1}
-      minScale={0.5}
+      initialScale={0.7}
+      minScale={0.3}
       maxScale={3}
       centerOnInit
     >
       <TransformComponent>
-      <svg
-          width="1400"
-          height="850"
+        <svg
+          width={CANVAS_WIDTH}
+          height={CANVAS_HEIGHT}
         >
           <Background />
 
@@ -236,7 +264,7 @@ export default function Graph({
             </marker>
           </defs>
 
-          <Clusters />
+          <Clusters authors={authors} />
 
           {relations.map((relation, i) => {
             const source = getAuthor(

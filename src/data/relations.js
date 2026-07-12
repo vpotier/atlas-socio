@@ -518,4 +518,3 @@ export const relations = [
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
   },
 ];
-];

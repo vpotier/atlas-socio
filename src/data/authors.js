@@ -938,7 +938,7 @@ export const authors = [
       "Les Conséquences de la modernité (1990)",
     ],
 
-    influences: ["Durkheim", "Weber", "Marx", "Schütz"],
+    influences: ["Durkheim", "Weber", "Marx", "Schütz", "levi-strauss"],
     heirs: ["Wanda Orlikowski", "Rob Stones"],
 
     summary:
@@ -953,6 +953,7 @@ export const authors = [
       "Corcuff, 2007, Les nouvelles sociologies",
     ],
   },
+
   {
     id: "levi-strauss",
     name: "Claude Lévi-Strauss",
@@ -980,7 +981,7 @@ export const authors = [
     constellation: "structuralisme",
     consensus: 4,
     classificationNote:
-      "Le cours de référence (atelier doctoral, d'après Lallement 2017 et Dollo et al. 2015) regroupe sous un même chapitre \"Structuralisme\" des auteurs que l'Atlas répartit par ailleurs dans trois constellations distinctes (bourdieusien, sociologie marxiste, théorie de la structuration). Plutôt que de fusionner ces constellations, l'Atlas retient Lévi-Strauss (et Althusser) comme auteurs-ponts, reliés par des relations explicites aux figures de chacune des trois, pour représenter cette filiation commune sans effacer les divergences réelles entre elles.",
+      "Lallement 2017 et Dollo et al. 2015 regroupent sous un même chapitre \"Structuralisme\" des auteurs que l'Atlas répartit par ailleurs dans trois constellations distinctes (bourdieusien, sociologie marxiste, théorie de la structuration). Plutôt que de fusionner ces constellations, l'Atlas retient Lévi-Strauss (et Althusser) comme auteurs-ponts, reliés par des relations explicites aux figures de chacune des trois, pour représenter cette filiation commune sans effacer les divergences réelles entre elles.",
     sources: [
       "Lallement, 2017, Histoire des idées sociologiques",
       "Dollo et al., 2015, Les grandes notions de la sociologie",
@@ -1011,10 +1012,433 @@ export const authors = [
     constellation: "structuralisme",
     consensus: 4,
     classificationNote:
-      "Althusser est identifié par le cours de référence comme le passeur entre le structuralisme lévi-straussien et sa déclinaison marxiste, incarnée ensuite par Poulantzas. L'Atlas le retient comme auteur-pont plutôt que de l'inclure directement dans la constellation marxiste, pour préserver la lisibilité de la filiation intellectuelle structuraliste.",
+      "Althusser est identifié comme le passeur entre le structuralisme lévi-straussien et sa déclinaison marxiste, incarnée ensuite par Poulantzas. L'Atlas le retient comme auteur-pont plutôt que de l'inclure directement dans la constellation marxiste, pour préserver la lisibilité de la filiation intellectuelle structuraliste.",
     sources: [
       "Lallement, 2017, Histoire des idées sociologiques",
       "Dollo et al., 2015, Les grandes notions de la sociologie",
     ],
+  },
+
+  {
+    id: "comte",
+    name: "Auguste Comte",
+    school: "Positivisme",
+    period: "1798–1857",
+    birthYear: 1798,
+    deathYear: 1857,
+    x: 100,
+    y: 130,
+    color: "#5D8AA8",
+
+    concepts: ["Loi des trois états", "Physique sociale"],
+
+    works: [
+      "Cours de philosophie positive (1830-1842)",
+      "Discours sur l'esprit positif (1844)",
+    ],
+
+    influences: [],
+    heirs: ["durkheim"],
+
+    summary:
+      "Il est le premier à employer le terme de « sociologie » et affirme la possibilité d'une science positive des faits sociaux. Son positivisme repose sur l'observation des faits à l'écart de tout jugement de valeur et l'énoncé de lois, distinguant la dynamique sociale (l'évolution des sociétés) de la statique sociale (les conditions de leur ordre).",
+
+    constellation: "durkheimien",
+    consensus: 5,
+    classificationNote:
+      "Comte est unanimement présenté comme le fondateur du positivisme sociologique et l'inventeur du terme « sociologie ». Il est régulièrement identifié comme le précurseur direct du programme durkheimien de sociologie comme science des faits sociaux, bien que sa visée téléologique et moraliste soit davantage critiquée par la suite.",
+    sources: [
+      "Devinant, 1999, Introduction à la sociologie",
+      "Lallement, 2017, Histoire des idées sociologiques",
+    ],
+  },
+
+  {
+    id: "marx",
+    name: "Karl Marx",
+    school: "Marxisme (fondateur)",
+    period: "1818–1883",
+    birthYear: 1818,
+    deathYear: 1883,
+    x: 50,
+    y: 350,
+    color: "#7B241C",
+
+    concepts: ["Lutte des classes", "Infrastructure et superstructure", "Aliénation"],
+
+    works: [
+      "Le Capital (1867)",
+      "Manifeste du parti communiste (1848, avec F. Engels)",
+    ],
+
+    influences: ["Saint-Simon"],
+    heirs: ["althusser", "henri-lefebvre", "nicos-poulantzas"],
+
+    summary:
+      "Il soutient que chaque société est intrinsèquement liée à un système économique, et que la vie sociale entière est la conséquence de l'activité économique : les hommes « sont » en fonction de ce qu'ils produisent et de comment ils le produisent. Sa pensée holiste, dans la continuité de Saint-Simon, fait de la lutte des classes le moteur du changement historique.",
+
+    constellation: "la-sociologie-marxiste",
+    consensus: 5,
+    classificationNote:
+      "Marx est unanimement reconnu comme un précurseur majeur de la sociologie, bien que son œuvre relève autant de la philosophie et de l'économie politique. L'Atlas le rattache à la constellation marxiste comme figure fondatrice, dont Althusser, Poulantzas et Lefebvre développent chacun une lecture sociologique distincte.",
+    sources: [
+      "Lallement, 2017, Histoire des idées sociologiques",
+      "Dollo et al., 2015, Les grandes notions de la sociologie",
+    ],
+  },
+
+  {
+    id: "erich-fromm",
+    name: "Erich Fromm",
+    school: "École de Francfort (Première génération, freudo-marxisme)",
+    period: "1900–1980",
+    birthYear: 1900,
+    deathYear: 1980,
+    x: 1420,
+    y: 60,
+    color: "#616A6B",
+
+    concepts: ["Caractère social", "Aliénation psychologique"],
+
+    works: ["La Peur de la liberté (1941)", "L'Art d'aimer (1956)"],
+
+    influences: ["Marx", "Freud"],
+    heirs: [],
+
+    summary:
+      "Membre de la première École de Francfort, il propose une synthèse freudo-marxiste étudiant la domination sous l'angle de la rationalisation de la société, qu'il considère comme une forme d'aliénation. Il s'intéresse en particulier à la manière dont le caractère social des individus s'ajuste aux structures économiques de leur époque.",
+
+    constellation: "la-theorie-critique",
+    consensus: 4,
+    classificationNote:
+      "Fromm est identifié comme l'un des fondateurs de l'école « freudo-marxiste » de Francfort aux côtés de Marcuse, aujourd'hui disparue en tant que courant organisé mais dont Habermas revendique encore l'héritage partiel.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+  },
+
+  {
+    id: "herbert-marcuse",
+    name: "Herbert Marcuse",
+    school: "École de Francfort (Première génération, freudo-marxisme)",
+    period: "1898–1979",
+    birthYear: 1898,
+    deathYear: 1979,
+    x: 1480,
+    y: 60,
+    color: "#707B7C",
+
+    concepts: ["Homme unidimensionnel", "Désublimation répressive"],
+
+    works: ["Eros et Civilisation (1955)", "L'Homme unidimensionnel (1964)"],
+
+    influences: ["Marx", "Freud"],
+    heirs: [],
+
+    summary:
+      "Second grand représentant du freudo-marxisme francfortois, il théorise la « désublimation répressive » par laquelle la société de consommation neutralise le potentiel critique du désir en l'intégrant à la logique marchande, produisant un « homme unidimensionnel » privé de sa capacité de contestation.",
+
+    constellation: "la-theorie-critique",
+    consensus: 4,
+    classificationNote:
+      "Marcuse est identifié, aux côtés de Fromm, comme l'un des fondateurs de l'école freudo-marxiste de Francfort, aujourd'hui disparue en tant que courant organisé.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+  },
+
+  {
+    id: "ann-oakley",
+    name: "Ann Oakley",
+    school: "Féminisme (sociologie du genre)",
+    period: "1944–présent",
+    birthYear: 1944,
+    deathYear: null,
+    x: 250,
+    y: 750,
+    color: "#880E4F",
+
+    concepts: ["Distinction sexe/genre", "Sociologie du travail domestique"],
+
+    works: ["Sex, Gender and Society (1972)", "The Sociology of Housework (1974)"],
+
+    influences: [],
+    heirs: [],
+
+    summary:
+      "Sociologue britannique, elle met en circulation dès 1972 la distinction moderne entre sexe (biologique) et genre (socialement construit), fondatrice pour l'ensemble des études de genre ultérieures. Ses enquêtes sur le travail domestique documentent empiriquement la persistance de la répartition inégale des tâches malgré l'entrée massive des femmes sur le marché du travail.",
+
+    constellation: "le-constructivisme-social",
+    consensus: 4,
+    classificationNote:
+      "Oakley est identifiée comme celle qui met en circulation aux États-Unis le terme de genre dans son acception sociologique moderne à partir de 1972, fondation conceptuelle du champ des études de genre.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+
+  {
+    id: "judith-butler",
+    name: "Judith Butler",
+    school: "Féminisme (théorie queer)",
+    period: "1956–présent",
+    birthYear: 1956,
+    deathYear: null,
+    x: 320,
+    y: 800,
+    color: "#AD1457",
+
+    concepts: ["Performativité du genre"],
+
+    works: ["Gender Trouble (1990)", "Bodies That Matter (1993)"],
+
+    influences: [],
+    heirs: [],
+
+    summary:
+      "Théoricienne américaine, elle est l'une des tenantes les plus radicales des gender studies en soutenant le caractère performatif du genre : celui-ci ne serait pas l'expression d'une identité préexistante, mais constituerait l'identité qu'il est censé exprimer, par la répétition d'actes socialement codifiés.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 4,
+    classificationNote:
+      "Butler est universellement reconnue comme l'une des figures les plus radicales de la théorie du genre contemporaine ; sa thèse de la performativité a suscité des critiques marquées de la part de sociologues français comme Pierre Bourdieu et Nicole-Claude Mathieu, auxquelles elle a explicitement répondu.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+
+  {
+    id: "luc-boltanski",
+    name: "Luc Boltanski",
+    school: "Pragmatisme / sociologie de la critique",
+    period: "1940–présent",
+    birthYear: 1940,
+    deathYear: null,
+    x: 700,
+    y: 800,
+    color: "#004D40",
+
+    concepts: ["Régimes de justification", "Sociologie de la critique"],
+
+    works: [
+      "De la justification (1991, avec L. Thévenot)",
+      "Le Nouvel Esprit du capitalisme (1999, avec È. Chiapello)",
+    ],
+
+    influences: ["bourdieu", "Schütz"],
+    heirs: [],
+
+    summary:
+      "Ancien collaborateur de Bourdieu, il initie avec Laurent Thévenot le paradigme pragmatique centré sur les pratiques situées et les compétences critiques ordinaires des acteurs, en rupture avec la sociologie critique bourdieusienne du dévoilement. Il développe ensuite une sociologie de la critique visant à décrypter les mécanismes de justification mobilisés par les individus en situation de litige.",
+
+    constellation: "pragmatisme",
+    consensus: 4,
+    classificationNote:
+      "Boltanski est identifié comme le co-fondateur, avec Thévenot, du paradigme pragmatique en rupture explicite avec la sociologie critique de Bourdieu, dont il fut pourtant un proche collaborateur.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+
+  {
+    id: "laurent-thevenot",
+    name: "Laurent Thévenot",
+    school: "Pragmatisme / économie des conventions",
+    period: "1949–présent",
+    birthYear: 1949,
+    deathYear: null,
+    x: 770,
+    y: 830,
+    color: "#00695C",
+
+    concepts: ["Régimes d'engagement", "Cités (économies de la grandeur)"],
+
+    works: [
+      "De la justification (1991, avec L. Boltanski)",
+      "L'Action au pluriel (2006)",
+    ],
+
+    influences: ["luc-boltanski", "Schütz"],
+    heirs: [],
+
+    summary:
+      "Sociologue et économiste, il initie avec Luc Boltanski la sociologie pragmatique, qu'il prolonge par une théorie des régimes d'engagement décrivant les différentes manières dont les personnes s'ajustent à autrui et aux choses selon les situations, alternant approches macro et microsociologiques.",
+
+    constellation: "pragmatisme",
+    consensus: 4,
+    classificationNote:
+      "Thévenot est identifié comme le co-fondateur, avec Boltanski, du paradigme pragmatique en sociologie française contemporaine.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+
+  {
+    id: "alain-touraine",
+    name: "Alain Touraine",
+    school: "Actionnisme",
+    period: "1925–2023",
+    birthYear: 1925,
+    deathYear: 2023,
+    x: 550,
+    y: 900,
+    color: "#E65100",
+
+    concepts: ["Historicité", "Mouvement social", "Intervention sociologique"],
+
+    works: [
+      "Sociologie de l'action (1965)",
+      "La Voix et le Regard (1978)",
+      "Le Retour de l'acteur (1984)",
+    ],
+
+    influences: [],
+    heirs: [],
+
+    summary:
+      "Fondateur de l'actionnisme, il récuse l'idée que l'organisation sociale préexiste à l'action sociale et place les mouvements sociaux au centre de l'analyse, comme révélateurs des rapports sociaux fondamentaux. Il développe la méthode de l'intervention sociologique, dans laquelle le sociologue informe les acteurs pour qu'ils prennent conscience d'eux-mêmes plutôt que de se contenter de les observer.",
+
+    constellation: "pont",
+    consensus: 5,
+    classificationNote:
+      "Touraine est unanimement présenté comme le fondateur de l'actionnisme et de la sociologie française des mouvements sociaux de l'après-guerre. Il juge lui-même la sociologie classique de Weber, Marx et Durkheim inadaptée à l'étude des sociétés contemporaines, trop marquée par le paradigme industriel.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+
+  {
+    id: "cooley",
+    name: "Charles Horton Cooley",
+    school: "École de Chicago (fondatrice)",
+    period: "1864–1929",
+    birthYear: 1864,
+    deathYear: 1929,
+    x: 480,
+    y: 60,
+    color: "#455A64",
+
+    concepts: ["Groupes primaires", "Looking-glass self"],
+
+    works: ["Human Nature and the Social Order (1902)"],
+
+    influences: [],
+    heirs: ["mead"],
+
+    summary:
+      "Théoricien des groupes, il distingue les groupes primaires (comme la famille) des groupes secondaires, et refuse toute hiérarchie entre société et individu : pour lui, les deux naissent ensemble et se constituent mutuellement. Son concept de looking-glass self annonce les développements ultérieurs de l'interactionnisme symbolique.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 4,
+    classificationNote:
+      "Cooley est identifié comme l'un des tout premiers artisans de l'interactionnisme au sein de la première école de Chicago, aux côtés de George Herbert Mead, qui s'inspirera abondamment de son œuvre.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+
+  {
+    id: "mead",
+    name: "George Herbert Mead",
+    school: "École de Chicago (fondatrice) / interactionnisme naissant",
+    period: "1863–1931",
+    birthYear: 1863,
+    deathYear: 1931,
+    x: 550,
+    y: 90,
+    color: "#546E7A",
+
+    concepts: ["Autrui généralisé", "Soi (Je/Moi)"],
+
+    works: ["Mind, Self and Society (1934, posthume)"],
+
+    influences: ["cooley"],
+    heirs: ["herbert-blumer"],
+
+    summary:
+      "S'inspirant abondamment de Cooley, il invente le concept d'« autrui généralisé », figure idéelle rassemblant les valeurs et normes de comportement portées par une communauté, qui sert de guide à l'action individuelle. Il propose une théorie de la socialisation fondée sur l'idée que l'individu se forme au cours de ses interactions avec ses groupes d'appartenance, notamment par le langage et l'adoption des rôles d'autrui.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 5,
+    classificationNote:
+      "Mead est unanimement considéré comme le père fondateur de l'interactionnisme symbolique, dont Blumer reprendra et systématisera l'héritage sous ce nom quelques années après sa mort.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+
+  {
+    id: "robert-park",
+    name: "Robert E. Park",
+    school: "École de Chicago (fondatrice, écologie urbaine)",
+    period: "1864–1944",
+    birthYear: 1864,
+    deathYear: 1944,
+    x: 420,
+    y: 100,
+    color: "#37474F",
+
+    concepts: ["Écologie urbaine", "Désorganisation sociale"],
+
+    works: [
+      "Introduction to the Science of Sociology (1921, avec E. Burgess)",
+      "The City (1925, avec E. Burgess)",
+    ],
+
+    influences: [],
+    heirs: [],
+
+    summary:
+      "Il décrit le système social comme un ensemble d'éléments et de forces à l'image du cosmos, où le « règne humain » et le « règne technique » se confrontent. Avec Burgess, il passe la ville de Chicago au peigne fin pour expliquer son évolution en termes de forces et de vagues, notamment migratoires, dépassant la simple description urbanistique grâce à leur théorie de la désorganisation sociale.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 4,
+    classificationNote:
+      "Park est identifié comme l'une des deux grandes figures fondatrices de l'écologie urbaine de la première école de Chicago, indissociable de son collaborateur Ernest Burgess. L'Atlas le rattache à la constellation interactionniste plutôt que de créer une constellation dédiée, tout en assumant l'hétérogénéité interne de l'école de Chicago entre son aile écologique (Park, Burgess) et son aile interactionniste (Mead, Cooley, Blumer).",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+
+  {
+    id: "burgess",
+    name: "Ernest W. Burgess",
+    school: "École de Chicago (fondatrice, écologie urbaine)",
+    period: "1886–1966",
+    birthYear: 1886,
+    deathYear: 1966,
+    x: 490,
+    y: 130,
+    color: "#607D8B",
+
+    concepts: ["Modèle des zones concentriques"],
+
+    works: [
+      "Introduction to the Science of Sociology (1921, avec R. Park)",
+      "The City (1925, avec R. Park)",
+    ],
+
+    influences: [],
+    heirs: [],
+
+    summary:
+      "Avec Robert Park, il élabore le modèle des zones concentriques expliquant l'expansion des villes en anneaux successifs depuis le centre des affaires, chaque zone se caractérisant par des usages du sol, des groupes socioéconomiques et des taux de désorganisation sociale distincts.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 4,
+    classificationNote:
+      "Burgess est identifié comme l'autre grande figure fondatrice de l'écologie urbaine de la première école de Chicago, indissociable de son collaborateur Robert Park.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+
+  {
+    id: "lazarsfeld",
+    name: "Paul Lazarsfeld",
+    school: "Empirisme quantitativiste (Columbia)",
+    period: "1901–1976",
+    birthYear: 1901,
+    deathYear: 1976,
+    x: 1050,
+    y: 800,
+    color: "#6D4C41",
+
+    concepts: ["Recherche administrative", "Analyse quantitative des effets médiatiques"],
+
+    works: [
+      "The People's Choice (1944)",
+      "Personal Influence (1955, avec E. Katz)",
+    ],
+
+    influences: [],
+    heirs: [],
+
+    summary:
+      "Sociologue américain d'origine autrichienne, il développe à l'université de Columbia un empirisme quantitativiste centré sur les techniques d'enquête et l'analyse statistique des effets des médias sur la société, contribuant notamment au développement de la sociologie électorale.",
+
+    constellation: "fonctionnalisme",
+    consensus: 4,
+    classificationNote:
+      "Lazarsfeld est identifié comme la figure de proue de l'empirisme quantitativiste de l'université de Columbia, régulièrement mis en tension avec le fonctionnalisme mertonien pour son détachement supposé de toute théorisation.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
   },
 ];

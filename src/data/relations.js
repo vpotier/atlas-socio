@@ -307,4 +307,24 @@ export const relations = [
       "Giddens reproche au structuralisme la trop grande passivité qu'il accorde à l'individu, et développe la théorie de la structuration précisément pour dépasser cette limite tout en conservant le concept de structure.",
     sources: ["Giddens, 1987, La Constitution de la société"],
   },
+  {
+    source: "weber",
+    target: "raymond-boudon",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Boudon se revendique explicitement héritier de l'individualisme méthodologique wébérien, qu'il systématise et formalise pour en faire le socle de sa propre sociologie.",
+    sources: ["Boudon, 1979, La Logique du social"],
+  },
+  {
+    source: "bourdieu",
+    target: "lazega",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Lazega mobilise la notion de capital social héritée de Bourdieu, tout en la reformulant dans un cadre structural de réseaux plutôt que de champs, ce qui l'éloigne partiellement de la théorie des champs bourdieusienne.",
+    sources: ["Lazega, 2006, Réseaux sociaux et structures relationnelles"],
+  },
 ];

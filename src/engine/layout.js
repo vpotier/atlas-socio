@@ -2,11 +2,11 @@ import * as d3 from "d3";
 
 // Espace de travail utilisé pendant la simulation (large pour laisser
 // aux constellations la place de se répartir sans se chevaucher).
-const SIM_WIDTH = 2600;
-const SIM_HEIGHT = 1700;
+const SIM_WIDTH = 2000;
+const SIM_HEIGHT = 1300;
 
 // Marge laissée autour du contenu final calculé.
-const PADDING = 160;
+const PADDING = 120;
 
 // Calcule les positions des auteurs et des concepts avec un algorithme
 // force-directed : les auteurs liés se rapprochent, les nœuds (et leurs
@@ -23,7 +23,7 @@ export function computeLayout(authors, concepts, relations) {
   ];
 
   const ringRadius =
-    Math.min(SIM_WIDTH, SIM_HEIGHT) / 2 - 120;
+    Math.min(SIM_WIDTH, SIM_HEIGHT) / 2 - 100;
 
   const constellationCenters = {};
 

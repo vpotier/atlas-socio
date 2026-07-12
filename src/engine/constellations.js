@@ -55,4 +55,8 @@ export const constellations = {
     label: "Structuralisme (auteurs-ponts)",
     color: "#34495E",
   },
+  pragmatisme: {
+    label: "Pragmatisme / sociologie de la critique",
+    color: "#004D40",
+  },
 };

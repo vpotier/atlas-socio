@@ -267,4 +267,44 @@ export const relations = [
       "Tout en partageant l'intérêt de Latour pour les réseaux techniques et la matérialité, Star nuance l'ANT en y réintroduisant l'étude des exclus, des échecs d'alignement et de la souffrance silencieuse causée par les standards rigides.",
     sources: ["Star, 2010, Infrastructure and Ethnography"],
   },
+  {
+    source: "levi-strauss",
+    target: "althusser",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Le structuralisme lévi-straussien prend une connotation marxiste avec Althusser, qui l'applique à la reproduction des rapports sociaux plutôt qu'aux systèmes de parenté ou aux mythes.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "althusser",
+    target: "nicos-poulantzas",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Poulantzas se présente explicitement comme structuraliste marxiste dans la filiation directe d'Althusser, dont il reprend le concept de reproduction des rapports de classe pour l'appliquer à l'analyse de l'État.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "levi-strauss",
+    target: "bourdieu",
+    type: "tension",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Bourdieu se démarque explicitement de l'anthropologie structurale de Lévi-Strauss en considérant que les représentations mentales des agents ne relèvent pas toutes de systèmes structuraux complexes, mais peuvent s'interpréter comme relevant d'un sens pratique non réfléchi.",
+    sources: ["Accardo & Corcuff, 1989, La sociologie de Bourdieu"],
+  },
+  {
+    source: "levi-strauss",
+    target: "anthony-giddens",
+    type: "tension",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Giddens reproche au structuralisme la trop grande passivité qu'il accorde à l'individu, et développe la théorie de la structuration précisément pour dépasser cette limite tout en conservant le concept de structure.",
+    sources: ["Giddens, 1987, La Constitution de la société"],
+  },
 ];

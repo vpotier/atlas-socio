@@ -1,5 +1,25 @@
 import * as d3 from "d3";
 
+// Générateur pseudo-aléatoire déterministe (seed fixe) : garantit que le
+// layout produit exactement le même résultat à chaque chargement, au
+// lieu de dépendre de Math.random() qui change à chaque reload.
+function createSeededRandom(seed) {
+  let s = seed;
+
+  return function () {
+    s |= 0;
+    s = (s + 0x6d2b79f5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+const random = createSeededRandom(42);
+
+export const CANVAS_WIDTH = 1800;
+export const CANVAS_HEIGHT = 950;
+
 // Espace de travail utilisé pendant la simulation (large pour laisser
 // aux constellations la place de se répartir sans se chevaucher).
 const SIM_WIDTH = 2000;
@@ -41,8 +61,8 @@ export function computeLayout(authors, concepts, relations) {
     id: a.id,
     kind: "author",
     constellation: a.constellation,
-    x: center.x + (Math.random() - 0.5) * 300,
-    y: center.y + (Math.random() - 0.5) * 300,
+    x: center.x + (random() - 0.5) * 300,
+    y: center.y + (random() - 0.5) * 300,
   }));
 
   const authorConstellation = new Map(
@@ -55,8 +75,8 @@ export function computeLayout(authors, concepts, relations) {
     labelLength: c.label.length,
     constellation:
       authorConstellation.get(c.authors[0]) ?? null,
-    x: center.x + (Math.random() - 0.5) * 300,
-    y: center.y + (Math.random() - 0.5) * 300,
+    x: center.x + (random() - 0.5) * 300,
+    y: center.y + (random() - 0.5) * 300,
   }));
 
   const nodes = [...authorNodes, ...conceptNodes];

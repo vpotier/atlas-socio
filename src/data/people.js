@@ -185,4 +185,9 @@ export const people = {
     deathYear: 1990,
   },
   Gramsci: { fullName: "Antonio Gramsci", birthYear: 1891, deathYear: 1937 },
+  Saussure: {
+    fullName: "Ferdinand de Saussure",
+    birthYear: 1857,
+    deathYear: 1913,
+  },
 };

@@ -204,7 +204,6 @@ export default function Graph({
       minScale={0.2}
       maxScale={3}
       centerOnInit
-      centerZoomedOut
     >
       <TransformComponent>
         <svg

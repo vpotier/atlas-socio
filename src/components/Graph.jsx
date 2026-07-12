@@ -198,12 +198,13 @@ export default function Graph({
   };
 
   return (
-    <TransformWrapper
+   <TransformWrapper
       ref={transformRef}
       initialScale={0.55}
       minScale={0.2}
       maxScale={3}
       centerOnInit
+      centerZoomedOut
     >
       <TransformComponent>
         <svg

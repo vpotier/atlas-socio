@@ -112,7 +112,7 @@ export function computeLayout(authors, concepts, relations) {
           l.kind === "concept-link" ? 95 : 190
         )
         .strength((l) =>
-          l.kind === "concept-link" ? 0.9 : 0.35
+          l.kind === "concept-link" ? 0.9 : 0.5
         )
     )
     .force("charge", d3.forceManyBody().strength(-420))
@@ -136,7 +136,7 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.x : center.x;
         })
-        .strength(0.1)
+        .strength(0.6)
     )
     .force(
       "clusterY",
@@ -145,7 +145,7 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.y : center.y;
         })
-        .strength(0.1)
+        .strength(0.6)
     )
     .stop();
 

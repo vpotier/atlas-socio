@@ -953,4 +953,68 @@ export const authors = [
       "Corcuff, 2007, Les nouvelles sociologies",
     ],
   },
+  {
+    id: "levi-strauss",
+    name: "Claude Lévi-Strauss",
+    school: "Structuralisme (fondateur)",
+    period: "1908–2009",
+    birthYear: 1908,
+    deathYear: 2009,
+    x: 350,
+    y: 300,
+    color: "#34495E",
+
+    concepts: ["Structure sociale", "Mythème", "Gustème"],
+
+    works: [
+      "Les Structures élémentaires de la parenté (1949)",
+      "Anthropologie structurale (1958)",
+    ],
+
+    influences: ["Saussure"],
+    heirs: ["Althusser", "bourdieu", "anthony-giddens"],
+
+    summary:
+      "Anthropologue français, il initie le mouvement structuraliste en sciences sociales en s'inspirant du linguiste Ferdinand de Saussure. Il considère que les sociétés sont composées de sous-structures cachées et immuables qui assurent la cohérence des systèmes sociaux, qu'il décode aussi bien dans les systèmes de parenté que dans les mythes.",
+
+    constellation: "structuralisme",
+    consensus: 4,
+    classificationNote:
+      "Le cours de référence (atelier doctoral, d'après Lallement 2017 et Dollo et al. 2015) regroupe sous un même chapitre \"Structuralisme\" des auteurs que l'Atlas répartit par ailleurs dans trois constellations distinctes (bourdieusien, sociologie marxiste, théorie de la structuration). Plutôt que de fusionner ces constellations, l'Atlas retient Lévi-Strauss (et Althusser) comme auteurs-ponts, reliés par des relations explicites aux figures de chacune des trois, pour représenter cette filiation commune sans effacer les divergences réelles entre elles.",
+    sources: [
+      "Lallement, 2017, Histoire des idées sociologiques",
+      "Dollo et al., 2015, Les grandes notions de la sociologie",
+    ],
+  },
+
+  {
+    id: "althusser",
+    name: "Louis Althusser",
+    school: "Structuralisme marxiste",
+    period: "1918–1990",
+    birthYear: 1918,
+    deathYear: 1990,
+    x: 150,
+    y: 250,
+    color: "#5D6D7E",
+
+    concepts: ["Idéologie", "Reproduction des rapports sociaux"],
+
+    works: ["Pour Marx (1965)", "Lire le Capital (1965)"],
+
+    influences: ["levi-strauss", "Marx"],
+    heirs: ["nicos-poulantzas"],
+
+    summary:
+      "Philosophe français, il donne au structuralisme naissant une connotation marxiste en soutenant qu'aucune société ne dure dans l'histoire sans reproduire les conditions matérielles et sociales de son existence. Il développe le concept d'idéologie structurée pour expliquer le maintien des classes dominées dans leur position d'infériorité.",
+
+    constellation: "structuralisme",
+    consensus: 4,
+    classificationNote:
+      "Althusser est identifié par le cours de référence comme le passeur entre le structuralisme lévi-straussien et sa déclinaison marxiste, incarnée ensuite par Poulantzas. L'Atlas le retient comme auteur-pont plutôt que de l'inclure directement dans la constellation marxiste, pour préserver la lisibilité de la filiation intellectuelle structuraliste.",
+    sources: [
+      "Lallement, 2017, Histoire des idées sociologiques",
+      "Dollo et al., 2015, Les grandes notions de la sociologie",
+    ],
+  },
 ];

@@ -198,10 +198,10 @@ export default function Graph({
   };
 
   return (
-  <TransformWrapper
+    <TransformWrapper
       ref={transformRef}
-      initialScale={0.5}
-      minScale={0.15}
+      initialScale={0.55}
+      minScale={0.2}
       maxScale={3}
       centerOnInit
       centerZoomedOut
@@ -212,7 +212,7 @@ export default function Graph({
           width={layout.width}
           height={layout.height}
         >
-          <Background />
+          <Background width={layout.width} height={layout.height} />
 
           <defs>
             <marker

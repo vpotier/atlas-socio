@@ -327,4 +327,100 @@ export const relations = [
       "Lazega mobilise la notion de capital social héritée de Bourdieu, tout en la reformulant dans un cadre structural de réseaux plutôt que de champs, ce qui l'éloigne partiellement de la théorie des champs bourdieusienne.",
     sources: ["Lazega, 2006, Réseaux sociaux et structures relationnelles"],
   },
+  {
+    source: "comte",
+    target: "durkheim",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Durkheim prolonge et systématise le projet positiviste de Comte, en faisant du fait social l'objet d'une science positive rigoureuse, débarrassée de la visée téléologique et moraliste du comtisme.",
+    sources: ["Devinant, 1999, Introduction à la sociologie"],
+  },
+  {
+    source: "marx",
+    target: "henri-lefebvre",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Lefebvre développe une lecture humaniste et hétérodoxe du marxisme, prolongeant l'analyse de l'aliénation de Marx tout en la déplaçant vers la vie quotidienne et l'espace urbain.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "marx",
+    target: "nicos-poulantzas",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Poulantzas applique et prolonge l'analyse marxienne des rapports de classe à la théorie structuraliste de l'État, en se réclamant explicitement de l'héritage marxiste.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "marx",
+    target: "althusser",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Althusser propose une relecture structuraliste et anti-humaniste de l'œuvre de Marx, dont l'ambition affichée est de revenir à la rigueur scientifique du texte marxien contre ses interprétations humanistes.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "max-horkheimer",
+    target: "erich-fromm",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Fromm est un membre fondateur de l'Institut de recherche sociale dirigé par Horkheimer, avec lequel il élabore le programme freudo-marxiste de l'École de Francfort.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+  },
+  {
+    source: "max-horkheimer",
+    target: "herbert-marcuse",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Marcuse rejoint l'Institut de recherche sociale dirigé par Horkheimer et participe à l'élaboration du programme freudo-marxiste critiquant la rationalisation de la domination.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+  },
+  {
+    source: "ann-oakley",
+    target: "judith-butler",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Butler s'inscrit dans la filiation de la distinction sexe/genre mise en circulation par Oakley, tout en la radicalisant par la thèse de la performativité, qui remet en cause jusqu'à la stabilité du sexe biologique lui-même.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+  {
+    source: "bourdieu",
+    target: "judith-butler",
+    type: "tension",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Bourdieu critique la thèse de la performativité du genre de Butler ; celle-ci lui répond que le genre n'est pas un artifice que l'on pourrait assumer ou enlever à volonté, ni l'effet d'un simple choix individuel.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+  {
+    source: "erving-goffman",
+    target: "judith-butler",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "La théorie de la performativité du genre de Butler prolonge et radicalise l'approche dramaturgique de Goffman, en déplaçant la mise en scène de l'identité du registre de la présentation de soi vers celui de la construction performative du genre lui-même.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+  {
+    source: "peter-berger",
+    target: "ann-oakley",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
 ];

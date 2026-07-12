@@ -112,7 +112,7 @@ export function computeLayout(authors, concepts, relations) {
           l.kind === "concept-link" ? 95 : 190
         )
         .strength((l) =>
-          l.kind === "concept-link" ? 0.9 : 0.2
+          l.kind === "concept-link" ? 0.9 : 0.35
         )
     )
     .force("charge", d3.forceManyBody().strength(-420))

@@ -90,7 +90,7 @@ export const authors = [
       "Méditations pascaliennes",
     ],
 
-    influences: ["Durkheim", "Weber", "Marx"],
+    influences: ["Durkheim", "Weber", "Marx", "levi-strauss"],
     heirs: ["Lahire", "Boltanski", "Wacquant"],
 
     summary:

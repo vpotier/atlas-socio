@@ -1,43 +1,37 @@
+// Fond en grille tuilée (motif SVG répété), étendu largement au-delà
+// du contenu réel pour donner une impression de carte "infinie" quand
+// on drag librement au-delà des bords du graphe.
 export default function Background({ width, height }) {
   const step = 50;
-  const vLines = Math.ceil(width / step) + 1;
-  const hLines = Math.ceil(height / step) + 1;
+  const margin = 4000;
 
   return (
     <g>
-      {/* Fond */}
+      <defs>
+        <pattern
+          id="grid-pattern"
+          width={step}
+          height={step}
+          patternUnits="userSpaceOnUse"
+        >
+          <rect width={step} height={step} fill="#f8f8f5" />
+
+          <path
+            d={`M ${step} 0 L 0 0 0 ${step}`}
+            fill="none"
+            stroke="#ece9e2"
+            strokeWidth="1"
+          />
+        </pattern>
+      </defs>
+
       <rect
-        x="0"
-        y="0"
-        width={width}
-        height={height}
-        fill="#f8f8f5"
+        x={-margin}
+        y={-margin}
+        width={width + margin * 2}
+        height={height + margin * 2}
+        fill="url(#grid-pattern)"
       />
-
-      {/* Grille légère */}
-      {[...Array(vLines)].map((_, i) => (
-        <line
-          key={"v" + i}
-          x1={i * step}
-          y1="0"
-          x2={i * step}
-          y2={height}
-          stroke="#ece9e2"
-          strokeWidth="1"
-        />
-      ))}
-
-      {[...Array(hLines)].map((_, i) => (
-        <line
-          key={"h" + i}
-          x1="0"
-          y1={i * step}
-          x2={width}
-          y2={i * step}
-          stroke="#ece9e2"
-          strokeWidth="1"
-        />
-      ))}
     </g>
   );
 }

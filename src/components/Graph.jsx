@@ -207,9 +207,10 @@ export default function Graph({
       limitToBounds={false}
     >
       <TransformComponent>
-        <svg
+       <svg
           width={layout.width}
           height={layout.height}
+          style={{ overflow: "visible" }}
         >
           <Background width={layout.width} height={layout.height} />
 

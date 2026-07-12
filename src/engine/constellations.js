@@ -51,4 +51,8 @@ export const constellations = {
     label: "Théorie de la structuration",
     color: "#B7950B",
   },
+  structuralisme: {
+    label: "Structuralisme (auteurs-ponts)",
+    color: "#34495E",
+  },
 };

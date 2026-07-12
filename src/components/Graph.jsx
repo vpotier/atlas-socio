@@ -205,7 +205,6 @@ export default function Graph({
       maxScale={3}
       centerOnInit
       centerZoomedOut
-      limitToBounds
     >
       <TransformComponent>
         <svg

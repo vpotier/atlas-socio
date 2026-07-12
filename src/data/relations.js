@@ -327,7 +327,7 @@ export const relations = [
       "Lazega mobilise la notion de capital social héritée de Bourdieu, tout en la reformulant dans un cadre structural de réseaux plutôt que de champs, ce qui l'éloigne partiellement de la théorie des champs bourdieusienne.",
     sources: ["Lazega, 2006, Réseaux sociaux et structures relationnelles"],
   },
-  {
+ {
     source: "comte",
     target: "durkheim",
     type: "heritage",
@@ -423,4 +423,99 @@ export const relations = [
     type: "dialogue",
     strength: 2,
     consensus: "moyen",
+    justification:
+      "La distinction opérée par Oakley entre sexe biologique et genre socialement construit s'inscrit dans la filiation du constructivisme social bergerien-luckmannien, bien qu'elle ne s'en revendique pas explicitement.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+  {
+    source: "luc-boltanski",
+    target: "laurent-thevenot",
+    type: "dialogue",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Boltanski et Thévenot co-fondent le paradigme pragmatique et co-écrivent De la justification, texte fondateur de la sociologie de la critique et des régimes de justification.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+  {
+    source: "bourdieu",
+    target: "luc-boltanski",
+    type: "tension",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Ancien collaborateur de Bourdieu, Boltanski rompt explicitement avec la sociologie critique du dévoilement pour fonder une sociologie pragmatique attentive aux compétences critiques ordinaires des acteurs.",
+    sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+  },
+  {
+    source: "alain-touraine",
+    target: "weber",
+    type: "tension",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Touraine juge la sociologie classique de Weber inadaptée à l'étude des sociétés contemporaines, trop corrélée au paradigme industriel, et lui oppose le retour de l'acteur et de l'historicité.",
+    sources: ["Touraine, 1984, Le Retour de l'acteur"],
+  },
+  {
+    source: "alain-touraine",
+    target: "marx",
+    type: "tension",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Touraine récuse l'idée marxienne que l'organisation sociale (les rapports de production) préexiste à l'action sociale, inversant la priorité au profit des mouvements sociaux comme producteurs de la société.",
+    sources: ["Touraine, 1984, Le Retour de l'acteur"],
+  },
+  {
+    source: "alain-touraine",
+    target: "durkheim",
+    type: "tension",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Touraine juge la sociologie classique de Durkheim inadaptée à l'étude des sociétés contemporaines, trop corrélée au paradigme industriel, et lui oppose le retour de l'acteur et de l'historicité.",
+    sources: ["Touraine, 1984, Le Retour de l'acteur"],
+  },
+  {
+    source: "cooley",
+    target: "mead",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Mead s'inspire abondamment de l'œuvre de Cooley sur les groupes primaires et le refus de toute hiérarchie entre société et individu pour élaborer sa propre théorie de la socialisation.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "robert-park",
+    target: "burgess",
+    type: "dialogue",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Park et Burgess co-écrivent les textes fondateurs de l'écologie urbaine de l'école de Chicago, notamment Introduction to the Science of Sociology (1921) et The City (1925).",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "mead",
+    target: "herbert-blumer",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Blumer, disciple direct de Mead à Chicago, forge le terme d'« interactionnisme symbolique » en 1937 pour désigner et systématiser l'héritage théorique de son maître.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "robert-k-merton",
+    target: "lazarsfeld",
+    type: "tension",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Merton critique l'empirisme quantitativiste de Lazarsfeld, qu'il juge trop détaché de toute théorisation, defendant à l'inverse une articulation étroite entre théorie et recherche empirique.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+];
 ];

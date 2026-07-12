@@ -190,4 +190,9 @@ export const people = {
     birthYear: 1857,
     deathYear: 1913,
   },
+  "Nicole-Claude Mathieu": {
+    fullName: "Nicole-Claude Mathieu",
+    birthYear: 1937,
+    deathYear: 2014,
+  },
 };

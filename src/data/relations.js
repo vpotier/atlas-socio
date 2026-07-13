@@ -517,4 +517,39 @@ export const relations = [
       "Merton critique l'empirisme quantitativiste de Lazarsfeld, qu'il juge trop détaché de toute théorisation, defendant à l'inverse une articulation étroite entre théorie et recherche empirique.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
   },
+  {
+    source: "mark-granovetter",
+    target: "zelizer",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Zelizer partage avec Granovetter le refus d'une conception purement utilitariste de l'action économique, tout en déplaçant l'analyse de l'encastrement structural vers l'encastrement culturel et moral des transactions.",
+    sources: ["Steiner, 1999, La sociologie économique"],
+  },
+  {
+    source: "bruno-latour",
+    target: "akrich",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Akrich codirige avec Latour et Callon l'ouvrage collectif Sociologie de la traduction, textes fondateurs, et contribue directement au développement du programme de l'acteur-réseau au sein du CSI.",
+    sources: [
+      "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
+    ],
+  },
+  {
+    source: "michel-callon",
+    target: "akrich",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Akrich codirige avec Callon et Latour l'ouvrage collectif Sociologie de la traduction, textes fondateurs, et contribue directement au développement du programme de l'acteur-réseau au sein du CSI.",
+    sources: [
+      "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
+    ],
+  },
+];
 ];

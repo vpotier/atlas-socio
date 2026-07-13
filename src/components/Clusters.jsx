@@ -1,8 +1,10 @@
 import { constellations } from "../engine/constellations";
 
 // Calcule un halo (cercle englobant) par constellation à partir des
-// positions réelles de ses auteurs, avec une marge de confort.
-export default function Clusters({ authors }) {
+// positions réelles de SES AUTEURS *ET* DE SES CONCEPTS, avec une marge
+// de confort — sinon un concept positionné plus loin que ses auteurs
+// déborde visuellement du halo censé le contenir.
+export default function Clusters({ authors, concepts }) {
   const groups = {};
 
   authors.forEach((author) => {
@@ -11,6 +13,16 @@ export default function Clusters({ authors }) {
     }
 
     groups[author.constellation].push(author);
+  });
+
+  concepts.forEach((concept) => {
+    if (!concept.constellation) return;
+
+    if (!groups[concept.constellation]) {
+      groups[concept.constellation] = [];
+    }
+
+    groups[concept.constellation].push(concept);
   });
 
   return (

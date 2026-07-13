@@ -1441,4 +1441,67 @@ export const authors = [
       "Lazarsfeld est identifié comme la figure de proue de l'empirisme quantitativiste de l'université de Columbia, régulièrement mis en tension avec le fonctionnalisme mertonien pour son détachement supposé de toute théorisation.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
   },
+  {
+    id: "zelizer",
+    name: "Viviana Zelizer",
+    school: "Sociologie économique / sociologie de l'argent",
+    period: "1946–présent",
+    birthYear: 1946,
+    deathYear: null,
+    x: 1300,
+    y: 380,
+    color: "#8E44AD",
+
+    concepts: ["Significations sociales de l'argent", "Travail relationnel"],
+
+    works: [
+      "The Social Meaning of Money (1994)",
+      "The Purchase of Intimacy (2005)",
+    ],
+
+    influences: ["mark-granovetter"],
+    heirs: [],
+
+    summary:
+      "Sociologue économique américaine d'origine argentine, elle démontre que l'argent n'est jamais un simple équivalent neutre et interchangeable, mais qu'il est socialement et moralement différencié selon les relations et les contextes dans lesquels il circule. Son concept de « travail relationnel » éclaire comment les individus articulent constamment relations intimes et transactions économiques, loin de la séparation étanche que postule l'économie standard entre sphère marchande et sphère affective.",
+
+    constellation: "l-interactionnisme-structural",
+    consensus: 4,
+    classificationNote:
+      "Zelizer est identifiée comme l'une des figures majeures de la nouvelle sociologie économique aux côtés de Granovetter, dont elle partage le refus d'une conception purement utilitariste de l'action économique, tout en insistant davantage sur la dimension culturelle et morale des échanges que sur leur seule structure relationnelle.",
+    sources: ["Steiner, 1999, La sociologie économique"],
+  },
+
+  {
+    id: "akrich",
+    name: "Madeleine Akrich",
+    school: "Théorie de l'acteur-réseau (ANT) / sociologie des techniques",
+    period: "1959–présent",
+    birthYear: 1959,
+    deathYear: null,
+    x: 1350,
+    y: 700,
+    color: "#1ABC9C",
+
+    concepts: ["Script (scénario technique)", "Inscription"],
+
+    works: [
+      "Sociologie de la traduction : textes fondateurs (2006, dir. avec M. Callon et B. Latour)",
+    ],
+
+    influences: ["bruno-latour", "michel-callon"],
+    heirs: [],
+
+    summary:
+      "Sociologue et ingénieure française, elle contribue à développer la théorie de l'acteur-réseau aux côtés de Callon et Latour, avec une attention particulière portée aux usagers des dispositifs techniques. Son concept de script (ou scénario) désigne la manière dont les concepteurs inscrivent dans les objets techniques eux-mêmes des représentations et des attentes vis-à-vis de leurs utilisateurs, orientant ainsi les usages possibles.",
+
+    constellation: "theorie-de-l-acteur-reseau-et-sts",
+    consensus: 4,
+    classificationNote:
+      "Akrich est identifiée comme une contributrice majeure du Centre de sociologie de l'innovation, qu'elle codirige avec Callon et Latour dans l'ouvrage fondateur de la sociologie de la traduction, en apportant une attention singulière à l'analyse des usagers absente des premiers travaux plus centrés sur les scientifiques et les ingénieurs.",
+    sources: [
+      "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
+    ],
+  },
+];
 ];

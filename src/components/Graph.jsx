@@ -32,13 +32,16 @@ export default function Graph({
     [layout]
   );
 
-  const concepts = useMemo(
+const concepts = useMemo(
     () =>
       rawConcepts.map((c) => ({
         ...c,
         ...layout.conceptPositions.get(c.id),
+        constellation:
+          authors.find((a) => a.id === c.authors[0])
+            ?.constellation ?? null,
       })),
-    [layout]
+    [layout, authors]
   );
 
   const selectedAuthor =
@@ -252,7 +255,7 @@ export default function Graph({
             </marker>
           </defs>
 
-          <Clusters authors={authors} />
+  <Clusters authors={authors} concepts={concepts} />
 
           {relations.map((relation, i) => {
             const source = getAuthor(

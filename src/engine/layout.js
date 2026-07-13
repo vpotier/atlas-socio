@@ -140,4 +140,166 @@ function computeConstellationCenters(authors, relations) {
 // relations qui traversent deux constellations différentes n'ont plus
 // qu'une influence très légère sur la position individuelle (l'essentiel
 // de leur effet passe désormais par le positionnement macro de l'étage 1).
-//
+// ---------------------------------------------------------------------
+export function computeLayout(authors, concepts, relations) {
+  const constellationCenters = computeConstellationCenters(
+    authors,
+    relations
+  );
+
+  const center = { x: SIM_WIDTH / 2, y: SIM_HEIGHT / 2 };
+
+  const authorConstellation = new Map(
+    authors.map((a) => [a.id, a.constellation])
+  );
+
+  const authorNodes = authors.map((a) => {
+    const c = constellationCenters[a.constellation] ?? center;
+
+    return {
+      id: a.id,
+      kind: "author",
+      constellation: a.constellation,
+      x: c.x + (random() - 0.5) * 150,
+      y: c.y + (random() - 0.5) * 150,
+    };
+  });
+
+  const conceptNodes = concepts.map((c) => {
+    const authorConst =
+      authorConstellation.get(c.authors[0]) ?? null;
+    const center2 = constellationCenters[authorConst] ?? center;
+
+    return {
+      id: `concept:${c.id}`,
+      kind: "concept",
+      labelLength: c.label.length,
+      constellation: authorConst,
+      x: center2.x + (random() - 0.5) * 150,
+      y: center2.y + (random() - 0.5) * 150,
+    };
+  });
+
+  const nodes = [...authorNodes, ...conceptNodes];
+
+  const links = [];
+
+  relations.forEach((r) => {
+    const sameConstellation =
+      authorConstellation.get(r.source) ===
+      authorConstellation.get(r.target);
+
+    links.push({
+      source: r.source,
+      target: r.target,
+      kind: "relation",
+      sameConstellation,
+    });
+  });
+
+  concepts.forEach((c) => {
+    c.authors.forEach((authorId) => {
+      links.push({
+        source: `concept:${c.id}`,
+        target: authorId,
+        kind: "concept-link",
+        sameConstellation: true,
+      });
+    });
+  });
+
+  const simulation = d3
+    .forceSimulation(nodes)
+    .force(
+      "link",
+      d3
+        .forceLink(links)
+        .id((d) => d.id)
+        .distance((l) => {
+          if (l.kind === "concept-link") return 95;
+          return l.sameConstellation ? 160 : 320;
+        })
+        .strength((l) => {
+          if (l.kind === "concept-link") return 0.9;
+          // Relation interne à une constellation : rapproche vraiment.
+          // Relation entre deux constellations différentes : influence
+          // très légère, la proximité macro est déjà gérée à l'étage 1.
+          return l.sameConstellation ? 0.35 : 0.04;
+        })
+    )
+    .force("charge", d3.forceManyBody().strength(-380))
+    .force(
+      "collide",
+      d3
+        .forceCollide()
+        .radius((d) =>
+          d.kind === "author"
+            ? 75
+            // Les labels de concepts s'affichent à droite du point ;
+            // on approxime leur largeur avec le nombre de caractères.
+            : 40 + Math.min(d.labelLength ?? 10, 26) * 3
+        )
+        .strength(0.9)
+    )
+    .force(
+      "clusterX",
+      d3
+        .forceX((d) => {
+          const c = constellationCenters[d.constellation];
+          return c ? c.x : center.x;
+        })
+        .strength(0.3)
+    )
+    .force(
+      "clusterY",
+      d3
+        .forceY((d) => {
+          const c = constellationCenters[d.constellation];
+          return c ? c.y : center.y;
+        })
+        .strength(0.3)
+    )
+    .stop();
+
+  simulation.tick(500);
+
+  // Recadrage : on calcule l'étendue réelle du résultat et on
+  // dimensionne le canevas final dessus, pour éliminer le vide
+  // et garder tout le monde visible.
+  const xs = nodes.map((n) => n.x);
+  const ys = nodes.map((n) => n.y);
+
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+
+  nodes.forEach((n) => {
+    n.x = n.x - minX + PADDING;
+    n.y = n.y - minY + PADDING;
+  });
+
+  const width = maxX - minX + PADDING * 2;
+  const height = maxY - minY + PADDING * 2;
+
+  const authorPositions = new Map();
+  const conceptPositions = new Map();
+
+  nodes.forEach((n) => {
+    if (n.kind === "author") {
+      authorPositions.set(n.id, { x: n.x, y: n.y });
+    } else {
+      conceptPositions.set(n.id.replace("concept:", ""), {
+        x: n.x,
+        y: n.y,
+      });
+    }
+  });
+
+  return {
+    authorPositions,
+    conceptPositions,
+    width,
+    height,
+  };
+}

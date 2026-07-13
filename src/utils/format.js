@@ -12,9 +12,11 @@ function formatWithDates(fullName, birthYear, deathYear) {
 }
 
 export function formatPerson(shortNameOrId) {
+  const lower = shortNameOrId.toLowerCase();
+
   const author =
     authors.find((a) => a.id === shortNameOrId) ||
-    authors.find((a) => a.name.endsWith(shortNameOrId));
+    authors.find((a) => a.name.toLowerCase().endsWith(lower));
 
   if (author) {
     return formatWithDates(
@@ -24,13 +26,15 @@ export function formatPerson(shortNameOrId) {
     );
   }
 
-  const person = people[shortNameOrId];
+  const personKey = Object.keys(people).find(
+    (key) => key.toLowerCase() === lower
+  );
 
-  if (person) {
+  if (personKey) {
     return formatWithDates(
-      person.fullName,
-      person.birthYear,
-      person.deathYear
+      people[personKey].fullName,
+      people[personKey].birthYear,
+      people[personKey].deathYear
     );
   }
 

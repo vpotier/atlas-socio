@@ -1504,4 +1504,3 @@ export const authors = [
     ],
   },
 ];
-];

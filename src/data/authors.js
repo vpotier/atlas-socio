@@ -1498,7 +1498,7 @@ export const authors = [
     constellation: "theorie-de-l-acteur-reseau-et-sts",
     consensus: 4,
     classificationNote:
-      "Akrich est identifiée comme une contributrice majeure du Centre de sociologie de l'innovation, qu'elle codirige avec Callon et Latour dans l'ouvrage fondateur de la sociologie de la traduction, en apportant une attention singulière à l'analyse des usagers absente des premiers travaux plus centrés sur les scientifiques et les ingénieurs.",
+      "Akrich est identifiée comme une contributrice majeure de la sociologie de l'innovation. Elle codirige avec Callon et Latour un ouvrage fondateur de la sociologie de la traduction, en apportant une attention singulière à l'analyse des usagers absente des premiers travaux plus centrés sur les scientifiques et les ingénieurs.",
     sources: [
       "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
     ],

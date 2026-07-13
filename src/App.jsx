@@ -22,12 +22,43 @@ export default function App() {
       );
     }
 
+    const closeButton = (
+      <button
+        onClick={() => setSelectedItem(null)}
+        style={{
+          position: "absolute",
+          top: 16,
+          right: 16,
+          border: "none",
+          background: "#eee",
+          borderRadius: "50%",
+          width: 28,
+          height: 28,
+          cursor: "pointer",
+          fontSize: 16,
+          lineHeight: "28px",
+          textAlign: "center",
+          color: "#555",
+        }}
+        aria-label="Fermer"
+        title="Fermer"
+      >
+        ×
+      </button>
+    );
+
     if (selectedItem.type === "author") {
       const a = selectedItem.data;
 
       return (
         <>
+          {closeButton}
+
           <h2>{a.name}</h2>
+
+          <p style={{ marginTop: -8, color: "#888" }}>
+            {a.period}
+          </p>
 
           <p>
             <strong>École</strong>
@@ -64,7 +95,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                <a
+                
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -102,7 +133,9 @@ export default function App() {
       const c = selectedItem.data;
 
       return (
-       <>
+        <>
+          {closeButton}
+
           <h2>{c.label}</h2>
 
           <p>{c.definition}</p>
@@ -129,6 +162,8 @@ export default function App() {
 
       return (
         <>
+          {closeButton}
+
           <h2>{labels[r.type]}</h2>
 
           <p>
@@ -191,7 +226,7 @@ export default function App() {
         }
       />
 
-  <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
+      <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
         <Graph
           selectedItem={selectedItem}
           setSelectedItem={setSelectedItem}
@@ -206,6 +241,7 @@ export default function App() {
           padding: 20,
           background: "#fafafa",
           overflowY: "auto",
+          position: "relative",
         }}
       >
         {renderSidebar()}

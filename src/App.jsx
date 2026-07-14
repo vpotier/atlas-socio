@@ -55,6 +55,7 @@ export default function App() {
     const closeButton = (
       <button
         onClick={() => setSelectedItem(null)}
+        className="icon-button"
         style={{
           position: "absolute",
           top: 16,
@@ -163,7 +164,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                <a
+                
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -394,6 +395,7 @@ export default function App() {
 
   return (
     <div
+      className="app-fade-in"
       style={{
         display: "flex",
         height: "100vh",
@@ -419,7 +421,8 @@ export default function App() {
       />
 
       <Legend />
-<div
+
+      <div
         style={{
           position: "absolute",
           bottom: 12,
@@ -434,13 +437,14 @@ export default function App() {
         }}
       >
         Par Victor Potier —{" "}
-        <a
+        
           href="mailto:victor.potier@univ-eiffel.fr"
           style={{ color: "var(--color-tardis)" }}
         >
           Me contacter
         </a>
       </div>
+
       <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
         <Graph
           selectedItem={selectedItem}
@@ -461,7 +465,20 @@ export default function App() {
           position: "relative",
         }}
       >
-        {renderSidebar()}
+        <div
+          key={
+            selectedItem
+              ? `${selectedItem.type}-${
+                  selectedItem.data.id ??
+                  selectedItem.data.label ??
+                  `${selectedItem.data.source}-${selectedItem.data.target}`
+                }`
+              : "empty"
+          }
+          className="sidebar-content"
+        >
+          {renderSidebar()}
+        </div>
       </aside>
     </div>
   );

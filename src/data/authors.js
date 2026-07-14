@@ -21,6 +21,7 @@ export const authors = [
 
     influences: ["Comte", "Saint-Simon"],
     heirs: ["Mauss", "Halbwachs", "Bourdieu"],
+    themes: ["Sociologie de la religion", "Sociologie de l'éducation et de la socialisation"],
 
     summary:
       "Fondateur de la sociologie française. Il explique les phénomènes sociaux par des faits sociaux extérieurs aux individus.",
@@ -56,6 +57,7 @@ export const authors = [
 
     influences: ["Nietzsche", "Rickert"],
     heirs: ["Aron", "Boudon"],
+    themes: ["Sociologie politique et de l'État", "Sociologie de la religion"],
 
     summary:
       "Fondateur de la sociologie compréhensive. Il cherche à comprendre le sens que les individus donnent à leurs actions.",
@@ -92,6 +94,7 @@ export const authors = [
 
     influences: ["Durkheim", "Weber", "Marx", "levi-strauss"],
     heirs: ["Lahire", "Boltanski", "Wacquant"],
+    themes: ["Sociologie de l'éducation et de la socialisation"],
 
     summary:
       "Il articule structures sociales et pratiques individuelles grâce aux notions d'habitus, de champ et de capitaux.",
@@ -126,6 +129,7 @@ export const authors = [
 
     influences: ["Durkheim", "Frazer"],
     heirs: ["Radcliffe-Brown", "talcott-parsons"],
+    themes: [],
 
     summary:
       "Anthropologue d'origine polonaise, il pose les bases du fonctionnalisme en postulant que chaque élément d'une culture répond à un besoin biologique ou psychologique humain fondamental. Sa méthode d'observation participante a profondément renouvelé l'analyse des institutions sociales.",
@@ -160,6 +164,7 @@ export const authors = [
 
     influences: ["Durkheim", "Weber", "Pareto"],
     heirs: ["robert-k-merton", "Alexander", "Luhmann"],
+    themes: [],
 
     summary:
       "Figure centrale de la sociologie américaine du XXe siècle, il élabore une théorie générale de l'action sociale à visée systémique et universelle. Son modèle AGIL formalise les quatre impératifs fonctionnels indispensables à l'équilibre de tout système social.",
@@ -198,6 +203,7 @@ export const authors = [
 
     influences: ["Durkheim", "talcott-parsons", "Sorokin"],
     heirs: ["Boudon", "Coleman"],
+    themes: ["Sociologie de la déviance"],
 
     summary:
       "Sociologue américain majeur, il assouplit le cadre fonctionnaliste parsonien en rejetant les postulats d'unité et de fonctionnalisme universel. Il introduit la distinction entre fonctions manifestes et latentes, et plaide pour des théories de moyenne portée.",
@@ -233,6 +239,7 @@ export const authors = [
 
     influences: ["Weber", "Simmel", "robert-k-merton"],
     heirs: ["Mohamed Cherkaoui", "Bernard Valade"],
+    themes: ["Sociologie de l'éducation et de la socialisation"],
 
     summary:
       "Chef de file de l'individualisme méthodologique en France, il démontre que les phénomènes collectifs résultent de l'agrégation d'actions individuelles. Il développe le concept d'effet pervers pour expliquer comment des choix rationnels produisent des résultats collectifs non intentionnels et souvent indésirables. Son approche défend une conception élargie de la rationalité, dite cognitive ou axiologique.",
@@ -267,6 +274,7 @@ export const authors = [
 
     influences: ["Weber", "robert-k-merton"],
     heirs: ["Peter Hedström"],
+    themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie économique"],
 
     summary:
       "Sociologue américain majeur, il formalise le passage du niveau micro-sociologique au niveau macro-sociologique à l'aide de sa célèbre « formule du bateau » (diagramme de Coleman). Il utilise la théorie mathématique des choix rationnels pour modéliser le comportement des acteurs au sein des structures sociales. Ses travaux ont directement inspiré la fondation de la sociologie analytique, courant contemporain qui formalise l'étude des mécanismes sociaux.",
@@ -298,6 +306,7 @@ export const authors = [
 
     influences: ["Mead", "Thomas"],
     heirs: ["erving-goffman", "becker"],
+    themes: [],
 
     summary:
       "Sociologue américain et disciple de George Herbert Mead, il forge l'expression « interactionnisme symbolique » en 1937. Il formalise le courant autour de trois postulats : les humains agissent à l'égard des choses en fonction du sens que celles-ci ont pour eux, ce sens dérive de l'interaction sociale, et il est modifié par l'interprétation. Il défend une posture méthodologique inductive et qualitative, opposée au positivisme quantitatif.",
@@ -333,6 +342,7 @@ export const authors = [
 
     influences: ["Mead", "herbert-blumer", "Hughes"],
     heirs: [],
+    themes: [],
 
     summary:
       "Observateur minutieux des rituels de la vie quotidienne, il développe une approche dramaturgique de l'espace social où chaque individu est un acteur gérant l'impression qu'il donne aux autres. Ses travaux sur les « institutions totales » mettent en lumière les mécanismes d'altération de l'identité individuelle par les structures asilaires ou carcérales. Il formalise également la notion de cadre pour expliquer comment les individus structurent leur expérience de la réalité. Ses travaux ont directement influencé les analystes de conversation ainsi que les sociologues des médias contemporains.",
@@ -368,6 +378,7 @@ export const authors = [
 
     influences: ["Hughes", "herbert-blumer"],
     heirs: [],
+    themes: ["Sociologie de la déviance", "Sociologie du travail et des professions"],
 
     summary:
       "Figure centrale de la seconde École de Chicago, il renouvelle la sociologie de la déviance en élaborant la théorie de l'étiquetage, démontrant que la déviance n'est pas une qualité de l'acte mais le produit d'une interaction et d'une qualification sociale. Par ses enquêtes sur les musiciens de jazz et les fumeurs de marijuana, il théorise la notion de « carrière déviante ». Il a également profondément marqué la sociologie de l'art. Son approche a nourri la sociologie des problèmes publics ainsi que le courant ethnométhodologique.",
@@ -402,6 +413,7 @@ export const authors = [
 
     influences: ["Lévi-Strauss", "Simmel"],
     heirs: ["mark-granovetter", "lazega", "Barry Wellman"],
+    themes: ["Sociologie économique"],
 
     summary:
       "Physicien de formation devenu sociologue, il est le père fondateur de l'analyse structurale moderne et de la sociologie des réseaux. Il rejette les explications fondées sur les attributs psychologiques individuels ou les catégories macro-sociales figées pour se concentrer sur la géométrie des liens sociaux. Son modèle mathématique des blocs et son approche des marchés ont profondément redéfini la micro-macro-sociologie en montrant que les identités émergent des formations de réseaux.",
@@ -436,6 +448,7 @@ export const authors = [
 
     influences: ["harrison-white"],
     heirs: [],
+    themes: ["Sociologie économique", "Sociologie du travail et des professions"],
 
     summary:
       "Sociologue américain de premier plan, il introduit la célèbre distinction entre « liens forts » et « liens faibles », démontrant la valeur informationnelle cruciale des relations distantes pour l'accès à l'emploi. Il forge également le concept d'encastrement (embeddedness) pour signifier que les actions économiques restent insérées dans des réseaux de relations personnelles concrètes. Ses modèles d'action collective à seuil lient finement choix individuels et dynamiques de réseaux. Ses travaux ont fondé une grande partie de la sociologie économique contemporaine.",
@@ -470,6 +483,7 @@ export const authors = [
 
     influences: ["harrison-white", "coleman", "Bourdieu"],
     heirs: [],
+    themes: ["Sociologie du travail et des professions", "Sociologie économique"],
 
     summary:
       "Sociologue français contemporain, il formalise le programme de la sociologie néo-structurale en combinant l'analyse des réseaux sociaux et l'étude des organisations. À travers ses enquêtes approfondies sur les cabinets d'avocats ou les tribunaux de commerce, il théorise les processus d'action collective, de contrôle social et de régulation par les pairs au sein des structures d'interdépendance. Il montre comment le capital social individuel se convertit en ressources collectives ou en asymétries de pouvoir. Ses travaux irriguent aujourd'hui l'ensemble de la recherche francophone en analyse de réseaux.",
@@ -501,6 +515,7 @@ export const authors = [
 
     influences: ["Schütz", "talcott-parsons"],
     heirs: ["harvey-sacks", "Aaron Cicourel", "Louis Quéré"],
+    themes: [],
 
     summary:
       "Fondateur de l'ethnométhodologie, il rompt radicalement avec le structuralisme pour étudier les méthodes que les acteurs utilisent au quotidien pour rendre leur monde intelligible et ordonné. Il conçoit l'ordre social non comme une structure préexistante, mais comme une réalisation pratique continue. Ses célèbres « expériences de brèche » visaient à briser délibérément les routines quotidiennes pour révéler les attentes implicites qui sous-tendent les interactions sociales.",
@@ -532,6 +547,7 @@ export const authors = [
 
     influences: ["harold-garfinkel", "erving-goffman"],
     heirs: ["Emanuel Schegloff", "Deirdre Boden"],
+    themes: [],
 
     summary:
       "Disciple de Garfinkel, il applique les principes ethnométhodologiques à l'étude fine du langage oral en devenant le pionnier de l'analyse de conversation. Il démontre que la parole quotidienne est rigoureusement structurée par des règles d'organisation séquentielle et des mécanismes de prise de tour de parole. Ses travaux ont prouvé que les micro-détails de l'interaction verbale constituent un ordre social autonome et hautement ordonné. Son approche continue d'irriguer la sociolinguistique francophone contemporaine.",
@@ -566,6 +582,7 @@ export const authors = [
 
     influences: ["Schütz", "Weber", "Marx", "Durkheim"],
     heirs: ["Dubar", "Corcuff", "Ian Hacking"],
+    themes: ["Sociologie de la religion"],
 
     summary:
       "Sociologue américain d'origine autrichienne, il co-écrit un ouvrage fondateur qui révolutionne la sociologie de la connaissance en l'orientant vers la vie quotidienne. Avec Thomas Luckmann, il démontre comment la réalité sociale se construit à travers un processus dialectique permanent en trois étapes : l'extériorisation, l'objectivation et l'intériorisation. Ses travaux ultérieurs ont grandement enrichi la sociologie des religions et de la sécularisation.",
@@ -600,6 +617,7 @@ export const authors = [
 
     influences: ["Schütz", "Weber", "durkheim"],
     heirs: ["Knoblauch"],
+    themes: ["Sociologie de la religion"],
 
     summary:
       "Sociologue germano-slovène, il a jeté les bases du constructivisme social en prolongeant l'œuvre phénoménologique d'Alfred Schütz. En collaboration avec Peter Berger, il décrit comment les représentations subjectives des acteurs se cristallisent en structures sociales objectives perçues comme naturelles. Il s'est également illustré par ses analyses fines de la communication, de l'identité et de la recomposition des formes religieuses modernes. Ses travaux continuent d'irriguer la sociologie de la connaissance contemporaine.",
@@ -634,6 +652,7 @@ export const authors = [
 
     influences: ["peter-berger", "thomas-luckmann", "Bourdieu", "Hughes"],
     heirs: [],
+    themes: ["Sociologie du travail et des professions", "Sociologie de l'éducation et de la socialisation"],
 
     summary:
       "Sociologue français majeur, il applique et approfondit la matrice théorique constructiviste au champ du travail, de la formation et des trajectoires professionnelles. Il conceptualise l'identité comme un processus dynamique issu de la dualité entre 'l'identité pour autrui' (les définitions institutionnelles) et 'l'identité pour soi' (l'histoire vécue). Ses travaux articulent magistralement les dimensions biographiques et structurelles du changement social. Son approche a durablement structuré la recherche francophone en sociologie du travail et de l'éducation.",
@@ -668,6 +687,7 @@ export const authors = [
 
     influences: ["Marx", "Hegel", "Freud", "Weber"],
     heirs: ["jürgen-habermas", "Axel Honneth"],
+    themes: ["Sociologie des médias et industries culturelles"],
 
     summary:
       "Philosophe et sociologue allemand, il prend la direction de l'Institut de recherche sociale de Francfort en 1930 et jette les bases théoriques de l'École. Il formalise le projet d'une « théorie critique » en rupture avec la « théorie traditionnelle » positiviste, assignant aux sciences sociales l'objectif de libérer les êtres humains des structures de domination. Ses écrits co-signés avec Adorno dénoncent l'asservissement de la raison par le capitalisme monopolistique sous la forme de l'aliénation culturelle.",
@@ -703,6 +723,7 @@ export const authors = [
 
     influences: ["Marx", "Hegel", "Freud", "Weber"],
     heirs: ["jürgen-habermas"],
+    themes: ["Sociologie des médias et industries culturelles"],
 
     summary:
       "Philosophe, sociologue et musicologue allemand, il est l'une des figures de proue de la première génération de l'École de Francfort. À travers une critique radicale de la modernité, il théorise le concept d'industrie culturelle pour démontrer comment la culture de masse standardise les consciences et désamorce tout potentiel de révolte politique. Ses enquêtes empiriques sur la personnalité autoritaire lient psychologie sociale et structures politiques pour expliquer les racines du fascisme. Son analyse critique de la culture continue d'irriguer la sociologie de la culture critique contemporaine.",
@@ -737,6 +758,7 @@ export const authors = [
 
     influences: ["max-horkheimer", "theodor-w-adorno", "Weber", "Mead"],
     heirs: ["Axel Honneth", "Nancy Fraser"],
+    themes: ["Sociologie politique et de l'État", "Sociologie des médias et industries culturelles"],
 
     summary:
       "Chef de file de la deuxième génération de l'École de Francfort, il opère un tournant langagier majeur en substituant à la critique de la raison instrumentale une théorie de l'agir communicationnel. Il modélise la modernité comme une tension dialectique entre le 'système' (régulé par l'argent et le pouvoir administratifs) et le 'monde vécu' (structuré par la communication interconnectée). Il défend le projet inachevé des Lumières à travers le concept d'un espace public démocratique fondé sur l'éthique de la discussion. Son œuvre a directement nourri la sociologie politique délibérative contemporaine.",
@@ -772,6 +794,7 @@ export const authors = [
 
     influences: ["Marx", "Hegel", "Nietzsche"],
     heirs: ["David Harvey", "Manuel Castells", "Jean Baudrillard"],
+    themes: ["Sociologie urbaine"],
 
     summary:
       "Intellectuel et sociologue français, il rompt avec l'orthodoxie du Parti communiste pour développer une critique humaniste de la modernité. Pionnier de la sociologie de la vie quotidienne, il analyse comment le capitalisme colonise l'existence ordinaire à travers la marchandisation du temps et de l'espace. Son concept de « droit à la ville » a profondément influencé les mouvements urbains et la géographie critique mondiale en repensant la ville comme œuvre collective.",
@@ -806,6 +829,7 @@ export const authors = [
 
     influences: ["Marx", "Althusser", "Gramsci"],
     heirs: ["Bob Jessop"],
+    themes: ["Sociologie politique et de l'État"],
 
     summary:
       "Sociologue politique d'origine grecque ayant fait l'essentiel de sa carrière en France, il applique le structuralisme marxiste à l'analyse de l'État moderne. Opposé aux visions instrumentalistes, il théorise l'autonomie relative de l'État, qu'il définit non comme un simple outil de la bourgeoisie, mais comme la condensation matérielle d'un rapport de forces entre les classes. Ses débats avec Ralph Miliband ont marqué l'âge d'or de la théorie de l'État. Ses travaux ont durablement structuré les théories contemporaines de l'État.",
@@ -841,6 +865,7 @@ export const authors = [
 
     influences: ["Serres", "Greimas", "harold-garfinkel", "harrison-white"],
     heirs: ["michel-callon", "susan-leigh-star", "Philippe Descola"],
+    themes: ["Sociologie de l'innovation et des techniques (STS)"],
 
     summary:
       "Sociologue et anthropologue des sciences français, il est l'un des principaux fondateurs de la théorie de l'acteur-réseau. Il révolutionne les sciences sociales en introduisant le principe de symétrie généralisée, qui accorde une capacité d'action (agency) aux non-humains au même titre qu'aux humains. Ses enquêtes de laboratoire redéfinissent l'activité scientifique non comme une pure découverte de faits objectifs, mais comme une construction de réseaux d'associations de plus en plus vastes. Son approche a directement inspiré le courant de l'écologie politique contemporaine.",
@@ -875,6 +900,7 @@ export const authors = [
 
     influences: ["bruno-latour", "harrison-white"],
     heirs: ["Donald MacKenzie"],
+    themes: ["Sociologie de l'innovation et des techniques (STS)", "Sociologie économique"],
 
     summary:
       "Sociologue et ingénieur français, il co-développe la théorie de l'acteur-réseau en insistant sur les processus de problématisation et d'intéressement à travers lesquels les innovateurs enrôlent des alliés humains et matériels. Ses travaux ultérieurs sur la sociologie des marchés et la performativité de l'économie démontrent que l'économie ne se contente pas de décrire les marchés, mais qu'elle les configure techniquement. Il a également grandement contribué à l'étude des controverses sociotechniques et de la démocratie technique. Ses travaux ont fondé un pan entier de la sociologie économique des agencements marchands.",
@@ -906,6 +932,7 @@ export const authors = [
 
     influences: ["Hughes", "becker", "bruno-latour"],
     heirs: ["Geoffrey Bowker", "Paul Dourish"],
+    themes: ["Sociologie de l'innovation et des techniques (STS)"],
 
     summary:
       "Sociologue américaine s'inscrivant à l'intersection des STS, du pragmatisme et du féminisme, elle est une figure clé des Infrastructure Studies. Elle étudie les structures invisibles, les standards et les classifications qui soutiennent notre monde matériel, révélant la dimension politique et morale logée dans le design technique. Son concept de « objet-frontière » explique comment des groupes hétérogènes parviennent à coopérer sans pour autant partager le même point de vue. Son approche continue d'irriguer aujourd'hui le champ des Design Studies.",
@@ -940,6 +967,7 @@ export const authors = [
 
     influences: ["Durkheim", "Weber", "Marx", "Schütz", "levi-strauss"],
     heirs: ["Wanda Orlikowski", "Rob Stones"],
+    themes: [],
 
     summary:
       "Sociologue britannique incontournable, il formule la théorie de la structuration pour dépasser l'opposition traditionnelle entre objectivisme structural et subjectivisme individuel. Il introduit le concept central de « dualité du structurel », postulant que les structures sociales sont à la fois le moyen et le résultat des pratiques des acteurs. Son œuvre propose également une analyse profonde de la modernité avancée et de la réflexivité institutionnelle. Sa théorie continue de structurer un large pan des sociologies contemporaines de la modernité.",
@@ -974,6 +1002,7 @@ export const authors = [
 
     influences: ["Saussure"],
     heirs: ["Althusser", "bourdieu", "anthony-giddens"],
+    themes: [],
 
     summary:
       "Anthropologue français, il initie le mouvement structuraliste en sciences sociales en s'inspirant du linguiste Ferdinand de Saussure. Il considère que les sociétés sont composées de sous-structures cachées et immuables qui assurent la cohérence des systèmes sociaux, qu'il décode aussi bien dans les systèmes de parenté que dans les mythes.",
@@ -1005,6 +1034,7 @@ export const authors = [
 
     influences: ["levi-strauss", "Marx"],
     heirs: ["nicos-poulantzas"],
+    themes: ["Sociologie politique et de l'État"],
 
     summary:
       "Philosophe français, il donne au structuralisme naissant une connotation marxiste en soutenant qu'aucune société ne dure dans l'histoire sans reproduire les conditions matérielles et sociales de son existence. Il développe le concept d'idéologie structurée pour expliquer le maintien des classes dominées dans leur position d'infériorité.",
@@ -1039,6 +1069,7 @@ export const authors = [
 
     influences: [],
     heirs: ["durkheim"],
+    themes: [],
 
     summary:
       "Il est le premier à employer le terme de « sociologie » et affirme la possibilité d'une science positive des faits sociaux. Son positivisme repose sur l'observation des faits à l'écart de tout jugement de valeur et l'énoncé de lois, distinguant la dynamique sociale (l'évolution des sociétés) de la statique sociale (les conditions de leur ordre).",
@@ -1073,6 +1104,7 @@ export const authors = [
 
     influences: ["Saint-Simon"],
     heirs: ["althusser", "henri-lefebvre", "nicos-poulantzas"],
+    themes: ["Sociologie économique", "Sociologie politique et de l'État"],
 
     summary:
       "Il soutient que chaque société est intrinsèquement liée à un système économique, et que la vie sociale entière est la conséquence de l'activité économique : les hommes « sont » en fonction de ce qu'ils produisent et de comment ils le produisent. Sa pensée holiste, dans la continuité de Saint-Simon, fait de la lutte des classes le moteur du changement historique.",
@@ -1104,6 +1136,7 @@ export const authors = [
 
     influences: ["Marx", "Freud"],
     heirs: [],
+    themes: [],
 
     summary:
       "Membre de la première École de Francfort, il propose une synthèse freudo-marxiste étudiant la domination sous l'angle de la rationalisation de la société, qu'il considère comme une forme d'aliénation. Il s'intéresse en particulier à la manière dont le caractère social des individus s'ajuste aux structures économiques de leur époque.",
@@ -1132,6 +1165,7 @@ export const authors = [
 
     influences: ["Marx", "Freud"],
     heirs: [],
+    themes: ["Sociologie des médias et industries culturelles"],
 
     summary:
       "Second grand représentant du freudo-marxisme francfortois, il théorise la « désublimation répressive » par laquelle la société de consommation neutralise le potentiel critique du désir en l'intégrant à la logique marchande, produisant un « homme unidimensionnel » privé de sa capacité de contestation.",
@@ -1160,6 +1194,7 @@ export const authors = [
 
     influences: [],
     heirs: [],
+    themes: ["Études de genre", "Sociologie du travail et des professions"],
 
     summary:
       "Sociologue britannique, elle met en circulation dès 1972 la distinction moderne entre sexe (biologique) et genre (socialement construit), fondatrice pour l'ensemble des études de genre ultérieures. Ses enquêtes sur le travail domestique documentent empiriquement la persistance de la répartition inégale des tâches malgré l'entrée massive des femmes sur le marché du travail.",
@@ -1188,6 +1223,7 @@ export const authors = [
 
     influences: [],
     heirs: [],
+    themes: ["Études de genre"],
 
     summary:
       "Théoricienne américaine, elle est l'une des tenantes les plus radicales des gender studies en soutenant le caractère performatif du genre : celui-ci ne serait pas l'expression d'une identité préexistante, mais constituerait l'identité qu'il est censé exprimer, par la répétition d'actes socialement codifiés.",
@@ -1219,6 +1255,7 @@ export const authors = [
 
     influences: ["bourdieu", "Schütz"],
     heirs: [],
+    themes: ["Sociologie du travail et des professions", "Sociologie économique"],
 
     summary:
       "Ancien collaborateur de Bourdieu, il initie avec Laurent Thévenot le paradigme pragmatique centré sur les pratiques situées et les compétences critiques ordinaires des acteurs, en rupture avec la sociologie critique bourdieusienne du dévoilement. Il développe ensuite une sociologie de la critique visant à décrypter les mécanismes de justification mobilisés par les individus en situation de litige.",
@@ -1250,6 +1287,7 @@ export const authors = [
 
     influences: ["luc-boltanski", "Schütz"],
     heirs: [],
+    themes: ["Sociologie économique"],
 
     summary:
       "Sociologue et économiste, il initie avec Luc Boltanski la sociologie pragmatique, qu'il prolonge par une théorie des régimes d'engagement décrivant les différentes manières dont les personnes s'ajustent à autrui et aux choses selon les situations, alternant approches macro et microsociologiques.",
@@ -1282,6 +1320,7 @@ export const authors = [
 
     influences: [],
     heirs: [],
+    themes: ["Sociologie politique et de l'État"],
 
     summary:
       "Fondateur de l'actionnisme, il récuse l'idée que l'organisation sociale préexiste à l'action sociale et place les mouvements sociaux au centre de l'analyse, comme révélateurs des rapports sociaux fondamentaux. Il développe la méthode de l'intervention sociologique, dans laquelle le sociologue informe les acteurs pour qu'ils prennent conscience d'eux-mêmes plutôt que de se contenter de les observer.",
@@ -1310,6 +1349,7 @@ export const authors = [
 
     influences: [],
     heirs: ["mead"],
+    themes: ["Sociologie de l'éducation et de la socialisation"],
 
     summary:
       "Théoricien des groupes, il distingue les groupes primaires (comme la famille) des groupes secondaires, et refuse toute hiérarchie entre société et individu : pour lui, les deux naissent ensemble et se constituent mutuellement. Son concept de looking-glass self annonce les développements ultérieurs de l'interactionnisme symbolique.",
@@ -1338,6 +1378,7 @@ export const authors = [
 
     influences: ["cooley"],
     heirs: ["herbert-blumer"],
+    themes: ["Sociologie de l'éducation et de la socialisation"],
 
     summary:
       "S'inspirant abondamment de Cooley, il invente le concept d'« autrui généralisé », figure idéelle rassemblant les valeurs et normes de comportement portées par une communauté, qui sert de guide à l'action individuelle. Il propose une théorie de la socialisation fondée sur l'idée que l'individu se forme au cours de ses interactions avec ses groupes d'appartenance, notamment par le langage et l'adoption des rôles d'autrui.",
@@ -1369,6 +1410,7 @@ export const authors = [
 
     influences: [],
     heirs: [],
+    themes: ["Sociologie urbaine"],
 
     summary:
       "Il décrit le système social comme un ensemble d'éléments et de forces à l'image du cosmos, où le « règne humain » et le « règne technique » se confrontent. Avec Burgess, il passe la ville de Chicago au peigne fin pour expliquer son évolution en termes de forces et de vagues, notamment migratoires, dépassant la simple description urbanistique grâce à leur théorie de la désorganisation sociale.",
@@ -1400,6 +1442,7 @@ export const authors = [
 
     influences: [],
     heirs: [],
+    themes: ["Sociologie urbaine"],
 
     summary:
       "Avec Robert Park, il élabore le modèle des zones concentriques expliquant l'expansion des villes en anneaux successifs depuis le centre des affaires, chaque zone se caractérisant par des usages du sol, des groupes socioéconomiques et des taux de désorganisation sociale distincts.",
@@ -1431,6 +1474,7 @@ export const authors = [
 
     influences: [],
     heirs: [],
+    themes: ["Sociologie des médias et industries culturelles"],
 
     summary:
       "Sociologue américain d'origine autrichienne, il développe à l'université de Columbia un empirisme quantitativiste centré sur les techniques d'enquête et l'analyse statistique des effets des médias sur la société, contribuant notamment au développement de la sociologie électorale.",
@@ -1461,6 +1505,7 @@ export const authors = [
 
     influences: ["mark-granovetter"],
     heirs: [],
+    themes: ["Sociologie économique"],
 
     summary:
       "Sociologue économique américaine d'origine argentine, elle démontre que l'argent n'est jamais un simple équivalent neutre et interchangeable, mais qu'il est socialement et moralement différencié selon les relations et les contextes dans lesquels il circule. Son concept de « travail relationnel » éclaire comment les individus articulent constamment relations intimes et transactions économiques, loin de la séparation étanche que postule l'économie standard entre sphère marchande et sphère affective.",
@@ -1491,6 +1536,7 @@ export const authors = [
 
     influences: ["bruno-latour", "michel-callon"],
     heirs: [],
+    themes: ["Sociologie de l'innovation et des techniques (STS)"],
 
     summary:
       "Sociologue et ingénieure française, elle contribue à développer la théorie de l'acteur-réseau aux côtés de Callon et Latour, avec une attention particulière portée aux usagers des dispositifs techniques. Son concept de script (ou scénario) désigne la manière dont les concepteurs inscrivent dans les objets techniques eux-mêmes des représentations et des attentes vis-à-vis de leurs utilisateurs, orientant ainsi les usages possibles.",

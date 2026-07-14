@@ -8,7 +8,7 @@ export const constellations = {
     color: "#B53B3B",
   },
   bourdieusien: {
-    label: "Structuralisme constructiviste",
+    label: "Constructivisme structuraliste",
     color: "#86B53F",
   },
   fonctionnalisme: {
@@ -44,7 +44,7 @@ export const constellations = {
     color: "#922B21",
   },
   "theorie-de-l-acteur-reseau-et-sts": {
-    label: "Théorie de l'acteur-réseau / STS",
+    label: "Théorie de l'acteur-réseau",
     color: "#0B5345",
   },
   "la-theorie-de-la-structuration": {
@@ -56,7 +56,7 @@ export const constellations = {
     color: "#34495E",
   },
   pragmatisme: {
-    label: "Pragmatisme / sociologie de la critique",
+    label: "Sociologie pragmatique",
     color: "#004D40",
   },
 };

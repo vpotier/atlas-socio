@@ -744,7 +744,7 @@ export const authors = [
     school: "École de Francfort (Deuxième génération)",
     period: "1929–présent",
     birthYear: 1929,
-    deathYear: null,
+    deathYear: 2026,
     x: 1480,
     y: 260,
     color: "#884EA0",

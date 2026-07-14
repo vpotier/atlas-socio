@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import Background from "../layers/Background";
@@ -16,6 +16,8 @@ import { constellationAxisValues } from "../data/theoreticalAxes";
 // considérée comme correspondant à la position d'un curseur de filtre.
 const AXIS_TOLERANCE = 0.13;
 
+const INITIAL_SCALE = 0.55;
+
 export default function Graph({
   selectedItem,
   setSelectedItem,
@@ -29,6 +31,32 @@ export default function Graph({
     () => computeLayout(rawAuthors, rawConcepts, relations),
     []
   );
+
+  // Centrage manuel au chargement : on calcule nous-mêmes la position de
+  // la caméra à partir de la taille réelle du conteneur à l'écran, plutôt
+  // que de laisser `centerOnInit` deviner — avec un très grand canevas et
+  // un zoom initial réduit, son calcul automatique s'est révélé peu fiable.
+  useEffect(() => {
+    if (!transformRef.current) return;
+
+    const wrapperEl = transformRef.current.instance?.wrapperComponent;
+
+    if (!wrapperEl) return;
+
+    const { clientWidth, clientHeight } = wrapperEl;
+
+    const targetX =
+      clientWidth / 2 - (layout.width / 2) * INITIAL_SCALE;
+    const targetY =
+      clientHeight / 2 - (layout.height / 2) * INITIAL_SCALE;
+
+    transformRef.current.setTransform(
+      targetX,
+      targetY,
+      INITIAL_SCALE,
+      0
+    );
+  }, [layout]);
 
   const authors = useMemo(
     () =>
@@ -312,10 +340,9 @@ export default function Graph({
   return (
     <TransformWrapper
       ref={transformRef}
-      initialScale={0.55}
+      initialScale={INITIAL_SCALE}
       minScale={0.2}
       maxScale={3}
-      centerOnInit
       limitToBounds={false}
     >
       <TransformComponent>

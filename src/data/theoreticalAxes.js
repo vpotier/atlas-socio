@@ -95,3 +95,129 @@ export const constellationAxisValues = {
     },
   },
   bourdieusien: {
+    individuSociete: {
+      value: 0.35,
+      label: "Structures incorporées (habitus)",
+    },
+    methode: { value: 0.45, label: "Mixte" },
+    rationalite: {
+      value: 0.3,
+      label: "Pratique (sens pratique non réfléchi)",
+    },
+  },
+  "la-theorie-critique": {
+    individuSociete: {
+      value: 0.45,
+      label: "Relation (intersubjectivité communicationnelle)",
+    },
+    methode: {
+      value: 0.55,
+      label: "Mixte (critique + reconstruction rationnelle)",
+    },
+    rationalite: {
+      value: 0.6,
+      label: "Communicationnelle (orientée vers l'entente)",
+    },
+  },
+  "le-constructivisme-social": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation (dialectique individu-société)",
+    },
+    methode: { value: 0.7, label: "Compréhensive (phénoménologique)" },
+    rationalite: { value: 0.5, label: "Située (interprétative)" },
+  },
+  "l-interactionnisme-symbolique": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation (co-construction interactionnelle)",
+    },
+    methode: { value: 0.75, label: "Compréhensive empirique" },
+    rationalite: { value: 0.45, label: "Située (contextuelle)" },
+  },
+  "l-ethnomethodologie": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation (ordre local produit en continu)",
+    },
+    methode: { value: 0.85, label: "Compréhensive radicale" },
+    rationalite: {
+      value: 0.5,
+      label: "Pratique située (accountability)",
+    },
+  },
+  pragmatisme: {
+    individuSociete: { value: 0.55, label: "Relation (épreuves situées)" },
+    methode: { value: 0.55, label: "Mixte (épreuves)" },
+    rationalite: {
+      value: 0.55,
+      label: "Plurielle (justification situationnelle)",
+    },
+  },
+  "l-interactionnisme-structural": {
+    individuSociete: {
+      value: 0.55,
+      label: "Relation (réseaux d'interdépendance)",
+    },
+    methode: {
+      value: 0.6,
+      label: "Explicative relationnelle (structure des réseaux)",
+    },
+    rationalite: {
+      value: 0.6,
+      label: "Distribuée (encastrement relationnel)",
+    },
+  },
+  "la-theorie-de-la-structuration": {
+    individuSociete: {
+      value: 0.6,
+      label: "Dualité du structurel (dépassement de l'opposition)",
+    },
+    methode: { value: 0.5, label: "Mixte (synthèse)" },
+    rationalite: {
+      value: 0.55,
+      label: "Réflexive (conscience pratique/discursive)",
+    },
+  },
+  pont: {
+    individuSociete: {
+      value: 0.65,
+      label: "Acteur (auto-production de la société)",
+    },
+    methode: {
+      value: 0.6,
+      label: "Intervention sociologique (compréhensive engagée)",
+    },
+    rationalite: {
+      value: 0.65,
+      label: "Historicité (capacité collective d'auto-transformation)",
+    },
+  },
+  weberien: {
+    individuSociete: { value: 0.75, label: "Individu (méthodologique)" },
+    methode: { value: 0.9, label: "Compréhensive" },
+    rationalite: { value: 0.75, label: "Plurielle (sens subjectif)" },
+  },
+  "l-individualisme-methodologique": {
+    individuSociete: { value: 0.85, label: "Individu" },
+    methode: {
+      value: 0.2,
+      label: "Explicative par les raisons à formalisée (mixte Boudon/Coleman)",
+    },
+    rationalite: {
+      value: 0.85,
+      label: "Raisonnable à maximale (mixte Boudon/Coleman)",
+    },
+  },
+  "theorie-de-l-acteur-reseau-et-sts": {
+    individuSociete: {
+      value: 1,
+      label: "Symétrie humain/non-humain (hors de l'axe individu/société)",
+    },
+    methode: { value: 1, label: "Description (suivre les acteurs)" },
+    rationalite: {
+      value: 0.95,
+      label: "Distribuée (effet de réseau, actants humains et non-humains)",
+    },
+  },
+};

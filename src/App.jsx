@@ -4,6 +4,8 @@ import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";
 import FiltersPanel from "./components/FiltersPanel";
 import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
+import { constellations } from "./engine/constellations";
+import { axes, constellationAxisValues } from "./data/theoreticalAxes";
 
 import "./styles/app.css";
 

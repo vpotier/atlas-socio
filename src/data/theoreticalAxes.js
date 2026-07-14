@@ -100,9 +100,10 @@ export const constellationAxisValues = {
       label: "Structures incorporées (habitus)",
     },
     methode: { value: 0.45, label: "Mixte" },
-    rationalite: {
-      value: 0.3,
-      label: "Pratique (sens pratique non réfléchi)",
+  rationalite: {
+      value: 0.4,
+      label:
+        "Pratique ambivalente — programme « ni-ni » : ni calcul rationnel conscient, ni pur automatisme mécanique (Dewerpe, 1996)",
     },
   },
   "la-theorie-critique": {

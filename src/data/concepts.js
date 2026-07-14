@@ -305,4 +305,13 @@ export const concepts = [
     x: 610,
     y: 420,
   },
+{
+    id: "socialisation-primaire-secondaire",
+    label: "Socialisation (primaire/secondaire)",
+    definition:
+      "Processus par lequel un individu intériorise, d'abord dans l'enfance au sein de la famille (socialisation primaire), puis tout au long de la vie au contact d'autres institutions (socialisation secondaire), les normes, valeurs et façons de voir le monde de la société dans laquelle il vit.",
+    authors: ["peter-berger", "thomas-luckmann"],
+    x: 1010,
+    y: 600,
+  },
 ];

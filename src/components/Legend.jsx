@@ -5,15 +5,10 @@ export default function Legend() {
 
   return (
     <div
-      style={{
-        position: "absolute",
-        bottom: 20,
-        left: 20,
-        zIndex: 1000,
-        fontFamily: "var(--font-body)",
-      }}
+      className="floating-legend"
+      style={{ fontFamily: "var(--font-body)" }}
     >
-   <button
+      <button
         onClick={() => setOpen((o) => !o)}
         className="icon-button"
         style={{
@@ -30,17 +25,19 @@ export default function Legend() {
         Légende
       </button>
 
-    {open && (
+      {open && (
         <div
           className="dropdown-panel"
           style={{
             marginTop: 8,
-            width: 260,
+            width: "min(260px, calc(100vw - 24px))",
             background: "var(--color-paper-dim)",
             border: "1px solid var(--color-taupe)",
             borderRadius: 6,
             boxShadow: "0 2px 10px rgba(43,38,32,0.15)",
             padding: 16,
+            maxHeight: "60vh",
+            overflowY: "auto",
           }}
         >
           <div

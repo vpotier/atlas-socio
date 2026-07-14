@@ -571,4 +571,176 @@ export const relations = [
       "Habermas intègre des éléments du fonctionnalisme parsonien dans sa distinction entre système et monde vécu, tout en cherchant à en corriger le déterminisme.",
     sources: ["Ansart, 1990, Les sociologies contemporaines"],
   },
+  {
+    source: "bourdieu",
+    target: "raymond-boudon",
+    type: "tension",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Bourdieu critique l'individualisme méthodologique comme une croyance naïve en la transparence du calcul rationnel, ignorant le poids des dispositions incorporées (habitus) ; Boudon reproche symétriquement à Bourdieu de nier toute marge d'autonomie à l'acteur individuel.",
+    sources: ["Corcuff, 2003, Bourdieu autrement"],
+  },
+  {
+    source: "marx",
+    target: "bourdieu",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Bourdieu reprend explicitement le concept marxien de capital pour en démultiplier les formes (culturel, social, symbolique), au-delà de sa seule acception économique.",
+    sources: ["Corcuff, 2003, Bourdieu autrement"],
+  },
+  {
+    source: "durkheim",
+    target: "bronislaw-malinowski",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Malinowski s'inspire du holisme durkheimien pour penser la cohérence fonctionnelle des sociétés, tout en déplaçant l'explication vers des besoins biologiques individuels plutôt que vers le seul fait social.",
+    sources: ["Ritzer, 2011, Sociological Theory"],
+  },
+  {
+    source: "weber",
+    target: "talcott-parsons",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Parsons traduit Weber en anglais et fonde sa théorie générale de l'action sociale sur une synthèse explicite de la sociologie compréhensive wébérienne.",
+    sources: ["Rocher, 1972, Talcott Parsons et la sociologie américaine"],
+  },
+  {
+    source: "durkheim",
+    target: "talcott-parsons",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "The Structure of Social Action de Parsons opère une synthèse explicite de Durkheim, Weber et Pareto pour fonder sa théorie générale de l'action.",
+    sources: ["Rocher, 1972, Talcott Parsons et la sociologie américaine"],
+  },
+  {
+    source: "durkheim",
+    target: "robert-k-merton",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Le concept mertonien d'anomie prolonge directement la notion durkheimienne, en l'appliquant à l'écart entre buts culturels et moyens légitimes disponibles.",
+    sources: [
+      "Boudon & Bourricaud, 1982, Dictionnaire critique de la sociologie",
+    ],
+  },
+  {
+    source: "weber",
+    target: "jürgen-habermas",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Habermas reprend et prolonge la théorie wébérienne de la rationalisation pour construire sa distinction entre système et monde vécu.",
+    sources: ["Ansart, 1990, Les sociologies contemporaines"],
+  },
+  {
+    source: "weber",
+    target: "peter-berger",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Berger s'inscrit dans la tradition compréhensive wébérienne pour sa sociologie de la religion et sa méthode d'analyse du sens subjectif.",
+    sources: ["Lallement, 2000, Histoire des idées sociologiques"],
+  },
+  {
+    source: "durkheim",
+    target: "peter-berger",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Berger reprend la question durkheimienne du fait social objectif pour l'articuler dialectiquement avec la construction subjective de la réalité.",
+    sources: ["Lallement, 2000, Histoire des idées sociologiques"],
+  },
+  {
+    source: "durkheim",
+    target: "thomas-luckmann",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Luckmann reprend la question durkheimienne du fait social objectif pour l'articuler dialectiquement avec la construction subjective de la réalité.",
+    sources: ["Corcuff, 2007, Les nouvelles sociologies"],
+  },
+  {
+    source: "weber",
+    target: "max-horkheimer",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "La critique francfortoise de la raison instrumentale prolonge et radicalise l'analyse wébérienne de la rationalisation du monde moderne.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+  },
+  {
+    source: "weber",
+    target: "theodor-w-adorno",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "La critique francfortoise de la raison instrumentale prolonge et radicalise l'analyse wébérienne de la rationalisation du monde moderne.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+  },
+  {
+    source: "weber",
+    target: "anthony-giddens",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Giddens intègre l'attention wébérienne au sens subjectif de l'action dans sa théorie de la structuration, aux côtés de l'héritage durkheimien.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "durkheim",
+    target: "anthony-giddens",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Giddens dialogue avec l'héritage durkheimien du fait social pour élaborer sa propre conception de la structure comme à la fois contrainte et ressource.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "bourdieu",
+    target: "muriel-darmon",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Darmon adopte une approche dispositionnaliste explicitement inspirée de Bourdieu pour analyser la fabrication des habitus (classes préparatoires, anorexie).",
+    sources: ["Darmon, 2013, Classes préparatoires. La fabrique d'une jeunesse dominante"],
+  },
+  {
+    source: "becker",
+    target: "muriel-darmon",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Darmon mobilise explicitement la notion de carrière déviante de Becker (via l'étude Boys in White) pour analyser des processus de socialisation comme l'anorexie.",
+    sources: ["Darmon, 2003, Devenir anorexique : une approche sociologique"],
+  },
+  {
+    source: "bourdieu",
+    target: "lahire",
+    type: "tension",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Lahire critique l'unité présupposée de l'habitus bourdieusien et lui oppose une pluralité des dispositions individuelles selon les contextes sociaux traversés par un même acteur.",
+    sources: ["Corcuff, 2007, Les nouvelles sociologies"],
+  },
 ];

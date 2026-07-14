@@ -68,13 +68,15 @@ export default function Clusters({
           <g
             key={constellationId}
             style={{ cursor: "pointer" }}
-            onClick={() =>
+        onClick={() =>
               setSelectedItem({
                 type: "constellation",
                 data: {
                   id: constellationId,
                   label: meta.label,
                   color: meta.color,
+                  period: meta.period,
+                  definition: meta.definition,
                   members: authorMembers,
                 },
               })

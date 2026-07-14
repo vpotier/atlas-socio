@@ -12,7 +12,90 @@ export const constellations = {
     period: "Début XXe siècle (~1900–1920)",
     definition:
       "Fondée par Weber, elle cherche à comprendre le sens subjectif que les acteurs donnent à leurs actions, plutôt qu'à en expliquer les causes extérieures. L'individu et sa rationalité propre y occupent une place centrale.",
+  export const constellations = {
+  durkheimien: {
+    label: "École durkheimienne",
+    color: "#3A5A78",
+    period: "Fin XIXe – début XXe siècle (~1890–1920)",
+    definition:
+      "Fondée par Durkheim, elle étudie les faits sociaux comme des « choses » extérieures et contraignantes pour l'individu, dans une perspective holiste et positiviste : c'est la société qui explique l'individu, non l'inverse.",
+    disciplines: ["Philosophie", "Biologie"],
   },
+  weberien: {
+    label: "Sociologie compréhensive",
+    color: "#9C4A42",
+    period: "Début XXe siècle (~1900–1920)",
+    definition:
+      "Fondée par Weber, elle cherche à comprendre le sens subjectif que les acteurs donnent à leurs actions, plutôt qu'à en expliquer les causes extérieures. L'individu et sa rationalité propre y occupent une place centrale.",
+    disciplines: ["Droit", "Histoire", "Économie"],
+  },
+  bourdieusien: {
+    label: "Constructivisme structuraliste",
+    color: "#6B7F4A",
+    period: "Années 1960–2000",
+    definition:
+      "Portée par Bourdieu, elle articule structures sociales objectives et pratiques individuelles incorporées, à travers les notions d'habitus, de champ et de capital.",
+    disciplines: ["Philosophie", "Anthropologie", "Linguistique"],
+  },
+  fonctionnalisme: {
+    label: "Fonctionnalisme",
+    color: "#B87333",
+    period: "Années 1920–1970",
+    definition:
+      "La société y est pensée comme un système dont chaque institution remplit une fonction contribuant à son équilibre global, de l'anthropologie fonctionnaliste (Malinowski) au structuralo-fonctionnalisme américain (Parsons, Merton).",
+    disciplines: ["Anthropologie", "Biologie"],
+  },
+  "l-individualisme-methodologique": {
+    label: "Individualisme méthodologique",
+    color: "#6B4C7A",
+    period: "Années 1970–1990",
+    definition:
+      "Elle explique les phénomènes collectifs comme le résultat de l'agrégation d'actions individuelles rationnelles, quitte à produire des effets pervers non désirés par personne (Boudon, Coleman).",
+    disciplines: ["Économie"],
+  },
+  "l-interactionnisme-symbolique": {
+    label: "Interactionnisme symbolique",
+    color: "#3F7A6C",
+    period: "Années 1920 (Chicago) – 1980",
+    definition:
+      "Issue de l'École de Chicago (Mead, Cooley), elle considère que l'ordre social se construit en continu dans l'interaction quotidienne face à face, à travers l'interprétation mutuelle des symboles et des rôles (Blumer, Goffman, Becker).",
+    disciplines: ["Philosophie (pragmatisme)", "Psychologie sociale"],
+  },
+  "l-interactionnisme-structural": {
+    label: "Interactionnisme structural",
+    color: "#2F5770",
+    period: "Années 1970 – présent",
+    definition:
+      "Elle analyse la structure des réseaux sociaux et l'encastrement (embeddedness) de l'action économique dans des relations concrètes, contre l'idée d'acteurs atomisés (White, Granovetter, Zelizer, Lazega).",
+    disciplines: ["Mathématiques (théorie des graphes)", "Économie"],
+  },
+  "l-ethnomethodologie": {
+    label: "Ethnométhodologie",
+    color: "#7A5C33",
+    period: "Années 1960–1970",
+    definition:
+      "Fondée par Garfinkel, elle étudie les méthodes ordinaires et souvent invisibles par lesquelles les acteurs produisent et rendent intelligible, en pratique, l'ordre social qui les entoure.",
+    disciplines: ["Phénoménologie / Philosophie"],
+  },
+  "le-constructivisme-social": {
+    label: "Constructivisme social",
+    color: "#8C4560",
+    period: "Années 1966–1990",
+    definition:
+      "Portée par Berger et Luckmann, elle décrit la réalité sociale comme le produit d'une dialectique continue entre l'individu et la société : extériorisation, objectivation, intériorisation.",
+    disciplines: ["Phénoménologie / Philosophie"],
+  },
+  "la-theorie-critique": {
+    label: "Théorie critique",
+    color: "#4A3B54",
+    period: "Années 1930–1980",
+    definition:
+      "Issue de l'École de Francfort (Horkheimer, Adorno, Fromm, Marcuse, puis Habermas), elle vise à dévoiler les structures d'aliénation et de domination pour ouvrir la voie à l'émancipation, plutôt qu'à seulement décrire le social.",
+    disciplines: ["Psychanalyse", "Philosophie"],
+  },
+  "la-sociologie-marxiste": {
+    label: "Sociologie marxiste",
+    color:
   bourdieusien: {
     label: "Constructivisme structuraliste",
     color: "#6B7F4A",

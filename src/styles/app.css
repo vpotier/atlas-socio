@@ -79,3 +79,54 @@ aside a {
 button {
   font-family: var(--font-body);
 }
+
+/* ------------------------------------------------------------------ */
+/* Animations                                                          */
+/* ------------------------------------------------------------------ */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.sidebar-content {
+  animation: fade-slide-in 0.25s ease-out;
+}
+
+.dropdown-panel {
+  animation: fade-slide-in 0.18s ease-out;
+  transform-origin: top;
+}
+
+.icon-button {
+  transition: background 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.icon-button:hover {
+  background: var(--color-paper) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(43, 38, 32, 0.18);
+}
+
+.icon-button:active {
+  transform: translateY(0);
+}

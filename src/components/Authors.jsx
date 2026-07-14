@@ -1,14 +1,20 @@
+import { useState } from "react";
+
 export default function Authors({
   authors,
   selectedAuthor,
   setSelectedItem,
   dimIds,
 }) {
+  const [hoveredId, setHoveredId] = useState(null);
+
   return (
     <>
       {authors.map((author) => {
         const isSelected =
           selectedAuthor?.id === author.id;
+
+        const isHovered = hoveredId === author.id;
 
         const isDimmed =
           dimIds && !dimIds.has(author.id);
@@ -21,6 +27,8 @@ export default function Authors({
               cursor: "pointer",
               transition: "all .25s",
             }}
+            onMouseEnter={() => setHoveredId(author.id)}
+            onMouseLeave={() => setHoveredId(null)}
             onClick={() =>
               setSelectedItem({
                 type: "author",
@@ -31,13 +39,22 @@ export default function Authors({
             <circle
               cx={author.x}
               cy={author.y}
-              r={isSelected ? 25 : 20}
+              r={
+                isSelected
+                  ? 25
+                  : isHovered
+                  ? 22
+                  : 20
+              }
               fill={author.color}
               stroke={isSelected ? "#1b3f66" : "#ede6d9"}
               strokeWidth={isSelected ? 4 : 2}
               opacity={isDimmed ? 0.18 : 1}
               style={{
-                transition: "all .25s",
+                transition: "all .2s",
+                filter: isHovered
+                  ? "brightness(1.1)"
+                  : "none",
               }}
             />
 
@@ -47,12 +64,13 @@ export default function Authors({
               textAnchor="middle"
               fontSize="13"
               fontFamily="Inter, sans-serif"
-              fontWeight={isSelected ? 600 : 400}
+              fontWeight={isSelected || isHovered ? 600 : 400}
               fill="#2b2620"
               opacity={isDimmed ? 0.25 : 1}
               style={{
                 userSelect: "none",
                 pointerEvents: "none",
+                transition: "font-weight .2s",
               }}
             >
               {author.name}

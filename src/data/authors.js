@@ -1559,7 +1559,7 @@ export const authors = [
     deathYear: null,
     x: 450,
     y: 500,
-    color: "#86B53F",
+    color: "#6B7F4A",
 
     concepts: ["Homme pluriel", "Dispositions plurielles"],
 
@@ -1591,7 +1591,7 @@ export const authors = [
     deathYear: null,
     x: 480,
     y: 620,
-    color: "#48A0A0",
+    color: "#6B7F4A",
 
     concepts: ["Carrière (socialisation)", "Fabrique de l'habitus"],
 

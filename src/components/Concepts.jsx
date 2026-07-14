@@ -2,12 +2,16 @@ export default function Concepts({
   concepts,
   selectedConcept,
   setSelectedItem,
+  dimIds,
 }) {
   return (
     <>
       {concepts.map((concept) => {
         const isSelected =
           selectedConcept?.id === concept.id;
+
+        const isDimmed =
+          dimIds && !dimIds.has(concept.id);
 
         return (
           <g
@@ -28,7 +32,7 @@ export default function Concepts({
               cy={concept.y}
               r={isSelected ? 12 : 9}
               fill={isSelected ? "#111" : "#444"}
-              opacity={isSelected ? 1 : 0.65}
+              opacity={isDimmed ? 0.1 : isSelected ? 1 : 0.65}
               style={{
                 transition: "all .25s",
               }}
@@ -39,9 +43,11 @@ export default function Concepts({
               y={concept.y + 4}
               fontSize="12"
               fill={isSelected ? "#111" : "#444"}
+              opacity={isDimmed ? 0.15 : 1}
               style={{
                 userSelect: "none",
                 pointerEvents: "none",
+                transition: "opacity .25s",
               }}
             >
               {concept.label}

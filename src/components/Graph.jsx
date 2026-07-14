@@ -349,16 +349,12 @@ export default function Graph({
       ref={containerRef}
       style={{ width: "100%", height: "100%", position: "relative" }}
     >
-     <button
+  <button
         onClick={() => resetView(400)}
         title="Recentrer la vue"
         aria-label="Recentrer la vue"
-        className="icon-button"
+        className="icon-button floating-recenter"
         style={{
-          position: "absolute",
-          top: 12,
-          right: 12,
-          zIndex: 1000,
           width: 38,
           height: 38,
           borderRadius: 6,

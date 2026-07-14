@@ -31,8 +31,8 @@ export default function Concepts({
               cx={concept.x}
               cy={concept.y}
               r={isSelected ? 12 : 9}
-              fill={isSelected ? "#111" : "#444"}
-              opacity={isDimmed ? 0.1 : isSelected ? 1 : 0.65}
+              fill={isSelected ? "#1b3f66" : "#6b3f2a"}
+              opacity={isDimmed ? 0.1 : isSelected ? 1 : 0.55}
               style={{
                 transition: "all .25s",
               }}
@@ -42,7 +42,8 @@ export default function Concepts({
               x={concept.x + 14}
               y={concept.y + 4}
               fontSize="12"
-              fill={isSelected ? "#111" : "#444"}
+              fontFamily="Inter, sans-serif"
+              fill={isSelected ? "#1b3f66" : "#2b2620"}
               opacity={isDimmed ? 0.15 : 1}
               style={{
                 userSelect: "none",

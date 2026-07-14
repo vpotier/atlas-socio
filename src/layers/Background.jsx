@@ -14,12 +14,12 @@ export default function Background({ width, height }) {
           height={step}
           patternUnits="userSpaceOnUse"
         >
-          <rect width={step} height={step} fill="#f8f8f5" />
+          <rect width={step} height={step} fill="#ede6d9" />
 
           <path
             d={`M ${step} 0 L 0 0 0 ${step}`}
             fill="none"
-            stroke="#ece9e2"
+            stroke="#ddd0b8"
             strokeWidth="1"
           />
         </pattern>

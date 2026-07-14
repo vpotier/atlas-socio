@@ -1550,6 +1550,7 @@ export const authors = [
       "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
     ],
   },
+
   {
     id: "lahire",
     name: "Bernard Lahire",
@@ -1617,6 +1618,7 @@ export const authors = [
     ],
     themes: ["Sociologie de l'éducation et de la socialisation"],
   },
+
   {
     id: "wacquant",
     name: "Loïc Wacquant",
@@ -1686,5 +1688,111 @@ export const authors = [
       "Mauger, 2023, Avec Bourdieu. Un parcours sociologique",
     ],
     themes: ["Sociologie de la déviance", "Sociologie de l'éducation et de la socialisation"],
+  },
+
+  {
+    id: "hochschild",
+    name: "Arlie Russell Hochschild",
+    school: "Sociologie des émotions (interactionnisme)",
+    period: "1940–présent",
+    birthYear: 1940,
+    deathYear: null,
+    x: 700,
+    y: 750,
+    color: "#16A085",
+
+    concepts: ["Travail émotionnel", "Règles de sentiment", "Double journée"],
+
+    works: [
+      "The Managed Heart (1983)",
+      "The Second Shift (1989)",
+    ],
+
+    influences: ["erving-goffman"],
+    heirs: [],
+
+    summary:
+      "Sociologue américaine, professeure émérite à Berkeley, elle fonde la sociologie des émotions en montrant que celles-ci sont socialement produites et gérées selon des « règles de sentiment » implicites. Son concept de travail émotionnel désigne l'effort requis, notamment dans les métiers de service, pour ajuster ses émotions ressenties et affichées aux attentes professionnelles.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 4,
+    classificationNote:
+      "Hochschild prolonge explicitement l'approche dramaturgique de Goffman (mise en scène de soi) en l'appliquant à la gestion des émotions elles-mêmes, fondant ainsi la sociologie des émotions comme sous-champ de l'interactionnisme.",
+    sources: [
+      "Wikipédia FR, Arlie Russell Hochschild",
+      "CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions",
+    ],
+    themes: ["Études de genre", "Sociologie du travail et des professions"],
+  },
+
+  {
+    id: "eva-illouz",
+    name: "Eva Illouz",
+    school: "Sociologie des émotions et du capitalisme émotionnel",
+    period: "1961–présent",
+    birthYear: 1961,
+    deathYear: null,
+    x: 620,
+    y: 780,
+    color: "#6B7F4A",
+
+    concepts: ["Capital émotionnel", "Capitalisme émotionnel"],
+
+    works: [
+      "Les Sentiments du capitalisme (2006)",
+      "Pourquoi l'amour fait mal (2012)",
+      "La Fin de l'amour (2020)",
+    ],
+
+    influences: ["bourdieu", "weber", "hochschild"],
+    heirs: [],
+
+    summary:
+      "Sociologue franco-israélienne, directrice d'études à l'EHESS, elle analyse comment le capitalisme contemporain façonne, exploite et transforme en marchandises nos vies affectives et amoureuses, en articulant les outils de Bourdieu (capital), de Weber (rationalisation) et de Hochschild (travail émotionnel).",
+
+    constellation: "bourdieusien",
+    consensus: 4,
+    classificationNote:
+      "Illouz est identifiée comme une figure de proue de la sociologie contemporaine des émotions, qui articule explicitement l'héritage bourdieusien du capital, l'héritage wébérien de la rationalisation, et l'héritage interactionniste de Hochschild plutôt que de se rattacher à une seule tradition.",
+    sources: [
+      "Wikipédia FR, Eva Illouz",
+      "CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions",
+    ],
+    themes: ["Études de genre", "Sociologie économique"],
+  },
+
+  {
+    id: "nancy-fraser",
+    name: "Nancy Fraser",
+    school: "Théorie critique (féminisme matérialiste et justice sociale)",
+    period: "1947–présent",
+    birthYear: 1947,
+    deathYear: null,
+    x: 1560,
+    y: 340,
+    color: "#4A3B54",
+
+    concepts: ["Redistribution / Reconnaissance", "Contre-publics subalternes"],
+
+    works: [
+      "Unruly Practices (1989)",
+      "Redistribution or Recognition? (2003, avec A. Honneth)",
+    ],
+
+    influences: ["jürgen-habermas"],
+    heirs: [],
+
+    summary:
+      "Philosophe et théoricienne critique américaine, elle prolonge et critique la théorie habermassienne de l'espace public en montrant qu'il occulte historiquement les exclusions de genre et de classe, et propose une théorie de la justice sociale articulant redistribution économique et reconnaissance culturelle.",
+
+    constellation: "la-theorie-critique",
+    consensus: 4,
+    classificationNote:
+      "Fraser est identifiée comme une continuatrice critique de la théorie critique habermassienne, qu'elle enrichit d'une perspective féministe et matérialiste sur les exclusions structurant l'espace public.",
+    sources: [
+      "Fraser, 1989, Unruly Practices",
+      "Fraser & Honneth, 2003, Redistribution or Recognition?",
+    ],
+    themes: ["Études de genre", "Sociologie politique et de l'État"],
   },
 ];

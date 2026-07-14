@@ -1617,4 +1617,74 @@ export const authors = [
     ],
     themes: ["Sociologie de l'éducation et de la socialisation"],
   },
+  {
+    id: "wacquant",
+    name: "Loïc Wacquant",
+    school: "Sociologie dispositionnaliste et réflexive (Bourdieu)",
+    period: "1960–présent",
+    birthYear: 1960,
+    deathYear: null,
+    x: 500,
+    y: 700,
+    color: "#6B7F4A",
+
+    concepts: ["Microsociologie charnelle", "Marginalité urbaine avancée"],
+
+    works: [
+      "Réponses. Pour une anthropologie réflexive (1992, avec P. Bourdieu)",
+      "Corps et âme (2000)",
+      "Parias urbains (2006)",
+    ],
+
+    influences: ["bourdieu"],
+    heirs: [],
+
+    summary:
+      "Sociologue et anthropologue français installé aux États-Unis, il est l'un des plus proches collaborateurs de Bourdieu, avec qui il co-écrit un ouvrage de référence sur la méthode réflexive. Il prolonge ce cadre par une « microsociologie charnelle » (immersion dans une salle de boxe) et par une sociologie comparée de la marginalité urbaine avancée (ghetto noir américain, banlieues françaises, État pénal).",
+
+    constellation: "bourdieusien",
+    consensus: 5,
+    classificationNote:
+      "Wacquant est identifié comme l'un des plus proches collaborateurs et continuateurs de Bourdieu, avec qui il a directement co-écrit, et dont il prolonge le programme réflexif appliqué à la marginalité urbaine et au système pénal.",
+    sources: [
+      "Universalis, Biographie de Loïc Wacquant",
+      "Wacquant, 2006, Parias urbains. Ghetto, banlieues, État",
+    ],
+    themes: ["Sociologie urbaine", "Sociologie politique et de l'État"],
+  },
+
+  {
+    id: "gerard-mauger",
+    name: "Gérard Mauger",
+    school: "Sociologie bourdieusienne des classes populaires et de la jeunesse",
+    period: "1943–présent",
+    birthYear: 1943,
+    deathYear: null,
+    x: 420,
+    y: 700,
+    color: "#6B7F4A",
+
+    concepts: ["Sociologie de la jeunesse populaire", "Générations"],
+
+    works: [
+      "Les Bandes, le milieu et la bohème populaire (2006)",
+      "Avec Bourdieu. Un parcours sociologique (2023)",
+    ],
+
+    influences: ["bourdieu"],
+    heirs: [],
+
+    summary:
+      "Sociologue français, directeur de recherche émérite au CNRS, il applique et prolonge le cadre bourdieusien à l'étude de la jeunesse des classes populaires, de la déviance, des générations et des pratiques culturelles.",
+
+    constellation: "bourdieusien",
+    consensus: 4,
+    classificationNote:
+      "Mauger est identifié comme l'un des continuateurs directs du programme bourdieusien, qu'il applique de façon soutenue à la sociologie de la jeunesse populaire et de la déviance depuis les années 1970.",
+    sources: [
+      "Wikipédia FR, Gérard Mauger",
+      "Mauger, 2023, Avec Bourdieu. Un parcours sociologique",
+    ],
+    themes: ["Sociologie de la déviance", "Sociologie de l'éducation et de la socialisation"],
+  },
 ];

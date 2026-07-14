@@ -3,6 +3,7 @@ import { useState } from "react";
 import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";
 import FiltersPanel from "./components/FiltersPanel";
+import Legend from "./components/Legend";
 import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
 import { constellations } from "./engine/constellations";
 import { axes, constellationAxisValues } from "./data/theoreticalAxes";
@@ -24,10 +25,28 @@ export default function App() {
     if (!selectedItem) {
       return (
         <>
-          <h2>Atlas de la théorie sociologique</h2>
+          <div
+            style={{
+              display: "inline-block",
+              fontSize: 11,
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: "var(--color-taupe)",
+              border: "1px solid var(--color-taupe)",
+              borderRadius: 3,
+              padding: "3px 8px",
+              marginBottom: 14,
+            }}
+          >
+            Atlas
+          </div>
 
-          <p>
-            Sélectionnez un auteur, un concept ou une relation.
+          <h2>Théorie sociologique</h2>
+
+          <p style={{ color: "var(--color-taupe)" }}>
+            Sélectionnez un auteur, un concept, une relation ou une
+            constellation sur la carte.
           </p>
         </>
       );
@@ -41,7 +60,7 @@ export default function App() {
           top: 16,
           right: 16,
           border: "none",
-          background: "#eee",
+          background: "var(--color-paper)",
           borderRadius: "50%",
           width: 28,
           height: 28,
@@ -49,13 +68,32 @@ export default function App() {
           fontSize: 16,
           lineHeight: "28px",
           textAlign: "center",
-          color: "#555",
+          color: "var(--color-taupe)",
         }}
         aria-label="Fermer"
         title="Fermer"
       >
         ×
       </button>
+    );
+
+    const tabLabel = (text) => (
+      <div
+        style={{
+          display: "inline-block",
+          fontSize: 11,
+          fontWeight: 600,
+          textTransform: "uppercase",
+          letterSpacing: "0.1em",
+          color: "var(--color-leather)",
+          border: "1px solid var(--color-leather)",
+          borderRadius: 3,
+          padding: "3px 8px",
+          marginBottom: 10,
+        }}
+      >
+        {text}
+      </div>
     );
 
     if (selectedItem.type === "author") {
@@ -65,9 +103,11 @@ export default function App() {
         <>
           {closeButton}
 
+          {tabLabel("Auteur·ice")}
+
           <h2>{a.name}</h2>
 
-          <p style={{ marginTop: -8, color: "#888" }}>
+          <p style={{ marginTop: -8, color: "var(--color-taupe)" }}>
             {a.period}
           </p>
 
@@ -123,7 +163,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                <a
+                
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -164,6 +204,8 @@ export default function App() {
         <>
           {closeButton}
 
+          {tabLabel("Concept")}
+
           <h2>{c.label}</h2>
 
           <p>{c.definition}</p>
@@ -192,6 +234,8 @@ export default function App() {
         <>
           {closeButton}
 
+          {tabLabel("Relation")}
+
           <h2>{labels[r.type]}</h2>
 
           <p>
@@ -206,11 +250,33 @@ export default function App() {
             {r.targetName}
           </p>
 
-          <p>
+          <p style={{ marginBottom: 4 }}>
             <strong>Force du lien</strong>
-            <br />
-            {r.strength}/5
           </p>
+
+          <div
+            style={{
+              display: "flex",
+              gap: 3,
+              marginBottom: 14,
+            }}
+          >
+            {[1, 2, 3, 4, 5].map((n) => (
+              <div
+                key={n}
+                style={{
+                  height: 6,
+                  flex: 1,
+                  borderRadius: 2,
+                  background:
+                    n <= r.strength
+                      ? "var(--color-tardis)"
+                      : "var(--color-paper-dim)",
+                  border: "1px solid var(--color-taupe)",
+                }}
+              />
+            ))}
+          </div>
 
           <p>
             <strong>Consensus</strong>
@@ -243,7 +309,7 @@ export default function App() {
               <div key={name}>
                 <h3>Positionnement théorique — {name}</h3>
 
-                <p style={{ marginTop: -8, color: "#888" }}>
+                <p style={{ marginTop: -8, color: "var(--color-taupe)" }}>
                   {cstMeta.label}
                 </p>
 
@@ -270,10 +336,12 @@ export default function App() {
         <>
           {closeButton}
 
+          {tabLabel("Constellation")}
+
           <h2 style={{ color: cst.color }}>{cst.label}</h2>
 
           {cst.period && (
-            <p style={{ marginTop: -8, color: "#888" }}>
+            <p style={{ marginTop: -8, color: "var(--color-taupe)" }}>
               {cst.period}
             </p>
           )}
@@ -313,7 +381,7 @@ export default function App() {
                   })
                 }
               >
-                {m.name} <span style={{ color: "#999" }}>({m.period})</span>
+                {m.name} <span style={{ color: "var(--color-taupe)" }}>({m.period})</span>
               </li>
             ))}
           </ul>
@@ -329,8 +397,9 @@ export default function App() {
       style={{
         display: "flex",
         height: "100vh",
-        fontFamily: "Arial, sans-serif",
+        fontFamily: "var(--font-body)",
         position: "relative",
+        background: "var(--color-paper)",
       }}
     >
       <SearchBar
@@ -349,6 +418,8 @@ export default function App() {
         setThemeFilters={setThemeFilters}
       />
 
+      <Legend />
+
       <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
         <Graph
           selectedItem={selectedItem}
@@ -362,9 +433,9 @@ export default function App() {
         style={{
           width: "340px",
           flexShrink: 0,
-          borderLeft: "1px solid #ddd",
+          borderLeft: "1px solid var(--color-taupe)",
           padding: 20,
-          background: "#fafafa",
+          background: "var(--color-paper-dim)",
           overflowY: "auto",
           position: "relative",
         }}

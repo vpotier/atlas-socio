@@ -10,10 +10,10 @@ import "./styles/app.css";
 export default function App() {
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const [axisFilters, setAxisFilters] = useState({
-    individuSociete: null,
-    methode: null,
-    rationalite: null,
+ const [axisFilters, setAxisFilters] = useState({
+    individuSociete: { enabled: false, value: 0.5 },
+    methode: { enabled: false, value: 0.5 },
+    rationalite: { enabled: false, value: 0.5 },
   });
 
   const [themeFilters, setThemeFilters] = useState([]);

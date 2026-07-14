@@ -433,7 +433,7 @@ export default function App() {
           border: "1px solid var(--color-taupe)",
         }}
         Par Victor Potier —{" "}
-        
+        <a
           href="mailto:victor.potier@univ-eiffel.fr"
           style={{ color: "var(--color-tardis)" }}
         >

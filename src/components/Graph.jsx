@@ -408,7 +408,7 @@ const activeAxisEntries = useMemo(
                 onMouseLeave={() =>
                   setHoveredRelation(null)
                 }
-                onClick={() =>
+            onClick={() =>
                   setSelectedItem({
                     type: "relation",
                     data: {
@@ -417,6 +417,10 @@ const activeAxisEntries = useMemo(
                         source.name,
                       targetName:
                         target.name,
+                      sourceConstellation:
+                        source.constellation,
+                      targetConstellation:
+                        target.constellation,
                     },
                   })
                 }

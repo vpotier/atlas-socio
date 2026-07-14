@@ -52,17 +52,12 @@ export default function FiltersPanel({
 
   return (
     <div
-      style={{
-        position: "absolute",
-        top: 20,
-        left: 300,
-        zIndex: 1000,
-        fontFamily: "var(--font-body)",
-      }}
+      className="floating-filters"
+      style={{ fontFamily: "var(--font-body)" }}
     >
       <button
         onClick={() => setOpen((o) => !o)}
-         className="icon-button"
+        className="icon-button"
         style={{
           padding: "10px 16px",
           borderRadius: 8,
@@ -77,18 +72,18 @@ export default function FiltersPanel({
         Filtres {anyActive ? "●" : ""}
       </button>
 
-     {open && (
+      {open && (
         <div
           className="dropdown-panel"
           style={{
             marginTop: 8,
-            width: 340,
+            width: "min(340px, calc(100vw - 24px))",
             background: "var(--color-paper-dim)",
             border: "1px solid var(--color-taupe)",
             borderRadius: 8,
             boxShadow: "0 2px 10px rgba(0,0,0,0.15)",
             padding: 16,
-            maxHeight: "75vh",
+            maxHeight: "70vh",
             overflowY: "auto",
           }}
         >

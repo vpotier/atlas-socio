@@ -17,107 +17,175 @@ function createSeededRandom(seed) {
 
 const random = createSeededRandom(42);
 
-// Espace de travail pour la simulation.
 const SIM_WIDTH = 2600;
 const SIM_HEIGHT = 1700;
-
-// Marge laissée autour du contenu final calculé.
 const PADDING = 140;
 
 // ---------------------------------------------------------------------
-// Layout de type ForceAtlas2 (comme dans Gephi) : les positions émergent
-// du poids réel des relations entre auteurs, sans hypothèse de départ sur
-// qui doit être central. Deux auteurs fortement reliés (héritage, dialogue
-// ou tension) se rapprochent ; les autres se repoussent naturellement.
-//
-// Filet de sécurité : entre auteurs d'une même constellation qui n'ont
-// PAS de relation explicite entre eux, on ajoute un lien de cohésion très
-// faible, pour éviter qu'un courant peu connecté (ex. Actionnisme) ne
-// parte à la dérive — mais ce n'est plus le moteur principal du layout,
-// juste un correctif léger.
+// ÉTAGE 1 — méta-layout de type ForceAtlas2, appliqué aux CONSTELLATIONS
+// elles-mêmes (pas aux auteurs individuels). On agrège le poids de toutes
+// les relations qui traversent deux constellations différentes, et on
+// fait tourner une vraie simulation de forces entre elles : deux
+// constellations fortement reliées se rapprochent, les autres se
+// repoussent — sans aucun centre imposé au départ, la position relative
+// émerge uniquement des données.
 // ---------------------------------------------------------------------
-export function computeLayout(authors, concepts, relations) {
+function computeConstellationCenters(authors, relations) {
   const center = { x: SIM_WIDTH / 2, y: SIM_HEIGHT / 2 };
-
-  const authorNodes = authors.map((a) => ({
-    id: a.id,
-    kind: "author",
-    constellation: a.constellation,
-    x: center.x + (random() - 0.5) * SIM_WIDTH * 0.6,
-    y: center.y + (random() - 0.5) * SIM_HEIGHT * 0.6,
-  }));
 
   const authorConstellation = new Map(
     authors.map((a) => [a.id, a.constellation])
   );
 
-  const conceptNodes = concepts.map((c) => ({
-    id: `concept:${c.id}`,
-    kind: "concept",
-    labelLength: c.label.length,
-    constellation:
-      authorConstellation.get(c.authors[0]) ?? null,
-    x: center.x + (random() - 0.5) * SIM_WIDTH * 0.6,
-    y: center.y + (random() - 0.5) * SIM_HEIGHT * 0.6,
-  }));
+  const constellationIds = [
+    ...new Set(authors.map((a) => a.constellation)),
+  ];
+
+  const memberCount = {};
+  constellationIds.forEach((id) => {
+    memberCount[id] = authors.filter(
+      (a) => a.constellation === id
+    ).length;
+  });
+
+  const crossWeights = {};
+
+  relations.forEach((r) => {
+    const cA = authorConstellation.get(r.source);
+    const cB = authorConstellation.get(r.target);
+
+    if (!cA || !cB || cA === cB) return;
+
+    const key = [cA, cB].sort().join("--");
+    crossWeights[key] = (crossWeights[key] || 0) + r.strength;
+  });
+
+  const metaNodes = constellationIds.map((id, i) => {
+    const angle = (i / constellationIds.length) * 2 * Math.PI;
+    const seedRadius = Math.min(SIM_WIDTH, SIM_HEIGHT) / 3;
+
+    return {
+      id,
+      x: center.x + seedRadius * Math.cos(angle),
+      y: center.y + seedRadius * Math.sin(angle),
+    };
+  });
+
+  const metaLinks = Object.entries(crossWeights).map(
+    ([key, weight]) => {
+      const [source, target] = key.split("--");
+      return { source, target, weight };
+    }
+  );
+
+  const metaSimulation = d3
+    .forceSimulation(metaNodes)
+    .force(
+      "link",
+      d3
+        .forceLink(metaLinks)
+        .id((d) => d.id)
+        // Plus deux constellations sont fortement reliées, plus elles
+        // sont attirées l'une vers l'autre.
+        .distance((l) => Math.max(280, 700 - l.weight * 20))
+        .strength((l) => Math.min(0.8, 0.1 + l.weight * 0.02))
+    )
+    .force("charge", d3.forceManyBody().strength(-2200))
+    .force(
+      "collide",
+      d3
+        .forceCollide()
+        .radius((d) => 220 + memberCount[d.id] * 35)
+    )
+    .force("center", d3.forceCenter(center.x, center.y))
+    .stop();
+
+  metaSimulation.tick(500);
+
+  const constellationCenters = {};
+
+  metaNodes.forEach((n) => {
+    constellationCenters[n.id] = { x: n.x, y: n.y };
+  });
+
+  return constellationCenters;
+}
+
+// ---------------------------------------------------------------------
+// ÉTAGE 2 — micro-layout : à l'intérieur de ce cadre macro, les auteurs
+// et concepts se placent. Le regroupement par constellation est fort
+// (chacun reste fermement dans son propre halo) ; les relations entre
+// auteurs d'une MÊME constellation les rapprochent normalement ; les
+// relations qui traversent deux constellations différentes n'ont plus
+// qu'une influence très légère sur la position individuelle (l'essentiel
+// de leur effet est déjà capté au niveau macro par l'étage 1).
+// ---------------------------------------------------------------------
+export function computeLayout(authors, concepts, relations) {
+  const constellationCenters = computeConstellationCenters(
+    authors,
+    relations
+  );
+
+  const center = { x: SIM_WIDTH / 2, y: SIM_HEIGHT / 2 };
+
+  const authorConstellation = new Map(
+    authors.map((a) => [a.id, a.constellation])
+  );
+
+  const authorNodes = authors.map((a) => {
+    const c = constellationCenters[a.constellation] ?? center;
+
+    return {
+      id: a.id,
+      kind: "author",
+      constellation: a.constellation,
+      x: c.x + (random() - 0.5) * 150,
+      y: c.y + (random() - 0.5) * 150,
+    };
+  });
+
+  const conceptNodes = concepts.map((c) => {
+    const authorConst =
+      authorConstellation.get(c.authors[0]) ?? null;
+    const c2 = constellationCenters[authorConst] ?? center;
+
+    return {
+      id: `concept:${c.id}`,
+      kind: "concept",
+      labelLength: c.label.length,
+      constellation: authorConst,
+      x: c2.x + (random() - 0.5) * 150,
+      y: c2.y + (random() - 0.5) * 150,
+    };
+  });
 
   const nodes = [...authorNodes, ...conceptNodes];
 
   const links = [];
 
-  // Relations réelles entre auteurs : le moteur principal du layout.
   relations.forEach((r) => {
+    const sameConstellation =
+      authorConstellation.get(r.source) ===
+      authorConstellation.get(r.target);
+
     links.push({
       source: r.source,
       target: r.target,
       kind: "relation",
       strength: r.strength || 2,
+      sameConstellation,
     });
   });
 
-  // Concept -> auteur(s).
   concepts.forEach((c) => {
     c.authors.forEach((authorId) => {
       links.push({
         source: `concept:${c.id}`,
         target: authorId,
         kind: "concept-link",
+        sameConstellation: true,
       });
     });
-  });
-
-  // Filet de sécurité : cohésion légère par constellation, seulement
-  // entre auteurs qui n'ont pas déjà de relation explicite entre eux.
-  const explicitPairs = new Set(
-    relations.map((r) =>
-      [r.source, r.target].sort().join("--")
-    )
-  );
-
-  const byConstellation = {};
-
-  authors.forEach((a) => {
-    if (!byConstellation[a.constellation]) {
-      byConstellation[a.constellation] = [];
-    }
-
-    byConstellation[a.constellation].push(a.id);
-  });
-
-  Object.values(byConstellation).forEach((ids) => {
-    for (let i = 0; i < ids.length; i++) {
-      for (let j = i + 1; j < ids.length; j++) {
-        const key = [ids[i], ids[j]].sort().join("--");
-
-        if (!explicitPairs.has(key)) {
-          links.push({
-            source: ids[i],
-            target: ids[j],
-            kind: "cohesion",
-          });
-        }
-      }
-    }
   });
 
   const simulation = d3
@@ -128,19 +196,21 @@ export function computeLayout(authors, concepts, relations) {
         .forceLink(links)
         .id((d) => d.id)
         .distance((l) => {
-          if (l.kind === "concept-link") return 90;
-          if (l.kind === "cohesion") return 280;
-          // Relation réelle : plus la force est grande, plus la
-          // distance cible est courte (auteurs très liés = très proches).
-          return Math.max(120, 320 - l.strength * 35);
+          if (l.kind === "concept-link") return 95;
+          return l.sameConstellation ? 160 : 320;
         })
         .strength((l) => {
           if (l.kind === "concept-link") return 0.9;
-          if (l.kind === "cohesion") return 0.04;
-          return Math.min(0.9, 0.15 + l.strength * 0.09);
+          // Relation interne à une constellation : rapproche vraiment,
+          // proportionnellement à sa force réelle.
+          // Relation entre deux constellations différentes : influence
+          // très légère, la proximité macro est déjà gérée à l'étage 1.
+          return l.sameConstellation
+            ? Math.min(0.6, 0.15 + l.strength * 0.07)
+            : 0.04;
         })
     )
-    .force("charge", d3.forceManyBody().strength(-460))
+    .force("charge", d3.forceManyBody().strength(-380))
     .force(
       "collide",
       d3
@@ -148,20 +218,32 @@ export function computeLayout(authors, concepts, relations) {
         .radius((d) =>
           d.kind === "author"
             ? 75
-            // Les labels de concepts s'affichent à droite du point ;
-            // on approxime leur largeur avec le nombre de caractères.
             : 40 + Math.min(d.labelLength ?? 10, 26) * 3
         )
         .strength(0.9)
     )
-    .force("center", d3.forceCenter(center.x, center.y))
+    .force(
+      "clusterX",
+      d3
+        .forceX((d) => {
+          const c = constellationCenters[d.constellation];
+          return c ? c.x : center.x;
+        })
+        .strength(0.3)
+    )
+    .force(
+      "clusterY",
+      d3
+        .forceY((d) => {
+          const c = constellationCenters[d.constellation];
+          return c ? c.y : center.y;
+        })
+        .strength(0.3)
+    )
     .stop();
 
-  simulation.tick(600);
+  simulation.tick(500);
 
-  // Recadrage : on calcule l'étendue réelle du résultat et on
-  // dimensionne le canevas final dessus, pour éliminer le vide
-  // et garder tout le monde visible.
   const xs = nodes.map((n) => n.x);
   const ys = nodes.map((n) => n.y);
 

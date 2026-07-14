@@ -432,13 +432,12 @@ export default function App() {
           borderRadius: 6,
           border: "1px solid var(--color-taupe)",
         }}
-      >
-        Par Victor Potier — Retours et remarques :{" "}
-        <a
+        Par Victor Potier —{" "}
+        
           href="mailto:victor.potier@univ-eiffel.fr"
           style={{ color: "var(--color-tardis)" }}
         >
-          victor.potier@univ-eiffel.fr
+          Me contacter
         </a>
       </div>
       <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>

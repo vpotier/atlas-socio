@@ -221,7 +221,15 @@ export default function App() {
         <>
           {closeButton}
 
-          <h2 style={{ color: cst.color }}>{cst.label}</h2>
+         <h2 style={{ color: cst.color }}>{cst.label}</h2>
+
+          {cst.period && (
+            <p style={{ marginTop: -8, color: "#888" }}>
+              {cst.period}
+            </p>
+          )}
+
+          {cst.definition && <p>{cst.definition}</p>}
 
           <p>
             <strong>{cst.members.length}</strong>{" "}

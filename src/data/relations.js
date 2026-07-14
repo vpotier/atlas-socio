@@ -551,4 +551,24 @@ export const relations = [
       "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
     ],
   },
+  {
+    source: "marx",
+    target: "max-horkheimer",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "L'École de Francfort s'inscrit explicitement dans l'héritage marxiste, qu'elle combine avec la psychanalyse freudienne pour analyser les nouvelles formes de domination du capitalisme du XXe siècle.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+  },
+  {
+    source: "talcott-parsons",
+    target: "jürgen-habermas",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Habermas intègre des éléments du fonctionnalisme parsonien dans sa distinction entre système et monde vécu, tout en cherchant à en corriger le déterminisme.",
+    sources: ["Ansart, 1990, Les sociologies contemporaines"],
+  },
 ];

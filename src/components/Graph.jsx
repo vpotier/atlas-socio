@@ -10,10 +10,17 @@ import { authors as rawAuthors } from "../data/authors";
 import { concepts as rawConcepts } from "../data/concepts";
 import { relations } from "../data/relations";
 import { computeLayout } from "../engine/layout";
+import { constellationAxisValues } from "../data/theoreticalAxes";
+
+// Tolérance (en fraction de l'axe, 0-1) pour qu'une constellation soit
+// considérée comme correspondant à la position d'un curseur de filtre.
+const AXIS_TOLERANCE = 0.13;
 
 export default function Graph({
   selectedItem,
   setSelectedItem,
+  axisFilters,
+  themeFilters,
 }) {
   const [hoveredRelation, setHoveredRelation] = useState(null);
   const transformRef = useRef(null);
@@ -32,7 +39,7 @@ export default function Graph({
     [layout]
   );
 
-const concepts = useMemo(
+  const concepts = useMemo(
     () =>
       rawConcepts.map((c) => ({
         ...c,
@@ -52,6 +59,11 @@ const concepts = useMemo(
   const selectedConcept =
     selectedItem?.type === "concept"
       ? selectedItem.data
+      : null;
+
+  const selectedConstellationId =
+    selectedItem?.type === "constellation"
+      ? selectedItem.data.id
       : null;
 
   const neighbourIds = useMemo(() => {
@@ -75,6 +87,87 @@ const concepts = useMemo(
 
     return new Set(selectedConcept.authors);
   }, [selectedConcept]);
+
+  // --- Filtres théoriques (axes) et thématiques ---
+  const activeAxisEntries = useMemo(
+    () =>
+      Object.entries(axisFilters || {}).filter(
+        ([, v]) => v !== null && v !== undefined
+      ),
+    [axisFilters]
+  );
+
+  const matchingConstellationIds = useMemo(() => {
+    if (activeAxisEntries.length === 0) return null;
+
+    const ids = new Set();
+
+    Object.keys(constellationAxisValues).forEach(
+      (constellationId) => {
+        const values = constellationAxisValues[constellationId];
+
+        const matches = activeAxisEntries.every(
+          ([axisKey, filterValue]) => {
+            const axisValue = values[axisKey];
+            if (!axisValue) return false;
+            return (
+              Math.abs(axisValue.value - filterValue) <=
+              AXIS_TOLERANCE
+            );
+          }
+        );
+
+        if (matches) ids.add(constellationId);
+      }
+    );
+
+    return ids;
+  }, [activeAxisEntries]);
+
+  const filtersActive =
+    activeAxisEntries.length > 0 ||
+    (themeFilters && themeFilters.length > 0);
+
+  const filterVisibleAuthorIds = useMemo(() => {
+    if (!filtersActive) return null;
+
+    const ids = new Set();
+
+    authors.forEach((a) => {
+      const constellationOk =
+        !matchingConstellationIds ||
+        matchingConstellationIds.has(a.constellation);
+
+      const themeOk =
+        !themeFilters ||
+        themeFilters.length === 0 ||
+        (a.themes || []).some((t) =>
+          themeFilters.includes(t)
+        );
+
+      if (constellationOk && themeOk) ids.add(a.id);
+    });
+
+    return ids;
+  }, [authors, matchingConstellationIds, themeFilters, filtersActive]);
+
+  const filterVisibleConceptIds = useMemo(() => {
+    if (!filterVisibleAuthorIds) return null;
+
+    const ids = new Set();
+
+    concepts.forEach((c) => {
+      if (
+        c.authors.some((authorId) =>
+          filterVisibleAuthorIds.has(authorId)
+        )
+      ) {
+        ids.add(c.id);
+      }
+    });
+
+    return ids;
+  }, [concepts, filterVisibleAuthorIds]);
 
   const getAuthor = (id) =>
     authors.find((a) => a.id === id);
@@ -183,6 +276,14 @@ const concepts = useMemo(
       width = linked ? 4 : 1;
     }
 
+    if (filterVisibleAuthorIds) {
+      const linked =
+        filterVisibleAuthorIds.has(relation.source) &&
+        filterVisibleAuthorIds.has(relation.target);
+
+      opacity = linked ? opacity : 0.03;
+    }
+
     if (
       hoveredRelation &&
       hoveredRelation.source === relation.source &&
@@ -200,8 +301,16 @@ const concepts = useMemo(
     };
   };
 
+  const authorDimIds = filtersActive
+    ? filterVisibleAuthorIds
+    : neighbourIds || conceptAuthors;
+
+  const conceptDimIds = filtersActive
+    ? filterVisibleConceptIds
+    : null;
+
   return (
-<TransformWrapper
+    <TransformWrapper
       ref={transformRef}
       initialScale={0.55}
       minScale={0.2}
@@ -210,7 +319,7 @@ const concepts = useMemo(
       limitToBounds={false}
     >
       <TransformComponent>
-       <svg
+        <svg
           width={layout.width}
           height={layout.height}
           style={{ overflow: "visible" }}
@@ -255,7 +364,13 @@ const concepts = useMemo(
             </marker>
           </defs>
 
-  <Clusters authors={authors} concepts={concepts} />
+          <Clusters
+            authors={authors}
+            concepts={concepts}
+            selectedConstellationId={selectedConstellationId}
+            setSelectedItem={setSelectedItem}
+            dimConstellationIds={matchingConstellationIds}
+          />
 
           {relations.map((relation, i) => {
             const source = getAuthor(
@@ -317,6 +432,7 @@ const concepts = useMemo(
             setSelectedItem={
               setSelectedItem
             }
+            dimIds={conceptDimIds}
           />
 
           <Authors
@@ -327,10 +443,7 @@ const concepts = useMemo(
             setSelectedItem={
               setSelectedItem
             }
-            dimIds={
-              neighbourIds ||
-              conceptAuthors
-            }
+            dimIds={authorDimIds}
           />
         </svg>
       </TransformComponent>

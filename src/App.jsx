@@ -2,12 +2,21 @@ import { useState } from "react";
 
 import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";
+import FiltersPanel from "./components/FiltersPanel";
 import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
 
 import "./styles/app.css";
 
 export default function App() {
   const [selectedItem, setSelectedItem] = useState(null);
+
+  const [axisFilters, setAxisFilters] = useState({
+    individuSociete: null,
+    methode: null,
+    rationalite: null,
+  });
+
+  const [themeFilters, setThemeFilters] = useState([]);
 
   const renderSidebar = () => {
     if (!selectedItem) {
@@ -205,6 +214,40 @@ export default function App() {
       );
     }
 
+    if (selectedItem.type === "constellation") {
+      const cst = selectedItem.data;
+
+      return (
+        <>
+          {closeButton}
+
+          <h2 style={{ color: cst.color }}>{cst.label}</h2>
+
+          <p>
+            <strong>{cst.members.length}</strong>{" "}
+            auteur(e)s dans cette constellation.
+          </p>
+
+          <ul>
+            {cst.members.map((m) => (
+              <li
+                key={m.id}
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  setSelectedItem({
+                    type: "author",
+                    data: m,
+                  })
+                }
+              >
+                {m.name} <span style={{ color: "#999" }}>({m.period})</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      );
+    }
+
     return null;
   };
 
@@ -226,10 +269,19 @@ export default function App() {
         }
       />
 
+      <FiltersPanel
+        axisFilters={axisFilters}
+        setAxisFilters={setAxisFilters}
+        themeFilters={themeFilters}
+        setThemeFilters={setThemeFilters}
+      />
+
       <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
         <Graph
           selectedItem={selectedItem}
           setSelectedItem={setSelectedItem}
+          axisFilters={axisFilters}
+          themeFilters={themeFilters}
         />
       </div>
 

@@ -1,10 +1,16 @@
 import { constellations } from "../engine/constellations";
 
 // Calcule un halo (cercle englobant) par constellation à partir des
-// positions réelles de SES AUTEURS *ET* DE SES CONCEPTS, avec une marge
-// de confort — sinon un concept positionné plus loin que ses auteurs
-// déborde visuellement du halo censé le contenir.
-export default function Clusters({ authors, concepts }) {
+// positions réelles de SES AUTEURS *ET* DE SES CONCEPTS. Cliquable
+// (sélectionne la constellation), et s'estompe si un filtre actif
+// (axe théorique ou thème) ne la concerne pas.
+export default function Clusters({
+  authors,
+  concepts,
+  selectedConstellationId,
+  setSelectedItem,
+  dimConstellationIds,
+}) {
   const groups = {};
 
   authors.forEach((author) => {
@@ -47,14 +53,42 @@ export default function Clusters({ authors, concepts }) {
             )
           ) + 90;
 
+        const isSelected =
+          selectedConstellationId === constellationId;
+
+        const isDimmed =
+          dimConstellationIds &&
+          !dimConstellationIds.has(constellationId);
+
+        const authorMembers = authors.filter(
+          (a) => a.constellation === constellationId
+        );
+
         return (
-          <g key={constellationId}>
+          <g
+            key={constellationId}
+            style={{ cursor: "pointer" }}
+            onClick={() =>
+              setSelectedItem({
+                type: "constellation",
+                data: {
+                  id: constellationId,
+                  label: meta.label,
+                  color: meta.color,
+                  members: authorMembers,
+                },
+              })
+            }
+          >
             <circle
               cx={cx}
               cy={cy}
               r={radius}
               fill={meta.color}
-              opacity="0.08"
+              opacity={
+                isDimmed ? 0.03 : isSelected ? 0.22 : 0.08
+              }
+              style={{ transition: "opacity .25s" }}
             />
 
             <circle
@@ -63,8 +97,9 @@ export default function Clusters({ authors, concepts }) {
               r={radius}
               fill="none"
               stroke={meta.color}
-              strokeWidth="1"
-              opacity="0.25"
+              strokeWidth={isSelected ? 2.5 : 1}
+              opacity={isDimmed ? 0.08 : isSelected ? 0.7 : 0.25}
+              style={{ transition: "opacity .25s" }}
             />
 
             <text
@@ -72,11 +107,13 @@ export default function Clusters({ authors, concepts }) {
               y={cy - radius + 24}
               textAnchor="middle"
               fontSize="16"
+              fontWeight={isSelected ? "bold" : "normal"}
               fill={meta.color}
-              opacity="0.75"
+              opacity={isDimmed ? 0.15 : 0.75}
               style={{
                 userSelect: "none",
                 pointerEvents: "none",
+                transition: "opacity .25s",
               }}
             >
               {meta.label}

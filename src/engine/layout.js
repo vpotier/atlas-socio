@@ -247,9 +247,9 @@ export function computeLayout(authors, concepts, relations) {
   const authorXs = authorNodes.map((n) => n.x);
   const authorYs = authorNodes.map((n) => n.y);
 
-  const centroidX =
+  const authorCentroidX =
     authorXs.reduce((sum, x) => sum + x, 0) / authorXs.length;
-  const centroidY =
+  const authorCentroidY =
     authorYs.reduce((sum, y) => sum + y, 0) / authorYs.length;
 
   const xs = nodes.map((n) => n.x);
@@ -260,25 +260,20 @@ export function computeLayout(authors, concepts, relations) {
   const minY = Math.min(...ys);
   const maxY = Math.max(...ys);
 
-  // On centre le canevas final sur le centroïde réel des auteurs (et non
-  // sur le simple centre du rectangle englobant), pour que le centrage
-  // automatique de la vue au chargement tombe pile sur le contenu, même
-  // si sa répartition est asymétrique.
-  const halfWidth =
-    Math.max(centroidX - minX, maxX - centroidX) + PADDING;
-  const halfHeight =
-    Math.max(centroidY - minY, maxY - centroidY) + PADDING;
-
-  const offsetX = centroidX - halfWidth;
-  const offsetY = centroidY - halfHeight;
-
+  // Canevas dimensionné simplement sur l'étendue réelle du contenu (pas
+  // de gonflement artificiel). Le centre du contenu (utilisé pour viser
+  // la caméra au chargement) est calculé et exposé séparément, sans
+  // supposer qu'il tombe pile au centre géométrique du canevas.
   nodes.forEach((n) => {
-    n.x = n.x - offsetX;
-    n.y = n.y - offsetY;
+    n.x = n.x - minX + PADDING;
+    n.y = n.y - minY + PADDING;
   });
 
-  const width = halfWidth * 2;
-  const height = halfHeight * 2;
+  const width = maxX - minX + PADDING * 2;
+  const height = maxY - minY + PADDING * 2;
+
+  const centerX = authorCentroidX - minX + PADDING;
+  const centerY = authorCentroidY - minY + PADDING;
 
   const authorPositions = new Map();
   const conceptPositions = new Map();
@@ -299,5 +294,7 @@ export function computeLayout(authors, concepts, relations) {
     conceptPositions,
     width,
     height,
+    centerX,
+    centerY,
   };
 }

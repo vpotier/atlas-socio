@@ -440,14 +440,7 @@ export default function App() {
         background: "var(--color-paper)",
       }}
     >
-      <SearchBar
-        setSelectedAuthor={(author) =>
-          setSelectedItem({
-            type: "author",
-            data: author,
-          })
-        }
-      />
+   <SearchBar setSelectedItem={setSelectedItem} />
 
       <FiltersPanel
         axisFilters={axisFilters}

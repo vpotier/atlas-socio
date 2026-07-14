@@ -1550,4 +1550,71 @@ export const authors = [
       "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
     ],
   },
+  {
+    id: "lahire",
+    name: "Bernard Lahire",
+    school: "Sociologie dispositionnaliste (pluralité des dispositions)",
+    period: "1963–présent",
+    birthYear: 1963,
+    deathYear: null,
+    x: 450,
+    y: 500,
+    color: "#86B53F",
+
+    concepts: ["Homme pluriel", "Dispositions plurielles"],
+
+    works: [
+      "Tableaux de familles (1995)",
+      "L'Homme pluriel (1998)",
+    ],
+
+    influences: ["bourdieu"],
+    heirs: [],
+
+    summary:
+      "Sociologue français, il prolonge et infléchit la théorie de l'habitus de Bourdieu en soutenant que les individus contemporains, traversés par des socialisations multiples et parfois contradictoires (famille, école, groupes de pairs), possèdent un répertoire de dispositions plurielles et non un habitus unifié.",
+
+    constellation: "bourdieusien",
+    consensus: 4,
+    classificationNote:
+      "Lahire est identifié comme l'un des principaux continuateurs critiques de Bourdieu, dont il complexifie la théorie de l'habitus par une attention à la pluralité et à la variabilité contextuelle des dispositions individuelles.",
+    sources: ["Corcuff, 2007, Les nouvelles sociologies"],
+    themes: ["Sociologie de l'éducation et de la socialisation"],
+  },
+
+  {
+    id: "muriel-darmon",
+    name: "Muriel Darmon",
+    school: "Sociologie dispositionnaliste et interactionniste (socialisation)",
+    period: "1973–présent",
+    birthYear: 1973,
+    deathYear: null,
+    x: 480,
+    y: 620,
+    color: "#48A0A0",
+
+    concepts: ["Carrière (socialisation)", "Fabrique de l'habitus"],
+
+    works: [
+      "Devenir anorexique : une approche sociologique (2003)",
+      "Classes préparatoires. La fabrique d'une jeunesse dominante (2013)",
+      "La Socialisation (2006)",
+    ],
+
+    influences: ["bourdieu", "becker", "Hughes"],
+    heirs: [],
+
+    summary:
+      "Sociologue française, directrice de recherche au CNRS, elle articule une approche dispositionnaliste héritée de Bourdieu et de Lahire avec la tradition interactionniste de l'École de Chicago (Becker, Hughes), notamment la notion de carrière, pour analyser des processus de socialisation comme l'anorexie ou la fabrication des élites scolaires en classes préparatoires.",
+
+    constellation: "bourdieusien",
+    consensus: 4,
+    classificationNote:
+      "Darmon est identifiée comme une figure représentative des passerelles contemporaines entre sociologie dispositionnaliste bourdieusienne et interactionnisme beckerien, qu'elle articule explicitement plutôt que de choisir entre les deux traditions.",
+    sources: [
+      "Darmon, 2013, Classes préparatoires. La fabrique d'une jeunesse dominante",
+      "Darmon, 2003, Devenir anorexique : une approche sociologique",
+    ],
+    themes: ["Sociologie de l'éducation et de la socialisation"],
+  },
 ];

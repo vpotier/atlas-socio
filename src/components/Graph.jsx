@@ -89,7 +89,7 @@ export default function Graph({
   }, [selectedConcept]);
 
   // --- Filtres théoriques (axes) et thématiques ---
-const activeAxisEntries = useMemo(
+  const activeAxisEntries = useMemo(
     () =>
       Object.entries(axisFilters || {})
         .filter(([, f]) => f && f.enabled)
@@ -238,15 +238,15 @@ const activeAxisEntries = useMemo(
 
     switch (relation.type) {
       case "heritage":
-        color = "#4CAF50";
+        color = "#6B3F2A";
         break;
 
       case "dialogue":
-        color = "#F1C232";
+        color = "#4A72A0";
         break;
 
       case "tension":
-        color = "#D32F2F";
+        color = "#8C3B3B";
         dash = "6 4";
         break;
 
@@ -336,7 +336,7 @@ const activeAxisEntries = useMemo(
               markerHeight="7"
               orient="auto-start-reverse"
             >
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#4CAF50" />
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#6B3F2A" />
             </marker>
 
             <marker
@@ -348,7 +348,7 @@ const activeAxisEntries = useMemo(
               markerHeight="7"
               orient="auto-start-reverse"
             >
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#F1C232" />
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#4A72A0" />
             </marker>
 
             <marker
@@ -360,7 +360,7 @@ const activeAxisEntries = useMemo(
               markerHeight="7"
               orient="auto-start-reverse"
             >
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#D32F2F" />
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#8C3B3B" />
             </marker>
           </defs>
 
@@ -408,7 +408,7 @@ const activeAxisEntries = useMemo(
                 onMouseLeave={() =>
                   setHoveredRelation(null)
                 }
-            onClick={() =>
+                onClick={() =>
                   setSelectedItem({
                     type: "relation",
                     data: {

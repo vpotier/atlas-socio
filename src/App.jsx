@@ -212,6 +212,35 @@ export default function App() {
               <li key={s}>{s}</li>
             ))}
           </ul>
+          {[
+            { name: r.sourceName, constellationId: r.sourceConstellation },
+            { name: r.targetName, constellationId: r.targetConstellation },
+          ].map(({ name, constellationId }) => {
+            const cstMeta = constellations[constellationId];
+            const axisValues = constellationAxisValues[constellationId];
+
+            if (!cstMeta || !axisValues) return null;
+
+            return (
+              <div key={name}>
+                <h3>Positionnement théorique — {name}</h3>
+
+                <p style={{ marginTop: -8, color: "#888" }}>
+                  {cstMeta.label}
+                </p>
+
+                <ul>
+                  {Object.entries(axes).map(([axisKey, axisMeta]) => (
+                    <li key={axisKey}>
+                      <strong>{axisMeta.label}</strong>
+                      <br />
+                      {axisValues[axisKey]?.label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </>
       );
     }

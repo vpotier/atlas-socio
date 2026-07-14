@@ -350,6 +350,40 @@ export default function App() {
           )}
 
           {cst.definition && <p>{cst.definition}</p>}
+          {cst.disciplines && cst.disciplines.length > 0 && (
+            <div style={{ marginBottom: 12 }}>
+              <span
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  color: "var(--color-taupe)",
+                  marginRight: 6,
+                }}
+              >
+                Inspirée par :
+              </span>
+
+              {cst.disciplines.map((d) => (
+                <span
+                  key={d}
+                  style={{
+                    display: "inline-block",
+                    fontSize: 12,
+                    color: "var(--color-leather)",
+                    border: "1px solid var(--color-leather)",
+                    borderRadius: 3,
+                    padding: "2px 7px",
+                    marginRight: 6,
+                    marginBottom: 4,
+                  }}
+                >
+                  {d}
+                </span>
+              ))}
+            </div>
+          )}
 
           {constellationAxisValues[cst.id] && (
             <>

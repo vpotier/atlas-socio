@@ -419,7 +419,28 @@ export default function App() {
       />
 
       <Legend />
-
+<div
+        style={{
+          position: "absolute",
+          bottom: 12,
+          right: 356,
+          zIndex: 1000,
+          fontSize: 11,
+          color: "var(--color-taupe)",
+          background: "var(--color-paper-dim)",
+          padding: "6px 10px",
+          borderRadius: 6,
+          border: "1px solid var(--color-taupe)",
+        }}
+      >
+        Par Victor Potier — Retours et remarques :{" "}
+        
+          href="mailto:victor.potier@univ-eiffel.fr"
+          style={{ color: "var(--color-tardis)" }}
+        >
+          victor.potier@univ-eiffel.fr
+        </a>
+      </div>
       <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
         <Graph
           selectedItem={selectedItem}

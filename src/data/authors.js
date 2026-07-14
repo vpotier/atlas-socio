@@ -8,7 +8,7 @@ export const authors = [
     deathYear: 1917,
     x: 165,
     y: 185,
-    color: "#2E6DB4",
+    color: "#3A5A78",
 
     concepts: ["Fait social", "Solidarité", "Anomie"],
 
@@ -45,7 +45,7 @@ export const authors = [
     deathYear: 1920,
     x: 720,
     y: 180,
-    color: "#B53B3B",
+    color: "#9C4A42",
 
     concepts: ["Action sociale", "Domination", "Idéal-type"],
 
@@ -81,7 +81,7 @@ export const authors = [
     deathYear: 2002,
     x: 420,
     y: 405,
-    color: "#86B53F",
+    color: "#6B7F4A",
 
     concepts: ["Habitus", "Champ", "Capital"],
 
@@ -118,7 +118,7 @@ export const authors = [
     deathYear: 1942,
     x: 880,
     y: 500,
-    color: "#E67E22",
+    color: "#B87333",
 
     concepts: ["Besoin fondamental", "Institution"],
 
@@ -153,7 +153,7 @@ export const authors = [
     deathYear: 1979,
     x: 980,
     y: 440,
-    color: "#D35400",
+    color: "#B87333",
 
     concepts: ["Modèle AGIL", "Action sociale"],
 
@@ -188,7 +188,7 @@ export const authors = [
     deathYear: 2003,
     x: 900,
     y: 610,
-    color: "#F39C12",
+    color: "#B87333",
 
     concepts: [
       "Fonction manifeste et latente",
@@ -227,7 +227,7 @@ export const authors = [
     deathYear: 2013,
     x: 200,
     y: 550,
-    color: "#8E44AD",
+    color: "#6B4C7A",
 
     concepts: ["Effet pervers", "Rationalité cognitive", "Effet d'agrégation"],
 
@@ -263,7 +263,7 @@ export const authors = [
     deathYear: 1995,
     x: 320,
     y: 610,
-    color: "#9B59B6",
+    color: "#6B4C7A",
 
     concepts: ["Diagramme de Coleman", "Acteur rationnel"],
 
@@ -298,7 +298,7 @@ export const authors = [
     deathYear: 1987,
     x: 560,
     y: 630,
-    color: "#16A085",
+    color: "#3F7A6C",
 
     concepts: ["Interactionnisme symbolique", "Processus d'interprétation"],
 
@@ -330,7 +330,7 @@ export const authors = [
     deathYear: 1982,
     x: 630,
     y: 680,
-    color: "#1ABC9C",
+    color: "#3F7A6C",
 
     concepts: ["Approche dramaturgique", "Institution totale", "Façonnage du cadre"],
 
@@ -366,7 +366,7 @@ export const authors = [
     deathYear: 2023,
     x: 500,
     y: 690,
-    color: "#48C9B0",
+    color: "#3F7A6C",
 
     concepts: ["Théorie de l'étiquetage", "Carrière déviante", "Entrepreneur de morale"],
 
@@ -402,7 +402,7 @@ export const authors = [
     deathYear: 2024,
     x: 1150,
     y: 320,
-    color: "#1F618D",
+    color: "#2F5770",
 
     concepts: ["Réseau social", "Équivalence structurale", "Encastrement"],
 
@@ -437,7 +437,7 @@ export const authors = [
     deathYear: null,
     x: 1250,
     y: 260,
-    color: "#2E86C1",
+    color: "#2F5770",
 
     concepts: ["Force des liens faibles", "Encastrement social"],
 
@@ -472,7 +472,7 @@ export const authors = [
     deathYear: null,
     x: 1180,
     y: 420,
-    color: "#5499C7",
+    color: "#2F5770",
 
     concepts: ["Régulation collégiale", "Triade relationnelle"],
 
@@ -507,7 +507,7 @@ export const authors = [
     deathYear: 2011,
     x: 760,
     y: 630,
-    color: "#7E5109",
+    color: "#7A5C33",
 
     concepts: ["Indexicalité", "Réflexivité", "Accomplissement pratique"],
 
@@ -539,7 +539,7 @@ export const authors = [
     deathYear: 1975,
     x: 830,
     y: 690,
-    color: "#9C640C",
+    color: "#7A5C33",
 
     concepts: ["Analyse de conversation", "Prise de tour", "Paire adjacente"],
 
@@ -571,7 +571,7 @@ export const authors = [
     deathYear: 2017,
     x: 1000,
     y: 650,
-    color: "#C2185B",
+    color: "#8C4560",
 
     concepts: ["Objectivation", "Institutionnalisation", "Socialisation secondaire"],
 
@@ -606,7 +606,7 @@ export const authors = [
     deathYear: 2016,
     x: 1060,
     y: 690,
-    color: "#D81B60",
+    color: "#8C4560",
 
     concepts: ["Univers symbolique", "Intériorisation"],
 
@@ -641,7 +641,7 @@ export const authors = [
     deathYear: 2015,
     x: 950,
     y: 720,
-    color: "#EC407A",
+    color: "#8C4560",
 
     concepts: ["Identité pour soi / pour autrui", "Crise des identités", "Forme identitaire"],
 
@@ -676,7 +676,7 @@ export const authors = [
     deathYear: 1973,
     x: 1450,
     y: 180,
-    color: "#4A235A",
+    color: "#4A3B54",
 
     concepts: ["Théorie critique", "Raison instrumentale"],
 
@@ -711,7 +711,7 @@ export const authors = [
     deathYear: 1969,
     x: 1520,
     y: 140,
-    color: "#6C3483",
+    color: "#4A3B54",
 
     concepts: ["Industrie culturelle", "Personnalité autoritaire"],
 
@@ -742,12 +742,12 @@ export const authors = [
     id: "jürgen-habermas",
     name: "Jürgen Habermas",
     school: "École de Francfort (Deuxième génération)",
-    period: "1929–présent",
+    period: "1929–2026",
     birthYear: 1929,
     deathYear: 2026,
     x: 1480,
     y: 260,
-    color: "#884EA0",
+    color: "#4A3B54",
 
     concepts: ["Agir communicationnel", "Espace public", "Monde vécu / Système"],
 
@@ -782,7 +782,7 @@ export const authors = [
     deathYear: 1991,
     x: 50,
     y: 420,
-    color: "#922B21",
+    color: "#7A3B30",
 
     concepts: ["Critique de la vie quotidienne", "Production de l'espace", "Droit à la ville"],
 
@@ -818,7 +818,7 @@ export const authors = [
     deathYear: 1979,
     x: 90,
     y: 480,
-    color: "#B03A2E",
+    color: "#7A3B30",
 
     concepts: ["Autonomie relative de l'État", "Condensation matérielle"],
 
@@ -853,7 +853,7 @@ export const authors = [
     deathYear: 2022,
     x: 1300,
     y: 600,
-    color: "#0B5345",
+    color: "#2F5C4F",
 
     concepts: ["Actant", "Principe de symétrie généralisée", "Traduction"],
 
@@ -889,7 +889,7 @@ export const authors = [
     deathYear: 2025,
     x: 1370,
     y: 650,
-    color: "#117864",
+    color: "#2F5C4F",
 
     concepts: ["Performativité de l'économie", "Enrôlement", "Controverse sociotechnique"],
 
@@ -924,7 +924,7 @@ export const authors = [
     deathYear: 2010,
     x: 1330,
     y: 720,
-    color: "#45B39D",
+    color: "#2F5C4F",
 
     concepts: ["Objet-frontière", "Inversion infrastructurale"],
 
@@ -956,7 +956,7 @@ export const authors = [
     deathYear: null,
     x: 600,
     y: 350,
-    color: "#B7950B",
+    color: "#9C8A3F",
 
     concepts: ["Dualité du structurel", "Double herméneutique", "Conscience pratique"],
 
@@ -991,7 +991,7 @@ export const authors = [
     deathYear: 2009,
     x: 350,
     y: 300,
-    color: "#34495E",
+    color: "#404954",
 
     concepts: ["Structure sociale", "Mythème", "Gustème"],
 
@@ -1026,7 +1026,7 @@ export const authors = [
     deathYear: 1990,
     x: 150,
     y: 250,
-    color: "#5D6D7E",
+    color: "#404954",
 
     concepts: ["Idéologie", "Reproduction des rapports sociaux"],
 
@@ -1058,7 +1058,7 @@ export const authors = [
     deathYear: 1857,
     x: 100,
     y: 130,
-    color: "#5D8AA8",
+    color: "#3A5A78",
 
     concepts: ["Loi des trois états", "Physique sociale"],
 
@@ -1093,7 +1093,7 @@ export const authors = [
     deathYear: 1883,
     x: 50,
     y: 350,
-    color: "#7B241C",
+    color: "#7A3B30",
 
     concepts: ["Lutte des classes", "Infrastructure et superstructure", "Aliénation"],
 
@@ -1128,7 +1128,7 @@ export const authors = [
     deathYear: 1980,
     x: 1420,
     y: 60,
-    color: "#616A6B",
+    color: "#4A3B54",
 
     concepts: ["Caractère social", "Aliénation psychologique"],
 
@@ -1157,7 +1157,7 @@ export const authors = [
     deathYear: 1979,
     x: 1480,
     y: 60,
-    color: "#707B7C",
+    color: "#4A3B54",
 
     concepts: ["Homme unidimensionnel", "Désublimation répressive"],
 
@@ -1186,7 +1186,7 @@ export const authors = [
     deathYear: null,
     x: 250,
     y: 750,
-    color: "#880E4F",
+    color: "#8C4560",
 
     concepts: ["Distinction sexe/genre", "Sociologie du travail domestique"],
 
@@ -1215,7 +1215,7 @@ export const authors = [
     deathYear: null,
     x: 320,
     y: 800,
-    color: "#AD1457",
+    color: "#3F7A6C",
 
     concepts: ["Performativité du genre"],
 
@@ -1231,7 +1231,7 @@ export const authors = [
     constellation: "l-interactionnisme-symbolique",
     consensus: 4,
     classificationNote:
-      "Butler est universellement reconnue comme l'une des figures les plus radicales de la théorie du genre contemporaine ; sa thèse de la performativité a suscité des critiques marquées de la part de sociologues français comme Pierre Bourdieu et Nicole-Claude Mathieu, auxquelles elle a explicitement répondu.",
+      "Butler est unanimement reconnue comme l'une des figures les plus radicales de la théorie du genre contemporaine ; sa thèse de la performativité a suscité des critiques marquées de la part de sociologues français comme Pierre Bourdieu et Nicole-Claude Mathieu, auxquelles elle a explicitement répondu, ouvrant ainsi des échanges épistémiques importants pour la sociologie contemporaines.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
   },
 
@@ -1244,7 +1244,7 @@ export const authors = [
     deathYear: null,
     x: 700,
     y: 800,
-    color: "#004D40",
+    color: "#33544C",
 
     concepts: ["Régimes de justification", "Sociologie de la critique"],
 
@@ -1276,7 +1276,7 @@ export const authors = [
     deathYear: null,
     x: 770,
     y: 830,
-    color: "#00695C",
+    color: "#33544C",
 
     concepts: ["Régimes d'engagement", "Cités (économies de la grandeur)"],
 
@@ -1341,7 +1341,7 @@ export const authors = [
     deathYear: 1929,
     x: 480,
     y: 60,
-    color: "#455A64",
+    color: "#3F7A6C",
 
     concepts: ["Groupes primaires", "Looking-glass self"],
 
@@ -1370,7 +1370,7 @@ export const authors = [
     deathYear: 1931,
     x: 550,
     y: 90,
-    color: "#546E7A",
+    color: "#3F7A6C",
 
     concepts: ["Autrui généralisé", "Soi (Je/Moi)"],
 
@@ -1399,7 +1399,7 @@ export const authors = [
     deathYear: 1944,
     x: 420,
     y: 100,
-    color: "#37474F",
+    color: "#3F7A6C",
 
     concepts: ["Écologie urbaine", "Désorganisation sociale"],
 
@@ -1431,7 +1431,7 @@ export const authors = [
     deathYear: 1966,
     x: 490,
     y: 130,
-    color: "#607D8B",
+    color: "#3F7A6C",
 
     concepts: ["Modèle des zones concentriques"],
 
@@ -1463,7 +1463,7 @@ export const authors = [
     deathYear: 1976,
     x: 1050,
     y: 800,
-    color: "#6D4C41",
+    color: "#B87333",
 
     concepts: ["Recherche administrative", "Analyse quantitative des effets médiatiques"],
 
@@ -1485,6 +1485,7 @@ export const authors = [
       "Lazarsfeld est identifié comme la figure de proue de l'empirisme quantitativiste de l'université de Columbia, régulièrement mis en tension avec le fonctionnalisme mertonien pour son détachement supposé de toute théorisation.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
   },
+
   {
     id: "zelizer",
     name: "Viviana Zelizer",
@@ -1494,7 +1495,7 @@ export const authors = [
     deathYear: null,
     x: 1300,
     y: 380,
-    color: "#8E44AD",
+    color: "#2F5770",
 
     concepts: ["Significations sociales de l'argent", "Travail relationnel"],
 
@@ -1526,7 +1527,7 @@ export const authors = [
     deathYear: null,
     x: 1350,
     y: 700,
-    color: "#1ABC9C",
+    color: "#2F5C4F",
 
     concepts: ["Script (scénario technique)", "Inscription"],
 

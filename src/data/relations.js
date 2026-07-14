@@ -327,7 +327,7 @@ export const relations = [
       "Lazega mobilise la notion de capital social héritée de Bourdieu, tout en la reformulant dans un cadre structural de réseaux plutôt que de champs, ce qui l'éloigne partiellement de la théorie des champs bourdieusienne.",
     sources: ["Lazega, 2006, Réseaux sociaux et structures relationnelles"],
   },
- {
+  {
     source: "comte",
     target: "durkheim",
     type: "heritage",
@@ -762,5 +762,235 @@ export const relations = [
     justification:
       "Mauger applique et prolonge de façon soutenue le cadre théorique bourdieusien (habitus, capital, classes sociales) à la sociologie de la jeunesse populaire et de la déviance.",
     sources: ["Mauger, 2023, Avec Bourdieu. Un parcours sociologique"],
+  },
+  {
+    source: "erving-goffman",
+    target: "hochschild",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Hochschild prolonge l'approche dramaturgique de Goffman (gestion de l'impression donnée à autrui) en l'appliquant à la gestion des émotions elles-mêmes, fondant la sociologie des émotions.",
+    sources: ["Wikipédia FR, Arlie Russell Hochschild"],
+  },
+  {
+    source: "bourdieu",
+    target: "eva-illouz",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Illouz reprend et étend le concept bourdieusien de capital pour analyser la valeur sociale différenciée des émotions et des relations affectives.",
+    sources: ["CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions"],
+  },
+  {
+    source: "weber",
+    target: "eva-illouz",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Illouz applique la théorie wébérienne de la rationalisation à la sphère amoureuse et affective, montrant comment le choix du partenaire se rationalise sur le modèle du marché.",
+    sources: ["CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions"],
+  },
+  {
+    source: "hochschild",
+    target: "eva-illouz",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Illouz prolonge directement le concept de travail émotionnel de Hochschild en l'articulant à une théorie plus large du capitalisme émotionnel contemporain.",
+    sources: ["CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions"],
+  },
+  {
+    source: "jürgen-habermas",
+    target: "nancy-fraser",
+    type: "tension",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Fraser critique la théorie habermassienne de l'espace public bourgeois pour avoir occulté historiquement les exclusions de genre et de classe qui la structuraient, tout en s'inscrivant dans son sillage critique.",
+    sources: ["Fraser, 1989, Unruly Practices"],
+  },
+  {
+    source: "bronislaw-malinowski",
+    target: "talcott-parsons",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "Parsons engage un dialogue critique avec le fonctionnalisme anthropologique de Malinowski dans l'élaboration de sa propre théorie fonctionnaliste des systèmes sociaux.",
+    sources: ["Ritzer, 2011, Sociological Theory"],
+  },
+  {
+    source: "robert-k-merton",
+    target: "raymond-boudon",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Boudon se réclame explicitement du programme mertonien des théories de moyenne portée, articulant étroitement théorie et recherche empirique contre les grandes théories systémiques.",
+    sources: ["Ansart, 1990, Les sociologies contemporaines"],
+  },
+  {
+    source: "robert-k-merton",
+    target: "james-coleman",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Coleman a été l'élève direct de Merton (et de Lazarsfeld) à Columbia ; c'est Merton lui-même qui l'initie à la lecture de Durkheim et de Weber.",
+    sources: ["Sage Encyclopedia of Social Theory, Coleman, James"],
+  },
+  {
+    source: "weber",
+    target: "james-coleman",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Coleman est initié à la lecture de Weber par Merton lors de sa formation à Columbia, influence qui infuse sa théorie de l'action rationnelle articulée au niveau macrosocial.",
+    sources: ["Wikipedia (en), James Samuel Coleman"],
+  },
+  {
+    source: "mead",
+    target: "erving-goffman",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Goffman s'inscrit dans la filiation de l'interactionnisme meadien, qu'il prolonge et déplace vers une analyse dramaturgique plus formaliste de l'ordre de l'interaction.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "levi-strauss",
+    target: "harrison-white",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "White s'inspire de l'analyse structurale lévi-straussienne des systèmes de parenté comme réseaux de relations pour fonder sa propre analyse structurale des réseaux sociaux.",
+    sources: ["Mercklé, 2011, L'analyse des réseaux sociaux"],
+  },
+  {
+    source: "james-coleman",
+    target: "lazega",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Lazega dialogue avec la théorie du choix rationnel et du capital social de Coleman, qu'il articule à une analyse plus fine des structures relationnelles au sein des organisations professionnelles.",
+    sources: ["Lazega, 2006, Réseaux sociaux et structures relationnelles"],
+  },
+  {
+    source: "marx",
+    target: "peter-berger",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "Berger s'inscrit dans la tradition de la sociologie de la connaissance qui doit beaucoup à la critique marxienne de l'idéologie, tout en la déplaçant vers une perspective phénoménologique.",
+    sources: ["Lallement, 2000, Histoire des idées sociologiques"],
+  },
+  {
+    source: "weber",
+    target: "thomas-luckmann",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Luckmann s'inscrit dans la tradition compréhensive wébérienne pour son attention au sens subjectif construit par les acteurs dans leur expérience quotidienne.",
+    sources: ["Corcuff, 2007, Les nouvelles sociologies"],
+  },
+  {
+    source: "thomas-luckmann",
+    target: "claude-dubar",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Dubar s'approprie explicitement la théorie de la socialisation primaire et secondaire formalisée par Luckmann (avec Berger) pour bâtir son modèle de la socialisation professionnelle.",
+    sources: ["Dubar, 1991, La Socialisation"],
+  },
+  {
+    source: "bourdieu",
+    target: "claude-dubar",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Dubar articule la théorie constructiviste de la socialisation avec les outils bourdieusiens de champ et de capital pour analyser les trajectoires professionnelles et identitaires.",
+    sources: ["Dubar, 1991, La Socialisation"],
+  },
+  {
+    source: "marx",
+    target: "theodor-w-adorno",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Adorno inscrit sa critique de l'industrie culturelle et de la raison instrumentale dans l'héritage marxiste, combiné à la psychanalyse freudienne.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+  },
+  {
+    source: "mead",
+    target: "jürgen-habermas",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Habermas mobilise explicitement la théorie meadienne de l'interaction symbolique et de la formation du soi pour construire sa théorie de l'agir communicationnel.",
+    sources: ["Ansart, 1990, Les sociologies contemporaines"],
+  },
+  {
+    source: "harrison-white",
+    target: "bruno-latour",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "La théorie de l'acteur-réseau de Latour dialogue avec l'analyse structurale des réseaux de White, dont elle prolonge et radicalise l'ontologie relationnelle en y intégrant les non-humains.",
+    sources: ["Mercklé, 2011, L'analyse des réseaux sociaux"],
+  },
+  {
+    source: "harrison-white",
+    target: "michel-callon",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "L'analyse callonienne des marchés comme réseaux sociotechniques dialogue avec l'approche structurale des marchés de White, tout en y intégrant les dispositifs techniques.",
+    sources: ["Mercklé, 2011, L'analyse des réseaux sociaux"],
+  },
+  {
+    source: "marx",
+    target: "anthony-giddens",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Giddens consacre une critique approfondie et un dialogue soutenu avec le matérialisme historique marxien, dont il retravaille les concepts dans sa théorie de la structuration.",
+    sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+  },
+  {
+    source: "marx",
+    target: "erich-fromm",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Fromm fonde son projet freudo-marxiste sur une synthèse explicite entre l'analyse marxienne de l'aliénation économique et la psychanalyse freudienne.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+  },
+  {
+    source: "marx",
+    target: "herbert-marcuse",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Marcuse fonde sa critique de la société de consommation et de la désublimation répressive sur une lecture explicitement marxiste combinée à la psychanalyse freudienne.",
+    sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
   },
 ];

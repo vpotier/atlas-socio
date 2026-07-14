@@ -14,20 +14,13 @@ export default function SearchBar({ setSelectedAuthor }) {
   };
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: 20,
-        left: 20,
-        zIndex: 1000,
-      }}
-    >
+    <div className="floating-search">
       <input
         type="text"
         placeholder="Rechercher un auteur…"
         onChange={handleChange}
         style={{
-          width: "260px",
+          width: "min(260px, calc(100vw - 40px))",
           padding: "10px 14px",
           borderRadius: "6px",
           border: "1px solid var(--color-taupe)",

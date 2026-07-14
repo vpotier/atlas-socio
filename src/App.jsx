@@ -12,7 +12,7 @@ import "./styles/app.css";
 export default function App() {
   const [selectedItem, setSelectedItem] = useState(null);
 
- const [axisFilters, setAxisFilters] = useState({
+  const [axisFilters, setAxisFilters] = useState({
     individuSociete: { enabled: false, value: 0.5 },
     methode: { enabled: false, value: 0.5 },
     rationalite: { enabled: false, value: 0.5 },
@@ -83,6 +83,23 @@ export default function App() {
 
           <p>{a.classificationNote}</p>
 
+          {constellationAxisValues[a.constellation] && (
+            <>
+              <h3>Positionnement théorique</h3>
+
+              <ul>
+                {Object.entries(axes).map(([axisKey, axisMeta]) => (
+                  <li key={axisKey}>
+                    <strong>{axisMeta.label}</strong>
+                    <br />
+                    {constellationAxisValues[a.constellation][axisKey]
+                      ?.label}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
           <p>
             <strong>Sources</strong>
           </p>
@@ -106,7 +123,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                <a
+                
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -212,6 +229,7 @@ export default function App() {
               <li key={s}>{s}</li>
             ))}
           </ul>
+
           {[
             { name: r.sourceName, constellationId: r.sourceConstellation },
             { name: r.targetName, constellationId: r.targetConstellation },
@@ -252,7 +270,7 @@ export default function App() {
         <>
           {closeButton}
 
-         <h2 style={{ color: cst.color }}>{cst.label}</h2>
+          <h2 style={{ color: cst.color }}>{cst.label}</h2>
 
           {cst.period && (
             <p style={{ marginTop: -8, color: "#888" }}>
@@ -261,6 +279,22 @@ export default function App() {
           )}
 
           {cst.definition && <p>{cst.definition}</p>}
+
+          {constellationAxisValues[cst.id] && (
+            <>
+              <h3>Positionnement théorique</h3>
+
+              <ul>
+                {Object.entries(axes).map(([axisKey, axisMeta]) => (
+                  <li key={axisKey}>
+                    <strong>{axisMeta.label}</strong>
+                    <br />
+                    {constellationAxisValues[cst.id][axisKey]?.label}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
 
           <p>
             <strong>{cst.members.length}</strong>{" "}

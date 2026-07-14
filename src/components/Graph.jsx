@@ -26,6 +26,7 @@ export default function Graph({
 }) {
   const [hoveredRelation, setHoveredRelation] = useState(null);
   const transformRef = useRef(null);
+  const containerRef = useRef(null);
 
   const layout = useMemo(
     () => computeLayout(rawAuthors, rawConcepts, relations),
@@ -37,18 +38,14 @@ export default function Graph({
   // que de laisser `centerOnInit` deviner — avec un très grand canevas et
   // un zoom initial réduit, son calcul automatique s'est révélé peu fiable.
   useEffect(() => {
-    if (!transformRef.current) return;
+    if (!transformRef.current || !containerRef.current) return;
 
-    const wrapperEl = transformRef.current.instance?.wrapperComponent;
-
-    if (!wrapperEl) return;
-
-    const { clientWidth, clientHeight } = wrapperEl;
+    const { clientWidth, clientHeight } = containerRef.current;
 
     const targetX =
-      clientWidth / 2 - (layout.width / 2) * INITIAL_SCALE;
+      clientWidth / 2 - layout.centerX * INITIAL_SCALE;
     const targetY =
-      clientHeight / 2 - (layout.height / 2) * INITIAL_SCALE;
+      clientHeight / 2 - layout.centerY * INITIAL_SCALE;
 
     transformRef.current.setTransform(
       targetX,
@@ -338,14 +335,18 @@ export default function Graph({
     : null;
 
   return (
-    <TransformWrapper
-      ref={transformRef}
-      initialScale={INITIAL_SCALE}
-      minScale={0.2}
-      maxScale={3}
-      limitToBounds={false}
+    <div
+      ref={containerRef}
+      style={{ width: "100%", height: "100%" }}
     >
-      <TransformComponent>
+      <TransformWrapper
+        ref={transformRef}
+        initialScale={INITIAL_SCALE}
+        minScale={0.2}
+        maxScale={3}
+        limitToBounds={false}
+      >
+        <TransformComponent>
         <svg
           width={layout.width}
           height={layout.height}
@@ -479,5 +480,6 @@ export default function Graph({
         </svg>
       </TransformComponent>
     </TransformWrapper>
+    </div>
   );
 }

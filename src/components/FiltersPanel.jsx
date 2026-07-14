@@ -57,7 +57,7 @@ export default function FiltersPanel({
         top: 20,
         left: 300,
         zIndex: 1000,
-        fontFamily: "Arial, sans-serif",
+        fontFamily: "var(--font-body)",
       }}
     >
       <button
@@ -65,9 +65,9 @@ export default function FiltersPanel({
         style={{
           padding: "10px 16px",
           borderRadius: 8,
-          border: "1px solid #ddd",
-          background: anyActive ? "#333" : "#fff",
-          color: anyActive ? "#fff" : "#333",
+          border: "1px solid var(--color-taupe)",
+          background: anyActive ? "var(--color-tardis)" : "var(--color-paper-dim)",
+          color: anyActive ? "#ede6d9" : "var(--color-ink)",
           cursor: "pointer",
           boxShadow: "0 1px 4px rgba(0,0,0,0.15)",
           fontSize: 14,
@@ -81,7 +81,8 @@ export default function FiltersPanel({
           style={{
             marginTop: 8,
             width: 340,
-            background: "#fff",
+            background: "var(--color-paper-dim)",
+            border: "1px solid var(--color-taupe)",
             borderRadius: 8,
             boxShadow: "0 2px 10px rgba(0,0,0,0.15)",
             padding: 16,
@@ -95,7 +96,7 @@ export default function FiltersPanel({
               fontSize: 13,
               textTransform: "uppercase",
               letterSpacing: "0.04em",
-              color: "#666",
+              color: "var(--color-taupe)",
             }}
           >
             Axes théoriques
@@ -172,8 +173,8 @@ export default function FiltersPanel({
                         fontSize: 10,
                         color:
                           filter.enabled && i === stepIndex
-                            ? "#111"
-                            : "#999",
+                            ? "var(--color-ink)"
+                            : "var(--color-taupe)",
                         fontWeight:
                           filter.enabled && i === stepIndex
                             ? "bold"
@@ -198,7 +199,7 @@ export default function FiltersPanel({
               fontSize: 13,
               textTransform: "uppercase",
               letterSpacing: "0.04em",
-              color: "#666",
+              color: "var(--color-taupe)",
             }}
           >
             Thèmes (cumulables)
@@ -233,8 +234,8 @@ export default function FiltersPanel({
                 width: "100%",
                 padding: "8px",
                 borderRadius: 6,
-                border: "1px solid #ddd",
-                background: "#f5f5f5",
+                border: "1px solid var(--color-taupe)",
+                background: "var(--color-paper)",
                 cursor: "pointer",
                 fontSize: 13,
               }}

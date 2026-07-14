@@ -434,7 +434,7 @@ export default function App() {
         }}
       >
         Par Victor Potier — Retours et remarques :{" "}
-        
+        <a
           href="mailto:victor.potier@univ-eiffel.fr"
           style={{ color: "var(--color-tardis)" }}
         >

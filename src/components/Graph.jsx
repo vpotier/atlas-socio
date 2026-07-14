@@ -89,11 +89,11 @@ export default function Graph({
   }, [selectedConcept]);
 
   // --- Filtres théoriques (axes) et thématiques ---
-  const activeAxisEntries = useMemo(
+const activeAxisEntries = useMemo(
     () =>
-      Object.entries(axisFilters || {}).filter(
-        ([, v]) => v !== null && v !== undefined
-      ),
+      Object.entries(axisFilters || {})
+        .filter(([, f]) => f && f.enabled)
+        .map(([axisKey, f]) => [axisKey, f.value]),
     [axisFilters]
   );
 

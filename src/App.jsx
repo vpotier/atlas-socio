@@ -435,7 +435,7 @@ export default function App() {
       >
         Par Victor Potier — Retours et remarques :{" "}
         <a
-          href="mailto:victor.potier@univ-eiffel.fr">Me contacter</a>
+          <a href="mailto:victor.potier@univ-eiffel.fr">Me contacter</a>
           style={{ color: "var(--color-tardis)" }}
         >
           victor.potier@univ-eiffel.fr

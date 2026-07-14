@@ -75,9 +75,9 @@ export const constellationAxisValues = {
       label: "Faible à modérée (adaptation fonctionnelle)",
     },
   },
-  durkheimien: {
-    individuSociete: { value: 0.15, label: "Primat de la société" },
-    methode: { value: 0.15, label: "Explicative (causale)" },
+durkheimien: {
+    individuSociete: { value: 0.08, label: "Primat de la société" },
+    methode: { value: 0.08, label: "Explicative (causale)" },
     rationalite: {
       value: 0.1,
       label: "Faible (contraintes sociales extérieures)",

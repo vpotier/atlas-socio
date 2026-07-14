@@ -13,8 +13,9 @@ export default function Legend() {
         fontFamily: "var(--font-body)",
       }}
     >
-      <button
+   <button
         onClick={() => setOpen((o) => !o)}
+        className="icon-button"
         style={{
           padding: "10px 16px",
           borderRadius: 6,
@@ -29,8 +30,9 @@ export default function Legend() {
         Légende
       </button>
 
-      {open && (
+    {open && (
         <div
+          className="dropdown-panel"
           style={{
             marginTop: 8,
             width: 260,

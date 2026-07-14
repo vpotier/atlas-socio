@@ -244,6 +244,14 @@ export function computeLayout(authors, concepts, relations) {
 
   simulation.tick(500);
 
+  const authorXs = authorNodes.map((n) => n.x);
+  const authorYs = authorNodes.map((n) => n.y);
+
+  const centroidX =
+    authorXs.reduce((sum, x) => sum + x, 0) / authorXs.length;
+  const centroidY =
+    authorYs.reduce((sum, y) => sum + y, 0) / authorYs.length;
+
   const xs = nodes.map((n) => n.x);
   const ys = nodes.map((n) => n.y);
 
@@ -252,13 +260,25 @@ export function computeLayout(authors, concepts, relations) {
   const minY = Math.min(...ys);
   const maxY = Math.max(...ys);
 
+  // On centre le canevas final sur le centroïde réel des auteurs (et non
+  // sur le simple centre du rectangle englobant), pour que le centrage
+  // automatique de la vue au chargement tombe pile sur le contenu, même
+  // si sa répartition est asymétrique.
+  const halfWidth =
+    Math.max(centroidX - minX, maxX - centroidX) + PADDING;
+  const halfHeight =
+    Math.max(centroidY - minY, maxY - centroidY) + PADDING;
+
+  const offsetX = centroidX - halfWidth;
+  const offsetY = centroidY - halfHeight;
+
   nodes.forEach((n) => {
-    n.x = n.x - minX + PADDING;
-    n.y = n.y - minY + PADDING;
+    n.x = n.x - offsetX;
+    n.y = n.y - offsetY;
   });
 
-  const width = maxX - minX + PADDING * 2;
-  const height = maxY - minY + PADDING * 2;
+  const width = halfWidth * 2;
+  const height = halfHeight * 2;
 
   const authorPositions = new Map();
   const conceptPositions = new Map();

@@ -33,7 +33,7 @@ export default function Authors({
               cy={author.y}
               r={isSelected ? 25 : 20}
               fill={author.color}
-              stroke={isSelected ? "#111" : "#fff"}
+              stroke={isSelected ? "#1b3f66" : "#ede6d9"}
               strokeWidth={isSelected ? 4 : 2}
               opacity={isDimmed ? 0.18 : 1}
               style={{
@@ -46,7 +46,9 @@ export default function Authors({
               y={author.y + 38}
               textAnchor="middle"
               fontSize="13"
-              fill="#333"
+              fontFamily="Inter, sans-serif"
+              fontWeight={isSelected ? 600 : 400}
+              fill="#2b2620"
               opacity={isDimmed ? 0.25 : 1}
               style={{
                 userSelect: "none",

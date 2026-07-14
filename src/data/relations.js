@@ -743,4 +743,24 @@ export const relations = [
       "Lahire critique l'unité présupposée de l'habitus bourdieusien et lui oppose une pluralité des dispositions individuelles selon les contextes sociaux traversés par un même acteur.",
     sources: ["Corcuff, 2007, Les nouvelles sociologies"],
   },
+  {
+    source: "bourdieu",
+    target: "wacquant",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Wacquant est l'un des plus proches collaborateurs de Bourdieu, avec qui il co-écrit directement un ouvrage de référence sur la méthode réflexive, avant de prolonger ce cadre vers la sociologie urbaine comparée.",
+    sources: ["Wacquant, 2006, Parias urbains. Ghetto, banlieues, État"],
+  },
+  {
+    source: "bourdieu",
+    target: "gerard-mauger",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Mauger applique et prolonge de façon soutenue le cadre théorique bourdieusien (habitus, capital, classes sociales) à la sociologie de la jeunesse populaire et de la déviance.",
+    sources: ["Mauger, 2023, Avec Bourdieu. Un parcours sociologique"],
+  },
 ];

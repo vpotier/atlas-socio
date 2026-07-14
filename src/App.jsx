@@ -4,6 +4,7 @@ import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";
 import FiltersPanel from "./components/FiltersPanel";
 import Legend from "./components/Legend";
+import { useIsMobile } from "./hooks/useIsMobile";
 import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
 import { constellations } from "./engine/constellations";
 import { axes, constellationAxisValues } from "./data/theoreticalAxes";
@@ -11,6 +12,7 @@ import { axes, constellationAxisValues } from "./data/theoreticalAxes";
 import "./styles/app.css";
 
 export default function App() {
+  const isMobile = useIsMobile();
   const [selectedItem, setSelectedItem] = useState(null);
 
   const [axisFilters, setAxisFilters] = useState({
@@ -164,7 +166,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                <a
+                
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -423,11 +425,8 @@ export default function App() {
       <Legend />
 
       <div
+        className="floating-credit"
         style={{
-          position: "absolute",
-          bottom: 12,
-          right: 356,
-          zIndex: 1000,
           fontSize: 11,
           color: "var(--color-taupe)",
           background: "var(--color-paper-dim)",
@@ -454,32 +453,51 @@ export default function App() {
         />
       </div>
 
-      <aside
-        style={{
-          width: "340px",
-          flexShrink: 0,
-          borderLeft: "1px solid var(--color-taupe)",
-          padding: 20,
-          background: "var(--color-paper-dim)",
-          overflowY: "auto",
-          position: "relative",
-        }}
-      >
-        <div
-          key={
-            selectedItem
-              ? `${selectedItem.type}-${
-                  selectedItem.data.id ??
-                  selectedItem.data.label ??
-                  `${selectedItem.data.source}-${selectedItem.data.target}`
-                }`
-              : "empty"
+      {(!isMobile || selectedItem) && (
+        <aside
+          style={
+            isMobile
+              ? {
+                  position: "fixed",
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  maxHeight: "70vh",
+                  background: "var(--color-paper-dim)",
+                  borderTop: "1px solid var(--color-taupe)",
+                  borderRadius: "14px 14px 0 0",
+                  padding: 20,
+                  overflowY: "auto",
+                  zIndex: 1500,
+                  boxShadow: "0 -4px 16px rgba(43,38,32,0.25)",
+                }
+              : {
+                  width: "340px",
+                  flexShrink: 0,
+                  borderLeft: "1px solid var(--color-taupe)",
+                  padding: 20,
+                  background: "var(--color-paper-dim)",
+                  overflowY: "auto",
+                  position: "relative",
+                }
           }
-          className="sidebar-content"
         >
-          {renderSidebar()}
-        </div>
-      </aside>
+          <div
+            key={
+              selectedItem
+                ? `${selectedItem.type}-${
+                    selectedItem.data.id ??
+                    selectedItem.data.label ??
+                    `${selectedItem.data.source}-${selectedItem.data.target}`
+                  }`
+                : "empty"
+            }
+            className="sidebar-content"
+          >
+            {renderSidebar()}
+          </div>
+        </aside>
+      )}
     </div>
   );
 }

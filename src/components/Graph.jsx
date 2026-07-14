@@ -33,26 +33,36 @@ export default function Graph({
     []
   );
 
-  // Centrage manuel au chargement : on calcule nous-mêmes la position de
-  // la caméra à partir de la taille réelle du conteneur à l'écran, plutôt
-  // que de laisser `centerOnInit` deviner — avec un très grand canevas et
-  // un zoom initial réduit, son calcul automatique s'est révélé peu fiable.
-  useEffect(() => {
+  // Centre la caméra sur le vrai centre du contenu et ajuste le zoom pour
+  // que l'ensemble des constellations remplisse l'écran. Réutilisée au
+  // chargement initial et par le bouton de recentrage.
+  const resetView = (animationTime = 0) => {
     if (!transformRef.current || !containerRef.current) return;
 
     const { clientWidth, clientHeight } = containerRef.current;
 
-    const targetX =
-      clientWidth / 2 - layout.centerX * INITIAL_SCALE;
-    const targetY =
-      clientHeight / 2 - layout.centerY * INITIAL_SCALE;
+    const fitScale =
+      Math.min(
+        clientWidth / layout.width,
+        clientHeight / layout.height
+      ) * 0.9;
+
+    const scale = Math.max(0.15, Math.min(fitScale, 1.2));
+
+    const targetX = clientWidth / 2 - layout.centerX * scale;
+    const targetY = clientHeight / 2 - layout.centerY * scale;
 
     transformRef.current.setTransform(
       targetX,
       targetY,
-      INITIAL_SCALE,
-      0
+      scale,
+      animationTime
     );
+  };
+
+  useEffect(() => {
+    resetView(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [layout]);
 
   const authors = useMemo(
@@ -337,8 +347,45 @@ export default function Graph({
   return (
     <div
       ref={containerRef}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "100%", height: "100%", position: "relative" }}
     >
+      <button
+        onClick={() => resetView(400)}
+        title="Recentrer la vue"
+        aria-label="Recentrer la vue"
+        style={{
+          position: "absolute",
+          top: 12,
+          right: 12,
+          zIndex: 1000,
+          width: 38,
+          height: 38,
+          borderRadius: 6,
+          border: "1px solid var(--color-taupe)",
+          background: "var(--color-paper-dim)",
+          color: "var(--color-tardis)",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 1px 3px rgba(43,38,32,0.12)",
+        }}
+      >
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="3" />
+          <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+        </svg>
+      </button>
+
       <TransformWrapper
         ref={transformRef}
         initialScale={INITIAL_SCALE}

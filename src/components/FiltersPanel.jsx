@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { axes } from "../data/theoreticalAxes";
+import { axes, axisSteps } from "../data/theoreticalAxes";
 import { themes } from "../data/themes";
 
 export default function FiltersPanel({
@@ -11,7 +11,7 @@ export default function FiltersPanel({
   const [open, setOpen] = useState(false);
 
   const anyActive =
-    Object.values(axisFilters).some((v) => v !== null) ||
+    Object.values(axisFilters).some((f) => f.enabled) ||
     themeFilters.length > 0;
 
   const toggleTheme = (theme) => {
@@ -22,11 +22,30 @@ export default function FiltersPanel({
     );
   };
 
+  const setAxisValue = (axisKey, value) => {
+    setAxisFilters((prev) => ({
+      ...prev,
+      [axisKey]: { ...prev[axisKey], value },
+    }));
+  };
+
+  const toggleAxisEnabled = (axisKey) => {
+    setAxisFilters((prev) => ({
+      ...prev,
+      [axisKey]: {
+        ...prev[axisKey],
+        enabled: !prev[axisKey].enabled,
+      },
+    }));
+  };
+
   const resetAll = () => {
-    setAxisFilters({
-      individuSociete: null,
-      methode: null,
-      rationalite: null,
+    setAxisFilters((prev) => {
+      const next = {};
+      Object.keys(prev).forEach((key) => {
+        next[key] = { ...prev[key], enabled: false };
+      });
+      return next;
     });
     setThemeFilters([]);
   };
@@ -61,7 +80,7 @@ export default function FiltersPanel({
         <div
           style={{
             marginTop: 8,
-            width: 320,
+            width: 340,
             background: "#fff",
             borderRadius: 8,
             boxShadow: "0 2px 10px rgba(0,0,0,0.15)",
@@ -83,66 +102,91 @@ export default function FiltersPanel({
           </h3>
 
           {Object.entries(axes).map(([axisKey, axisMeta]) => {
-            const value = axisFilters[axisKey];
-            const isActive = value !== null;
+            const filter = axisFilters[axisKey];
+            const steps = axisSteps[axisKey];
+            const stepIndex = steps.findIndex(
+              (s) => s.value === filter.value
+            );
 
             return (
-              <div key={axisKey} style={{ marginBottom: 18 }}>
-                <div
+              <div key={axisKey} style={{ marginBottom: 22 }}>
+                <label
                   style={{
                     display: "flex",
-                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: 8,
                     fontSize: 13,
-                    marginBottom: 4,
+                    marginBottom: 8,
+                    cursor: "pointer",
                   }}
                 >
+                  <input
+                    type="checkbox"
+                    checked={filter.enabled}
+                    onChange={() => toggleAxisEnabled(axisKey)}
+                  />
                   <strong>{axisMeta.label}</strong>
-
-                  {isActive && (
-                    <button
-                      onClick={() =>
-                        setAxisFilters((prev) => ({
-                          ...prev,
-                          [axisKey]: null,
-                        }))
-                      }
-                      style={{
-                        border: "none",
-                        background: "none",
-                        color: "#999",
-                        cursor: "pointer",
-                        fontSize: 12,
-                      }}
-                    >
-                      réinitialiser
-                    </button>
-                  )}
-                </div>
+                </label>
 
                 <input
                   type="range"
                   min={0}
-                  max={100}
-                  value={isActive ? value * 100 : 50}
+                  max={steps.length - 1}
+                  step={1}
+                  value={stepIndex === -1 ? 0 : stepIndex}
+                  disabled={!filter.enabled}
                   onChange={(e) =>
-                    setAxisFilters((prev) => ({
-                      ...prev,
-                      [axisKey]: Number(e.target.value) / 100,
-                    }))
+                    setAxisValue(
+                      axisKey,
+                      steps[Number(e.target.value)].value
+                    )
                   }
-                  style={{ width: "100%" }}
+                  style={{
+                    width: "100%",
+                    opacity: filter.enabled ? 1 : 0.4,
+                  }}
                 />
 
                 <div
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    fontSize: 11,
-                    color: "#888",
+                    marginTop: 4,
                   }}
                 >
-                  <span>{axisMeta.leftLabel}</span>
-                  <span>{axisMeta.rightLabel}</span>
+                  {steps.map((s, i) => (
+                    <div
+                      key={s.value}
+                      onClick={() =>
+                        filter.enabled &&
+                        setAxisValue(axisKey, s.value)
+                      }
+                      style={{
+                        flex: 1,
+                        textAlign:
+                          i === 0
+                            ? "left"
+                            : i === steps.length - 1
+                            ? "right"
+                            : "center",
+                        fontSize: 10,
+                        color:
+                          filter.enabled && i === stepIndex
+                            ? "#111"
+                            : "#999",
+                        fontWeight:
+                          filter.enabled && i === stepIndex
+                            ? "bold"
+                            : "normal",
+                        cursor: filter.enabled
+                          ? "pointer"
+                          : "default",
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      {s.label}
+                    </div>
+                  ))}
                 </div>
               </div>
             );

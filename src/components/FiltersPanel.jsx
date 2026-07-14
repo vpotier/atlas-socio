@@ -62,6 +62,7 @@ export default function FiltersPanel({
     >
       <button
         onClick={() => setOpen((o) => !o)}
+         className="icon-button"
         style={{
           padding: "10px 16px",
           borderRadius: 8,
@@ -76,8 +77,9 @@ export default function FiltersPanel({
         Filtres {anyActive ? "●" : ""}
       </button>
 
-      {open && (
+     {open && (
         <div
+          className="dropdown-panel"
           style={{
             marginTop: 8,
             width: 340,

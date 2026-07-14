@@ -130,3 +130,64 @@ button {
 .icon-button:active {
   transform: translateY(0);
 }
+
+/* ------------------------------------------------------------------ */
+/* Panneaux flottants (recherche, filtres, légende)                    */
+/* ------------------------------------------------------------------ */
+.floating-search {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.floating-filters {
+  position: absolute;
+  top: 20px;
+  left: 300px;
+  z-index: 1000;
+}
+
+.floating-legend {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.floating-credit {
+  position: absolute;
+  bottom: 12px;
+  right: 356px;
+  z-index: 1000;
+}
+
+@media (max-width: 767px) {
+  .floating-credit {
+    right: 12px;
+    bottom: 12px;
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .floating-search {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .floating-search input {
+    width: 100% !important;
+  }
+
+  .floating-filters {
+    top: 64px;
+    left: 12px;
+  }
+
+  .floating-legend {
+    bottom: 12px;
+    left: 12px;
+  }
+}

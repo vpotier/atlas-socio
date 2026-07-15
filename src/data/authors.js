@@ -1699,7 +1699,7 @@ export const authors = [
     deathYear: null,
     x: 700,
     y: 750,
-    color: "#16A085",
+    color: "#3F7A6C",
 
     concepts: ["Travail émotionnel", "Règles de sentiment", "Double journée"],
 

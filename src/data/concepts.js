@@ -112,7 +112,7 @@ export const concepts = [
     label: "Carrière déviante",
     definition:
       "Processus séquentiel au cours duquel un individu s'engage progressivement dans des pratiques réprouvées, traverse des étapes d'apprentissage technique et de modification des perceptions, et finit par intégrer une identité sociale spécifique suite à un étiquetage public.",
-    authors: ["becker"],
+    authors: ["becker", "muriel-darmon"],
     x: 470,
     y: 740,
   },

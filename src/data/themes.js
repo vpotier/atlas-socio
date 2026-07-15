@@ -11,4 +11,6 @@ export const themes = [
   "Sociologie politique et de l'État",
   "Sociologie de l'éducation et de la socialisation",
   "Sociologie de la religion",
+  "Sociologie de la religion",
+  "Sociologie des émotions",
 ];

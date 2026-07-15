@@ -499,7 +499,7 @@ export default function App() {
         }}
       >
         Par Victor Potier —{" "}
-        
+        <a
           href="mailto:victor.potier@univ-eiffel.fr"
           style={{ color: "var(--color-tardis)" }}
         >

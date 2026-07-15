@@ -173,10 +173,17 @@ button {
    des autres panneaux (z-index supérieur). On sépare clairement un
    groupe "haut d'écran" (recherche + filtres) d'un groupe "bas d'écran"
    (légende + crédit empilés à gauche, recentrage isolé à droite), pour
-   qu'aucune combinaison d'orientation ne puisse les faire se chevaucher. */
-@media (max-width: 767px) {
+   qu'aucune combinaison d'orientation ne puisse les faire se chevaucher.
+   Le déclencheur se base sur la largeur OU la hauteur d'écran : un
+   téléphone en mode paysage est large mais bas, et doit donc rester
+   traité comme "mobile" — sinon ces règles ne s'appliquent plus et les
+   chevauchements réapparaissent. On ajoute aussi une marge de sécurité
+   (env(safe-area-inset-*)) pour ne pas passer sous la barre système du
+   téléphone (encoche, barre de gestes, barre d'adresse). */
+@media (max-width: 767px), (max-height: 500px) {
+  /* Ligne 1 : recherche, pleine largeur */
   .floating-search {
-    top: 12px;
+    top: calc(12px + env(safe-area-inset-top, 0px));
     left: 12px;
     right: 12px;
   }
@@ -185,26 +192,30 @@ button {
     width: 100% !important;
   }
 
+  /* Ligne 2, à gauche : filtres */
   .floating-filters {
-    top: 64px;
+    top: calc(64px + env(safe-area-inset-top, 0px));
     left: 12px;
   }
 
+  /* Ligne 2, à droite : recentrage — jamais sur la ligne de recherche,
+     jamais en bas où se trouvent légende/crédit. */
+  .floating-recenter {
+    top: calc(64px + env(safe-area-inset-top, 0px));
+    right: 12px;
+    bottom: auto;
+  }
+
+  /* Bas d'écran, empilés à gauche : légende puis crédit au-dessus */
   .floating-legend {
-    bottom: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
     left: 12px;
   }
 
   .floating-credit {
-    bottom: 56px;
+    bottom: calc(56px + env(safe-area-inset-bottom, 0px));
     left: 12px;
     right: auto;
     font-size: 10px !important;
-  }
-
-  .floating-recenter {
-    top: auto;
-    bottom: 12px;
-    right: 12px;
   }
 }

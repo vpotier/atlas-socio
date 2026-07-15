@@ -771,7 +771,7 @@ export const relations = [
     consensus: "élevé",
     justification:
       "Hochschild prolonge l'approche dramaturgique de Goffman (gestion de l'impression donnée à autrui) en l'appliquant à la gestion des émotions elles-mêmes, fondant la sociologie des émotions.",
-    sources: ["Wikipédia FR, Arlie Russell Hochschild"],
+    sources: ["Hochschild, 1983, The Managed Heart"],
   },
   {
     source: "bourdieu",
@@ -851,7 +851,7 @@ export const relations = [
     consensus: "moyen",
     justification:
       "Coleman est initié à la lecture de Weber par Merton lors de sa formation à Columbia, influence qui infuse sa théorie de l'action rationnelle articulée au niveau macrosocial.",
-    sources: ["Wikipedia (en), James Samuel Coleman"],
+    sources: ["Sage Encyclopedia of Social Theory, Coleman, James"],
   },
   {
     source: "mead",

@@ -107,6 +107,15 @@ button {
   animation: fade-in 0.5s ease-out;
 }
 
+/* Hauteur "dynamique" du viewport : sur mobile, 100vh compte la hauteur
+   maximale possible (barre d'adresse masquée), pas la zone réellement
+   visible à l'instant T. Ça pousse les éléments ancrés en bas hors du
+   cadre visible. 100dvh corrige ça (repli sur 100vh si non supporté). */
+.app-root {
+  height: 100vh;
+  height: 100dvh;
+}
+
 .sidebar-content {
   animation: fade-slide-in 0.25s ease-out;
 }
@@ -167,6 +176,39 @@ button {
   top: 12px;
   right: 12px;
   z-index: 1000;
+}
+
+/* Bouton de fermeture de la fiche : toujours ancré à l'écran (pas à la
+   fiche elle-même), pour ne jamais défiler hors de vue avec le contenu
+   ni dépendre de la taille exacte du panneau. */
+.close-button {
+  position: fixed !important;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  z-index: 2000;
+}
+
+/* Fiche mobile : plein écran en portrait (peu de largeur disponible),
+   mais limitée à un panneau latéral raisonnable en paysage (large mais
+   bas), pour ne pas envahir tout l'écran alors que de la largeur ne
+   manque pas. */
+.mobile-sheet {
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 600px) and (max-height: 500px) {
+  .mobile-sheet {
+    left: auto;
+    right: 0;
+    top: 0;
+    width: min(420px, 60vw);
+    max-height: none !important;
+    height: 100%;
+    border-radius: 14px 0 0 14px;
+    border-top: none;
+    border-left: 1px solid var(--color-taupe);
+  }
 }
 
 /* Mobile : la recherche (avec ses suggestions) passe toujours au-dessus

@@ -203,6 +203,7 @@ const filtersActive =
     return ids;
   }, [authors, activeAxisEntries, themeFilters, filtersActive]);
 
+  const filterVisibleAuthorIds = useMemo(() => {
     const ids = new Set();
 
     authors.forEach((a) => {

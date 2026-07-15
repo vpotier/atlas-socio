@@ -127,22 +127,56 @@ export default function App() {
 
           <p>{a.classificationNote}</p>
 
-          {constellationAxisValues[a.constellation] && (
-            <>
-              <h3>Positionnement théorique</h3>
+          {(() => {
+            const individualValues = authorAxisValues[a.id];
+            const values =
+              individualValues ||
+              constellationAxisValues[a.constellation];
 
-              <ul>
-                {Object.entries(axes).map(([axisKey, axisMeta]) => (
-                  <li key={axisKey}>
-                    <strong>{axisMeta.label}</strong>
-                    <br />
-                    {constellationAxisValues[a.constellation][axisKey]
-                      ?.label}
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
+            if (!values) return null;
+
+            return (
+              <>
+                <h3>Positionnement théorique</h3>
+
+                {!individualValues && (
+                  <p
+                    style={{
+                      fontSize: 12,
+                      fontStyle: "italic",
+                      color: "var(--color-taupe)",
+                      marginTop: -4,
+                    }}
+                  >
+                    Valeur héritée de la constellation — pas encore
+                    sourcée individuellement pour cet auteur·ice.
+                  </p>
+                )}
+
+                <ul>
+                  {Object.entries(axes).map(([axisKey, axisMeta]) => (
+                    <li key={axisKey}>
+                      <strong>{axisMeta.label}</strong>
+                      <br />
+                      {values[axisKey]?.label}
+                      {values[axisKey]?.sources && (
+                        <span
+                          style={{
+                            display: "block",
+                            fontSize: 12,
+                            color: "var(--color-taupe)",
+                            marginTop: 2,
+                          }}
+                        >
+                          {values[axisKey].sources.join(" ; ")}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            );
+          })()}
 
           <p>
             <strong>Sources</strong>
@@ -167,7 +201,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                <a
+                
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -351,6 +385,7 @@ export default function App() {
           )}
 
           {cst.definition && <p>{cst.definition}</p>}
+
           {cst.disciplines && cst.disciplines.length > 0 && (
             <div style={{ marginBottom: 12 }}>
               <span
@@ -441,7 +476,7 @@ export default function App() {
         background: "var(--color-paper)",
       }}
     >
-   <SearchBar setSelectedItem={setSelectedItem} />
+      <SearchBar setSelectedItem={setSelectedItem} />
 
       <FiltersPanel
         axisFilters={axisFilters}
@@ -464,7 +499,7 @@ export default function App() {
         }}
       >
         Par Victor Potier —{" "}
-        <a
+        
           href="mailto:victor.potier@univ-eiffel.fr"
           style={{ color: "var(--color-tardis)" }}
         >

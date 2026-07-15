@@ -203,27 +203,6 @@ const filtersActive =
     return ids;
   }, [authors, activeAxisEntries, themeFilters, filtersActive]);
 
-  const filterVisibleAuthorIds = useMemo(() => {
-    
-    const ids = new Set();
-
-    authors.forEach((a) => {
-      const constellationOk =
-        !matchingConstellationIds ||
-        matchingConstellationIds.has(a.constellation);
-
-      const themeOk =
-        !themeFilters ||
-        themeFilters.length === 0 ||
-        (a.themes || []).some((t) =>
-          themeFilters.includes(t)
-        );
-
-      if (constellationOk && themeOk) ids.add(a.id);
-    });
-
-    return ids;
-  }, [authors, matchingConstellationIds, themeFilters, filtersActive]);
 
   const filterVisibleConceptIds = useMemo(() => {
     if (!filterVisibleAuthorIds) return null;

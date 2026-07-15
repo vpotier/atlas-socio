@@ -63,7 +63,7 @@ export default function Concepts({
             <text
               x={concept.x + 14}
               y={concept.y + 4}
-              fontSize="12"
+              fontSize="12.5"
               fontFamily="Inter, sans-serif"
               fontWeight={isHovered ? 600 : 400}
               fill={isSelected ? "#1b3f66" : "#2b2620"}

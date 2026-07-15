@@ -10,7 +10,7 @@ export default function Background({ width, height }) {
       y={-margin}
       width={width + margin * 2}
       height={height + margin * 2}
-      fill="#f3ede1"
+      fill="#faf7f1"
     />
   );
 }

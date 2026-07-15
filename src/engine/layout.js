@@ -196,7 +196,7 @@ export function computeLayout(authors, concepts, relations) {
         .forceLink(links)
         .id((d) => d.id)
         .distance((l) => {
-          if (l.kind === "concept-link") return 95;
+          if (l.kind === "concept-link") return 110;
           return l.sameConstellation ? 160 : 320;
         })
         .strength((l) => {
@@ -217,10 +217,11 @@ export function computeLayout(authors, concepts, relations) {
         .forceCollide()
         .radius((d) =>
           d.kind === "author"
-            ? 75
-            : 40 + Math.min(d.labelLength ?? 10, 26) * 3
+            ? 78
+            : 55 + Math.min(d.labelLength ?? 10, 30) * 4
         )
-        .strength(0.9)
+        .strength(1)
+        .iterations(3)
     )
     .force(
       "clusterX",
@@ -242,7 +243,7 @@ export function computeLayout(authors, concepts, relations) {
     )
     .stop();
 
-  simulation.tick(500);
+  simulation.tick(650);
 
   const authorXs = authorNodes.map((n) => n.x);
   const authorYs = authorNodes.map((n) => n.y);

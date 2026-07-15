@@ -993,4 +993,34 @@ export const relations = [
       "Marcuse fonde sa critique de la société de consommation et de la désublimation répressive sur une lecture explicitement marxiste combinée à la psychanalyse freudienne.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
   },
+  {
+    source: "robert-park",
+    target: "hughes",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Hughes effectue son doctorat sous la direction de Robert Park à l'université de Chicago, dont il prolonge et transmet l'héritage à la génération suivante.",
+    sources: ["Chapoulie, 1996, préface au Regard sociologique. Essais choisis"],
+  },
+  {
+    source: "hughes",
+    target: "erving-goffman",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Goffman est l'élève direct de Hughes à l'université de Chicago, qui fait de ce dernier le véritable chaînon entre la première et la seconde génération de l'École de Chicago.",
+    sources: ["Chapoulie, 1996, préface au Regard sociologique. Essais choisis"],
+  },
+  {
+    source: "hughes",
+    target: "becker",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Becker est l'élève direct de Hughes à l'université de Chicago, qui fait de ce dernier le véritable chaînon entre la première et la seconde génération de l'École de Chicago.",
+    sources: ["Chapoulie, 1996, préface au Regard sociologique. Essais choisis"],
+  },
 ];

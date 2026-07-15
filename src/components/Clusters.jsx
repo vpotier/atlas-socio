@@ -106,21 +106,21 @@ export default function Clusters({
             />
 
             {(() => {
-              const labelY = cy - radius + 26;
-              const estWidth = meta.label.length * 9.5 + 28;
+              const labelY = cy - radius + 34;
+              const estWidth = meta.label.length * 15 + 44;
 
               return (
                 <>
                   <rect
                     x={cx - estWidth / 2}
-                    y={labelY - 18}
+                    y={labelY - 27}
                     width={estWidth}
-                    height={30}
-                    rx={15}
+                    height={46}
+                    rx={23}
                     fill="var(--color-paper)"
                     stroke={meta.color}
-                    strokeWidth="1"
-                    opacity={isDimmed ? 0.1 : isSelected ? 0.95 : 0.8}
+                    strokeWidth="1.5"
+                    opacity={isDimmed ? 0.1 : isSelected ? 0.95 : 0.85}
                     style={{ transition: "opacity .25s" }}
                   />
 
@@ -129,7 +129,7 @@ export default function Clusters({
                     y={labelY}
                     textAnchor="middle"
                     dominantBaseline="middle"
-                    fontSize="17"
+                    fontSize="27"
                     fontWeight={isSelected ? "bold" : 600}
                     fontFamily="var(--font-display)"
                     fill={meta.color}

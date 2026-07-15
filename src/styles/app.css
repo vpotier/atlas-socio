@@ -138,7 +138,7 @@ button {
   position: absolute;
   top: 20px;
   left: 20px;
-  z-index: 1000;
+  z-index: 1200;
 }
 
 .floating-filters {
@@ -161,6 +161,7 @@ button {
   right: 356px;
   z-index: 1000;
 }
+
 .floating-recenter {
   position: absolute;
   top: 12px;
@@ -168,21 +169,11 @@ button {
   z-index: 1000;
 }
 
-@media (max-width: 767px) {
-  .floating-recenter {
-    top: 64px;
-    right: 12px;
-  }
-}
-
-@media (max-width: 767px) {
-  .floating-credit {
-    right: 12px;
-    bottom: 12px;
-    font-size: 10px !important;
-  }
-}
-
+/* Mobile : la recherche (avec ses suggestions) passe toujours au-dessus
+   des autres panneaux (z-index supérieur). On sépare clairement un
+   groupe "haut d'écran" (recherche + filtres) d'un groupe "bas d'écran"
+   (légende + crédit empilés à gauche, recentrage isolé à droite), pour
+   qu'aucune combinaison d'orientation ne puisse les faire se chevaucher. */
 @media (max-width: 767px) {
   .floating-search {
     top: 12px;
@@ -202,5 +193,18 @@ button {
   .floating-legend {
     bottom: 12px;
     left: 12px;
+  }
+
+  .floating-credit {
+    bottom: 56px;
+    left: 12px;
+    right: auto;
+    font-size: 10px !important;
+  }
+
+  .floating-recenter {
+    top: auto;
+    bottom: 12px;
+    right: 12px;
   }
 }

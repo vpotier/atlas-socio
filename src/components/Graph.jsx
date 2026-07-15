@@ -11,6 +11,7 @@ import { concepts as rawConcepts } from "../data/concepts";
 import { relations } from "../data/relations";
 import { computeLayout } from "../engine/layout";
 import { constellationAxisValues } from "../data/theoreticalAxes";
+import { authorAxisValues } from "../data/authorAxisValues";
 
 // Tolérance (en fraction de l'axe, 0-1) pour qu'une constellation soit
 // considérée comme correspondant à la position d'un curseur de filtre.

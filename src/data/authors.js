@@ -1649,7 +1649,7 @@ export const authors = [
     classificationNote:
       "Wacquant est identifié comme l'un des plus proches collaborateurs et continuateurs de Bourdieu, avec qui il a directement co-écrit, et dont il prolonge le programme réflexif appliqué à la marginalité urbaine et au système pénal.",
     sources: [
-      "Universalis, Biographie de Loïc Wacquant",
+      "Wacquant, 1992, Réponses. Pour une anthropologie réflexive (avec P. Bourdieu)",
       "Wacquant, 2006, Parias urbains. Ghetto, banlieues, État",
     ],
     themes: ["Sociologie urbaine", "Sociologie politique et de l'État"],
@@ -1684,7 +1684,7 @@ export const authors = [
     classificationNote:
       "Mauger est identifié comme l'un des continuateurs directs du programme bourdieusien, qu'il applique de façon soutenue à la sociologie de la jeunesse populaire et de la déviance depuis les années 1970.",
     sources: [
-      "Wikipédia FR, Gérard Mauger",
+      "Mauger, 2006, Les Bandes, le milieu et la bohème populaire",
       "Mauger, 2023, Avec Bourdieu. Un parcours sociologique",
     ],
     themes: ["Sociologie de la déviance", "Sociologie de l'éducation et de la socialisation"],
@@ -1719,8 +1719,8 @@ export const authors = [
     classificationNote:
       "Hochschild prolonge explicitement l'approche dramaturgique de Goffman (mise en scène de soi) en l'appliquant à la gestion des émotions elles-mêmes, fondant ainsi la sociologie des émotions comme sous-champ de l'interactionnisme.",
     sources: [
-      "Wikipédia FR, Arlie Russell Hochschild",
-      "CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions",
+      "Hochschild, 1983, The Managed Heart",
+      "Hochschild, 1989, The Second Shift",
     ],
     themes: ["Études de genre", "Sociologie du travail et des professions"],
   },
@@ -1755,8 +1755,8 @@ export const authors = [
     classificationNote:
       "Illouz est identifiée comme une figure de proue de la sociologie contemporaine des émotions, qui articule explicitement l'héritage bourdieusien du capital, l'héritage wébérien de la rationalisation, et l'héritage interactionniste de Hochschild plutôt que de se rattacher à une seule tradition.",
     sources: [
-      "Wikipédia FR, Eva Illouz",
-      "CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions",
+      "Illouz, 2006, Les Sentiments du capitalisme",
+      "Illouz, 2012, Pourquoi l'amour fait mal",
     ],
     themes: ["Études de genre", "Sociologie économique"],
   },

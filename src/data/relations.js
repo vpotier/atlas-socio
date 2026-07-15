@@ -1023,4 +1023,24 @@ export const relations = [
       "Becker est l'élève direct de Hughes à l'université de Chicago, qui fait de ce dernier le véritable chaînon entre la première et la seconde génération de l'École de Chicago.",
     sources: ["Chapoulie, 1996, préface au Regard sociologique. Essais choisis"],
   },
+  {
+    source: "wright-mills",
+    target: "talcott-parsons",
+    type: "tension",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Mills qualifie la « grande théorie » de Parsons de verbiage abstrait coupé du concret — « 50 % de multiplication de mots, 40 % de platitude sociologique » — et lui oppose l'exigence d'une imagination sociologique reliant biographie individuelle et structures historiques.",
+    sources: ["Mills, 1959, L'Imagination sociologique"],
+  },
+  {
+    source: "wright-mills",
+    target: "lazarsfeld",
+    type: "tension",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Mills critique « l'empirisme abstrait » des enquêtes statistiques à la Lazarsfeld, qu'il juge myope : des faits accumulés sans théorie pour leur donner sens.",
+    sources: ["Mills, 1959, L'Imagination sociologique"],
+  },
 ];

@@ -58,21 +58,19 @@ export default function App() {
     const closeButton = (
       <button
         onClick={() => setSelectedItem(null)}
-        className="icon-button"
+        className="icon-button close-button"
         style={{
-          position: "absolute",
-          top: 16,
-          right: 16,
           border: "none",
           background: "var(--color-paper)",
           borderRadius: "50%",
-          width: 28,
-          height: 28,
+          width: 32,
+          height: 32,
           cursor: "pointer",
-          fontSize: 16,
-          lineHeight: "28px",
+          fontSize: 18,
+          lineHeight: "32px",
           textAlign: "center",
           color: "var(--color-taupe)",
+          boxShadow: "0 1px 4px rgba(43,38,32,0.2)",
         }}
         aria-label="Fermer"
         title="Fermer"
@@ -153,7 +151,7 @@ export default function App() {
                   </p>
                 )}
 
-          <ul>
+                <ul>
                   {Object.entries(axes).map(([axisKey, axisMeta]) => (
                     <li key={axisKey}>
                       <strong>{axisMeta.label}</strong>
@@ -218,7 +216,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                <a
+                
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -484,10 +482,9 @@ export default function App() {
 
   return (
     <div
-      className="app-fade-in"
+      className="app-fade-in app-root"
       style={{
         display: "flex",
-        height: "100vh",
         fontFamily: "var(--font-body)",
         position: "relative",
         background: "var(--color-paper)",
@@ -516,7 +513,7 @@ export default function App() {
         }}
       >
         Par Victor Potier —{" "}
-        <a
+        
           href="mailto:victor.potier@univ-eiffel.fr"
           style={{ color: "var(--color-tardis)" }}
         >
@@ -535,18 +532,19 @@ export default function App() {
 
       {(!isMobile || selectedItem) && (
         <aside
+          className={isMobile ? "mobile-sheet" : undefined}
           style={
             isMobile
               ? {
                   position: "fixed",
-                  left: 0,
-                  right: 0,
                   bottom: 0,
                   maxHeight: "70vh",
                   background: "var(--color-paper-dim)",
                   borderTop: "1px solid var(--color-taupe)",
                   borderRadius: "14px 14px 0 0",
                   padding: 20,
+                  paddingBottom:
+                    "calc(20px + env(safe-area-inset-bottom, 0px))",
                   overflowY: "auto",
                   zIndex: 1500,
                   boxShadow: "0 -4px 16px rgba(43,38,32,0.25)",

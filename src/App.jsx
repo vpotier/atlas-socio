@@ -153,17 +153,24 @@ export default function App() {
                   </p>
                 )}
 
-           <ul>
+          <ul>
                   {Object.entries(axes).map(([axisKey, axisMeta]) => (
                     <li key={axisKey}>
                       <strong>{axisMeta.label}</strong>
                       <br />
-                      {values[axisKey]?.label}
+                      <span
+                        style={{
+                          fontStyle: "italic",
+                          color: "var(--color-leather)",
+                        }}
+                      >
+                        {values[axisKey]?.label}
+                      </span>
                       {values[axisKey]?.justification && (
                         <span
                           style={{
                             display: "block",
-                            marginTop: 2,
+                            marginTop: 4,
                           }}
                         >
                           {values[axisKey].justification}
@@ -175,7 +182,7 @@ export default function App() {
                             display: "block",
                             fontSize: 12,
                             color: "var(--color-taupe)",
-                            marginTop: 2,
+                            marginTop: 4,
                           }}
                         >
                           {values[axisKey].sources.join(" ; ")}

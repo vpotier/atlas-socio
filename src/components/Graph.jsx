@@ -160,12 +160,48 @@ export default function Graph({
     return ids;
   }, [activeAxisEntries]);
 
-  const filtersActive =
+const filtersActive =
     activeAxisEntries.length > 0 ||
     (themeFilters && themeFilters.length > 0);
 
+  // Valeurs d'axes effectives pour un auteur : sa propre entrée
+  // sourcée individuellement si elle existe, sinon repli sur la
+  // valeur de sa constellation.
+  const getAxisValuesForAuthor = (author) =>
+    authorAxisValues[author.id] ||
+    constellationAxisValues[author.constellation];
+
   const filterVisibleAuthorIds = useMemo(() => {
     if (!filtersActive) return null;
+
+    const ids = new Set();
+
+    authors.forEach((a) => {
+      const values = getAxisValuesForAuthor(a);
+
+      const axisOk = activeAxisEntries.every(
+        ([axisKey, filterValue]) => {
+          const axisValue = values?.[axisKey];
+          if (!axisValue) return false;
+          return (
+            Math.abs(axisValue.value - filterValue) <=
+            AXIS_TOLERANCE
+          );
+        }
+      );
+
+      const themeOk =
+        !themeFilters ||
+        themeFilters.length === 0 ||
+        (a.themes || []).some((t) =>
+          themeFilters.includes(t)
+        );
+
+      if (axisOk && themeOk) ids.add(a.id);
+    });
+
+    return ids;
+  }, [authors, activeAxisEntries, themeFilters, filtersActive]);
 
     const ids = new Set();
 

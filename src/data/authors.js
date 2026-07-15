@@ -1834,4 +1834,36 @@ export const authors = [
     ],
     themes: ["Sociologie du travail et des professions"],
   },
+
+  {
+    id: "wright-mills",
+    name: "Charles Wright Mills",
+    school: "Sociologie critique américaine (imagination sociologique)",
+    period: "1916–1962",
+    birthYear: 1916,
+    deathYear: 1962,
+    x: 1450,
+    y: 500,
+    color: "#8C7F6F",
+
+    concepts: ["Imagination sociologique", "Élite du pouvoir"],
+
+    works: ["L'Imagination sociologique (1959)", "The Power Elite (1956)"],
+
+    influences: [],
+    heirs: [],
+
+    summary:
+      "Sociologue américain, il appelle à une sociologie capable de relier les biographies individuelles (les « troubles personnels ») aux structures historiques et sociales (les « enjeux publics ») — ce qu'il nomme l'imagination sociologique. Il critique frontalement à la fois la « grande théorie » abstraite de Parsons, coupée du concret, et « l'empirisme abstrait » des enquêtes statistiques à la Lazarsfeld, qui s'arrêtent au ras des faits sans les relier à une réflexion théorique.",
+
+    constellation: "pont",
+    consensus: 4,
+    classificationNote:
+      "Mills est identifié comme une voix critique indépendante de la sociologie américaine des années 1950, refusant aussi bien le systémisme parsonien que l'empirisme statistique de l'école de Columbia, sans pour autant se rattacher formellement à un courant marxiste organisé.",
+    sources: [
+      "Mills, 1959, L'Imagination sociologique",
+      "Mills, 1956, The Power Elite",
+    ],
+    themes: ["Sociologie politique et de l'État"],
+  },
 ];

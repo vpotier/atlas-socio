@@ -1722,7 +1722,11 @@ export const authors = [
       "Hochschild, 1983, The Managed Heart",
       "Hochschild, 1989, The Second Shift",
     ],
-    themes: ["Études de genre", "Sociologie du travail et des professions"],
+    themes: [
+      "Études de genre",
+      "Sociologie du travail et des professions",
+      "Sociologie des émotions",
+    ],
   },
 
   {
@@ -1758,7 +1762,7 @@ export const authors = [
       "Illouz, 2006, Les Sentiments du capitalisme",
       "Illouz, 2012, Pourquoi l'amour fait mal",
     ],
-    themes: ["Études de genre", "Sociologie économique"],
+    themes: ["Études de genre", "Sociologie économique", "Sociologie des émotions"],
   },
 
   {
@@ -1794,5 +1798,40 @@ export const authors = [
       "Fraser & Honneth, 2003, Redistribution or Recognition?",
     ],
     themes: ["Études de genre", "Sociologie politique et de l'État"],
+  },
+
+  {
+    id: "hughes",
+    name: "Everett C. Hughes",
+    school: "École de Chicago (chaînon entre 1ère et 2e génération)",
+    period: "1897–1983",
+    birthYear: 1897,
+    deathYear: 1983,
+    x: 550,
+    y: 720,
+    color: "#3F7A6C",
+
+    concepts: ["Sale boulot (dirty work)", "Licence et mandat", "Carrière professionnelle"],
+
+    works: [
+      "Men and Their Work (1958)",
+      "Le Regard sociologique. Essais choisis (recueil, 1996)",
+    ],
+
+    influences: ["robert-park"],
+    heirs: ["erving-goffman", "becker"],
+
+    summary:
+      "Formé sous la direction de Robert Park, dont il complète et transmet l'héritage à la génération suivante, il fonde une sociologie du travail et des professions attentive aux divisions du monde social : entre simples métiers et professions constituées, entre tâches valorisantes et « sale boulot » délégué à d'autres. Il forme directement Erving Goffman et Howard Becker à Chicago.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 4,
+    classificationNote:
+      "Hughes est identifié comme le chaînon entre la première génération de l'École de Chicago (Park, Thomas, Znaniecki) et la seconde, celle de l'interactionnisme symbolique (Blumer, Goffman, Becker), dont il fut directement le professeur.",
+    sources: [
+      "Chapoulie, 1996, préface au Regard sociologique. Essais choisis",
+      "Hughes, 1958, Men and Their Work",
+    ],
+    themes: ["Sociologie du travail et des professions"],
   },
 ];

@@ -259,4 +259,84 @@ export const authorAxisValues = {
       sources: ["Illouz, 2012, Pourquoi l'amour fait mal"],
     },
   },
+
+  "talcott-parsons": {
+    individuSociete: {
+      value: 0.3,
+      label: "Entre action individuelle et système social",
+      justification:
+        "Parsons cherche dès 1937 à concilier l'action individuelle orientée par des valeurs (empruntée à Weber) et l'ordre social (emprunté à Durkheim), avant de déplacer son propre système théorique vers une conception plus systémique où l'acteur devient occupant de rôles au service du système social.",
+      sources: [
+        "Parsons, 1937, The Structure of Social Action",
+        "Encyclopédie Universalis, Biographie de Talcott Parsons",
+      ],
+    },
+    methode: {
+      value: 0.25,
+      label: "Grande théorie abstraite et déductive",
+      justification:
+        "Parsons construit un vaste système conceptuel abstrait, très éloigné de l'enquête empirique de terrain dominante à son époque (Chicago, Lazarsfeld) — ce qui lui vaut la critique fameuse de Wright Mills, pour qui sa « grande théorie » n'est que « multiplication de mots ».",
+      sources: [
+        "Dortier, 2009, Talcott Parsons et la grande théorie, in Molénat (dir.), La Sociologie, Éditions Sciences Humaines",
+        "Mills, 1959, L'Imagination sociologique",
+      ],
+    },
+    rationalite: {
+      value: 0.55,
+      label: "Variables-modèles : typologie plurielle au service du système",
+      justification:
+        "Ses cinq paires de « variables-modèles » (affectivité/neutralité affective, universalisme/particularisme...) décrivent différentes orientations de l'action, inspirées de Weber, mais réinterprétées comme des impératifs fonctionnels du système plutôt que des choix libres de l'acteur.",
+      sources: [
+        "Boudon, 1989, La théorie de l'action sociale de Parsons : la conserver, mais la dépasser, Sociologie et sociétés, 21(1), 55-67",
+      ],
+    },
+  },
+
+  "anthony-giddens": {
+    individuSociete: {
+      value: 0.6,
+      label: "Dualité du structurel",
+      justification:
+        "Pour Giddens, les structures sociales sont à la fois la condition et le résultat de l'action des individus : elles ne préexistent pas à l'action comme une contrainte extérieure (Durkheim), ni ne s'y réduisent (individualisme), mais se reproduisent continuellement à travers elle.",
+      sources: ["Giddens, 1987, La Constitution de la société"],
+    },
+    methode: {
+      value: 0.5,
+      label: "Théorique et synthétique, peu empirique",
+      justification:
+        "Comme Parsons, Giddens construit une théorie générale essentiellement conceptuelle ; à la différence de Bourdieu, son œuvre ne repose pas sur des enquêtes de terrain mais sur un travail de synthèse théorique entre sociologies de l'action et sociologies des structures.",
+      sources: ["Giddens, 1987, La Constitution de la société"],
+    },
+    rationalite: {
+      value: 0.55,
+      label: "Conscience pratique et conscience discursive",
+      justification:
+        "Giddens distingue deux registres de la compétence des acteurs : la conscience pratique (savoir-faire tacites, non exprimables) et la conscience discursive (ce que l'acteur peut formuler verbalement) — ni pur calcul conscient, ni pur automatisme.",
+      sources: ["Giddens, 1987, La Constitution de la société"],
+    },
+  },
+
+  "jürgen-habermas": {
+    individuSociete: {
+      value: 0.45,
+      label: "Intersubjectivité communicationnelle",
+      justification:
+        "Habermas décrit la société comme l'articulation entre des « mondes vécus » partagés intersubjectivement par la communication, et des systèmes fonctionnels régis par une rationalité instrumentale — ni pur individu, ni pure société.",
+      sources: ["Habermas, 1981, Théorie de l'agir communicationnel"],
+    },
+    methode: {
+      value: 0.55,
+      label: "Reconstruction théorique et pragmatique du langage",
+      justification:
+        "Sa méthode combine une reconstruction conceptuelle du savoir préthéorique des locuteurs, la pragmatique formelle du langage, et un dialogue critique avec les classiques (Weber, Durkheim, Mead) — plus proche d'une synthèse théorique que d'une enquête empirique.",
+      sources: ["Habermas, 1981, Théorie de l'agir communicationnel"],
+    },
+    rationalite: {
+      value: 0.6,
+      label: "Rationalité communicationnelle, plurielle, orientée vers l'entente",
+      justification:
+        "Habermas critique la conception wébérienne de la rationalité, trop centrée sur l'agir rationnel en finalité, et lui oppose une rationalité fondée sur la recherche d'un accord mutuel entre locuteurs, par la discussion argumentée.",
+      sources: ["Habermas, 1981, Théorie de l'agir communicationnel"],
+    },
+  },
 };

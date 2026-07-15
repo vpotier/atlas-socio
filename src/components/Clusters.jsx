@@ -68,7 +68,7 @@ export default function Clusters({
           <g
             key={constellationId}
             style={{ cursor: "pointer" }}
-    onClick={() =>
+            onClick={() =>
               setSelectedItem({
                 type: "constellation",
                 data: {
@@ -105,22 +105,46 @@ export default function Clusters({
               style={{ transition: "opacity .25s" }}
             />
 
-            <text
-              x={cx}
-              y={cy - radius + 24}
-              textAnchor="middle"
-              fontSize="16"
-              fontWeight={isSelected ? "bold" : "normal"}
-              fill={meta.color}
-              opacity={isDimmed ? 0.15 : 0.75}
-              style={{
-                userSelect: "none",
-                pointerEvents: "none",
-                transition: "opacity .25s",
-              }}
-            >
-              {meta.label}
-            </text>
+            {(() => {
+              const labelY = cy - radius + 26;
+              const estWidth = meta.label.length * 9.5 + 28;
+
+              return (
+                <>
+                  <rect
+                    x={cx - estWidth / 2}
+                    y={labelY - 18}
+                    width={estWidth}
+                    height={30}
+                    rx={15}
+                    fill="var(--color-paper)"
+                    stroke={meta.color}
+                    strokeWidth="1"
+                    opacity={isDimmed ? 0.1 : isSelected ? 0.95 : 0.8}
+                    style={{ transition: "opacity .25s" }}
+                  />
+
+                  <text
+                    x={cx}
+                    y={labelY}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fontSize="17"
+                    fontWeight={isSelected ? "bold" : 600}
+                    fontFamily="var(--font-display)"
+                    fill={meta.color}
+                    opacity={isDimmed ? 0.15 : 1}
+                    style={{
+                      userSelect: "none",
+                      pointerEvents: "none",
+                      transition: "opacity .25s",
+                    }}
+                  >
+                    {meta.label}
+                  </text>
+                </>
+              );
+            })()}
           </g>
         );
       })}

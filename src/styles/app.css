@@ -161,7 +161,7 @@ button {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  z-index: 1000;
+  z-index: 1100;
 }
 
 .floating-credit {
@@ -178,15 +178,7 @@ button {
   z-index: 1000;
 }
 
-/* Bouton de fermeture de la fiche : toujours ancré à l'écran (pas à la
-   fiche elle-même), pour ne jamais défiler hors de vue avec le contenu
-   ni dépendre de la taille exacte du panneau. */
-.close-button {
-  position: fixed !important;
-  top: calc(16px + env(safe-area-inset-top, 0px));
-  right: calc(16px + env(safe-area-inset-right, 0px));
-  z-index: 2000;
-}
+
 
 /* Fiche mobile : plein écran en portrait (peu de largeur disponible),
    mais limitée à un panneau latéral raisonnable en paysage (large mais

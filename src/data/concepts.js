@@ -305,7 +305,7 @@ export const concepts = [
     x: 610,
     y: 420,
   },
-{
+  {
     id: "socialisation-primaire-secondaire",
     label: "Socialisation (primaire/secondaire)",
     definition:
@@ -313,5 +313,14 @@ export const concepts = [
     authors: ["peter-berger", "thomas-luckmann"],
     x: 1010,
     y: 600,
+  },
+  {
+    id: "sale-boulot",
+    label: "Sale boulot (dirty work)",
+    definition:
+      "Tâches ingrates, dégradantes ou moralement discréditées au sein d'une division du travail, que les membres d'une profession valorisée délèguent à d'autres pour préserver leur propre honorabilité et leur mandat professionnel.",
+    authors: ["hughes"],
+    x: 700,
+    y: 780,
   },
 ];

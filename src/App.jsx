@@ -8,6 +8,7 @@ import { useIsMobile } from "./hooks/useIsMobile";
 import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
 import { constellations } from "./engine/constellations";
 import { axes, constellationAxisValues } from "./data/theoreticalAxes";
+import { authorAxisValues } from "./data/authorAxisValues";
 
 import "./styles/app.css";
 

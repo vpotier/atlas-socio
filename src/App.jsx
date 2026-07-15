@@ -55,30 +55,43 @@ export default function App() {
       );
     }
 
-    const closeButton = (
-      <button
-        onClick={() => setSelectedItem(null)}
-        className="icon-button close-button"
+   const closeButton = (
+      <div
         style={{
-          border: "none",
-          background: "var(--color-paper)",
-          borderRadius: "50%",
-          width: 32,
-          height: 32,
-          cursor: "pointer",
-          fontSize: 18,
-          lineHeight: "32px",
-          textAlign: "center",
-          color: "var(--color-taupe)",
-          boxShadow: "0 1px 4px rgba(43,38,32,0.2)",
+          position: "sticky",
+          top: 0,
+          zIndex: 10,
+          display: "flex",
+          justifyContent: "flex-end",
+          marginBottom: -32,
+          marginRight: -4,
+          pointerEvents: "none",
         }}
-        aria-label="Fermer"
-        title="Fermer"
       >
-        ×
-      </button>
+        <button
+          onClick={() => setSelectedItem(null)}
+          className="icon-button"
+          style={{
+            border: "none",
+            background: "var(--color-paper)",
+            borderRadius: "50%",
+            width: 32,
+            height: 32,
+            cursor: "pointer",
+            fontSize: 18,
+            lineHeight: "32px",
+            textAlign: "center",
+            color: "var(--color-taupe)",
+            boxShadow: "0 1px 4px rgba(43,38,32,0.2)",
+            pointerEvents: "auto",
+          }}
+          aria-label="Fermer"
+          title="Fermer"
+        >
+          ×
+        </button>
+      </div>
     );
-
     const tabLabel = (text) => (
       <div
         style={{

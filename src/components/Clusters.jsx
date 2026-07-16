@@ -46,12 +46,14 @@ export default function Clusters({
           members.reduce((sum, m) => sum + m.y, 0) /
           members.length;
 
-        const radius =
+        const radius = Math.min(
           Math.max(
             ...members.map((m) =>
               Math.hypot(m.x - cx, m.y - cy)
             )
-          ) + 90;
+          ) + 90,
+          320
+        );
 
         const isSelected =
           selectedConstellationId === constellationId;

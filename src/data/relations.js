@@ -1043,4 +1043,135 @@ export const relations = [
       "Mills critique « l'empirisme abstrait » des enquêtes statistiques à la Lazarsfeld, qu'il juge myope : des faits accumulés sans théorie pour leur donner sens.",
     sources: ["Mills, 1959, L'Imagination sociologique"],
   },
+  {
+    source: "harrison-white",
+    target: "degenne",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Degenne reconnaît explicitement sa dette envers l'analyse structurale de White, auquel il consacre un texte le qualifiant de « chaînon manquant de la sociologie », et importe cette approche en France sous le nom d'interactionnisme structural.",
+    sources: ["Degenne, 1996, Harrison White ou un chaînon manquant de la sociologie"],
+  },
+  {
+    source: "degenne",
+    target: "forse",
+    type: "dialogue",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Co-auteurs de l'ouvrage de référence qui nomme et théorise l'« interactionnisme structural » en sociologie française, initiant aussi bien aux études empiriques qu'à l'analyse des graphes.",
+    sources: ["Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie"],
+  },
+  {
+    source: "degenne",
+    target: "bidart",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Co-auteurs de La vie en réseau, ouvrage fondateur de la sociologie des dynamiques relationnelles, couronné par le prix Simmel de l'International Network for Social Network Analysis en 2020.",
+    sources: ["Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales"],
+  },
+  {
+    source: "bidart",
+    target: "grossetti",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Co-auteurs de La vie en réseau, ouvrage fondateur de la sociologie des dynamiques relationnelles, couronné par le prix Simmel de l'International Network for Social Network Analysis en 2020.",
+    sources: ["Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales"],
+  },
+  {
+    source: "claude-fischer",
+    target: "grossetti",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Grossetti transpose directement en France (enquête toulousaine de 2001) la méthode d'enquête sur les réseaux personnels développée par Fischer dans la région de San Francisco à la fin des années 1970, permettant des comparaisons internationales.",
+    sources: [
+      "Grossetti, 2009, Qu'est-ce qu'une relation sociale ? Un ensemble de médiations dyadiques, Redes, 16(2)",
+    ],
+  },
+  {
+    source: "bruno-latour",
+    target: "luc-boltanski",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "La théorie de l'acteur-réseau et la sociologie de la justification naissent toutes deux au milieu des années 1980 en réaction au structuralisme bourdieusien, et partagent la notion centrale d'« épreuve », qu'elles définissent toutefois différemment.",
+    sources: [
+      "Blondeau & Sevin, 2004, Entretien avec Luc Boltanski, une sociologie toujours mise à l'épreuve, ethnographiques.org, 5",
+    ],
+  },
+  {
+    source: "michel-callon",
+    target: "laurent-thevenot",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "La théorie de l'acteur-réseau et la sociologie de la justification naissent toutes deux au milieu des années 1980 en réaction au structuralisme bourdieusien, et partagent la notion centrale d'« épreuve », qu'elles définissent toutefois différemment.",
+    sources: [
+      "Blondeau & Sevin, 2004, Entretien avec Luc Boltanski, une sociologie toujours mise à l'épreuve, ethnographiques.org, 5",
+    ],
+  },
+  {
+    source: "ellul",
+    target: "simondon",
+    type: "tension",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Simondon réfute explicitement la thèse ellulienne de la technique comme source d'aliénation et force autonome menaçant l'humain : il propose au contraire d'intégrer les objets techniques à la culture, en découvrant « sans préjugés la vraie structure et l'essence réelle de la technicité ».",
+    sources: [
+      "Simondon, 1958, Du mode d'existence des objets techniques",
+      "Ellul, 1954, La Technique ou l'enjeu du siècle",
+    ],
+  },
+  {
+    source: "hughes",
+    target: "susan-leigh-star",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Star inscrit sa sociologie du travail invisible et des infrastructures dans la filiation de la sociologie du travail de Hughes, dont elle reprend l'attention aux tâches invisibilisées et au « sale boulot ».",
+    sources: ["Star & Strauss, 1999, Layers of Silence, Arenas of Voice: The Ecology of Visible and Invisible Work, Computer Supported Cooperative Work, 8"],
+  },
+  {
+    source: "hughes",
+    target: "muriel-darmon",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Darmon mobilise la notion de carrière issue de la sociologie de Hughes (transmise via Becker) pour analyser les processus de socialisation.",
+    sources: [
+      "Darmon, 2008, La notion de carrière : un instrument interactionniste d'objectivation, Sociétés contemporaines, 72(4), 27-46",
+    ],
+  },
+  {
+    source: "degenne",
+    target: "grossetti",
+    type: "dialogue",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Co-auteurs de La vie en réseau, ouvrage fondateur de la sociologie des dynamiques relationnelles, couronné par le prix Simmel de l'International Network for Social Network Analysis en 2020.",
+    sources: ["Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales"],
+  },
+  {
+    source: "hughes",
+    target: "claude-dubar",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Dubar mobilise la sociologie des professions de Hughes (licence, mandat, carrière) pour construire son analyse de la socialisation professionnelle et des identités au travail.",
+    sources: ["Dubar, 1991, La Socialisation"],
+  },
 ];

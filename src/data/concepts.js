@@ -323,4 +323,22 @@ export const concepts = [
     x: 700,
     y: 780,
   },
+  {
+    id: "rationalite-cognitive",
+    label: "Rationalité cognitive",
+    definition:
+      "Forme de rationalité par laquelle l'acteur agit en fonction de croyances qui lui semblent, dans son contexte, bien fondées — même lorsque ces croyances se révèlent objectivement fausses. Boudon l'oppose à la seule rationalité instrumentale (calcul coûts/avantages) pour expliquer des comportements qu'elle laisse inexpliqués.",
+    authors: ["raymond-boudon"],
+    x: 180,
+    y: 650,
+  },
+  {
+    id: "double-transaction",
+    label: "Double transaction",
+    definition:
+      "Chez Dubar, l'identité résulte de l'articulation entre une transaction biographique (le sens que l'individu donne subjectivement à son propre parcours) et une transaction relationnelle (la reconnaissance ou l'identité que lui attribuent autrui et les institutions).",
+    authors: ["claude-dubar"],
+    x: 220,
+    y: 850,
+  },
 ];

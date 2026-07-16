@@ -1308,7 +1308,7 @@ export const authors = [
     deathYear: 2023,
     x: 550,
     y: 900,
-    color: "#E65100",
+    color: "#DBBA00",
 
     concepts: ["Historicité", "Mouvement social", "Intervention sociologique"],
 
@@ -1844,7 +1844,7 @@ export const authors = [
     deathYear: 1962,
     x: 1450,
     y: 500,
-    color: "#8C7F6F",
+    color: "#DBBA00",
 
     concepts: ["Imagination sociologique", "Élite du pouvoir"],
 

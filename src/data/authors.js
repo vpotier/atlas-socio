@@ -643,7 +643,7 @@ export const authors = [
     y: 720,
     color: "#8C4560",
 
-    concepts: ["Identité pour soi / pour autrui", "Crise des identités", "Forme identitaire"],
+    concepts: ["Identité pour soi / pour autrui", "Crise des identités", "Forme identitaire", "Double transaction"],
 
     works: [
       "La Socialisation : Construction des identités sociales et professionnelles (1991)",

@@ -95,7 +95,7 @@ function computeConstellationCenters(authors, relations) {
       "collide",
       d3
         .forceCollide()
-        .radius((d) => 220 + memberCount[d.id] * 35)
+        .radius((d) => 280 + memberCount[d.id] * 48)
     )
     .force("center", d3.forceCenter(center.x, center.y))
     .stop();
@@ -230,7 +230,7 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.x : center.x;
         })
-        .strength(0.3)
+        .strength(0.4)
     )
     .force(
       "clusterY",
@@ -239,7 +239,7 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.y : center.y;
         })
-        .strength(0.3)
+        .strength(0.4)
     )
     .stop();
 

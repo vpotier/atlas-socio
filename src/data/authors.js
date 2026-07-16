@@ -1308,7 +1308,7 @@ export const authors = [
     deathYear: 2023,
     x: 550,
     y: 900,
-    color: "#DBBA00",
+    color: "#E65100",
 
     concepts: ["Historicité", "Mouvement social", "Intervention sociologique"],
 
@@ -1844,7 +1844,7 @@ export const authors = [
     deathYear: 1962,
     x: 1450,
     y: 500,
-    color: "#DBBA00",
+    color: "#8C7F6F",
 
     concepts: ["Imagination sociologique", "Élite du pouvoir"],
 
@@ -1865,5 +1865,235 @@ export const authors = [
       "Mills, 1956, The Power Elite",
     ],
     themes: ["Sociologie politique et de l'État"],
+  },
+
+  {
+    id: "degenne",
+    name: "Alain Degenne",
+    school: "Analyse des réseaux sociaux (interactionnisme structural)",
+    period: "1939–présent",
+    birthYear: 1939,
+    deathYear: null,
+    x: 350,
+    y: 850,
+    color: "#1F618D",
+
+    concepts: ["Interactionnisme structural", "Analyse structurale des réseaux"],
+
+    works: [
+      "Les réseaux sociaux. Une approche structurale en sociologie (1994, avec M. Forsé)",
+      "La vie en réseau. Dynamique des relations sociales (2011, avec C. Bidart et M. Grossetti)",
+    ],
+
+    influences: ["harrison-white"],
+    heirs: [],
+
+    summary:
+      "Pionnier de l'analyse des réseaux sociaux en France, fondateur du LASMAS-IdL, il inscrit explicitement ses travaux dans ce qu'il nomme avec Michel Forsé l'« interactionnisme structural », directement inspiré de la sociologie structurale américaine de Harrison White.",
+
+    constellation: "l-interactionnisme-structural",
+    consensus: 4,
+    classificationNote:
+      "Degenne est identifié, avec Forsé, comme l'un des principaux importateurs et théoriciens de l'« interactionnisme structural » en sociologie française, reconnaissant explicitement sa dette envers l'analyse structurale américaine des réseaux de Harrison White.",
+    sources: [
+      "Degenne, 1996, Harrison White ou un chaînon manquant de la sociologie",
+      "Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie",
+    ],
+    themes: ["Sociologie économique"],
+  },
+
+  {
+    id: "forse",
+    name: "Michel Forsé",
+    school: "Analyse des réseaux sociaux (interactionnisme structural)",
+    period: "1954–présent",
+    birthYear: 1954,
+    deathYear: null,
+    x: 420,
+    y: 870,
+    color: "#1F618D",
+
+    concepts: ["Sociabilité négociée", "Justice sociale empirique"],
+
+    works: [
+      "Les réseaux sociaux. Une approche structurale en sociologie (1994, avec A. Degenne)",
+      "Une théorie empirique de la justice sociale (2010, avec M. Parodi)",
+    ],
+
+    influences: ["degenne"],
+    heirs: [],
+
+    summary:
+      "Co-auteur avec Alain Degenne de l'ouvrage de référence qui nomme et théorise l'« interactionnisme structural » en sociologie française, initiant aussi bien aux études empiriques qu'à l'analyse formelle des graphes. Il se consacre ensuite à une sociologie empirique de la justice sociale.",
+
+    constellation: "l-interactionnisme-structural",
+    consensus: 4,
+    classificationNote:
+      "Forsé est identifié comme le co-fondateur, avec Degenne, du paradigme explicitement nommé « interactionnisme structural » en sociologie française.",
+    sources: [
+      "Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie",
+    ],
+    themes: [],
+  },
+
+  {
+    id: "bidart",
+    name: "Claire Bidart",
+    school: "Sociologie des dynamiques relationnelles",
+    period: "1960–présent",
+    birthYear: 1960,
+    deathYear: null,
+    x: 300,
+    y: 900,
+    color: "#1F618D",
+
+    concepts: ["Dynamique des réseaux personnels", "Bifurcations biographiques"],
+
+    works: [
+      "La vie en réseau. Dynamique des relations sociales (2011, avec A. Degenne et M. Grossetti)",
+    ],
+
+    influences: ["degenne", "grossetti"],
+    heirs: [],
+
+    summary:
+      "Elle étudie la dynamique des réseaux personnels au fil des parcours de vie et des bifurcations biographiques, notamment à travers une enquête longitudinale sur vingt ans (le « Panel de Caen »).",
+
+    constellation: "l-interactionnisme-structural",
+    consensus: 4,
+    classificationNote:
+      "Bidart est identifiée comme l'une des trois co-fondatrices, avec Degenne et Grossetti, de la sociologie des dynamiques relationnelles, qui étudie l'évolution des réseaux personnels au cours du temps.",
+    sources: [
+      "Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales",
+    ],
+    themes: [],
+  },
+
+  {
+    id: "grossetti",
+    name: "Michel Grossetti",
+    school: "Sociologie des dynamiques relationnelles",
+    period: "1957–présent",
+    birthYear: 1957,
+    deathYear: null,
+    x: 380,
+    y: 920,
+    color: "#1F618D",
+
+    concepts: ["Encastrement et découplage", "Narrations quantifiées"],
+
+    works: [
+      "La vie en réseau. Dynamique des relations sociales (2011, avec C. Bidart et A. Degenne)",
+      "Sociologie de l'imprévisible (2004)",
+    ],
+
+    influences: ["claude-fischer", "bidart", "degenne"],
+    heirs: [],
+
+    summary:
+      "Il transpose en France la méthode d'enquête sur les réseaux personnels développée par Claude Fischer en Californie, et met au point les « narrations quantifiées », une méthode permettant de reconstruire les chaînes de relations mobilisées dans la mise en relation de personnes.",
+
+    constellation: "l-interactionnisme-structural",
+    consensus: 4,
+    classificationNote:
+      "Grossetti est identifié comme ayant directement transposé en France la méthode d'enquête sur les réseaux personnels développée par Claude Fischer aux États-Unis à la fin des années 1970.",
+    sources: [
+      "Grossetti, 2009, Qu'est-ce qu'une relation sociale ? Un ensemble de médiations dyadiques, Redes, 16(2)",
+    ],
+    themes: [],
+  },
+
+  {
+    id: "claude-fischer",
+    name: "Claude S. Fischer",
+    school: "Sociologie urbaine des réseaux personnels",
+    period: "1948–présent",
+    birthYear: 1948,
+    deathYear: null,
+    x: 280,
+    y: 950,
+    color: "#1F618D",
+
+    concepts: ["Réseaux personnels", "Sociologie urbaine des relations"],
+
+    works: [
+      "To Dwell Among Friends: Personal Networks in Town and City (1982)",
+      "Networks and Places (1977)",
+    ],
+
+    influences: [],
+    heirs: ["grossetti"],
+
+    summary:
+      "Sociologue américain d'origine française, il conduit à la fin des années 1970 dans la région de San Francisco une enquête fondatrice sur les réseaux personnels, dont la méthode devient une référence internationale, notamment reprise en France par Michel Grossetti.",
+
+    constellation: "l-interactionnisme-structural",
+    consensus: 4,
+    classificationNote:
+      "Fischer est reconnu pour une enquête empirique fondatrice sur les réseaux personnels en milieu urbain et rural, dont la méthode a été directement transposée en France par Michel Grossetti.",
+    sources: [
+      "Fischer, 1982, To Dwell Among Friends: Personal Networks in Town and City",
+    ],
+    themes: ["Sociologie urbaine"],
+  },
+
+  {
+    id: "ellul",
+    name: "Jacques Ellul",
+    school: "Philosophie et sociologie de la technique",
+    period: "1912–1994",
+    birthYear: 1912,
+    deathYear: 1994,
+    x: 1550,
+    y: 750,
+    color: "#8C7F6F",
+
+    concepts: ["Technique autonome"],
+
+    works: ["La Technique ou l'enjeu du siècle (1954)"],
+
+    influences: [],
+    heirs: [],
+
+    summary:
+      "Philosophe, historien du droit, sociologue et théologien, il soutient que la technique est devenue au XXe siècle un phénomène autonome échappant au contrôle humain, transformant l'outil que l'homme maîtrisait en système auquel il est désormais assujetti.",
+
+    constellation: "pont",
+    consensus: 4,
+    classificationNote:
+      "Ellul est identifié comme l'un des principaux penseurs de la technique du XXe siècle (aux côtés de Simondon, Heidegger ou Habermas), dont la thèse de l'autonomie technique nourrit encore les débats contemporains en sociologie des techniques, sans qu'il soit lui-même rattaché à un courant sociologique organisé.",
+    sources: ["Ellul, 1954, La Technique ou l'enjeu du siècle"],
+    themes: ["Sociologie de l'innovation et des techniques (STS)"],
+  },
+
+  {
+    id: "simondon",
+    name: "Gilbert Simondon",
+    school: "Philosophie de la technique",
+    period: "1924–1989",
+    birthYear: 1924,
+    deathYear: 1989,
+    x: 1600,
+    y: 780,
+    color: "#8C7F6F",
+
+    concepts: ["Mode d'existence des objets techniques"],
+
+    works: ["Du mode d'existence des objets techniques (1958)"],
+
+    influences: [],
+    heirs: [],
+
+    summary:
+      "Philosophe et professeur de psychologie, il propose de comprendre les objets techniques comme ayant leur propre mode d'existence, au même titre que les objets sacrés ou esthétiques, plutôt que de les percevoir comme une menace pour la culture humaine.",
+
+    constellation: "pont",
+    consensus: 4,
+    classificationNote:
+      "Simondon est identifié comme l'un des principaux penseurs de la technique du XXe siècle, dont l'approche s'oppose explicitement à la thèse de l'aliénation technique défendue par Ellul, sans qu'il soit lui-même rattaché à un courant sociologique organisé.",
+    sources: [
+      "Simondon, 1958, Du mode d'existence des objets techniques",
+    ],
+    themes: ["Sociologie de l'innovation et des techniques (STS)"],
   },
 ];

@@ -154,7 +154,7 @@ button {
   position: absolute;
   top: 20px;
   left: 360px;
-  z-index: 1000;
+  z-index: 1100;
 }
 
 .floating-legend {
@@ -177,8 +177,6 @@ button {
   right: 12px;
   z-index: 1000;
 }
-
-
 
 /* Fiche mobile : plein écran en portrait (peu de largeur disponible),
    mais limitée à un panneau latéral raisonnable en paysage (large mais

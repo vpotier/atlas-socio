@@ -207,7 +207,7 @@ export function computeLayout(authors, concepts, relations) {
           // très légère, la proximité macro est déjà gérée à l'étage 1.
           return l.sameConstellation
             ? Math.min(0.6, 0.15 + l.strength * 0.07)
-            : 0.04;
+            : 0.025;
         })
     )
     .force("charge", d3.forceManyBody().strength(-380))
@@ -230,7 +230,7 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.x : center.x;
         })
-        .strength(0.4)
+        .strength(0.5)
     )
     .force(
       "clusterY",
@@ -239,7 +239,7 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.y : center.y;
         })
-        .strength(0.4)
+        .strength(0.5)
     )
     .stop();
 

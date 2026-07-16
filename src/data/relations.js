@@ -1220,4 +1220,28 @@ export const relations = [
       "Une nouvelle théodicée ? Remarques sur la sociologie des techniques de Bruno Latour, Revue du Mauss permanente, 2019",
     ],
   },
+  {
+    source: "laurent-thevenot",
+    target: "desrosieres",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Desrosières est membre fondateur du Groupe de sociologie politique et morale aux côtés de Thévenot, avec qui il co-écrit Les Investissements de forme (1986) et un ouvrage sur les nomenclatures socioprofessionnelles (1988), fondateurs de l'économie des conventions.",
+    sources: [
+      "Armatte, 2013, Alain Desrosières (1940-2013). La statistique, outil de preuve et de gouvernement, Hermès, La Revue, 66(2), 252-254",
+    ],
+  },
+  {
+    source: "bourdieu",
+    target: "desrosieres",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Ses premiers travaux à l'Insee, notamment les éditions des Données sociales (1984-1987), restent largement inspirés de Bourdieu, avant qu'il ne se rapproche du Groupe de sociologie politique et morale et de l'économie des conventions.",
+    sources: [
+      "Armatte, 2013, Alain Desrosières (1940-2013). La statistique, outil de preuve et de gouvernement, Hermès, La Revue, 66(2), 252-254",
+    ],
+  },
 ];

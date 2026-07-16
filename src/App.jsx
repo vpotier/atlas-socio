@@ -1,594 +1,253 @@
-import { useState } from "react";
-
-import Graph from "./components/Graph";
-import SearchBar from "./components/SearchBar";
-import FiltersPanel from "./components/FiltersPanel";
-import Legend from "./components/Legend";
-import { useIsMobile } from "./hooks/useIsMobile";
-import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
-import { constellations } from "./engine/constellations";
-import { axes, constellationAxisValues } from "./data/theoreticalAxes";
-import { authorAxisValues } from "./data/authorAxisValues";
-
-import "./styles/app.css";
-
-export default function App() {
-  const isMobile = useIsMobile();
-  const [selectedItem, setSelectedItem] = useState(null);
-
-  const [axisFilters, setAxisFilters] = useState({
-    individuSociete: { enabled: false, value: 0.5 },
-    methode: { enabled: false, value: 0.5 },
-    rationalite: { enabled: false, value: 0.5 },
-  });
-
-  const [themeFilters, setThemeFilters] = useState([]);
-
-  const renderSidebar = () => {
-    if (!selectedItem) {
-      return (
-        <>
-          <div
-            style={{
-              display: "inline-block",
-              fontSize: 11,
-              fontWeight: 600,
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              color: "var(--color-taupe)",
-              border: "1px solid var(--color-taupe)",
-              borderRadius: 3,
-              padding: "3px 8px",
-              marginBottom: 14,
-            }}
-          >
-            Atlas
-          </div>
-
-          <h2>Théorie sociologique</h2>
-
-          <p style={{ color: "var(--color-taupe)" }}>
-            Sélectionnez un auteur, un concept, une relation ou une
-            constellation sur la carte.
-          </p>
-        </>
-      );
-    }
-
-   const closeButton = (
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
-          display: "flex",
-          justifyContent: "flex-end",
-          marginBottom: -32,
-          marginRight: -4,
-          pointerEvents: "none",
-        }}
-      >
-        <button
-          onClick={() => setSelectedItem(null)}
-          className="icon-button"
-          style={{
-            border: "none",
-            background: "var(--color-paper)",
-            borderRadius: "50%",
-            width: 32,
-            height: 32,
-            cursor: "pointer",
-            fontSize: 18,
-            lineHeight: "32px",
-            textAlign: "center",
-            color: "var(--color-taupe)",
-            boxShadow: "0 1px 4px rgba(43,38,32,0.2)",
-            pointerEvents: "auto",
-          }}
-          aria-label="Fermer"
-          title="Fermer"
-        >
-          ×
-        </button>
-      </div>
-    );
-    const tabLabel = (text) => (
-      <div
-        style={{
-          display: "inline-block",
-          fontSize: 11,
-          fontWeight: 600,
-          textTransform: "uppercase",
-          letterSpacing: "0.1em",
-          color: "var(--color-leather)",
-          border: "1px solid var(--color-leather)",
-          borderRadius: 3,
-          padding: "3px 8px",
-          marginBottom: 10,
-        }}
-      >
-        {text}
-      </div>
-    );
-
-    if (selectedItem.type === "author") {
-      const a = selectedItem.data;
-
-      return (
-        <>
-          {closeButton}
-
-          {tabLabel("Auteur·ice")}
-
-          <h2>{a.name}</h2>
-
-          <p style={{ marginTop: -8, color: "var(--color-taupe)" }}>
-            {a.period}
-          </p>
-
-          <p>
-            <strong>École</strong>
-            <br />
-            {a.school}
-          </p>
-
-          <p>{a.summary}</p>
-
-          <h3>Classification</h3>
-
-          <p>{a.classificationNote}</p>
-
-          {(() => {
-            const individualValues = authorAxisValues[a.id];
-            const values =
-              individualValues ||
-              constellationAxisValues[a.constellation];
-
-            if (!values) return null;
-
-            return (
-              <>
-                <h3>Positionnement théorique</h3>
-
-                {!individualValues && (
-                  <p
-                    style={{
-                      fontSize: 12,
-                      fontStyle: "italic",
-                      color: "var(--color-taupe)",
-                      marginTop: -4,
-                    }}
-                  >
-                    Valeur héritée de la constellation — pas encore
-                    sourcée individuellement pour cet auteur·ice.
-                  </p>
-                )}
-
-                <ul>
-                  {Object.entries(axes).map(([axisKey, axisMeta]) => (
-                    <li key={axisKey}>
-                      <strong>{axisMeta.label}</strong>
-                      <br />
-                      <span
-                        style={{
-                          fontStyle: "italic",
-                          color: "var(--color-leather)",
-                        }}
-                      >
-                        {values[axisKey]?.label}
-                      </span>
-                      {values[axisKey]?.justification && (
-                        <span
-                          style={{
-                            display: "block",
-                            marginTop: 4,
-                          }}
-                        >
-                          {values[axisKey].justification}
-                        </span>
-                      )}
-                      {values[axisKey]?.sources && (
-                        <span
-                          style={{
-                            display: "block",
-                            fontSize: 12,
-                            color: "var(--color-taupe)",
-                            marginTop: 4,
-                          }}
-                        >
-                          {values[axisKey].sources.join(" ; ")}
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            );
-          })()}
-
-          <p>
-            <strong>Sources</strong>
-          </p>
-
-          <ul>
-            {a.sources.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
-
-          <h3>Concepts</h3>
-
-          <ul>
-            {a.concepts.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
-          </ul>
-
-          <h3>Œuvres</h3>
-
-          <ul>
-            {a.works.map((w) => (
-              <li key={w}>
-                <a
-                  href={workSearchUrl(w, a.name)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {w}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <h3>Influences</h3>
-
-          <ul>
-            {a.influences.map((i) => (
-              <li key={i}>{formatPerson(i)}</li>
-            ))}
-          </ul>
-
-          {a.heirs.length > 0 && (
-            <>
-              <h3>Héritiers</h3>
-
-              <ul>
-                {a.heirs.map((h) => (
-                  <li key={h}>{formatPerson(h)}</li>
-                ))}
-              </ul>
-            </>
-          )}
-        </>
-      );
-    }
-
-    if (selectedItem.type === "concept") {
-      const c = selectedItem.data;
-
-      return (
-        <>
-          {closeButton}
-
-          {tabLabel("Concept")}
-
-          <h2>{c.label}</h2>
-
-          <p>{c.definition}</p>
-
-          <h3>Auteurs concernés</h3>
-
-          <ul>
-            {c.authors.map((id) => (
-              <li key={id}>{formatAuthorById(id)}</li>
-            ))}
-          </ul>
-        </>
-      );
-    }
-
-    if (selectedItem.type === "relation") {
-      const r = selectedItem.data;
-
-      const labels = {
-        heritage: "Héritage",
-        dialogue: "Dialogue",
-        tension: "Tension",
-      };
-
-      return (
-        <>
-          {closeButton}
-
-          {tabLabel("Relation")}
-
-          <h2>{labels[r.type]}</h2>
-
-          <p>
-            <strong>Source</strong>
-            <br />
-            {r.sourceName}
-          </p>
-
-          <p>
-            <strong>Cible</strong>
-            <br />
-            {r.targetName}
-          </p>
-
-          <p style={{ marginBottom: 4 }}>
-            <strong>Force du lien</strong>
-          </p>
-
-          <div
-            style={{
-              display: "flex",
-              gap: 3,
-              marginBottom: 14,
-            }}
-          >
-            {[1, 2, 3, 4, 5].map((n) => (
-              <div
-                key={n}
-                style={{
-                  height: 6,
-                  flex: 1,
-                  borderRadius: 2,
-                  background:
-                    n <= r.strength
-                      ? "var(--color-tardis)"
-                      : "var(--color-paper-dim)",
-                  border: "1px solid var(--color-taupe)",
-                }}
-              />
-            ))}
-          </div>
-
-          <p>
-            <strong>Consensus</strong>
-            <br />
-            {r.consensus}
-          </p>
-
-          <p>{r.justification}</p>
-
-          <p>
-            <strong>Sources</strong>
-          </p>
-
-          <ul>
-            {r.sources.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
-
-          {[
-            { name: r.sourceName, constellationId: r.sourceConstellation },
-            { name: r.targetName, constellationId: r.targetConstellation },
-          ].map(({ name, constellationId }) => {
-            const cstMeta = constellations[constellationId];
-            const axisValues = constellationAxisValues[constellationId];
-
-            if (!cstMeta || !axisValues) return null;
-
-            return (
-              <div key={name}>
-                <h3>Positionnement théorique — {name}</h3>
-
-                <p style={{ marginTop: -8, color: "var(--color-taupe)" }}>
-                  {cstMeta.label}
-                </p>
-
-                <ul>
-                  {Object.entries(axes).map(([axisKey, axisMeta]) => (
-                    <li key={axisKey}>
-                      <strong>{axisMeta.label}</strong>
-                      <br />
-                      {axisValues[axisKey]?.label}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </>
-      );
-    }
-
-    if (selectedItem.type === "constellation") {
-      const cst = selectedItem.data;
-
-      return (
-        <>
-          {closeButton}
-
-          {tabLabel("Constellation")}
-
-          <h2 style={{ color: cst.color }}>{cst.label}</h2>
-
-          {cst.period && (
-            <p style={{ marginTop: -8, color: "var(--color-taupe)" }}>
-              {cst.period}
-            </p>
-          )}
-
-          {cst.definition && <p>{cst.definition}</p>}
-
-          {cst.disciplines && cst.disciplines.length > 0 && (
-            <div style={{ marginBottom: 12 }}>
-              <span
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  color: "var(--color-taupe)",
-                  marginRight: 6,
-                }}
-              >
-                Inspirée par :
-              </span>
-
-              {cst.disciplines.map((d) => (
-                <span
-                  key={d}
-                  style={{
-                    display: "inline-block",
-                    fontSize: 12,
-                    color: "var(--color-leather)",
-                    border: "1px solid var(--color-leather)",
-                    borderRadius: 3,
-                    padding: "2px 7px",
-                    marginRight: 6,
-                    marginBottom: 4,
-                  }}
-                >
-                  {d}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {constellationAxisValues[cst.id] && (
-            <>
-              <h3>Positionnement théorique</h3>
-
-              <ul>
-                {Object.entries(axes).map(([axisKey, axisMeta]) => (
-                  <li key={axisKey}>
-                    <strong>{axisMeta.label}</strong>
-                    <br />
-                    {constellationAxisValues[cst.id][axisKey]?.label}
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-
-          <p>
-            <strong>{cst.members.length}</strong>{" "}
-            auteur(e)s dans cette constellation.
-          </p>
-
-          <ul>
-            {cst.members.map((m) => (
-              <li
-                key={m.id}
-                style={{ cursor: "pointer" }}
-                onClick={() =>
-                  setSelectedItem({
-                    type: "author",
-                    data: m,
-                  })
-                }
-              >
-                {m.name} <span style={{ color: "var(--color-taupe)" }}>({m.period})</span>
-              </li>
-            ))}
-          </ul>
-        </>
-      );
-    }
-
-    return null;
-  };
-
-  return (
-    <div
-      className="app-fade-in app-root"
-      style={{
-        display: "flex",
-        fontFamily: "var(--font-body)",
-        position: "relative",
-        background: "var(--color-paper)",
-      }}
-    >
-      <SearchBar setSelectedItem={setSelectedItem} />
-
-      <FiltersPanel
-        axisFilters={axisFilters}
-        setAxisFilters={setAxisFilters}
-        themeFilters={themeFilters}
-        setThemeFilters={setThemeFilters}
-      />
-
-      <Legend />
-
-      <div
-        className="floating-credit"
-        style={{
-          fontSize: 11,
-          color: "var(--color-taupe)",
-          background: "var(--color-paper-dim)",
-          padding: "6px 10px",
-          borderRadius: 6,
-          border: "1px solid var(--color-taupe)",
-        }}
-      >
-        Par Victor Potier —{" "}
-        <a
-          href="mailto:victor.potier@univ-eiffel.fr"
-          style={{ color: "var(--color-tardis)" }}
-        >
-          Me contacter
-        </a>
-      </div>
-
-      <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
-        <Graph
-          selectedItem={selectedItem}
-          setSelectedItem={setSelectedItem}
-          axisFilters={axisFilters}
-          themeFilters={themeFilters}
-        />
-      </div>
-
-      {(!isMobile || selectedItem) && (
-        <aside
-          className={isMobile ? "mobile-sheet" : undefined}
-          style={
-            isMobile
-              ? {
-                  position: "fixed",
-                  bottom: 0,
-                  maxHeight: "70vh",
-                  background: "var(--color-paper-dim)",
-                  borderTop: "1px solid var(--color-taupe)",
-                  borderRadius: "14px 14px 0 0",
-                  padding: 20,
-                  paddingBottom:
-                    "calc(20px + env(safe-area-inset-bottom, 0px))",
-                  overflowY: "auto",
-                  zIndex: 1500,
-                  boxShadow: "0 -4px 16px rgba(43,38,32,0.25)",
-                }
-              : {
-                  width: "340px",
-                  flexShrink: 0,
-                  borderLeft: "1px solid var(--color-taupe)",
-                  padding: 20,
-                  background: "var(--color-paper-dim)",
-                  overflowY: "auto",
-                  position: "relative",
-                }
-          }
-        >
-          <div
-            key={
-              selectedItem
-                ? `${selectedItem.type}-${
-                    selectedItem.data.id ??
-                    selectedItem.data.label ??
-                    `${selectedItem.data.source}-${selectedItem.data.target}`
-                  }`
-                : "empty"
-            }
-            className="sidebar-content"
-          >
-            {renderSidebar()}
-          </div>
-        </aside>
-      )}
-    </div>
-  );
+/* ------------------------------------------------------------------ */
+/* Design tokens — direction "archive académique moderne"              */
+/* ------------------------------------------------------------------ */
+:root {
+  --color-paper: #faf7f1;
+  --color-paper-dim: #f0ebe0;
+  --color-ink: #2b2620;
+  --color-taupe: #8c7f6f;
+  --color-leather: #6b3f2a;
+  --color-tardis: #1b3f66;
+  --color-tardis-light: #4a72a0;
+  --color-tension: #8c3b3b;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+aside h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+aside h3 {
+  margin-bottom: 6px;
+  margin-top: 20px;
+  font-size: 12px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-taupe);
+  border-bottom: 1px solid var(--color-taupe);
+  padding-bottom: 4px;
+}
+
+aside p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+aside ul {
+  margin: 0 0 16px 0;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+aside a {
+  color: var(--color-tardis);
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+/* ------------------------------------------------------------------ */
+/* Animations                                                          */
+/* ------------------------------------------------------------------ */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Hauteur "dynamique" du viewport : sur mobile, 100vh compte la hauteur
+   maximale possible (barre d'adresse masquée), pas la zone réellement
+   visible à l'instant T. Ça pousse les éléments ancrés en bas hors du
+   cadre visible. 100dvh corrige ça (repli sur 100vh si non supporté). */
+.app-root {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.sidebar-content {
+  animation: fade-slide-in 0.25s ease-out;
+}
+
+.dropdown-panel {
+  animation: fade-slide-in 0.18s ease-out;
+  transform-origin: top;
+}
+
+.icon-button {
+  transition: background 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.icon-button:hover {
+  background: var(--color-paper) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(43, 38, 32, 0.18);
+}
+
+.icon-button:active {
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------------ */
+/* Panneaux flottants (recherche, filtres, légende)                    */
+/* ------------------------------------------------------------------ */
+.floating-search {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1200;
+}
+
+.floating-filters {
+  position: absolute;
+  top: 20px;
+  left: 360px;
+  z-index: 1100;
+}
+
+.floating-legend {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1100;
+}
+
+.floating-credit {
+  position: absolute;
+  bottom: 12px;
+  right: 356px;
+  z-index: 1000;
+}
+
+.floating-recenter {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+}
+
+/* Fiche mobile : plein écran en portrait (peu de largeur disponible),
+   mais limitée à un panneau latéral raisonnable en paysage (large mais
+   bas), pour ne pas envahir tout l'écran alors que de la largeur ne
+   manque pas. */
+.mobile-sheet {
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 600px) and (max-height: 500px) {
+  .mobile-sheet {
+    left: auto;
+    right: 0;
+    top: 0;
+    width: min(420px, 60vw);
+    max-height: none !important;
+    height: 100%;
+    border-radius: 14px 0 0 14px;
+    border-top: none;
+    border-left: 1px solid var(--color-taupe);
+  }
+}
+
+/* Mobile : la recherche (avec ses suggestions) passe toujours au-dessus
+   des autres panneaux (z-index supérieur). On sépare clairement un
+   groupe "haut d'écran" (recherche + filtres) d'un groupe "bas d'écran"
+   (légende + crédit empilés à gauche, recentrage isolé à droite), pour
+   qu'aucune combinaison d'orientation ne puisse les faire se chevaucher.
+   Le déclencheur se base sur la largeur OU la hauteur d'écran : un
+   téléphone en mode paysage est large mais bas, et doit donc rester
+   traité comme "mobile" — sinon ces règles ne s'appliquent plus et les
+   chevauchements réapparaissent. On ajoute aussi une marge de sécurité
+   (env(safe-area-inset-*)) pour ne pas passer sous la barre système du
+   téléphone (encoche, barre de gestes, barre d'adresse). */
+@media (max-width: 767px), (max-height: 500px) {
+  /* Ligne 1 : recherche, pleine largeur */
+  .floating-search {
+    top: calc(12px + env(safe-area-inset-top, 0px));
+    left: 12px;
+    right: 12px;
+  }
+
+  .floating-search input {
+    width: 100% !important;
+  }
+
+  /* Ligne 2, à gauche : filtres */
+  .floating-filters {
+    top: calc(64px + env(safe-area-inset-top, 0px));
+    left: 12px;
+  }
+
+  /* Ligne 2, à droite : recentrage — jamais sur la ligne de recherche,
+     jamais en bas où se trouvent légende/crédit. */
+  .floating-recenter {
+    top: calc(64px + env(safe-area-inset-top, 0px));
+    right: 12px;
+    bottom: auto;
+  }
+
+  /* Bas d'écran, empilés à gauche : légende puis crédit au-dessus */
+  .floating-legend {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+  }
+
+  .floating-credit {
+    bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+    right: auto;
+    font-size: 10px !important;
+  }
 }

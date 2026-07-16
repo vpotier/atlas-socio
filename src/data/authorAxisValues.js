@@ -892,4 +892,110 @@ export const authorAxisValues = {
       sources: ["Oakley, 1974, The Sociology of Housework"],
     },
   },
+
+  "max-horkheimer": {
+    individuSociete: {
+      value: 0.3,
+      label: "Structures dominantes — société administrée",
+      justification:
+        "Pour Horkheimer, la « raison instrumentale » moderne transforme les individus en simples rouages d'un système technique qui les dépasse et les contrôle.",
+      sources: ["Horkheimer & Adorno, 1944, Dialectique de la raison"],
+    },
+    methode: {
+      value: 0.6,
+      label: "Théorique et critique, opposée à la neutralité scientifique",
+      justification:
+        "Horkheimer refuse l'idée d'une science neutre et objective : sa « théorie critique » (1937) veut au contraire dénoncer l'ordre social existant pour aider à le transformer.",
+      sources: ["Horkheimer, 1937, Théorie traditionnelle et théorie critique"],
+    },
+    rationalite: {
+      value: 0.75,
+      label: "Raison instrumentale généralisée",
+      justification:
+        "Pour Horkheimer, la raison moderne s'est réduite à un pur calcul d'efficacité et de contrôle, au détriment de toute réflexion sur les fins poursuivies.",
+      sources: ["Horkheimer & Adorno, 1944, Dialectique de la raison"],
+    },
+  },
+
+  "theodor-w-adorno": {
+    individuSociete: {
+      value: 0.3,
+      label: "Structures dominantes — société administrée",
+      justification:
+        "Adorno partage avec Horkheimer, avec qui il coécrit La Dialectique de la raison, l'idée que la raison instrumentale moderne réduit les individus à de simples rouages d'un système qui les dépasse.",
+      sources: ["Horkheimer & Adorno, 1944, Dialectique de la raison"],
+    },
+    methode: {
+      value: 0.65,
+      label: "Dialectique négative — méthode fragmentaire et anti-systématique",
+      justification:
+        "Sa « dialectique négative » (1966) refuse toute conclusion définitive ou système clos : Adorno écrit même par fragments et aphorismes (Minima Moralia) plutôt que par grande démonstration continue.",
+      sources: [
+        "Adorno, 1966, Dialectique négative",
+        "Adorno, 1951, Minima Moralia",
+      ],
+    },
+    rationalite: {
+      value: 0.75,
+      label: "Raison instrumentale généralisée",
+      justification:
+        "Comme Horkheimer, avec qui il partage cette thèse, Adorno pense que la raison moderne s'est réduite à un pur calcul d'efficacité et de contrôle.",
+      sources: ["Horkheimer & Adorno, 1944, Dialectique de la raison"],
+    },
+  },
+
+  "erich-fromm": {
+    individuSociete: {
+      value: 0.4,
+      label: "Aliénation sociale généralisée, mais espoir individuel",
+      justification:
+        "Fromm pense que l'aliénation est devenue la norme dans nos sociétés industrielles, mais il garde espoir qu'un individu puisse s'en libérer par un travail sur lui-même — ce que Marcuse lui reprochera comme trop optimiste.",
+      sources: [
+        "Fromm, 1956, Société aliénée et société saine",
+        "Marcuse, 1955, Éros et civilisation, postface",
+      ],
+    },
+    methode: {
+      value: 0.55,
+      label: "Psychologie sociale analytique — synthèse marxo-freudienne",
+      justification:
+        "Fromm mélange la psychanalyse freudienne (l'inconscient) et l'analyse marxiste de la société pour comprendre les individus.",
+      sources: [
+        "Fromm, 1969, Tâche et méthode d'une psychologie sociale analytique, L'Homme et la société, 11, 19-35",
+      ],
+    },
+    rationalite: {
+      value: 0.2,
+      label: "Faible — pulsions largement inconscientes",
+      justification:
+        "Pour Fromm, ce sont surtout des pulsions inconscientes qui font agir les gens, bien plus qu'un raisonnement conscient.",
+      sources: [
+        "Fromm, 1969, Tâche et méthode d'une psychologie sociale analytique, L'Homme et la société, 11, 19-35",
+      ],
+    },
+  },
+
+  "herbert-marcuse": {
+    individuSociete: {
+      value: 0.25,
+      label: "Aliénation sociale totale",
+      justification:
+        "Marcuse va plus loin que Fromm : pour lui, la société rend l'individu aliéné de façon si totale qu'il ne peut pas s'en libérer seul, même par la psychanalyse.",
+      sources: ["Marcuse, 1955, Éros et civilisation, postface"],
+    },
+    methode: {
+      value: 0.55,
+      label: "Synthèse marxo-freudienne, plus pessimiste que Fromm",
+      justification:
+        "Comme Fromm, Marcuse combine psychanalyse et marxisme, mais pour arriver à des conclusions plus pessimistes sur les chances de s'en sortir individuellement.",
+      sources: ["Marcuse, 1955, Éros et civilisation"],
+    },
+    rationalite: {
+      value: 0.2,
+      label: "Faible — désublimation répressive des pulsions",
+      justification:
+        "Marcuse montre que la société détourne nos pulsions à son profit (dans le travail, le sport, la guerre) plutôt que de les laisser s'exprimer — rien à voir avec un calcul rationnel.",
+      sources: ["Marcuse, 1955, Éros et civilisation"],
+    },
+  },
 };

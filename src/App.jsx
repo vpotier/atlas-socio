@@ -230,7 +230,7 @@ export default function App() {
           <ul>
             {a.works.map((w) => (
               <li key={w}>
-                
+                <a
                   href={workSearchUrl(w, a.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -527,7 +527,7 @@ export default function App() {
         }}
       >
         Par Victor Potier —{" "}
-        
+        <a
           href="mailto:victor.potier@univ-eiffel.fr"
           style={{ color: "var(--color-tardis)" }}
         >

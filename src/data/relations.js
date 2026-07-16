@@ -1174,4 +1174,50 @@ export const relations = [
       "Dubar mobilise la sociologie des professions de Hughes (licence, mandat, carrière) pour construire son analyse de la socialisation professionnelle et des identités au travail.",
     sources: ["Dubar, 1991, La Socialisation"],
   },
+  {
+    source: "laurent-thevenot",
+    target: "bruno-latour",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Un compte rendu académique de L'Action au pluriel rapproche explicitement la démarche de Thévenot de celle de Latour, tous deux œuvrant à la revalorisation des attachements matériels et expérientiels, à rebours de l'opposition moderniste entre autonomie désirable et dépendances aliénantes.",
+    sources: [
+      "Compte rendu de Thévenot, L'Action au pluriel. Sociologie des régimes d'engagement, Politix, 2007, 4",
+    ],
+  },
+  {
+    source: "simondon",
+    target: "bruno-latour",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Latour reconnaît explicitement l'influence de Simondon, en particulier de son Mode d'existence des objets techniques, sur sa réflexion sur le rapport entre l'humain et la technique : la théorie de l'acteur-réseau offre une traduction opérationnelle du projet simondonien de dépassement du dualisme humain/technique.",
+    sources: [
+      "La théorie de l'acteur-réseau entre Latour et Simondon, Symposium, 2018, 22(2), 74-89",
+    ],
+  },
+  {
+    source: "simondon",
+    target: "madeleine-akrich",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Akrich est l'une des rares figures de la théorie de l'acteur-réseau à engager un dialogue explicite avec l'œuvre de Simondon, notamment dans son texte de 1993 sur les formes de médiation technique — alors que cette influence reste le plus souvent implicite chez les autres auteurs du courant.",
+    sources: ["Akrich, 1993, Les formes de médiation technique, Réseaux, 60"],
+  },
+  {
+    source: "ellul",
+    target: "bruno-latour",
+    type: "tension",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Une critique académique de la sociologie des techniques de Latour mobilise explicitement Ellul (aux côtés d'Illich) pour lui objecter qu'au-delà de certains seuils de puissance, le système technique échappe au type de description symétrique et localisée que propose la théorie de l'acteur-réseau.",
+    sources: [
+      "Une nouvelle théodicée ? Remarques sur la sociologie des techniques de Bruno Latour, Revue du Mauss permanente, 2019",
+    ],
+  },
 ];

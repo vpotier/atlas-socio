@@ -1,253 +1,134 @@
-/* ------------------------------------------------------------------ */
-/* Design tokens — direction "archive académique moderne"              */
-/* ------------------------------------------------------------------ */
-:root {
-  --color-paper: #faf7f1;
-  --color-paper-dim: #f0ebe0;
-  --color-ink: #2b2620;
-  --color-taupe: #8c7f6f;
-  --color-leather: #6b3f2a;
-  --color-tardis: #1b3f66;
-  --color-tardis-light: #4a72a0;
-  --color-tension: #8c3b3b;
+import { useState } from "react";
 
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-}
+import Graph from "./components/Graph";
+import SearchBar from "./components/SearchBar";
+import FiltersPanel from "./components/FiltersPanel";
+import Legend from "./components/Legend";
+import { useIsMobile } from "./hooks/useIsMobile";
+import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
+import { constellations } from "./engine/constellations";
+import { axes, constellationAxisValues } from "./data/theoreticalAxes";
+import { authorAxisValues } from "./data/authorAxisValues";
 
-* {
-  box-sizing: border-box;
-}
+import "./styles/app.css";
 
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
+export default function App() {
+  const isMobile = useIsMobile();
+  const [selectedItem, setSelectedItem] = useState(null);
 
-body {
-  font-family: var(--font-body);
-  color: var(--color-ink);
-  background: var(--color-paper);
-}
+  const [axisFilters, setAxisFilters] = useState({
+    individuSociete: { enabled: false, value: 0.5 },
+    methode: { enabled: false, value: 0.5 },
+    rationalite: { enabled: false, value: 0.5 },
+  });
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
+  const [themeFilters, setThemeFilters] = useState([]);
 
-aside h2 {
-  margin-top: 0;
-  font-size: 22px;
-}
+  const renderSidebar = () => {
+    if (!selectedItem) {
+      return (
+        <>
+          <div
+            style={{
+              display: "inline-block",
+              fontSize: 11,
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: "var(--color-taupe)",
+              border: "1px solid var(--color-taupe)",
+              borderRadius: 3,
+              padding: "3px 8px",
+              marginBottom: 14,
+            }}
+          >
+            Atlas
+          </div>
 
-aside h3 {
-  margin-bottom: 6px;
-  margin-top: 20px;
-  font-size: 12px;
-  font-family: var(--font-body);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-taupe);
-  border-bottom: 1px solid var(--color-taupe);
-  padding-bottom: 4px;
-}
+          <h2>Théorie sociologique</h2>
 
-aside p {
-  font-size: 14px;
-  line-height: 1.55;
-}
+          <p style={{ color: "var(--color-taupe)" }}>
+            Sélectionnez un auteur, un concept, une relation ou une
+            constellation sur la carte.
+          </p>
+        </>
+      );
+    }
 
-aside ul {
-  margin: 0 0 16px 0;
-  padding-left: 18px;
-  font-size: 14px;
-  line-height: 1.5;
-}
+    const closeButton = (
+      <div
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 10,
+          display: "flex",
+          justifyContent: "flex-end",
+          marginBottom: -32,
+          marginRight: -4,
+          pointerEvents: "none",
+        }}
+      >
+        <button
+          onClick={() => setSelectedItem(null)}
+          className="icon-button"
+          style={{
+            border: "none",
+            background: "var(--color-paper)",
+            borderRadius: "50%",
+            width: 32,
+            height: 32,
+            cursor: "pointer",
+            fontSize: 18,
+            lineHeight: "32px",
+            textAlign: "center",
+            color: "var(--color-taupe)",
+            boxShadow: "0 1px 4px rgba(43,38,32,0.2)",
+            pointerEvents: "auto",
+          }}
+          aria-label="Fermer"
+          title="Fermer"
+        >
+          ×
+        </button>
+      </div>
+    );
 
-aside a {
-  color: var(--color-tardis);
-}
+    const tabLabel = (text) => (
+      <div
+        style={{
+          display: "inline-block",
+          fontSize: 11,
+          fontWeight: 600,
+          textTransform: "uppercase",
+          letterSpacing: "0.1em",
+          color: "var(--color-leather)",
+          border: "1px solid var(--color-leather)",
+          borderRadius: 3,
+          padding: "3px 8px",
+          marginBottom: 10,
+        }}
+      >
+        {text}
+      </div>
+    );
 
-button {
-  font-family: var(--font-body);
-}
+    if (selectedItem.type === "author") {
+      const a = selectedItem.data;
 
-/* ------------------------------------------------------------------ */
-/* Animations                                                          */
-/* ------------------------------------------------------------------ */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+      return (
+        <>
+          {closeButton}
 
-@keyframes fade-slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+          {tabLabel("Auteur·ice")}
 
-.app-fade-in {
-  animation: fade-in 0.5s ease-out;
-}
+          <h2>{a.name}</h2>
 
-/* Hauteur "dynamique" du viewport : sur mobile, 100vh compte la hauteur
-   maximale possible (barre d'adresse masquée), pas la zone réellement
-   visible à l'instant T. Ça pousse les éléments ancrés en bas hors du
-   cadre visible. 100dvh corrige ça (repli sur 100vh si non supporté). */
-.app-root {
-  height: 100vh;
-  height: 100dvh;
-}
+          <p style={{ marginTop: -8, color: "var(--color-taupe)" }}>
+            {a.period}
+          </p>
 
-.sidebar-content {
-  animation: fade-slide-in 0.25s ease-out;
-}
-
-.dropdown-panel {
-  animation: fade-slide-in 0.18s ease-out;
-  transform-origin: top;
-}
-
-.icon-button {
-  transition: background 0.15s ease, transform 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.icon-button:hover {
-  background: var(--color-paper) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(43, 38, 32, 0.18);
-}
-
-.icon-button:active {
-  transform: translateY(0);
-}
-
-/* ------------------------------------------------------------------ */
-/* Panneaux flottants (recherche, filtres, légende)                    */
-/* ------------------------------------------------------------------ */
-.floating-search {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1200;
-}
-
-.floating-filters {
-  position: absolute;
-  top: 20px;
-  left: 360px;
-  z-index: 1100;
-}
-
-.floating-legend {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  z-index: 1100;
-}
-
-.floating-credit {
-  position: absolute;
-  bottom: 12px;
-  right: 356px;
-  z-index: 1000;
-}
-
-.floating-recenter {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 1000;
-}
-
-/* Fiche mobile : plein écran en portrait (peu de largeur disponible),
-   mais limitée à un panneau latéral raisonnable en paysage (large mais
-   bas), pour ne pas envahir tout l'écran alors que de la largeur ne
-   manque pas. */
-.mobile-sheet {
-  left: 0;
-  right: 0;
-}
-
-@media (min-width: 600px) and (max-height: 500px) {
-  .mobile-sheet {
-    left: auto;
-    right: 0;
-    top: 0;
-    width: min(420px, 60vw);
-    max-height: none !important;
-    height: 100%;
-    border-radius: 14px 0 0 14px;
-    border-top: none;
-    border-left: 1px solid var(--color-taupe);
-  }
-}
-
-/* Mobile : la recherche (avec ses suggestions) passe toujours au-dessus
-   des autres panneaux (z-index supérieur). On sépare clairement un
-   groupe "haut d'écran" (recherche + filtres) d'un groupe "bas d'écran"
-   (légende + crédit empilés à gauche, recentrage isolé à droite), pour
-   qu'aucune combinaison d'orientation ne puisse les faire se chevaucher.
-   Le déclencheur se base sur la largeur OU la hauteur d'écran : un
-   téléphone en mode paysage est large mais bas, et doit donc rester
-   traité comme "mobile" — sinon ces règles ne s'appliquent plus et les
-   chevauchements réapparaissent. On ajoute aussi une marge de sécurité
-   (env(safe-area-inset-*)) pour ne pas passer sous la barre système du
-   téléphone (encoche, barre de gestes, barre d'adresse). */
-@media (max-width: 767px), (max-height: 500px) {
-  /* Ligne 1 : recherche, pleine largeur */
-  .floating-search {
-    top: calc(12px + env(safe-area-inset-top, 0px));
-    left: 12px;
-    right: 12px;
-  }
-
-  .floating-search input {
-    width: 100% !important;
-  }
-
-  /* Ligne 2, à gauche : filtres */
-  .floating-filters {
-    top: calc(64px + env(safe-area-inset-top, 0px));
-    left: 12px;
-  }
-
-  /* Ligne 2, à droite : recentrage — jamais sur la ligne de recherche,
-     jamais en bas où se trouvent légende/crédit. */
-  .floating-recenter {
-    top: calc(64px + env(safe-area-inset-top, 0px));
-    right: 12px;
-    bottom: auto;
-  }
-
-  /* Bas d'écran, empilés à gauche : légende puis crédit au-dessus */
-  .floating-legend {
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-    left: 12px;
-  }
-
-  .floating-credit {
-    bottom: calc(56px + env(safe-area-inset-bottom, 0px));
-    left: 12px;
-    right: auto;
-    font-size: 10px !important;
-  }
-}
+          <p>
+            <strong>École</strong>
+            <br />
+            {a.school}
+          </p>

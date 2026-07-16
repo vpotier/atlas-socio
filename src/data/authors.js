@@ -2046,7 +2046,7 @@ export const authors = [
     deathYear: 1994,
     x: 1550,
     y: 750,
-    color: "#8C7F6F",
+    color: "#DBBA00",
 
     concepts: ["Technique autonome"],
 
@@ -2075,7 +2075,7 @@ export const authors = [
     deathYear: 1989,
     x: 1600,
     y: 780,
-    color: "#8C7F6F",
+    color: "#DBBA00",
 
     concepts: ["Mode d'existence des objets techniques"],
 

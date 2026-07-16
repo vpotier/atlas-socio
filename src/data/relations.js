@@ -1280,4 +1280,14 @@ export const relations = [
       "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
     ],
   },
+  {
+    source: "herbert-marcuse",
+    target: "erich-fromm",
+    type: "tension",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Marcuse critique explicitement Fromm dans la postface d'Éros et civilisation, lui reprochant un optimisme « révisionniste » : croire qu'un individu peut s'émanciper par la seule psychanalyse, alors que la société est selon lui objectivement et totalement aliénante.",
+    sources: ["Marcuse, 1955, Éros et civilisation, postface"],
+  },
 ];

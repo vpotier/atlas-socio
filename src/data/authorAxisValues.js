@@ -339,4 +339,87 @@ export const authorAxisValues = {
       sources: ["Habermas, 1981, Théorie de l'agir communicationnel"],
     },
   },
+
+  "robert-k-merton": {
+    individuSociete: {
+      value: 0.2,
+      label: "Holisme relativisé (fonctionnalisme relatif)",
+      justification:
+        "Merton parle de « fonctionnalisme relatif », par opposition au « fonctionnalisme absolu » de Malinowski : il introduit la notion d'équivalent fonctionnel (plusieurs institutions différentes peuvent remplir la même fonction), ce qui assouplit le holisme déterministe de ses prédécesseurs.",
+      sources: ["Saint-Martin, 2018, La sociologie de Robert K. Merton, La Découverte"],
+    },
+    methode: {
+      value: 0.5,
+      label: "Théories de moyenne portée — voie médiane assumée",
+      justification:
+        "Merton se positionne explicitement à mi-chemin entre la grande théorie abstraite de Parsons et l'empirisme purement statistique de Lazarsfeld — un « fonctionnalisme prudent » reliant théorie et enquête empirique.",
+      sources: ["Merton, 1953, Éléments de théorie et de méthode sociologique"],
+    },
+    rationalite: {
+      value: 0.3,
+      label: "Structurellement contrainte, mais typologie de réponses individuelles",
+      justification:
+        "Sa théorie de l'anomie explique la déviance par le décalage entre buts culturels et moyens légitimes disponibles, mais il distingue cinq types de réponses individuelles à cette tension (conformisme, innovation, ritualisme, retraitisme, rébellion) — plus de nuance qu'un pur déterminisme.",
+      sources: ["Saint-Martin, 2018, La sociologie de Robert K. Merton, La Découverte"],
+    },
+  },
+
+  "bronislaw-malinowski": {
+    individuSociete: {
+      value: 0.08,
+      label: "Holisme absolu et déterministe",
+      justification:
+        "Malinowski défend un « fonctionnalisme absolu » : chaque élément d'une culture remplit une fonction indispensable à la survie du groupe — une thèse plus radicale encore que celle de Durkheim.",
+      sources: [
+        "Young, 2018, Le Jason de l'anthropologie : vie, œuvre et legs de Bronislaw Malinowski, Encyclopédie Bérose des histoires de l'anthropologie",
+      ],
+    },
+    methode: {
+      value: 0.8,
+      label: "Compréhensive radicale — malgré une théorie holiste",
+      justification:
+        "Contraste frappant avec sa théorie : Malinowski est l'inventeur même de l'observation participante, s'immergeant seul plusieurs années chez les Trobriandais, coupé du monde occidental, pour en apprendre la langue et la vie quotidienne.",
+      sources: ["Malinowski, 1922, Argonauts of the Western Pacific"],
+    },
+    rationalite: {
+      value: 0.15,
+      label: "Instrumentale, au service de besoins biologiques",
+      justification:
+        "Pour Malinowski, la culture est une réponse instrumentale à des besoins biologiques fondamentaux (la faim, en premier lieu) — l'action collective s'explique par nécessité adaptative, non par un choix rationnel individuel.",
+      sources: [
+        "Young, 2018, Le Jason de l'anthropologie : vie, œuvre et legs de Bronislaw Malinowski, Encyclopédie Bérose des histoires de l'anthropologie",
+      ],
+    },
+  },
+
+  lazarsfeld: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — le petit groupe comme médiation",
+      justification:
+        "Lazarsfeld refuse explicitement l'analogie entre petit groupe et société : le groupe restreint (famille, collègues, amis) constitue une structure de médiation, avec ses propres normes, entre l'individu et les influences de la société plus large (médias, propagande) — ni pur individu isolé, ni pure détermination sociale directe.",
+      sources: [
+        "Laurens, 2010, L'œuvre oubliée en psychologie de Paul Lazarsfeld, Bulletin de psychologie, 63(4), 279-287",
+      ],
+    },
+    methode: {
+      value: 0.08,
+      label: "Explicative quantitative — enquêtes par panel",
+      justification:
+        "Ses enquêtes reposent sur des entretiens répétés (panel) et des indices statistiques construits (indice de prédisposition politique) pour prédire et expliquer les choix, sans ambition théorique généralisante.",
+      sources: [
+        "Laurens, 2010, L'œuvre oubliée en psychologie de Paul Lazarsfeld, Bulletin de psychologie, 63(4), 279-287",
+      ],
+    },
+    rationalite: {
+      value: 0.2,
+      label: "Choix largement prédéterminés par la position sociale",
+      justification:
+        "Ses enquêtes montrent que les choix de vote sont fortement prédits par des caractéristiques sociales préexistantes ; la campagne électorale a surtout pour effet d'activer des prédispositions latentes plutôt que de susciter une délibération rationnelle nouvelle.",
+      sources: [
+        "Lazarsfeld, Berelson & Gaudet, 1944, The People's Choice",
+        "Laurens, 2010, L'œuvre oubliée en psychologie de Paul Lazarsfeld, Bulletin de psychologie, 63(4), 279-287",
+      ],
+    },
+  },
 };

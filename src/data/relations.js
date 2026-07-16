@@ -1200,7 +1200,7 @@ export const relations = [
   },
   {
     source: "simondon",
-    target: "madeleine-akrich",
+    target: "akrich",
     type: "dialogue",
     strength: 3,
     consensus: "moyen",

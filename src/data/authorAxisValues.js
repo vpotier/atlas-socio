@@ -664,4 +664,232 @@ export const authorAxisValues = {
       ],
     },
   },
+
+  "raymond-boudon": {
+    individuSociete: {
+      value: 0.85,
+      label: "Individu (atome logique de l'analyse)",
+      justification:
+        "Pour Boudon, l'individu est l'« atome logique » de toute analyse sociologique : les phénomènes sociaux s'expliquent par l'agrégation d'actions individuelles, jamais l'inverse.",
+      sources: [
+        "Perrenoud, 1978, Les limites de l'individualisme méthodologique. À propos des Effets pervers et ordre social de Raymond Boudon, Revue française de sociologie, 19(3), 442-454",
+      ],
+    },
+    methode: {
+      value: 0.2,
+      label: "Explicative formalisée — modélisation de l'action individuelle",
+      justification:
+        "Boudon formalise mathématiquement l'agrégation des choix individuels (par exemple dans L'Inégalité des chances, 1973), pour expliquer statistiquement des phénomènes macrosociaux comme des effets de composition non voulus.",
+      sources: [
+        "Encyclopédie Universalis, Action rationnelle : individualisme méthodologique et effets pervers",
+      ],
+    },
+    rationalite: {
+      value: 0.7,
+      label: "Rationalité limitée et située (homo sociologicus)",
+      justification:
+        "Boudon distingue l'« homo sociologicus », doté d'une rationalité limitée par ses rôles sociaux et son expérience, de l'« homo oeconomicus » de la rationalité économique pure.",
+      sources: [
+        "Encyclopédie Universalis, Action rationnelle : individualisme méthodologique et effets pervers",
+      ],
+    },
+  },
+
+  "james-coleman": {
+    individuSociete: {
+      value: 0.9,
+      label: "Individualisme strict — self-interest",
+      justification:
+        "La démarche de Coleman est qualifiée de « strictement individualiste » : l'acteur, mû par l'intérêt personnel, est le point de départ exclusif de toute explication sociale, sans que la théorie consacre d'effort à en justifier la pertinence.",
+      sources: [
+        "Demeulenaere, 2003, Dans quelle mesure la théorie sociale de James S. Coleman est-elle trop parcimonieuse ?, Revue française de sociologie, 44(2)",
+      ],
+    },
+    methode: {
+      value: 0.12,
+      label: "Explicative formalisée — axiomatisation mathématique",
+      justification:
+        "Coleman construit une théorie fondationnelle systématique, s'appuyant sur une mathématisation rigoureuse qui lui permet de démontrer le caractère parcimonieux et applicable de son modèle — plus formalisée encore que celle de Boudon.",
+      sources: [
+        "Rationalité, discipline sociale et structure, Revue française de sociologie, 2003, 44(2)",
+      ],
+    },
+    rationalite: {
+      value: 0.85,
+      label: "Rationalité instrumentale pure (choix rationnel)",
+      justification:
+        "À la différence de Boudon qui distingue rationalité instrumentale et rationalité cognitive, Coleman s'en tient à la seule rationalité instrumentale de la théorie du choix rationnel.",
+      sources: [
+        "Les Foundations de James S. Coleman : une introduction, Revue française de sociologie, 2003, 44(2)",
+      ],
+    },
+  },
+
+  "harold-garfinkel": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — production collective d'ordre par les membres",
+      justification:
+        "Les membres utilisent les activités concertées de la vie courante comme méthodes pour produire et démontrer collectivement le caractère rationnel et ordonné de leurs actions.",
+      sources: [
+        "Encyclopédie Universalis, Biographie de Harold Garfinkel : l'ethnométhodologie",
+      ],
+    },
+    methode: {
+      value: 0.9,
+      label: "Compréhensive radicale — expériences de rupture",
+      justification:
+        "Garfinkel développe des méthodes inédites (expériences de rupture, analyse minutieuse de conversations enregistrées) pour rendre visibles les procédures ordinaires, habituellement invisibles, par lesquelles les membres produisent le sens commun.",
+      sources: ["Coulon, 1987, L'Ethnométhodologie, PUF, coll. Que sais-je ?"],
+    },
+    rationalite: {
+      value: 0.55,
+      label: "Rationalité pratique — l'acteur n'est pas un « idiot culturel »",
+      justification:
+        "Garfinkel insiste : l'acteur social « n'est pas un idiot culturel » qui appliquerait mécaniquement des règles intériorisées ; il démontre au contraire une compétence réflexive pour rendre ses actions intelligibles en situation.",
+      sources: ["Garfinkel, 1967, Studies in Ethnomethodology"],
+    },
+  },
+
+  "harvey-sacks": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — l'ordre social s'exprime en interaction",
+      justification:
+        "Sacks étudie comment les individus construisent leurs catégories et leur ordre social non pas isolément ni sous une pure contrainte extérieure, mais à travers l'organisation observable de leurs interactions verbales.",
+      sources: ["Sacks, 1992, Lectures on Conversation (éd. G. Jefferson), Blackwell"],
+    },
+    methode: {
+      value: 0.9,
+      label: "Compréhensive radicale — examen inductif sans a priori",
+      justification:
+        "Sa méthode d'« examen non motivé » (unmotivated examination), fondée sur l'écoute répétée d'enregistrements, s'oppose explicitement à l'orientation hypothético-déductive de la linguistique chomskienne : Sacks part de cas concrets rencontrés par hasard plutôt que d'un modèle théorique préétabli.",
+      sources: [
+        "Sacks, 1984, Notes on Methodology, in Atkinson & Heritage (dir.), Structures of Social Action, Cambridge University Press",
+      ],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Ordre méthodique mais non réfléchi de la conversation",
+      justification:
+        "L'analyse conversationnelle révèle une nature « hautement ordonnée » de l'interaction (tours de parole, paires adjacentes), mais cet ordre est produit méthodiquement par les locuteurs sans qu'ils le théorisent consciemment comme un ensemble de règles.",
+      sources: [
+        "Développements actuels en Analyse Conversationnelle, Revue française de linguistique appliquée, 2017, 22(2)",
+      ],
+    },
+  },
+
+  "peter-berger": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — dialectique société/individu",
+      justification:
+        "Berger et Luckmann se situent explicitement pour « dépasser l'objectivisme de Durkheim et le subjectivisme de Weber » : la société y est analysée à la fois comme réalité intersubjective et réalité objective.",
+      sources: [
+        "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
+      ],
+    },
+    methode: {
+      value: 0.8,
+      label: "Compréhensive — méthode phénoménologique descriptive",
+      justification:
+        "Inspirés par la phénoménologie d'Alfred Schütz, ils développent une méthode purement descriptive visant à clarifier la réalité vécue de la vie quotidienne, telle qu'elle est perçue par le sens commun.",
+      sources: [
+        "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
+      ],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Située — typification et légitimation réciproques",
+      justification:
+        "Le sens se construit par un processus continu de typification, d'objectivation et de légitimation réciproques entre les acteurs — ni pur calcul, ni pur automatisme.",
+      sources: [
+        "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
+      ],
+    },
+  },
+
+  "thomas-luckmann": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — dialectique société/individu",
+      justification:
+        "Berger et Luckmann se situent explicitement pour « dépasser l'objectivisme de Durkheim et le subjectivisme de Weber » : la société y est analysée à la fois comme réalité intersubjective et réalité objective.",
+      sources: [
+        "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
+      ],
+    },
+    methode: {
+      value: 0.8,
+      label: "Compréhensive — méthode phénoménologique descriptive",
+      justification:
+        "Inspirés par la phénoménologie d'Alfred Schütz, ils développent une méthode purement descriptive visant à clarifier la réalité vécue de la vie quotidienne, telle qu'elle est perçue par le sens commun.",
+      sources: [
+        "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
+      ],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Située — typification et légitimation réciproques",
+      justification:
+        "Le sens se construit par un processus continu de typification, d'objectivation et de légitimation réciproques entre les acteurs — ni pur calcul, ni pur automatisme.",
+      sources: [
+        "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
+      ],
+    },
+  },
+
+  "claude-dubar": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — double transaction",
+      justification:
+        "Dubar théorise l'identité comme le produit d'une « double transaction » : une transaction biographique (subjective, propre à l'individu) et une transaction relationnelle (l'identité attribuée par autrui et les institutions).",
+      sources: [
+        "Dubar, 1991, La Socialisation. Construction des identités sociales et professionnelles, Armand Colin",
+      ],
+    },
+    methode: {
+      value: 0.8,
+      label: "Compréhensive — entretiens biographiques structurés",
+      justification:
+        "Sa méthode d'analyse des entretiens biographiques décompose les opérations permettant de passer des catégories sociales utilisées par les enquêtés aux catégories analytiques de la théorisation sociologique.",
+      sources: [
+        "Dubar & Demazière, 1997, Analyser les entretiens biographiques. L'exemple des récits d'insertion, Nathan",
+      ],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Située — narration interprétative de la trajectoire",
+      justification:
+        "L'individu interprète et raconte activement son propre parcours (dire son projet, raconter son passé, justifier ses pratiques présentes) pour lui donner sens — ni pur calcul, ni pure détermination.",
+      sources: [
+        "Dubar & Demazière, 1997, Analyser les entretiens biographiques. L'exemple des récits d'insertion, Nathan",
+      ],
+    },
+  },
+
+  "ann-oakley": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — expérience subjective au sein d'une structure sexiste",
+      justification:
+        "Oakley documente l'expérience subjective des femmes au foyer (insatisfaction, monotonie) tout en la resituant dans le cadre d'une division sexuée du travail structurellement ancrée dans la société.",
+      sources: ["Oakley, 1974, The Sociology of Housework"],
+    },
+    methode: {
+      value: 0.85,
+      label: "Compréhensive — entretiens approfondis et méthode féministe",
+      justification:
+        "Sa recherche repose sur 40 entretiens approfondis enregistrés auprès de femmes au foyer ; elle apporte aussi une contribution méthodologique féministe majeure, critiquant la fausse neutralité de l'entretien sociologique classique.",
+      sources: ["Oakley, 1981, Interviewing Women: A Contradiction in Terms"],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Située — sens et expérience vécue du travail domestique",
+      justification:
+        "Oakley se concentre sur le sens que les femmes donnent à leur expérience du travail domestique (insatisfaction, monotonie, autonomie théorique mais non réelle) plutôt que sur un calcul rationnel.",
+      sources: ["Oakley, 1974, The Sociology of Housework"],
+    },
+  },
 };

@@ -341,4 +341,13 @@ export const concepts = [
     x: 220,
     y: 850,
   },
+  {
+    id: "raison-instrumentale",
+    label: "Raison instrumentale",
+    definition:
+      "Forme de raison réduite à un pur calcul d'efficacité (trouver les meilleurs moyens pour un but donné), sans plus jamais interroger si ce but est lui-même souhaitable. Pour Horkheimer et Adorno, cette dérive marque toute la modernité, jusqu'à rendre possible la domination et la barbarie au nom du progrès technique.",
+    authors: ["max-horkheimer", "theodor-w-adorno"],
+    x: 1250,
+    y: 40,
+  },
 ];

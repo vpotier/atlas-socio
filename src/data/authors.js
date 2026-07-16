@@ -2096,4 +2096,39 @@ export const authors = [
     ],
     themes: ["Sociologie de l'innovation et des techniques (STS)"],
   },
+
+  {
+    id: "desrosieres",
+    name: "Alain Desrosières",
+    school: "Sociologie et histoire de la statistique (économie des conventions)",
+    period: "1940–2013",
+    birthYear: 1940,
+    deathYear: 2013,
+    x: 1700,
+    y: 950,
+    color: "#33544C",
+
+    concepts: ["Raison statistique", "Investissements de forme"],
+
+    works: [
+      "La Politique des grands nombres. Histoire de la raison statistique (1993)",
+      "Les Investissements de forme (1986, avec L. Thévenot et al.)",
+    ],
+
+    influences: ["bourdieu", "laurent-thevenot"],
+    heirs: [],
+
+    summary:
+      "Sociologue, statisticien et historien à l'EHESS, il montre que la statistique n'est jamais un simple reflet neutre du réel mais un « langage » construit socialement et politiquement : les catégories statistiques (chômage, catégories socioprofessionnelles) résultent de conventions négociées, stabilisées puis parfois contestées, avant de devenir des outils à la fois de connaissance et de gouvernement.",
+
+    constellation: "pragmatisme",
+    consensus: 4,
+    classificationNote:
+      "Desrosières est identifié comme un membre fondateur du Groupe de sociologie politique et morale aux côtés de Boltanski et Thévenot, dont la sociologie historique de la statistique traite les catégories chiffrées comme des conventions sociales négociées plutôt que comme des faits naturels préexistants.",
+    sources: [
+      "Armatte, 2013, Alain Desrosières (1940-2013). La statistique, outil de preuve et de gouvernement, Hermès, La Revue, 66(2), 252-254",
+      "Desrosières, 1993, La Politique des grands nombres. Histoire de la raison statistique",
+    ],
+    themes: ["Sociologie politique et de l'État"],
+  },
 ];

@@ -1244,4 +1244,40 @@ export const relations = [
       "Armatte, 2013, Alain Desrosières (1940-2013). La statistique, outil de preuve et de gouvernement, Hermès, La Revue, 66(2), 252-254",
     ],
   },
+  {
+    source: "marx",
+    target: "thomas-luckmann",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "La théorie de Berger et Luckmann s'élabore explicitement à partir de plusieurs références conjointes, dont la perspective dialectique de Marx.",
+    sources: [
+      "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
+    ],
+  },
+  {
+    source: "mead",
+    target: "peter-berger",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Berger et Luckmann reprennent explicitement les présupposés meadiens sur l'intériorisation de la réalité sociale, issus de l'interactionnisme symbolique.",
+    sources: [
+      "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
+    ],
+  },
+  {
+    source: "mead",
+    target: "thomas-luckmann",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Berger et Luckmann reprennent explicitement les présupposés meadiens sur l'intériorisation de la réalité sociale, issus de l'interactionnisme symbolique.",
+    sources: [
+      "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
+    ],
+  },
 ];

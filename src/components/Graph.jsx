@@ -24,6 +24,7 @@ export default function Graph({
   setSelectedItem,
   axisFilters,
   themeFilters,
+  relationTypeFilters,
 }) {
   const [hoveredRelation, setHoveredRelation] = useState(null);
   const transformRef = useRef(null);
@@ -160,7 +161,7 @@ export default function Graph({
     return ids;
   }, [activeAxisEntries]);
 
-const filtersActive =
+  const filtersActive =
     activeAxisEntries.length > 0 ||
     (themeFilters && themeFilters.length > 0);
 
@@ -202,7 +203,6 @@ const filtersActive =
 
     return ids;
   }, [authors, activeAxisEntries, themeFilters, filtersActive]);
-
 
   const filterVisibleConceptIds = useMemo(() => {
     if (!filterVisibleAuthorIds) return null;
@@ -367,7 +367,7 @@ const filtersActive =
       ref={containerRef}
       style={{ width: "100%", height: "100%", position: "relative" }}
     >
-  <button
+      <button
         onClick={() => resetView(400)}
         title="Recentrer la vue"
         aria-label="Recentrer la vue"
@@ -463,6 +463,13 @@ const filtersActive =
           />
 
           {relations.map((relation, i) => {
+            if (
+              relationTypeFilters &&
+              relationTypeFilters[relation.type] === false
+            ) {
+              return null;
+            }
+
             const source = getAuthor(
               relation.source
             );

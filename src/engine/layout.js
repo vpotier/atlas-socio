@@ -239,7 +239,7 @@ export function computeLayout(authors, concepts, relations) {
         .forceCollide()
         .radius((d) =>
           d.kind === "author"
-            ? 70 + Math.min(d.degree ?? 0, 20) * 3
+            ? 70 + Math.min(d.degree ?? 0, 26) * 4
             : 55 + Math.min(d.labelLength ?? 10, 30) * 4
         )
         .strength(1)

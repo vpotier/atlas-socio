@@ -7,12 +7,19 @@ export default function FiltersPanel({
   setAxisFilters,
   themeFilters,
   setThemeFilters,
+  relationTypeFilters,
+  setRelationTypeFilters,
 }) {
   const [open, setOpen] = useState(false);
 
+  const anyRelationTypeDisabled = Object.values(
+    relationTypeFilters
+  ).some((v) => !v);
+
   const anyActive =
     Object.values(axisFilters).some((f) => f.enabled) ||
-    themeFilters.length > 0;
+    themeFilters.length > 0 ||
+    anyRelationTypeDisabled;
 
   const toggleTheme = (theme) => {
     setThemeFilters((prev) =>
@@ -39,6 +46,13 @@ export default function FiltersPanel({
     }));
   };
 
+  const toggleRelationType = (type) => {
+    setRelationTypeFilters((prev) => ({
+      ...prev,
+      [type]: !prev[type],
+    }));
+  };
+
   const resetAll = () => {
     setAxisFilters((prev) => {
       const next = {};
@@ -48,6 +62,11 @@ export default function FiltersPanel({
       return next;
     });
     setThemeFilters([]);
+    setRelationTypeFilters({
+      heritage: true,
+      dialogue: true,
+      tension: true,
+    });
   };
 
   return (
@@ -220,6 +239,43 @@ export default function FiltersPanel({
                 onChange={() => toggleTheme(theme)}
               />
               {theme}
+            </label>
+          ))}
+
+          <h3
+            style={{
+              margin: "16px 0 12px 0",
+              fontSize: 13,
+              textTransform: "uppercase",
+              letterSpacing: "0.04em",
+              color: "var(--color-taupe)",
+            }}
+          >
+            Relations affichées sur la carte
+          </h3>
+
+          {[
+            { key: "heritage", label: "Héritage" },
+            { key: "dialogue", label: "Dialogue" },
+            { key: "tension", label: "Tension" },
+          ].map(({ key, label }) => (
+            <label
+              key={key}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                fontSize: 13,
+                marginBottom: 6,
+                cursor: "pointer",
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={relationTypeFilters[key]}
+                onChange={() => toggleRelationType(key)}
+              />
+              {label}
             </label>
           ))}
 

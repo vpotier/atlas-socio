@@ -125,6 +125,16 @@ export default function Graph({
     return new Set(selectedConcept.authors);
   }, [selectedConcept]);
 
+  const constellationAuthorIds = useMemo(() => {
+    if (!selectedConstellationId) return null;
+
+    return new Set(
+      authors
+        .filter((a) => a.constellation === selectedConstellationId)
+        .map((a) => a.id)
+    );
+  }, [selectedConstellationId, authors]);
+
   // --- Filtres théoriques (axes) et thématiques ---
   const activeAxisEntries = useMemo(
     () =>
@@ -342,6 +352,15 @@ export default function Graph({
 
       opacity = linked ? 1 : 0.05;
       width = linked ? 4 : 1;
+    }
+
+    if (constellationAuthorIds) {
+      const linked =
+        constellationAuthorIds.has(relation.source) ||
+        constellationAuthorIds.has(relation.target);
+
+      opacity = linked ? 1 : 0.05;
+      width = linked ? 3 : 1;
     }
 
     if (filterVisibleAuthorIds) {

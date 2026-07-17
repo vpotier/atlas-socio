@@ -350,4 +350,22 @@ export const concepts = [
     x: 1250,
     y: 40,
   },
+  {
+    id: "script-technique",
+    label: "Script (scénario technique)",
+    definition:
+      "Programme d'action inscrit par les concepteurs dans un objet technique : celui-ci attribue des rôles à certains types d'utilisateurs, en exclut d'autres — parfois sans que cela ait été voulu explicitement — et autorise certains usages plutôt que d'autres.",
+    authors: ["akrich"],
+    x: 1350,
+    y: 260,
+  },
+  {
+    id: "lecture-symptomale",
+    label: "Lecture symptomale",
+    definition:
+      "Méthode de lecture des textes (notamment ceux de Marx) qui ne s'arrête pas à ce qu'ils disent explicitement, mais interroge leurs silences, leurs manques et leurs contradictions internes, pour faire apparaître un problème que l'auteur n'arrive pas tout à fait à formuler lui-même.",
+    authors: ["althusser"],
+    x: 1180,
+    y: 620,
+  },
 ];

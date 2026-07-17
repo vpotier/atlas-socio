@@ -998,4 +998,242 @@ export const authorAxisValues = {
       sources: ["Marcuse, 1955, Éros et civilisation"],
     },
   },
+
+  marx: {
+    individuSociete: {
+      value: 0.15,
+      label: "Primat des rapports sociaux de production",
+      justification:
+        "Marx dit : « ce n'est pas la conscience des hommes qui détermine leur être ; c'est au contraire leur être social qui détermine leur conscience. » Mais les gens ne sont pas de simples marionnettes : ils « font leur propre histoire », même s'ils restent limités par les conditions matérielles de leur époque.",
+      sources: ["Marx, 1859, Contribution à la critique de l'économie politique"],
+    },
+    methode: {
+      value: 0.3,
+      label: "Explicative historique — modèles abstraits ancrés dans l'histoire concrète",
+      justification:
+        "Dans Le Capital, Marx construit des catégories abstraites (comme la « classe » ouvrière), presque comme des modèles, avant de les relier à l'histoire concrète du capitalisme.",
+      sources: ["Marx, 1867, Le Capital, Livre I"],
+    },
+    rationalite: {
+      value: 0.2,
+      label: "Faible — la conscience est déterminée par la position de classe",
+      justification:
+        "Pour Marx, ce que les gens pensent découle surtout de leur place dans la société (leur classe), bien plus que d'un raisonnement individuel autonome.",
+      sources: ["Marx, 1859, Contribution à la critique de l'économie politique"],
+    },
+  },
+
+  "henri-lefebvre": {
+    individuSociete: {
+      value: 0.25,
+      label: "Structures capitalistes dominantes, mais possibilité d'appropriation",
+      justification:
+        "Pour Lefebvre, le capitalisme dépossède les gens de leur capacité à créer eux-mêmes leurs espaces de vie — mais il garde une place pour la pratique quotidienne et la possibilité de se réapproprier son cadre de vie.",
+      sources: ["Lefebvre, 1961, Critique de la vie quotidienne II, L'Arche"],
+    },
+    methode: {
+      value: 0.5,
+      label: "Mixte — méthode « progressive-régressive »",
+      justification:
+        "Lefebvre combine deux méthodes qui se complètent : partir du vécu quotidien concret, puis remonter vers l'analyse théorique des structures — et inversement.",
+      sources: ["Lefebvre, 1961, Critique de la vie quotidienne II, L'Arche"],
+    },
+    rationalite: {
+      value: 0.3,
+      label: "Faible — critique de la rationalité technocratique imposée",
+      justification:
+        "Lefebvre critique la « rationalité industrielle » imposée d'en haut par l'État et la technocratie, qui organise la vie des gens sans les consulter.",
+      sources: ["Lefebvre, 1968, La Vie quotidienne dans le monde moderne, Gallimard"],
+    },
+  },
+
+  "nicos-poulantzas": {
+    individuSociete: {
+      value: 0.3,
+      label: "Structures de classe, évoluant vers le relationnel",
+      justification:
+        "Poulantzas part d'une théorie où l'État est déterminé par les rapports entre classes sociales, puis évolue vers une idée plus souple : l'État comme « rapport social » plutôt que simple structure figée.",
+      sources: [
+        "Poulantzas, 1968, Pouvoir politique et classes sociales, Maspero",
+        "Poulantzas, 1978, L'État, le pouvoir, le socialisme, PUF",
+      ],
+    },
+    methode: {
+      value: 0.3,
+      label: "Théorique structuraliste, puis plus attentive au concret",
+      justification:
+        "Ses premiers travaux (1968) analysent l'État de façon très théorique, sous l'influence d'Althusser ; ses travaux suivants s'intéressent davantage à des situations concrètes (le fascisme en Grèce, au Portugal, en Espagne).",
+      sources: ["Poulantzas, 1968, Pouvoir politique et classes sociales, Maspero"],
+    },
+    rationalite: {
+      value: 0.25,
+      label: "Faible — primat des rapports de force entre classes",
+      justification:
+        "Poulantzas s'intéresse surtout aux rapports de force entre classes sociales, bien plus qu'au calcul individuel des acteurs.",
+      sources: ["Poulantzas, 1968, Pouvoir politique et classes sociales, Maspero"],
+    },
+  },
+
+  "levi-strauss": {
+    individuSociete: {
+      value: 0.08,
+      label: "Holisme radical — dissolution du sujet",
+      justification:
+        "Pour Lévi-Strauss, « le but dernier des sciences humaines n'est pas de constituer l'homme mais de le dissoudre » : les individus ne créent pas les structures culturelles, ce sont elles qui les font agir, sans qu'ils s'en rendent compte.",
+      sources: ["Lévi-Strauss, 1962, La Pensée sauvage, Plon"],
+    },
+    methode: {
+      value: 0.3,
+      label: "Explicative — analyse structurale abstraite",
+      justification:
+        "Sa méthode part de l'observation de faits concrets (mythes, règles de parenté) pour en extraire, par abstraction, des structures inconscientes universelles, un peu comme en linguistique.",
+      sources: ["Lévi-Strauss, 1958, Anthropologie structurale, Plon"],
+    },
+    rationalite: {
+      value: 0.1,
+      label: "Très faible — structures inconscientes gouvernant l'action",
+      justification:
+        "Les individus n'agissent pas selon un raisonnement conscient : ce sont des structures inconscientes, communes à toute l'humanité, qui organisent leurs actions à leur insu.",
+      sources: ["Lévi-Strauss, 1962, La Pensée sauvage, Plon"],
+    },
+  },
+
+  althusser: {
+    individuSociete: {
+      value: 0.1,
+      label: "Holisme structural — le sujet comme « effet de surface »",
+      justification:
+        "Comme Lévi-Strauss, Althusser pense que c'est la structure qui détermine tout, pas le sujet : le sujet n'est qu'un « effet de surface » produit par les rapports structuraux — une « cause absente » qui agit sans qu'on puisse la désigner directement.",
+      sources: ["Althusser & Balibar, 1965, Lire le Capital, Maspero"],
+    },
+    methode: {
+      value: 0.45,
+      label: "Théorique — la « lecture symptomale »",
+      justification:
+        "Sa méthode originale, la « lecture symptomale », consiste à lire les textes de Marx non pas pour ce qu'ils disent explicitement, mais pour leurs silences et leurs manques — révélant un problème que Marx n'arrive pas tout à fait à formuler.",
+      sources: ["Althusser & Balibar, 1965, Lire le Capital, Maspero"],
+    },
+    rationalite: {
+      value: 0.15,
+      label: "Faible — la structure détermine, pas le raisonnement individuel",
+      justification:
+        "Comme chez Lévi-Strauss, c'est la structure qui détermine les effets, pas le raisonnement des individus.",
+      sources: ["Althusser & Balibar, 1965, Lire le Capital, Maspero"],
+    },
+  },
+
+  "bruno-latour": {
+    individuSociete: {
+      value: 0.55,
+      label: "Relation — réseaux d'humains et de non-humains",
+      justification:
+        "La théorie de l'acteur-réseau refuse à la fois l'individualisme et le holisme classiques : ce qui compte, ce sont les réseaux de relations entre humains ET objets (« actants »), sans hiérarchie de principe entre eux.",
+      sources: ["Latour, 1993, Le Topofil de Boa Vista, Raisons pratiques, 4"],
+    },
+    methode: {
+      value: 0.75,
+      label: "Compréhensive — suivre les acteurs sur le terrain",
+      justification:
+        "Sa méthode consiste à suivre les acteurs sur le terrain (enquête empirique, souvent en observant des laboratoires ou des expéditions scientifiques) plutôt qu'à leur imposer des catégories théoriques toutes faites.",
+      sources: [
+        "Latour, 1993, Le Topofil de Boa Vista, Raisons pratiques, 4",
+        "Latour, 1992, Aramis ou l'amour des techniques, La Découverte",
+      ],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Située — intérêts à aligner par la « traduction »",
+      justification:
+        "Les acteurs (humains et objets) ont des intérêts variés, parfois contradictoires, qui doivent être alignés par un travail de « traduction » — ni pur calcul rationnel, ni pur automatisme.",
+      sources: ["Latour, 1992, Aramis ou l'amour des techniques, La Découverte"],
+    },
+  },
+
+  "michel-callon": {
+    individuSociete: {
+      value: 0.55,
+      label: "Relation — réseaux d'humains et de non-humains",
+      justification:
+        "Callon partage avec Latour ce refus de choisir entre individu et société : le réseau de relations entre humains et objets est l'unité d'analyse de base.",
+      sources: [
+        "Callon, 1986, Éléments pour une sociologie de la traduction, L'Année sociologique, 36, 169-208",
+      ],
+    },
+    methode: {
+      value: 0.75,
+      label: "Compréhensive — suivre les controverses empiriquement",
+      justification:
+        "Comme Latour, Callon suit empiriquement les controverses et les processus concrets d'innovation, plutôt que d'appliquer un modèle théorique préétabli.",
+      sources: [
+        "Callon, 1986, Éléments pour une sociologie de la traduction, L'Année sociologique, 36, 169-208",
+      ],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Située — intérêts à aligner par la négociation",
+      justification:
+        "Les acteurs ont des intérêts qu'il faut aligner par la négociation — ni pur calcul, ni pur automatisme.",
+      sources: [
+        "Callon, 1986, Éléments pour une sociologie de la traduction, L'Année sociologique, 36, 169-208",
+      ],
+    },
+  },
+
+  "susan-leigh-star": {
+    individuSociete: {
+      value: 0.35,
+      label: "Structures — les infrastructures et classifications ont leur propre pouvoir",
+      justification:
+        "Pour Star (avec Bowker), les infrastructures et les systèmes de classification ne sont jamais neutres : chaque catégorie et chaque norme valorise un point de vue et en réduit un autre au silence, produisant de l'inclusion ou de l'exclusion — parfois invisible — pour celles et ceux qui n'y correspondent pas exactement (par exemple les classifications raciales sous l'apartheid).",
+      sources: [
+        "Bowker & Star, 1999, Sorting Things Out: Classification and Its Consequences, MIT Press",
+      ],
+    },
+    methode: {
+      value: 0.7,
+      label: "Compréhensive — ethnographie des infrastructures",
+      justification:
+        "Comme un·e historien·ne urbain·e étudierait les permis de construire pour raconter une ville, Star et Bowker étudient les archives de conception des classifications pour comprendre comment ces choix, souvent techniques en apparence, ont été faits.",
+      sources: [
+        "Bowker & Star, 1999, Sorting Things Out: Classification and Its Consequences, MIT Press",
+      ],
+    },
+    rationalite: {
+      value: 0.3,
+      label: "Faible — le pouvoir structurant, souvent invisible, des normes",
+      justification:
+        "Les normes et catégories techniques (médicales, administratives...) structurent silencieusement les possibilités d'action des personnes, sans qu'elles en aient toujours conscience ni qu'elles puissent en débattre — un pouvoir d'autant plus fort qu'il reste invisible.",
+      sources: [
+        "Bowker & Star, 1999, Sorting Things Out: Classification and Its Consequences, MIT Press",
+      ],
+    },
+  },
+
+  akrich: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — objets et « scripts » qui structurent les rôles",
+      justification:
+        "Les objets techniques inscrivent un « script » qui attribue des rôles à certains types d'acteurs (humains et non-humains), en excluent d'autres, et autorisent certains modes de relation plutôt que d'autres — comme le kit d'éclairage photovoltaïque qui exclut, sans que personne ne l'ait explicitement voulu, certains usages.",
+      sources: ["Akrich, 1987, Comment décrire les objets techniques ?, Techniques et culture, 9, 49-64"],
+    },
+    methode: {
+      value: 0.75,
+      label: "Compréhensive — de la sociologie des techniques à une sociologie des usages",
+      justification:
+        "Akrich déplace l'attention de la conception des objets vers l'étude empirique de la manière dont les usagers se les approprient réellement, parfois très différemment de ce qu'avaient prévu les concepteurs.",
+      sources: [
+        "Akrich, 1990, De la sociologie des techniques à une sociologie des usages, Techniques et culture, 16, 83-110",
+      ],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Située — négociation entre le script prescrit et l'usage réel",
+      justification:
+        "Les usagers ne suivent jamais mécaniquement le programme d'action inscrit dans un objet technique : ils le réinterprètent, le détournent ou s'y adaptent en situation.",
+      sources: [
+        "Akrich, 1993, Les objets techniques et leurs utilisateurs, de la conception à l'action, Raisons pratiques, 4, 35-57",
+      ],
+    },
+  },
 };

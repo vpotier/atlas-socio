@@ -1236,4 +1236,249 @@ export const authorAxisValues = {
       ],
     },
   },
+
+  "luc-boltanski": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — dépasse holisme et individualisme",
+      justification:
+        "Boltanski et Thévenot posent les bases d'une alternative aux paradigmes holistes et individualistes dominants en sciences sociales : les personnes se justifient toujours devant autrui, en se référant à des principes de justice partagés (les « cités »).",
+      sources: [
+        "Boltanski & Thévenot, 1991, De la justification. Les économies de la grandeur, Gallimard",
+      ],
+    },
+    methode: {
+      value: 0.6,
+      label: "Compréhensive — attentive aux disputes concrètes",
+      justification:
+        "Plutôt que de partir d'une théorie toute faite, Boltanski et Thévenot étudient les disputes réelles et les arguments que les gens utilisent pour se justifier, tout en les éclairant à l'aide de grandes traditions de pensée politique (Saint-Simon, Rousseau, Adam Smith...).",
+      sources: [
+        "Piteau, 1992, Genèses de l'ordre et raison pratique, Revue française de science politique, 42(6)",
+      ],
+    },
+    rationalite: {
+      value: 0.6,
+      label: "Compétence critique réflexive",
+      justification:
+        "Pour Boltanski et Thévenot, les gens ne sont ni de purs calculateurs rationnels, ni de simples exécutants de normes intériorisées : ils possèdent une vraie compétence critique pour justifier leurs actes au nom de principes partagés.",
+      sources: [
+        "Piteau, 1992, Genèses de l'ordre et raison pratique, Revue française de science politique, 42(6)",
+      ],
+    },
+  },
+
+  "laurent-thevenot": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — dépasse holisme et individualisme",
+      justification:
+        "Boltanski et Thévenot posent les bases d'une alternative aux paradigmes holistes et individualistes dominants en sciences sociales : les personnes se justifient toujours devant autrui, en se référant à des principes de justice partagés (les « cités »).",
+      sources: [
+        "Boltanski & Thévenot, 1991, De la justification. Les économies de la grandeur, Gallimard",
+      ],
+    },
+    methode: {
+      value: 0.6,
+      label: "Compréhensive — attentive aux disputes concrètes",
+      justification:
+        "Plutôt que de partir d'une théorie toute faite, Boltanski et Thévenot étudient les disputes réelles et les arguments que les gens utilisent pour se justifier, tout en les éclairant à l'aide de grandes traditions de pensée politique (Saint-Simon, Rousseau, Adam Smith...).",
+      sources: [
+        "Piteau, 1992, Genèses de l'ordre et raison pratique, Revue française de science politique, 42(6)",
+      ],
+    },
+    rationalite: {
+      value: 0.6,
+      label: "Compétence critique réflexive",
+      justification:
+        "Pour Boltanski et Thévenot, les gens ne sont ni de purs calculateurs rationnels, ni de simples exécutants de normes intériorisées : ils possèdent une vraie compétence critique pour justifier leurs actes au nom de principes partagés.",
+      sources: [
+        "Piteau, 1992, Genèses de l'ordre et raison pratique, Revue française de science politique, 42(6)",
+      ],
+    },
+  },
+
+  "harrison-white": {
+    individuSociete: {
+      value: 0.55,
+      label: "Relation — dépasse les oppositions classiques",
+      justification:
+        "Son « interactionnisme structural » cherche explicitement à dépasser les oppositions classiques (micro/macro, structure/action) ; il a toujours refusé de définir des groupes par des frontières fixes.",
+      sources: ["White, 1992, Identity and Control, Princeton University Press"],
+    },
+    methode: {
+      value: 0.12,
+      label: "Explicative formalisée — modèles algébriques (« blockmodels »)",
+      justification:
+        "Physicien et mathématicien de formation (entré au MIT à 15 ans), White élabore des modèles algébriques et matriciels très formalisés pour représenter les structures relationnelles.",
+      sources: [
+        "Doreian, 2009, Positional Analysis and Blockmodeling, in Encyclopedia of Complexity and Systems Science, Springer",
+      ],
+    },
+    rationalite: {
+      value: 0.3,
+      label: "Position structurelle plutôt que calcul individuel",
+      justification:
+        "Sa théorie des marchés explique le comportement des acteurs par leur position structurelle dans le réseau d'échanges, plus que par un calcul individuel.",
+      sources: [
+        "White, 1981, Where Do Markets Come From?, American Journal of Sociology, 87(3)",
+      ],
+    },
+  },
+
+  "mark-granovetter": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — encastrement (embeddedness)",
+      justification:
+        "Son concept d'« encastrement » critique à la fois les modèles économiques « sous-socialisés » (individu isolé, purement calculateur) et les modèles sociologiques « sur-socialisés » (déterminisme normatif total).",
+      sources: [
+        "Granovetter, 1985, Economic Action and Social Structure: The Problem of Embeddedness, American Journal of Sociology, 91(3)",
+      ],
+    },
+    methode: {
+      value: 0.3,
+      label: "Explicative — enquête empirique quantifiée des réseaux",
+      justification:
+        "Son étude fondatrice sur l'accès à l'emploi repose sur une enquête empirique quantifiée du réseau de relations personnelles mobilisées.",
+      sources: ["Granovetter, 1974, Getting a Job: A Study of Contacts and Careers, Harvard University Press"],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Situé — ni pur calculateur, ni pur exécutant de normes",
+      justification:
+        "Ni pur calculateur isolé, ni simple exécutant de normes : l'acteur agit à travers des relations personnelles concrètes et durables.",
+      sources: [
+        "Granovetter, 1985, Economic Action and Social Structure: The Problem of Embeddedness, American Journal of Sociology, 91(3)",
+      ],
+    },
+  },
+
+  lazega: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — niveau méso, entre l'individu et les grandes structures",
+      justification:
+        "Lazega positionne sa sociologie néo-structurale au niveau méso, entre le niveau macro (les classes sociales) et le niveau individuel : un fait social doit être observé à plusieurs niveaux à la fois, ce qui rend inséparable l'analyse des relations individuelles de celle des relations organisationnelles.",
+      sources: [
+        "Lazega, 2012, Sociologie néo-structurale, in Keucheyan & Bronner (dir.), Introduction à la théorie sociale contemporaine, PUF",
+      ],
+    },
+    methode: {
+      value: 0.4,
+      label: "Mixte — ethnographie et modèles formels de réseaux",
+      justification:
+        "Son étude de référence sur un cabinet d'avocats articule l'ethnographie de terrain avec des modèles formels d'analyse de réseaux.",
+      sources: [
+        "Lazega, 2001, The Collegial Phenomenon: The Social Mechanisms of Cooperation among Peers in a Corporate Law Partnership, Oxford University Press",
+      ],
+    },
+    rationalite: {
+      value: 0.4,
+      label: "Socle de la discipline sociale entre pairs",
+      justification:
+        "La rationalité des acteurs n'est pas un simple calcul individuel : elle constitue le socle même de la discipline sociale et de la coopération entre pairs au sein d'une organisation.",
+      sources: [
+        "Lazega, 2003, Rationalité, discipline sociale et structure, Revue française de sociologie, 44, 305-330",
+      ],
+    },
+  },
+
+  degenne: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — réseaux comme unité d'analyse",
+      justification:
+        "Les réseaux « solidifient » l'interaction et en font une structure, susceptible d'être formalisée — dans la filiation directe de Harrison White.",
+      sources: ["Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie"],
+    },
+    methode: {
+      value: 0.3,
+      label: "Explicative formalisée — au-delà de l'interactionnisme classique",
+      justification:
+        "Leur approche se distingue explicitement de l'interactionnisme classique (Park, Hughes, Becker), qui ne pousse pas la formalisation jusqu'à la quantification et à la modélisation.",
+      sources: ["Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie"],
+    },
+  },
+
+  forse: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — réseaux comme unité d'analyse",
+      justification:
+        "Les réseaux « solidifient » l'interaction et en font une structure, susceptible d'être formalisée — dans la filiation directe de Harrison White.",
+      sources: ["Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie"],
+    },
+    methode: {
+      value: 0.3,
+      label: "Explicative formalisée — au-delà de l'interactionnisme classique",
+      justification:
+        "Leur approche se distingue explicitement de l'interactionnisme classique (Park, Hughes, Becker), qui ne pousse pas la formalisation jusqu'à la quantification et à la modélisation.",
+      sources: ["Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie"],
+    },
+  },
+
+  bidart: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — réseaux personnels au fil des trajectoires",
+      justification:
+        "Le réseau d'un individu témoigne des différents univers qu'il a parcourus et participe à sa socialisation et à son identité plurielle.",
+      sources: ["Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales"],
+    },
+    methode: {
+      value: 0.5,
+      label: "Mixte — entretiens biographiques et narrations quantifiées",
+      justification:
+        "Une enquête qualitative longitudinale (méthodes biographiques) combinée à une systématisation des données pour saisir les moments de bifurcation.",
+      sources: ["Bidart, 2006, Crises, décisions et temporalités : autour des bifurcations biographiques, Cahiers internationaux de sociologie"],
+    },
+    rationalite: {
+      value: 0.4,
+      label: "Modeste — les récits exagèrent souvent la rationalité des choix",
+      justification:
+        "Bidart observe que les récits des personnes tendent à présenter leurs choix passés comme plus logiques qu'ils ne l'étaient réellement sur le moment ; les bifurcations biographiques se caractérisent au contraire par un haut degré d'imprévisibilité.",
+      sources: ["Bidart, 2006, Crises, décisions et temporalités : autour des bifurcations biographiques, Cahiers internationaux de sociologie"],
+    },
+  },
+
+  grossetti: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — réseaux personnels au fil des trajectoires",
+      justification:
+        "Le réseau d'un individu témoigne des différents univers qu'il a parcourus et participe à sa socialisation et à son identité plurielle.",
+      sources: ["Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales"],
+    },
+    methode: {
+      value: 0.5,
+      label: "Mixte — entretiens biographiques et narrations quantifiées",
+      justification:
+        "Une enquête qualitative longitudinale (méthodes biographiques) combinée à une systématisation des données pour saisir les moments de bifurcation.",
+      sources: ["Bidart, 2006, Crises, décisions et temporalités : autour des bifurcations biographiques, Cahiers internationaux de sociologie"],
+    },
+    rationalite: {
+      value: 0.4,
+      label: "Modeste — les récits exagèrent souvent la rationalité des choix",
+      justification:
+        "Bidart observe que les récits des personnes tendent à présenter leurs choix passés comme plus logiques qu'ils ne l'étaient réellement sur le moment ; les bifurcations biographiques se caractérisent au contraire par un haut degré d'imprévisibilité.",
+      sources: ["Bidart, 2006, Crises, décisions et temporalités : autour des bifurcations biographiques, Cahiers internationaux de sociologie"],
+    },
+  },
+
+  "claude-fischer": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — réseaux personnels comme unité d'analyse",
+      justification:
+        "Fischer étudie les réseaux personnels des habitants de villes et de zones rurales comme unité d'analyse centrale, plutôt que l'individu isolé ou la société comme un tout.",
+      sources: ["Fischer, 1982, To Dwell Among Friends: Personal Networks in Town and City"],
+    },
+    methode: {
+      value: 0.25,
+      label: "Explicative quantitative — enquête statistique sur les réseaux personnels",
+      justification:
+        "Sa recherche fondatrice repose sur une enquête statistique standardisée conduite auprès d'un large échantillon dans la région de San Francisco.",
+      sources: ["Fischer, 1982, To Dwell Among Friends: Personal Networks in Town and City"],
+    },
+  },
 };

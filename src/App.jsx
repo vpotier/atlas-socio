@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";
@@ -23,6 +23,43 @@ export default function App() {
   });
 
   const [themeFilters, setThemeFilters] = useState([]);
+
+  const [relationTypeFilters, setRelationTypeFilters] = useState({
+    heritage: true,
+    dialogue: true,
+    tension: true,
+  });
+
+  // Fermer la fiche avec la touche Échap (ordinateur)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setSelectedItem(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  // Fermer la fiche en glissant vers le bas (mobile)
+  const touchStartY = useRef(null);
+
+  const handleSheetTouchStart = (e) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleSheetTouchEnd = (e) => {
+    if (touchStartY.current === null) return;
+
+    const deltaY = e.changedTouches[0].clientY - touchStartY.current;
+
+    if (deltaY > 70) {
+      setSelectedItem(null);
+    }
+
+    touchStartY.current = null;
+  };
 
   const renderSidebar = () => {
     if (!selectedItem) {
@@ -511,6 +548,8 @@ export default function App() {
         setAxisFilters={setAxisFilters}
         themeFilters={themeFilters}
         setThemeFilters={setThemeFilters}
+        relationTypeFilters={relationTypeFilters}
+        setRelationTypeFilters={setRelationTypeFilters}
       />
 
       <Legend />
@@ -541,12 +580,15 @@ export default function App() {
           setSelectedItem={setSelectedItem}
           axisFilters={axisFilters}
           themeFilters={themeFilters}
+          relationTypeFilters={relationTypeFilters}
         />
       </div>
 
       {(!isMobile || selectedItem) && (
         <aside
           className={isMobile ? "mobile-sheet" : undefined}
+          onTouchStart={isMobile ? handleSheetTouchStart : undefined}
+          onTouchEnd={isMobile ? handleSheetTouchEnd : undefined}
           style={
             isMobile
               ? {
@@ -574,6 +616,19 @@ export default function App() {
                 }
           }
         >
+          {isMobile && (
+            <div
+              style={{
+                width: 40,
+                height: 4,
+                borderRadius: 2,
+                background: "var(--color-taupe)",
+                opacity: 0.5,
+                margin: "-8px auto 12px",
+              }}
+            />
+          )}
+
           <div
             key={
               selectedItem

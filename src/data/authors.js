@@ -157,6 +157,10 @@ export const authors = [
       "Ritzer, 2011, Sociological Theory",
       "Cuche, 2010, La notion de culture dans les sciences sociales",
     ],
+    simple: {
+      summary:
+        "Bronisław Malinowski est l'un des fondateurs de l'anthropologie de terrain moderne. Il défend un « fonctionnalisme absolu » : selon lui, chaque élément d'une culture, même le plus étrange en apparence, remplit une fonction indispensable à la satisfaction des besoins biologiques du groupe (se nourrir, se reproduire, se protéger). Pour l'étudier, il s'installe seul pendant plusieurs années chez les Trobriandais, en apprenant leur langue et en partageant leur quotidien — une méthode, l'observation participante, qu'il contribue à inventer.",
+    },
   },
 
   {
@@ -192,6 +196,10 @@ export const authors = [
       "Rocher, 1972, Talcott Parsons et la sociologie américaine",
       "Ritzer, 2011, Sociological Theory",
     ],
+    simple: {
+      summary:
+        "Talcott Parsons cherche à construire une théorie générale, applicable à toute société. Il compare la société à un système, dont chaque institution remplit une fonction nécessaire à son équilibre. Sa théorie est très abstraite et volontiers critiquée pour son éloignement du terrain concret, notamment par Wright Mills, qui lui reproche de se perdre dans une « grande théorie » coupée du réel.",
+    },
   },
 
   {
@@ -231,6 +239,10 @@ export const authors = [
       "Boudon & Bourricaud, 1982, Dictionnaire critique de la sociologie",
       "Ansart, 1990, Les sociologies contemporaines",
     ],
+    simple: {
+      summary:
+        "Robert K. Merton nuance le fonctionnalisme de Parsons : selon lui, une institution peut aussi avoir des effets négatifs imprévus, et plusieurs institutions différentes peuvent remplir la même fonction. Il défend des « théories de moyenne portée », plus modestes et davantage ancrées dans l'enquête empirique que la théorie générale de Parsons. Sa théorie de l'anomie explique la déviance par le décalage entre les buts valorisés par une société et les moyens réellement accessibles pour les atteindre.",
+    },
   },
 
   {
@@ -267,6 +279,10 @@ export const authors = [
       "Ansart, 1990, Les sociologies contemporaines",
       "Lallement, 2000, Histoire des idées sociologiques",
     ],
+    simple: {
+      summary:
+        "Raymond Boudon explique les phénomènes sociaux à partir des actions individuelles : pour lui, la société n'est jamais qu'une agrégation de comportements individuels, même si le résultat global peut échapper aux intentions de chacun, ce qu'il nomme un « effet pervers ». Il conçoit un individu rationnel, mais dont la rationalité reste limitée par sa situation et par les informations dont il dispose.",
+    },
   },
 
   {
@@ -302,6 +318,10 @@ export const authors = [
       "Ritzer, 2011, Sociological Theory",
       "Collins, 1994, Four Sociological Traditions",
     ],
+    simple: {
+      summary:
+        "James Coleman pousse plus loin encore la démarche de Boudon : pour lui, l'intérêt personnel des individus suffit à expliquer les phénomènes sociaux. Il formalise ses raisonnements de façon mathématique très rigoureuse, afin de démontrer que des modèles simples permettent d'expliquer des phénomènes sociaux complexes.",
+    },
   },
 
   {
@@ -334,6 +354,10 @@ export const authors = [
       "Lallement, 2000, Histoire des idées sociologiques",
       "Le Breton, 2004, L'interactionnisme symbolique",
     ],
+    simple: {
+      summary:
+        "Herbert Blumer formule les principes fondateurs de l'interactionnisme symbolique : les individus agissent en fonction du sens qu'ils donnent aux choses, un sens qui se construit et se modifie continuellement au fil des interactions avec autrui. Il critique les méthodes purement statistiques, qui laissent selon lui échapper ce travail d'interprétation, et préfère une observation attentive de situations concrètes.",
+    },
   },
 
   {
@@ -370,6 +394,10 @@ export const authors = [
       "Coenen-Huther, 2003, Le fonctionnalisme modifié : de la métaphore à l'outil",
       "Ansart, 1990, Les sociologies contemporaines",
     ],
+    simple: {
+      summary:
+        "Erving Goffman étudie la vie quotidienne comme une scène de théâtre : chacun y joue un rôle, gère l'image qu'il donne de lui-même et ajuste son comportement selon la situation et le public présent. Il s'appuie sur une observation minutieuse des interactions ordinaires (une file d'attente, un repas, une conversation) plutôt que sur des statistiques.",
+    },
   },
 
   {
@@ -406,6 +434,10 @@ export const authors = [
       "Dubar, 2000, La socialisation",
       "Lallement, 2000, Histoire des idées sociologiques",
     ],
+    simple: {
+      summary:
+        "Howard S. Becker montre que la déviance n'est pas une caractéristique propre à un acte ou à une personne, mais le résultat d'un étiquetage social : un comportement devient « déviant » parce qu'un groupe le désigne ainsi. Il s'appuie sur de longues enquêtes de terrain (musiciens de jazz, consommateurs de marijuana) pour reconstituer les étapes par lesquelles une personne en vient à endosser une identité déviante.",
+    },
   },
 
   {
@@ -1253,6 +1285,10 @@ export const authors = [
     classificationNote:
       "Butler est unanimement reconnue comme l'une des figures les plus radicales de la théorie du genre contemporaine ; sa thèse de la performativité a suscité des critiques marquées de la part de sociologues français comme Pierre Bourdieu et Nicole-Claude Mathieu, auxquelles elle a explicitement répondu, ouvrant ainsi des échanges épistémiques importants pour la sociologie contemporaines.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simple: {
+      summary:
+        "Judith Butler remet en question l'idée que le genre correspondrait à une nature intérieure stable. Pour elle, le genre se construit par la répétition d'actes et de comportements conformes à des normes sociales : ce n'est pas un individu déjà constitué qui choisirait son genre, c'est cette répétition elle-même qui donne l'impression d'une identité stable. Elle montre aussi que des pratiques de détournement, comme le travestissement, peuvent perturber ces normes.",
+    },
   },
 
   {
@@ -1379,6 +1415,10 @@ export const authors = [
     classificationNote:
       "Cooley est identifié comme l'un des tout premiers artisans de l'interactionnisme au sein de la première école de Chicago, aux côtés de George Herbert Mead, qui s'inspirera abondamment de son œuvre.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simple: {
+      summary:
+        "Charles Horton Cooley montre que l'identité d'une personne se construit dans le regard des autres : chacun se perçoit un peu comme dans un miroir, en imaginant comment autrui le voit et le juge. Il accorde une grande importance aux petits groupes, comme la famille ou les amis proches, dans la formation de la personnalité.",
+    },
   },
 
   {
@@ -1408,6 +1448,10 @@ export const authors = [
     classificationNote:
       "Mead est unanimement considéré comme le père fondateur de l'interactionnisme symbolique, dont Blumer reprendra et systématisera l'héritage sous ce nom quelques années après sa mort.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simple: {
+      summary:
+        "George Herbert Mead pense que le « soi » d'un individu se construit progressivement, par l'interaction avec les autres et par la capacité à se représenter comment autrui le perçoit. L'enfant apprend ainsi à adopter le point de vue de son entourage, puis celui de la société dans son ensemble, ce que Mead nomme l'« autrui généralisé ».",
+    },
   },
 
   {
@@ -1440,6 +1484,10 @@ export const authors = [
     classificationNote:
       "Park est identifié comme l'une des deux grandes figures fondatrices de l'écologie urbaine de la première école de Chicago, indissociable de son collaborateur Ernest Burgess. L'Atlas le rattache à la constellation interactionniste plutôt que de créer une constellation dédiée, tout en assumant l'hétérogénéité interne de l'école de Chicago entre son aile écologique (Park, Burgess) et son aile interactionniste (Mead, Cooley, Blumer).",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simple: {
+      summary:
+        "Robert E. Park compare la ville à un écosystème naturel, où différents groupes sociaux se répartissent l'espace urbain selon une logique proche de la compétition biologique. Ancien journaliste, il privilégie l'observation directe des communautés urbaines plutôt que la seule cartographie statistique.",
+    },
   },
 
   {
@@ -1472,6 +1520,10 @@ export const authors = [
     classificationNote:
       "Burgess est identifié comme l'autre grande figure fondatrice de l'écologie urbaine de la première école de Chicago, indissociable de son collaborateur Robert Park.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simple: {
+      summary:
+        "Ernest W. Burgess prolonge les travaux de Park sur la ville et propose un modèle des « zones concentriques » pour représenter comment les différents groupes sociaux se répartissent dans l'espace urbain, du centre-ville vers la périphérie, selon leurs ressources économiques.",
+    },
   },
 
   {
@@ -1504,6 +1556,10 @@ export const authors = [
     classificationNote:
       "Lazarsfeld est identifié comme la figure de proue de l'empirisme quantitativiste de l'université de Columbia, régulièrement mis en tension avec le fonctionnalisme mertonien pour son détachement supposé de toute théorisation.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simple: {
+      summary:
+        "Paul Lazarsfeld développe des méthodes d'enquête rigoureuses fondées sur des questionnaires et des statistiques, notamment pour étudier les comportements électoraux. Il montre par exemple que les choix de vote sont fortement liés aux caractéristiques sociales des électeurs, la campagne ayant surtout pour effet de renforcer des opinions déjà présentes plutôt que d'en créer de nouvelles.",
+    },
   },
 
   {
@@ -1767,6 +1823,10 @@ export const authors = [
       "Sociologie du travail et des professions",
       "Sociologie des émotions",
     ],
+    simple: {
+      summary:
+        "Arlie Russell Hochschild étudie la manière dont certains métiers exigent des salariés qu'ils gèrent et affichent des émotions précises, conformes aux attentes de leur fonction — par exemple, le sourire constant qu'on attend d'une hôtesse de l'air. Elle nomme ce travail invisible le « travail émotionnel ».",
+    },
   },
 
   {
@@ -1878,6 +1938,10 @@ export const authors = [
       "Hughes, 1958, Men and Their Work",
     ],
     themes: ["Sociologie du travail et des professions"],
+    simple: {
+      summary:
+        "Everett C. Hughes étudie les professions et la manière dont elles construisent une image valorisante d'elles-mêmes. Il montre que chaque groupe professionnel cherche à se décharger des tâches les plus dévalorisantes, le « sale boulot », sur d'autres, afin de préserver son honorabilité. Il joue aussi un rôle de passerelle entre deux générations de sociologues à l'université de Chicago, en formant directement Goffman et Becker.",
+    },
   },
 
   {

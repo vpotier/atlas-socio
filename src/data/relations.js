@@ -581,7 +581,7 @@ export const relations = [
       "Bourdieu critique l'individualisme méthodologique comme une croyance naïve en la transparence du calcul rationnel, ignorant le poids des dispositions incorporées (habitus) ; Boudon reproche symétriquement à Bourdieu de nier toute marge d'autonomie à l'acteur individuel.",
     sources: ["Corcuff, 2003, Bourdieu autrement"],
     simpleExplanation:
-      "Bourdieu et Boudon ne sont pas d'accord : pour Bourdieu, nos choix sont très influencés par notre milieu social sans qu'on s'en aperçoive, alors que pour Boudon, les individus font des choix plus conscients et réfléchis.",
+      "Bourdieu et Boudon s'opposent : pour Bourdieu, nos choix sont fortement influencés par notre milieu social sans que nous nous en apercevions, tandis que pour Boudon, les individus effectuent des choix plus conscients et réfléchis.",
   },
   {
     source: "marx",
@@ -593,7 +593,7 @@ export const relations = [
       "Bourdieu reprend explicitement le concept marxien de capital pour en démultiplier les formes (culturel, social, symbolique), au-delà de sa seule acception économique.",
     sources: ["Corcuff, 2003, Bourdieu autrement"],
     simpleExplanation:
-      "Bourdieu reprend une idée de Marx, celle du « capital » (les richesses), mais il en invente d'autres formes : le capital culturel (les diplômes, la culture) et le capital social (les relations utiles qu'on a).",
+      "Bourdieu reprend une notion de Marx, celle de « capital » (les richesses), mais il en invente d'autres formes : le capital culturel (les diplômes, la culture) et le capital social (les relations utiles dont on dispose).",
   },
   {
     source: "durkheim",
@@ -605,7 +605,7 @@ export const relations = [
       "Malinowski s'inspire du holisme durkheimien pour penser la cohérence fonctionnelle des sociétés, tout en déplaçant l'explication vers des besoins biologiques individuels plutôt que vers le seul fait social.",
     sources: ["Ritzer, 2011, Sociological Theory"],
     simpleExplanation:
-      "Malinowski s'est inspiré des idées de Durkheim sur la société pour étudier les peuples qu'il observait, tout en donnant plus d'importance aux besoins très concrets (manger, se loger...) des individus.",
+      "Malinowski s'inspire des idées de Durkheim sur la société pour étudier les peuples qu'il observe, tout en accordant une plus grande importance aux besoins concrets (se nourrir, se loger...) des individus.",
   },
   {
     source: "weber",
@@ -617,7 +617,7 @@ export const relations = [
       "Parsons traduit Weber en anglais et fonde sa théorie générale de l'action sociale sur une synthèse explicite de la sociologie compréhensive wébérienne.",
     sources: ["Rocher, 1972, Talcott Parsons et la sociologie américaine"],
     simpleExplanation:
-      "Parsons a repris et traduit les idées de Weber pour construire sa propre théorie de l'action, aux États-Unis.",
+      "Parsons reprend et traduit les idées de Weber pour construire sa propre théorie de l'action, aux États-Unis.",
   },
   {
     source: "durkheim",

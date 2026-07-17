@@ -93,7 +93,7 @@ export default function App() {
             Atlas
           </div>
 
-          <h2>Théorie sociologique</h2>
+          <h2>Atlas des théories sociologiques</h2>
 
           <p style={{ color: "var(--color-taupe)" }}>
             Sélectionnez un auteur, un concept, une relation ou une

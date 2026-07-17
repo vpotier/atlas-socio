@@ -165,12 +165,27 @@ export default function Graph({
     activeAxisEntries.length > 0 ||
     (themeFilters && themeFilters.length > 0);
 
-  // Valeurs d'axes effectives pour un auteur : sa propre entrée
-  // sourcée individuellement si elle existe, sinon repli sur la
-  // valeur de sa constellation.
-  const getAxisValuesForAuthor = (author) =>
-    authorAxisValues[author.id] ||
-    constellationAxisValues[author.constellation];
+  // Valeurs d'axes effectives pour un auteur : pour chaque axe, sa
+  // propre entrée sourcée individuellement si elle existe, sinon repli
+  // sur la valeur de sa constellation pour cet axe précis (et non sur
+  // l'auteur dans son ensemble — un auteur peut avoir 2 axes sourcés
+  // individuellement et un 3e hérité de sa constellation).
+  const getAxisValuesForAuthor = (author) => {
+    const individual = authorAxisValues[author.id];
+    const constellationValues =
+      constellationAxisValues[author.constellation];
+
+    if (!individual) return constellationValues;
+    if (!constellationValues) return individual;
+
+    return {
+      individuSociete:
+        individual.individuSociete ?? constellationValues.individuSociete,
+      methode: individual.methode ?? constellationValues.methode,
+      rationalite:
+        individual.rationalite ?? constellationValues.rationalite,
+    };
+  };
 
   const filterVisibleAuthorIds = useMemo(() => {
     if (!filtersActive) return null;

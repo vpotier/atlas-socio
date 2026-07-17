@@ -395,4 +395,49 @@ export const concepts = [
     x: 260,
     y: 920,
   },
+  {
+    id: "intervention-sociologique",
+    label: "Intervention sociologique",
+    definition:
+      "Méthode inventée par Touraine consistant à réunir pendant plusieurs semaines un groupe de militants ou d'acteurs d'un mouvement social, pour les amener à s'auto-analyser collectivement et à faire apparaître le sens profond de leur engagement.",
+    authors: ["alain-touraine"],
+    x: 1420,
+    y: 500,
+  },
+  {
+    id: "imagination-sociologique",
+    label: "Imagination sociologique",
+    definition:
+      "Capacité à relier sa propre biographie individuelle (les « troubles personnels ») aux structures sociales et historiques plus larges (les « enjeux publics »), pour comprendre que des difficultés vécues comme purement personnelles sont souvent le fait de changements qui dépassent l'individu.",
+    authors: ["wright-mills"],
+    x: 1500,
+    y: 550,
+  },
+  {
+    id: "travail-emotionnel",
+    label: "Travail émotionnel",
+    definition:
+      "Effort requis, notamment dans les métiers de service, pour ajuster ses émotions ressenties et affichées aux attentes professionnelles (par exemple, une hôtesse de l'air qui doit paraître aimable en toute circonstance) — un travail invisible et souvent non reconnu comme tel.",
+    authors: ["hochschild"],
+    x: 720,
+    y: 780,
+  },
+  {
+    id: "performativite-du-genre",
+    label: "Performativité du genre",
+    definition:
+      "Pour Butler, le genre n'est pas l'expression d'une identité intérieure préexistante, mais le résultat d'une répétition d'actes et de normes socialement codifiés : c'est cette répétition elle-même, et non un sujet antérieur, qui produit l'illusion d'une identité de genre stable.",
+    authors: ["judith-butler"],
+    x: 1230,
+    y: 150,
+  },
+  {
+    id: "redistribution-reconnaissance",
+    label: "Redistribution / Reconnaissance",
+    definition:
+      "Chez Fraser, deux dimensions distinctes mais complémentaires de la justice sociale : la redistribution vise à corriger les inégalités économiques, la reconnaissance vise à corriger le mépris ou le déni de respect envers certains groupes sociaux — les deux luttes doivent être menées ensemble, sans réduire l'une à l'autre.",
+    authors: ["nancy-fraser"],
+    x: 1600,
+    y: 400,
+  },
 ];

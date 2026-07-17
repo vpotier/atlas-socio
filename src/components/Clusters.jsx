@@ -38,13 +38,23 @@ export default function Clusters({
 
         if (!meta) return null;
 
+        // Le centre du halo se base uniquement sur les AUTEURS (pas sur
+        // les concepts) : sinon un concept qui dérive un peu suffit à
+        // décaler tout le centre, et l'auteur lui-même finit visible
+        // près du bord voire hors du halo. Le rayon, lui, continue
+        // d'englober tous les membres (auteurs + concepts).
+        const authorsOnly = members.filter((m) => m.name !== undefined);
+
+        const centerSource =
+          authorsOnly.length > 0 ? authorsOnly : members;
+
         const cx =
-          members.reduce((sum, m) => sum + m.x, 0) /
-          members.length;
+          centerSource.reduce((sum, m) => sum + m.x, 0) /
+          centerSource.length;
 
         const cy =
-          members.reduce((sum, m) => sum + m.y, 0) /
-          members.length;
+          centerSource.reduce((sum, m) => sum + m.y, 0) /
+          centerSource.length;
 
         const maxRadius = 140 + members.length * 28;
 

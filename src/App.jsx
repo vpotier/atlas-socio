@@ -137,7 +137,8 @@ export default function App() {
                 Mode découverte
               </div>
               <div style={{ fontSize: 12, color: "var(--color-taupe)" }}>
-                Fiches simplifiées, sans jargon
+                Des fiches simplifiées idéales pour découvrir la
+                sociologie
               </div>
             </div>
 

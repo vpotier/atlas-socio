@@ -16,6 +16,25 @@ export default function App() {
   const isMobile = useIsMobile();
   const [selectedItem, setSelectedItem] = useState(null);
 
+  // Mode "découverte" : contenu très simplifié, pensé pour un public
+  // néophyte. Persisté d'une visite à l'autre.
+  const [discoveryMode, setDiscoveryMode] = useState(() => {
+    try {
+      return localStorage.getItem("atlas-discovery-mode") === "true";
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("atlas-discovery-mode", String(discoveryMode));
+    } catch {
+      // stockage local indisponible : le mode reste actif pour la
+      // session en cours seulement, sans bloquer l'application.
+    }
+  }, [discoveryMode]);
+
   const [axisFilters, setAxisFilters] = useState({
     individuSociete: { enabled: false, value: 0.5 },
     methode: { enabled: false, value: 0.5 },
@@ -99,6 +118,61 @@ export default function App() {
             Sélectionnez un auteur, un concept, une relation ou une
             constellation sur la carte.
           </p>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 12,
+              marginTop: 24,
+              padding: "10px 12px",
+              borderRadius: 8,
+              border: "1px solid var(--color-taupe)",
+              background: "var(--color-paper)",
+            }}
+          >
+            <div>
+              <div style={{ fontWeight: 600, fontSize: 14 }}>
+                Mode découverte
+              </div>
+              <div style={{ fontSize: 12, color: "var(--color-taupe)" }}>
+                Fiches simplifiées, sans jargon
+              </div>
+            </div>
+
+            <button
+              onClick={() => setDiscoveryMode((v) => !v)}
+              aria-label="Activer ou désactiver le mode découverte"
+              aria-pressed={discoveryMode}
+              style={{
+                position: "relative",
+                width: 44,
+                height: 24,
+                borderRadius: 12,
+                border: "1px solid var(--color-taupe)",
+                background: discoveryMode
+                  ? "var(--color-tardis)"
+                  : "var(--color-paper-dim)",
+                cursor: "pointer",
+                flexShrink: 0,
+                transition: "background .2s",
+              }}
+            >
+              <span
+                style={{
+                  position: "absolute",
+                  top: 2,
+                  left: discoveryMode ? 22 : 2,
+                  width: 18,
+                  height: 18,
+                  borderRadius: "50%",
+                  background: "var(--color-paper)",
+                  transition: "left .2s",
+                }}
+              />
+            </button>
+          </div>
 
           <p style={{ marginTop: 20 }}>
             <a
@@ -317,93 +391,103 @@ export default function App() {
             {a.period}
           </p>
 
-          <p>
-            <strong>École</strong>
-            <br />
-            {a.school}
-          </p>
+          {discoveryMode ? (
+            <p>
+              {a.simple?.summary ??
+                "Fiche simplifiée pas encore disponible pour cet auteur·ice — désactivez le mode découverte pour voir le contenu complet."}
+            </p>
+          ) : (
+            <>
+              <p>
+                <strong>École</strong>
+                <br />
+                {a.school}
+              </p>
 
-          <p>{a.summary}</p>
+              <p>{a.summary}</p>
 
-          <h3>Classification</h3>
+              <h3>Classification</h3>
 
-          <p>{a.classificationNote}</p>
+              <p>{a.classificationNote}</p>
 
-          {(() => {
-            const individualValues = authorAxisValues[a.id];
-            const constellationValues =
-              constellationAxisValues[a.constellation];
+              {(() => {
+                const individualValues = authorAxisValues[a.id];
+                const constellationValues =
+                  constellationAxisValues[a.constellation];
 
-            if (!individualValues && !constellationValues) return null;
+                if (!individualValues && !constellationValues)
+                  return null;
 
-            return (
-              <>
-                <h3>Positionnement théorique</h3>
+                return (
+                  <>
+                    <h3>Positionnement théorique</h3>
 
-                <ul>
-                  {Object.entries(axes).map(([axisKey, axisMeta]) => {
-                    const individual = individualValues?.[axisKey];
-                    const value =
-                      individual || constellationValues?.[axisKey];
+                    <ul>
+                      {Object.entries(axes).map(([axisKey, axisMeta]) => {
+                        const individual = individualValues?.[axisKey];
+                        const value =
+                          individual || constellationValues?.[axisKey];
 
-                    if (!value) return null;
+                        if (!value) return null;
 
-                    return (
-                      <li key={axisKey}>
-                        <strong>{axisMeta.label}</strong>
-                        <br />
-                        <span
-                          style={{
-                            fontStyle: "italic",
-                            color: "var(--color-leather)",
-                          }}
-                        >
-                          {value.label}
-                        </span>
-                        {value.justification && (
-                          <span
-                            style={{
-                              display: "block",
-                              marginTop: 4,
-                            }}
-                          >
-                            {value.justification}
-                          </span>
-                        )}
-                        {value.sources && (
-                          <span
-                            style={{
-                              display: "block",
-                              fontSize: 12,
-                              color: "var(--color-taupe)",
-                              marginTop: 4,
-                            }}
-                          >
-                            {value.sources.join(" ; ")}
-                          </span>
-                        )}
-                        {!individual && (
-                          <span
-                            style={{
-                              display: "block",
-                              fontSize: 12,
-                              fontStyle: "italic",
-                              color: "var(--color-taupe)",
-                              marginTop: 4,
-                            }}
-                          >
-                            Valeur héritée de la constellation — pas
-                            encore sourcée individuellement pour cet
-                            auteur·ice.
-                          </span>
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </>
-            );
-          })()}
+                        return (
+                          <li key={axisKey}>
+                            <strong>{axisMeta.label}</strong>
+                            <br />
+                            <span
+                              style={{
+                                fontStyle: "italic",
+                                color: "var(--color-leather)",
+                              }}
+                            >
+                              {value.label}
+                            </span>
+                            {value.justification && (
+                              <span
+                                style={{
+                                  display: "block",
+                                  marginTop: 4,
+                                }}
+                              >
+                                {value.justification}
+                              </span>
+                            )}
+                            {value.sources && (
+                              <span
+                                style={{
+                                  display: "block",
+                                  fontSize: 12,
+                                  color: "var(--color-taupe)",
+                                  marginTop: 4,
+                                }}
+                              >
+                                {value.sources.join(" ; ")}
+                              </span>
+                            )}
+                            {!individual && (
+                              <span
+                                style={{
+                                  display: "block",
+                                  fontSize: 12,
+                                  fontStyle: "italic",
+                                  color: "var(--color-taupe)",
+                                  marginTop: 4,
+                                }}
+                              >
+                                Valeur héritée de la constellation — pas
+                                encore sourcée individuellement pour cet
+                                auteur·ice.
+                              </span>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </>
+                );
+              })()}
+            </>
+          )}
 
           <p>
             <strong>Sources</strong>
@@ -473,7 +557,12 @@ export default function App() {
 
           <h2>{c.label}</h2>
 
-          <p>{c.definition}</p>
+          <p>
+            {discoveryMode
+              ? c.simpleDefinition ??
+                "Définition simplifiée pas encore disponible pour ce concept — désactivez le mode découverte pour voir la définition complète."
+              : c.definition}
+          </p>
 
           <h3>Auteurs concernés</h3>
 
@@ -543,53 +632,62 @@ export default function App() {
             ))}
           </div>
 
-          <p>
-            <strong>Consensus</strong>
-            <br />
-            {r.consensus}
-          </p>
+          {discoveryMode ? (
+            <p>
+              {r.simpleExplanation ??
+                "Explication simplifiée pas encore disponible pour cette relation — désactivez le mode découverte pour voir le détail complet."}
+            </p>
+          ) : (
+            <>
+              <p>
+                <strong>Consensus</strong>
+                <br />
+                {r.consensus}
+              </p>
 
-          <p>{r.justification}</p>
+              <p>{r.justification}</p>
 
-          <p>
-            <strong>Sources</strong>
-          </p>
+              <p>
+                <strong>Sources</strong>
+              </p>
 
-          <ul>
-            {r.sources.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
+              <ul>
+                {r.sources.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
 
-          {[
-            { name: r.sourceName, constellationId: r.sourceConstellation },
-            { name: r.targetName, constellationId: r.targetConstellation },
-          ].map(({ name, constellationId }) => {
-            const cstMeta = constellations[constellationId];
-            const axisValues = constellationAxisValues[constellationId];
+              {[
+                { name: r.sourceName, constellationId: r.sourceConstellation },
+                { name: r.targetName, constellationId: r.targetConstellation },
+              ].map(({ name, constellationId }) => {
+                const cstMeta = constellations[constellationId];
+                const axisValues = constellationAxisValues[constellationId];
 
-            if (!cstMeta || !axisValues) return null;
+                if (!cstMeta || !axisValues) return null;
 
-            return (
-              <div key={name}>
-                <h3>Positionnement théorique — {name}</h3>
+                return (
+                  <div key={name}>
+                    <h3>Positionnement théorique — {name}</h3>
 
-                <p style={{ marginTop: -8, color: "var(--color-taupe)" }}>
-                  {cstMeta.label}
-                </p>
+                    <p style={{ marginTop: -8, color: "var(--color-taupe)" }}>
+                      {cstMeta.label}
+                    </p>
 
-                <ul>
-                  {Object.entries(axes).map(([axisKey, axisMeta]) => (
-                    <li key={axisKey}>
-                      <strong>{axisMeta.label}</strong>
-                      <br />
-                      {axisValues[axisKey]?.label}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
+                    <ul>
+                      {Object.entries(axes).map(([axisKey, axisMeta]) => (
+                        <li key={axisKey}>
+                          <strong>{axisMeta.label}</strong>
+                          <br />
+                          {axisValues[axisKey]?.label}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
+            </>
+          )}
         </>
       );
     }
@@ -611,7 +709,14 @@ export default function App() {
             </p>
           )}
 
-          {cst.definition && <p>{cst.definition}</p>}
+          {discoveryMode
+            ? (constellations[cst.id]?.simpleDefinition ?? cst.definition) && (
+                <p>
+                  {constellations[cst.id]?.simpleDefinition ??
+                    cst.definition}
+                </p>
+              )
+            : cst.definition && <p>{cst.definition}</p>}
 
           {cst.disciplines && cst.disciplines.length > 0 && (
             <div style={{ marginBottom: 12 }}>
@@ -648,7 +753,7 @@ export default function App() {
             </div>
           )}
 
-          {constellationAxisValues[cst.id] && (
+          {!discoveryMode && constellationAxisValues[cst.id] && (
             <>
               <h3>Positionnement théorique</h3>
 

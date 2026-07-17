@@ -368,4 +368,31 @@ export const concepts = [
     x: 1180,
     y: 620,
   },
+  {
+    id: "regimes-de-justification",
+    label: "Régimes de justification (cités)",
+    definition:
+      "Chez Boltanski et Thévenot, principes de justice partagés (marchand, industriel, domestique, civique, de l'opinion, inspiré...) auxquels les personnes se réfèrent pour justifier publiquement leurs actes et critiquer ceux des autres, lors d'une dispute.",
+    authors: ["luc-boltanski", "laurent-thevenot"],
+    x: 1780,
+    y: 350,
+  },
+  {
+    id: "equivalence-structurale",
+    label: "Équivalence structurale",
+    definition:
+      "Deux acteurs sont structuralement équivalents lorsqu'ils occupent des positions similaires dans un réseau de relations (mêmes types de liens avec les mêmes catégories d'autres acteurs), même s'ils ne sont pas directement en contact l'un avec l'autre.",
+    authors: ["harrison-white"],
+    x: 350,
+    y: 570,
+  },
+  {
+    id: "bifurcations-biographiques",
+    label: "Bifurcations biographiques",
+    definition:
+      "Changement majeur, soudain et durable dans une trajectoire de vie, caractérisé par un haut degré d'imprévisibilité et d'irréversibilité — par opposition aux évolutions progressives et prévisibles habituellement étudiées en sociologie.",
+    authors: ["bidart", "grossetti"],
+    x: 260,
+    y: 920,
+  },
 ];

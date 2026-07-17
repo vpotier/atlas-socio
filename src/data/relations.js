@@ -1302,4 +1302,14 @@ export const relations = [
       "Star & Griesemer, 1989, Institutional Ecology, 'Translations' and Boundary Objects, Social Studies of Science, 19(3), 387-420",
     ],
   },
+  {
+    source: "harrison-white",
+    target: "forse",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Forsé co-écrit avec Degenne l'ouvrage de référence qui importe et théorise l'analyse structurale de Harrison White en sociologie française sous le nom d'interactionnisme structural.",
+    sources: ["Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie"],
+  },
 ];

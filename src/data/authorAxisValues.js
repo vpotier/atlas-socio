@@ -1481,4 +1481,151 @@ export const authorAxisValues = {
       sources: ["Fischer, 1982, To Dwell Among Friends: Personal Networks in Town and City"],
     },
   },
+
+  "alain-touraine": {
+    individuSociete: {
+      value: 0.65,
+      label: "Primat de l'acteur et du sujet — contre le holisme systémique",
+      justification:
+        "Touraine construit sa sociologie de l'action contre celle de Parsons, qu'il juge trop centrée sur le système social : pour lui, la société est le produit de l'action des individus et des mouvements sociaux, et le sujet peut s'arracher aussi bien à ses identités héritées qu'au pur calcul de ses intérêts.",
+      sources: [
+        "Encyclopédie Universalis, Biographie d'Alain Touraine",
+        "Touraine, 1965, Sociologie de l'action, Seuil",
+      ],
+    },
+    methode: {
+      value: 0.85,
+      label: "Compréhensive — l'intervention sociologique",
+      justification:
+        "Touraine invente une méthode originale, l'intervention sociologique : réunir pendant plusieurs semaines un groupe de militants pour les faire s'auto-analyser collectivement, afin de faire apparaître le sens profond de leur engagement.",
+      sources: ["Touraine, 1978, La Voix et le regard, Seuil"],
+    },
+    rationalite: {
+      value: 0.6,
+      label: "Réflexive — capacité d'interprétation et de transformation de la conscience",
+      justification:
+        "Pour Touraine, les acteurs ont une vraie capacité d'analyse et d'interprétation de leur propre action, capable même de se transformer au cours du processus d'intervention sociologique lui-même.",
+      sources: ["Touraine, 1978, La Voix et le regard, Seuil"],
+    },
+  },
+
+  "wright-mills": {
+    individuSociete: {
+      value: 0.45,
+      label: "Relation — biographie individuelle et structures historiques",
+      justification:
+        "Pour Mills, l'individu ne peut trouver sa place qu'en la reliant au reste de la société ; les problèmes personnels (chômage, divorce) sont souvent le fait de changements structurels qui le dépassent.",
+      sources: ["Mills, 1959, L'Imagination sociologique"],
+    },
+    methode: {
+      value: 0.55,
+      label: "Voie médiane — méthodes historique et comparative",
+      justification:
+        "Mills attache une importance capitale à deux méthodes, la méthode historique et la méthode comparative, contre « l'empirisme abstrait » statistique et la « grande théorie » abstraite qu'il critique toutes deux.",
+      sources: ["Mills, 1959, L'Imagination sociologique"],
+    },
+    rationalite: {
+      value: 0.55,
+      label: "Réflexive — l'imagination sociologique",
+      justification:
+        "L'« imagination sociologique » est précisément la capacité réflexive à relier sa propre biographie individuelle à l'histoire générale de la société.",
+      sources: ["Mills, 1959, L'Imagination sociologique"],
+    },
+  },
+
+  ellul: {
+    individuSociete: {
+      value: 0.15,
+      label: "Primat de la technique comme système autonome",
+      justification:
+        "Pour Ellul, la technique est devenue au XXe siècle un système autonome qui échappe au contrôle humain et domine la société, transformant l'outil que l'homme maîtrisait en système auquel il est désormais assujetti.",
+      sources: ["Ellul, 1954, La Technique ou l'enjeu du siècle"],
+    },
+  },
+
+  desrosieres: {
+    methode: {
+      value: 0.4,
+      label: "Mixte — pratique statistique et histoire des conventions",
+      justification:
+        "Desrosières articule deux approches rarement tenues ensemble : la pratique statistique elle-même et l'analyse historique et sociologique de la façon dont ses catégories et conventions se sont construites au fil du temps.",
+      sources: [
+        "Desrosières, 1993, La Politique des grands nombres. Histoire de la raison statistique",
+      ],
+    },
+  },
+
+  hochschild: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — comme Goffman, au niveau de l'ordre de l'interaction",
+      justification:
+        "Hochschild prolonge explicitement l'approche dramaturgique de Goffman, se situant comme lui au niveau de l'interaction plutôt qu'à celui de l'individu isolé ou de la société comme un tout.",
+      sources: ["Hochschild, 1983, The Managed Heart"],
+    },
+    methode: {
+      value: 0.75,
+      label: "Compréhensive — entretiens et observation",
+      justification:
+        "Ses recherches (notamment sur les hôtesses de l'air) reposent sur des entretiens approfondis et de l'observation directe en milieu professionnel.",
+      sources: ["Hochschild, 1983, The Managed Heart"],
+    },
+    rationalite: {
+      value: 0.5,
+      label: "Située — le travail émotionnel selon des règles de sentiment",
+      justification:
+        "Le « travail émotionnel » consiste à gérer ses émotions ressenties et affichées selon des règles de sentiment sociales implicites — ni pur calcul, ni pur automatisme.",
+      sources: ["Hochschild, 1983, The Managed Heart"],
+    },
+  },
+
+  "nancy-fraser": {
+    individuSociete: {
+      value: 0.45,
+      label: "Relation — espace public communicationnel et exclusions structurelles",
+      justification:
+        "Comme Habermas dont elle prolonge et critique la théorie, Fraser situe l'analyse au niveau de l'espace public communicationnel, tout en étant plus attentive aux exclusions structurelles de genre et de classe qui le traversent.",
+      sources: ["Fraser, 1989, Unruly Practices"],
+    },
+    methode: {
+      value: 0.55,
+      label: "Théorique — philosophie politique critique",
+      justification:
+        "Fraser développe une argumentation de philosophie politique critique et normative, plutôt qu'une enquête empirique de terrain.",
+      sources: ["Fraser, 1989, Unruly Practices"],
+    },
+    rationalite: {
+      value: 0.55,
+      label: "Réflexive — revendications politiques argumentées",
+      justification:
+        "Sa théorie de la redistribution et de la reconnaissance suppose des acteurs capables de formuler des revendications politiques argumentées face aux injustices qu'ils subissent.",
+      sources: ["Fraser, 1989, Unruly Practices"],
+    },
+  },
+
+  "judith-butler": {
+    individuSociete: {
+      value: 0.3,
+      label: "Structures normatives réitérées — pas de sujet préexistant",
+      justification:
+        "Pour Butler, « il n'y a pas d'acteur derrière l'acte » : le sujet n'existe pas avant la répétition des normes de genre, il en est le produit — mais la parodie (comme les drag queens) garde un potentiel de subversion de ces normes.",
+      sources: [
+        "Butler, 1999, préface à la seconde édition de Gender Trouble",
+      ],
+    },
+    methode: {
+      value: 0.55,
+      label: "Théorique — démarche généalogique et déconstructive",
+      justification:
+        "Butler développe une démarche généalogique et déconstructive, inspirée d'Austin, Derrida et Foucault — un travail théorique et philosophique, non une enquête empirique de terrain.",
+      sources: ["Butler, 1990, Trouble dans le genre"],
+    },
+    rationalite: {
+      value: 0.35,
+      label: "Faible à situé — répétition non réfléchie, mais potentiel de parodie subversive",
+      justification:
+        "La répétition des normes de genre qui constitue le sujet est largement non réfléchie ; mais la parodie subversive (drag) introduit un potentiel critique et stratégique.",
+      sources: ["Butler, 1990, Trouble dans le genre"],
+    },
+  },
 };

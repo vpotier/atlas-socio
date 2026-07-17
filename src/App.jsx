@@ -100,6 +100,19 @@ export default function App() {
             constellation sur la carte.
           </p>
 
+          <p style={{ marginTop: 20 }}>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedItem({ type: "help", data: {} });
+              }}
+              style={{ color: "var(--color-tardis)", fontWeight: 600 }}
+            >
+              Comment utiliser l'Atlas →
+            </a>
+          </p>
+
           <p
             style={{
               marginTop: 32,
@@ -175,6 +188,119 @@ export default function App() {
         {text}
       </div>
     );
+
+    if (selectedItem.type === "help") {
+      return (
+        <>
+          {closeButton}
+
+          {tabLabel("Aide")}
+
+          <h2>Comment utiliser l'Atlas</h2>
+
+          <h3>Ce que contient l'Atlas</h3>
+
+          <p>
+            Une carte de 63 auteur·ices de théorie sociologique,
+            regroupé·es en 15 grands courants théoriques, auxquels
+            s'ajoutent quelques auteur·ices-ponts qui ne se rattachent
+            pleinement à aucun courant unique.
+          </p>
+
+          <p>
+            Chaque point cliquable ouvre une fiche : auteur·ice,
+            concept, ou courant théorique. Chaque trait reliant deux
+            auteur·ices est lui aussi cliquable, et ouvre sa propre
+            fiche synthétique et sourcée : héritage (marron), dialogue
+            (bleu), tension (rouge, pointillé).
+          </p>
+
+          <p>
+            L'ensemble des informations est sourcé : chaque fiche
+            indique les références académiques sur lesquelles elle
+            s'appuie.
+          </p>
+
+          <h3>Se repérer sur la carte</h3>
+
+          <p>
+            Zoomer/dézoomer à la molette ou en pinçant (sur mobile),
+            glisser pour se déplacer. Le bouton viseur (en haut à
+            droite) recentre la vue sur l'ensemble de la carte. Cliquer
+            sur le halo d'un courant théorique ouvre sa fiche :
+            définition, période, disciplines qui l'ont nourri.
+          </p>
+
+          <h3>Si vous êtes étudiant·e</h3>
+
+          <p>
+            Il peut être utile de commencer par explorer la carte sans
+            filtre : la disposition spatiale des courants théoriques,
+            issue des relations effectivement documentées entre leurs
+            auteur·ices, donne une première intuition de la manière
+            dont ils s'articulent les uns aux autres.
+          </p>
+
+          <p>
+            Cliquez sur un·e auteur·ice pour accéder à sa fiche
+            complète (résumé, œuvres, concepts, influences). Utilisez
+            la recherche pour retrouver rapidement un nom, un concept
+            ou un courant.
+          </p>
+
+          <p>
+            Le filtre par thème permet un premier balayage
+            bibliographique ciblé — par exemple, en période de révision
+            de partiels, pour retrouver rapidement l'ensemble des
+            auteur·ices ayant travaillé sur un objet donné (les études
+            de genre, la sociologie urbaine, etc.).
+          </p>
+
+          <h3>Si vous êtes enseignant·e</h3>
+
+          <p>
+            Les 3 curseurs de filtre (Individu/Société, Méthode,
+            Rationalité) permettent d'isoler les auteur·ices selon leur
+            positionnement épistémologique, ce qui peut être utile
+            pour construire une séance comparative.
+          </p>
+
+          <p>
+            Il est possible de masquer certains types de relations
+            (héritage, dialogue, tension) pour simplifier la lecture
+            en cours et concentrer l'attention des étudiant·es sur un
+            seul type de filiation.
+          </p>
+
+          <h3>Questions fréquentes</h3>
+
+          <p>
+            <strong>
+              Pourquoi tel auteur·ice est-il/elle classé·e dans tel
+              courant plutôt qu'un autre ?
+            </strong>
+            <br />
+            Voir la note de classification affichée dans sa fiche.
+          </p>
+
+          <p>
+            <strong>
+              Les positions sur les 3 axes sont-elles définitives ?
+            </strong>
+            <br />
+            Non, ce sont des lectures argumentées et sourcées, parfois
+            disputées dans la littérature — voir la justification
+            affichée pour chaque axe.
+          </p>
+
+          <p>
+            <strong>Puis-je proposer une correction ou un ajout ?</strong>
+            <br />
+            Oui, via le lien "Me contacter".
+          </p>
+        </>
+      );
+    }
 
     if (selectedItem.type === "author") {
       const a = selectedItem.data;

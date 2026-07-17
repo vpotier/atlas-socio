@@ -8,6 +8,8 @@ export const relations = [
     justification:
       "Bourdieu reprend et prolonge la notion durkheimienne de fait social, notamment via les concepts d'habitus et de champ.",
     sources: ["Fournier, 2007, Émile Durkheim"],
+    simpleExplanation:
+      "Bourdieu reprend et prolonge l'idée durkheimienne selon laquelle la société façonne les individus, notamment à travers ses notions d'habitus et de champ.",
   },
   {
     source: "bourdieu",
@@ -18,6 +20,8 @@ export const relations = [
     justification:
       "Dialogue critique entre l'objectivisme de Bourdieu et la sociologie compréhensive de Weber ; certains commentateurs minimisent cette filiation au profit de l'influence marxiste.",
     sources: ["Corcuff, 2003, Bourdieu autrement"],
+    simpleExplanation:
+      "Bourdieu dialogue de manière critique avec Weber : il partage son attention au sens de l'action, mais reproche à la sociologie compréhensive de trop s'en tenir au point de vue des individus.",
   },
   {
     source: "durkheim",
@@ -28,6 +32,8 @@ export const relations = [
     justification:
       "Opposition largement documentée entre holisme méthodologique (Durkheim) et individualisme méthodologique (Weber).",
     sources: ["Aron, 1967, Les Étapes de la pensée sociologique"],
+    simpleExplanation:
+      "Durkheim et Weber s'opposent sur un point fondamental : Durkheim explique les comportements par la société dans son ensemble, tandis que Weber part de l'individu et du sens qu'il donne à ses actes.",
   },
   {
     source: "talcott-parsons",
@@ -296,6 +302,8 @@ export const relations = [
     justification:
       "Bourdieu se démarque explicitement de l'anthropologie structurale de Lévi-Strauss en considérant que les représentations mentales des agents ne relèvent pas toutes de systèmes structuraux complexes, mais peuvent s'interpréter comme relevant d'un sens pratique non réfléchi.",
     sources: ["Accardo & Corcuff, 1989, La sociologie de Bourdieu"],
+    simpleExplanation:
+      "Bourdieu se démarque de Lévi-Strauss : pour lui, les façons de penser des individus ne relèvent pas toujours de structures complexes et inconscientes, mais souvent d'un sens pratique plus immédiat, forgé par l'expérience.",
   },
   {
     source: "levi-strauss",
@@ -326,6 +334,8 @@ export const relations = [
     justification:
       "Lazega mobilise la notion de capital social héritée de Bourdieu, tout en la reformulant dans un cadre structural de réseaux plutôt que de champs, ce qui l'éloigne partiellement de la théorie des champs bourdieusienne.",
     sources: ["Lazega, 2006, Réseaux sociaux et structures relationnelles"],
+    simpleExplanation:
+      "Lazega reprend l'idée bourdieusienne de capital social, mais la reformule dans le cadre de l'analyse des réseaux plutôt que dans celui des champs.",
   },
   {
     source: "comte",
@@ -336,6 +346,8 @@ export const relations = [
     justification:
       "Durkheim prolonge et systématise le projet positiviste de Comte, en faisant du fait social l'objet d'une science positive rigoureuse, débarrassée de la visée téléologique et moraliste du comtisme.",
     sources: ["Devinant, 1999, Introduction à la sociologie"],
+    simpleExplanation:
+      "Durkheim prolonge et systématise le projet de Comte : faire de l'étude de la société une science rigoureuse, débarrassée toutefois de sa dimension moralisatrice.",
   },
   {
     source: "marx",
@@ -406,6 +418,8 @@ export const relations = [
     justification:
       "Bourdieu critique la thèse de la performativité du genre de Butler ; celle-ci lui répond que le genre n'est pas un artifice que l'on pourrait assumer ou enlever à volonté, ni l'effet d'un simple choix individuel.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simpleExplanation:
+      "Bourdieu critique la thèse de Butler sur la performativité du genre ; celle-ci lui répond que le genre n'est pas un simple choix individuel que l'on pourrait assumer ou abandonner à volonté.",
   },
   {
     source: "erving-goffman",
@@ -446,6 +460,8 @@ export const relations = [
     justification:
       "Ancien collaborateur de Bourdieu, Boltanski rompt explicitement avec la sociologie critique du dévoilement pour fonder une sociologie pragmatique attentive aux compétences critiques ordinaires des acteurs.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simpleExplanation:
+      "Ancien collaborateur de Bourdieu, Boltanski s'en détache pour fonder une sociologie attentive à la capacité critique ordinaire des individus, plutôt qu'à la seule domination sociale.",
   },
   {
     source: "alain-touraine",
@@ -476,6 +492,8 @@ export const relations = [
     justification:
       "Touraine juge la sociologie classique de Durkheim inadaptée à l'étude des sociétés contemporaines, trop corrélée au paradigme industriel, et lui oppose le retour de l'acteur et de l'historicité.",
     sources: ["Touraine, 1984, Le Retour de l'acteur"],
+    simpleExplanation:
+      "Touraine juge la sociologie de Durkheim mal adaptée aux sociétés contemporaines et lui oppose l'importance de l'acteur et de sa capacité à transformer l'histoire.",
   },
   {
     source: "cooley",
@@ -628,6 +646,8 @@ export const relations = [
     justification:
       "The Structure of Social Action de Parsons opère une synthèse explicite de Durkheim, Weber et Pareto pour fonder sa théorie générale de l'action.",
     sources: ["Rocher, 1972, Talcott Parsons et la sociologie américaine"],
+    simpleExplanation:
+      "Parsons construit sa théorie générale de l'action en s'appuyant explicitement sur une synthèse des idées de Durkheim et de Weber.",
   },
   {
     source: "durkheim",
@@ -640,6 +660,8 @@ export const relations = [
     sources: [
       "Boudon & Bourricaud, 1982, Dictionnaire critique de la sociologie",
     ],
+    simpleExplanation:
+      "Merton prolonge directement la notion durkheimienne d'anomie, en l'appliquant à l'écart entre les buts valorisés par une société et les moyens légitimes dont disposent réellement les individus pour les atteindre.",
   },
   {
     source: "weber",
@@ -670,6 +692,8 @@ export const relations = [
     justification:
       "Berger reprend la question durkheimienne du fait social objectif pour l'articuler dialectiquement avec la construction subjective de la réalité.",
     sources: ["Lallement, 2000, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Berger reprend la question durkheimienne du fait social objectif pour l'articuler avec la construction subjective de la réalité par les individus.",
   },
   {
     source: "durkheim",
@@ -680,6 +704,8 @@ export const relations = [
     justification:
       "Luckmann reprend la question durkheimienne du fait social objectif pour l'articuler dialectiquement avec la construction subjective de la réalité.",
     sources: ["Corcuff, 2007, Les nouvelles sociologies"],
+    simpleExplanation:
+      "Luckmann reprend la question durkheimienne du fait social objectif pour l'articuler avec la construction subjective de la réalité par les individus.",
   },
   {
     source: "weber",
@@ -720,6 +746,8 @@ export const relations = [
     justification:
       "Giddens dialogue avec l'héritage durkheimien du fait social pour élaborer sa propre conception de la structure comme à la fois contrainte et ressource.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Giddens dialogue avec l'héritage durkheimien du fait social pour élaborer sa propre conception de la structure, à la fois contrainte et ressource pour l'action.",
   },
   {
     source: "bourdieu",
@@ -730,6 +758,8 @@ export const relations = [
     justification:
       "Darmon adopte une approche dispositionnaliste explicitement inspirée de Bourdieu pour analyser la fabrication des habitus (classes préparatoires, anorexie).",
     sources: ["Darmon, 2013, Classes préparatoires. La fabrique d'une jeunesse dominante"],
+    simpleExplanation:
+      "Darmon adopte une approche inspirée de Bourdieu pour analyser la fabrication des habitus, notamment en classes préparatoires ou chez des personnes anorexiques.",
   },
   {
     source: "becker",
@@ -740,6 +770,8 @@ export const relations = [
     justification:
       "Darmon mobilise explicitement la notion de carrière déviante de Becker (via l'étude Boys in White) pour analyser des processus de socialisation comme l'anorexie.",
     sources: ["Darmon, 2003, Devenir anorexique : une approche sociologique"],
+    simpleExplanation:
+      "Darmon reprend la notion de carrière déviante de Becker pour analyser des processus de socialisation comme l'anorexie.",
   },
   {
     source: "bourdieu",
@@ -750,6 +782,8 @@ export const relations = [
     justification:
       "Lahire critique l'unité présupposée de l'habitus bourdieusien et lui oppose une pluralité des dispositions individuelles selon les contextes sociaux traversés par un même acteur.",
     sources: ["Corcuff, 2007, Les nouvelles sociologies"],
+    simpleExplanation:
+      "Lahire critique l'idée d'un habitus unique et cohérent chez Bourdieu, et lui oppose une pluralité de dispositions individuelles selon les contextes sociaux traversés.",
   },
   {
     source: "bourdieu",
@@ -760,6 +794,8 @@ export const relations = [
     justification:
       "Wacquant est l'un des plus proches collaborateurs de Bourdieu, avec qui il co-écrit directement un ouvrage de référence sur la méthode réflexive, avant de prolonger ce cadre vers la sociologie urbaine comparée.",
     sources: ["Wacquant, 2006, Parias urbains. Ghetto, banlieues, État"],
+    simpleExplanation:
+      "Wacquant est l'un des plus proches collaborateurs de Bourdieu, avec qui il co-écrit un ouvrage de référence, avant de prolonger ce cadre vers l'étude de la marginalité urbaine.",
   },
   {
     source: "bourdieu",
@@ -770,6 +806,8 @@ export const relations = [
     justification:
       "Mauger applique et prolonge de façon soutenue le cadre théorique bourdieusien (habitus, capital, classes sociales) à la sociologie de la jeunesse populaire et de la déviance.",
     sources: ["Mauger, 2023, Avec Bourdieu. Un parcours sociologique"],
+    simpleExplanation:
+      "Mauger applique et prolonge le cadre théorique de Bourdieu (habitus, capital) à l'étude de la jeunesse des milieux populaires et de la déviance.",
   },
   {
     source: "erving-goffman",
@@ -790,6 +828,8 @@ export const relations = [
     justification:
       "Illouz reprend et étend le concept bourdieusien de capital pour analyser la valeur sociale différenciée des émotions et des relations affectives.",
     sources: ["CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions"],
+    simpleExplanation:
+      "Illouz reprend et étend le concept bourdieusien de capital pour analyser la valeur sociale des émotions et des relations affectives.",
   },
   {
     source: "weber",
@@ -800,6 +840,8 @@ export const relations = [
     justification:
       "Illouz applique la théorie wébérienne de la rationalisation à la sphère amoureuse et affective, montrant comment le choix du partenaire se rationalise sur le modèle du marché.",
     sources: ["CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions"],
+    simpleExplanation:
+      "Illouz applique la théorie wébérienne de la rationalisation à la sphère amoureuse, montrant comment le choix du partenaire se rapproche du modèle du marché.",
   },
   {
     source: "hochschild",
@@ -810,6 +852,8 @@ export const relations = [
     justification:
       "Illouz prolonge directement le concept de travail émotionnel de Hochschild en l'articulant à une théorie plus large du capitalisme émotionnel contemporain.",
     sources: ["CNRS Le journal, Eva Illouz, une sociologue contre la tyrannie des émotions"],
+    simpleExplanation:
+      "Illouz prolonge le concept de travail émotionnel de Hochschild en l'intégrant à une théorie plus large du capitalisme émotionnel contemporain.",
   },
   {
     source: "jürgen-habermas",
@@ -930,6 +974,8 @@ export const relations = [
     justification:
       "Dubar articule la théorie constructiviste de la socialisation avec les outils bourdieusiens de champ et de capital pour analyser les trajectoires professionnelles et identitaires.",
     sources: ["Dubar, 1991, La Socialisation"],
+    simpleExplanation:
+      "Dubar articule la théorie constructiviste de la socialisation avec les outils bourdieusiens de champ et de capital pour analyser les trajectoires professionnelles et identitaires.",
   },
   {
     source: "marx",
@@ -1161,6 +1207,8 @@ export const relations = [
     sources: [
       "Darmon, 2008, La notion de carrière : un instrument interactionniste d'objectivation, Sociétés contemporaines, 72(4), 27-46",
     ],
+    simpleExplanation:
+      "Darmon mobilise la notion de carrière issue de la sociologie de Hughes, transmise par Becker, pour analyser des processus de socialisation.",
   },
   {
     source: "degenne",
@@ -1251,6 +1299,8 @@ export const relations = [
     sources: [
       "Armatte, 2013, Alain Desrosières (1940-2013). La statistique, outil de preuve et de gouvernement, Hermès, La Revue, 66(2), 252-254",
     ],
+    simpleExplanation:
+      "Les premiers travaux de Desrosières restent largement inspirés de Bourdieu, avant qu'il ne se rapproche d'un autre courant, l'économie des conventions.",
   },
   {
     source: "marx",

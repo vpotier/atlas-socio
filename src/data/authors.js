@@ -1028,7 +1028,7 @@ export const authors = [
     y: 250,
     color: "#404954",
 
-    concepts: ["Idéologie", "Reproduction des rapports sociaux"],
+    concepts: ["Idéologie", "Reproduction des rapports sociaux", "Lecture symptomale"],
 
     works: ["Pour Marx (1965)", "Lire le Capital (1965)"],
 

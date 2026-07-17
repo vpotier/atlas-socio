@@ -51,6 +51,8 @@ export const concepts = [
     authors: ["talcott-parsons"],
     x: 950,
     y: 400,
+    simpleDefinition:
+      "Modèle selon lequel toute société doit remplir quatre fonctions essentielles pour se maintenir en équilibre : s'adapter à son environnement, atteindre ses buts, assurer la cohésion entre ses membres, et transmettre ses valeurs d'une génération à l'autre.",
   },
   {
     id: "fonction-manifeste-et-latente",
@@ -60,6 +62,8 @@ export const concepts = [
     authors: ["robert-k-merton"],
     x: 860,
     y: 650,
+    simpleDefinition:
+      "Distinction entre la fonction visible et voulue d'une pratique sociale, dite manifeste, et ses effets réels mais non intentionnels, souvent invisibles aux yeux des acteurs eux-mêmes, dits latents.",
   },
   {
     id: "equivalent-fonctionnel",
@@ -69,6 +73,8 @@ export const concepts = [
     authors: ["robert-k-merton"],
     x: 940,
     y: 650,
+    simpleDefinition:
+      "Idée selon laquelle une même fonction sociale peut être remplie par des institutions différentes selon les sociétés : il n'existe donc pas une seule façon nécessaire de répondre à un besoin social.",
   },
   {
     id: "effet-pervers",
@@ -78,6 +84,8 @@ export const concepts = [
     authors: ["raymond-boudon"],
     x: 150,
     y: 610,
+    simpleDefinition:
+      "Résultat collectif indésirable, produit involontairement par l'addition de choix individuels pourtant rationnels, sans qu'aucun des individus concernés ne l'ait souhaité.",
   },
   {
     id: "diagramme-de-coleman",
@@ -87,15 +95,8 @@ export const concepts = [
     authors: ["james-coleman"],
     x: 350,
     y: 650,
-  },
-  {
-    id: "rationalite-cognitive",
-    label: "Rationalité cognitive",
-    definition:
-      "Postulat sociologique élargissant la rationalité utilitaire, selon lequel un acteur adopte un comportement ou une croyance parce qu'il a des raisons valides et cohérentes d'y souscrire, compte tenu de son contexte et de ses informations.",
-    authors: ["raymond-boudon"],
-    x: 230,
-    y: 660,
+    simpleDefinition:
+      "Schéma représentant comment un phénomène collectif influence les individus, qui à leur tour, par leurs actions, produisent un nouveau phénomène collectif — reliant ainsi le niveau de la société et celui des individus.",
   },
   {
     id: "approche-dramaturgique",
@@ -105,6 +106,8 @@ export const concepts = [
     authors: ["erving-goffman"],
     x: 650,
     y: 730,
+    simpleDefinition:
+      "Manière d'analyser les interactions sociales en les comparant à une représentation théâtrale : chaque personne y joue un rôle, gère une mise en scène et cherche à contrôler l'image qu'elle donne à voir aux autres.",
   },
   {
     id: "institution-totale",
@@ -114,6 +117,8 @@ export const concepts = [
     authors: ["erving-goffman"],
     x: 600,
     y: 730,
+    simpleDefinition:
+      "Lieu fermé, comme un hôpital psychiatrique, une prison ou une caserne, dans lequel les résidents passent l'ensemble de leur vie quotidienne, coupés du monde extérieur et soumis à une organisation rigide qui encadre tous leurs faits et gestes.",
   },
   {
     id: "carriere-deviante",
@@ -332,6 +337,8 @@ export const concepts = [
     authors: ["hughes"],
     x: 700,
     y: 780,
+    simpleDefinition:
+      "Tâches ingrates ou dévalorisantes au sein d'un métier, que les membres d'une profession valorisée cherchent à déléguer à d'autres afin de préserver leur propre image.",
   },
   {
     id: "rationalite-cognitive",
@@ -341,6 +348,8 @@ export const concepts = [
     authors: ["raymond-boudon"],
     x: 180,
     y: 650,
+    simpleDefinition:
+      "Forme de rationalité selon laquelle un individu agit en fonction de croyances qui lui paraissent, dans son contexte, bien fondées — même lorsque ces croyances se révèlent par la suite fausses.",
   },
   {
     id: "double-transaction",
@@ -431,6 +440,8 @@ export const concepts = [
     authors: ["hochschild"],
     x: 720,
     y: 780,
+    simpleDefinition:
+      "Effort que demande, dans certains métiers, la gestion des émotions ressenties et affichées, pour les conformer aux attentes de la fonction exercée.",
   },
   {
     id: "performativite-du-genre",
@@ -440,6 +451,8 @@ export const concepts = [
     authors: ["judith-butler"],
     x: 1230,
     y: 150,
+    simpleDefinition:
+      "Idée selon laquelle le genre n'exprime pas une identité intérieure préexistante, mais se constitue par la répétition d'actes et de comportements conformes à des normes sociales.",
   },
   {
     id: "redistribution-reconnaissance",

@@ -1312,4 +1312,27 @@ export const relations = [
       "Forsé co-écrit avec Degenne l'ouvrage de référence qui importe et théorise l'analyse structurale de Harrison White en sociologie française sous le nom d'interactionnisme structural.",
     sources: ["Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie"],
   },
+  {
+    source: "nancy-fraser",
+    target: "judith-butler",
+    type: "tension",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Un débat direct oppose Fraser à Butler : Fraser reproche à la focalisation de Butler sur la performativité culturelle de négliger les injustices matérielles de redistribution, quand Butler lui répond que Fraser sépare artificiellement les luttes « culturelles » (jugées secondaires) des luttes économiques.",
+    sources: [
+      "Butler, 1997, Merely Cultural, Social Text, 15(3-4), 265-277",
+      "Fraser, 1998, Heterosexism, Misrecognition and Capitalism: A Response to Judith Butler, New Left Review, I/228",
+    ],
+  },
+  {
+    source: "talcott-parsons",
+    target: "alain-touraine",
+    type: "tension",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Touraine a suivi les séminaires de Parsons, mais construit sa sociologie de l'action précisément contre celle de Parsons, qu'il juge trop centrée sur le système social au détriment de l'acteur.",
+    sources: ["Encyclopédie Universalis, Biographie d'Alain Touraine"],
+  },
 ];

@@ -86,9 +86,11 @@ function computeConstellationCenters(authors, relations) {
         .forceLink(metaLinks)
         .id((d) => d.id)
         // Plus deux constellations sont fortement reliées, plus elles
-        // sont attirées l'une vers l'autre.
-        .distance((l) => Math.max(280, 700 - l.weight * 20))
-        .strength((l) => Math.min(0.8, 0.1 + l.weight * 0.02))
+        // sont attirées l'une vers l'autre — sensible même à un petit
+        // nombre de relations réelles (pas seulement aux courants très
+        // densément connectés entre eux).
+        .distance((l) => Math.max(280, 620 - l.weight * 35))
+        .strength((l) => Math.min(0.85, 0.15 + l.weight * 0.035))
     )
     .force("charge", d3.forceManyBody().strength(-2600))
     .force(
@@ -132,6 +134,21 @@ export function computeLayout(authors, concepts, relations) {
     authors.map((a) => [a.id, a.constellation])
   );
 
+  // Degré de chaque auteur (nombre de relations où il apparaît, en
+  // source ou en cible) : sert à la fois à agrandir visuellement les
+  // auteurs les plus centraux et à leur donner davantage d'espace de
+  // collision, puisqu'ils attirent mécaniquement plus de traits.
+  const authorDegree = new Map();
+  authors.forEach((a) => authorDegree.set(a.id, 0));
+  relations.forEach((r) => {
+    if (authorDegree.has(r.source)) {
+      authorDegree.set(r.source, authorDegree.get(r.source) + 1);
+    }
+    if (authorDegree.has(r.target)) {
+      authorDegree.set(r.target, authorDegree.get(r.target) + 1);
+    }
+  });
+
   const authorNodes = authors.map((a) => {
     const c = constellationCenters[a.constellation] ?? center;
 
@@ -139,6 +156,7 @@ export function computeLayout(authors, concepts, relations) {
       id: a.id,
       kind: "author",
       constellation: a.constellation,
+      degree: authorDegree.get(a.id) ?? 0,
       x: c.x + (random() - 0.5) * 150,
       y: c.y + (random() - 0.5) * 150,
     };
@@ -203,11 +221,15 @@ export function computeLayout(authors, concepts, relations) {
           if (l.kind === "concept-link") return 0.9;
           // Relation interne à une constellation : rapproche vraiment,
           // proportionnellement à sa force réelle.
-          // Relation entre deux constellations différentes : influence
-          // très légère, la proximité macro est déjà gérée à l'étage 1.
+          // Relation entre deux constellations différentes : AUCUNE
+          // influence sur la position individuelle — la proximité entre
+          // courants est entièrement décidée à l'étage macro (1). Sans
+          // ça, un auteur avec beaucoup de relations sortantes (même
+          // individuellement faibles) finit par dériver hors de son
+          // propre halo, faute de collègues pour le retenir.
           return l.sameConstellation
             ? Math.min(0.6, 0.15 + l.strength * 0.07)
-            : 0.01;
+            : 0;
         })
     )
     .force("charge", d3.forceManyBody().strength(-380))
@@ -217,7 +239,7 @@ export function computeLayout(authors, concepts, relations) {
         .forceCollide()
         .radius((d) =>
           d.kind === "author"
-            ? 78
+            ? 70 + Math.min(d.degree ?? 0, 20) * 3
             : 55 + Math.min(d.labelLength ?? 10, 30) * 4
         )
         .strength(1)
@@ -281,7 +303,7 @@ export function computeLayout(authors, concepts, relations) {
 
   nodes.forEach((n) => {
     if (n.kind === "author") {
-      authorPositions.set(n.id, { x: n.x, y: n.y });
+      authorPositions.set(n.id, { x: n.x, y: n.y, degree: n.degree });
     } else {
       conceptPositions.set(n.id.replace("concept:", ""), {
         x: n.x,

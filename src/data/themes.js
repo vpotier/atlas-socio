@@ -12,4 +12,7 @@ export const themes = [
   "Sociologie de l'éducation et de la socialisation",
   "Sociologie de la religion",
   "Sociologie des émotions",
+  "Sociologie de la famille",
+  "Sociologie du corps et de la santé",
+  "Sociologie des classes sociales et de la stratification",
 ];

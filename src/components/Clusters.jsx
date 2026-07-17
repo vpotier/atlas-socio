@@ -46,13 +46,15 @@ export default function Clusters({
           members.reduce((sum, m) => sum + m.y, 0) /
           members.length;
 
+        const maxRadius = 140 + members.length * 28;
+
         const radius = Math.min(
           Math.max(
             ...members.map((m) =>
               Math.hypot(m.x - cx, m.y - cy)
             )
           ) + 90,
-          320
+          maxRadius
         );
 
         const isSelected =

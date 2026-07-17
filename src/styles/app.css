@@ -152,8 +152,8 @@ button {
 
 .floating-filters {
   position: absolute;
-  top: 20px;
-  left: 360px;
+  top: 64px;
+  left: 20px;
   z-index: 1100;
 }
 
@@ -162,13 +162,6 @@ button {
   bottom: 20px;
   left: 20px;
   z-index: 1100;
-}
-
-.floating-credit {
-  position: absolute;
-  bottom: 12px;
-  right: 356px;
-  z-index: 1000;
 }
 
 .floating-recenter {
@@ -238,16 +231,9 @@ button {
     bottom: auto;
   }
 
-  /* Bas d'écran, empilés à gauche : légende puis crédit au-dessus */
+  /* Bas d'écran : légende */
   .floating-legend {
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
     left: 12px;
-  }
-
-  .floating-credit {
-    bottom: calc(56px + env(safe-area-inset-bottom, 0px));
-    left: 12px;
-    right: auto;
-    font-size: 10px !important;
   }
 }

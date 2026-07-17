@@ -8,7 +8,7 @@ export const concepts = [
     x: 420,
     y: 470,
     simpleDefinition:
-      "Tout ce qu'on a appris sans s'en rendre compte, depuis qu'on est petit·e, en grandissant dans notre famille et notre milieu : nos goûts, nos façons de parler ou de nous tenir. Ça nous influence énormément, même quand on pense choisir librement.",
+      "Ensemble de dispositions acquises inconsciemment depuis l'enfance, au sein de la famille et du milieu social : nos goûts, nos façons de parler ou de nous tenir. Cet ensemble nous influence fortement, même lorsque nous pensons choisir librement.",
   },
   {
     id: "champ",
@@ -28,7 +28,7 @@ export const concepts = [
     x: 140,
     y: 240,
     simpleDefinition:
-      "Ce qui se passe quand les règles communes d'une société s'affaiblissent : les gens se sentent perdus, sans repères clairs pour savoir comment agir.",
+      "Situation dans laquelle les règles communes d'une société s'affaiblissent : les individus se sentent alors perdus, sans repères clairs pour orienter leur action.",
   },
   {
     id: "action-sociale",
@@ -39,7 +39,7 @@ export const concepts = [
     x: 720,
     y: 260,
     simpleDefinition:
-      "Un acte qu'on fait en tenant compte des autres et du sens qu'on lui donne soi-même — pas juste un réflexe, mais quelque chose qui a une signification pour la personne qui le fait.",
+      "Acte accompli en tenant compte d'autrui et du sens qu'on lui donne soi-même — non un simple réflexe, mais un comportement qui revêt une signification pour la personne qui l'accomplit.",
   },
   {
     id: "modele-agil",

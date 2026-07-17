@@ -40,11 +40,8 @@ export default function Authors({
               cx={author.x}
               cy={author.y}
               r={
-                isSelected
-                  ? 25
-                  : isHovered
-                  ? 22
-                  : 20
+                (isSelected ? 25 : isHovered ? 22 : 20) +
+                Math.min(author.degree ?? 0, 20) * 0.7
               }
               fill={author.color}
               stroke={isSelected ? "#1b3f66" : "#ede6d9"}
@@ -60,7 +57,7 @@ export default function Authors({
 
             <text
               x={author.x}
-              y={author.y + 38}
+              y={author.y + 38 + Math.min(author.degree ?? 0, 20) * 0.7}
               textAnchor="middle"
               fontSize="14.5"
               fontFamily="Inter, sans-serif"

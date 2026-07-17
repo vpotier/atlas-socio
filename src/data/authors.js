@@ -1097,6 +1097,11 @@ export const authors = [
       "Devinant, 1999, Introduction à la sociologie",
       "Lallement, 2017, Histoire des idées sociologiques",
     ],
+
+    simple: {
+      summary:
+        "Auguste Comte est considéré comme le fondateur du positivisme et l'un des premiers penseurs à vouloir fonder une science de la société. Il pousse plus loin encore l'idée de Durkheim : pour lui, l'individu isolé n'existe pas vraiment, ce n'est qu'une abstraction, car chacun est toujours façonné par la société dans laquelle il vit. Comte pense que l'humanité progresse nécessairement à travers trois grandes étapes de pensée (religieuse, puis philosophique, puis scientifique), un mouvement historique qu'aucun individu ne maîtrise vraiment.",
+    },
   },
 
   {
@@ -1596,6 +1601,11 @@ export const authors = [
       "Lahire est identifié comme l'un des principaux continuateurs critiques de Bourdieu, dont il complexifie la théorie de l'habitus par une attention à la pluralité et à la variabilité contextuelle des dispositions individuelles.",
     sources: ["Corcuff, 2007, Les nouvelles sociologies"],
     themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie de la famille", "Sociologie des classes sociales et de la stratification"],
+
+    simple: {
+      summary:
+        "Bernard Lahire prolonge et nuance la théorie de Bourdieu : selon lui, un même individu ne possède pas un habitus unique et cohérent, mais un ensemble de dispositions parfois contradictoires, acquises au contact de milieux sociaux différents (la famille, l'école, les groupes d'amis). Selon le contexte, l'une ou l'autre de ces dispositions se manifeste. Lahire s'appuie sur des entretiens et des récits de vie pour étudier ces variations d'un individu à l'autre, et même chez une même personne.",
+    },
   },
 
   {
@@ -1632,6 +1642,11 @@ export const authors = [
       "Darmon, 2003, Devenir anorexique : une approche sociologique",
     ],
     themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie du corps et de la santé"],
+
+    simple: {
+      summary:
+        "Muriel Darmon combine deux approches habituellement distinctes : celle de Bourdieu, qui s'intéresse aux structures sociales profondes, et celle de Becker, qui s'intéresse aux étapes concrètes d'un parcours individuel (la notion de « carrière »). Elle étudie ainsi comment des dispositions se fabriquent progressivement, par exemple chez des élèves de classes préparatoires ou chez des personnes anorexiques, à travers un ensemble d'étapes et d'expériences vécues.",
+    },
   },
 
   {
@@ -1668,6 +1683,11 @@ export const authors = [
       "Wacquant, 2006, Parias urbains. Ghetto, banlieues, État",
     ],
     themes: ["Sociologie urbaine", "Sociologie politique et de l'État", "Sociologie du corps et de la santé", "Sociologie des classes sociales et de la stratification"],
+
+    simple: {
+      summary:
+        "Loïc Wacquant est l'un des plus proches collaborateurs de Pierre Bourdieu. Il prolonge ses idées en les appliquant à l'étude de la marginalité urbaine (les quartiers pauvres, les prisons) et en poussant l'enquête de terrain jusqu'à s'immerger totalement dans son objet d'étude : pour comprendre le monde de la boxe, il s'y entraîne lui-même pendant plusieurs années.",
+    },
   },
 
   {
@@ -1703,6 +1723,11 @@ export const authors = [
       "Mauger, 2023, Avec Bourdieu. Un parcours sociologique",
     ],
     themes: ["Sociologie de la déviance", "Sociologie de l'éducation et de la socialisation", "Sociologie des classes sociales et de la stratification"],
+
+    simple: {
+      summary:
+        "Gérard Mauger applique le cadre théorique de Bourdieu (habitus, capital) à l'étude de la jeunesse des milieux populaires et des comportements déviants. Il privilégie l'enquête de terrain et les entretiens directs, en portant une attention particulière à la relation qui s'établit entre le sociologue et les personnes qu'il interroge.",
+    },
   },
 
   {
@@ -1778,6 +1803,11 @@ export const authors = [
       "Illouz, 2012, Pourquoi l'amour fait mal",
     ],
     themes: ["Études de genre", "Sociologie économique", "Sociologie des émotions"],
+
+    simple: {
+      summary:
+        "Eva Illouz étudie la manière dont le capitalisme et la culture contemporaine façonnent jusqu'à nos sentiments les plus intimes, en particulier l'amour. Elle montre que la sphère amoureuse se rationalise de plus en plus, sur le modèle du marché : chacun compare et évalue ses partenaires potentiels un peu comme des biens de consommation. Elle mêle pour cela l'analyse de contenus culturels (livres de développement personnel, films, applications de rencontre) et des témoignages recueillis auprès de particuliers.",
+    },
   },
 
   {

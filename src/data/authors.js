@@ -34,6 +34,11 @@ export const authors = [
       "Coenen-Huther, 2003, Sociologie",
       "Fournier, 2007, Émile Durkheim",
     ],
+
+    simple: {
+      summary:
+        "Émile Durkheim pensait que c'est la société tout entière qui explique comment on se comporte, bien plus que notre volonté personnelle : les règles, les habitudes, la religion, tout ça vient de la société et s'impose à nous, un peu comme la pesanteur nous tire vers le sol sans qu'on y pense. Pour lui, pour bien comprendre les gens, il fallait regarder la société comme un tout, un peu comme on étudierait une fourmilière plutôt qu'une seule fourmi. C'est aussi l'un des tout premiers à avoir voulu faire de la sociologie une vraie science, avec des méthodes aussi rigoureuses qu'en biologie.",
+    },
   },
 
   {
@@ -70,6 +75,11 @@ export const authors = [
       "Aron, 1967, Les Étapes de la pensée sociologique",
       "Boudon & Bourricaud, 1982, Dictionnaire critique de la sociologie",
     ],
+
+    simple: {
+      summary:
+        "Max Weber pensait un peu à l'inverse de Durkheim : pour comprendre la société, il faut d'abord comprendre pourquoi CHAQUE personne agit comme elle agit, et le sens qu'elle donne elle-même à ses actes. Pour lui, il existe plusieurs façons d'être « raisonnable » : on peut agir par calcul, par conviction profonde, par habitude ou par émotion — et ces façons sont toutes légitimes à étudier, pas seulement le calcul froid.",
+    },
   },
 
   {
@@ -107,6 +117,11 @@ export const authors = [
       "Corcuff, 2003, Bourdieu autrement",
       "Lahire (dir.), 1999, Le travail sociologique de Pierre Bourdieu",
     ],
+
+    simple: {
+      summary:
+        "Pierre Bourdieu pensait que la société nous façonne très profondément, mais sans qu'on s'en rende compte : elle s'imprime en nous, dans notre corps et nos habitudes, dès l'enfance — il appelait ça l'« habitus ». Par exemple, nos goûts en musique ou en nourriture ne sont pas vraiment « à nous » : ils dépendent beaucoup du milieu social dans lequel on a grandi. Pour étudier ça, il combinait de grandes enquêtes chiffrées avec une observation très fine du quotidien des gens.",
+    },
   },
 
   {

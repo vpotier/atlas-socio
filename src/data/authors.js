@@ -37,7 +37,7 @@ export const authors = [
 
     simple: {
       summary:
-        "Émile Durkheim pensait que c'est la société tout entière qui explique comment on se comporte, bien plus que notre volonté personnelle : les règles, les habitudes, la religion, tout ça vient de la société et s'impose à nous, un peu comme la pesanteur nous tire vers le sol sans qu'on y pense. Pour lui, pour bien comprendre les gens, il fallait regarder la société comme un tout, un peu comme on étudierait une fourmilière plutôt qu'une seule fourmi. C'est aussi l'un des tout premiers à avoir voulu faire de la sociologie une vraie science, avec des méthodes aussi rigoureuses qu'en biologie.",
+        "Émile Durkheim pense que c'est la société dans son ensemble qui explique le comportement des individus, bien plus que leur volonté personnelle : les règles, les habitudes ou la religion viennent de la société et s'imposent à nous, un peu comme la pesanteur nous attire vers le sol sans qu'on y pense. Pour bien comprendre les individus, il faut donc regarder la société comme un tout, un peu comme on étudierait une fourmilière plutôt qu'une seule fourmi. Durkheim est aussi l'un des tout premiers à vouloir faire de la sociologie une science à part entière, avec des méthodes aussi rigoureuses qu'en biologie.",
     },
   },
 
@@ -78,7 +78,7 @@ export const authors = [
 
     simple: {
       summary:
-        "Max Weber pensait un peu à l'inverse de Durkheim : pour comprendre la société, il faut d'abord comprendre pourquoi CHAQUE personne agit comme elle agit, et le sens qu'elle donne elle-même à ses actes. Pour lui, il existe plusieurs façons d'être « raisonnable » : on peut agir par calcul, par conviction profonde, par habitude ou par émotion — et ces façons sont toutes légitimes à étudier, pas seulement le calcul froid.",
+        "Max Weber pense à l'inverse de Durkheim : pour comprendre la société, il faut d'abord comprendre pourquoi chaque personne agit comme elle le fait, et le sens qu'elle donne elle-même à ses actes. Pour lui, il existe plusieurs façons d'être « raisonnable » : on peut agir par calcul, par conviction profonde, par habitude ou par émotion — ces différentes façons méritent toutes d'être étudiées, pas seulement le calcul froid.",
     },
   },
 
@@ -120,7 +120,7 @@ export const authors = [
 
     simple: {
       summary:
-        "Pierre Bourdieu pensait que la société nous façonne très profondément, mais sans qu'on s'en rende compte : elle s'imprime en nous, dans notre corps et nos habitudes, dès l'enfance — il appelait ça l'« habitus ». Par exemple, nos goûts en musique ou en nourriture ne sont pas vraiment « à nous » : ils dépendent beaucoup du milieu social dans lequel on a grandi. Pour étudier ça, il combinait de grandes enquêtes chiffrées avec une observation très fine du quotidien des gens.",
+        "Pierre Bourdieu pense que la société façonne les individus très profondément, sans qu'ils en aient conscience : elle s'imprime en eux, dans leur corps et leurs habitudes, dès l'enfance — c'est ce qu'il nomme l'« habitus ». Nos goûts en musique ou en alimentation, par exemple, ne relèvent pas d'un choix purement personnel : ils dépendent largement du milieu social dans lequel nous avons grandi. Pour l'étudier, Bourdieu combine de grandes enquêtes statistiques avec une observation fine du quotidien des individus.",
     },
   },
 

@@ -18,6 +18,8 @@ export const concepts = [
     authors: ["bourdieu"],
     x: 460,
     y: 420,
+    simpleDefinition:
+      "Espace social dans lequel des individus occupent des positions différentes et entrent en concurrence pour obtenir des ressources (l'argent, la reconnaissance, le pouvoir...) et pour définir ce qui compte comme important dans ce domaine.",
   },
   {
     id: "anomie",
@@ -121,6 +123,8 @@ export const concepts = [
     authors: ["becker", "muriel-darmon"],
     x: 470,
     y: 740,
+    simpleDefinition:
+      "Suite d'étapes par lesquelles une personne s'engage progressivement dans un comportement réprouvé par la société, en apprend les techniques, et finit par se voir attribuer une identité liée à ce comportement aux yeux des autres.",
   },
   {
     id: "force-des-liens-faibles",

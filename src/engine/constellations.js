@@ -6,6 +6,8 @@ export const constellations = {
     definition:
       "Fondée par Durkheim, elle étudie les faits sociaux comme des « choses » extérieures et contraignantes pour l'individu, dans une perspective holiste et positiviste : c'est la société qui explique l'individu, non l'inverse.",
     disciplines: ["Philosophie", "Biologie"],
+    simpleDefinition:
+      "Fondé par Durkheim, ce courant pense que c'est la société dans son ensemble qui explique comment se comportent les individus, et non l'inverse. On y étudie les règles, les habitudes et les croyances communes comme des choses qui s'imposent à nous de l'extérieur, un peu malgré nous.",
   },
   weberien: {
     label: "Sociologie compréhensive",
@@ -14,6 +16,8 @@ export const constellations = {
     definition:
       "Fondée par Weber, elle cherche à comprendre le sens subjectif que les acteurs donnent à leurs actions, plutôt qu'à en expliquer les causes extérieures. L'individu et sa rationalité propre y occupent une place centrale.",
     disciplines: ["Droit", "Histoire", "Économie"],
+    simpleDefinition:
+      "Fondé par Weber, ce courant part de l'individu : pour comprendre la société, il faut d'abord comprendre le sens que chaque personne donne à ce qu'elle fait. Pour Weber, il existe plusieurs façons d'être raisonnable, pas une seule.",
   },
   bourdieusien: {
     label: "Constructivisme structuraliste",
@@ -22,6 +26,8 @@ export const constellations = {
     definition:
       "Portée par Bourdieu, elle articule structures sociales objectives et pratiques individuelles incorporées, à travers les notions d'habitus, de champ et de capital.",
     disciplines: ["Philosophie", "Anthropologie", "Linguistique"],
+    simpleDefinition:
+      "Porté par Bourdieu, ce courant pense que la société nous façonne en profondeur, jusque dans nos goûts et nos habitudes, sans qu'on en ait toujours conscience.",
   },
   fonctionnalisme: {
     label: "Fonctionnalisme",

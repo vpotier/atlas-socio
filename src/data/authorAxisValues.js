@@ -1544,6 +1544,16 @@ export const authorAxisValues = {
   },
 
   desrosieres: {
+    individuSociete: {
+      value: 0.45,
+      label: "Relation — médiation par les dispositifs de quantification",
+      justification:
+        "Chez Desrosières, l'action individuelle est médiatisée par des dispositifs de quantification qui construisent à la fois les acteurs, les catégories et les formes de coordination sociale.",
+      sources: [
+        "Desrosières, 1993, La Politique des grands nombres. Histoire de la raison statistique",
+        "Desrosières & Thévenot, 1988, Les catégories socioprofessionnelles",
+      ],
+    },
     methode: {
       value: 0.4,
       label: "Mixte — pratique statistique et histoire des conventions",

@@ -2077,7 +2077,7 @@ export const authors = [
     y: 780,
     color: "#DBBA00",
 
-    concepts: ["Mode d'existence des objets techniques"],
+    concepts: ["Mode d'existence des objets techniques", "Transindividuel"],
 
     works: ["Du mode d'existence des objets techniques (1958)"],
 

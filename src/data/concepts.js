@@ -440,4 +440,13 @@ export const concepts = [
     x: 1600,
     y: 400,
   },
+  {
+    id: "transindividuel",
+    label: "Transindividuel",
+    definition:
+      "Chez Simondon, processus par lequel l'individuel et le collectif s'individuent en même temps, l'un ne précédant jamais l'autre — à distinguer aussi bien de l'idée que « les individus font le groupe » que de l'idée inverse que « le groupe fait les individus ».",
+    authors: ["simondon"],
+    x: 1650,
+    y: 800,
+  },
 ];

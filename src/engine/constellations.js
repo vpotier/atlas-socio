@@ -36,6 +36,8 @@ export const constellations = {
     definition:
       "La société y est pensée comme un système dont chaque institution remplit une fonction contribuant à son équilibre global, de l'anthropologie fonctionnaliste (Malinowski) au structuralo-fonctionnalisme américain (Parsons, Merton).",
     disciplines: ["Anthropologie", "Biologie"],
+    simpleDefinition:
+      "Ce courant compare la société à un organisme vivant : chaque institution (la famille, l'école, la religion...) y remplit une fonction précise, un peu comme chaque organe remplit une fonction dans un corps, et contribue ainsi à l'équilibre de l'ensemble.",
   },
   "l-individualisme-methodologique": {
     label: "Individualisme méthodologique",
@@ -44,6 +46,8 @@ export const constellations = {
     definition:
       "Elle explique les phénomènes collectifs comme le résultat de l'agrégation d'actions individuelles rationnelles, quitte à produire des effets pervers non désirés par personne (Boudon, Coleman).",
     disciplines: ["Économie"],
+    simpleDefinition:
+      "Ce courant explique les phénomènes collectifs comme le résultat de la somme des choix individuels : chacun agit rationnellement selon ses propres intérêts, mais l'addition de ces choix peut produire, à l'échelle de la société, un résultat que personne n'avait vraiment souhaité.",
   },
   "l-interactionnisme-symbolique": {
     label: "Interactionnisme symbolique",
@@ -52,6 +56,8 @@ export const constellations = {
     definition:
       "Issue de l'École de Chicago (Mead, Cooley), elle considère que l'ordre social se construit en continu dans l'interaction quotidienne face à face, à travers l'interprétation mutuelle des symboles et des rôles (Blumer, Goffman, Becker).",
     disciplines: ["Philosophie (pragmatisme)", "Psychologie sociale"],
+    simpleDefinition:
+      "Ce courant considère que l'ordre social ne préexiste pas aux individus : il se construit et se renouvelle en permanence dans les interactions du quotidien, à mesure que les personnes interprètent les gestes, les paroles et les rôles des autres.",
   },
   "l-interactionnisme-structural": {
     label: "Interactionnisme structural",

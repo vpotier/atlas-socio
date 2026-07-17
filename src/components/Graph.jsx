@@ -135,6 +135,23 @@ export default function Graph({
     );
   }, [selectedConstellationId, authors]);
 
+  // Pour l'atténuation des nœuds : les membres de la constellation, PLUS
+  // tout auteur relié à l'un d'eux par une relation (même s'il
+  // appartient à une autre constellation) — pour ne jamais faire
+  // disparaître visuellement un lien affiché en pleine opacité.
+  const constellationNeighbourhoodIds = useMemo(() => {
+    if (!constellationAuthorIds) return null;
+
+    const ids = new Set(constellationAuthorIds);
+
+    relations.forEach((r) => {
+      if (constellationAuthorIds.has(r.source)) ids.add(r.target);
+      if (constellationAuthorIds.has(r.target)) ids.add(r.source);
+    });
+
+    return ids;
+  }, [constellationAuthorIds]);
+
   // --- Filtres théoriques (axes) et thématiques ---
   const activeAxisEntries = useMemo(
     () =>
@@ -390,10 +407,18 @@ export default function Graph({
 
   const authorDimIds = filtersActive
     ? filterVisibleAuthorIds
-    : neighbourIds || conceptAuthors;
+    : constellationNeighbourhoodIds || neighbourIds || conceptAuthors;
 
   const conceptDimIds = filtersActive
     ? filterVisibleConceptIds
+    : constellationAuthorIds
+    ? new Set(
+        concepts
+          .filter((c) =>
+            c.authors.some((id) => constellationAuthorIds.has(id))
+          )
+          .map((c) => c.id)
+      )
     : null;
 
   return (

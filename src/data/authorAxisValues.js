@@ -1638,4 +1638,17 @@ export const authorAxisValues = {
       sources: ["Butler, 1990, Trouble dans le genre"],
     },
   },
+
+  simondon: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — le « transindividuel », ni individualisme ni holisme",
+      justification:
+        "Simondon refuse d'opposer l'individu et la société comme deux substances séparées. Son concept de « transindividuel » désigne un processus où l'individuel et le collectif s'individuent en même temps, l'un ne précédant jamais l'autre — rejetant explicitement aussi bien l'idée que « les individus font le groupe » que l'idée inverse que « le groupe fait les individus ».",
+      sources: [
+        "Simondon, 1989, L'Individuation psychique et collective, Aubier",
+        "Combes, 1999, Simondon. Individu et collectivité. Pour une philosophie du transindividuel, PUF",
+      ],
+    },
+  },
 };

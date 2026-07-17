@@ -30,11 +30,22 @@ export default function App() {
     tension: true,
   });
 
+  // Sur mobile, la fiche latérale ne s'affiche normalement que lorsqu'un
+  // élément est sélectionné (pour laisser la carte plein écran). Ce
+  // bouton permet d'ouvrir quand même le panneau d'accueil (crédits,
+  // aide) sans rien sélectionner.
+  const [mobileHomeOpen, setMobileHomeOpen] = useState(false);
+
+  const closeSheet = () => {
+    setSelectedItem(null);
+    setMobileHomeOpen(false);
+  };
+
   // Fermer la fiche avec la touche Échap (ordinateur)
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
-        setSelectedItem(null);
+        closeSheet();
       }
     };
 
@@ -55,7 +66,7 @@ export default function App() {
     const deltaY = e.changedTouches[0].clientY - touchStartY.current;
 
     if (deltaY > 70) {
-      setSelectedItem(null);
+      closeSheet();
     }
 
     touchStartY.current = null;
@@ -122,7 +133,7 @@ export default function App() {
         }}
       >
         <button
-          onClick={() => setSelectedItem(null)}
+          onClick={closeSheet}
           className="icon-button"
           style={{
             border: "none",
@@ -578,6 +589,20 @@ export default function App() {
 
       <Legend />
 
+      {isMobile && (
+        <button
+          onClick={() => {
+            setSelectedItem(null);
+            setMobileHomeOpen(true);
+          }}
+          className="icon-button floating-info"
+          aria-label="Informations et crédits"
+          title="Informations et crédits"
+        >
+          i
+        </button>
+      )}
+
       <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
         <Graph
           selectedItem={selectedItem}
@@ -588,7 +613,7 @@ export default function App() {
         />
       </div>
 
-      {(!isMobile || selectedItem) && (
+      {(!isMobile || selectedItem || mobileHomeOpen) && (
         <aside
           className={isMobile ? "mobile-sheet" : undefined}
           onTouchStart={isMobile ? handleSheetTouchStart : undefined}

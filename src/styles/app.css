@@ -171,6 +171,26 @@ button {
   z-index: 1000;
 }
 
+.floating-info {
+  position: absolute;
+  bottom: 20px;
+  left: 130px;
+  z-index: 1000;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--color-taupe);
+  background: var(--color-paper-dim);
+  color: var(--color-tardis);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Fiche mobile : plein écran en portrait (peu de largeur disponible),
    mais limitée à un panneau latéral raisonnable en paysage (large mais
    bas), pour ne pas envahir tout l'écran alors que de la largeur ne
@@ -235,5 +255,10 @@ button {
   .floating-legend {
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
     left: 12px;
+  }
+
+  .floating-info {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    left: 110px;
   }
 }

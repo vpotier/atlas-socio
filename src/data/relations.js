@@ -1290,4 +1290,16 @@ export const relations = [
       "Marcuse critique explicitement Fromm dans la postface d'Éros et civilisation, lui reprochant un optimisme « révisionniste » : croire qu'un individu peut s'émanciper par la seule psychanalyse, alors que la société est selon lui objectivement et totalement aliénante.",
     sources: ["Marcuse, 1955, Éros et civilisation, postface"],
   },
+  {
+    source: "michel-callon",
+    target: "susan-leigh-star",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Le concept d'« objet-frontière » (boundary object) que développe Star prolonge explicitement le modèle de l'intéressement élaboré par Callon. Star a par ailleurs effectué un séjour de recherche au Centre de sociologie de l'innovation, où elle a directement collaboré avec Callon et Latour.",
+    sources: [
+      "Star & Griesemer, 1989, Institutional Ecology, 'Translations' and Boundary Objects, Social Studies of Science, 19(3), 387-420",
+    ],
+  },
 ];

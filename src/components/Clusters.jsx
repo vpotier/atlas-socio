@@ -108,7 +108,7 @@ export default function Clusters({
             />
 
             {(() => {
-              const labelY = cy - radius + 34;
+              const labelY = cy - radius - 20;
               const estWidth = meta.label.length * 15 + 44;
 
               return (

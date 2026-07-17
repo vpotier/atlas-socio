@@ -218,39 +218,6 @@ export default function FiltersPanel({
               color: "var(--color-taupe)",
             }}
           >
-            Thèmes (cumulables)
-          </h3>
-
-          {themes.map((theme) => (
-            <label
-              key={theme}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-                fontSize: 13,
-                marginBottom: 6,
-                cursor: "pointer",
-              }}
-            >
-              <input
-                type="checkbox"
-                checked={themeFilters.includes(theme)}
-                onChange={() => toggleTheme(theme)}
-              />
-              {theme}
-            </label>
-          ))}
-
-          <h3
-            style={{
-              margin: "16px 0 12px 0",
-              fontSize: 13,
-              textTransform: "uppercase",
-              letterSpacing: "0.04em",
-              color: "var(--color-taupe)",
-            }}
-          >
             Relations affichées sur la carte
           </h3>
 
@@ -276,6 +243,39 @@ export default function FiltersPanel({
                 onChange={() => toggleRelationType(key)}
               />
               {label}
+            </label>
+          ))}
+
+          <h3
+            style={{
+              margin: "16px 0 12px 0",
+              fontSize: 13,
+              textTransform: "uppercase",
+              letterSpacing: "0.04em",
+              color: "var(--color-taupe)",
+            }}
+          >
+            Thèmes (cumulables)
+          </h3>
+
+          {themes.map((theme) => (
+            <label
+              key={theme}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                fontSize: 13,
+                marginBottom: 6,
+                cursor: "pointer",
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={themeFilters.includes(theme)}
+                onChange={() => toggleTheme(theme)}
+              />
+              {theme}
             </label>
           ))}
 

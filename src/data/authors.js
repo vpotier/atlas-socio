@@ -57,7 +57,7 @@ export const authors = [
 
     influences: ["Nietzsche", "Rickert"],
     heirs: ["Aron", "Boudon"],
-    themes: ["Sociologie politique et de l'État", "Sociologie de la religion"],
+    themes: ["Sociologie politique et de l'État", "Sociologie de la religion", "Sociologie des classes sociales et de la stratification"],
 
     summary:
       "Fondateur de la sociologie compréhensive. Il cherche à comprendre le sens que les individus donnent à leurs actions.",
@@ -94,7 +94,7 @@ export const authors = [
 
     influences: ["Durkheim", "Weber", "Marx", "levi-strauss"],
     heirs: ["Lahire", "Boltanski", "Wacquant"],
-    themes: ["Sociologie de l'éducation et de la socialisation"],
+    themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie de la famille", "Sociologie des classes sociales et de la stratification"],
 
     summary:
       "Il articule structures sociales et pratiques individuelles grâce aux notions d'habitus, de champ et de capitaux.",
@@ -129,7 +129,7 @@ export const authors = [
 
     influences: ["Durkheim", "Frazer"],
     heirs: ["Radcliffe-Brown", "talcott-parsons"],
-    themes: [],
+    themes: ["Sociologie de la religion"],
 
     summary:
       "Anthropologue d'origine polonaise, il pose les bases du fonctionnalisme en postulant que chaque élément d'une culture répond à un besoin biologique ou psychologique humain fondamental. Sa méthode d'observation participante a profondément renouvelé l'analyse des institutions sociales.",
@@ -203,7 +203,7 @@ export const authors = [
 
     influences: ["Durkheim", "talcott-parsons", "Sorokin"],
     heirs: ["Boudon", "Coleman"],
-    themes: ["Sociologie de la déviance"],
+    themes: ["Sociologie de la déviance", "Sociologie des classes sociales et de la stratification"],
 
     summary:
       "Sociologue américain majeur, il assouplit le cadre fonctionnaliste parsonien en rejetant les postulats d'unité et de fonctionnalisme universel. Il introduit la distinction entre fonctions manifestes et latentes, et plaide pour des théories de moyenne portée.",
@@ -239,7 +239,7 @@ export const authors = [
 
     influences: ["Weber", "Simmel", "robert-k-merton"],
     heirs: ["Mohamed Cherkaoui", "Bernard Valade"],
-    themes: ["Sociologie de l'éducation et de la socialisation"],
+    themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie des classes sociales et de la stratification"],
 
     summary:
       "Chef de file de l'individualisme méthodologique en France, il démontre que les phénomènes collectifs résultent de l'agrégation d'actions individuelles. Il développe le concept d'effet pervers pour expliquer comment des choix rationnels produisent des résultats collectifs non intentionnels et souvent indésirables. Son approche défend une conception élargie de la rationalité, dite cognitive ou axiologique.",
@@ -274,7 +274,7 @@ export const authors = [
 
     influences: ["Weber", "robert-k-merton"],
     heirs: ["Peter Hedström"],
-    themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie économique"],
+    themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie économique", "Sociologie de la famille", "Sociologie des classes sociales et de la stratification"],
 
     summary:
       "Sociologue américain majeur, il formalise le passage du niveau micro-sociologique au niveau macro-sociologique à l'aide de sa célèbre « formule du bateau » (diagramme de Coleman). Il utilise la théorie mathématique des choix rationnels pour modéliser le comportement des acteurs au sein des structures sociales. Ses travaux ont directement inspiré la fondation de la sociologie analytique, courant contemporain qui formalise l'étude des mécanismes sociaux.",
@@ -342,7 +342,7 @@ export const authors = [
 
     influences: ["Mead", "herbert-blumer", "Hughes"],
     heirs: [],
-    themes: [],
+    themes: ["Sociologie de la déviance", "Sociologie du corps et de la santé"],
 
     summary:
       "Observateur minutieux des rituels de la vie quotidienne, il développe une approche dramaturgique de l'espace social où chaque individu est un acteur gérant l'impression qu'il donne aux autres. Ses travaux sur les « institutions totales » mettent en lumière les mécanismes d'altération de l'identité individuelle par les structures asilaires ou carcérales. Il formalise également la notion de cadre pour expliquer comment les individus structurent leur expérience de la réalité. Ses travaux ont directement influencé les analystes de conversation ainsi que les sociologues des médias contemporains.",
@@ -652,7 +652,7 @@ export const authors = [
 
     influences: ["peter-berger", "thomas-luckmann", "Bourdieu", "Hughes"],
     heirs: [],
-    themes: ["Sociologie du travail et des professions", "Sociologie de l'éducation et de la socialisation"],
+    themes: ["Sociologie du travail et des professions", "Sociologie de l'éducation et de la socialisation", "Sociologie de la famille"],
 
     summary:
       "Sociologue français majeur, il applique et approfondit la matrice théorique constructiviste au champ du travail, de la formation et des trajectoires professionnelles. Il conceptualise l'identité comme un processus dynamique issu de la dualité entre 'l'identité pour autrui' (les définitions institutionnelles) et 'l'identité pour soi' (l'histoire vécue). Ses travaux articulent magistralement les dimensions biographiques et structurelles du changement social. Son approche a durablement structuré la recherche francophone en sociologie du travail et de l'éducation.",
@@ -829,7 +829,7 @@ export const authors = [
 
     influences: ["Marx", "Althusser", "Gramsci"],
     heirs: ["Bob Jessop"],
-    themes: ["Sociologie politique et de l'État"],
+    themes: ["Sociologie politique et de l'État", "Sociologie des classes sociales et de la stratification"],
 
     summary:
       "Sociologue politique d'origine grecque ayant fait l'essentiel de sa carrière en France, il applique le structuralisme marxiste à l'analyse de l'État moderne. Opposé aux visions instrumentalistes, il théorise l'autonomie relative de l'État, qu'il définit non comme un simple outil de la bourgeoisie, mais comme la condensation matérielle d'un rapport de forces entre les classes. Ses débats avec Ralph Miliband ont marqué l'âge d'or de la théorie de l'État. Ses travaux ont durablement structuré les théories contemporaines de l'État.",
@@ -1104,7 +1104,7 @@ export const authors = [
 
     influences: ["Saint-Simon"],
     heirs: ["althusser", "henri-lefebvre", "nicos-poulantzas"],
-    themes: ["Sociologie économique", "Sociologie politique et de l'État"],
+    themes: ["Sociologie économique", "Sociologie politique et de l'État", "Sociologie des classes sociales et de la stratification"],
 
     summary:
       "Il soutient que chaque société est intrinsèquement liée à un système économique, et que la vie sociale entière est la conséquence de l'activité économique : les hommes « sont » en fonction de ce qu'ils produisent et de comment ils le produisent. Sa pensée holiste, dans la continuité de Saint-Simon, fait de la lutte des classes le moteur du changement historique.",
@@ -1194,7 +1194,7 @@ export const authors = [
 
     influences: [],
     heirs: [],
-    themes: ["Études de genre", "Sociologie du travail et des professions"],
+    themes: ["Études de genre", "Sociologie du travail et des professions", "Sociologie de la famille"],
 
     summary:
       "Sociologue britannique, elle met en circulation dès 1972 la distinction moderne entre sexe (biologique) et genre (socialement construit), fondatrice pour l'ensemble des études de genre ultérieures. Ses enquêtes sur le travail domestique documentent empiriquement la persistance de la répartition inégale des tâches malgré l'entrée massive des femmes sur le marché du travail.",
@@ -1506,7 +1506,7 @@ export const authors = [
 
     influences: ["mark-granovetter"],
     heirs: [],
-    themes: ["Sociologie économique"],
+    themes: ["Sociologie économique", "Sociologie de la famille"],
 
     summary:
       "Sociologue économique américaine d'origine argentine, elle démontre que l'argent n'est jamais un simple équivalent neutre et interchangeable, mais qu'il est socialement et moralement différencié selon les relations et les contextes dans lesquels il circule. Son concept de « travail relationnel » éclaire comment les individus articulent constamment relations intimes et transactions économiques, loin de la séparation étanche que postule l'économie standard entre sphère marchande et sphère affective.",
@@ -1580,7 +1580,7 @@ export const authors = [
     classificationNote:
       "Lahire est identifié comme l'un des principaux continuateurs critiques de Bourdieu, dont il complexifie la théorie de l'habitus par une attention à la pluralité et à la variabilité contextuelle des dispositions individuelles.",
     sources: ["Corcuff, 2007, Les nouvelles sociologies"],
-    themes: ["Sociologie de l'éducation et de la socialisation"],
+    themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie de la famille", "Sociologie des classes sociales et de la stratification"],
   },
 
   {
@@ -1616,7 +1616,7 @@ export const authors = [
       "Darmon, 2013, Classes préparatoires. La fabrique d'une jeunesse dominante",
       "Darmon, 2003, Devenir anorexique : une approche sociologique",
     ],
-    themes: ["Sociologie de l'éducation et de la socialisation"],
+    themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie du corps et de la santé"],
   },
 
   {
@@ -1652,7 +1652,7 @@ export const authors = [
       "Wacquant, 1992, Réponses. Pour une anthropologie réflexive (avec P. Bourdieu)",
       "Wacquant, 2006, Parias urbains. Ghetto, banlieues, État",
     ],
-    themes: ["Sociologie urbaine", "Sociologie politique et de l'État"],
+    themes: ["Sociologie urbaine", "Sociologie politique et de l'État", "Sociologie du corps et de la santé", "Sociologie des classes sociales et de la stratification"],
   },
 
   {
@@ -1687,7 +1687,7 @@ export const authors = [
       "Mauger, 2006, Les Bandes, le milieu et la bohème populaire",
       "Mauger, 2023, Avec Bourdieu. Un parcours sociologique",
     ],
-    themes: ["Sociologie de la déviance", "Sociologie de l'éducation et de la socialisation"],
+    themes: ["Sociologie de la déviance", "Sociologie de l'éducation et de la socialisation", "Sociologie des classes sociales et de la stratification"],
   },
 
   {
@@ -1899,7 +1899,7 @@ export const authors = [
       "Degenne, 1996, Harrison White ou un chaînon manquant de la sociologie",
       "Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie",
     ],
-    themes: ["Sociologie économique"],
+    themes: ["Sociologie économique", "Sociologie de la famille"],
   },
 
   {
@@ -1933,7 +1933,7 @@ export const authors = [
     sources: [
       "Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie",
     ],
-    themes: [],
+    themes: ["Sociologie économique"],
   },
 
   {
@@ -1966,7 +1966,7 @@ export const authors = [
     sources: [
       "Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales",
     ],
-    themes: [],
+    themes: ["Sociologie de la famille"],
   },
 
   {
@@ -2000,7 +2000,7 @@ export const authors = [
     sources: [
       "Grossetti, 2009, Qu'est-ce qu'une relation sociale ? Un ensemble de médiations dyadiques, Redes, 16(2)",
     ],
-    themes: [],
+    themes: ["Sociologie de la famille"],
   },
 
   {

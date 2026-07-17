@@ -90,12 +90,12 @@ function computeConstellationCenters(authors, relations) {
         .distance((l) => Math.max(280, 700 - l.weight * 20))
         .strength((l) => Math.min(0.8, 0.1 + l.weight * 0.02))
     )
-    .force("charge", d3.forceManyBody().strength(-2200))
+    .force("charge", d3.forceManyBody().strength(-2600))
     .force(
       "collide",
       d3
         .forceCollide()
-        .radius((d) => 280 + memberCount[d.id] * 48)
+        .radius((d) => 320 + memberCount[d.id] * 55)
     )
     .force("center", d3.forceCenter(center.x, center.y))
     .stop();
@@ -207,7 +207,7 @@ export function computeLayout(authors, concepts, relations) {
           // très légère, la proximité macro est déjà gérée à l'étage 1.
           return l.sameConstellation
             ? Math.min(0.6, 0.15 + l.strength * 0.07)
-            : 0.015;
+            : 0.01;
         })
     )
     .force("charge", d3.forceManyBody().strength(-380))
@@ -230,7 +230,7 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.x : center.x;
         })
-        .strength(0.65)
+        .strength(0.75)
     )
     .force(
       "clusterY",
@@ -239,7 +239,7 @@ export function computeLayout(authors, concepts, relations) {
           const c = constellationCenters[d.constellation];
           return c ? c.y : center.y;
         })
-        .strength(0.65)
+        .strength(0.75)
     )
     .stop();
 

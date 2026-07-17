@@ -44,6 +44,8 @@ export const relations = [
     justification:
       "Merton a été l'étudiant de Parsons à Harvard, une filiation académique directe qui s'est traduite par un intense compagnonnage intellectuel et institutionnel au sein de la sociologie américaine.",
     sources: ["Ritzer, 2011, Sociological Theory"],
+    simpleExplanation:
+      "Merton a été l'étudiant de Parsons à Harvard, ce qui a nourri un dialogue intellectuel étroit entre les deux sociologues.",
   },
   {
     source: "robert-k-merton",
@@ -56,6 +58,8 @@ export const relations = [
     sources: [
       "Boudon & Bourricaud, 1982, Dictionnaire critique de la sociologie",
     ],
+    simpleExplanation:
+      "Merton conteste l'approche très abstraite de Parsons et lui oppose la nécessité de construire des théories plus modestes, directement vérifiables par l'enquête empirique.",
   },
   {
     source: "raymond-boudon",
@@ -68,6 +72,8 @@ export const relations = [
     sources: [
       "Cherkaoui, 2006, Le paradoxe des conséquences : l'individualisme méthodologique",
     ],
+    simpleExplanation:
+      "Boudon et Coleman partagent l'ambition de fonder la sociologie sur l'analyse de l'action individuelle, et ont échangé sur ce sujet, notamment autour de la sociologie de l'éducation.",
   },
   {
     source: "raymond-boudon",
@@ -78,6 +84,8 @@ export const relations = [
     justification:
       "Une divergence conceptuelle oppose les deux auteurs concernant les limites de la rationalité : Coleman reste fidèle à l'optimisation économique utilitariste tandis que Boudon rejette ce réductionnisme au profit d'une rationalité cognitive.",
     sources: ["Boudon, 2002, Les méthodes en sociologie"],
+    simpleExplanation:
+      "Une divergence oppose les deux auteurs sur les limites de la rationalité : Coleman reste fidèle à un calcul d'intérêt strictement économique, tandis que Boudon défend une rationalité plus large, incluant des croyances qui paraissent seulement raisonnables à l'acteur.",
   },
   {
     source: "herbert-blumer",
@@ -88,6 +96,8 @@ export const relations = [
     justification:
       "Blumer fut le professeur de Goffman à l'Université de Chicago ; bien que Goffman ait pris ses distances avec l'orthodoxie méthodologique de Blumer pour développer son propre vocabulaire, sa vision d'un ordre de l'interaction dynamique découle directement de cet ancrage.",
     sources: ["Le Breton, 2004, L'interactionnisme symbolique"],
+    simpleExplanation:
+      "Blumer a été le professeur de Goffman à Chicago ; même si Goffman développe ensuite son propre vocabulaire, sa vision de l'interaction comme réalité en mouvement provient de cet enseignement.",
   },
   {
     source: "herbert-blumer",
@@ -98,6 +108,8 @@ export const relations = [
     justification:
       "Becker revendique explicitement l'héritage de Blumer, dont il a suivi les cours à Chicago, appliquant fidèlement le précepte blumérien d'aller observer directement le monde social en train de se faire.",
     sources: ["Becker, 1998, Les Ficelles du métier"],
+    simpleExplanation:
+      "Becker revendique explicitement l'héritage de Blumer, dont il a suivi les cours à Chicago, en appliquant fidèlement son exigence d'observer directement le monde social.",
   },
   {
     source: "erving-goffman",
@@ -108,6 +120,8 @@ export const relations = [
     justification:
       "Contemporains au sein de la néo-école de Chicago, ils partagent un intérêt pour les marges et la stigmatisation, échangeant régulièrement leurs concepts (Goffman utilise l'étiquetage, Becker s'appuie sur la notion de stigmate) malgré des styles analytiques différents.",
     sources: ["Ansart, 1990, Les sociologies contemporaines"],
+    simpleExplanation:
+      "Contemporains à Chicago, Goffman et Becker partagent un même intérêt pour les marges et la stigmatisation, et échangent leurs concepts malgré des styles différents.",
   },
   {
     source: "harrison-white",
@@ -158,6 +172,8 @@ export const relations = [
     justification:
       "Sacks a été fortement stimulé par les cours de Goffman à Berkeley sur l'ordre de l'interaction, bien qu'il ait rejeté l'approche dramaturgique au profit d'un enregistrement et d'une transcription littérale et technique des conversations.",
     sources: ["Ritzer, 2011, Sociological Theory"],
+    simpleExplanation:
+      "Sacks a été fortement marqué par les cours de Goffman sur l'interaction, avant de développer sa propre méthode d'analyse des conversations enregistrées.",
   },
   {
     source: "talcott-parsons",
@@ -168,6 +184,8 @@ export const relations = [
     justification:
       "Garfinkel a rédigé sa thèse sous la direction de Parsons, mais il a construit l'ethnométhodologie en opposition frontale avec la conception parsonienne d'un acteur passif ayant intériorisé des normes globales préexistantes.",
     sources: ["Ansart, 1990, Les sociologies contemporaines"],
+    simpleExplanation:
+      "Garfinkel a rédigé sa thèse sous la direction de Parsons, mais il construit l'ethnométhodologie en opposition frontale avec l'idée parsonienne d'un acteur passif se contentant d'appliquer des normes intériorisées.",
   },
   {
     source: "peter-berger",
@@ -262,6 +280,8 @@ export const relations = [
     justification:
       "Formée dans la lignée de la tradition de Chicago, Star applique la méthode ethnographique fine de la sociologie des professions et du travail (proche de Becker) à l'étude technique des ordinateurs et des classifications d'infrastructures.",
     sources: ["Star, 1999, Sorting Things Out"],
+    simpleExplanation:
+      "Formée dans la tradition de Chicago, Star applique une méthode d'enquête de terrain proche de celle de Becker à l'étude des infrastructures et des classifications techniques.",
   },
   {
     source: "bruno-latour",
@@ -324,6 +344,8 @@ export const relations = [
     justification:
       "Boudon se revendique explicitement héritier de l'individualisme méthodologique wébérien, qu'il systématise et formalise pour en faire le socle de sa propre sociologie.",
     sources: ["Boudon, 1979, La Logique du social"],
+    simpleExplanation:
+      "Boudon se revendique explicitement héritier de l'individualisme méthodologique de Weber, qu'il systématise et formalise pour en faire le socle de sa propre sociologie.",
   },
   {
     source: "bourdieu",
@@ -408,6 +430,8 @@ export const relations = [
     justification:
       "Butler s'inscrit dans la filiation de la distinction sexe/genre mise en circulation par Oakley, tout en la radicalisant par la thèse de la performativité, qui remet en cause jusqu'à la stabilité du sexe biologique lui-même.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simpleExplanation:
+      "Butler s'inscrit dans la filiation de la distinction entre sexe et genre proposée par Oakley, tout en la radicalisant : pour elle, même le sexe biologique n'échappe pas à une part de construction sociale.",
   },
   {
     source: "bourdieu",
@@ -430,6 +454,8 @@ export const relations = [
     justification:
       "La théorie de la performativité du genre de Butler prolonge et radicalise l'approche dramaturgique de Goffman, en déplaçant la mise en scène de l'identité du registre de la présentation de soi vers celui de la construction performative du genre lui-même.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simpleExplanation:
+      "La théorie de la performativité du genre de Butler prolonge et radicalise l'approche dramaturgique de Goffman, en déplaçant l'idée de mise en scène de la présentation de soi vers la construction du genre lui-même.",
   },
   {
     source: "peter-berger",
@@ -504,6 +530,8 @@ export const relations = [
     justification:
       "Mead s'inspire abondamment de l'œuvre de Cooley sur les groupes primaires et le refus de toute hiérarchie entre société et individu pour élaborer sa propre théorie de la socialisation.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Mead s'inspire largement de l'œuvre de Cooley sur les petits groupes et sur l'idée qu'il n'existe pas de hiérarchie stricte entre société et individu.",
   },
   {
     source: "robert-park",
@@ -514,6 +542,8 @@ export const relations = [
     justification:
       "Park et Burgess co-écrivent les textes fondateurs de l'écologie urbaine de l'école de Chicago, notamment Introduction to the Science of Sociology (1921) et The City (1925).",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Park et Burgess co-écrivent les textes fondateurs de l'écologie urbaine de l'école de Chicago.",
   },
   {
     source: "mead",
@@ -524,6 +554,8 @@ export const relations = [
     justification:
       "Blumer, disciple direct de Mead à Chicago, forge le terme d'« interactionnisme symbolique » en 1937 pour désigner et systématiser l'héritage théorique de son maître.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Blumer, disciple direct de Mead à Chicago, forge en 1937 le terme d'« interactionnisme symbolique » pour désigner et systématiser l'héritage théorique de son maître.",
   },
   {
     source: "robert-k-merton",
@@ -534,6 +566,8 @@ export const relations = [
     justification:
       "Merton critique l'empirisme quantitativiste de Lazarsfeld, qu'il juge trop détaché de toute théorisation, defendant à l'inverse une articulation étroite entre théorie et recherche empirique.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Merton critique l'empirisme statistique de Lazarsfeld, qu'il juge trop détaché de toute théorisation, et défend au contraire une étroite articulation entre théorie et enquête empirique.",
   },
   {
     source: "mark-granovetter",
@@ -588,6 +622,8 @@ export const relations = [
     justification:
       "Habermas intègre des éléments du fonctionnalisme parsonien dans sa distinction entre système et monde vécu, tout en cherchant à en corriger le déterminisme.",
     sources: ["Ansart, 1990, Les sociologies contemporaines"],
+    simpleExplanation:
+      "Habermas intègre certains éléments du fonctionnalisme de Parsons dans sa propre distinction entre système et monde vécu, tout en cherchant à en corriger le déterminisme.",
   },
   {
     source: "bourdieu",
@@ -818,6 +854,8 @@ export const relations = [
     justification:
       "Hochschild prolonge l'approche dramaturgique de Goffman (gestion de l'impression donnée à autrui) en l'appliquant à la gestion des émotions elles-mêmes, fondant la sociologie des émotions.",
     sources: ["Hochschild, 1983, The Managed Heart"],
+    simpleExplanation:
+      "Hochschild prolonge l'approche dramaturgique de Goffman, centrée sur la gestion de l'image donnée à autrui, en l'appliquant à la gestion des émotions elles-mêmes.",
   },
   {
     source: "bourdieu",
@@ -874,6 +912,8 @@ export const relations = [
     justification:
       "Parsons engage un dialogue critique avec le fonctionnalisme anthropologique de Malinowski dans l'élaboration de sa propre théorie fonctionnaliste des systèmes sociaux.",
     sources: ["Ritzer, 2011, Sociological Theory"],
+    simpleExplanation:
+      "Parsons engage un dialogue critique avec le fonctionnalisme anthropologique de Malinowski pour élaborer sa propre théorie fonctionnaliste des systèmes sociaux.",
   },
   {
     source: "robert-k-merton",
@@ -884,6 +924,8 @@ export const relations = [
     justification:
       "Boudon se réclame explicitement du programme mertonien des théories de moyenne portée, articulant étroitement théorie et recherche empirique contre les grandes théories systémiques.",
     sources: ["Ansart, 1990, Les sociologies contemporaines"],
+    simpleExplanation:
+      "Boudon se réclame explicitement du programme de Merton, articulant étroitement théorie et recherche empirique plutôt que de construire de grandes théories systémiques.",
   },
   {
     source: "robert-k-merton",
@@ -894,6 +936,8 @@ export const relations = [
     justification:
       "Coleman a été l'élève direct de Merton (et de Lazarsfeld) à Columbia ; c'est Merton lui-même qui l'initie à la lecture de Durkheim et de Weber.",
     sources: ["Sage Encyclopedia of Social Theory, Coleman, James"],
+    simpleExplanation:
+      "Coleman a été l'élève direct de Merton (et de Lazarsfeld) à l'université Columbia, où celui-ci l'initie notamment à la lecture de Durkheim et de Weber.",
   },
   {
     source: "weber",
@@ -904,6 +948,8 @@ export const relations = [
     justification:
       "Coleman est initié à la lecture de Weber par Merton lors de sa formation à Columbia, influence qui infuse sa théorie de l'action rationnelle articulée au niveau macrosocial.",
     sources: ["Sage Encyclopedia of Social Theory, Coleman, James"],
+    simpleExplanation:
+      "Coleman est initié à la lecture de Weber par Merton pendant sa formation à Columbia, une influence qui nourrit sa théorie de l'action rationnelle.",
   },
   {
     source: "mead",
@@ -914,6 +960,8 @@ export const relations = [
     justification:
       "Goffman s'inscrit dans la filiation de l'interactionnisme meadien, qu'il prolonge et déplace vers une analyse dramaturgique plus formaliste de l'ordre de l'interaction.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Goffman s'inscrit dans la filiation de l'interactionnisme de Mead, qu'il prolonge et déplace vers une analyse plus formelle de l'ordre de l'interaction.",
   },
   {
     source: "levi-strauss",
@@ -934,6 +982,8 @@ export const relations = [
     justification:
       "Lazega dialogue avec la théorie du choix rationnel et du capital social de Coleman, qu'il articule à une analyse plus fine des structures relationnelles au sein des organisations professionnelles.",
     sources: ["Lazega, 2006, Réseaux sociaux et structures relationnelles"],
+    simpleExplanation:
+      "Lazega dialogue avec la théorie du choix rationnel et du capital social de Coleman, qu'il articule à une analyse plus fine des structures relationnelles au sein des organisations.",
   },
   {
     source: "marx",
@@ -996,6 +1046,8 @@ export const relations = [
     justification:
       "Habermas mobilise explicitement la théorie meadienne de l'interaction symbolique et de la formation du soi pour construire sa théorie de l'agir communicationnel.",
     sources: ["Ansart, 1990, Les sociologies contemporaines"],
+    simpleExplanation:
+      "Habermas s'appuie explicitement sur la théorie de Mead concernant l'interaction symbolique et la formation du soi pour construire sa théorie de l'agir communicationnel.",
   },
   {
     source: "harrison-white",
@@ -1056,6 +1108,8 @@ export const relations = [
     justification:
       "Hughes effectue son doctorat sous la direction de Robert Park à l'université de Chicago, dont il prolonge et transmet l'héritage à la génération suivante.",
     sources: ["Chapoulie, 1996, préface au Regard sociologique. Essais choisis"],
+    simpleExplanation:
+      "Hughes effectue son doctorat sous la direction de Robert Park, dont il prolonge et transmet l'héritage à la génération suivante de sociologues.",
   },
   {
     source: "hughes",
@@ -1066,6 +1120,8 @@ export const relations = [
     justification:
       "Goffman est l'élève direct de Hughes à l'université de Chicago, qui fait de ce dernier le véritable chaînon entre la première et la seconde génération de l'École de Chicago.",
     sources: ["Chapoulie, 1996, préface au Regard sociologique. Essais choisis"],
+    simpleExplanation:
+      "Goffman est l'élève direct de Hughes à l'université de Chicago, ce qui fait de ce dernier un véritable chaînon entre deux générations de l'École de Chicago.",
   },
   {
     source: "hughes",
@@ -1076,6 +1132,8 @@ export const relations = [
     justification:
       "Becker est l'élève direct de Hughes à l'université de Chicago, qui fait de ce dernier le véritable chaînon entre la première et la seconde génération de l'École de Chicago.",
     sources: ["Chapoulie, 1996, préface au Regard sociologique. Essais choisis"],
+    simpleExplanation:
+      "Becker est l'élève direct de Hughes à l'université de Chicago, ce qui fait de ce dernier un véritable chaînon entre deux générations de l'École de Chicago.",
   },
   {
     source: "wright-mills",
@@ -1086,6 +1144,8 @@ export const relations = [
     justification:
       "Mills qualifie la « grande théorie » de Parsons de verbiage abstrait coupé du concret — « 50 % de multiplication de mots, 40 % de platitude sociologique » — et lui oppose l'exigence d'une imagination sociologique reliant biographie individuelle et structures historiques.",
     sources: ["Mills, 1959, L'Imagination sociologique"],
+    simpleExplanation:
+      "Mills qualifie la théorie de Parsons de discours abstrait coupé du concret, et lui oppose l'exigence d'une imagination sociologique capable de relier la biographie individuelle aux structures historiques.",
   },
   {
     source: "wright-mills",
@@ -1096,6 +1156,8 @@ export const relations = [
     justification:
       "Mills critique « l'empirisme abstrait » des enquêtes statistiques à la Lazarsfeld, qu'il juge myope : des faits accumulés sans théorie pour leur donner sens.",
     sources: ["Mills, 1959, L'Imagination sociologique"],
+    simpleExplanation:
+      "Mills critique les enquêtes statistiques de Lazarsfeld, qu'il juge myopes : des faits accumulés sans théorie pour leur donner du sens.",
   },
   {
     source: "harrison-white",
@@ -1195,6 +1257,8 @@ export const relations = [
     justification:
       "Star inscrit sa sociologie du travail invisible et des infrastructures dans la filiation de la sociologie du travail de Hughes, dont elle reprend l'attention aux tâches invisibilisées et au « sale boulot ».",
     sources: ["Star & Strauss, 1999, Layers of Silence, Arenas of Voice: The Ecology of Visible and Invisible Work, Computer Supported Cooperative Work, 8"],
+    simpleExplanation:
+      "Star inscrit sa sociologie du travail invisible et des infrastructures dans la filiation de Hughes, dont elle reprend l'attention portée aux tâches dévalorisées.",
   },
   {
     source: "hughes",
@@ -1229,6 +1293,8 @@ export const relations = [
     justification:
       "Dubar mobilise la sociologie des professions de Hughes (licence, mandat, carrière) pour construire son analyse de la socialisation professionnelle et des identités au travail.",
     sources: ["Dubar, 1991, La Socialisation"],
+    simpleExplanation:
+      "Dubar mobilise la sociologie des professions de Hughes pour construire son analyse de la socialisation professionnelle et des identités au travail.",
   },
   {
     source: "laurent-thevenot",
@@ -1325,6 +1391,8 @@ export const relations = [
     sources: [
       "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
     ],
+    simpleExplanation:
+      "Berger et Luckmann reprennent explicitement les idées de Mead sur l'intériorisation de la réalité sociale, issues de l'interactionnisme symbolique.",
   },
   {
     source: "mead",
@@ -1337,6 +1405,8 @@ export const relations = [
     sources: [
       "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
     ],
+    simpleExplanation:
+      "Berger et Luckmann reprennent explicitement les idées de Mead sur l'intériorisation de la réalité sociale, issues de l'interactionnisme symbolique.",
   },
   {
     source: "herbert-marcuse",
@@ -1382,6 +1452,8 @@ export const relations = [
       "Butler, 1997, Merely Cultural, Social Text, 15(3-4), 265-277",
       "Fraser, 1998, Heterosexism, Misrecognition and Capitalism: A Response to Judith Butler, New Left Review, I/228",
     ],
+    simpleExplanation:
+      "Un débat direct oppose Fraser à Butler : Fraser reproche à Butler de trop se concentrer sur la culture au détriment des injustices économiques ; Butler lui répond que Fraser sépare artificiellement ces deux types de luttes.",
   },
   {
     source: "talcott-parsons",
@@ -1392,5 +1464,7 @@ export const relations = [
     justification:
       "Touraine a suivi les séminaires de Parsons, mais construit sa sociologie de l'action précisément contre celle de Parsons, qu'il juge trop centrée sur le système social au détriment de l'acteur.",
     sources: ["Encyclopédie Universalis, Biographie d'Alain Touraine"],
+    simpleExplanation:
+      "Touraine a suivi les séminaires de Parsons, mais construit sa sociologie de l'action précisément contre celle de Parsons, qu'il juge trop centrée sur le système social au détriment de l'acteur.",
   },
 ];

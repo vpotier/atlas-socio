@@ -178,67 +178,75 @@ export default function App() {
 
           {(() => {
             const individualValues = authorAxisValues[a.id];
-            const values =
-              individualValues ||
+            const constellationValues =
               constellationAxisValues[a.constellation];
 
-            if (!values) return null;
+            if (!individualValues && !constellationValues) return null;
 
             return (
               <>
                 <h3>Positionnement théorique</h3>
 
-                {!individualValues && (
-                  <p
-                    style={{
-                      fontSize: 12,
-                      fontStyle: "italic",
-                      color: "var(--color-taupe)",
-                      marginTop: -4,
-                    }}
-                  >
-                    Valeur héritée de la constellation — pas encore
-                    sourcée individuellement pour cet auteur·ice.
-                  </p>
-                )}
-
                 <ul>
-                  {Object.entries(axes).map(([axisKey, axisMeta]) => (
-                    <li key={axisKey}>
-                      <strong>{axisMeta.label}</strong>
-                      <br />
-                      <span
-                        style={{
-                          fontStyle: "italic",
-                          color: "var(--color-leather)",
-                        }}
-                      >
-                        {values[axisKey]?.label}
-                      </span>
-                      {values[axisKey]?.justification && (
+                  {Object.entries(axes).map(([axisKey, axisMeta]) => {
+                    const individual = individualValues?.[axisKey];
+                    const value =
+                      individual || constellationValues?.[axisKey];
+
+                    if (!value) return null;
+
+                    return (
+                      <li key={axisKey}>
+                        <strong>{axisMeta.label}</strong>
+                        <br />
                         <span
                           style={{
-                            display: "block",
-                            marginTop: 4,
+                            fontStyle: "italic",
+                            color: "var(--color-leather)",
                           }}
                         >
-                          {values[axisKey].justification}
+                          {value.label}
                         </span>
-                      )}
-                      {values[axisKey]?.sources && (
-                        <span
-                          style={{
-                            display: "block",
-                            fontSize: 12,
-                            color: "var(--color-taupe)",
-                            marginTop: 4,
-                          }}
-                        >
-                          {values[axisKey].sources.join(" ; ")}
-                        </span>
-                      )}
-                    </li>
-                  ))}
+                        {value.justification && (
+                          <span
+                            style={{
+                              display: "block",
+                              marginTop: 4,
+                            }}
+                          >
+                            {value.justification}
+                          </span>
+                        )}
+                        {value.sources && (
+                          <span
+                            style={{
+                              display: "block",
+                              fontSize: 12,
+                              color: "var(--color-taupe)",
+                              marginTop: 4,
+                            }}
+                          >
+                            {value.sources.join(" ; ")}
+                          </span>
+                        )}
+                        {!individual && (
+                          <span
+                            style={{
+                              display: "block",
+                              fontSize: 12,
+                              fontStyle: "italic",
+                              color: "var(--color-taupe)",
+                              marginTop: 4,
+                            }}
+                          >
+                            Valeur héritée de la constellation — pas
+                            encore sourcée individuellement pour cet
+                            auteur·ice.
+                          </span>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </>
             );

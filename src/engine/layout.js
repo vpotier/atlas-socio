@@ -1,588 +1,323 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import * as d3 from "d3";
 
-import Background from "../layers/Background";
-import Clusters from "./Clusters";
-import Authors from "./Authors";
-import Concepts from "./Concepts";
+// Générateur pseudo-aléatoire déterministe (seed fixe) : garantit que le
+// layout produit exactement le même résultat à chaque chargement, au
+// lieu de dépendre de Math.random() qui change à chaque reload.
+function createSeededRandom(seed) {
+  let s = seed;
 
-import { authors as rawAuthors } from "../data/authors";
-import { concepts as rawConcepts } from "../data/concepts";
-import { relations } from "../data/relations";
-import { computeLayout } from "../engine/layout";
-import { constellationAxisValues } from "../data/theoreticalAxes";
-import { authorAxisValues } from "../data/authorAxisValues";
-
-// Tolérance (en fraction de l'axe, 0-1) pour qu'une constellation soit
-// considérée comme correspondant à la position d'un curseur de filtre.
-const AXIS_TOLERANCE = 0.13;
-
-const INITIAL_SCALE = 0.55;
-
-export default function Graph({
-  selectedItem,
-  setSelectedItem,
-  axisFilters,
-  themeFilters,
-  relationTypeFilters,
-}) {
-  const [hoveredRelation, setHoveredRelation] = useState(null);
-  const transformRef = useRef(null);
-  const containerRef = useRef(null);
-
-  const layout = useMemo(
-    () => computeLayout(rawAuthors, rawConcepts, relations),
-    []
-  );
-
-  // Centre la caméra sur le vrai centre du contenu et ajuste le zoom pour
-  // que l'ensemble des constellations remplisse l'écran. Réutilisée au
-  // chargement initial et par le bouton de recentrage.
-  const resetView = (animationTime = 0) => {
-    if (!transformRef.current || !containerRef.current) return;
-
-    const { clientWidth, clientHeight } = containerRef.current;
-
-    const fitScale =
-      Math.min(
-        clientWidth / layout.width,
-        clientHeight / layout.height
-      ) * 0.9;
-
-    const scale = Math.max(0.15, Math.min(fitScale, 1.2));
-
-    const targetX = clientWidth / 2 - layout.centerX * scale;
-    const targetY = clientHeight / 2 - layout.centerY * scale;
-
-    transformRef.current.setTransform(
-      targetX,
-      targetY,
-      scale,
-      animationTime
-    );
+  return function () {
+    s |= 0;
+    s = (s + 0x6d2b79f5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
+}
 
-  useEffect(() => {
-    resetView(0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [layout]);
+const random = createSeededRandom(42);
 
-  const authors = useMemo(
-    () =>
-      rawAuthors.map((a) => ({
-        ...a,
-        ...layout.authorPositions.get(a.id),
-      })),
-    [layout]
+const SIM_WIDTH = 2600;
+const SIM_HEIGHT = 1700;
+const PADDING = 140;
+
+// ---------------------------------------------------------------------
+// ÉTAGE 1 — méta-layout de type ForceAtlas2, appliqué aux CONSTELLATIONS
+// elles-mêmes (pas aux auteurs individuels). On agrège le poids de toutes
+// les relations qui traversent deux constellations différentes, et on
+// fait tourner une vraie simulation de forces entre elles : deux
+// constellations fortement reliées se rapprochent, les autres se
+// repoussent — sans aucun centre imposé au départ, la position relative
+// émerge uniquement des données.
+// ---------------------------------------------------------------------
+function computeConstellationCenters(authors, relations) {
+  const center = { x: SIM_WIDTH / 2, y: SIM_HEIGHT / 2 };
+
+  const authorConstellation = new Map(
+    authors.map((a) => [a.id, a.constellation])
   );
 
-  const concepts = useMemo(
-    () =>
-      rawConcepts.map((c) => ({
-        ...c,
-        ...layout.conceptPositions.get(c.id),
-        constellation:
-          authors.find((a) => a.id === c.authors[0])
-            ?.constellation ?? null,
-      })),
-    [layout, authors]
-  );
+  const constellationIds = [
+    ...new Set(authors.map((a) => a.constellation)),
+  ];
 
-  const selectedAuthor =
-    selectedItem?.type === "author"
-      ? selectedItem.data
-      : null;
+  const memberCount = {};
+  constellationIds.forEach((id) => {
+    memberCount[id] = authors.filter(
+      (a) => a.constellation === id
+    ).length;
+  });
 
-  const selectedConcept =
-    selectedItem?.type === "concept"
-      ? selectedItem.data
-      : null;
+  const crossWeights = {};
 
-  const selectedConstellationId =
-    selectedItem?.type === "constellation"
-      ? selectedItem.data.id
-      : null;
+  relations.forEach((r) => {
+    const cA = authorConstellation.get(r.source);
+    const cB = authorConstellation.get(r.target);
 
-  const neighbourIds = useMemo(() => {
-    if (!selectedAuthor) return null;
+    if (!cA || !cB || cA === cB) return;
 
-    const ids = new Set([selectedAuthor.id]);
+    const key = [cA, cB].sort().join("--");
+    crossWeights[key] = (crossWeights[key] || 0) + r.strength;
+  });
 
-    relations.forEach((r) => {
-      if (r.source === selectedAuthor.id)
-        ids.add(r.target);
-
-      if (r.target === selectedAuthor.id)
-        ids.add(r.source);
-    });
-
-    return ids;
-  }, [selectedAuthor]);
-
-  const conceptAuthors = useMemo(() => {
-    if (!selectedConcept) return null;
-
-    return new Set(selectedConcept.authors);
-  }, [selectedConcept]);
-
-  const constellationAuthorIds = useMemo(() => {
-    if (!selectedConstellationId) return null;
-
-    return new Set(
-      authors
-        .filter((a) => a.constellation === selectedConstellationId)
-        .map((a) => a.id)
-    );
-  }, [selectedConstellationId, authors]);
-
-  // --- Filtres théoriques (axes) et thématiques ---
-  const activeAxisEntries = useMemo(
-    () =>
-      Object.entries(axisFilters || {})
-        .filter(([, f]) => f && f.enabled)
-        .map(([axisKey, f]) => [axisKey, f.value]),
-    [axisFilters]
-  );
-
-  const matchingConstellationIds = useMemo(() => {
-    if (activeAxisEntries.length === 0) return null;
-
-    const ids = new Set();
-
-    Object.keys(constellationAxisValues).forEach(
-      (constellationId) => {
-        const values = constellationAxisValues[constellationId];
-
-        const matches = activeAxisEntries.every(
-          ([axisKey, filterValue]) => {
-            const axisValue = values[axisKey];
-            if (!axisValue) return false;
-            return (
-              Math.abs(axisValue.value - filterValue) <=
-              AXIS_TOLERANCE
-            );
-          }
-        );
-
-        if (matches) ids.add(constellationId);
-      }
-    );
-
-    return ids;
-  }, [activeAxisEntries]);
-
-  const filtersActive =
-    activeAxisEntries.length > 0 ||
-    (themeFilters && themeFilters.length > 0);
-
-  // Valeurs d'axes effectives pour un auteur : pour chaque axe, sa
-  // propre entrée sourcée individuellement si elle existe, sinon repli
-  // sur la valeur de sa constellation pour cet axe précis (et non sur
-  // l'auteur dans son ensemble — un auteur peut avoir 2 axes sourcés
-  // individuellement et un 3e hérité de sa constellation).
-  const getAxisValuesForAuthor = (author) => {
-    const individual = authorAxisValues[author.id];
-    const constellationValues =
-      constellationAxisValues[author.constellation];
-
-    if (!individual) return constellationValues;
-    if (!constellationValues) return individual;
+  const metaNodes = constellationIds.map((id, i) => {
+    const angle = (i / constellationIds.length) * 2 * Math.PI;
+    const seedRadius = Math.min(SIM_WIDTH, SIM_HEIGHT) / 3;
 
     return {
-      individuSociete:
-        individual.individuSociete ?? constellationValues.individuSociete,
-      methode: individual.methode ?? constellationValues.methode,
-      rationalite:
-        individual.rationalite ?? constellationValues.rationalite,
+      id,
+      x: center.x + seedRadius * Math.cos(angle),
+      y: center.y + seedRadius * Math.sin(angle),
     };
-  };
+  });
 
-  const filterVisibleAuthorIds = useMemo(() => {
-    if (!filtersActive) return null;
+  const metaLinks = Object.entries(crossWeights).map(
+    ([key, weight]) => {
+      const [source, target] = key.split("--");
+      return { source, target, weight };
+    }
+  );
 
-    const ids = new Set();
+  const metaSimulation = d3
+    .forceSimulation(metaNodes)
+    .force(
+      "link",
+      d3
+        .forceLink(metaLinks)
+        .id((d) => d.id)
+        // Plus deux constellations sont fortement reliées, plus elles
+        // sont attirées l'une vers l'autre — sensible même à un petit
+        // nombre de relations réelles (pas seulement aux courants très
+        // densément connectés entre eux).
+        .distance((l) => Math.max(280, 620 - l.weight * 35))
+        .strength((l) => Math.min(0.85, 0.15 + l.weight * 0.035))
+    )
+    .force("charge", d3.forceManyBody().strength(-2600))
+    .force(
+      "collide",
+      d3
+        .forceCollide()
+        .radius((d) => 320 + memberCount[d.id] * 55)
+    )
+    .force("center", d3.forceCenter(center.x, center.y))
+    .stop();
 
-    authors.forEach((a) => {
-      const values = getAxisValuesForAuthor(a);
+  metaSimulation.tick(500);
 
-      const axisOk = activeAxisEntries.every(
-        ([axisKey, filterValue]) => {
-          const axisValue = values?.[axisKey];
-          if (!axisValue) return false;
-          return (
-            Math.abs(axisValue.value - filterValue) <=
-            AXIS_TOLERANCE
-          );
-        }
-      );
+  const constellationCenters = {};
 
-      const themeOk =
-        !themeFilters ||
-        themeFilters.length === 0 ||
-        (a.themes || []).some((t) =>
-          themeFilters.includes(t)
-        );
+  metaNodes.forEach((n) => {
+    constellationCenters[n.id] = { x: n.x, y: n.y };
+  });
 
-      if (axisOk && themeOk) ids.add(a.id);
+  return constellationCenters;
+}
+
+// ---------------------------------------------------------------------
+// ÉTAGE 2 — micro-layout : à l'intérieur de ce cadre macro, les auteurs
+// et concepts se placent. Le regroupement par constellation est fort
+// (chacun reste fermement dans son propre halo) ; les relations entre
+// auteurs d'une MÊME constellation les rapprochent normalement ; les
+// relations qui traversent deux constellations différentes n'ont plus
+// qu'une influence très légère sur la position individuelle (l'essentiel
+// de leur effet est déjà capté au niveau macro par l'étage 1).
+// ---------------------------------------------------------------------
+export function computeLayout(authors, concepts, relations) {
+  const constellationCenters = computeConstellationCenters(
+    authors,
+    relations
+  );
+
+  const center = { x: SIM_WIDTH / 2, y: SIM_HEIGHT / 2 };
+
+  const authorConstellation = new Map(
+    authors.map((a) => [a.id, a.constellation])
+  );
+
+  // Degré de chaque auteur (nombre de relations où il apparaît, en
+  // source ou en cible) : sert à la fois à agrandir visuellement les
+  // auteurs les plus centraux et à leur donner davantage d'espace de
+  // collision, puisqu'ils attirent mécaniquement plus de traits.
+  const authorDegree = new Map();
+  authors.forEach((a) => authorDegree.set(a.id, 0));
+  relations.forEach((r) => {
+    if (authorDegree.has(r.source)) {
+      authorDegree.set(r.source, authorDegree.get(r.source) + 1);
+    }
+    if (authorDegree.has(r.target)) {
+      authorDegree.set(r.target, authorDegree.get(r.target) + 1);
+    }
+  });
+
+  const authorNodes = authors.map((a) => {
+    const c = constellationCenters[a.constellation] ?? center;
+
+    return {
+      id: a.id,
+      kind: "author",
+      constellation: a.constellation,
+      degree: authorDegree.get(a.id) ?? 0,
+      x: c.x + (random() - 0.5) * 150,
+      y: c.y + (random() - 0.5) * 150,
+    };
+  });
+
+  const conceptNodes = concepts.map((c) => {
+    const authorConst =
+      authorConstellation.get(c.authors[0]) ?? null;
+    const c2 = constellationCenters[authorConst] ?? center;
+
+    return {
+      id: `concept:${c.id}`,
+      kind: "concept",
+      labelLength: c.label.length,
+      constellation: authorConst,
+      x: c2.x + (random() - 0.5) * 150,
+      y: c2.y + (random() - 0.5) * 150,
+    };
+  });
+
+  const nodes = [...authorNodes, ...conceptNodes];
+
+  const links = [];
+
+  relations.forEach((r) => {
+    const sameConstellation =
+      authorConstellation.get(r.source) ===
+      authorConstellation.get(r.target);
+
+    links.push({
+      source: r.source,
+      target: r.target,
+      kind: "relation",
+      strength: r.strength || 2,
+      sameConstellation,
     });
+  });
 
-    return ids;
-  }, [authors, activeAxisEntries, themeFilters, filtersActive]);
+  concepts.forEach((c) => {
+    c.authors.forEach((authorId) => {
+      links.push({
+        source: `concept:${c.id}`,
+        target: authorId,
+        kind: "concept-link",
+        sameConstellation: true,
+      });
+    });
+  });
 
-  const filterVisibleConceptIds = useMemo(() => {
-    if (!filterVisibleAuthorIds) return null;
-
-    const ids = new Set();
-
-    concepts.forEach((c) => {
-      if (
-        c.authors.some((authorId) =>
-          filterVisibleAuthorIds.has(authorId)
+  const simulation = d3
+    .forceSimulation(nodes)
+    .force(
+      "link",
+      d3
+        .forceLink(links)
+        .id((d) => d.id)
+        .distance((l) => {
+          if (l.kind === "concept-link") return 110;
+          return l.sameConstellation ? 160 : 320;
+        })
+        .strength((l) => {
+          if (l.kind === "concept-link") return 0.9;
+          // Relation interne à une constellation : rapproche vraiment,
+          // proportionnellement à sa force réelle.
+          // Relation entre deux constellations différentes : AUCUNE
+          // influence sur la position individuelle — la proximité entre
+          // courants est entièrement décidée à l'étage macro (1). Sans
+          // ça, un auteur avec beaucoup de relations sortantes (même
+          // individuellement faibles) finit par dériver hors de son
+          // propre halo, faute de collègues pour le retenir.
+          return l.sameConstellation
+            ? Math.min(0.6, 0.15 + l.strength * 0.07)
+            : 0;
+        })
+    )
+    .force("charge", d3.forceManyBody().strength(-380))
+    .force(
+      "collide",
+      d3
+        .forceCollide()
+        .radius((d) =>
+          d.kind === "author"
+            ? 70 + Math.min(d.degree ?? 0, 26) * 4
+            : 55 + Math.min(d.labelLength ?? 10, 30) * 4
         )
-      ) {
-        ids.add(c.id);
-      }
-    });
+        .strength(1)
+        .iterations(3)
+    )
+    .force(
+      "clusterX",
+      d3
+        .forceX((d) => {
+          const c = constellationCenters[d.constellation];
+          return c ? c.x : center.x;
+        })
+        .strength(0.75)
+    )
+    .force(
+      "clusterY",
+      d3
+        .forceY((d) => {
+          const c = constellationCenters[d.constellation];
+          return c ? c.y : center.y;
+        })
+        .strength(0.75)
+    )
+    .stop();
 
-    return ids;
-  }, [concepts, filterVisibleAuthorIds]);
+  simulation.tick(650);
 
-  const getAuthor = (id) =>
-    authors.find((a) => a.id === id);
+  const authorXs = authorNodes.map((n) => n.x);
+  const authorYs = authorNodes.map((n) => n.y);
 
-  const relationGroups = useMemo(() => {
-    const groups = {};
+  const authorCentroidX =
+    authorXs.reduce((sum, x) => sum + x, 0) / authorXs.length;
+  const authorCentroidY =
+    authorYs.reduce((sum, y) => sum + y, 0) / authorYs.length;
 
-    relations.forEach((relation) => {
-      const key = [relation.source, relation.target]
-        .sort()
-        .join("--");
+  const xs = nodes.map((n) => n.x);
+  const ys = nodes.map((n) => n.y);
 
-      if (!groups[key]) groups[key] = [];
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
 
-      groups[key].push(relation);
-    });
+  // Canevas dimensionné simplement sur l'étendue réelle du contenu (pas
+  // de gonflement artificiel). Le centre du contenu (utilisé pour viser
+  // la caméra au chargement) est calculé et exposé séparément, sans
+  // supposer qu'il tombe pile au centre géométrique du canevas.
+  nodes.forEach((n) => {
+    n.x = n.x - minX + PADDING;
+    n.y = n.y - minY + PADDING;
+  });
 
-    return groups;
-  }, []);
+  const width = maxX - minX + PADDING * 2;
+  const height = maxY - minY + PADDING * 2;
 
-  const getPathD = (relation, source, target) => {
-    const key = [relation.source, relation.target]
-      .sort()
-      .join("--");
+  const centerX = authorCentroidX - minX + PADDING;
+  const centerY = authorCentroidY - minY + PADDING;
 
-    const group = relationGroups[key];
+  const authorPositions = new Map();
+  const conceptPositions = new Map();
 
-    if (group.length === 1) {
-      return `M ${source.x} ${source.y} L ${target.x} ${target.y}`;
+  nodes.forEach((n) => {
+    if (n.kind === "author") {
+      authorPositions.set(n.id, { x: n.x, y: n.y, degree: n.degree });
+    } else {
+      conceptPositions.set(n.id.replace("concept:", ""), {
+        x: n.x,
+        y: n.y,
+      });
     }
+  });
 
-    const index = group.indexOf(relation);
-    const offsetStep = 40;
-    const offset =
-      (index - (group.length - 1) / 2) * offsetStep;
-
-    const [idA, idB] = [
-      relation.source,
-      relation.target,
-    ].sort();
-
-    const nodeA = getAuthor(idA);
-    const nodeB = getAuthor(idB);
-
-    const midX = (nodeA.x + nodeB.x) / 2;
-    const midY = (nodeA.y + nodeB.y) / 2;
-
-    const dx = nodeB.x - nodeA.x;
-    const dy = nodeB.y - nodeA.y;
-    const length = Math.sqrt(dx * dx + dy * dy) || 1;
-
-    const normalX = -dy / length;
-    const normalY = dx / length;
-
-    const controlX = midX + normalX * offset;
-    const controlY = midY + normalY * offset;
-
-    return `M ${source.x} ${source.y} Q ${controlX} ${controlY}, ${target.x} ${target.y}`;
+  return {
+    authorPositions,
+    conceptPositions,
+    width,
+    height,
+    centerX,
+    centerY,
   };
-
-  const getLineStyle = (relation) => {
-    let color = "#999";
-    let width = relation.strength
-      ? 1 + relation.strength
-      : 2;
-    let dash = "";
-    let opacity = 0.18;
-
-    switch (relation.type) {
-      case "heritage":
-        color = "#6B3F2A";
-        break;
-
-      case "dialogue":
-        color = "#4A72A0";
-        break;
-
-      case "tension":
-        color = "#8C3B3B";
-        dash = "6 4";
-        break;
-
-      default:
-        break;
-    }
-
-    if (selectedAuthor) {
-      const linked =
-        relation.source === selectedAuthor.id ||
-        relation.target === selectedAuthor.id;
-
-      opacity = linked ? 1 : 0.05;
-      width = linked ? 4 : 1;
-    }
-
-    if (selectedConcept) {
-      const linked =
-        selectedConcept.authors.includes(
-          relation.source
-        ) ||
-        selectedConcept.authors.includes(
-          relation.target
-        );
-
-      opacity = linked ? 1 : 0.05;
-      width = linked ? 4 : 1;
-    }
-
-    if (constellationAuthorIds) {
-      const linked =
-        constellationAuthorIds.has(relation.source) ||
-        constellationAuthorIds.has(relation.target);
-
-      opacity = linked ? 1 : 0.05;
-      width = linked ? 3 : 1;
-    }
-
-    if (filterVisibleAuthorIds) {
-      const linked =
-        filterVisibleAuthorIds.has(relation.source) &&
-        filterVisibleAuthorIds.has(relation.target);
-
-      opacity = linked ? opacity : 0.03;
-    }
-
-    if (
-      hoveredRelation &&
-      hoveredRelation.source === relation.source &&
-      hoveredRelation.target === relation.target
-    ) {
-      opacity = 1;
-      width = 5;
-    }
-
-    return {
-      color,
-      width,
-      dash,
-      opacity,
-    };
-  };
-
-  const authorDimIds = filtersActive
-    ? filterVisibleAuthorIds
-    : neighbourIds || conceptAuthors;
-
-  const conceptDimIds = filtersActive
-    ? filterVisibleConceptIds
-    : null;
-
-  return (
-    <div
-      ref={containerRef}
-      style={{ width: "100%", height: "100%", position: "relative" }}
-    >
-      <button
-        onClick={() => resetView(400)}
-        title="Recentrer la vue"
-        aria-label="Recentrer la vue"
-        className="icon-button floating-recenter"
-        style={{
-          width: 38,
-          height: 38,
-          borderRadius: 6,
-          border: "1px solid var(--color-taupe)",
-          background: "var(--color-paper-dim)",
-          color: "var(--color-tardis)",
-          cursor: "pointer",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          boxShadow: "0 1px 3px rgba(43,38,32,0.12)",
-        }}
-      >
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="12" cy="12" r="3" />
-          <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
-        </svg>
-      </button>
-
-      <TransformWrapper
-        ref={transformRef}
-        initialScale={INITIAL_SCALE}
-        minScale={0.2}
-        maxScale={3}
-        limitToBounds={false}
-      >
-        <TransformComponent>
-        <svg
-          width={layout.width}
-          height={layout.height}
-          style={{ overflow: "visible" }}
-        >
-          <Background width={layout.width} height={layout.height} />
-
-          <defs>
-            <marker
-              id="arrow-heritage"
-              viewBox="0 0 10 10"
-              refX="9"
-              refY="5"
-              markerWidth="7"
-              markerHeight="7"
-              orient="auto-start-reverse"
-            >
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#6B3F2A" />
-            </marker>
-
-            <marker
-              id="arrow-dialogue"
-              viewBox="0 0 10 10"
-              refX="9"
-              refY="5"
-              markerWidth="7"
-              markerHeight="7"
-              orient="auto-start-reverse"
-            >
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#4A72A0" />
-            </marker>
-
-            <marker
-              id="arrow-tension"
-              viewBox="0 0 10 10"
-              refX="9"
-              refY="5"
-              markerWidth="7"
-              markerHeight="7"
-              orient="auto-start-reverse"
-            >
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#8C3B3B" />
-            </marker>
-          </defs>
-
-          <Clusters
-            authors={authors}
-            concepts={concepts}
-            selectedConstellationId={selectedConstellationId}
-            setSelectedItem={setSelectedItem}
-            dimConstellationIds={matchingConstellationIds}
-          />
-
-          {relations.map((relation, i) => {
-            if (
-              relationTypeFilters &&
-              relationTypeFilters[relation.type] === false
-            ) {
-              return null;
-            }
-
-            const source = getAuthor(
-              relation.source
-            );
-
-            const target = getAuthor(
-              relation.target
-            );
-
-            if (!source || !target) return null;
-
-            const style =
-              getLineStyle(relation);
-
-            return (
-              <path
-                key={i}
-                d={getPathD(relation, source, target)}
-                fill="none"
-                stroke={style.color}
-                strokeWidth={style.width}
-                strokeDasharray={style.dash}
-                opacity={style.opacity}
-                markerEnd={`url(#arrow-${relation.type})`}
-                style={{
-                  cursor: "pointer",
-                  transition: "all .25s",
-                }}
-                onMouseEnter={() =>
-                  setHoveredRelation(
-                    relation
-                  )
-                }
-                onMouseLeave={() =>
-                  setHoveredRelation(null)
-                }
-                onClick={() =>
-                  setSelectedItem({
-                    type: "relation",
-                    data: {
-                      ...relation,
-                      sourceName:
-                        source.name,
-                      targetName:
-                        target.name,
-                      sourceConstellation:
-                        source.constellation,
-                      targetConstellation:
-                        target.constellation,
-                    },
-                  })
-                }
-              />
-            );
-          })}
-
-          <Concepts
-            concepts={concepts}
-            selectedConcept={
-              selectedConcept
-            }
-            setSelectedItem={
-              setSelectedItem
-            }
-            dimIds={conceptDimIds}
-          />
-
-          <Authors
-            authors={authors}
-            selectedAuthor={
-              selectedAuthor
-            }
-            setSelectedItem={
-              setSelectedItem
-            }
-            dimIds={authorDimIds}
-          />
-        </svg>
-      </TransformComponent>
-    </TransformWrapper>
-    </div>
-  );
 }

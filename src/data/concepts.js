@@ -7,6 +7,8 @@ export const concepts = [
     authors: ["bourdieu"],
     x: 420,
     y: 470,
+    simpleDefinition:
+      "Tout ce qu'on a appris sans s'en rendre compte, depuis qu'on est petit·e, en grandissant dans notre famille et notre milieu : nos goûts, nos façons de parler ou de nous tenir. Ça nous influence énormément, même quand on pense choisir librement.",
   },
   {
     id: "champ",
@@ -25,6 +27,8 @@ export const concepts = [
     authors: ["durkheim"],
     x: 140,
     y: 240,
+    simpleDefinition:
+      "Ce qui se passe quand les règles communes d'une société s'affaiblissent : les gens se sentent perdus, sans repères clairs pour savoir comment agir.",
   },
   {
     id: "action-sociale",
@@ -34,6 +38,8 @@ export const concepts = [
     authors: ["weber", "talcott-parsons"],
     x: 720,
     y: 260,
+    simpleDefinition:
+      "Un acte qu'on fait en tenant compte des autres et du sens qu'on lui donne soi-même — pas juste un réflexe, mais quelque chose qui a une signification pour la personne qui le fait.",
   },
   {
     id: "modele-agil",

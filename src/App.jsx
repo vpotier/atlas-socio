@@ -88,6 +88,22 @@ export default function App() {
             Sélectionnez un auteur, un concept, une relation ou une
             constellation sur la carte.
           </p>
+
+          <p
+            style={{
+              marginTop: 32,
+              fontSize: 12,
+              color: "var(--color-taupe)",
+            }}
+          >
+            Par Victor Potier —{" "}
+            <a
+              href="mailto:victor.potier@univ-eiffel.fr"
+              style={{ color: "var(--color-tardis)" }}
+            >
+              Me contacter
+            </a>
+          </p>
         </>
       );
     }
@@ -561,26 +577,6 @@ export default function App() {
       />
 
       <Legend />
-
-      <div
-        className="floating-credit"
-        style={{
-          fontSize: 11,
-          color: "var(--color-taupe)",
-          background: "var(--color-paper-dim)",
-          padding: "6px 10px",
-          borderRadius: 6,
-          border: "1px solid var(--color-taupe)",
-        }}
-      >
-        Par Victor Potier —{" "}
-        <a
-          href="mailto:victor.potier@univ-eiffel.fr"
-          style={{ color: "var(--color-tardis)" }}
-        >
-          Me contacter
-        </a>
-      </div>
 
       <div style={{ flex: 1, padding: 20, minWidth: 0, overflow: "hidden" }}>
         <Graph

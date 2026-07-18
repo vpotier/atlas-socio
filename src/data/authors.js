@@ -473,6 +473,10 @@ export const authors = [
       "Mercklé, 2011, L'analyse des réseaux sociaux",
       "Ritzer, 2011, Sociological Theory",
     ],
+    simple: {
+      summary:
+        "Harrison White, physicien de formation, développe des modèles mathématiques très précis pour représenter les réseaux de relations sociales. Il montre par exemple que les marchés économiques ne sont pas de simples lieux d'échange entre acheteurs et vendeurs isolés, mais des structures où chaque acteur observe la position des autres pour s'y positionner à son tour.",
+    },
   },
 
   {
@@ -508,6 +512,10 @@ export const authors = [
       "Steiner, 1999, La sociologie économique",
       "Mercklé, 2011, L'analyse des réseaux sociaux",
     ],
+    simple: {
+      summary:
+        "Mark Granovetter montre que l'activité économique ne peut jamais être comprise indépendamment des relations sociales dans lesquelles elle s'inscrit, un principe qu'il nomme l'« encastrement ». Il montre aussi que ce sont souvent les relations les moins proches, les « liens faibles », qui se révèlent les plus utiles pour trouver un emploi, car elles donnent accès à des informations que nos proches ne détiennent pas déjà.",
+    },
   },
 
   {
@@ -543,6 +551,10 @@ export const authors = [
       "Lazega, 2006, Réseaux sociaux et structures relationnelles",
       "Dubar, 2000, La socialisation",
     ],
+    simple: {
+      summary:
+        "Emmanuel Lazega étudie les réseaux de relations au sein des organisations, par exemple entre avocats d'un même cabinet, pour comprendre comment se construisent la coopération et l'entraide entre collègues. Il combine l'observation de terrain avec des méthodes précises d'analyse de réseaux.",
+    },
   },
 
   {
@@ -575,6 +587,10 @@ export const authors = [
       "Coulon, 1987, L'ethnométhodologie",
       "Ritzer, 2011, Sociological Theory",
     ],
+    simple: {
+      summary:
+        "Harold Garfinkel fonde l'ethnométhodologie, un courant qui étudie les méthodes ordinaires par lesquelles chacun rend le monde social intelligible au quotidien, sans même y penser. Pour révéler ces méthodes habituellement invisibles, il conçoit des « expériences de rupture », qui consistent à enfreindre volontairement une règle implicite pour observer la réaction de désarroi que cela provoque chez autrui.",
+    },
   },
 
   {
@@ -607,6 +623,10 @@ export const authors = [
       "Coulon, 1987, L'ethnométhodologie",
       "Heritage, 1984, Garfinkel and Ethnomethodology",
     ],
+    simple: {
+      summary:
+        "Harvey Sacks fonde l'analyse de conversation, qui étudie en détail comment se déroulent les échanges verbaux : qui prend la parole, quand, et selon quelles règles implicites. Il fonde ses analyses sur l'écoute répétée d'enregistrements réels, plutôt que sur une théorie construite à l'avance.",
+    },
   },
 
   {
@@ -642,6 +662,10 @@ export const authors = [
       "Lallement, 2000, Histoire des idées sociologiques",
       "Ritzer, 2011, Sociological Theory",
     ],
+    simple: {
+      summary:
+        "Peter L. Berger montre, avec Thomas Luckmann, que la réalité sociale n'est ni purement extérieure aux individus, ni purement le fruit de leur volonté : elle se construit dans un aller-retour permanent entre les deux. Les individus créent des institutions par leurs actions répétées, ces institutions deviennent ensuite une réalité qui leur semble extérieure, puis cette réalité est à son tour intériorisée par les générations suivantes.",
+    },
   },
 
   {
@@ -677,6 +701,10 @@ export const authors = [
       "Corcuff, 2007, Les nouvelles sociologies",
       "Ansart, 1990, Les sociologies contemporaines",
     ],
+    simple: {
+      summary:
+        "Thomas Luckmann montre, avec Peter L. Berger, que la réalité sociale n'est ni purement extérieure aux individus, ni purement le fruit de leur volonté : elle se construit dans un aller-retour permanent entre les deux, à travers un processus en trois temps qu'ils nomment extériorisation, objectivation et intériorisation.",
+    },
   },
 
   {
@@ -712,6 +740,10 @@ export const authors = [
       "Dubar, 1991, La Socialisation",
       "Demazière, 2016, Hommage à Claude Dubar",
     ],
+    simple: {
+      summary:
+        "Claude Dubar étudie comment se construit l'identité professionnelle et sociale d'une personne, à travers ce qu'il appelle une « double transaction » : d'un côté, la manière dont la personne se raconte elle-même son propre parcours ; de l'autre, l'identité que lui attribuent les autres et les institutions.",
+    },
   },
 
   {
@@ -945,6 +977,10 @@ export const authors = [
       "Corcuff, 2007, Les nouvelles sociologies",
       "Ritzer, 2011, Sociological Theory",
     ],
+    simple: {
+      summary:
+        "Bruno Latour pense qu'il est impossible de comprendre la science et la technique en ne s'intéressant qu'aux humains : les objets, les instruments et les dispositifs techniques jouent eux aussi un rôle actif, au même titre que les personnes. Il étudie sur le terrain, souvent au sein même des laboratoires, comment se construisent les découvertes scientifiques, en suivant pas à pas les réseaux d'acteurs, humains et objets, impliqués.",
+    },
   },
 
   {
@@ -980,6 +1016,10 @@ export const authors = [
       "Lallement, 2000, Histoire des idées sociologiques",
       "Grossetti, 2004, Sociologie de l'imprévisibilité",
     ],
+    simple: {
+      summary:
+        "Michel Callon partage avec Latour l'idée que les objets techniques doivent être étudiés au même titre que les personnes. Il montre comment une innovation technique se construit par un processus de « traduction », au cours duquel des acteurs aux intérêts très différents en viennent progressivement à s'aligner autour d'un même projet.",
+    },
   },
 
   {
@@ -1012,6 +1052,10 @@ export const authors = [
       "Ritzer, 2011, Sociological Theory",
       "Star, 2010, Infrastructure and Ethnography",
     ],
+    simple: {
+      summary:
+        "Susan Leigh Star montre que les infrastructures techniques et les systèmes de classification, par exemple les catégories administratives ou médicales, ne sont jamais neutres : ils reflètent toujours un point de vue particulier, et peuvent exclure ou rendre invisibles celles et ceux qui n'y correspondent pas exactement.",
+    },
   },
 
   {
@@ -1047,6 +1091,10 @@ export const authors = [
       "Lallement, 2000, Histoire des idées sociologiques",
       "Corcuff, 2007, Les nouvelles sociologies",
     ],
+    simple: {
+      summary:
+        "Anthony Giddens refuse de choisir entre les structures sociales et l'action individuelle : selon lui, les structures ne sont pas seulement une contrainte extérieure, elles sont aussi ce qui rend possible l'action des individus, laquelle reproduit ou transforme ces structures en retour.",
+    },
   },
 
   {
@@ -1197,6 +1245,10 @@ export const authors = [
       "Lallement, 2017, Histoire des idées sociologiques",
       "Dollo et al., 2015, Les grandes notions de la sociologie",
     ],
+    simple: {
+      summary:
+        "Karl Marx pense que ce sont les rapports économiques et la place occupée dans la production, posséder ou non les moyens de production, qui déterminent la façon de penser et d'agir des individus, bien plus que leur volonté personnelle. Il montre que l'histoire avance à travers les tensions entre classes sociales aux intérêts opposés, en particulier entre la bourgeoisie et la classe ouvrière dans le capitalisme.",
+    },
   },
 
   {
@@ -1292,6 +1344,10 @@ export const authors = [
     classificationNote:
       "Oakley est identifiée comme celle qui met en circulation aux États-Unis le terme de genre dans son acception sociologique moderne à partir de 1972, fondation conceptuelle du champ des études de genre.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simple: {
+      summary:
+        "Ann Oakley étudie le travail domestique effectué par les femmes au foyer comme un véritable travail, avec ses tâches, ses contraintes et sa charge mentale, alors qu'il reste souvent invisible et non reconnu socialement. Elle renouvelle aussi profondément la manière de mener des entretiens sociologiques, en critiquant l'idée qu'il faudrait rester complètement neutre et distant face à la personne interrogée.",
+    },
   },
 
   {
@@ -1357,6 +1413,10 @@ export const authors = [
     classificationNote:
       "Boltanski est identifié comme le co-fondateur, avec Thévenot, du paradigme pragmatique en rupture explicite avec la sociologie critique de Bourdieu, dont il fut pourtant un proche collaborateur.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simple: {
+      summary:
+        "Luc Boltanski étudie la manière dont les personnes justifient leurs actes lors d'un désaccord, en s'appuyant sur des principes de justice communs, par exemple la réussite marchande, le mérite ou la solidarité. Il refuse l'idée que les individus seraient soit de purs calculateurs, soit de simples exécutants des normes de leur milieu social : ils disposent au contraire d'une réelle capacité critique.",
+    },
   },
 
   {
@@ -1389,6 +1449,10 @@ export const authors = [
     classificationNote:
       "Thévenot est identifié comme le co-fondateur, avec Boltanski, du paradigme pragmatique en sociologie française contemporaine.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simple: {
+      summary:
+        "Laurent Thévenot partage avec Boltanski, avec qui il coécrit leur ouvrage de référence, l'idée que les personnes justifient leurs actes lors d'un désaccord en s'appuyant sur des principes de justice communs. Il s'intéresse en particulier à la façon dont les objets et les instruments de mesure participent eux aussi à ces justifications.",
+    },
   },
 
   {
@@ -1422,6 +1486,10 @@ export const authors = [
     classificationNote:
       "Touraine est unanimement présenté comme le fondateur de l'actionnisme et de la sociologie française des mouvements sociaux de l'après-guerre. Il juge lui-même la sociologie classique de Weber, Marx et Durkheim inadaptée à l'étude des sociétés contemporaines, trop marquée par le paradigme industriel.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simple: {
+      summary:
+        "Alain Touraine construit sa sociologie contre celle de Parsons, qu'il juge trop centrée sur le système social : pour lui, ce sont les individus et les mouvements sociaux qui font l'histoire par leur action. Il invente une méthode originale, l'intervention sociologique, qui consiste à réunir un groupe de militants pendant plusieurs semaines pour les faire s'auto-analyser collectivement.",
+    },
   },
 
   {
@@ -1628,6 +1696,10 @@ export const authors = [
     classificationNote:
       "Zelizer est identifiée comme l'une des figures majeures de la nouvelle sociologie économique aux côtés de Granovetter, dont elle partage le refus d'une conception purement utilitariste de l'action économique, tout en insistant davantage sur la dimension culturelle et morale des échanges que sur leur seule structure relationnelle.",
     sources: ["Steiner, 1999, La sociologie économique"],
+    simple: {
+      summary:
+        "Viviana Zelizer montre que l'argent n'est jamais neutre : les personnes lui attribuent des significations morales différentes selon son origine et sa destination, l'argent gagné n'étant pas traité comme l'argent reçu en cadeau, par exemple. Elle s'oppose ainsi à l'idée d'un argent purement interchangeable, en s'appuyant sur une approche culturelle et historique plutôt que sur l'analyse formelle des réseaux.",
+    },
   },
 
   {
@@ -1661,6 +1733,10 @@ export const authors = [
     sources: [
       "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
     ],
+    simple: {
+      summary:
+        "Madeleine Akrich étudie comment les objets techniques inscrivent un usage prévu par leurs concepteurs, tout en montrant que les usagers réels s'en détournent souvent, en les utilisant autrement que prévu.",
+    },
   },
 
   {
@@ -1939,6 +2015,10 @@ export const authors = [
       "Fraser & Honneth, 2003, Redistribution or Recognition?",
     ],
     themes: ["Études de genre", "Sociologie politique et de l'État"],
+    simple: {
+      summary:
+        "Nancy Fraser prolonge et critique la théorie de Habermas sur l'espace public : elle lui reproche d'avoir ignoré les exclusions de genre et de classe qui le traversaient. Elle distingue deux formes de justice sociale complémentaires : la redistribution, qui vise à corriger les inégalités économiques, et la reconnaissance, qui vise à corriger le mépris envers certains groupes sociaux.",
+    },
   },
 
   {
@@ -2010,6 +2090,10 @@ export const authors = [
       "Mills, 1956, The Power Elite",
     ],
     themes: ["Sociologie politique et de l'État"],
+    simple: {
+      summary:
+        "Charles Wright Mills appelle à une sociologie capable de relier les biographies individuelles aux structures historiques et sociales, ce qu'il nomme l'« imagination sociologique ». Il critique à la fois la théorie trop abstraite de Parsons, coupée du concret, et les enquêtes statistiques de Lazarsfeld, qu'il juge trop détachées de toute réflexion théorique.",
+    },
   },
 
   {
@@ -2021,7 +2105,7 @@ export const authors = [
     deathYear: null,
     x: 350,
     y: 850,
-    color: "#1F618D",
+    color: "#2F5770",
 
     concepts: ["Interactionnisme structural", "Analyse structurale des réseaux"],
 
@@ -2045,6 +2129,10 @@ export const authors = [
       "Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie",
     ],
     themes: ["Sociologie économique", "Sociologie de la famille"],
+    simple: {
+      summary:
+        "Alain Degenne est l'un des pionniers de l'analyse des réseaux sociaux en France. Avec Michel Forsé, il importe et théorise en français l'approche structurale américaine de Harrison White, sous le nom d'« interactionnisme structural ».",
+    },
   },
 
   {
@@ -2056,7 +2144,7 @@ export const authors = [
     deathYear: null,
     x: 420,
     y: 870,
-    color: "#1F618D",
+    color: "#2F5770",
 
     concepts: ["Sociabilité négociée", "Justice sociale empirique"],
 
@@ -2079,6 +2167,10 @@ export const authors = [
       "Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie",
     ],
     themes: ["Sociologie économique"],
+    simple: {
+      summary:
+        "Michel Forsé coécrit avec Alain Degenne l'ouvrage de référence qui importe et théorise en français l'approche structurale américaine, sous le nom d'« interactionnisme structural ». Il se consacre ensuite davantage à l'étude empirique du sentiment de justice sociale.",
+    },
   },
 
   {
@@ -2090,7 +2182,7 @@ export const authors = [
     deathYear: null,
     x: 300,
     y: 900,
-    color: "#1F618D",
+    color: "#2F5770",
 
     concepts: ["Dynamique des réseaux personnels", "Bifurcations biographiques"],
 
@@ -2112,6 +2204,10 @@ export const authors = [
       "Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales",
     ],
     themes: ["Sociologie de la famille"],
+    simple: {
+      summary:
+        "Claire Bidart étudie comment les réseaux personnels d'un individu, la famille, les amis, les collègues, évoluent au fil de sa vie, en particulier lors de moments de bascule importants et parfois imprévisibles, comme un changement d'emploi ou une rupture amoureuse.",
+    },
   },
 
   {
@@ -2123,7 +2219,7 @@ export const authors = [
     deathYear: null,
     x: 380,
     y: 920,
-    color: "#1F618D",
+    color: "#2F5770",
 
     concepts: ["Encastrement et découplage", "Narrations quantifiées"],
 
@@ -2146,6 +2242,10 @@ export const authors = [
       "Grossetti, 2009, Qu'est-ce qu'une relation sociale ? Un ensemble de médiations dyadiques, Redes, 16(2)",
     ],
     themes: ["Sociologie de la famille"],
+    simple: {
+      summary:
+        "Michel Grossetti transpose en France une méthode d'enquête sur les réseaux personnels développée aux États-Unis, et met au point les « narrations quantifiées », une méthode pour reconstituer précisément les chaînes de relations mobilisées par une personne pour atteindre un but donné.",
+    },
   },
 
   {
@@ -2157,7 +2257,7 @@ export const authors = [
     deathYear: null,
     x: 280,
     y: 950,
-    color: "#1F618D",
+    color: "#2F5770",
 
     concepts: ["Réseaux personnels", "Sociologie urbaine des relations"],
 
@@ -2180,6 +2280,10 @@ export const authors = [
       "Fischer, 1982, To Dwell Among Friends: Personal Networks in Town and City",
     ],
     themes: ["Sociologie urbaine"],
+    simple: {
+      summary:
+        "Claude S. Fischer mène l'une des toutes premières grandes enquêtes sur les réseaux personnels des habitants d'une même région, en zone urbaine comme rurale, montrant comment ces réseaux varient selon le lieu de vie.",
+    },
   },
 
   {
@@ -2209,6 +2313,10 @@ export const authors = [
       "Ellul est identifié comme l'un des principaux penseurs de la technique du XXe siècle (aux côtés de Simondon, Heidegger ou Habermas), dont la thèse de l'autonomie technique nourrit encore les débats contemporains en sociologie des techniques, sans qu'il soit lui-même rattaché à un courant sociologique organisé.",
     sources: ["Ellul, 1954, La Technique ou l'enjeu du siècle"],
     themes: ["Sociologie de l'innovation et des techniques (STS)"],
+    simple: {
+      summary:
+        "Jacques Ellul soutient que la technique est devenue, au XXe siècle, un système autonome qui échappe désormais au contrôle des individus : l'outil que l'être humain maîtrisait s'est transformé en système auquel il est lui-même soumis.",
+    },
   },
 
   {
@@ -2240,6 +2348,10 @@ export const authors = [
       "Simondon, 1958, Du mode d'existence des objets techniques",
     ],
     themes: ["Sociologie de l'innovation et des techniques (STS)"],
+    simple: {
+      summary:
+        "Gilbert Simondon refuse d'opposer l'individu et la société comme deux réalités séparées : selon lui, l'individu et le collectif se construisent en même temps, l'un ne précédant jamais l'autre, dans un même mouvement qu'il nomme l'« individuation ».",
+    },
   },
 
   {
@@ -2275,5 +2387,9 @@ export const authors = [
       "Desrosières, 1993, La Politique des grands nombres. Histoire de la raison statistique",
     ],
     themes: ["Sociologie politique et de l'État"],
+    simple: {
+      summary:
+        "Alain Desrosières étudie l'histoire de la statistique et montre qu'elle n'est jamais un simple reflet neutre de la réalité : les catégories statistiques, comme les catégories socioprofessionnelles, résultent de conventions établies collectivement, avant de devenir des outils à la fois de connaissance et de gouvernement.",
+    },
   },
 ];

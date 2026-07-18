@@ -66,6 +66,8 @@ export const constellations = {
     definition:
       "Elle analyse la structure des réseaux sociaux et l'encastrement (embeddedness) de l'action économique dans des relations concrètes, contre l'idée d'acteurs atomisés (White, Granovetter, Zelizer, Lazega).",
     disciplines: ["Mathématiques (théorie des graphes)", "Économie"],
+    simpleDefinition:
+      "Ce courant analyse la structure des réseaux de relations entre personnes, et montre que même les décisions économiques restent toujours ancrées dans des relations concrètes, contre l'idée d'individus isolés qui agiraient seuls.",
   },
   "l-ethnomethodologie": {
     label: "Ethnométhodologie",
@@ -74,6 +76,8 @@ export const constellations = {
     definition:
       "Fondée par Garfinkel, elle étudie les méthodes ordinaires et souvent invisibles par lesquelles les acteurs produisent et rendent intelligible, en pratique, l'ordre social qui les entoure.",
     disciplines: ["Phénoménologie / Philosophie"],
+    simpleDefinition:
+      "Ce courant s'intéresse aux méthodes ordinaires, souvent invisibles, par lesquelles les personnes produisent et rendent compréhensible, dans la pratique de tous les jours, l'ordre social qui les entoure.",
   },
   "le-constructivisme-social": {
     label: "Constructivisme social",
@@ -82,6 +86,8 @@ export const constellations = {
     definition:
       "Portée par Berger et Luckmann, elle décrit la réalité sociale comme le produit d'une dialectique continue entre l'individu et la société : extériorisation, objectivation, intériorisation.",
     disciplines: ["Phénoménologie / Philosophie"],
+    simpleDefinition:
+      "Ce courant montre que la réalité sociale se construit continuellement dans un aller-retour entre l'individu et la société : nos actions façonnent le monde social, qui devient à son tour une réalité extérieure que nous intériorisons à notre tour.",
   },
   "la-theorie-critique": {
     label: "Théorie critique",
@@ -110,6 +116,8 @@ export const constellations = {
     definition:
       "Portée par Latour et Callon, elle postule une symétrie entre humains et non-humains (objets, techniques, dispositifs), considérés ensemble comme des « actants » au sein de réseaux sociotechniques.",
     disciplines: ["Sémiotique", "Histoire des sciences"],
+    simpleDefinition:
+      "Ce courant refuse de séparer les humains des objets techniques : pour comprendre l'innovation ou la science, il faut suivre ensemble les personnes ET les objets (machines, instruments, dispositifs), qui agissent tous ensemble en réseau.",
   },
   "la-theorie-de-la-structuration": {
     label: "Théorie de la structuration",
@@ -118,6 +126,8 @@ export const constellations = {
     definition:
       "Formulée par Giddens, elle dépasse l'opposition entre structure et action individuelle en montrant que les structures sociales sont à la fois le moyen et le résultat des pratiques des acteurs.",
     disciplines: ["Linguistique", "Philosophie"],
+    simpleDefinition:
+      "Ce courant refuse de choisir entre structure et action individuelle : pour Giddens, les structures sociales sont à la fois ce qui rend possible l'action des individus et ce que cette action produit et reproduit en retour.",
   },
   structuralisme: {
     label: "Structuralisme (auteurs-ponts)",
@@ -136,5 +146,7 @@ export const constellations = {
     definition:
       "Développée par Boltanski et Thévenot en rupture avec la sociologie critique de Bourdieu, elle étudie les compétences critiques ordinaires des acteurs et les régimes de justification qu'ils mobilisent dans l'action et l'épreuve.",
     disciplines: ["Philosophie", "Économie"],
+    simpleDefinition:
+      "Ce courant s'intéresse à la manière dont les personnes justifient publiquement leurs actes lors d'un désaccord, en s'appuyant sur des principes de justice partagés — plutôt que de supposer d'emblée qu'un groupe social domine les autres.",
   },
 };

@@ -97,15 +97,7 @@ function computeConstellationCenters(authors, relations) {
       "collide",
       d3
         .forceCollide()
-        .radius((d) =>
-          320 +
-          memberCount[d.id] * 55 +
-          // Petit supplément ciblé pour les constellations à très peu
-          // de membres (1 ou 2), qui ont sinon trop peu de marge pour
-          // résister à l'attraction d'un voisin plus imposant. Reste
-          // sans effet sur les constellations plus grandes.
-          (memberCount[d.id] <= 2 ? 90 : 0)
-        )
+        .radius((d) => 320 + memberCount[d.id] * 55)
     )
     .force("center", d3.forceCenter(center.x, center.y))
     .stop();
@@ -116,6 +108,35 @@ function computeConstellationCenters(authors, relations) {
 
   metaNodes.forEach((n) => {
     constellationCenters[n.id] = { x: n.x, y: n.y };
+  });
+
+  // Filet de sécurité : quoi qu'il arrive pendant la simulation
+  // (répulsion en cascade, constellation isolée poussée trop loin...),
+  // aucun courant ne doit finir hors d'un rayon raisonnable autour du
+  // centre général de la carte. On ramène doucement les éventuels
+  // isolés vers le reste, sans toucher à ceux déjà bien placés.
+  const cxs = Object.values(constellationCenters).map((c) => c.x);
+  const cys = Object.values(constellationCenters).map((c) => c.y);
+  const centroid = {
+    x: cxs.reduce((a, b) => a + b, 0) / cxs.length,
+    y: cys.reduce((a, b) => a + b, 0) / cys.length,
+  };
+
+  const MAX_DISTANCE_FROM_CENTROID = 950;
+
+  Object.keys(constellationCenters).forEach((id) => {
+    const c = constellationCenters[id];
+    const dx = c.x - centroid.x;
+    const dy = c.y - centroid.y;
+    const dist = Math.hypot(dx, dy);
+
+    if (dist > MAX_DISTANCE_FROM_CENTROID) {
+      const scale = MAX_DISTANCE_FROM_CENTROID / dist;
+      constellationCenters[id] = {
+        x: centroid.x + dx * scale,
+        y: centroid.y + dy * scale,
+      };
+    }
   });
 
   return constellationCenters;

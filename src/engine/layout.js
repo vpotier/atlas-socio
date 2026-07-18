@@ -321,6 +321,58 @@ export function computeLayout(authors, concepts, relations) {
 
   simulation.tick(650);
 
+  // Filet de sécurité final, appliqué directement sur les positions
+  // réellement simulées (celles qui servent ensuite à l'affichage) —
+  // et non sur une étape intermédiaire que d'autres forces pourraient
+  // ensuite annuler. Si le centre (calculé sur les AUTEURS seulement,
+  // comme le fait le halo visuel dans Clusters.jsx) de « théorie de la
+  // structuration » reste trop proche de celui de « sociologie
+  // marxiste » malgré tout ce qui précède, on déplace en bloc tous les
+  // membres (auteurs ET concepts) de la première pour les écarter,
+  // sans toucher à la seconde ni à aucune autre constellation.
+  const HARD_SEPARATION_OVERRIDES = [
+    {
+      fixed: "la-sociologie-marxiste",
+      moved: "la-theorie-de-la-structuration",
+      minDistance: 650,
+    },
+  ];
+
+  HARD_SEPARATION_OVERRIDES.forEach(({ fixed, moved, minDistance }) => {
+    const fixedAuthors = nodes.filter(
+      (n) => n.kind === "author" && n.constellation === fixed
+    );
+    const movedNodes = nodes.filter(
+      (n) => n.constellation === moved
+    );
+    const movedAuthors = movedNodes.filter((n) => n.kind === "author");
+
+    if (fixedAuthors.length === 0 || movedAuthors.length === 0) return;
+
+    const centroid = (list) => ({
+      x: list.reduce((s, n) => s + n.x, 0) / list.length,
+      y: list.reduce((s, n) => s + n.y, 0) / list.length,
+    });
+
+    const fixedCenter = centroid(fixedAuthors);
+    const movedCenter = centroid(movedAuthors);
+
+    const dx = movedCenter.x - fixedCenter.x;
+    const dy = movedCenter.y - fixedCenter.y;
+    const dist = Math.hypot(dx, dy) || 1;
+
+    if (dist < minDistance) {
+      const shortfall = minDistance - dist;
+      const ux = dx / dist;
+      const uy = dy / dist;
+
+      movedNodes.forEach((n) => {
+        n.x += ux * shortfall;
+        n.y += uy * shortfall;
+      });
+    }
+  });
+
   const authorXs = authorNodes.map((n) => n.x);
   const authorYs = authorNodes.map((n) => n.y);
 

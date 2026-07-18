@@ -275,77 +275,98 @@ export default function App() {
 
           <h3>Ce que contient l'Atlas</h3>
 
-          <p>
-            Une carte de 63 auteur·ices de théorie sociologique,
-            regroupé·es en 15 grands courants théoriques, auxquels
-            s'ajoutent quelques auteur·ices-ponts qui ne se rattachent
-            pleinement à aucun courant unique.
-          </p>
-
-          <p>
-            Chaque point cliquable ouvre une fiche : auteur·ice,
-            concept, ou courant théorique. Chaque trait reliant deux
-            auteur·ices est lui aussi cliquable, et ouvre sa propre
-            fiche synthétique et sourcée : héritage (marron), dialogue
-            (bleu), tension (rouge, pointillé).
-          </p>
-
-          <p>
-            L'ensemble des informations est sourcé : chaque fiche
-            indique les références académiques sur lesquelles elle
-            s'appuie.
-          </p>
+          <ul>
+            <li>
+              Une carte de 63 auteur·ices de théorie sociologique,
+              regroupé·es en 15 grands courants théoriques, auxquels
+              s'ajoutent quelques auteur·ices-ponts qui ne se rattachent
+              pleinement à aucun courant unique.
+            </li>
+            <li>
+              Chaque point cliquable ouvre une fiche : auteur·ice,
+              concept, ou courant théorique. Chaque trait reliant deux
+              auteur·ices est lui aussi cliquable, et ouvre sa propre
+              fiche synthétique et sourcée : héritage (marron), dialogue
+              (bleu), tension (rouge, pointillé).
+            </li>
+            <li>
+              L'ensemble des informations est sourcé : chaque fiche
+              indique les références académiques sur lesquelles elle
+              s'appuie.
+            </li>
+            <li>
+              Un mode découverte, accessible depuis ce panneau d'accueil,
+              propose des fiches très simplifiées, sans jargon, idéales
+              pour une première approche de la sociologie. Il peut être
+              activé ou désactivé à tout moment, le contenu complet reste
+              toujours accessible juste à côté.
+            </li>
+          </ul>
 
           <h3>Se repérer sur la carte</h3>
 
-          <p>
-            Zoomer/dézoomer à la molette ou en pinçant (sur mobile),
-            glisser pour se déplacer. Le bouton viseur (en haut à
-            droite) recentre la vue sur l'ensemble de la carte. Cliquer
-            sur le halo d'un courant théorique ouvre sa fiche :
-            définition, période, disciplines qui l'ont nourri.
-          </p>
+          <ul>
+            <li>
+              Zoomer/dézoomer à la molette ou en pinçant (sur mobile),
+              glisser pour se déplacer.
+            </li>
+            <li>
+              Le bouton viseur (en haut à droite) recentre la vue sur
+              l'ensemble de la carte.
+            </li>
+            <li>
+              Cliquer sur le halo d'un courant théorique ouvre sa fiche :
+              définition, période, disciplines qui l'ont nourri.
+            </li>
+            <li>
+              Dans le panneau Filtres, il est possible d'afficher ou de
+              masquer chaque type de relation (héritage, dialogue,
+              tension) indépendamment, pour alléger la carte et faciliter
+              la lecture.
+            </li>
+          </ul>
 
           <h3>Si vous êtes étudiant·e</h3>
 
-          <p>
-            Il peut être utile de commencer par explorer la carte sans
-            filtre : la disposition spatiale des courants théoriques,
-            issue des relations effectivement documentées entre leurs
-            auteur·ices, donne une première intuition de la manière
-            dont ils s'articulent les uns aux autres.
-          </p>
-
-          <p>
-            Cliquez sur un·e auteur·ice pour accéder à sa fiche
-            complète (résumé, œuvres, concepts, influences). Utilisez
-            la recherche pour retrouver rapidement un nom, un concept
-            ou un courant.
-          </p>
-
-          <p>
-            Le filtre par thème permet un premier balayage
-            bibliographique ciblé — par exemple, en période de révision
-            de partiels, pour retrouver rapidement l'ensemble des
-            auteur·ices ayant travaillé sur un objet donné (les études
-            de genre, la sociologie urbaine, etc.).
-          </p>
+          <ul>
+            <li>
+              Il peut être utile de commencer par explorer la carte sans
+              filtre : la disposition spatiale des courants théoriques,
+              issue des relations effectivement documentées entre leurs
+              auteur·ices, donne une première intuition de la manière
+              dont ils s'articulent les uns aux autres.
+            </li>
+            <li>
+              Cliquez sur un·e auteur·ice pour accéder à sa fiche
+              complète (résumé, œuvres, concepts, influences). Utilisez
+              la recherche pour retrouver rapidement un nom, un concept
+              ou un courant.
+            </li>
+            <li>
+              Le filtre par thème permet un premier balayage
+              bibliographique ciblé — par exemple, en période de révision
+              de partiels, pour retrouver rapidement l'ensemble des
+              auteur·ices ayant travaillé sur un objet donné (les études
+              de genre, la sociologie urbaine, etc.).
+            </li>
+          </ul>
 
           <h3>Si vous êtes enseignant·e</h3>
 
-          <p>
-            Les 3 curseurs de filtre (Individu/Société, Méthode,
-            Rationalité) permettent d'isoler les auteur·ices selon leur
-            positionnement épistémologique, ce qui peut être utile
-            pour construire une séance comparative.
-          </p>
-
-          <p>
-            Il est possible de masquer certains types de relations
-            (héritage, dialogue, tension) pour simplifier la lecture
-            en cours et concentrer l'attention des étudiant·es sur un
-            seul type de filiation.
-          </p>
+          <ul>
+            <li>
+              Les 3 curseurs de filtre (Individu/Société, Méthode,
+              Rationalité) permettent d'isoler les auteur·ices selon leur
+              positionnement épistémologique, ce qui peut être utile
+              pour construire une séance comparative.
+            </li>
+            <li>
+              Il est possible de masquer certains types de relations
+              (héritage, dialogue, tension) pour simplifier la lecture
+              en cours et concentrer l'attention des étudiant·es sur un
+              seul type de filiation.
+            </li>
+          </ul>
 
           <h3>Questions fréquentes</h3>
 

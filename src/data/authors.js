@@ -747,6 +747,10 @@ export const authors = [
       "Lallement, 2000, Histoire des idées sociologiques",
       "Ritzer, 2011, Sociological Theory",
     ],
+    simple: {
+      summary:
+        "Max Horkheimer développe, avec Adorno, l'idée que la raison moderne s'est progressivement réduite à un pur calcul d'efficacité, au service de la domination plutôt que de l'émancipation — ce qu'il nomme la « raison instrumentale ». Il refuse l'idée d'une science neutre et objective : sa « théorie critique » vise au contraire à dénoncer l'ordre social existant pour contribuer à sa transformation.",
+    },
   },
 
   {
@@ -783,6 +787,10 @@ export const authors = [
       "Aron, 1967, Les étapes de la pensée sociologique",
       "Ritzer, 2011, Sociological Theory",
     ],
+    simple: {
+      summary:
+        "Theodor W. Adorno partage avec Horkheimer, avec qui il coécrit La Dialectique de la raison, l'idée que la raison moderne s'est réduite à un pur calcul d'efficacité au service de la domination. Il développe aussi une critique de l'industrie culturelle (cinéma, radio, musique de masse), qu'il juge standardisée et propre à maintenir les individus dans la passivité. Son style d'écriture, volontairement fragmentaire, refuse toute conclusion trop définitive.",
+    },
   },
 
   {
@@ -818,6 +826,10 @@ export const authors = [
       "Ansart, 1990, Les sociologies contemporaines",
       "Collins, 1994, Four Sociological Traditions",
     ],
+    simple: {
+      summary:
+        "Jürgen Habermas prolonge la théorie critique tout en s'en distanciant : plutôt que de s'en tenir à une critique de la raison instrumentale, il propose une autre forme de rationalité, la « rationalité communicationnelle », fondée sur la recherche d'un accord mutuel entre les personnes par la discussion argumentée. Il s'intéresse aussi à l'espace public, ce lieu où les citoyens peuvent débattre librement des affaires communes.",
+    },
   },
 
   {
@@ -854,6 +866,10 @@ export const authors = [
       "Lallement, 2000, Histoire des idées sociologiques",
       "Ansart, 1990, Les sociologies contemporaines",
     ],
+    simple: {
+      summary:
+        "Henri Lefebvre étudie comment le capitalisme façonne jusqu'à l'espace dans lequel nous vivons, les villes, les logements, les lieux de travail, et dépossède les individus de leur capacité à créer eux-mêmes leur cadre de vie. Il critique aussi la « rationalité industrielle » imposée d'en haut par l'État et la technocratie, tout en gardant une place pour la vie quotidienne et la possibilité de se réapproprier son environnement.",
+    },
   },
 
   {
@@ -889,6 +905,10 @@ export const authors = [
       "Ritzer, 2011, Sociological Theory",
       "Collins, 1994, Four Sociological Traditions",
     ],
+    simple: {
+      summary:
+        "Nicos Poulantzas étudie l'État et le pouvoir politique à partir d'une grille de lecture marxiste : selon lui, l'État sert d'abord les intérêts des classes dominantes, tout en devant composer avec les rapports de force entre les différentes classes sociales. Ses derniers travaux nuancent cette approche en présentant l'État non plus comme un simple instrument, mais comme le résultat de rapports sociaux en tension permanente.",
+    },
   },
 
   {
@@ -1062,6 +1082,10 @@ export const authors = [
       "Lallement, 2017, Histoire des idées sociologiques",
       "Dollo et al., 2015, Les grandes notions de la sociologie",
     ],
+    simple: {
+      summary:
+        "Claude Lévi-Strauss pense que les individus sont façonnés par des structures inconscientes communes à toute l'humanité, que l'on retrouve par exemple dans l'organisation de la parenté ou dans les mythes de sociétés très différentes les unes des autres. Il va jusqu'à dire que l'un des buts de sa discipline n'est pas de mettre l'individu au centre, mais bien de le « dissoudre » au profit de l'étude de ces structures.",
+    },
   },
 
   {
@@ -1094,6 +1118,10 @@ export const authors = [
       "Lallement, 2017, Histoire des idées sociologiques",
       "Dollo et al., 2015, Les grandes notions de la sociologie",
     ],
+    simple: {
+      summary:
+        "Louis Althusser prolonge, à sa manière, l'idée que ce sont les structures qui déterminent les individus, et non l'inverse : pour lui, le sujet n'est qu'un « effet de surface » produit par des rapports sociaux qui le dépassent. Sa méthode de lecture des textes, la « lecture symptomale », consiste à repérer dans les œuvres de Marx ce qui n'y est pas dit explicitement, plutôt que de s'en tenir à leur sens apparent.",
+    },
   },
 
   {
@@ -1198,6 +1226,10 @@ export const authors = [
     classificationNote:
       "Fromm est identifié comme l'un des fondateurs de l'école « freudo-marxiste » de Francfort aux côtés de Marcuse, aujourd'hui disparue en tant que courant organisé mais dont Habermas revendique encore l'héritage partiel.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simple: {
+      summary:
+        "Erich Fromm combine la psychanalyse de Freud et la théorie de Marx pour comprendre comment la société façonne la psychologie des individus. Il montre que l'aliénation, ce sentiment de ne plus être maître de sa propre vie, est devenue la norme dans les sociétés industrielles modernes, tout en gardant l'espoir qu'un individu puisse s'en libérer par un travail sur lui-même.",
+    },
   },
 
   {
@@ -1227,6 +1259,10 @@ export const authors = [
     classificationNote:
       "Marcuse est identifié, aux côtés de Fromm, comme l'un des fondateurs de l'école freudo-marxiste de Francfort, aujourd'hui disparue en tant que courant organisé.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simple: {
+      summary:
+        "Herbert Marcuse combine lui aussi psychanalyse et marxisme, mais aboutit à des conclusions plus pessimistes que Fromm : pour lui, la société est si profondément aliénante que l'individu ne peut s'en libérer seul. Il montre notamment que la société détourne nos pulsions à son profit, par exemple dans le travail ou le sport, plutôt que de leur permettre de s'exprimer librement.",
+    },
   },
 
   {

@@ -132,6 +132,8 @@ export const relations = [
     justification:
       "White a dirigé la thèse de doctorat de Granovetter à Harvard, lui insufflant l'intuition de l'analyse de réseau et l'encadrant lors de la rédaction de son article séminal sur les liens faibles.",
     sources: ["Mercklé, 2011, L'analyse des réseaux sociaux"],
+    simpleExplanation:
+      "White a dirigé la thèse de doctorat de Granovetter à Harvard, lui transmettant l'intuition de l'analyse de réseau lors de la rédaction de son article fondateur sur la force des liens faibles.",
   },
   {
     source: "harrison-white",
@@ -142,6 +144,8 @@ export const relations = [
     justification:
       "Lazega s'appuie explicitement sur la théorie phénoménologique des réseaux de White pour construire sa sociologie néo-structurale, prolongeant l'idée que les réseaux forment le niveau intermédiaire entre l'action et la macro-structure.",
     sources: ["Lazega, 2006, Réseaux sociaux et structures relationnelles"],
+    simpleExplanation:
+      "Lazega s'appuie sur la théorie des réseaux de White pour construire sa propre sociologie, en prolongeant l'idée que les réseaux forment un niveau intermédiaire entre l'individu et les grandes structures sociales.",
   },
   {
     source: "mark-granovetter",
@@ -152,6 +156,8 @@ export const relations = [
     justification:
       "Les deux auteurs animent les débats contemporains de la sociologie économique de réseau, Lazega complétant l'approche de l'encastrement de Granovetter par une modélisation plus poussée des dynamiques de pouvoir et d'organisation.",
     sources: ["Steiner, 1999, La sociologie économique"],
+    simpleExplanation:
+      "Les deux auteurs participent aux mêmes débats contemporains sur les réseaux économiques : Lazega complète l'approche de l'encastrement de Granovetter par une analyse plus poussée des dynamiques de pouvoir au sein des organisations.",
   },
   {
     source: "harold-garfinkel",
@@ -162,6 +168,8 @@ export const relations = [
     justification:
       "Sacks a collaboré étroitement avec Garfinkel au Center for the Scientific Study of Suicide de Los Angeles, s'appropriant la phénoménologie garfinkelienne pour l'appliquer à l'analyse empirique de la parole en interaction.",
     sources: ["Coulon, 1987, L'ethnométhodologie"],
+    simpleExplanation:
+      "Sacks a collaboré étroitement avec Garfinkel, en reprenant certains de ses principes pour les appliquer à l'analyse empirique de la parole en interaction.",
   },
   {
     source: "erving-goffman",
@@ -196,6 +204,8 @@ export const relations = [
     justification:
       "Berger et Luckmann ont co-écrit l'un des livres les plus influents du XXe siècle, unifiant leurs perspectives pour forger le paradigme du constructivisme social dans une complicité intellectuelle totale.",
     sources: ["Ritzer, 2011, Sociological Theory"],
+    simpleExplanation:
+      "Berger et Luckmann coécrivent l'un des livres les plus influents du XXe siècle, en unifiant leurs perspectives pour fonder ensemble le constructivisme social.",
   },
   {
     source: "peter-berger",
@@ -206,6 +216,8 @@ export const relations = [
     justification:
       "Dubar s'approprie explicitement la théorie de la socialisation primaire et secondaire formalisée par Berger et Luckmann, en l'utilisant comme socle conceptuel pour bâtir son modèle de la socialisation professionnelle.",
     sources: ["Dubar, 1991, La Socialisation"],
+    simpleExplanation:
+      "Dubar reprend la théorie de la socialisation primaire et secondaire formulée par Berger et Luckmann pour bâtir son propre modèle de la socialisation professionnelle.",
   },
   {
     source: "max-horkheimer",
@@ -268,6 +280,8 @@ export const relations = [
     justification:
       "Partenaires de recherche historiques au Centre de sociologie de l'innovation (CSI) de l'École des Mines, Latour et Callon ont co-écrit les textes fondateurs de la théorie de l'acteur-réseau, articulant ensemble la sociologie des sciences.",
     sources: ["Corcuff, 2007, Les nouvelles sociologies"],
+    simpleExplanation:
+      "Partenaires de recherche historiques au Centre de sociologie de l'innovation, Latour et Callon coécrivent les textes fondateurs de la théorie de l'acteur-réseau.",
   },
   {
     source: "harold-garfinkel",
@@ -278,6 +292,8 @@ export const relations = [
     justification:
       "Latour s'est massivement inspiré de l'ethnométhodologie de Garfinkel pour mener ses premières enquêtes de laboratoire, adoptant une posture d'anthropologue naïf qui refuse d'expliquer les pratiques scientifiques par des structures sociales a priori.",
     sources: ["Ritzer, 2011, Sociological Theory"],
+    simpleExplanation:
+      "Latour s'inspire largement de l'ethnométhodologie de Garfinkel pour mener ses premières enquêtes dans les laboratoires scientifiques, en adoptant une posture d'observateur qui refuse d'expliquer d'avance les pratiques qu'il observe.",
   },
   {
     source: "becker",
@@ -300,6 +316,8 @@ export const relations = [
     justification:
       "Tout en partageant l'intérêt de Latour pour les réseaux techniques et la matérialité, Star nuance l'ANT en y réintroduisant l'étude des exclus, des échecs d'alignement et de la souffrance silencieuse causée par les standards rigides.",
     sources: ["Star, 2010, Infrastructure and Ethnography"],
+    simpleExplanation:
+      "Tout en partageant l'intérêt de Latour pour les réseaux techniques, Star nuance la théorie de l'acteur-réseau en y ajoutant l'étude de celles et ceux qui sont exclus par les standards techniques.",
   },
   {
     source: "levi-strauss",
@@ -490,6 +508,8 @@ export const relations = [
     justification:
       "La distinction opérée par Oakley entre sexe biologique et genre socialement construit s'inscrit dans la filiation du constructivisme social bergerien-luckmannien, bien qu'elle ne s'en revendique pas explicitement.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simpleExplanation:
+      "La distinction opérée par Oakley entre sexe biologique et genre socialement construit s'inscrit dans la filiation du constructivisme social de Berger et Luckmann.",
   },
   {
     source: "luc-boltanski",
@@ -500,6 +520,8 @@ export const relations = [
     justification:
       "Boltanski et Thévenot co-fondent le paradigme pragmatique et co-écrivent De la justification, texte fondateur de la sociologie de la critique et des régimes de justification.",
     sources: ["Jacquemain & Frère, 2008, Épistémologie de la sociologie"],
+    simpleExplanation:
+      "Boltanski et Thévenot cofondent le pragmatisme sociologique et coécrivent De la justification, le texte fondateur de la sociologie de la critique et des régimes de justification.",
   },
   {
     source: "bourdieu",
@@ -522,6 +544,8 @@ export const relations = [
     justification:
       "Touraine juge la sociologie classique de Weber inadaptée à l'étude des sociétés contemporaines, trop corrélée au paradigme industriel, et lui oppose le retour de l'acteur et de l'historicité.",
     sources: ["Touraine, 1984, Le Retour de l'acteur"],
+    simpleExplanation:
+      "Touraine juge la sociologie de Weber mal adaptée à l'étude des sociétés contemporaines, et lui oppose le retour de l'acteur et de sa capacité à transformer l'histoire.",
   },
   {
     source: "alain-touraine",
@@ -532,6 +556,8 @@ export const relations = [
     justification:
       "Touraine récuse l'idée marxienne que l'organisation sociale (les rapports de production) préexiste à l'action sociale, inversant la priorité au profit des mouvements sociaux comme producteurs de la société.",
     sources: ["Touraine, 1984, Le Retour de l'acteur"],
+    simpleExplanation:
+      "Touraine refuse l'idée marxiste selon laquelle l'organisation économique déterminerait l'action sociale, et donne au contraire la priorité aux mouvements sociaux comme producteurs de la société.",
   },
   {
     source: "alain-touraine",
@@ -602,6 +628,8 @@ export const relations = [
     justification:
       "Zelizer partage avec Granovetter le refus d'une conception purement utilitariste de l'action économique, tout en déplaçant l'analyse de l'encastrement structural vers l'encastrement culturel et moral des transactions.",
     sources: ["Steiner, 1999, La sociologie économique"],
+    simpleExplanation:
+      "Zelizer partage avec Granovetter le refus d'une conception purement calculatrice de l'action économique, tout en déplaçant l'analyse vers les significations culturelles et morales des échanges.",
   },
   {
     source: "bruno-latour",
@@ -614,6 +642,8 @@ export const relations = [
     sources: [
       "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
     ],
+    simpleExplanation:
+      "Akrich codirige avec Latour et Callon l'ouvrage collectif fondateur de la sociologie de la traduction, et contribue directement au développement de la théorie de l'acteur-réseau.",
   },
   {
     source: "michel-callon",
@@ -626,6 +656,8 @@ export const relations = [
     sources: [
       "Akrich, Callon & Latour (dir.), 2006, Sociologie de la traduction : textes fondateurs",
     ],
+    simpleExplanation:
+      "Akrich codirige avec Callon et Latour l'ouvrage collectif fondateur de la sociologie de la traduction, et contribue directement au développement de la théorie de l'acteur-réseau.",
   },
   {
     source: "marx",
@@ -746,6 +778,8 @@ export const relations = [
     justification:
       "Berger s'inscrit dans la tradition compréhensive wébérienne pour sa sociologie de la religion et sa méthode d'analyse du sens subjectif.",
     sources: ["Lallement, 2000, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Berger s'inscrit dans la tradition compréhensive de Weber pour sa sociologie de la religion et sa méthode d'analyse du sens que les individus donnent à leurs actions.",
   },
   {
     source: "durkheim",
@@ -804,6 +838,8 @@ export const relations = [
     justification:
       "Giddens intègre l'attention wébérienne au sens subjectif de l'action dans sa théorie de la structuration, aux côtés de l'héritage durkheimien.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Giddens intègre l'attention wébérienne au sens de l'action dans sa théorie de la structuration, aux côtés de l'héritage durkheimien.",
   },
   {
     source: "durkheim",
@@ -1030,6 +1066,8 @@ export const relations = [
     justification:
       "Berger s'inscrit dans la tradition de la sociologie de la connaissance qui doit beaucoup à la critique marxienne de l'idéologie, tout en la déplaçant vers une perspective phénoménologique.",
     sources: ["Lallement, 2000, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Berger s'inscrit dans une tradition de sociologie de la connaissance qui doit beaucoup à la critique marxiste de l'idéologie, tout en la déplaçant vers une perspective plus centrée sur l'expérience vécue.",
   },
   {
     source: "weber",
@@ -1040,6 +1078,8 @@ export const relations = [
     justification:
       "Luckmann s'inscrit dans la tradition compréhensive wébérienne pour son attention au sens subjectif construit par les acteurs dans leur expérience quotidienne.",
     sources: ["Corcuff, 2007, Les nouvelles sociologies"],
+    simpleExplanation:
+      "Luckmann s'inscrit dans la tradition compréhensive de Weber, attentive au sens que les acteurs donnent à leur expérience quotidienne.",
   },
   {
     source: "thomas-luckmann",
@@ -1050,6 +1090,8 @@ export const relations = [
     justification:
       "Dubar s'approprie explicitement la théorie de la socialisation primaire et secondaire formalisée par Luckmann (avec Berger) pour bâtir son modèle de la socialisation professionnelle.",
     sources: ["Dubar, 1991, La Socialisation"],
+    simpleExplanation:
+      "Dubar reprend la théorie de la socialisation primaire et secondaire formulée par Luckmann (avec Berger) pour bâtir son propre modèle de la socialisation professionnelle.",
   },
   {
     source: "bourdieu",
@@ -1096,6 +1138,8 @@ export const relations = [
     justification:
       "La théorie de l'acteur-réseau de Latour dialogue avec l'analyse structurale des réseaux de White, dont elle prolonge et radicalise l'ontologie relationnelle en y intégrant les non-humains.",
     sources: ["Mercklé, 2011, L'analyse des réseaux sociaux"],
+    simpleExplanation:
+      "La théorie de l'acteur-réseau de Latour dialogue avec l'analyse des réseaux de White, dont elle prolonge et élargit la logique en y intégrant les objets non humains.",
   },
   {
     source: "harrison-white",
@@ -1106,6 +1150,8 @@ export const relations = [
     justification:
       "L'analyse callonienne des marchés comme réseaux sociotechniques dialogue avec l'approche structurale des marchés de White, tout en y intégrant les dispositifs techniques.",
     sources: ["Mercklé, 2011, L'analyse des réseaux sociaux"],
+    simpleExplanation:
+      "L'analyse callonienne des marchés comme réseaux dialogue avec l'approche structurale des marchés de White, en y intégrant en plus les dispositifs techniques.",
   },
   {
     source: "marx",
@@ -1116,6 +1162,8 @@ export const relations = [
     justification:
       "Giddens consacre une critique approfondie et un dialogue soutenu avec le matérialisme historique marxien, dont il retravaille les concepts dans sa théorie de la structuration.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Giddens dialogue de façon soutenue avec la théorie de Marx, dont il retravaille certains concepts dans sa propre théorie de la structuration.",
   },
   {
     source: "marx",
@@ -1210,6 +1258,8 @@ export const relations = [
     justification:
       "Degenne reconnaît explicitement sa dette envers l'analyse structurale de White, auquel il consacre un texte le qualifiant de « chaînon manquant de la sociologie », et importe cette approche en France sous le nom d'interactionnisme structural.",
     sources: ["Degenne, 1996, Harrison White ou un chaînon manquant de la sociologie"],
+    simpleExplanation:
+      "Degenne reconnaît sa dette envers l'analyse structurale de White, à qui il consacre un texte le qualifiant de « chaînon manquant de la sociologie », et importe cette approche en France.",
   },
   {
     source: "degenne",
@@ -1220,6 +1270,8 @@ export const relations = [
     justification:
       "Co-auteurs de l'ouvrage de référence qui nomme et théorise l'« interactionnisme structural » en sociologie française, initiant aussi bien aux études empiriques qu'à l'analyse des graphes.",
     sources: ["Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie"],
+    simpleExplanation:
+      "Co-auteurs de l'ouvrage de référence qui nomme et théorise l'« interactionnisme structural » en sociologie française.",
   },
   {
     source: "degenne",
@@ -1230,6 +1282,8 @@ export const relations = [
     justification:
       "Co-auteurs de La vie en réseau, ouvrage fondateur de la sociologie des dynamiques relationnelles, couronné par le prix Simmel de l'International Network for Social Network Analysis en 2020.",
     sources: ["Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales"],
+    simpleExplanation:
+      "Co-auteurs de La vie en réseau, ouvrage fondateur de la sociologie des dynamiques relationnelles.",
   },
   {
     source: "bidart",
@@ -1240,6 +1294,8 @@ export const relations = [
     justification:
       "Co-auteurs de La vie en réseau, ouvrage fondateur de la sociologie des dynamiques relationnelles, couronné par le prix Simmel de l'International Network for Social Network Analysis en 2020.",
     sources: ["Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales"],
+    simpleExplanation:
+      "Co-auteurs de La vie en réseau, ouvrage fondateur de la sociologie des dynamiques relationnelles.",
   },
   {
     source: "claude-fischer",
@@ -1252,6 +1308,8 @@ export const relations = [
     sources: [
       "Grossetti, 2009, Qu'est-ce qu'une relation sociale ? Un ensemble de médiations dyadiques, Redes, 16(2)",
     ],
+    simpleExplanation:
+      "Grossetti transpose directement en France la méthode d'enquête sur les réseaux personnels développée par Fischer aux États-Unis, permettant des comparaisons entre les deux pays.",
   },
   {
     source: "bruno-latour",
@@ -1264,6 +1322,8 @@ export const relations = [
     sources: [
       "Blondeau & Sevin, 2004, Entretien avec Luc Boltanski, une sociologie toujours mise à l'épreuve, ethnographiques.org, 5",
     ],
+    simpleExplanation:
+      "La théorie de l'acteur-réseau et la sociologie de la justification naissent toutes deux au milieu des années 1980 en réaction au structuralisme bourdieusien, et partagent la notion d'« épreuve », bien que définie différemment.",
   },
   {
     source: "michel-callon",
@@ -1276,6 +1336,8 @@ export const relations = [
     sources: [
       "Blondeau & Sevin, 2004, Entretien avec Luc Boltanski, une sociologie toujours mise à l'épreuve, ethnographiques.org, 5",
     ],
+    simpleExplanation:
+      "La théorie de l'acteur-réseau et la sociologie de la justification naissent toutes deux au milieu des années 1980 en réaction au structuralisme bourdieusien, et partagent la notion d'« épreuve », bien que définie différemment.",
   },
   {
     source: "ellul",
@@ -1289,6 +1351,8 @@ export const relations = [
       "Simondon, 1958, Du mode d'existence des objets techniques",
       "Ellul, 1954, La Technique ou l'enjeu du siècle",
     ],
+    simpleExplanation:
+      "Simondon réfute la thèse d'Ellul selon laquelle la technique serait une force autonome menaçant l'humain : il propose au contraire d'intégrer les objets techniques à la culture plutôt que de les y opposer.",
   },
   {
     source: "hughes",
@@ -1325,6 +1389,8 @@ export const relations = [
     justification:
       "Co-auteurs de La vie en réseau, ouvrage fondateur de la sociologie des dynamiques relationnelles, couronné par le prix Simmel de l'International Network for Social Network Analysis en 2020.",
     sources: ["Bidart, Degenne & Grossetti, 2011, La vie en réseau. Dynamique des relations sociales"],
+    simpleExplanation:
+      "Co-auteurs de La vie en réseau, ouvrage fondateur de la sociologie des dynamiques relationnelles.",
   },
   {
     source: "hughes",
@@ -1349,6 +1415,8 @@ export const relations = [
     sources: [
       "Compte rendu de Thévenot, L'Action au pluriel. Sociologie des régimes d'engagement, Politix, 2007, 4",
     ],
+    simpleExplanation:
+      "Un compte rendu académique rapproche la démarche de Thévenot de celle de Latour, tous deux attentifs à l'importance des objets matériels dans l'action.",
   },
   {
     source: "simondon",
@@ -1361,6 +1429,8 @@ export const relations = [
     sources: [
       "La théorie de l'acteur-réseau entre Latour et Simondon, Symposium, 2018, 22(2), 74-89",
     ],
+    simpleExplanation:
+      "Latour reconnaît explicitement l'influence de Simondon sur sa réflexion concernant le rapport entre l'humain et la technique.",
   },
   {
     source: "simondon",
@@ -1371,6 +1441,8 @@ export const relations = [
     justification:
       "Akrich est l'une des rares figures de la théorie de l'acteur-réseau à engager un dialogue explicite avec l'œuvre de Simondon, notamment dans son texte de 1993 sur les formes de médiation technique — alors que cette influence reste le plus souvent implicite chez les autres auteurs du courant.",
     sources: ["Akrich, 1993, Les formes de médiation technique, Réseaux, 60"],
+    simpleExplanation:
+      "Akrich est l'une des rares figures de la théorie de l'acteur-réseau à engager un dialogue explicite avec l'œuvre de Simondon.",
   },
   {
     source: "ellul",
@@ -1383,6 +1455,8 @@ export const relations = [
     sources: [
       "Une nouvelle théodicée ? Remarques sur la sociologie des techniques de Bruno Latour, Revue du Mauss permanente, 2019",
     ],
+    simpleExplanation:
+      "Une critique académique de la sociologie des techniques de Latour mobilise Ellul pour lui objecter qu'au-delà d'un certain seuil de puissance, le système technique échappe à toute description locale et symétrique.",
   },
   {
     source: "laurent-thevenot",
@@ -1395,6 +1469,8 @@ export const relations = [
     sources: [
       "Armatte, 2013, Alain Desrosières (1940-2013). La statistique, outil de preuve et de gouvernement, Hermès, La Revue, 66(2), 252-254",
     ],
+    simpleExplanation:
+      "Desrosières est membre fondateur du même groupe de recherche que Thévenot, avec qui il coécrit plusieurs ouvrages fondateurs de l'économie des conventions.",
   },
   {
     source: "bourdieu",
@@ -1421,6 +1497,8 @@ export const relations = [
     sources: [
       "Berger & Luckmann, 1966, The Social Construction of Reality (trad. fr. 1986, La Construction sociale de la réalité, Méridiens Klincksieck)",
     ],
+    simpleExplanation:
+      "La théorie de Berger et Luckmann s'élabore explicitement à partir de plusieurs références conjointes, dont la perspective de Marx.",
   },
   {
     source: "mead",
@@ -1473,6 +1551,8 @@ export const relations = [
     sources: [
       "Star & Griesemer, 1989, Institutional Ecology, 'Translations' and Boundary Objects, Social Studies of Science, 19(3), 387-420",
     ],
+    simpleExplanation:
+      "Le concept d'« objet-frontière » que développe Star prolonge le modèle de l'intéressement élaboré par Callon ; elle a par ailleurs effectué un séjour de recherche au Centre de sociologie de l'innovation, où elle a directement collaboré avec Callon.",
   },
   {
     source: "harrison-white",
@@ -1483,6 +1563,8 @@ export const relations = [
     justification:
       "Forsé co-écrit avec Degenne l'ouvrage de référence qui importe et théorise l'analyse structurale de Harrison White en sociologie française sous le nom d'interactionnisme structural.",
     sources: ["Degenne & Forsé, 1994, Les réseaux sociaux. Une approche structurale en sociologie"],
+    simpleExplanation:
+      "Forsé coécrit avec Degenne l'ouvrage de référence qui importe et théorise l'analyse structurale de Harrison White en sociologie française.",
   },
   {
     source: "nancy-fraser",

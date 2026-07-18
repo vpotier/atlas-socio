@@ -110,35 +110,6 @@ function computeConstellationCenters(authors, relations) {
     constellationCenters[n.id] = { x: n.x, y: n.y };
   });
 
-  // Filet de sécurité : quoi qu'il arrive pendant la simulation
-  // (répulsion en cascade, constellation isolée poussée trop loin...),
-  // aucun courant ne doit finir hors d'un rayon raisonnable autour du
-  // centre général de la carte. On ramène doucement les éventuels
-  // isolés vers le reste, sans toucher à ceux déjà bien placés.
-  const cxs = Object.values(constellationCenters).map((c) => c.x);
-  const cys = Object.values(constellationCenters).map((c) => c.y);
-  const centroid = {
-    x: cxs.reduce((a, b) => a + b, 0) / cxs.length,
-    y: cys.reduce((a, b) => a + b, 0) / cys.length,
-  };
-
-  const MAX_DISTANCE_FROM_CENTROID = 950;
-
-  Object.keys(constellationCenters).forEach((id) => {
-    const c = constellationCenters[id];
-    const dx = c.x - centroid.x;
-    const dy = c.y - centroid.y;
-    const dist = Math.hypot(dx, dy);
-
-    if (dist > MAX_DISTANCE_FROM_CENTROID) {
-      const scale = MAX_DISTANCE_FROM_CENTROID / dist;
-      constellationCenters[id] = {
-        x: centroid.x + dx * scale,
-        y: centroid.y + dy * scale,
-      };
-    }
-  });
-
   return constellationCenters;
 }
 

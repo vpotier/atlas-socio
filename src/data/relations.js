@@ -216,6 +216,8 @@ export const relations = [
     justification:
       "Compagnons d'exil et collaborateurs intimes pendant plus de trois décennies, Horkheimer et Adorno ont co-écrit les textes les plus emblématiques de l'École de Francfort, fusionnant leurs pensées au point de rendre leurs contributions souvent indissociables.",
     sources: ["Assoun, 1987, L'École de Francfort"],
+    simpleExplanation:
+      "Compagnons d'exil et collaborateurs pendant plus de trente ans, Horkheimer et Adorno coécrivent les textes les plus emblématiques de l'École de Francfort, au point que leurs contributions sont souvent indissociables.",
   },
   {
     source: "max-horkheimer",
@@ -226,6 +228,8 @@ export const relations = [
     justification:
       "Habermas a été l'assistant de formation de Horkheimer à l'Institut de Francfort, héritant de l'ambition de construire une science sociale interdisciplinaire ancrée dans la critique sociale malgré des frictions quant au radicalisme politique du jeune Habermas.",
     sources: ["Ritzer, 2011, Sociological Theory"],
+    simpleExplanation:
+      "Habermas a été l'assistant de Horkheimer à l'Institut de Francfort, dont il hérite l'ambition de construire une science sociale attentive à la critique de la société.",
   },
   {
     source: "theodor-w-adorno",
@@ -238,6 +242,8 @@ export const relations = [
     sources: [
       "Keucheyan, 2010, Hémisphère gauche : Une cartographie des nouvelles pensées critiques",
     ],
+    simpleExplanation:
+      "Tout en se revendiquant de cet héritage, Habermas rompt avec le pessimisme d'Adorno : il lui reproche de ne proposer aucune base positive permettant de penser une véritable émancipation.",
   },
   {
     source: "henri-lefebvre",
@@ -250,6 +256,8 @@ export const relations = [
     sources: [
       "Keucheyan, 2010, Hémisphère gauche : Une cartographie des nouvelles pensées critiques",
     ],
+    simpleExplanation:
+      "Une opposition profonde sépare la sociologie humaniste de Lefebvre, attentive au vécu quotidien, du structuralisme plus rigide de Poulantzas et d'Althusser.",
   },
   {
     source: "bruno-latour",
@@ -302,6 +310,8 @@ export const relations = [
     justification:
       "Le structuralisme lévi-straussien prend une connotation marxiste avec Althusser, qui l'applique à la reproduction des rapports sociaux plutôt qu'aux systèmes de parenté ou aux mythes.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Le structuralisme de Lévi-Strauss prend une orientation marxiste avec Althusser, qui l'applique à la reproduction des rapports sociaux plutôt qu'aux systèmes de parenté ou aux mythes.",
   },
   {
     source: "althusser",
@@ -312,6 +322,8 @@ export const relations = [
     justification:
       "Poulantzas se présente explicitement comme structuraliste marxiste dans la filiation directe d'Althusser, dont il reprend le concept de reproduction des rapports de classe pour l'appliquer à l'analyse de l'État.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Poulantzas se présente explicitement comme un structuraliste marxiste dans la lignée d'Althusser, dont il reprend l'idée que les structures reproduisent les rapports de classe, pour l'appliquer à l'analyse de l'État.",
   },
   {
     source: "levi-strauss",
@@ -334,6 +346,8 @@ export const relations = [
     justification:
       "Giddens reproche au structuralisme la trop grande passivité qu'il accorde à l'individu, et développe la théorie de la structuration précisément pour dépasser cette limite tout en conservant le concept de structure.",
     sources: ["Giddens, 1987, La Constitution de la société"],
+    simpleExplanation:
+      "Giddens reproche au structuralisme de laisser trop peu de place à l'individu, et développe sa théorie de la structuration précisément pour dépasser cette limite tout en conservant l'idée de structure.",
   },
   {
     source: "weber",
@@ -380,6 +394,8 @@ export const relations = [
     justification:
       "Lefebvre développe une lecture humaniste et hétérodoxe du marxisme, prolongeant l'analyse de l'aliénation de Marx tout en la déplaçant vers la vie quotidienne et l'espace urbain.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Lefebvre développe une lecture originale du marxisme, prolongeant l'analyse de l'aliénation de Marx tout en la déplaçant vers la vie quotidienne et l'espace urbain.",
   },
   {
     source: "marx",
@@ -390,6 +406,8 @@ export const relations = [
     justification:
       "Poulantzas applique et prolonge l'analyse marxienne des rapports de classe à la théorie structuraliste de l'État, en se réclamant explicitement de l'héritage marxiste.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Poulantzas applique et prolonge l'analyse marxiste des rapports de classe à sa propre théorie structuraliste de l'État.",
   },
   {
     source: "marx",
@@ -400,6 +418,8 @@ export const relations = [
     justification:
       "Althusser propose une relecture structuraliste et anti-humaniste de l'œuvre de Marx, dont l'ambition affichée est de revenir à la rigueur scientifique du texte marxien contre ses interprétations humanistes.",
     sources: ["Lallement, 2017, Histoire des idées sociologiques"],
+    simpleExplanation:
+      "Althusser propose une relecture structuraliste de l'œuvre de Marx, avec l'ambition affichée de revenir à la rigueur du texte original contre certaines de ses interprétations plus humanistes.",
   },
   {
     source: "max-horkheimer",
@@ -410,6 +430,8 @@ export const relations = [
     justification:
       "Fromm est un membre fondateur de l'Institut de recherche sociale dirigé par Horkheimer, avec lequel il élabore le programme freudo-marxiste de l'École de Francfort.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simpleExplanation:
+      "Fromm est un membre fondateur de l'Institut de recherche sociale dirigé par Horkheimer, avec lequel il élabore un programme combinant marxisme et psychanalyse.",
   },
   {
     source: "max-horkheimer",
@@ -420,6 +442,8 @@ export const relations = [
     justification:
       "Marcuse rejoint l'Institut de recherche sociale dirigé par Horkheimer et participe à l'élaboration du programme freudo-marxiste critiquant la rationalisation de la domination.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simpleExplanation:
+      "Marcuse rejoint l'Institut de recherche sociale dirigé par Horkheimer et participe à l'élaboration d'un programme combinant marxisme et psychanalyse pour critiquer les nouvelles formes de domination.",
   },
   {
     source: "ann-oakley",
@@ -612,6 +636,8 @@ export const relations = [
     justification:
       "L'École de Francfort s'inscrit explicitement dans l'héritage marxiste, qu'elle combine avec la psychanalyse freudienne pour analyser les nouvelles formes de domination du capitalisme du XXe siècle.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simpleExplanation:
+      "L'École de Francfort s'inscrit explicitement dans l'héritage de Marx, qu'elle combine avec la psychanalyse freudienne pour analyser les nouvelles formes de domination du XXe siècle.",
   },
   {
     source: "talcott-parsons",
@@ -708,6 +734,8 @@ export const relations = [
     justification:
       "Habermas reprend et prolonge la théorie wébérienne de la rationalisation pour construire sa distinction entre système et monde vécu.",
     sources: ["Ansart, 1990, Les sociologies contemporaines"],
+    simpleExplanation:
+      "Habermas reprend et prolonge la théorie de la rationalisation de Weber pour construire sa propre distinction entre système et monde vécu.",
   },
   {
     source: "weber",
@@ -752,6 +780,8 @@ export const relations = [
     justification:
       "La critique francfortoise de la raison instrumentale prolonge et radicalise l'analyse wébérienne de la rationalisation du monde moderne.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simpleExplanation:
+      "La critique francfortoise de la raison instrumentale prolonge et radicalise l'analyse wébérienne de la rationalisation du monde moderne.",
   },
   {
     source: "weber",
@@ -762,6 +792,8 @@ export const relations = [
     justification:
       "La critique francfortoise de la raison instrumentale prolonge et radicalise l'analyse wébérienne de la rationalisation du monde moderne.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simpleExplanation:
+      "La critique francfortoise de la raison instrumentale prolonge et radicalise l'analyse wébérienne de la rationalisation du monde moderne.",
   },
   {
     source: "weber",
@@ -902,6 +934,8 @@ export const relations = [
     justification:
       "Fraser critique la théorie habermassienne de l'espace public bourgeois pour avoir occulté historiquement les exclusions de genre et de classe qui la structuraient, tout en s'inscrivant dans son sillage critique.",
     sources: ["Fraser, 1989, Unruly Practices"],
+    simpleExplanation:
+      "Fraser critique la théorie habermassienne de l'espace public pour avoir occulté les exclusions de genre et de classe qui la traversaient, tout en s'inscrivant dans son sillage critique.",
   },
   {
     source: "bronislaw-malinowski",
@@ -972,6 +1006,8 @@ export const relations = [
     justification:
       "White s'inspire de l'analyse structurale lévi-straussienne des systèmes de parenté comme réseaux de relations pour fonder sa propre analyse structurale des réseaux sociaux.",
     sources: ["Mercklé, 2011, L'analyse des réseaux sociaux"],
+    simpleExplanation:
+      "White s'inspire de l'analyse structurale de Lévi-Strauss sur les systèmes de parenté, envisagés comme des réseaux de relations, pour fonder sa propre analyse structurale des réseaux sociaux.",
   },
   {
     source: "james-coleman",
@@ -1036,6 +1072,8 @@ export const relations = [
     justification:
       "Adorno inscrit sa critique de l'industrie culturelle et de la raison instrumentale dans l'héritage marxiste, combiné à la psychanalyse freudienne.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simpleExplanation:
+      "Adorno inscrit sa critique de l'industrie culturelle et de la raison instrumentale dans l'héritage marxiste, combiné à la psychanalyse freudienne.",
   },
   {
     source: "mead",
@@ -1088,6 +1126,8 @@ export const relations = [
     justification:
       "Fromm fonde son projet freudo-marxiste sur une synthèse explicite entre l'analyse marxienne de l'aliénation économique et la psychanalyse freudienne.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simpleExplanation:
+      "Fromm fonde son projet sur une synthèse entre l'analyse marxiste de l'aliénation économique et la psychanalyse freudienne.",
   },
   {
     source: "marx",
@@ -1098,6 +1138,8 @@ export const relations = [
     justification:
       "Marcuse fonde sa critique de la société de consommation et de la désublimation répressive sur une lecture explicitement marxiste combinée à la psychanalyse freudienne.",
     sources: ["Delas & Milly, 2015, Histoire des pensées sociologiques"],
+    simpleExplanation:
+      "Marcuse fonde sa critique de la société de consommation sur une lecture marxiste combinée à la psychanalyse freudienne.",
   },
   {
     source: "robert-park",
@@ -1417,6 +1459,8 @@ export const relations = [
     justification:
       "Marcuse critique explicitement Fromm dans la postface d'Éros et civilisation, lui reprochant un optimisme « révisionniste » : croire qu'un individu peut s'émanciper par la seule psychanalyse, alors que la société est selon lui objectivement et totalement aliénante.",
     sources: ["Marcuse, 1955, Éros et civilisation, postface"],
+    simpleExplanation:
+      "Marcuse critique explicitement Fromm, lui reprochant un optimisme trop grand : croire qu'un individu peut s'émanciper par la seule psychanalyse, alors que pour Marcuse la société est objectivement et totalement aliénante.",
   },
   {
     source: "michel-callon",

@@ -90,6 +90,8 @@ export const constellations = {
     definition:
       "Issue de l'École de Francfort (Horkheimer, Adorno, Fromm, Marcuse, puis Habermas), elle vise à dévoiler les structures d'aliénation et de domination pour ouvrir la voie à l'émancipation, plutôt qu'à seulement décrire le social.",
     disciplines: ["Psychanalyse", "Philosophie"],
+    simpleDefinition:
+      "Ce courant ne se contente pas de décrire la société : il cherche à dévoiler les formes cachées de domination et d'aliénation qui pèsent sur les individus, pour ouvrir la voie à leur émancipation.",
   },
   "la-sociologie-marxiste": {
     label: "Sociologie marxiste",
@@ -98,6 +100,8 @@ export const constellations = {
     definition:
       "Fondée sur l'œuvre de Marx, elle explique les phénomènes sociaux par les rapports de production et la lutte des classes, prolongée au XXe siècle par des lectures structuralistes (Poulantzas) ou urbaines (Lefebvre) de l'État et de l'espace.",
     disciplines: ["Philosophie", "Économie politique"],
+    simpleDefinition:
+      "Fondé sur l'œuvre de Marx, ce courant explique les phénomènes sociaux par les rapports économiques et la lutte entre les classes sociales, avant d'être prolongé au XXe siècle vers l'étude de l'État ou de la ville.",
   },
   "theorie-de-l-acteur-reseau-et-sts": {
     label: "Théorie de l'acteur-réseau",
@@ -122,6 +126,8 @@ export const constellations = {
     definition:
       "Initié par Lévi-Strauss puis décliné en marxisme structuraliste par Althusser, ce courant explique les phénomènes sociaux par des structures symboliques ou économiques cachées, largement inconscientes des acteurs eux-mêmes.",
     disciplines: ["Linguistique"],
+    simpleDefinition:
+      "Ce courant explique les comportements et les phénomènes sociaux par des structures cachées, inconscientes des individus eux-mêmes, plutôt que par leurs intentions ou leurs choix personnels.",
   },
   pragmatisme: {
     label: "Sociologie pragmatique",

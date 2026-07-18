@@ -157,6 +157,8 @@ export const concepts = [
     authors: ["harrison-white"],
     x: 1100,
     y: 270,
+    simpleDefinition:
+      "Deux personnes sont structuralement équivalentes lorsqu'elles occupent une position similaire dans un réseau de relations, avec les mêmes types de liens vers les mêmes catégories d'autres personnes, même si elles ne se connaissent pas directement.",
   },
   {
     id: "indexicalite",
@@ -220,6 +222,8 @@ export const concepts = [
     authors: ["max-horkheimer", "theodor-w-adorno"],
     x: 1480,
     y: 100,
+    simpleDefinition:
+      "Manière de faire de la sociologie qui refuse de se contenter de décrire la société : elle cherche à dévoiler les formes de domination qui s'y exercent, pour aider à les transformer.",
   },
   {
     id: "industrie-culturelle",
@@ -229,6 +233,8 @@ export const concepts = [
     authors: ["theodor-w-adorno", "max-horkheimer"],
     x: 1560,
     y: 100,
+    simpleDefinition:
+      "Production en masse de biens culturels, films, musique, émissions, selon une logique proche de celle d'une usine, qui standardise les contenus et entretient la passivité du public plutôt que sa réflexion critique.",
   },
   {
     id: "agir-communicationnel",
@@ -238,6 +244,8 @@ export const concepts = [
     authors: ["jürgen-habermas"],
     x: 1540,
     y: 300,
+    simpleDefinition:
+      "Forme d'action orientée non vers le succès personnel, mais vers la recherche d'un accord mutuel avec autrui, obtenu par la discussion et l'échange d'arguments plutôt que par la contrainte.",
   },
   {
     id: "critique-de-la-vie-quotidienne",
@@ -247,6 +255,8 @@ export const concepts = [
     authors: ["henri-lefebvre"],
     x: 20,
     y: 360,
+    simpleDefinition:
+      "Analyse des gestes et des routines de la vie de tous les jours, le travail, les loisirs, l'habitat, pour comprendre comment ils sont façonnés par le fonctionnement du capitalisme.",
   },
   {
     id: "production-de-l-espace",
@@ -256,6 +266,8 @@ export const concepts = [
     authors: ["henri-lefebvre"],
     x: 20,
     y: 470,
+    simpleDefinition:
+      "Idée selon laquelle l'espace, les villes, les logements, les lieux publics, n'est jamais neutre : il est façonné par des rapports sociaux et économiques, et façonne à son tour la vie de celles et ceux qui l'habitent.",
   },
   {
     id: "autonomie-relative-de-l-etat",
@@ -265,6 +277,8 @@ export const concepts = [
     authors: ["nicos-poulantzas"],
     x: 130,
     y: 530,
+    simpleDefinition:
+      "Idée selon laquelle l'État n'est pas un simple instrument au service direct des classes dominantes : il dispose d'une certaine marge de manœuvre, nécessaire pour maintenir l'ordre social dans son ensemble.",
   },
   {
     id: "actant",
@@ -368,6 +382,8 @@ export const concepts = [
     authors: ["max-horkheimer", "theodor-w-adorno"],
     x: 1250,
     y: 40,
+    simpleDefinition:
+      "Forme de raison réduite à un pur calcul d'efficacité, trouver les meilleurs moyens pour atteindre un but donné, sans plus jamais se demander si ce but est lui-même souhaitable.",
   },
   {
     id: "script-technique",
@@ -386,6 +402,8 @@ export const concepts = [
     authors: ["althusser"],
     x: 1180,
     y: 620,
+    simpleDefinition:
+      "Méthode de lecture des textes qui ne s'arrête pas à ce qu'ils disent explicitement, mais interroge leurs silences et leurs manques, pour faire apparaître un problème que l'auteur n'arrive pas tout à fait à formuler lui-même.",
   },
   {
     id: "regimes-de-justification",
@@ -395,15 +413,6 @@ export const concepts = [
     authors: ["luc-boltanski", "laurent-thevenot"],
     x: 1780,
     y: 350,
-  },
-  {
-    id: "equivalence-structurale",
-    label: "Équivalence structurale",
-    definition:
-      "Deux acteurs sont structuralement équivalents lorsqu'ils occupent des positions similaires dans un réseau de relations (mêmes types de liens avec les mêmes catégories d'autres acteurs), même s'ils ne sont pas directement en contact l'un avec l'autre.",
-    authors: ["harrison-white"],
-    x: 350,
-    y: 570,
   },
   {
     id: "bifurcations-biographiques",

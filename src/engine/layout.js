@@ -196,12 +196,25 @@ export function computeLayout(authors, concepts, relations) {
   });
 
   concepts.forEach((c) => {
+    // Constellation "de référence" du concept, celle de son premier
+    // auteur — c'est elle qui détermine où le concept est ancré (voir
+    // conceptNodes ci-dessus).
+    const homeConstellation = authorConstellation.get(c.authors[0]);
+
     c.authors.forEach((authorId) => {
       links.push({
         source: `concept:${c.id}`,
         target: authorId,
         kind: "concept-link",
-        sameConstellation: true,
+        // Un concept partagé par des auteurs de constellations
+        // différentes (ex. « Action sociale » chez Weber ET Parsons)
+        // ne doit être fortement attiré que par son auteur de
+        // référence : sinon il se retrouve tiraillé entre deux halos
+        // et finit par déborder des deux. Le lien vers un auteur
+        // « secondaire » d'une autre constellation reste visible sur
+        // la carte mais n'exerce plus de force.
+        sameConstellation:
+          authorConstellation.get(authorId) === homeConstellation,
       });
     });
   });
@@ -214,11 +227,13 @@ export function computeLayout(authors, concepts, relations) {
         .forceLink(links)
         .id((d) => d.id)
         .distance((l) => {
-          if (l.kind === "concept-link") return 110;
+          if (l.kind === "concept-link")
+            return l.sameConstellation ? 110 : 260;
           return l.sameConstellation ? 160 : 320;
         })
         .strength((l) => {
-          if (l.kind === "concept-link") return 0.9;
+          if (l.kind === "concept-link")
+            return l.sameConstellation ? 0.9 : 0;
           // Relation interne à une constellation : rapproche vraiment,
           // proportionnellement à sa force réelle.
           // Relation entre deux constellations différentes : AUCUNE

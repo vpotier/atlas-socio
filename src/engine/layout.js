@@ -124,7 +124,7 @@ function computeConstellationCenters(authors, relations) {
     {
       a: "la-sociologie-marxiste",
       b: "la-theorie-de-la-structuration",
-      minDistance: 700,
+      minDistance: 900,
     },
   ];
 

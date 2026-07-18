@@ -139,6 +139,8 @@ export const concepts = [
     authors: ["mark-granovetter"],
     x: 1300,
     y: 200,
+    simpleDefinition:
+      "Idée selon laquelle les relations peu fréquentes ou peu intimes, les « liens faibles », sont souvent plus utiles que les relations proches pour trouver des informations nouvelles, par exemple lors d'une recherche d'emploi, car elles donnent accès à des cercles sociaux différents des nôtres.",
   },
   {
     id: "encastrement-social",
@@ -148,6 +150,8 @@ export const concepts = [
     authors: ["harrison-white", "mark-granovetter"],
     x: 1220,
     y: 240,
+    simpleDefinition:
+      "Idée selon laquelle l'activité économique ne peut jamais être totalement séparée des relations sociales concrètes dans lesquelles elle s'inscrit : les décisions économiques restent toujours influencées par la confiance, les habitudes et les liens personnels entre les acteurs.",
   },
   {
     id: "equivalence-structurale",
@@ -168,6 +172,8 @@ export const concepts = [
     authors: ["harold-garfinkel"],
     x: 720,
     y: 690,
+    simpleDefinition:
+      "Propriété d'une parole ou d'un geste dont le sens exact dépend toujours du contexte précis dans lequel il est prononcé ou accompli, et ne peut donc jamais être compris entièrement en dehors de cette situation.",
   },
   {
     id: "reflexivite",
@@ -177,6 +183,8 @@ export const concepts = [
     authors: ["harold-garfinkel"],
     x: 790,
     y: 570,
+    simpleDefinition:
+      "Capacité des individus à rendre leurs propres actions compréhensibles et justifiables, à eux-mêmes comme aux autres, au moment même où ils les accomplissent.",
   },
   {
     id: "analyse-de-conversation",
@@ -186,6 +194,8 @@ export const concepts = [
     authors: ["harvey-sacks"],
     x: 870,
     y: 750,
+    simpleDefinition:
+      "Étude rigoureuse et détaillée des échanges verbaux réels, enregistrés puis transcrits, pour comprendre les règles implicites qui organisent la prise de parole, comme les tours de parole ou les réponses attendues.",
   },
   {
     id: "objectivation",
@@ -195,6 +205,8 @@ export const concepts = [
     authors: ["peter-berger", "thomas-luckmann"],
     x: 1030,
     y: 610,
+    simpleDefinition:
+      "Étape au cours de laquelle une pratique ou une institution créée par les individus finit par leur apparaître comme une réalité extérieure et indépendante d'eux, comme si elle avait toujours existé.",
   },
   {
     id: "interiorisation",
@@ -204,6 +216,8 @@ export const concepts = [
     authors: ["peter-berger", "thomas-luckmann"],
     x: 1090,
     y: 640,
+    simpleDefinition:
+      "Processus par lequel un individu fait sienne une réalité sociale extérieure, au point qu'elle devienne pour lui une évidence naturelle, plutôt qu'une construction historique.",
   },
   {
     id: "identite-pour-soi-pour-autrui",
@@ -213,6 +227,8 @@ export const concepts = [
     authors: ["claude-dubar"],
     x: 900,
     y: 760,
+    simpleDefinition:
+      "Distinction entre la manière dont une personne se perçoit et se définit elle-même, et l'identité que les autres et les institutions lui attribuent, qui peuvent parfois entrer en tension.",
   },
   {
     id: "theorie-critique-concept",
@@ -288,6 +304,8 @@ export const concepts = [
     authors: ["bruno-latour", "michel-callon"],
     x: 1250,
     y: 560,
+    simpleDefinition:
+      "Terme désignant tout élément, humain ou non humain, un objet, une machine, un instrument, capable d'agir et de produire des effets au sein d'un réseau de relations.",
   },
   {
     id: "traduction",
@@ -297,6 +315,8 @@ export const concepts = [
     authors: ["michel-callon", "bruno-latour"],
     x: 1420,
     y: 600,
+    simpleDefinition:
+      "Processus par lequel des acteurs aux intérêts au départ très différents en viennent progressivement à aligner leurs objectifs autour d'un même projet, souvent par l'intermédiaire d'un acteur qui parvient à se rendre indispensable.",
   },
   {
     id: "objet-frontiere",
@@ -306,6 +326,8 @@ export const concepts = [
     authors: ["susan-leigh-star"],
     x: 1390,
     y: 770,
+    simpleDefinition:
+      "Objet ou dispositif suffisamment souple pour être utilisé différemment par plusieurs groupes aux préoccupations distinctes, tout en conservant une structure commune qui leur permet de continuer à collaborer malgré leurs différences.",
   },
   {
     id: "dualite-du-structurel",
@@ -315,6 +337,8 @@ export const concepts = [
     authors: ["anthony-giddens"],
     x: 560,
     y: 280,
+    simpleDefinition:
+      "Idée selon laquelle les structures sociales sont à la fois la condition qui rend possible l'action des individus, et le résultat produit par cette même action, qui la reproduit ou la transforme.",
   },
   {
     id: "double-hermeneutique",
@@ -324,6 +348,8 @@ export const concepts = [
     authors: ["anthony-giddens"],
     x: 660,
     y: 290,
+    simpleDefinition:
+      "Constat que les théories des sociologues, une fois diffusées dans la société, peuvent être connues et reprises par les individus eux-mêmes, qui ajustent alors leur comportement en fonction de ces théories.",
   },
   {
     id: "conscience-pratique",
@@ -333,6 +359,8 @@ export const concepts = [
     authors: ["anthony-giddens"],
     x: 610,
     y: 420,
+    simpleDefinition:
+      "Ensemble des savoir-faire et des routines qu'un individu maîtrise et met en œuvre au quotidien, sans être capable de les expliquer clairement avec des mots.",
   },
   {
     id: "socialisation-primaire-secondaire",
@@ -342,6 +370,8 @@ export const concepts = [
     authors: ["peter-berger", "thomas-luckmann"],
     x: 1010,
     y: 600,
+    simpleDefinition:
+      "Distinction entre la socialisation primaire, celle de la petite enfance au sein de la famille, qui installe les bases de l'identité, et la socialisation secondaire, celle qui intervient plus tard, en particulier à l'école ou au travail.",
   },
   {
     id: "sale-boulot",
@@ -373,6 +403,8 @@ export const concepts = [
     authors: ["claude-dubar"],
     x: 220,
     y: 850,
+    simpleDefinition:
+      "Chez Dubar, l'identité se construit à partir de deux éléments : le sens que la personne donne elle-même à son propre parcours, et l'identité que lui attribuent les autres et les institutions.",
   },
   {
     id: "raison-instrumentale",
@@ -393,6 +425,8 @@ export const concepts = [
     authors: ["akrich"],
     x: 1350,
     y: 260,
+    simpleDefinition:
+      "Programme d'action inscrit par les concepteurs dans un objet technique, qui prévoit certains usages et en exclut d'autres, parfois sans que cela ait été voulu explicitement.",
   },
   {
     id: "lecture-symptomale",
@@ -413,6 +447,8 @@ export const concepts = [
     authors: ["luc-boltanski", "laurent-thevenot"],
     x: 1780,
     y: 350,
+    simpleDefinition:
+      "Principes de justice partagés, par exemple la réussite marchande, le mérite ou la solidarité, auxquels les personnes se réfèrent pour justifier publiquement leurs actes et critiquer ceux des autres, lors d'un désaccord.",
   },
   {
     id: "bifurcations-biographiques",
@@ -422,6 +458,8 @@ export const concepts = [
     authors: ["bidart", "grossetti"],
     x: 260,
     y: 920,
+    simpleDefinition:
+      "Changement soudain et durable dans le parcours de vie d'une personne, caractérisé par un fort degré d'imprévisibilité, à la différence des évolutions progressives et attendues.",
   },
   {
     id: "intervention-sociologique",
@@ -431,6 +469,8 @@ export const concepts = [
     authors: ["alain-touraine"],
     x: 1420,
     y: 500,
+    simpleDefinition:
+      "Méthode inventée par Touraine consistant à réunir un groupe de militants pendant plusieurs semaines pour les amener à s'auto-analyser collectivement, afin de faire apparaître le sens profond de leur engagement.",
   },
   {
     id: "imagination-sociologique",
@@ -440,6 +480,8 @@ export const concepts = [
     authors: ["wright-mills"],
     x: 1500,
     y: 550,
+    simpleDefinition:
+      "Capacité à relier sa propre biographie individuelle aux structures sociales et historiques plus larges, pour comprendre que des difficultés vécues comme purement personnelles proviennent souvent de changements qui dépassent l'individu.",
   },
   {
     id: "travail-emotionnel",
@@ -471,6 +513,8 @@ export const concepts = [
     authors: ["nancy-fraser"],
     x: 1600,
     y: 400,
+    simpleDefinition:
+      "Chez Fraser, deux formes complémentaires de justice sociale : la redistribution vise à corriger les inégalités économiques, la reconnaissance vise à corriger le mépris envers certains groupes sociaux.",
   },
   {
     id: "transindividuel",
@@ -480,5 +524,7 @@ export const concepts = [
     authors: ["simondon"],
     x: 1650,
     y: 800,
+    simpleDefinition:
+      "Chez Simondon, processus par lequel l'individuel et le collectif se construisent en même temps, l'un ne précédant jamais l'autre.",
   },
 ];

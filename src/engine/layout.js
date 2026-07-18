@@ -110,6 +110,45 @@ function computeConstellationCenters(authors, relations) {
     constellationCenters[n.id] = { x: n.x, y: n.y };
   });
 
+  // Certaines paires de constellations peuvent, selon la dynamique de
+  // la simulation, finir trop proches l'une de l'autre malgré la force
+  // de collision — notamment quand l'une d'elles est tirée dans
+  // plusieurs directions à la fois par de nombreuses relations
+  // croisées (ex. Giddens, relié à Marx, Weber, Durkheim et
+  // Lévi-Strauss). Plutôt que de retoucher les réglages généraux — ce
+  // qui a des répercussions imprévisibles sur toute la carte — on
+  // corrige ici, après coup, les cas précis déjà repérés visuellement,
+  // en écartant seulement les deux constellations concernées, sans
+  // toucher à la position de toutes les autres.
+  const MIN_SEPARATION_OVERRIDES = [
+    {
+      a: "la-sociologie-marxiste",
+      b: "la-theorie-de-la-structuration",
+      minDistance: 700,
+    },
+  ];
+
+  MIN_SEPARATION_OVERRIDES.forEach(({ a, b, minDistance }) => {
+    const ca = constellationCenters[a];
+    const cb = constellationCenters[b];
+    if (!ca || !cb) return;
+
+    const dx = cb.x - ca.x;
+    const dy = cb.y - ca.y;
+    const dist = Math.hypot(dx, dy) || 1;
+
+    if (dist < minDistance) {
+      const push = (minDistance - dist) / 2;
+      const ux = dx / dist;
+      const uy = dy / dist;
+
+      ca.x -= ux * push;
+      ca.y -= uy * push;
+      cb.x += ux * push;
+      cb.y += uy * push;
+    }
+  });
+
   return constellationCenters;
 }
 

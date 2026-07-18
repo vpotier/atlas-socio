@@ -30,7 +30,7 @@ const PADDING = 140;
 // repoussent — sans aucun centre imposé au départ, la position relative
 // émerge uniquement des données.
 // ---------------------------------------------------------------------
-function computeConstellationCenters(authors, relations) {
+function computeConstellationCenters(authors, concepts, relations) {
   const center = { x: SIM_WIDTH / 2, y: SIM_HEIGHT / 2 };
 
   const authorConstellation = new Map(
@@ -41,11 +41,22 @@ function computeConstellationCenters(authors, relations) {
     ...new Set(authors.map((a) => a.constellation)),
   ];
 
+  // Compte les auteurs ET les concepts de chaque constellation : le
+  // halo visuel (Clusters.jsx) englobe les deux, donc ce compte doit
+  // correspondre exactement, sinon un courant riche en concepts mais
+  // pauvre en auteurs (ex. la sociologie marxiste) est sous-estimé ici
+  // et son halo réel finit par déborder de la marge prévue.
   const memberCount = {};
   constellationIds.forEach((id) => {
-    memberCount[id] = authors.filter(
-      (a) => a.constellation === id
+    const authorIds = new Set(
+      authors.filter((a) => a.constellation === id).map((a) => a.id)
+    );
+
+    const conceptCount = concepts.filter((c) =>
+      c.authors.some((aid) => authorIds.has(aid))
     ).length;
+
+    memberCount[id] = authorIds.size + conceptCount;
   });
 
   const crossWeights = {};
@@ -97,7 +108,7 @@ function computeConstellationCenters(authors, relations) {
       "collide",
       d3
         .forceCollide()
-        .radius((d) => 320 + memberCount[d.id] * 55)
+        .radius((d) => 360 + memberCount[d.id] * 60)
     )
     .force("center", d3.forceCenter(center.x, center.y))
     .stop();
@@ -125,6 +136,7 @@ function computeConstellationCenters(authors, relations) {
 export function computeLayout(authors, concepts, relations) {
   const constellationCenters = computeConstellationCenters(
     authors,
+    concepts,
     relations
   );
 

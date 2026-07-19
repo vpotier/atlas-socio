@@ -49,7 +49,7 @@ export default function Graph({
         clientHeight / layout.height
       ) * 0.9;
 
-    const scale = Math.max(0.15, Math.min(fitScale, 1.2));
+    const scale = Math.max(0.05, Math.min(fitScale, 1.2));
 
     const targetX = clientWidth / 2 - layout.centerX * scale;
     const targetY = clientHeight / 2 - layout.centerY * scale;
@@ -463,7 +463,7 @@ export default function Graph({
       <TransformWrapper
         ref={transformRef}
         initialScale={INITIAL_SCALE}
-        minScale={0.2}
+        minScale={0.05}
         maxScale={3}
         limitToBounds={false}
       >
@@ -610,4 +610,3 @@ export default function Graph({
     </TransformWrapper>
     </div>
   );
-}

@@ -277,29 +277,30 @@ export default function App() {
 
           <ul>
             <li>
-              Une carte de 63 auteur·ices de théorie sociologique,
-              regroupé·es en 15 grands courants théoriques, auxquels
-              s'ajoutent quelques auteur·ices-ponts qui ne se rattachent
-              pleinement à aucun courant unique.
+              Une carte de <strong>63 auteur·ices</strong> de théorie
+              sociologique, regroupé·es en 15 grands courants théoriques,
+              auxquels s'ajoutent quelques auteur·ices-ponts qui ne se
+              rattachent pleinement à aucun courant unique.
             </li>
             <li>
-              Chaque point cliquable ouvre une fiche : auteur·ice,
-              concept, ou courant théorique. Chaque trait reliant deux
-              auteur·ices est lui aussi cliquable, et ouvre sa propre
-              fiche synthétique et sourcée : héritage (marron), dialogue
-              (bleu), tension (rouge, pointillé).
+              <strong>Chaque point est cliquable</strong> et ouvre une
+              fiche : auteur·ice, concept, ou courant théorique. Chaque
+              trait reliant deux auteur·ices est lui aussi cliquable, et
+              ouvre sa propre fiche synthétique et sourcée : héritage
+              (marron), dialogue (bleu), tension (rouge, pointillé).
             </li>
             <li>
-              L'ensemble des informations est sourcé : chaque fiche
-              indique les références académiques sur lesquelles elle
-              s'appuie.
+              L'ensemble des informations est <strong>sourcé</strong> :
+              chaque fiche indique les références académiques sur
+              lesquelles elle s'appuie.
             </li>
             <li>
-              Un mode découverte, accessible depuis ce panneau d'accueil,
-              propose des fiches très simplifiées, sans jargon, idéales
-              pour une première approche de la sociologie. Il peut être
-              activé ou désactivé à tout moment, le contenu complet reste
-              toujours accessible juste à côté.
+              Un <strong>mode découverte</strong>, accessible depuis ce
+              panneau d'accueil, propose des fiches très simplifiées,
+              sans jargon, idéales pour une première approche de la
+              sociologie. Il peut être activé ou désactivé à tout
+              moment, le contenu complet reste toujours accessible juste
+              à côté.
             </li>
           </ul>
 
@@ -307,22 +308,23 @@ export default function App() {
 
           <ul>
             <li>
-              Zoomer/dézoomer à la molette ou en pinçant (sur mobile),
-              glisser pour se déplacer.
+              <strong>Zoomer/dézoomer</strong> à la molette ou en
+              pinçant (sur mobile), glisser pour se déplacer.
             </li>
             <li>
-              Le bouton viseur (en haut à droite) recentre la vue sur
-              l'ensemble de la carte.
+              Le <strong>bouton viseur</strong> (en haut à droite)
+              recentre la vue sur l'ensemble de la carte.
             </li>
             <li>
-              Cliquer sur le halo d'un courant théorique ouvre sa fiche :
-              définition, période, disciplines qui l'ont nourri.
+              Cliquer sur le <strong>halo d'un courant théorique</strong>{" "}
+              ouvre sa fiche : définition, période, disciplines qui
+              l'ont nourri.
             </li>
             <li>
-              Dans le panneau Filtres, il est possible d'afficher ou de
-              masquer chaque type de relation (héritage, dialogue,
-              tension) indépendamment, pour alléger la carte et faciliter
-              la lecture.
+              Dans le panneau Filtres, il est possible d'
+              <strong>afficher ou masquer chaque type de relation</strong>{" "}
+              (héritage, dialogue, tension) indépendamment, pour alléger
+              la carte et faciliter la lecture.
             </li>
           </ul>
 
@@ -330,24 +332,25 @@ export default function App() {
 
           <ul>
             <li>
-              Il peut être utile de commencer par explorer la carte sans
-              filtre : la disposition spatiale des courants théoriques,
-              issue des relations effectivement documentées entre leurs
+              Il peut être utile de commencer par{" "}
+              <strong>explorer la carte sans filtre</strong> : la
+              disposition spatiale des courants théoriques, issue des
+              relations effectivement documentées entre leurs
               auteur·ices, donne une première intuition de la manière
               dont ils s'articulent les uns aux autres.
             </li>
             <li>
               Cliquez sur un·e auteur·ice pour accéder à sa fiche
               complète (résumé, œuvres, concepts, influences). Utilisez
-              la recherche pour retrouver rapidement un nom, un concept
-              ou un courant.
+              la <strong>recherche</strong> pour retrouver rapidement un
+              nom, un concept ou un courant.
             </li>
             <li>
-              Le filtre par thème permet un premier balayage
-              bibliographique ciblé — par exemple, en période de révision
-              de partiels, pour retrouver rapidement l'ensemble des
-              auteur·ices ayant travaillé sur un objet donné (les études
-              de genre, la sociologie urbaine, etc.).
+              Le <strong>filtre par thème</strong> permet un premier
+              balayage bibliographique ciblé — par exemple, en période
+              de révision de partiels, pour retrouver rapidement
+              l'ensemble des auteur·ices ayant travaillé sur un objet
+              donné (les études de genre, la sociologie urbaine, etc.).
             </li>
           </ul>
 
@@ -355,13 +358,14 @@ export default function App() {
 
           <ul>
             <li>
-              Les 3 curseurs de filtre (Individu/Société, Méthode,
-              Rationalité) permettent d'isoler les auteur·ices selon leur
-              positionnement épistémologique, ce qui peut être utile
-              pour construire une séance comparative.
+              Les <strong>3 curseurs de filtre</strong> (Individu/Société,
+              Méthode, Rationalité) permettent d'isoler les auteur·ices
+              selon leur positionnement épistémologique, ce qui peut
+              être utile pour construire une séance comparative.
             </li>
             <li>
-              Il est possible de masquer certains types de relations
+              Il est possible de{" "}
+              <strong>masquer certains types de relations</strong>{" "}
               (héritage, dialogue, tension) pour simplifier la lecture
               en cours et concentrer l'attention des étudiant·es sur un
               seul type de filiation.
@@ -392,7 +396,14 @@ export default function App() {
           <p>
             <strong>Puis-je proposer une correction ou un ajout ?</strong>
             <br />
-            Oui, via le lien "Me contacter".
+            Oui, via le lien{" "}
+            <a
+              href="mailto:victor.potier@univ-eiffel.fr"
+              style={{ color: "var(--color-tardis)" }}
+            >
+              Me contacter
+            </a>
+            .
           </p>
         </>
       );

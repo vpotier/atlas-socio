@@ -527,4 +527,48 @@ export const concepts = [
     simpleDefinition:
       "Chez Simondon, processus par lequel l'individuel et le collectif se construisent en même temps, l'un ne précédant jamais l'autre.",
   },
+  {
+    id: "sociologie-formelle",
+    label: "Sociologie formelle",
+    definition:
+      "Approche sociologique qui isole les formes récurrentes de l'interaction sociale — domination, conflit, échange, sociabilité — de leur contenu concret et de leurs finalités particulières, un peu comme la géométrie isole des formes abstraites des objets physiques.",
+    authors: ["simmel"],
+    x: 1250,
+    y: 380,
+    simpleDefinition:
+      "Manière d'étudier la société qui s'intéresse aux formes que prennent les relations entre les personnes (dominer, être en conflit, échanger...), plutôt qu'au contenu précis de chaque relation.",
+  },
+  {
+    id: "action-reciproque",
+    label: "Action réciproque",
+    definition:
+      "Concept central de la sociologie de Simmel (Wechselwirkung) : la vie collective ne se saisit jamais autrement que dans l'action réciproque entre individus — c'est cette interaction elle-même, et non une entité séparée nommée « société », qui produit le social.",
+    authors: ["simmel"],
+    x: 1330,
+    y: 470,
+    simpleDefinition:
+      "L'idée que la société n'existe pas comme une chose séparée des individus : elle se produit dans l'échange constant entre les personnes, dès qu'elles interagissent les unes avec les autres.",
+  },
+  {
+    id: "dyade-et-triade",
+    label: "Dyade et triade",
+    definition:
+      "Analyse simmélienne montrant que le passage d'un groupe de deux personnes (dyade) à un groupe de trois (triade) transforme qualitativement la nature des relations : un tiers peut jouer les rôles de médiateur, d'arbitre, ou tirer profit de la division entre les deux autres.",
+    authors: ["simmel"],
+    x: 1370,
+    y: 400,
+    simpleDefinition:
+      "Simmel montre qu'ajouter une troisième personne à un groupe de deux change complètement la nature des relations : le tiers peut jouer les arbitres, ou profiter d'une division entre les deux autres.",
+  },
+  {
+    id: "l-etranger",
+    label: "L'étranger",
+    definition:
+      "Figure sociale théorisée par Simmel : l'étranger n'est ni le pur extérieur ni le pur intérieur au groupe, mais occupe une position paradoxale de proximité et de distance combinées, ce qui lui confère un regard singulier sur le groupe qui l'accueille.",
+    authors: ["simmel"],
+    x: 1280,
+    y: 460,
+    simpleDefinition:
+      "Pour Simmel, l'étranger n'est ni complètement extérieur ni complètement intégré à un groupe : il est à la fois proche et distant, ce qui lui donne un regard particulier sur ce groupe.",
+  },
 ];

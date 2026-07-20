@@ -2287,6 +2287,51 @@ export const authors = [
   },
 
   {
+    id: "simmel",
+    name: "Georg Simmel",
+    school: "Sociologie formelle (auteur-pont)",
+    period: "1858–1918",
+    birthYear: 1858,
+    deathYear: 1918,
+    x: 1300,
+    y: 420,
+    color: "#DBBA00",
+
+    concepts: [
+      "Sociologie formelle",
+      "Action réciproque",
+      "Dyade et triade",
+      "L'étranger",
+    ],
+
+    works: [
+      "Philosophie de l'argent (1900)",
+      "Sociologie (1908)",
+      "Les grandes villes et la vie de l'esprit (1903)",
+    ],
+
+    influences: [],
+    heirs: ["robert-park", "erving-goffman"],
+
+    summary:
+      "Georg Simmel refuse les deux grandes options de la sociologie naissante : ni la société comme totalité supérieure aux individus (comme chez Durkheim), ni l'individu isolé dont la société ne serait qu'une fiction abstraite. Pour lui, la société existe précisément dans l'action réciproque (Wechselwirkung) entre individus : dès qu'il y a interaction, il y a société. Il développe une « sociologie formelle » qui isole les formes récurrentes de l'interaction — domination, conflit, échange, sociabilité — indépendamment de leur contenu concret. Dans sa Philosophie de l'argent, il analyse comment l'économie monétaire transforme à la fois la liberté individuelle et les rapports sociaux. Considéré de son vivant avant tout comme un philosophe, il est aujourd'hui reconnu comme l'un des pères fondateurs de la sociologie.",
+
+    constellation: "pont",
+    consensus: 4,
+    classificationNote:
+      "Simmel est identifié comme un auteur-pont : contemporain de Weber, il partage avec lui l'attention portée au sens de l'action, mais son insistance sur les formes pures de l'interaction et son influence directe sur Robert Park en font aussi un précurseur de l'interactionnisme symbolique américain, sans qu'il appartienne pleinement à l'un ou l'autre courant.",
+    sources: [
+      "Vandenberghe, La sociologie de Georg Simmel, La Découverte, coll. Repères",
+      "Watier, 2003, Georg Simmel sociologue, Circé",
+    ],
+    themes: ["Sociologie économique", "Sociologie urbaine"],
+    simple: {
+      summary:
+        "Georg Simmel refuse de choisir entre deux positions extrêmes : pour lui, la société n'est ni une réalité supérieure aux individus, ni une simple fiction sans consistance propre. La société existe précisément dans les interactions entre les personnes : chaque fois que des individus entrent en relation, il y a société. Il étudie ainsi les formes récurrentes de ces interactions (la domination, le conflit, l'échange) plutôt que leur contenu particulier. Dans sa Philosophie de l'argent, il montre comment l'argent transforme à la fois la liberté individuelle et les liens entre les personnes. Son influence directe sur Robert Park, qui fut son étudiant à Berlin, en fait une figure importante à l'origine de l'école de sociologie de Chicago.",
+    },
+  },
+
+  {
     id: "ellul",
     name: "Jacques Ellul",
     school: "Philosophie et sociologie de la technique",

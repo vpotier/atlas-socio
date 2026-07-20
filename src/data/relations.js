@@ -1593,4 +1593,47 @@ export const relations = [
     simpleExplanation:
       "Touraine a suivi les séminaires de Parsons, mais construit sa sociologie de l'action précisément contre celle de Parsons, qu'il juge trop centrée sur le système social au détriment de l'acteur.",
   },
+  {
+    source: "simmel",
+    target: "robert-park",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Park a étudié directement sous la direction de Simmel à Berlin (1899-1900) — une influence qualifiée de « probablement la plus importante » sur le noyau de ses théories sociologiques.",
+    sources: [
+      "Grafmeyer & Joseph (dir.), 1979/1990, L'École de Chicago, naissance de l'écologie urbaine, Aubier",
+    ],
+    simpleExplanation:
+      "Park a étudié directement avec Simmel à Berlin, avant de fonder l'école de Chicago — une rencontre qui a durablement marqué sa manière de penser la ville et la société.",
+  },
+  {
+    source: "durkheim",
+    target: "simmel",
+    type: "tension",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Durkheim rédige lui-même un compte rendu critique de la Philosophie de l'argent de Simmel, dont il rejette l'approche jugée trop centrée sur l'individu et insuffisamment attentive à la réalité objective des faits sociaux.",
+    sources: [
+      "Durkheim, 1900-1901, Philosophie des Geldes (compte rendu), L'Année sociologique, 5",
+      "Sagnol, 1987, Le statut de la sociologie chez Simmel et Durkheim, Revue française de sociologie, 28-1, 99-125",
+    ],
+    simpleExplanation:
+      "Durkheim rédige lui-même une critique du livre de Simmel sur l'argent, lui reprochant de trop partir de l'individu et pas assez de la réalité objective de la société.",
+  },
+  {
+    source: "simmel",
+    target: "erving-goffman",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Un commentateur académique décrit Goffman comme « un nœud gordien fait principalement de sources d'inspiration simmélienne, durkheimienne et sartrienne » — Simmel y figure comme l'une des influences fondatrices, notamment pour l'analyse des formes d'interaction.",
+    sources: [
+      "Jacobsen, 2009, cité dans Beyond the \"inimitable\" Goffman, PMC",
+    ],
+    simpleExplanation:
+      "Goffman doit beaucoup à Simmel, en particulier pour son attention aux formes récurrentes de l'interaction entre les personnes, indépendamment de leur contenu précis.",
+  },
 ];

@@ -1651,4 +1651,34 @@ export const authorAxisValues = {
       ],
     },
   },
+
+  simmel: {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation — la société comme action réciproque",
+      justification:
+        "Simmel refuse explicitement les deux visions dominantes : ni la société comme totalité supérieure aux individus (comme chez Durkheim), ni l'individualisme pur où la société ne serait qu'une fiction. Pour lui, la société existe dès que des individus entrent en interaction — elle est cette interaction réciproque elle-même.",
+      sources: [
+        "Thouard & Zimmermann (dir.), 2017, Simmel, le parti-pris du tiers, CNRS Éditions",
+      ],
+    },
+    methode: {
+      value: 0.6,
+      label: "Théorique et analytique — extraction des formes pures",
+      justification:
+        "Sa « sociologie formelle » consiste à isoler les formes récurrentes de l'interaction sociale (domination, conflit, échange...) de leur contenu concret — une démarche philosophique et analytique, non une enquête de terrain.",
+      sources: [
+        "Vandenberghe, La sociologie de Georg Simmel, La Découverte, coll. Repères",
+      ],
+    },
+    rationalite: {
+      value: 0.55,
+      label: "Située — le sens que les individus donnent aux structures",
+      justification:
+        "Simmel rappelle constamment que les structures sociales ne sont jamais qu'une création humaine, dépendante du sens que les individus leur accordent.",
+      sources: [
+        "Vandenberghe, La sociologie de Georg Simmel, La Découverte, coll. Repères",
+      ],
+    },
+  },
 };

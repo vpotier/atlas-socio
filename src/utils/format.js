@@ -41,11 +41,6 @@ export function formatPerson(shortNameOrId) {
   return shortNameOrId;
 }
 
-export function workSearchUrl(title, authorName) {
-  const query = encodeURIComponent(`${title} ${authorName}`);
-  return `https://fr.wikipedia.org/w/index.php?search=${query}`;
-}
-
 export function formatAuthorById(id) {
   const author = authors.find((a) => a.id === id);
 
@@ -57,3 +52,21 @@ export function formatAuthorById(id) {
     author.deathYear
   );
 }
+
+/*
+ * NOTE — ancienne fonction `workSearchUrl` retirée.
+ *
+ * Elle générait une URL de recherche Wikipédia devinée à partir du titre
+ * de l'œuvre et du nom de l'auteur, sans jamais vérifier que l'article
+ * existait réellement : c'est ce qui produisait des liens morts.
+ *
+ * Chaque œuvre dans authors.js contient désormais directement :
+ *   - `citation` : la référence bibliographique complète (à afficher en italique)
+ *   - `sources`  : un tableau de { label, url } vérifiés un par un
+ *                  (Wikipédia quand un article dédié existe, sinon Cairn/
+ *                  Persée/OpenEdition/La Vie des idées/texte intégral etc.)
+ *
+ * Le rendu se fait donc directement dans App.jsx en mappant sur
+ * `author.works`, sans passer par une fonction de génération d'URL.
+ * Voir le composant WorksList fourni à part.
+ */

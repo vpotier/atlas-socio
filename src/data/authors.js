@@ -747,7 +747,7 @@ export const authors = [
         citation: "Granovetter M., 1973, The Strength of Weak Ties, American Journal of Sociology, 78, p. 1360-1380.",
         sources: [
           {
-            label: "Degenne A., Forsé M., 2011, La Vie en réseau. Dynamique des relations sociales, PUF",
+            label: "Bidart C., Degenne A., Grossetti M., 2011, La Vie en réseau. Dynamique des relations sociales, PUF",
             url: "https://shs.cairn.info/la-vie-en-reseau--9782130590644-page-255",
           },
         ],
@@ -1055,8 +1055,24 @@ export const authors = [
     concepts: ["Identité pour soi / pour autrui", "Crise des identités", "Forme identitaire", "Double transaction"],
 
     works: [
-      "La Socialisation : Construction des identités sociales et professionnelles (1991)",
-      "La Crise des identités (2000)",
+      {
+        citation: "Dubar C., 1991, La Socialisation. Construction des identités sociales et professionnelles, Paris, Armand Colin.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/socialisation--9782200601874",
+          },
+        ],
+      },
+      {
+        citation: "Dubar C., 2000, La Crise des identités. L'interprétation d'une mutation, Paris, PUF.",
+        sources: [
+          {
+            label: "Texte intégral (introduction)",
+            url: "https://shs.cairn.info/la-crise-des-identites--9782130583653-page-1",
+          },
+        ],
+      },
     ],
 
     influences: ["peter-berger", "thomas-luckmann", "Bourdieu", "Hughes"],
@@ -1162,8 +1178,8 @@ export const authors = [
         citation: "Adorno T. W., 1951, Minima Moralia, trad. fr., Paris, Payot.",
         sources: [
           {
-            label: "Abensour M., 2025, notice sur Minima Moralia, in Critique de la politique, Klincksieck, p. 67",
-            url: "https://shs.cairn.info/critique-de-la-politique--9782252047972-page-67?lang=fr",
+            label: "Recension anonyme, 1980, Allemagne d'aujourd'hui, 74, p. 111",
+            url: "https://www.persee.fr/doc/alauj_0002-5712_1980_num_74_1_4111_t1_0111_0000_3",
           },
         ],
       },
@@ -1717,8 +1733,24 @@ export const authors = [
     concepts: ["Loi des trois états", "Physique sociale"],
 
     works: [
-      "Cours de philosophie positive (1830-1842)",
-      "Discours sur l'esprit positif (1844)",
+      {
+        citation: "Comte A., 1830-1842, Cours de philosophie positive, Paris, Bachelier.",
+        sources: [
+          {
+            label: "Seys P., 1996, recension conjointe, Revue Philosophique de Louvain, 94-2, p. 364-367",
+            url: "https://www.persee.fr/doc/phlou_0035-3841_1996_num_94_2_6995_t1_0364_0000_1",
+          },
+        ],
+      },
+      {
+        citation: "Comte A., 1844, Discours sur l'esprit positif, Paris, Carilian-Goeury et Dalmont.",
+        sources: [
+          {
+            label: "Seys P., 1996, recension conjointe, Revue Philosophique de Louvain, 94-2, p. 364-367",
+            url: "https://www.persee.fr/doc/phlou_0035-3841_1996_num_94_2_6995_t1_0364_0000_1",
+          },
+        ],
+      },
     ],
 
     influences: [],
@@ -1906,7 +1938,26 @@ export const authors = [
 
     concepts: ["Distinction sexe/genre", "Sociologie du travail domestique"],
 
-    works: ["Sex, Gender and Society (1972)", "The Sociology of Housework (1974)"],
+    works: [
+      {
+        citation: "Oakley A., 1972, Sex, Gender and Society, London, Maurice Temple Smith.",
+        sources: [
+          {
+            label: "Ferry P., 2015, recension, Lectures (OpenEdition)",
+            url: "https://journals.openedition.org/lectures/17847",
+          },
+        ],
+      },
+      {
+        citation: "Oakley A., 1974, The Sociology of Housework, London, Martin Robertson.",
+        sources: [
+          {
+            label: "Hurstfield J., 1975, recension, Sociological Review (exception anglaise)",
+            url: "https://journals.sagepub.com/doi/abs/10.1111/j.1467-954X.1975.tb02241.x",
+          },
+        ],
+      },
+    ],
 
     influences: [],
     heirs: [],
@@ -2109,8 +2160,8 @@ export const authors = [
         citation: "Touraine A., 1984, Le Retour de l'acteur, Paris, Fayard.",
         sources: [
           {
-            label: "Texte intégral (autorisé par l'auteur), Classiques des sciences sociales, UQAM",
-            url: "https://classiques.uqam.ca/contemporains/touraine_alain/retour_de_acteur/retour_de_acteur.html",
+            label: "Note bibliographique non signée, 1985, Les Annales de la recherche urbaine, 26, p. 119",
+            url: "https://www.persee.fr/doc/aru_0180-930x_1985_num_26_1_2845_t1_0119_0000_2",
           },
         ],
       },
@@ -2338,8 +2389,24 @@ export const authors = [
     concepts: ["Recherche administrative", "Analyse quantitative des effets médiatiques"],
 
     works: [
-      "The People's Choice (1944)",
-      "Personal Influence (1955, avec E. Katz)",
+      {
+        citation: "Lazarsfeld P., Berelson B., Gaudet H., 1944, The People's Choice, New York, Duell, Sloan and Pearce.",
+        sources: [
+          {
+            label: "Chazel F., 2000, « Modes d'influence et choix électoraux : un enrichissement de l'« analyse empirique de l'action » », in Aux fondements de la sociologie, PUF, p. 155-166",
+            url: "https://shs.cairn.info/aux-fondements-de-la-sociologie--9782130501381-page-155",
+          },
+        ],
+      },
+      {
+        citation: "Lazarsfeld P., Katz E., 1955, Personal Influence, Glencoe, The Free Press.",
+        sources: [
+          {
+            label: "Laurens S., 2010, « L'œuvre oubliée en psychologie de Paul Lazarsfeld », Bulletin de psychologie, 508-4",
+            url: "https://shs.cairn.info/article/BUPSY_508_0279",
+          },
+        ],
+      },
     ],
 
     influences: [],
@@ -2374,8 +2441,24 @@ export const authors = [
     concepts: ["Significations sociales de l'argent", "Travail relationnel"],
 
     works: [
-      "The Social Meaning of Money (1994)",
-      "The Purchase of Intimacy (2005)",
+      {
+        citation: "Zelizer V., 1994, The Social Meaning of Money, New York, Basic Books.",
+        sources: [
+          {
+            label: "Weber F. (entretien avec V. Zelizer), 2006, « Viviana Zelizer, « l'argent social » », Genèses, 65, p. 126",
+            url: "https://shs.cairn.info/revue-geneses-2006-4-page-126",
+          },
+        ],
+      },
+      {
+        citation: "Zelizer V., 2005, The Purchase of Intimacy, Princeton, Princeton University Press.",
+        sources: [
+          {
+            label: "Weber F. (entretien avec V. Zelizer), 2006, « Viviana Zelizer, « l'argent social » », Genèses, 65, p. 126",
+            url: "https://shs.cairn.info/revue-geneses-2006-4-page-126",
+          },
+        ],
+      },
     ],
 
     influences: ["mark-granovetter"],
@@ -2455,8 +2538,24 @@ export const authors = [
     concepts: ["Homme pluriel", "Dispositions plurielles"],
 
     works: [
-      "Tableaux de familles (1995)",
-      "L'Homme pluriel (1998)",
+      {
+        citation: "Lahire B., 1995, Tableaux de familles. Heurs et malheurs scolaires en milieux populaires, Paris, Gallimard/Le Seuil.",
+        sources: [
+          {
+            label: "Fossé-Poliak C., 1995, recension, Politix, 31, p. 237-240",
+            url: "https://shs.cairn.info/revue-politix-1995-3-page-237",
+          },
+        ],
+      },
+      {
+        citation: "Lahire B., 1998, L'Homme pluriel. Les ressorts de l'action, Paris, Nathan.",
+        sources: [
+          {
+            label: "Recension, 1999, Revue française de sociologie, 40-4",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1999_num_40_4_5224",
+          },
+        ],
+      },
     ],
 
     influences: ["bourdieu"],
@@ -2492,9 +2591,33 @@ export const authors = [
     concepts: ["Carrière (socialisation)", "Fabrique de l'habitus"],
 
     works: [
-      "Devenir anorexique : une approche sociologique (2003)",
-      "Classes préparatoires. La fabrique d'une jeunesse dominante (2013)",
-      "La Socialisation (2006)",
+      {
+        citation: "Darmon M., 2003, Devenir anorexique. Une approche sociologique, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Tamisier K., 2005, recension, Sciences Sociales et Santé, 23-1, p. 119-121",
+            url: "https://www.persee.fr/doc/sosan_0294-0337_2005_num_23_1_1815",
+          },
+        ],
+      },
+      {
+        citation: "Darmon M., 2013, Classes préparatoires. La fabrique d'une jeunesse dominante, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Allouch A., 2014, recension, Sociologie",
+            url: "https://shs.cairn.info/article/SOCIO_054_0455",
+          },
+        ],
+      },
+      {
+        citation: "Darmon M., 2006, La Socialisation, Paris, Armand Colin.",
+        sources: [
+          {
+            label: "Faure S., 2006, recension, Agora débats/jeunesses, 41, p. 152",
+            url: "https://www.persee.fr/doc/agora_1268-5666_2006_num_41_1_2292_t13_0152_0000_2",
+          },
+        ],
+      },
     ],
 
     influences: ["bourdieu", "becker", "Hughes"],
@@ -2533,9 +2656,29 @@ export const authors = [
     concepts: ["Microsociologie charnelle", "Marginalité urbaine avancée"],
 
     works: [
-      "Réponses. Pour une anthropologie réflexive (1992, avec P. Bourdieu)",
-      "Corps et âme (2000)",
-      "Parias urbains (2006)",
+      {
+        citation: "Bourdieu P., Wacquant L., 1992, Réponses. Pour une anthropologie réflexive, Paris, Seuil.",
+        sources: [
+        ],
+      },
+      {
+        citation: "Wacquant L., 2000, Corps et âme. Carnets ethnographiques d'un apprenti boxeur, Marseille, Agone.",
+        sources: [
+          {
+            label: "Recension dans Lire les sciences sociales, vol. 5, Éditions de la MSH",
+            url: "https://books.openedition.org/editionsmsh/8221?lang=fr",
+          },
+        ],
+      },
+      {
+        citation: "Wacquant L., 2006, Parias urbains. Ghetto, banlieues, État, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Gounin Y., 2006, recension, Revue internationale et stratégique, 63, p. 205-207",
+            url: "https://shs.cairn.info/revue-internationale-et-strategique-2006-3-page-205",
+          },
+        ],
+      },
     ],
 
     influences: ["bourdieu"],
@@ -2574,8 +2717,24 @@ export const authors = [
     concepts: ["Sociologie de la jeunesse populaire", "Générations"],
 
     works: [
-      "Les Bandes, le milieu et la bohème populaire (2006)",
-      "Avec Bourdieu. Un parcours sociologique (2023)",
+      {
+        citation: "Mauger G., 2006, Les Bandes, le milieu et la bohème populaire, Paris, Belin.",
+        sources: [
+          {
+            label: "Voldoire J., 2008, recension conjointe (avec Wacquant), Revue française de science politique, 58-6",
+            url: "https://shs.cairn.info/revue-francaise-de-science-politique-2008-6-page-III",
+          },
+        ],
+      },
+      {
+        citation: "Mauger G., 2023, Avec Bourdieu. Un parcours sociologique, Paris, PUF.",
+        sources: [
+          {
+            label: "Pudal R., 2023, recension, Revue française de science politique, 73-4/5, p. 756",
+            url: "https://shs.cairn.info/revue-francaise-de-science-politique-2023-4-page-756",
+          },
+        ],
+      },
     ],
 
     influences: ["bourdieu"],
@@ -2664,9 +2823,29 @@ export const authors = [
     concepts: ["Capital émotionnel", "Capitalisme émotionnel"],
 
     works: [
-      "Les Sentiments du capitalisme (2006)",
-      "Pourquoi l'amour fait mal (2012)",
-      "La Fin de l'amour (2020)",
+      {
+        citation: "Illouz E., 2006, Les Sentiments du capitalisme, Paris, Seuil.",
+        sources: [
+          {
+            label: "Recension, Sciences Humaines, 2014",
+            url: "https://www.cairn.info/magazine-sciences-humaines-2014-1-p-42.htm",
+          },
+        ],
+      },
+      {
+        citation: "Illouz E., 2012, Pourquoi l'amour fait mal, Paris, Seuil.",
+        sources: [
+        ],
+      },
+      {
+        citation: "Illouz E., 2020, La Fin de l'amour, Paris, Seuil.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/la-fin-de-l-amour--9782021430349",
+          },
+        ],
+      },
     ],
 
     influences: ["bourdieu", "weber", "hochschild"],
@@ -2705,8 +2884,24 @@ export const authors = [
     concepts: ["Redistribution / Reconnaissance", "Contre-publics subalternes"],
 
     works: [
-      "Unruly Practices (1989)",
-      "Redistribution or Recognition? (2003, avec A. Honneth)",
+      {
+        citation: "Fraser N., 1989, Unruly Practices, Minneapolis, University of Minnesota Press.",
+        sources: [
+          {
+            label: "Downs L. L., Laufer J., 2012, « Nancy Fraser, une philosophe rebelle » (entretien), Travail, genre et sociétés, 27, p. 5-27",
+            url: "https://shs.cairn.info/revue-travail-genre-et-societes-2012-1-page-5",
+          },
+        ],
+      },
+      {
+        citation: "Fraser N., Honneth A., 2003, Redistribution or Recognition?, London, Verso.",
+        sources: [
+          {
+            label: "Fraser N., 2004, « Justice sociale, redistribution et reconnaissance » (texte de l'auteure), Revue du MAUSS, 23, p. 152-164",
+            url: "https://shs.cairn.info/revue-du-mauss-2004-1-page-152",
+          },
+        ],
+      },
     ],
 
     influences: ["jürgen-habermas"],
@@ -2858,8 +3053,24 @@ export const authors = [
     concepts: ["Interactionnisme structural", "Analyse structurale des réseaux"],
 
     works: [
-      "Les réseaux sociaux. Une approche structurale en sociologie (1994, avec M. Forsé)",
-      "La vie en réseau. Dynamique des relations sociales (2011, avec C. Bidart et M. Grossetti)",
+      {
+        citation: "Degenne A., Forsé M., 1994, Les réseaux sociaux. Une approche structurale en sociologie, Paris, Armand Colin.",
+        sources: [
+          {
+            label: "Texte intégral (chapitres, éd. 2004)",
+            url: "https://www.cairn.info/publications-de-Alain-Degenne--37203.htm",
+          },
+        ],
+      },
+      {
+        citation: "Bidart C., Degenne A., Grossetti M., 2011, La vie en réseau. Dynamique des relations sociales, Paris, PUF.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/la-vie-en-reseau--9782130590644",
+          },
+        ],
+      },
     ],
 
     influences: ["harrison-white"],
@@ -2897,8 +3108,24 @@ export const authors = [
     concepts: ["Sociabilité négociée", "Justice sociale empirique"],
 
     works: [
-      "Les réseaux sociaux. Une approche structurale en sociologie (1994, avec A. Degenne)",
-      "Une théorie empirique de la justice sociale (2010, avec M. Parodi)",
+      {
+        citation: "Degenne A., Forsé M., 1994, Les réseaux sociaux. Une approche structurale en sociologie, Paris, Armand Colin.",
+        sources: [
+          {
+            label: "Texte intégral (chapitres, éd. 2004)",
+            url: "https://www.cairn.info/publications-de-Alain-Degenne--37203.htm",
+          },
+        ],
+      },
+      {
+        citation: "Forsé M., Parodi M., 2010, Une théorie empirique de la justice sociale, Paris, Hermann.",
+        sources: [
+          {
+            label: "Recension, Lectures (OpenEdition), 2011",
+            url: "https://journals.openedition.org/lectures/2771",
+          },
+        ],
+      },
     ],
 
     influences: ["degenne"],
@@ -2935,7 +3162,15 @@ export const authors = [
     concepts: ["Dynamique des réseaux personnels", "Bifurcations biographiques"],
 
     works: [
-      "La vie en réseau. Dynamique des relations sociales (2011, avec A. Degenne et M. Grossetti)",
+      {
+        citation: "Bidart C., Degenne A., Grossetti M., 2011, La vie en réseau. Dynamique des relations sociales, Paris, PUF.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/la-vie-en-reseau--9782130590644",
+          },
+        ],
+      },
     ],
 
     influences: ["degenne", "grossetti"],
@@ -2972,8 +3207,24 @@ export const authors = [
     concepts: ["Encastrement et découplage", "Narrations quantifiées"],
 
     works: [
-      "La vie en réseau. Dynamique des relations sociales (2011, avec C. Bidart et A. Degenne)",
-      "Sociologie de l'imprévisible (2004)",
+      {
+        citation: "Bidart C., Degenne A., Grossetti M., 2011, La vie en réseau. Dynamique des relations sociales, Paris, PUF.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/la-vie-en-reseau--9782130590644",
+          },
+        ],
+      },
+      {
+        citation: "Grossetti M., 2004, Sociologie de l'imprévisible, Paris, PUF.",
+        sources: [
+          {
+            label: "Recension, Sociologie du travail (OpenEdition), 2008",
+            url: "https://journals.openedition.org/sdt/23604",
+          },
+        ],
+      },
     ],
 
     influences: ["claude-fischer", "bidart", "degenne"],
@@ -3010,8 +3261,24 @@ export const authors = [
     concepts: ["Réseaux personnels", "Sociologie urbaine des relations"],
 
     works: [
-      "To Dwell Among Friends: Personal Networks in Town and City (1982)",
-      "Networks and Places (1977)",
+      {
+        citation: "Fischer C. S., 1982, To Dwell Among Friends: Personal Networks in Town and City, Chicago, University of Chicago Press.",
+        sources: [
+          {
+            label: "Bidart C., 2008, « Dynamiques des réseaux personnels et processus de socialisation », Revue française de sociologie, 49-3, p. 559-583",
+            url: "https://shs.cairn.info/revue-francaise-de-sociologie-1-2008-3-page-559",
+          },
+        ],
+      },
+      {
+        citation: "Fischer C. S., 1990, « Gardez le contact ! L'industrie du téléphone découvre la sociabilité », Flux, 6-2, p. 5-24.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://www.persee.fr/doc/flux_1154-2721_1990_num_6_2_1136",
+          },
+        ],
+      },
     ],
 
     influences: [],

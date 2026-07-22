@@ -17,8 +17,8 @@ export const authors = [
         citation: "Durkheim É., 1893, De la division du travail social, Paris, Félix Alcan.",
         sources: [
           {
-            label: "Wikipédia, « De la division du travail social »",
-            url: "https://fr.wikipedia.org/wiki/De_la_division_du_travail_social",
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/de-la-division-du-travail-social--9782130619574",
           },
         ],
       },
@@ -26,8 +26,8 @@ export const authors = [
         citation: "Durkheim É., 1895, Les Règles de la méthode sociologique, Paris, Félix Alcan.",
         sources: [
           {
-            label: "Wikipédia, « Les Règles de la méthode sociologique »",
-            url: "https://fr.wikipedia.org/wiki/Les_Règles_de_la_méthode_sociologique",
+            label: "Texte intégral, Classiques des sciences sociales (UQAM)",
+            url: "https://classiques.uqam.ca/classiques/Durkheim_emile/regles_methode/regles_methode.html",
           },
         ],
       },
@@ -35,8 +35,8 @@ export const authors = [
         citation: "Durkheim É., 1897, Le Suicide, Paris, Félix Alcan.",
         sources: [
           {
-            label: "Wikipédia, « Le Suicide »",
-            url: "https://fr.wikipedia.org/wiki/Le_Suicide",
+            label: "Giraud F., 2007, recension, Lectures (OpenEdition)",
+            url: "https://journals.openedition.org/lectures/473",
           },
         ],
       },
@@ -44,8 +44,8 @@ export const authors = [
         citation: "Durkheim É., 1912, Les Formes élémentaires de la vie religieuse, Paris, Félix Alcan.",
         sources: [
           {
-            label: "Wikipédia, « Les Formes élémentaires de la vie religieuse »",
-            url: "https://fr.wikipedia.org/wiki/Les_Formes_élémentaires_de_la_vie_religieuse",
+            label: "Martinache I., 2009, recension, Lectures (OpenEdition)",
+            url: "https://journals.openedition.org/lectures/726",
           },
         ],
       },
@@ -91,8 +91,8 @@ export const authors = [
         citation: "Weber M., 1904-1905, L'Éthique protestante et l'esprit du capitalisme, trad. fr., Paris, Plon.",
         sources: [
           {
-            label: "Wikipédia, « L'Éthique protestante et l'esprit du capitalisme »",
-            url: "https://fr.wikipedia.org/wiki/L'Éthique_protestante_et_l'Esprit_du_capitalisme",
+            label: "Steiner P., 1996, recension de Disselkamp A., L'éthique protestante de Max Weber, Revue française de sociologie, 37-1, p. 138-141",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1996_num_37_1_7087",
           },
         ],
       },
@@ -100,8 +100,8 @@ export const authors = [
         citation: "Weber M., 1921, Économie et société, trad. fr., Paris, Plon.",
         sources: [
           {
-            label: "Wikipédia, « Économie et société »",
-            url: "https://fr.wikipedia.org/wiki/Économie_et_société",
+            label: "Lallement M., 2016, « Max Weber (1864-1920). Une méthode compréhensive », in Les grands penseurs des Sciences Humaines, Éditions Sciences Humaines, p. 39-43",
+            url: "https://shs.cairn.info/les-grands-penseurs-des-sciences-humaines--9782361063825-page-39",
           },
         ],
       },
@@ -156,8 +156,8 @@ export const authors = [
         citation: "Bourdieu P., 1979, La Distinction. Critique sociale du jugement, Paris, Éditions de Minuit.",
         sources: [
           {
-            label: "Wikipédia, « La Distinction »",
-            url: "https://fr.wikipedia.org/wiki/La_Distinction",
+            label: "Cabin P., 2008, « La Distinction. Critique sociale du jugement », in Pierre Bourdieu. Son œuvre, son héritage, Éditions Sciences Humaines, p. 36-41",
+            url: "https://shs.cairn.info/pierre-bourdieu--9782912601780-page-36",
           },
         ],
       },
@@ -165,8 +165,8 @@ export const authors = [
         citation: "Bourdieu P., Passeron J.-C., 1964, Les Héritiers. Les étudiants et la culture, Paris, Éditions de Minuit.",
         sources: [
           {
-            label: "Wikipédia, « Les Héritiers »",
-            url: "https://fr.wikipedia.org/wiki/Les_héritiers",
+            label: "Fournier M., 2008, « Les Héritiers », in Pierre Bourdieu. Son œuvre, son héritage, Éditions Sciences Humaines, p. 19-24",
+            url: "https://shs.cairn.info/pierre-bourdieu--9782912601780-page-19",
           },
         ],
       },
@@ -174,19 +174,14 @@ export const authors = [
         citation: "Bourdieu P., 1980, Le Sens pratique, Paris, Éditions de Minuit.",
         sources: [
           {
-            label: "Wikipédia, « Le Sens pratique »",
-            url: "https://fr.wikipedia.org/wiki/Le_Sens_pratique",
+            label: "Bourdieu P., 1976, article précurseur « Le sens pratique », Actes de la recherche en sciences sociales, 2-1, p. 43-86",
+            url: "https://www.persee.fr/doc/arss_0335-5322_1976_num_2_1_3383",
           },
         ],
       },
       {
         citation: "Bourdieu P., 1997, Méditations pascaliennes, Paris, Éditions du Seuil.",
-        sources: [
-          {
-            label: "Wikipédia, « Méditations pascaliennes »",
-            url: "https://fr.wikipedia.org/wiki/Méditations_pascaliennes",
-          },
-        ],
+        sources: [],
       },
     ],
 
@@ -230,8 +225,8 @@ export const authors = [
         citation: "Malinowski B., 1922, Argonauts of the Western Pacific, Londres, Routledge.",
         sources: [
           {
-            label: "Wikipédia, « Les Argonautes du Pacifique occidental »",
-            url: "https://fr.wikipedia.org/wiki/Les_Argonautes_du_Pacifique_occidental",
+            label: "Texte intégral, Classiques des sciences sociales (UQAM)",
+            url: "https://classiques.uqam.ca/classiques/malinowski_bronislaw/les_argonautes/les_argonautes.html",
           },
         ],
       },
@@ -573,8 +568,8 @@ export const authors = [
         citation: "Goffman E., 1961, Asylums, Garden City, Anchor Books.",
         sources: [
           {
-            label: "Wikipédia, « Asiles »",
-            url: "https://fr.wikipedia.org/wiki/Asiles",
+            label: "Dion M., 1969, recension, Revue française de sociologie, 10-2, p. 228-229",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1969_num_10_2_1522",
           },
         ],
       },

@@ -5,7 +5,7 @@ import SearchBar from "./components/SearchBar";
 import FiltersPanel from "./components/FiltersPanel";
 import Legend from "./components/Legend";
 import { useIsMobile } from "./hooks/useIsMobile";
-import { formatPerson, formatAuthorById, workSearchUrl } from "./utils/format";
+import { formatPerson, formatAuthorById } from "./utils/format";
 import { constellations } from "./engine/constellations";
 import { axes, constellationAxisValues } from "./data/theoreticalAxes";
 import { authorAxisValues } from "./data/authorAxisValues";
@@ -543,15 +543,35 @@ export default function App() {
           <h3>Œuvres</h3>
 
           <ul>
-            {a.works.map((w) => (
-              <li key={w}>
-                <a
-                  href={workSearchUrl(w, a.name)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {w}
-                </a>
+            {a.works.map((w, i) => (
+              <li key={i} style={{ marginBottom: 10 }}>
+                <span style={{ fontStyle: "italic" }}>{w.citation}</span>
+                {w.sources && w.sources.length > 0 && (
+                  <span
+                    style={{
+                      display: "block",
+                      fontSize: 12,
+                      fontStyle: "italic",
+                      color: "var(--color-taupe)",
+                      marginTop: 4,
+                    }}
+                  >
+                    Pour aller plus loin :{" "}
+                    {w.sources.map((s, j) => (
+                      <span key={j}>
+                        <a
+                          href={s.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "var(--color-tardis)" }}
+                        >
+                          {s.label}
+                        </a>
+                        {j < w.sources.length - 1 ? " ; " : ""}
+                      </span>
+                    ))}
+                  </span>
+                )}
               </li>
             ))}
           </ul>

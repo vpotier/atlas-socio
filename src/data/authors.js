@@ -1526,6 +1526,24 @@ export const authors = [
           },
         ],
       },
+      {
+        citation: "Star S. L., 1999, « The Ethnography of Infrastructure », American Behavioral Scientist, 43-3, p. 377-391.",
+        sources: [
+          {
+            label: "Beltrame T., Peerbaye A., 2018, « Prendre soin des infrastructures. Introduction à la traduction de « L'ethnographie des infrastructures » de Susan Leigh Star », Tracés. Revue de Sciences humaines, 35, p. 179-186",
+            url: "https://journals.openedition.org/traces/8443",
+          },
+        ],
+      },
+      {
+        citation: "Star S. L., 1991, « Power, Technology and the Phenomenology of Conventions: On Being Allergic to Onions », The Sociological Review, 38-1, p. 26-56.",
+        sources: [
+          {
+            label: "Riom L., Gouilhers S., 2025, « Introduction à la traduction de « Pouvoir, technologie et phénoménologie des conventions : être allergique aux oignons » », Revue d'anthropologie des connaissances, 19-3",
+            url: "https://journals.openedition.org/rac/39527",
+          },
+        ],
+      },
     ],
 
     influences: ["Hughes", "becker", "bruno-latour"],
@@ -2492,8 +2510,35 @@ export const authors = [
         citation: "Akrich M., Callon M., Latour B. (dir.), 2006, Sociologie de la traduction : textes fondateurs, Paris, Presses des Mines.",
         sources: [
           {
-            label: "Lassave P., 2006, « Sociologie de la traduction. L'exemple de la « Bible des écrivains » », Cahiers internationaux de sociologie, 120, p. 133-154",
-            url: "https://shs.cairn.info/revue-cahiers-internationaux-de-sociologie-2006-1-page-133",
+            label: "Texte intégral",
+            url: "https://books.openedition.org/pressesmines/1181?lang=fr",
+          },
+        ],
+      },
+      {
+        citation: "Akrich M., 2006, « La construction d'un système socio-technique. Esquisse pour une anthropologie des techniques », in Sociologie de la traduction : textes fondateurs, Presses des Mines.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://books.openedition.org/pressesmines/1195",
+          },
+        ],
+      },
+      {
+        citation: "Akrich M., 2006, « La description des objets techniques », in Sociologie de la traduction : textes fondateurs, Presses des Mines.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://books.openedition.org/pressesmines/1197",
+          },
+        ],
+      },
+      {
+        citation: "Akrich M., 2006, « Les objets techniques et leurs utilisateurs. De la conception à l'action », in Sociologie de la traduction : textes fondateurs, Presses des Mines.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://books.openedition.org/pressesmines/1198",
           },
         ],
       },

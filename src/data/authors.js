@@ -13,10 +13,42 @@ export const authors = [
     concepts: ["Fait social", "Solidarité", "Anomie"],
 
     works: [
-      "De la division du travail social",
-      "Les Règles de la méthode sociologique",
-      "Le Suicide",
-      "Les Formes élémentaires de la vie religieuse",
+      {
+        citation: "Durkheim É., 1893, De la division du travail social, Paris, Félix Alcan.",
+        sources: [
+          {
+            label: "Wikipédia, « De la division du travail social »",
+            url: "https://fr.wikipedia.org/wiki/De_la_division_du_travail_social",
+          },
+        ],
+      },
+      {
+        citation: "Durkheim É., 1895, Les Règles de la méthode sociologique, Paris, Félix Alcan.",
+        sources: [
+          {
+            label: "Wikipédia, « Les Règles de la méthode sociologique »",
+            url: "https://fr.wikipedia.org/wiki/Les_Règles_de_la_méthode_sociologique",
+          },
+        ],
+      },
+      {
+        citation: "Durkheim É., 1897, Le Suicide, Paris, Félix Alcan.",
+        sources: [
+          {
+            label: "Wikipédia, « Le Suicide »",
+            url: "https://fr.wikipedia.org/wiki/Le_Suicide",
+          },
+        ],
+      },
+      {
+        citation: "Durkheim É., 1912, Les Formes élémentaires de la vie religieuse, Paris, Félix Alcan.",
+        sources: [
+          {
+            label: "Wikipédia, « Les Formes élémentaires de la vie religieuse »",
+            url: "https://fr.wikipedia.org/wiki/Les_Formes_élémentaires_de_la_vie_religieuse",
+          },
+        ],
+      },
     ],
 
     influences: ["Comte", "Saint-Simon"],
@@ -55,9 +87,33 @@ export const authors = [
     concepts: ["Action sociale", "Domination", "Idéal-type"],
 
     works: [
-      "Économie et société",
-      "Le Savant et le Politique",
-      "L'Éthique protestante",
+      {
+        citation: "Weber M., 1904-1905, L'Éthique protestante et l'esprit du capitalisme, trad. fr., Paris, Plon.",
+        sources: [
+          {
+            label: "Wikipédia, « L'Éthique protestante et l'esprit du capitalisme »",
+            url: "https://fr.wikipedia.org/wiki/L'Éthique_protestante_et_l'Esprit_du_capitalisme",
+          },
+        ],
+      },
+      {
+        citation: "Weber M., 1921, Économie et société, trad. fr., Paris, Plon.",
+        sources: [
+          {
+            label: "Wikipédia, « Économie et société »",
+            url: "https://fr.wikipedia.org/wiki/Économie_et_société",
+          },
+        ],
+      },
+      {
+        citation: "Weber M., 1919, Le Savant et le Politique, trad. fr., Paris, Plon.",
+        sources: [
+          {
+            label: "Ravaz B., 2006, « Le Savant et la Politique. De Max Weber (1864-1919) », in Mémento des grandes œuvres politiques, Hachette Éducation",
+            url: "https://shs.cairn.info/memento-des-grandes-oeuvres-politiques--9782011458094-page-159",
+          },
+        ],
+      },
     ],
 
     influences: ["Nietzsche", "Rickert"],
@@ -96,10 +152,42 @@ export const authors = [
     concepts: ["Habitus", "Champ", "Capital"],
 
     works: [
-      "La Distinction",
-      "Le Sens pratique",
-      "Les Héritiers",
-      "Méditations pascaliennes",
+      {
+        citation: "Bourdieu P., 1979, La Distinction. Critique sociale du jugement, Paris, Éditions de Minuit.",
+        sources: [
+          {
+            label: "Wikipédia, « La Distinction »",
+            url: "https://fr.wikipedia.org/wiki/La_Distinction",
+          },
+        ],
+      },
+      {
+        citation: "Bourdieu P., Passeron J.-C., 1964, Les Héritiers. Les étudiants et la culture, Paris, Éditions de Minuit.",
+        sources: [
+          {
+            label: "Wikipédia, « Les Héritiers »",
+            url: "https://fr.wikipedia.org/wiki/Les_héritiers",
+          },
+        ],
+      },
+      {
+        citation: "Bourdieu P., 1980, Le Sens pratique, Paris, Éditions de Minuit.",
+        sources: [
+          {
+            label: "Wikipédia, « Le Sens pratique »",
+            url: "https://fr.wikipedia.org/wiki/Le_Sens_pratique",
+          },
+        ],
+      },
+      {
+        citation: "Bourdieu P., 1997, Méditations pascaliennes, Paris, Éditions du Seuil.",
+        sources: [
+          {
+            label: "Wikipédia, « Méditations pascaliennes »",
+            url: "https://fr.wikipedia.org/wiki/Méditations_pascaliennes",
+          },
+        ],
+      },
     ],
 
     influences: ["Durkheim", "Weber", "Marx", "levi-strauss"],
@@ -138,8 +226,24 @@ export const authors = [
     concepts: ["Besoin fondamental", "Institution"],
 
     works: [
-      "Les Argonautes du Pacifique occidental (1922)",
-      "Une théorie scientifique de la culture (1944)",
+      {
+        citation: "Malinowski B., 1922, Argonauts of the Western Pacific, Londres, Routledge.",
+        sources: [
+          {
+            label: "Wikipédia, « Les Argonautes du Pacifique occidental »",
+            url: "https://fr.wikipedia.org/wiki/Les_Argonautes_du_Pacifique_occidental",
+          },
+        ],
+      },
+      {
+        citation: "Malinowski B., 1944, A Scientific Theory of Culture, Chapel Hill, University of North Carolina Press.",
+        sources: [
+          {
+            label: "Texte intégral, Classiques des sciences sociales (UQAC/UQAM)",
+            url: "https://classiques.uqam.ca/classiques/malinowsli/theorie_culture/theorie_culture_quoi.html",
+          },
+        ],
+      },
     ],
 
     influences: ["Durkheim", "Frazer"],
@@ -177,8 +281,24 @@ export const authors = [
     concepts: ["Modèle AGIL", "Action sociale"],
 
     works: [
-      "The Structure of Social Action (1937)",
-      "The Social System (1951)",
+      {
+        citation: "Parsons T., 1937, The Structure of Social Action, New York, McGraw-Hill.",
+        sources: [
+          {
+            label: "Chazel F., 2000, « The Structure of Social Action, ou les fondements d'un programme de recherche », in Aux fondements de la sociologie, PUF",
+            url: "https://shs.cairn.info/aux-fondements-de-la-sociologie--9782130501381-page-111",
+          },
+        ],
+      },
+      {
+        citation: "Parsons T., 1951, The Social System, Glencoe, The Free Press.",
+        sources: [
+          {
+            label: "Ferrant C., 2019, « De l'action sociale au système social : les deux réceptions de l'œuvre de Pareto par Parsons », Revue européenne des sciences sociales, 57-1, p. 237-254",
+            url: "https://shs.cairn.info/revue-europeenne-des-sciences-sociales-2019-1-page-237",
+          },
+        ],
+      },
     ],
 
     influences: ["Durkheim", "Weber", "Pareto"],
@@ -220,8 +340,24 @@ export const authors = [
     ],
 
     works: [
-      "Social Theory and Social Structure (1949)",
-      "Science, Technology and Society in Seventeenth-Century England (1938)",
+      {
+        citation: "Merton R. K., 1949, Social Theory and Social Structure, Glencoe, The Free Press.",
+        sources: [
+          {
+            label: "Dortier J.-F., 2009, « Entre théorie et empirisme, la sociologie de R. K. Merton », in La Sociologie, Éditions Sciences Humaines",
+            url: "https://shs.cairn.info/la-sociologie--9782912601858-page-71",
+          },
+        ],
+      },
+      {
+        citation: "Merton R. K., 1938, Science, Technology and Society in Seventeenth-Century England, Bruges, St. Catherine Press.",
+        sources: [
+          {
+            label: "Texte intégral (Temple University STS Network)",
+            url: "https://sites.temple.edu/stsnetwork/files/2022/01/Science-Technology-and-Society-in-Seventeenth-Century-England.pdf",
+          },
+        ],
+      },
     ],
 
     influences: ["Durkheim", "talcott-parsons", "Sorokin"],
@@ -259,9 +395,33 @@ export const authors = [
     concepts: ["Effet pervers", "Rationalité cognitive", "Effet d'agrégation"],
 
     works: [
-      "L'Inégalité des chances (1973)",
-      "Effets pervers et ordre social (1977)",
-      "Dictionnaire critique de la sociologie (1982)",
+      {
+        citation: "Boudon R., 1973, L'Inégalité des chances. La mobilité sociale dans les sociétés industrielles, Paris, Armand Colin.",
+        sources: [
+          {
+            label: "Letonturier É., Universalis, « L'Inégalité des chances. La mobilité sociale dans les sociétés industrielles », fiche de lecture",
+            url: "https://www.universalis.fr/encyclopedie/l-inegalite-des-chances-la-mobilite-sociale-dans-les-societes-industrielles",
+          },
+        ],
+      },
+      {
+        citation: "Boudon R., 1977, Effets pervers et ordre social, Paris, PUF.",
+        sources: [
+          {
+            label: "Forquin J.-C., 1979, recension, Revue française de pédagogie, 47, p. 68",
+            url: "https://www.persee.fr/doc/rfp_0556-7807_1979_num_47_1_2178_t1_0068_0000_1",
+          },
+        ],
+      },
+      {
+        citation: "Boudon R., Bourricaud F., 1982, Dictionnaire critique de la sociologie, Paris, PUF.",
+        sources: [
+          {
+            label: "Girard A., 1983, recension, Population, 38-2, p. 422",
+            url: "https://www.persee.fr/doc/pop_0032-4663_1983_num_38_2_17866",
+          },
+        ],
+      },
     ],
 
     influences: ["Weber", "Simmel", "robert-k-merton"],
@@ -299,8 +459,24 @@ export const authors = [
     concepts: ["Diagramme de Coleman", "Acteur rationnel"],
 
     works: [
-      "The Asymmetric Society (1982)",
-      "Foundations of Social Theory (1990)",
+      {
+        citation: "Coleman J. S., 1990, Foundations of Social Theory, Cambridge (Mass.), Harvard University Press.",
+        sources: [
+          {
+            label: "Steiner P., 2003, « Les Foundations de James S. Coleman : une introduction », Revue française de sociologie, 44-2, p. 205",
+            url: "https://shs.cairn.info/revue-francaise-de-sociologie-1-2003-2-page-205",
+          },
+        ],
+      },
+      {
+        citation: "Coleman J. S., 1982, The Asymmetric Society, Syracuse, Syracuse University Press.",
+        sources: [
+          {
+            label: "Lazega E., 2003, « Rationalité, discipline sociale et structure », Revue française de sociologie, 44, p. 305-330",
+            url: "https://shs.cairn.info/revue-francaise-de-sociologie-1-2003-2-page-305",
+          },
+        ],
+      },
     ],
 
     influences: ["Weber", "robert-k-merton"],
@@ -337,7 +513,17 @@ export const authors = [
 
     concepts: ["Interactionnisme symbolique", "Processus d'interprétation"],
 
-    works: ["Symbolic Interactionism: Perspective and Method (1969)"],
+    works: [
+      {
+        citation: "Blumer H., 1969, Symbolic Interactionism: Perspective and Method, Englewood Cliffs, Prentice-Hall.",
+        sources: [
+          {
+            label: "Lacaze L., 2024, « Présentation », Sociétés, 164, p. 5-9",
+            url: "https://shs.cairn.info/revue-societes-2024-2-page-5",
+          },
+        ],
+      },
+    ],
 
     influences: ["Mead", "Thomas"],
     heirs: ["erving-goffman", "becker"],
@@ -374,9 +560,33 @@ export const authors = [
     concepts: ["Approche dramaturgique", "Institution totale", "Façonnage du cadre"],
 
     works: [
-      "La Présentation de soi (1956)",
-      "Asiles (1961)",
-      "Les Rites d'interaction (1967)",
+      {
+        citation: "Goffman E., 1959, The Presentation of Self in Everyday Life, Édimbourg, University of Edinburgh Press.",
+        sources: [
+          {
+            label: "Keck F., 2012, « Goffman, Durkheim et les rites de la vie quotidienne », Archives de philosophie, 75, p. 471-492",
+            url: "https://shs.cairn.info/revue-archives-de-philosophie-2012-3-page-471",
+          },
+        ],
+      },
+      {
+        citation: "Goffman E., 1961, Asylums, Garden City, Anchor Books.",
+        sources: [
+          {
+            label: "Wikipédia, « Asiles »",
+            url: "https://fr.wikipedia.org/wiki/Asiles",
+          },
+        ],
+      },
+      {
+        citation: "Goffman E., 1967, Interaction Ritual, Garden City, Anchor Books.",
+        sources: [
+          {
+            label: "Keck F., 2012, « Goffman, Durkheim et les rites de la vie quotidienne », Archives de philosophie, 75, p. 471-492",
+            url: "https://shs.cairn.info/revue-archives-de-philosophie-2012-3-page-471",
+          },
+        ],
+      },
     ],
 
     influences: ["Mead", "herbert-blumer", "Hughes"],
@@ -414,9 +624,33 @@ export const authors = [
     concepts: ["Théorie de l'étiquetage", "Carrière déviante", "Entrepreneur de morale"],
 
     works: [
-      "Outsiders (1963)",
-      "Les Mondes de l'art (1982)",
-      "Les Ficelles du métier (1998)",
+      {
+        citation: "Becker H. S., 1963, Outsiders. Studies in the Sociology of Deviance, New York, The Free Press.",
+        sources: [
+          {
+            label: "Texte intégral traduit",
+            url: "https://shs.cairn.info/outsiders--9791022610452",
+          },
+        ],
+      },
+      {
+        citation: "Becker H. S., 1982, Art Worlds, Berkeley, University of California Press.",
+        sources: [
+          {
+            label: "Benghozi P.-J., 1990, recension, Revue française de sociologie, 31-1, p. 133-139",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1990_num_31_1_1086",
+          },
+        ],
+      },
+      {
+        citation: "Becker H. S., 1998, Tricks of the Trade, Chicago, University of Chicago Press.",
+        sources: [
+          {
+            label: "Texte intégral traduit",
+            url: "https://shs.cairn.info/les-ficelles-du-metier--9782707133700",
+          },
+        ],
+      },
     ],
 
     influences: ["Hughes", "herbert-blumer"],
@@ -454,8 +688,24 @@ export const authors = [
     concepts: ["Réseau social", "Équivalence structurale", "Encastrement"],
 
     works: [
-      "Chains of Opportunity (1970)",
-      "Identity and Control: A Structural Theory of Social Action (1992)",
+      {
+        citation: "White H. C., 1970, Chains of Opportunity, Cambridge (Mass.), Harvard University Press.",
+        sources: [
+          {
+            label: "McFarland D. D., 1974, recension, American Journal of Sociology, 79-5",
+            url: "https://www.journals.uchicago.edu/doi/10.1086/225691",
+          },
+        ],
+      },
+      {
+        citation: "White H. C., 1992, Identity and Control, Princeton, Princeton University Press.",
+        sources: [
+          {
+            label: "Degenne A., Godart F., Grossetti M., 2025, « Harrison White, pionnier de l'analyse des réseaux », La Vie des idées",
+            url: "https://laviedesidees.fr/Harrison-White-pionnier-de-l-analyse-des-reseaux",
+          },
+        ],
+      },
     ],
 
     influences: ["Lévi-Strauss", "Simmel"],
@@ -493,8 +743,24 @@ export const authors = [
     concepts: ["Force des liens faibles", "Encastrement social"],
 
     works: [
-      "The Strength of Weak Ties (1973)",
-      "Society and Economy: Framework and Principles (2017)",
+      {
+        citation: "Granovetter M., 1973, The Strength of Weak Ties, American Journal of Sociology, 78, p. 1360-1380.",
+        sources: [
+          {
+            label: "Degenne A., Forsé M., 2011, La Vie en réseau. Dynamique des relations sociales, PUF",
+            url: "https://shs.cairn.info/la-vie-en-reseau--9782130590644-page-255",
+          },
+        ],
+      },
+      {
+        citation: "Granovetter M., 2017, Society and Economy, Cambridge (Mass.), Harvard University Press.",
+        sources: [
+          {
+            label: "Grossetti M., 2018, « L'économie comme science sociale », La Vie des idées",
+            url: "https://laviedesidees.fr/L-economie-comme-science-sociale",
+          },
+        ],
+      },
     ],
 
     influences: ["harrison-white"],
@@ -532,8 +798,24 @@ export const authors = [
     concepts: ["Régulation collégiale", "Triade relationnelle"],
 
     works: [
-      "The Collegial Organization and a New Sociology of Professional Behavior (2001)",
-      "Réseaux sociaux et structures relationnelles (2006)",
+      {
+        citation: "Lazega E., 2001, The Collegial Phenomenon, Oxford, Oxford University Press.",
+        sources: [
+          {
+            label: "Lazega E., 1999, « Le phénomène collégial : une théorie structurale de l'action collective entre pairs », Revue française de sociologie, 40-4, p. 639-670",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1999_num_40_4_5212",
+          },
+        ],
+      },
+      {
+        citation: "Lazega E., 1998/2013, Réseaux sociaux et structures relationnelles, Paris, PUF.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/reseaux-sociaux-et-structures-relationnelles--9782130626589",
+          },
+        ],
+      },
     ],
 
     influences: ["harrison-white", "coleman", "Bourdieu"],
@@ -570,7 +852,17 @@ export const authors = [
 
     concepts: ["Indexicalité", "Réflexivité", "Accomplissement pratique"],
 
-    works: ["Studies in Ethnomethodology (1967)", "Seeing Sociologically (2006)"],
+    works: [
+      {
+        citation: "Garfinkel H., 1967, Studies in Ethnomethodology, Englewood Cliffs, Prentice-Hall.",
+        sources: [
+          {
+            label: "Traduction française intégrale, introduction du traducteur, L'Ethnométhodologie, PUF, 2007",
+            url: "https://cairn.info/l-ethnomethodologie--9782130634935-page-3.htm",
+          },
+        ],
+      },
+    ],
 
     influences: ["Schütz", "talcott-parsons"],
     heirs: ["harvey-sacks", "Aaron Cicourel", "Louis Quéré"],
@@ -606,7 +898,17 @@ export const authors = [
 
     concepts: ["Analyse de conversation", "Prise de tour", "Paire adjacente"],
 
-    works: ["Lectures on Conversation (1992)"],
+    works: [
+      {
+        citation: "Sacks H., 1992, Lectures on Conversation, Oxford, Blackwell.",
+        sources: [
+          {
+            label: "Conein B., 2015, « À propos d'Harvey Sacks : la sociologie et l'analyse de la conversation. Commentaires sur Langage, activités et ordre social. Faire de la sociologie avec Harvey Sacks, A. Bovet, E. Gonzalez-Martinez & F. Malbois (dir.), Bern, Peter Lang, 2014 », Langage et société, 152-2, p. 123-129",
+            url: "https://shs.cairn.info/revue-langage-et-societe-2015-2-page-123",
+          },
+        ],
+      },
+    ],
 
     influences: ["harold-garfinkel", "erving-goffman"],
     heirs: ["Emanuel Schegloff", "Deirdre Boden"],
@@ -643,8 +945,24 @@ export const authors = [
     concepts: ["Objectivation", "Institutionnalisation", "Socialisation secondaire"],
 
     works: [
-      "La Construction sociale de la réalité (1966)",
-      "Le Rumeur des anges (1969)",
+      {
+        citation: "Berger P. L., Luckmann T., 1966, The Social Construction of Reality, Paris, Armand Colin.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/la-construction-sociale-de-la-realite--9782200621902",
+          },
+        ],
+      },
+      {
+        citation: "Berger P. L., 1969, A Rumor of Angels [trad. fr. : La Rumeur de Dieu], Paris, Le Centurion.",
+        sources: [
+          {
+            label: "Gounelle A., 1972, recension, Études théologiques et religieuses, 47-4, p. 505",
+            url: "https://www.persee.fr/doc/ether_0014-2239_1972_num_47_4_2229_t1_0505_0000_2",
+          },
+        ],
+      },
     ],
 
     influences: ["Schütz", "Weber", "Marx", "Durkheim"],
@@ -682,8 +1000,24 @@ export const authors = [
     concepts: ["Univers symbolique", "Intériorisation"],
 
     works: [
-      "La Construction sociale de la réalité (1966)",
-      "The Structures of the Life-World (1973)",
+      {
+        citation: "Berger P. L., Luckmann T., 1966, The Social Construction of Reality, Paris, Armand Colin.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/la-construction-sociale-de-la-realite--9782200621902",
+          },
+        ],
+      },
+      {
+        citation: "Schütz A., Luckmann T., 1973, The Structures of the Life-World, Evanston, Northwestern University Press.",
+        sources: [
+          {
+            label: "Paperman P., Stavo-Debauge J., 2010, « Alfred Schütz : Situations de crise et réalités multiples dans « le monde de la vie de tous les jours » », in Sous les sciences sociales, le genre, La Découverte",
+            url: "https://shs.cairn.info/sous-les-sciences-sociales-le-genre--9782707154507-page-231",
+          },
+        ],
+      },
     ],
 
     influences: ["Schütz", "Weber", "durkheim"],
@@ -760,8 +1094,24 @@ export const authors = [
     concepts: ["Théorie critique", "Raison instrumentale"],
 
     works: [
-      "Théorie traditionnelle et théorie critique (1937)",
-      "La Dialectique de la Raison (1944)",
+      {
+        citation: "Horkheimer M., 1937, Théorie traditionnelle et théorie critique, trad. fr., Paris, Gallimard.",
+        sources: [
+          {
+            label: "Hamel C., 2016, « Théorie politique et critique », Revue française de science politique, 66-5, p. 801-803",
+            url: "https://shs.cairn.info/revue-francaise-de-science-politique-2016-5-page-801",
+          },
+        ],
+      },
+      {
+        citation: "Horkheimer M., Adorno T. W., 1944, Dialektik der Aufklärung [trad. fr. : La Dialectique de la Raison], Paris, Gallimard.",
+        sources: [
+          {
+            label: "Belaval P., 1990, « La dialectique de la raison de Max Horkheimer & Theodor Adorno », Germanica",
+            url: "https://journals.openedition.org/germanica/2446",
+          },
+        ],
+      },
     ],
 
     influences: ["Marx", "Hegel", "Freud", "Weber"],
@@ -799,9 +1149,33 @@ export const authors = [
     concepts: ["Industrie culturelle", "Personnalité autoritaire"],
 
     works: [
-      "La Dialectique de la Raison (1944)",
-      "Minima Moralia (1951)",
-      "Études sur la personnalité autoritaire (1950)",
+      {
+        citation: "Horkheimer M., Adorno T. W., 1944, Dialektik der Aufklärung [trad. fr. : La Dialectique de la Raison], Paris, Gallimard.",
+        sources: [
+          {
+            label: "Belaval P., 1990, « La dialectique de la raison de Max Horkheimer & Theodor Adorno », Germanica",
+            url: "https://journals.openedition.org/germanica/2446",
+          },
+        ],
+      },
+      {
+        citation: "Adorno T. W., 1951, Minima Moralia, trad. fr., Paris, Payot.",
+        sources: [
+          {
+            label: "Abensour M., 2025, notice sur Minima Moralia, in Critique de la politique, Klincksieck, p. 67",
+            url: "https://shs.cairn.info/critique-de-la-politique--9782252047972-page-67?lang=fr",
+          },
+        ],
+      },
+      {
+        citation: "Adorno T. W. et al., 1950, The Authoritarian Personality [trad. fr. : Études sur la personnalité autoritaire], Paris, Allia.",
+        sources: [
+          {
+            label: "Gordon P. E., 2022, « Réalisme et utopie dans La Personnalité autoritaire », trad. D. Rolo, Prismes, 4-1, p. 21-61",
+            url: "https://shs.cairn.info/revue-prismes-2022-1-page-21",
+          },
+        ],
+      },
     ],
 
     influences: ["Marx", "Hegel", "Freud", "Weber"],
@@ -839,8 +1213,24 @@ export const authors = [
     concepts: ["Agir communicationnel", "Espace public", "Monde vécu / Système"],
 
     works: [
-      "L'Espace public (1962)",
-      "Théorie de l'agir communicationnel (1981)",
+      {
+        citation: "Habermas J., 1962, Strukturwandel der Öffentlichkeit [trad. fr. : L'Espace public], Paris, Payot.",
+        sources: [
+          {
+            label: "Trom D., 1989, recension, Politix, 2-5, p. 95-96",
+            url: "https://www.persee.fr/doc/polix_0295-2319_1989_num_2_5_2021",
+          },
+        ],
+      },
+      {
+        citation: "Habermas J., 1981, Theorie des kommunikativen Handelns [trad. fr. : Théorie de l'agir communicationnel], Paris, Fayard.",
+        sources: [
+          {
+            label: "Jacob A., 1987, recension, L'Homme et la société, 85-86, p. 189",
+            url: "https://www.persee.fr/doc/homso_0018-4306_1987_num_85_3_3263",
+          },
+        ],
+      },
     ],
 
     influences: ["max-horkheimer", "theodor-w-adorno", "Weber", "Mead"],
@@ -878,9 +1268,33 @@ export const authors = [
     concepts: ["Critique de la vie quotidienne", "Production de l'espace", "Droit à la ville"],
 
     works: [
-      "Critique de la vie quotidienne (1947)",
-      "La Production de l'espace (1974)",
-      "Le Droit à la ville (1968)",
+      {
+        citation: "Lefebvre H., 1947-1961, Critique de la vie quotidienne (tomes I-II), Paris, L'Arche.",
+        sources: [
+          {
+            label: "Isambert-Jamati V., 1962, recension du tome II, Revue française de sociologie, 3-3, p. 334-337",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1962_num_3_3_6105",
+          },
+        ],
+      },
+      {
+        citation: "Lefebvre H., 1974, La Production de l'espace, Paris, Anthropos.",
+        sources: [
+          {
+            label: "Lefebvre H., 1974, « La production de l'espace », L'Homme et la société, 31",
+            url: "https://www.persee.fr/doc/homso_0018-4306_1974_num_31_1_1855",
+          },
+        ],
+      },
+      {
+        citation: "Lefebvre H., 1968, Le Droit à la ville, Paris, Anthropos.",
+        sources: [
+          {
+            label: "Costes L., 2010, « Le Droit à la ville de Henri Lefebvre : quel héritage politique et scientifique ? », Espaces et sociétés, 140-141, p. 177-191",
+            url: "https://shs.cairn.info/revue-espaces-et-societes-2010-1-page-177",
+          },
+        ],
+      },
     ],
 
     influences: ["Marx", "Hegel", "Nietzsche"],
@@ -918,8 +1332,24 @@ export const authors = [
     concepts: ["Autonomie relative de l'État", "Condensation matérielle"],
 
     works: [
-      "Pouvoir politique et classes sociales (1968)",
-      "L'État, le pouvoir, le socialisme (1978)",
+      {
+        citation: "Poulantzas N., 1968, Pouvoir politique et classes sociales, Paris, Maspero.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/pouvoir-politique-et-classes-sociales--9782707112811",
+          },
+        ],
+      },
+      {
+        citation: "Poulantzas N., 1978, L'État, le pouvoir, le socialisme, Paris, PUF.",
+        sources: [
+          {
+            label: "Recension de la réédition, 2025, EcoRev', 2025-2, p. 201",
+            url: "https://shs.cairn.info/revue-ecorev-2025-2-page-201",
+          },
+        ],
+      },
     ],
 
     influences: ["Marx", "Althusser", "Gramsci"],
@@ -957,9 +1387,33 @@ export const authors = [
     concepts: ["Actant", "Principe de symétrie généralisée", "Traduction"],
 
     works: [
-      "La Vie de laboratoire (1979)",
-      "Nous n'avons jamais été modernes (1991)",
-      "Changer de société - Refaire de la sociologie (2005)",
+      {
+        citation: "Latour B., Woolgar S., 1979, Laboratory Life [trad. fr. : La Vie de laboratoire], Paris, La Découverte.",
+        sources: [
+          {
+            label: "Masson P., 2017, « La Vie de laboratoire de Bruno Latour et Steve Woolgar, 1988 », in Les enquêtes sociologiques en France depuis 1945, La Découverte",
+            url: "https://shs.cairn.info/les-enquetes-sociologiques-en-france-depuis-1945--9782707196972-page-155",
+          },
+        ],
+      },
+      {
+        citation: "Latour B., 1991, Nous n'avons jamais été modernes, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/nous-n-avons-jamais-ete-modernes--9782707148490",
+          },
+        ],
+      },
+      {
+        citation: "Latour B., 2005, Changer de société, refaire de la sociologie, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/changer-de-societe-refaire-de-la-sociologie--9782707153272",
+          },
+        ],
+      },
     ],
 
     influences: ["Serres", "Greimas", "harold-garfinkel", "harrison-white"],
@@ -997,8 +1451,24 @@ export const authors = [
     concepts: ["Performativité de l'économie", "Enrôlement", "Controverse sociotechnique"],
 
     works: [
-      "Éléments pour une sociologie de la traduction (1986)",
-      "L'Emprise des marchés (2017)",
+      {
+        citation: "Callon M., 1986, Éléments pour une sociologie de la traduction, L'Année sociologique, 36, p. 169-208.",
+        sources: [
+          {
+            label: "Texte intégral (projet ANR Resendem, Université Bordeaux Montaigne)",
+            url: "https://resendem.u-bordeaux-montaigne.fr/spipd541.html",
+          },
+        ],
+      },
+      {
+        citation: "Callon M., 2017, L'Emprise des marchés, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/l-emprise-des-marches--9782707185389",
+          },
+        ],
+      },
     ],
 
     influences: ["bruno-latour", "harrison-white"],
@@ -1035,7 +1505,17 @@ export const authors = [
 
     concepts: ["Objet-frontière", "Inversion infrastructurale"],
 
-    works: ["Sorting Things Out: Classification and Its Consequences (1999)"],
+    works: [
+      {
+        citation: "Bowker G. C., Star S. L., 1999, Sorting Things Out: Classification and Its Consequences, Cambridge (Mass.), MIT Press.",
+        sources: [
+          {
+            label: "Girard-Chanudet C., 2024, « Je range donc je trie », recension de Bowker G. C., Star S. L., Arranger les choses. Des conséquences de la classification, EHESS, La Vie des idées",
+            url: "https://laviedesidees.fr/Je-range-donc-je-trie",
+          },
+        ],
+      },
+    ],
 
     influences: ["Hughes", "becker", "bruno-latour"],
     heirs: ["Geoffrey Bowker", "Paul Dourish"],
@@ -1072,8 +1552,24 @@ export const authors = [
     concepts: ["Dualité du structurel", "Double herméneutique", "Conscience pratique"],
 
     works: [
-      "La Constitution de la société (1984)",
-      "Les Conséquences de la modernité (1990)",
+      {
+        citation: "Giddens A., 1984, The Constitution of Society, Paris, PUF.",
+        sources: [
+          {
+            label: "Bouchikhi H., 1988, recension, Sociologie du travail, 30-3, p. 494-497",
+            url: "https://www.persee.fr/doc/sotra_0038-0296_1988_num_30_3_2421_t1_0494_0000_1",
+          },
+        ],
+      },
+      {
+        citation: "Giddens A., 1990, The Consequences of Modernity, Paris, L'Harmattan.",
+        sources: [
+          {
+            label: "Lassave P., 1994, recension, Les Annales de la recherche urbaine, 64, p. 136",
+            url: "https://www.persee.fr/doc/aru_0180-930x_1994_num_64_1_1832_t1_0136_0000_1",
+          },
+        ],
+      },
     ],
 
     influences: ["Durkheim", "Weber", "Marx", "Schütz", "levi-strauss"],
@@ -1111,8 +1607,24 @@ export const authors = [
     concepts: ["Structure sociale", "Mythème", "Gustème"],
 
     works: [
-      "Les Structures élémentaires de la parenté (1949)",
-      "Anthropologie structurale (1958)",
+      {
+        citation: "Lévi-Strauss C., 1949, Les Structures élémentaires de la parenté, Paris, PUF.",
+        sources: [
+          {
+            label: "Najoux J., 2013, « Les Structures élémentaires de la parenté, de Claude Lévi-Strauss (1949) », in La parenté en question(s), Éditions Sciences Humaines",
+            url: "https://shs.cairn.info/la-parente-en-questions--9782361060350-page-11",
+          },
+        ],
+      },
+      {
+        citation: "Lévi-Strauss C., 1958, Anthropologie structurale, Paris, Plon.",
+        sources: [
+          {
+            label: "Kilani M., 2012, « Chapitre 19 - Lévi-Strauss et l'anthropologie structurale : Une pensée à l'œuvre », in Anthropologie. Du local au global, Armand Colin, p. 244-258",
+            url: "https://shs.cairn.info/anthropologie--9782200278212-page-244",
+          },
+        ],
+      },
     ],
 
     influences: ["Saussure"],
@@ -1149,7 +1661,26 @@ export const authors = [
 
     concepts: ["Idéologie", "Reproduction des rapports sociaux", "Lecture symptomale"],
 
-    works: ["Pour Marx (1965)", "Lire le Capital (1965)"],
+    works: [
+      {
+        citation: "Althusser L., Balibar É. et al., 1965, Lire le Capital, Paris, Maspero.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/lire-le-capital--9782130634690",
+          },
+        ],
+      },
+      {
+        citation: "Althusser L., 1965, Pour Marx, Paris, Maspero.",
+        sources: [
+          {
+            label: "Collectif, 2020, « Présentation », dossier du cinquantenaire de Pour Marx et Lire le Capital, Actuel Marx, 2020-1, p. 7-9",
+            url: "https://shs.cairn.info/revue-actuel-marx-2020-1-page-7",
+          },
+        ],
+      },
+    ],
 
     influences: ["levi-strauss", "Marx"],
     heirs: ["nicos-poulantzas"],
@@ -1226,8 +1757,24 @@ export const authors = [
     concepts: ["Lutte des classes", "Infrastructure et superstructure", "Aliénation"],
 
     works: [
-      "Le Capital (1867)",
-      "Manifeste du parti communiste (1848, avec F. Engels)",
+      {
+        citation: "Marx K., 1867, Das Kapital [trad. fr. : Le Capital], Paris, Éditions sociales.",
+        sources: [
+          {
+            label: "Lavialle C., 2017, « 19. Karl Marx et Le Capital », in Histoire de la pensée économique, Dunod",
+            url: "https://shs.cairn.info/maxi-fiches-histoire-de-la-pensee-economique--9782100759309-page-75",
+          },
+        ],
+      },
+      {
+        citation: "Marx K., Engels F., 1848, Manifest der Kommunistischen Partei [trad. fr. : Manifeste du parti communiste], Paris, Éditions sociales.",
+        sources: [
+          {
+            label: "Ravaz B., 2006, « Manifeste du parti communiste (1848) », in Mémento des grandes œuvres politiques, Hachette Éducation",
+            url: "https://shs.cairn.info/memento-des-grandes-oeuvres-politiques--9782011458094-page-133",
+          },
+        ],
+      },
     ],
 
     influences: ["Saint-Simon"],
@@ -1264,7 +1811,17 @@ export const authors = [
 
     concepts: ["Caractère social", "Aliénation psychologique"],
 
-    works: ["La Peur de la liberté (1941)", "L'Art d'aimer (1956)"],
+    works: [
+      {
+        citation: "Fromm E., 1941, Escape from Freedom [trad. fr. : La Peur de la liberté], Paris, Les Belles Lettres.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/la-peur-de-la-liberte--9782251451718",
+          },
+        ],
+      },
+    ],
 
     influences: ["Marx", "Freud"],
     heirs: [],
@@ -1297,7 +1854,26 @@ export const authors = [
 
     concepts: ["Homme unidimensionnel", "Désublimation répressive"],
 
-    works: ["Eros et Civilisation (1955)", "L'Homme unidimensionnel (1964)"],
+    works: [
+      {
+        citation: "Marcuse H., 1955, Eros and Civilization [trad. fr. : Eros et civilisation], Paris, Éditions de Minuit.",
+        sources: [
+          {
+            label: "Bernard P., 1964, recension, Sociologie du travail, 6-3, p. 314-315",
+            url: "https://www.persee.fr/doc/sotra_0038-0296_1964_num_6_3_1202_t1_0314_0000_5",
+          },
+        ],
+      },
+      {
+        citation: "Marcuse H., 1964, One-Dimensional Man [trad. fr. : L'Homme unidimensionnel], Paris, Éditions de Minuit.",
+        sources: [
+          {
+            label: "Schram S. R., 1965, recension double (avec Eros et civilisation), Revue française de science politique, 15-6, p. 1188-1193",
+            url: "https://www.persee.fr/doc/rfsp_0035-2950_1965_num_15_6_392906_t1_1188_0000_002",
+          },
+        ],
+      },
+    ],
 
     influences: ["Marx", "Freud"],
     heirs: [],
@@ -1363,7 +1939,17 @@ export const authors = [
 
     concepts: ["Performativité du genre"],
 
-    works: ["Gender Trouble (1990)", "Bodies That Matter (1993)"],
+    works: [
+      {
+        citation: "Butler J., 1990, Gender Trouble, New York, Routledge.",
+        sources: [
+          {
+            label: "Ferrarese E., 2007, « Judith Butler, Trouble dans le genre », Travail, genre et sociétés, 18, p. 185-188",
+            url: "https://shs.cairn.info/revue-travail-genre-et-societes-2007-2-page-185",
+          },
+        ],
+      },
+    ],
 
     influences: [],
     heirs: [],
@@ -1397,8 +1983,24 @@ export const authors = [
     concepts: ["Régimes de justification", "Sociologie de la critique"],
 
     works: [
-      "De la justification (1991, avec L. Thévenot)",
-      "Le Nouvel Esprit du capitalisme (1999, avec È. Chiapello)",
+      {
+        citation: "Boltanski L., Thévenot L., 1991, De la justification. Les économies de la grandeur, Paris, Gallimard.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/de-la-justification--9782072971563",
+          },
+        ],
+      },
+      {
+        citation: "Boltanski L., Chiapello È., 1999, Le Nouvel Esprit du capitalisme, Paris, Gallimard.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/le-nouvel-esprit-du-capitalisme--9782070131525",
+          },
+        ],
+      },
     ],
 
     influences: ["bourdieu", "Schütz"],
@@ -1433,8 +2035,24 @@ export const authors = [
     concepts: ["Régimes d'engagement", "Cités (économies de la grandeur)"],
 
     works: [
-      "De la justification (1991, avec L. Boltanski)",
-      "L'Action au pluriel (2006)",
+      {
+        citation: "Boltanski L., Thévenot L., 1991, De la justification. Les économies de la grandeur, Paris, Gallimard.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/de-la-justification--9782072971563",
+          },
+        ],
+      },
+      {
+        citation: "Thévenot L., 2006, L'Action au pluriel. Sociologie des régimes d'engagement, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/l-action-au-pluriel--9782707146403",
+          },
+        ],
+      },
     ],
 
     influences: ["luc-boltanski", "Schütz"],
@@ -1469,9 +2087,33 @@ export const authors = [
     concepts: ["Historicité", "Mouvement social", "Intervention sociologique"],
 
     works: [
-      "Sociologie de l'action (1965)",
-      "La Voix et le Regard (1978)",
-      "Le Retour de l'acteur (1984)",
+      {
+        citation: "Touraine A., 1965, Sociologie de l'action, Paris, Éditions du Seuil.",
+        sources: [
+          {
+            label: "Texte intégral, Classiques des sciences sociales (UQAM)",
+            url: "https://classiques.uqam.ca/contemporains/touraine_alain/sociologie_de_action/sociologie_de_action_intro.html",
+          },
+        ],
+      },
+      {
+        citation: "Touraine A., 1978, La Voix et le Regard, Paris, Éditions du Seuil.",
+        sources: [
+          {
+            label: "Minguet G., 1980, recension, Revue française de sociologie, 21-1, p. 121-133",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1980_num_21_1_6939",
+          },
+        ],
+      },
+      {
+        citation: "Touraine A., 1984, Le Retour de l'acteur, Paris, Fayard.",
+        sources: [
+          {
+            label: "Texte intégral (autorisé par l'auteur), Classiques des sciences sociales, UQAM",
+            url: "https://classiques.uqam.ca/contemporains/touraine_alain/retour_de_acteur/retour_de_acteur.html",
+          },
+        ],
+      },
     ],
 
     influences: [],
@@ -1505,7 +2147,17 @@ export const authors = [
 
     concepts: ["Groupes primaires", "Looking-glass self"],
 
-    works: ["Human Nature and the Social Order (1902)"],
+    works: [
+      {
+        citation: "Cooley C. H., 1902, Human Nature and the Social Order, New York, Scribner's.",
+        sources: [
+          {
+            label: "Laberge Y., « Sur un livre de Charles Horton Cooley jamais traduit en français : Human Nature and the Social Order (1903) », Amerika",
+            url: "https://journals.openedition.org/amerika/17020",
+          },
+        ],
+      },
+    ],
 
     influences: [],
     heirs: ["mead"],
@@ -1538,7 +2190,17 @@ export const authors = [
 
     concepts: ["Autrui généralisé", "Soi (Je/Moi)"],
 
-    works: ["Mind, Self and Society (1934, posthume)"],
+    works: [
+      {
+        citation: "Mead G. H., 1934, Mind, Self and Society, Chicago, University of Chicago Press (posthume).",
+        sources: [
+          {
+            label: "Victoroff D., 1953, G. H. Mead, sociologue et philosophe, PUF",
+            url: "https://shs.cairn.info/g-h-mead-sociologue-et-philosophe--9782705912901-page-1",
+          },
+        ],
+      },
+    ],
 
     influences: ["cooley"],
     heirs: ["herbert-blumer"],
@@ -1572,8 +2234,24 @@ export const authors = [
     concepts: ["Écologie urbaine", "Désorganisation sociale"],
 
     works: [
-      "Introduction to the Science of Sociology (1921, avec E. Burgess)",
-      "The City (1925, avec E. Burgess)",
+      {
+        citation: "Park R. E., Burgess E. W., 1921, Introduction to the Science of Sociology, Chicago, University of Chicago Press.",
+        sources: [
+          {
+            label: "Lannoy P., 2004, « Quand Robert Park écrit « La ville » (1915). Essai de scientométrie qualitative », Revue d'Histoire des Sciences Humaines",
+            url: "https://shs.cairn.info/revue-histoire-des-sciences-humaines-2004-2-page-157",
+          },
+        ],
+      },
+      {
+        citation: "Park R. E., Burgess E. W., 1925, The City, Chicago, University of Chicago Press.",
+        sources: [
+          {
+            label: "Lannoy P., 2004, même référence que ci-dessus",
+            url: "https://shs.cairn.info/revue-histoire-des-sciences-humaines-2004-2-page-157",
+          },
+        ],
+      },
     ],
 
     influences: [],
@@ -1608,8 +2286,24 @@ export const authors = [
     concepts: ["Modèle des zones concentriques"],
 
     works: [
-      "Introduction to the Science of Sociology (1921, avec R. Park)",
-      "The City (1925, avec R. Park)",
+      {
+        citation: "Park R. E., Burgess E. W., 1921, Introduction to the Science of Sociology, Chicago, University of Chicago Press.",
+        sources: [
+          {
+            label: "Lannoy P., 2004, « Quand Robert Park écrit « La ville » (1915). Essai de scientométrie qualitative », Revue d'Histoire des Sciences Humaines",
+            url: "https://shs.cairn.info/revue-histoire-des-sciences-humaines-2004-2-page-157",
+          },
+        ],
+      },
+      {
+        citation: "Park R. E., Burgess E. W., 1925, The City, Chicago, University of Chicago Press.",
+        sources: [
+          {
+            label: "Lannoy P., 2004, même référence que ci-dessus",
+            url: "https://shs.cairn.info/revue-histoire-des-sciences-humaines-2004-2-page-157",
+          },
+        ],
+      },
     ],
 
     influences: [],
@@ -1716,7 +2410,15 @@ export const authors = [
     concepts: ["Script (scénario technique)", "Inscription"],
 
     works: [
-      "Sociologie de la traduction : textes fondateurs (2006, dir. avec M. Callon et B. Latour)",
+      {
+        citation: "Akrich M., Callon M., Latour B. (dir.), 2006, Sociologie de la traduction : textes fondateurs, Paris, Presses des Mines.",
+        sources: [
+          {
+            label: "Lassave P., 2006, « Sociologie de la traduction. L'exemple de la « Bible des écrivains » », Cahiers internationaux de sociologie, 120, p. 133-154",
+            url: "https://shs.cairn.info/revue-cahiers-internationaux-de-sociologie-2006-1-page-133",
+          },
+        ],
+      },
     ],
 
     influences: ["bruno-latour", "michel-callon"],
@@ -1912,8 +2614,15 @@ export const authors = [
     concepts: ["Travail émotionnel", "Règles de sentiment", "Double journée"],
 
     works: [
-      "The Managed Heart (1983)",
-      "The Second Shift (1989)",
+      {
+        citation: "Hochschild A. R., 1983, The Managed Heart, Berkeley, University of California Press.",
+        sources: [
+          {
+            label: "Mariage G., 2018, recension du Prix des sentiments, Sociologie du travail",
+            url: "https://journals.openedition.org/sdt/2825",
+          },
+        ],
+      },
     ],
 
     influences: ["erving-goffman"],
@@ -2035,8 +2744,24 @@ export const authors = [
     concepts: ["Sale boulot (dirty work)", "Licence et mandat", "Carrière professionnelle"],
 
     works: [
-      "Men and Their Work (1958)",
-      "Le Regard sociologique. Essais choisis (recueil, 1996)",
+      {
+        citation: "Hughes E. C., 1958, Men and Their Work, Glencoe, The Free Press.",
+        sources: [
+          {
+            label: "Tréanton J.-R., 1959, recension, Sociologie du travail, 1-1, p. 85-86",
+            url: "https://www.persee.fr/doc/sotra_0038-0296_1959_num_1_1_1005_t1_0085_0000_2",
+          },
+        ],
+      },
+      {
+        citation: "Hughes E. C., 1996, Le Regard sociologique. Essais choisis, Paris, Éditions de l'EHESS.",
+        sources: [
+          {
+            label: "Chenu A., 1998, recension, Sociologie du travail, 40-3, p. 414-416",
+            url: "https://www.persee.fr/doc/sotra_0038-0296_1998_num_40_3_1340_t1_0414_0000_2",
+          },
+        ],
+      },
     ],
 
     influences: ["robert-park"],
@@ -2073,7 +2798,30 @@ export const authors = [
 
     concepts: ["Imagination sociologique", "Élite du pouvoir"],
 
-    works: ["L'Imagination sociologique (1959)", "The Power Elite (1956)"],
+    works: [
+      {
+        citation: "Mills C. W., 1956, The Power Elite [trad. fr. : L'Élite au pouvoir], Marseille, Agone.",
+        sources: [
+          {
+            label: "Denord F., Réau B., 2014, La Sociologie de Charles Wright Mills, La Découverte",
+            url: "https://shs.cairn.info/la-sociologie-de-charles-wright-mills--9782707173348",
+          },
+        ],
+      },
+      {
+        citation: "Mills C. W., 1959, The Sociological Imagination [trad. fr. : L'Imagination sociologique], Paris, Maspero.",
+        sources: [
+          {
+            label: "Denord F., Réau B., 2014, La Sociologie de Charles Wright Mills, La Découverte",
+            url: "https://shs.cairn.info/la-sociologie-de-charles-wright-mills--9782707173348",
+          },
+          {
+            label: "Tarrab G., 1968, recension, L'Homme et la société, 7, p. 292-294",
+            url: "https://www.persee.fr/doc/homso_0018-4306_1968_num_7_1_1121",
+          },
+        ],
+      },
+    ],
 
     influences: [],
     heirs: [],
@@ -2305,9 +3053,33 @@ export const authors = [
     ],
 
     works: [
-      "Philosophie de l'argent (1900)",
-      "Sociologie (1908)",
-      "Les grandes villes et la vie de l'esprit (1903)",
+      {
+        citation: "Simmel G., 1900, Philosophie des Geldes [trad. fr. : Philosophie de l'argent], Paris, PUF.",
+        sources: [
+          {
+            label: "Sagnol M., 1988, recension, Revue française de sociologie, 29-4, p. 691-695",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1988_num_29_4_2554",
+          },
+        ],
+      },
+      {
+        citation: "Simmel G., 1908, Soziologie [trad. fr. : Sociologie], Paris, PUF.",
+        sources: [
+          {
+            label: "Vandenberghe F., 2001, La Sociologie de Georg Simmel, La Découverte",
+            url: "https://shs.cairn.info/la-sociologie-de-georg-simmel--9782707133076",
+          },
+        ],
+      },
+      {
+        citation: "Simmel G., 1903, Die Großstädte und das Geistesleben [trad. fr. : Les grandes villes et la vie de l'esprit], Paris, Payot.",
+        sources: [
+          {
+            label: "Jurkowicz P., 2013, recension, Lectures",
+            url: "https://journals.openedition.org/lectures/11348",
+          },
+        ],
+      },
     ],
 
     influences: [],
@@ -2344,7 +3116,17 @@ export const authors = [
 
     concepts: ["Technique autonome"],
 
-    works: ["La Technique ou l'enjeu du siècle (1954)"],
+    works: [
+      {
+        citation: "Ellul J., 1954, La Technique ou l'enjeu du siècle, Paris, Armand Colin.",
+        sources: [
+          {
+            label: "Troude-Chastenet P., 2019, « II. Le penseur de la technique », in Introduction à Jacques Ellul, La Découverte, p. 21-46",
+            url: "https://shs.cairn.info/introduction-a-jacques-ellul--9782348040436-page-21",
+          },
+        ],
+      },
+    ],
 
     influences: [],
     heirs: [],
@@ -2377,7 +3159,17 @@ export const authors = [
 
     concepts: ["Mode d'existence des objets techniques", "Transindividuel"],
 
-    works: ["Du mode d'existence des objets techniques (1958)"],
+    works: [
+      {
+        citation: "Simondon G., 1958, Du mode d'existence des objets techniques, Paris, Aubier.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/du-mode-dexistence-des-objets-techniques--9782081231412",
+          },
+        ],
+      },
+    ],
 
     influences: [],
     heirs: [],
@@ -2413,8 +3205,24 @@ export const authors = [
     concepts: ["Raison statistique", "Investissements de forme"],
 
     works: [
-      "La Politique des grands nombres. Histoire de la raison statistique (1993)",
-      "Les Investissements de forme (1986, avec L. Thévenot et al.)",
+      {
+        citation: "Desrosières A., 1993, La Politique des grands nombres. Histoire de la raison statistique, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/la-politique-des-grands-nombres--9782707165046",
+          },
+        ],
+      },
+      {
+        citation: "Desrosières A., 1985, Histoires de formes : statistiques et sciences sociales avant 1940, Revue française de sociologie, 26-2, p. 277-310.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1985_num_26_2_3951",
+          },
+        ],
+      },
     ],
 
     influences: ["bourdieu", "laurent-thevenot"],

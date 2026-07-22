@@ -545,7 +545,7 @@ export default function App() {
           <ul>
             {a.works.map((w, i) => (
               <li key={i} style={{ marginBottom: 10 }}>
-                <span style={{ fontStyle: "italic" }}>{w.citation}</span>
+                <span>{w.citation}</span>
                 {w.sources && w.sources.length > 0 && (
                   <span
                     style={{

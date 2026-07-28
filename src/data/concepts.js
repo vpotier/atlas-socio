@@ -571,4 +571,26 @@ export const concepts = [
     simpleDefinition:
       "Pour Simmel, l'étranger n'est ni complètement extérieur ni complètement intégré à un groupe : il est à la fois proche et distant, ce qui lui donne un regard particulier sur ce groupe.",
   },
+  {
+    id: "lanceur-alerte",
+    label: "Lanceur d'alerte",
+    definition:
+      "Chez Chateauraynaud et Torny, acte éthique délibérément tourné vers autrui par lequel un individu, s'appuyant sur des signes précurseurs souvent ignorés, s'efforce de faire reconnaître publiquement un danger avant qu'il ne devienne une catastrophe reconnue de tous.",
+    authors: ["francis-chateauraynaud"],
+    x: 950,
+    y: 780,
+    simpleDefinition:
+      "Personne qui, la première, tente de faire reconnaître un danger — sanitaire, environnemental, etc. — avant que celui-ci ne soit accepté par tous. Le concept, créé par Chateauraynaud, est passé du champ académique à la loi française en 2013.",
+  },
+  {
+    id: "controverse",
+    label: "Controverse",
+    definition:
+      "Chez Lemieux, dispute publique et argumentée entre acteurs qui se reconnaissent mutuellement une légitimité à débattre, se distinguant à la fois du conflit de pure force (où l'argumentation n'a plus cours) et du désaccord privé sans enjeu collectif.",
+    authors: ["cyril-lemieux", "francis-chateauraynaud"],
+    x: 830,
+    y: 800,
+    simpleDefinition:
+      "Une controverse n'est pas un simple désaccord ou une polémique médiatique : c'est une dispute publique où les personnes qui s'opposent continuent de reconnaître à l'autre le droit de débattre, et où l'on argumente encore, sans basculer dans le pur rapport de force.",
+  },
 ];

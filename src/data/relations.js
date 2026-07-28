@@ -1636,4 +1636,152 @@ export const relations = [
     simpleExplanation:
       "Goffman doit beaucoup à Simmel, en particulier pour son attention aux formes récurrentes de l'interaction entre les personnes, indépendamment de leur contenu précis.",
   },
+  {
+    source: "francis-chateauraynaud",
+    target: "luc-boltanski",
+    type: "heritage",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Chateauraynaud a soutenu sa thèse à l'EHESS en 1990 sous la direction de Boltanski, dont il reprend le cadre pragmatique avant de s'en émanciper pour développer sa propre sociologie des controverses et de l'alerte.",
+    sources: ["Wikipédia, article Francis Chateauraynaud"],
+    simpleExplanation:
+      "Chateauraynaud a fait sa thèse sous la direction de Boltanski, dont il reprend certains outils avant de développer sa propre approche, centrée sur les controverses et l'alerte.",
+  },
+  {
+    source: "francis-chateauraynaud",
+    target: "bruno-latour",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Chateauraynaud dialogue avec la théorie de l'acteur-réseau de Latour, notamment autour de l'analyse des controverses sociotechniques, tout en développant des outils socio-informatiques (Prospéro, Marlowe) propres à son laboratoire.",
+    sources: ["Wikipédia, article Francis Chateauraynaud"],
+    simpleExplanation:
+      "Chateauraynaud dialogue avec les idées de Latour sur les controverses techniques et scientifiques, tout en développant ses propres outils informatiques d'analyse.",
+  },
+  {
+    source: "cyril-lemieux",
+    target: "luc-boltanski",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Lemieux s'est formé au Groupe de sociologie politique et morale fondé par Boltanski et Thévenot, dont il reprend le cadre pragmatique tout en le prolongeant vers une théorie générale de l'action.",
+    sources: ["Fiche EHESS, Cyril Lemieux"],
+    simpleExplanation:
+      "Lemieux s'est formé auprès de Boltanski, dont il reprend le cadre pragmatique avant de le prolonger dans sa propre théorie de l'action.",
+  },
+  {
+    source: "cyril-lemieux",
+    target: "laurent-thevenot",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Comme pour Boltanski, Lemieux s'est formé au sein du Groupe de sociologie politique et morale codirigé par Thévenot, dont il reprend certains outils d'analyse des régimes d'action.",
+    sources: ["Fiche EHESS, Cyril Lemieux"],
+    simpleExplanation:
+      "Lemieux s'est aussi formé auprès de Thévenot, dont il reprend certains outils pour analyser l'action en société.",
+  },
+  {
+    source: "cyril-lemieux",
+    target: "mead",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Dans Le devoir et la grâce (2009), Lemieux construit son « analyse grammaticale de l'action » en combinant explicitement les apports du pragmatisme de George H. Mead avec la tradition durkheimienne.",
+    sources: [
+      "Lemieux, 2009, Le devoir et la grâce. Pour une analyse grammaticale de l'action",
+    ],
+    simpleExplanation:
+      "Lemieux construit sa théorie de l'action en combinant les idées de Mead sur l'interaction avec la tradition durkheimienne.",
+  },
+  {
+    source: "cyril-lemieux",
+    target: "durkheim",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Lemieux revendique un néo-durkheimisme holiste, défendant le holisme de Durkheim contre les approches plus individualistes, notamment dans son opposition publique au sociologue Gérald Bronner.",
+    sources: ["Wikipédia, article Cyril Lemieux"],
+    simpleExplanation:
+      "Lemieux défend explicitement l'héritage holiste de Durkheim, selon lequel la société façonne les individus, contre des approches plus individualistes.",
+  },
+  {
+    source: "cyril-lemieux",
+    target: "bourdieu",
+    type: "tension",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Lemieux oppose à la sociologie bourdieusienne des médias, qu'il juge trop centrée sur la « critique du dévoilement » et le poids du champ, sa propre « critique interne », qui prend au sérieux les contraintes et les normes internes au monde journalistique.",
+    sources: [
+      "Lemieux, 2000, Mauvaise presse. Une sociologie compréhensive du travail journalistique et de ses critiques",
+    ],
+    simpleExplanation:
+      "Lemieux critique la sociologie des médias de Bourdieu, qu'il juge trop centrée sur la dénonciation, et lui oppose une critique qui prend au sérieux les règles internes du métier de journaliste.",
+  },
+  {
+    source: "nicolas-dodier",
+    target: "luc-boltanski",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Dodier a rejoint le Groupe de sociologie politique et morale fondé par Boltanski et Thévenot, dont il a repris la direction de 2006 à 2009, prolongeant leur approche pragmatique appliquée au monde médical et technique.",
+    sources: ["EverybodyWiki, article Nicolas Dodier"],
+    simpleExplanation:
+      "Dodier a rejoint le laboratoire fondé par Boltanski, dont il a ensuite pris la direction, en appliquant l'approche pragmatique au monde médical et technique.",
+  },
+  {
+    source: "nicolas-dodier",
+    target: "laurent-thevenot",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Comme pour Boltanski, Dodier a rejoint puis dirigé le Groupe de sociologie politique et morale codirigé par Thévenot, dont il reprend les outils d'analyse des conventions et des régimes d'action.",
+    sources: ["EverybodyWiki, article Nicolas Dodier"],
+    simpleExplanation:
+      "Dodier a aussi rejoint le laboratoire codirigé par Thévenot, dont il reprend les outils d'analyse des conventions qui soutiennent l'action.",
+  },
+  {
+    source: "nicolas-dodier",
+    target: "erving-goffman",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Les premières recherches de Dodier sur les règles morales régissant les interactions en milieu de travail ont été influencées par le courant interactionniste américain, notamment Goffman.",
+    sources: ["EverybodyWiki, article Nicolas Dodier"],
+    simpleExplanation:
+      "Les premiers travaux de Dodier sur les interactions en milieu de travail doivent beaucoup à l'interactionnisme américain, dont Goffman est l'une des grandes figures.",
+  },
+  {
+    source: "nicolas-dodier",
+    target: "becker",
+    type: "heritage",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "Aux côtés de Goffman et Freidson, Becker fait partie des références interactionnistes américaines qui ont influencé les premières enquêtes de Dodier en milieu de travail.",
+    sources: ["EverybodyWiki, article Nicolas Dodier"],
+    simpleExplanation:
+      "Becker fait partie, avec Goffman, des références interactionnistes américaines qui ont influencé les débuts des recherches de Dodier.",
+  },
+  {
+    source: "nicolas-dodier",
+    target: "harold-garfinkel",
+    type: "heritage",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Les premières recherches de Dodier ont également été influencées par l'ethnométhodologie de Garfinkel, notamment dans l'attention portée aux méthodes pratiques par lesquelles les acteurs construisent le sens de leurs situations de travail.",
+    sources: ["EverybodyWiki, article Nicolas Dodier"],
+    simpleExplanation:
+      "Dodier doit aussi beaucoup à l'ethnométhodologie de Garfinkel, en particulier pour son attention aux méthodes concrètes par lesquelles les acteurs donnent sens à leurs situations de travail.",
+  },
 ];

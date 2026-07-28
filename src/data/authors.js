@@ -585,7 +585,7 @@ export const authors = [
     ],
 
     influences: ["Mead", "herbert-blumer", "Hughes"],
-    heirs: [],
+    heirs: ["nicolas-dodier"],
     themes: ["Sociologie de la déviance", "Sociologie du corps et de la santé"],
 
     summary:
@@ -649,7 +649,7 @@ export const authors = [
     ],
 
     influences: ["Hughes", "herbert-blumer"],
-    heirs: [],
+    heirs: ["nicolas-dodier"],
     themes: ["Sociologie de la déviance", "Sociologie du travail et des professions"],
 
     summary:
@@ -860,7 +860,7 @@ export const authors = [
     ],
 
     influences: ["Schütz", "talcott-parsons"],
-    heirs: ["harvey-sacks", "Aaron Cicourel", "Louis Quéré"],
+    heirs: ["harvey-sacks", "Aaron Cicourel", "Louis Quéré", "nicolas-dodier"],
     themes: [],
 
     summary:
@@ -1428,7 +1428,7 @@ export const authors = [
     ],
 
     influences: ["Serres", "Greimas", "harold-garfinkel", "harrison-white"],
-    heirs: ["michel-callon", "susan-leigh-star", "Philippe Descola"],
+    heirs: ["michel-callon", "susan-leigh-star", "Philippe Descola", "francis-chateauraynaud"],
     themes: ["Sociologie de l'innovation et des techniques (STS)"],
 
     summary:
@@ -2068,7 +2068,7 @@ export const authors = [
     ],
 
     influences: ["bourdieu", "Schütz"],
-    heirs: [],
+    heirs: ["francis-chateauraynaud", "cyril-lemieux", "nicolas-dodier"],
     themes: ["Sociologie du travail et des professions", "Sociologie économique"],
 
     summary:
@@ -2120,7 +2120,7 @@ export const authors = [
     ],
 
     influences: ["luc-boltanski", "Schütz"],
-    heirs: [],
+    heirs: ["cyril-lemieux", "nicolas-dodier"],
     themes: ["Sociologie économique"],
 
     summary:
@@ -3550,6 +3550,189 @@ export const authors = [
     simple: {
       summary:
         "Alain Desrosières étudie l'histoire de la statistique et montre qu'elle n'est jamais un simple reflet neutre de la réalité : les catégories statistiques, comme les catégories socioprofessionnelles, résultent de conventions établies collectivement, avant de devenir des outils à la fois de connaissance et de gouvernement.",
+    },
+  },
+
+  {
+    id: "francis-chateauraynaud",
+    name: "Francis Chateauraynaud",
+    school: "Pragmatisme / sociologie des controverses et de l'alerte",
+    period: "1960–présent",
+    birthYear: 1960,
+    deathYear: null,
+    x: 900,
+    y: 850,
+    color: "#33544C",
+
+    concepts: ["Lanceur d'alerte", "Sociologie des controverses"],
+
+    works: [
+      {
+        citation: "Chateauraynaud F., 1991, La Faute professionnelle. Une sociologie des conflits de responsabilité, Paris, Métailié.",
+        sources: [
+          {
+            label: "Didry C., 1992, recension, Genèses, 9, p. 164",
+            url: "https://www.persee.fr/doc/genes_1155-3219_1992_num_9_1_1667_t1_0164_0000_1",
+          },
+        ],
+      },
+      {
+        citation: "Chateauraynaud F., Torny D., 1999, Les Sombres précurseurs. Une sociologie pragmatique de l'alerte et du risque, Paris, Éditions de l'EHESS.",
+        sources: [
+          {
+            label: "Caïra O., 2000, recension, Politix, 13-52, p. 243-247",
+            url: "https://www.persee.fr/doc/polix_0295-2319_2000_num_13_52_1128",
+          },
+        ],
+      },
+      {
+        citation: "Chateauraynaud F., Debaz J., 2017, Aux bords de l'irréversible. Sociologie pragmatique des transformations, Paris, Pétra.",
+        sources: [
+          {
+            label: "Perault É., Tabouret S., 2019, recension, Revue d'anthropologie des connaissances, 13-3, p. 943-952",
+            url: "https://shs.cairn.info/revue-anthropologie-des-connaissances-2019-3-page-943",
+          },
+        ],
+      },
+    ],
+
+    influences: ["luc-boltanski", "bruno-latour"],
+    heirs: [],
+    themes: ["Sociologie de l'environnement et des risques", "Sociologie des sciences et techniques"],
+
+    summary:
+      "Sociologue à l'EHESS, fondateur du Groupe de sociologie pragmatique et réflexive (GSPR), il a créé la notion de « lanceur d'alerte » pour décrire les acteurs qui, à partir de signes précurseurs souvent ignorés, s'efforcent de faire reconnaître un danger avant qu'il ne soit admis collectivement. Co-concepteur des logiciels Prospéro et Marlowe, il développe une sociologie des controverses outillée par l'analyse de grands corpus textuels.",
+
+    constellation: "pragmatisme",
+    consensus: 3,
+    classificationNote:
+      "Formé au pragmatisme sous la direction de Boltanski, Chateauraynaud s'en distancie progressivement pour développer un style de recherche propre, centré sur les controverses et l'alerte, en dialogue critique avec la théorie de l'acteur-réseau de Latour.",
+    sources: [],
+    simple: {
+      summary:
+        "Francis Chateauraynaud étudie comment une inquiétude — sur l'amiante, le nucléaire, un risque sanitaire — se transforme en alerte publique, puis parfois en controverse ou en loi. Il a inventé la notion de « lanceur d'alerte » pour désigner ceux qui, les premiers, tentent de faire reconnaître un danger avant qu'il ne soit accepté par tous. Il a aussi conçu des logiciels capables d'analyser automatiquement de grands corpus de textes pour suivre l'évolution d'une controverse dans le temps.",
+    },
+  },
+
+  {
+    id: "cyril-lemieux",
+    name: "Cyril Lemieux",
+    school: "Pragmatisme / sociologie du jugement",
+    period: "1967–présent",
+    birthYear: 1967,
+    deathYear: null,
+    x: 850,
+    y: 750,
+    color: "#33544C",
+
+    concepts: ["Controverse", "Grammaire de l'action"],
+
+    works: [
+      {
+        citation: "Lemieux C., 2000, Mauvaise presse. Une sociologie compréhensive du travail journalistique et de ses critiques, Paris, Métailié.",
+        sources: [
+          {
+            label: "Recension, 2001, Mouvements, 13, p. 135-139",
+            url: "https://shs.cairn.info/revue-mouvements-2001-1-page-135",
+          },
+        ],
+      },
+      {
+        citation: "Lemieux C., 2007, « À quoi sert l'analyse des controverses ? », Mil neuf cent. Revue d'histoire intellectuelle, 25, p. 191-212.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/revue-mil-neuf-cent-2007-1-page-191",
+          },
+        ],
+      },
+      {
+        citation: "Lemieux C., 2009, Le devoir et la grâce. Pour une analyse grammaticale de l'action, Paris, Economica.",
+        sources: [
+          {
+            label: "Roueff O., 2011, recension, Politix, 94-2, p. 211-216",
+            url: "https://shs.cairn.info/revue-politix-2011-2-page-211",
+          },
+        ],
+      },
+    ],
+
+    influences: ["luc-boltanski", "laurent-thevenot", "mead", "durkheim"],
+    heirs: [],
+    themes: ["Sociologie des médias et du journalisme", "Théorie de l'action"],
+
+    summary:
+      "Sociologue à l'EHESS, directeur du LIER, formé au GSPM de Boltanski et Thévenot. Ses travaux portent sur le journalisme et l'espace public (Mauvaise presse), sur la méthodologie de l'analyse des controverses, puis sur la théorie de l'action, où il défend une « analyse grammaticale de l'action » combinant l'héritage de Mead et de Durkheim.",
+
+    constellation: "pragmatisme",
+    consensus: 3,
+    classificationNote:
+      "Formé dans la mouvance pragmatiste, Lemieux s'en distingue par sa défense d'un néo-durkheimisme holiste et par sa critique frontale de la sociologie bourdieusienne des médias, qu'il oppose à sa propre « critique interne ».",
+    sources: [],
+    simple: {
+      summary:
+        "Cyril Lemieux étudie comment les journalistes travaillent et comment leur travail est critiqué, puis comment les disputes publiques — les controverses — fonctionnent selon des règles précises. Il a aussi proposé une théorie générale de l'action qui combine deux grandes traditions sociologiques, l'une américaine (Mead) et l'autre française (Durkheim).",
+    },
+  },
+
+  {
+    id: "nicolas-dodier",
+    name: "Nicolas Dodier",
+    school: "Pragmatisme / sociologie de la médecine et du travail",
+    period: "1957–présent",
+    birthYear: 1957,
+    deathYear: null,
+    x: 950,
+    y: 900,
+    color: "#33544C",
+
+    concepts: ["Sociologie des dispositifs"],
+
+    works: [
+      {
+        citation: "Dodier N., 1993, L'Expertise médicale. Essai de sociologie sur l'exercice du jugement, Paris, Métailié.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/l-expertise-medicale--9782864241404",
+          },
+        ],
+      },
+      {
+        citation: "Dodier N., 1995, Les Hommes et les Machines. La conscience collective dans les sociétés technicisées, Paris, Métailié.",
+        sources: [
+          {
+            label: "Vatin F., 1996, recension, Revue française de sociologie, 37-3, p. 465-467",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1996_num_37_3_5714",
+          },
+        ],
+      },
+      {
+        citation: "Barbot J., Dodier N., 2023, Des victimes en procès. Essai sur la réparation, Paris, Presses des Mines.",
+        sources: [
+          {
+            label: "Michel J., 2023, recension, Revue française de science politique, 73-4/5, p. 736-737",
+            url: "https://shs.cairn.info/revue-francaise-de-science-politique-2023-4-page-736",
+          },
+        ],
+      },
+    ],
+
+    influences: ["luc-boltanski", "laurent-thevenot", "erving-goffman", "becker", "harold-garfinkel"],
+    heirs: [],
+    themes: ["Sociologie de la médecine et de la santé", "Sociologie du travail et des professions"],
+
+    summary:
+      "Sociologue, directeur de recherche à l'INSERM et directeur d'études à l'EHESS, il a dirigé le Groupe de sociologie politique et morale (GSPM) de 2006 à 2009. Formé à l'interactionnisme américain et à l'ethnométhodologie, il a développé une sociologie pragmatique du jugement médical, puis du travail et de la technique, avant de s'orienter vers une approche processuelle des dispositifs et de la réparation des dommages collectifs.",
+
+    constellation: "pragmatisme",
+    consensus: 3,
+    classificationNote:
+      "Formé à l'interactionnisme (Goffman, Becker) et à l'ethnométhodologie (Garfinkel) avant de rejoindre le pragmatisme de Boltanski et Thévenot, dont il a repris la direction du laboratoire (GSPM) ; sa trajectoire illustre la porosité entre ces courants.",
+    sources: [],
+    simple: {
+      summary:
+        "Nicolas Dodier étudie comment les médecins, les ouvriers ou les juges portent des jugements dans des situations complexes, en s'appuyant sur des règles qui ne sont jamais entièrement fixées à l'avance. Il s'est aussi intéressé à la manière dont les victimes de catastrophes collectives, comme des scandales sanitaires, s'organisent pour obtenir réparation.",
     },
   },
 ];

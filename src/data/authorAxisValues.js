@@ -1681,4 +1681,248 @@ export const authorAxisValues = {
       ],
     },
   },
+
+  "margaret-mead": {
+    individuSociete: {
+      value: 0.15,
+      label: "Primat de la culture (déterminisme culturel)",
+      justification:
+        "Mead défend le déterminisme culturel : les traits de caractère, la sexualité ou le tempérament que l'on croit individuels ou biologiques sont en réalité façonnés par le modèle culturel dans lequel on grandit, contre les explications par la nature ou l'hérédité.",
+      sources: [
+        "Britannica, article Margaret Mead : « cultural determinism, the theory that human behavior is determined by culture rather than biology »",
+        "Encyclopædia Universalis, article Culturalisme",
+      ],
+    },
+    methode: {
+      value: 0.75,
+      label: "Compréhensive empirique (ethnographie qualitative)",
+      justification:
+        "Mead privilégie l'enquête de terrain qualitative — observation participante, entretiens — plutôt que la mesure quantitative, pour saisir de l'intérieur la cohérence d'une culture donnée.",
+      sources: [
+        "Britannica, article Margaret Mead : « her reliance on qualitative rather than quantitative methods »",
+      ],
+    },
+    rationalite: {
+      value: 0.15,
+      label: "Faible (comportement façonné par l'enculturation)",
+      justification:
+        "Pour Mead, les comportements individuels ne relèvent pas d'un calcul ou d'un choix conscient, mais de l'intériorisation précoce d'un modèle culturel qui standardise la personnalité de ses membres.",
+      sources: [
+        "Damon J., 2006, « La pensée de... Margaret Mead (1901-1978) », Informations sociales, 134-6, p. 27",
+      ],
+    },
+  },
+
+  "florence-weber": {
+    individuSociete: {
+      value: 0.45,
+      label: "Relation (pratiques concrètes à la frontière individu/institution)",
+      justification:
+        "Weber étudie la parenté et l'économie domestique non comme des structures abstraites imposées ni comme de purs choix individuels, mais comme des pratiques concrètes négociées au quotidien entre proches, à la frontière du don et du calcul.",
+      sources: [
+        "Weber, 2013, « Conclusion. L'économie domestique », in Penser la parenté aujourd'hui, Éditions Rue d'Ulm",
+      ],
+    },
+    methode: {
+      value: 0.85,
+      label: "Description (ethnographie de terrain approfondie)",
+      justification:
+        "Coautrice du Guide de l'enquête de terrain, ouvrage de référence méthodologique en sciences sociales françaises, Weber privilégie l'observation directe et prolongée, au plus près des acteurs, plutôt que la mesure statistique.",
+      sources: [
+        "Beaud S., Weber F., 1997, Guide de l'enquête de terrain, La Découverte",
+        "Quemin A., 1999, recension, Revue française de sociologie, 40-2, p. 430-433",
+      ],
+    },
+    rationalite: {
+      value: 0.3,
+      label: "Pratique (logiques non réfléchies de l'économie domestique)",
+      justification:
+        "Les échanges au sein de la parenté pratique (garde, héritage, entraide) obéissent à des logiques largement implicites, mêlant affection et intérêt sans calcul explicite, plutôt qu'à une stratégie délibérée.",
+      sources: [
+        "Weber, 2005, Le Sang, le nom, le quotidien. Une sociologie de la parenté pratique",
+      ],
+    },
+  },
+
+  "margaret-maruani": {
+    individuSociete: {
+      value: 0.2,
+      label: "Primat des structures du marché du travail",
+      justification:
+        "Maruani explique les trajectoires professionnelles des femmes (temps partiel, sous-emploi, chômage) d'abord par les structures du marché du travail et les statistiques d'activité, non par les choix individuels des travailleuses.",
+      sources: [
+        "Kergoat D., 2000, recension, Cahiers du Genre, 28, p. 161-163",
+      ],
+    },
+    methode: {
+      value: 0.2,
+      label: "Explicative (analyse statistique du marché du travail)",
+      justification:
+        "Maruani construit ses analyses à partir de séries statistiques longues sur l'activité, l'emploi et le chômage des femmes, dans une démarche quantitative et comparative plutôt que compréhensive.",
+      sources: [
+        "Laufer J., Ravet H. (entretien avec Maruani), 2021, Travail, genre et sociétés, 46, p. 5-25",
+      ],
+    },
+    rationalite: {
+      value: 0.2,
+      label: "Faible à modérée (contraintes structurelles du marché du travail)",
+      justification:
+        "Le sous-emploi et le temps partiel féminins ne résultent pas d'abord d'un choix individuel mais de contraintes structurelles (garde d'enfants, ségrégation professionnelle, tolérance sociale au chômage féminin).",
+      sources: [
+        "Kergoat D., 2000, recension, Cahiers du Genre, 28, p. 161-163",
+      ],
+    },
+  },
+
+  "hannah-arendt": {
+    individuSociete: {
+      value: 0.7,
+      label: "Acteur (pluralité et capacité de commencement)",
+      justification:
+        "Arendt place au centre de sa pensée la pluralité des hommes agissants et leur capacité à « entreprendre quelque chose de neuf » (natalité) : l'action politique est la capacité individuelle, jamais totalement déterminée par avance, de faire advenir de l'imprévisible dans le monde commun.",
+      sources: [
+        "Cairn.info, « Hannah Arendt, la politique et la pensée », L'Enseignement philosophique, 2017-2",
+      ],
+    },
+    methode: {
+      value: 0.75,
+      label: "Compréhensive (phénoménologie politique)",
+      justification:
+        "Formée par Husserl, Heidegger et Jaspers, Arendt aborde le politique par une démarche largement phénoménologique, cherchant à décrire l'expérience de l'action et de la pluralité (travail, œuvre, action) plutôt qu'à en établir les causes.",
+      sources: [
+        "Arendt H., 1958, The Human Condition [trad. fr. : Condition de l'homme moderne]",
+      ],
+    },
+    rationalite: {
+      value: 0.7,
+      label: "Réflexive (jugement contre rationalité technique)",
+      justification:
+        "Arendt critique la rationalité technique et instrumentale en politique ; elle lui oppose la faculté de juger, une rationalité réflexive proche de la phronesis aristotélicienne, exercée dans la pluralité du débat public.",
+      sources: [
+        "Cairn.info, « L'agir et le faire chez Hannah Arendt », Cahiers philosophiques, 2015-4",
+      ],
+    },
+  },
+
+  "francoise-heritier": {
+    individuSociete: {
+      value: 0.25,
+      label: "Primat des structures (invariants anthropologiques)",
+      justification:
+        "Héritier prolonge directement la méthode structurale de Lévi-Strauss : la « valence différentielle des sexes » est présentée comme un invariant anthropologique universel qui s'impose aux individus, au même titre que la prohibition de l'inceste.",
+      sources: [
+        "Héritier-Augé F., Molinier P., 2014, « La valence différentielle des sexes, création de l'esprit humain archaïque », Nouvelle revue de psychosociologie, 17-1, p. 167-176",
+      ],
+    },
+    methode: {
+      value: 0.25,
+      label: "Explicative structurale (formalisation et comparaison systématique)",
+      justification:
+        "Dans L'Exercice de la parenté, Héritier mobilise le traitement informatique et statistique de grandes séries de données de terrain pour dégager des régularités structurales, dans la continuité méthodologique de Lévi-Strauss.",
+      sources: [
+        "Encyclopædia Universalis, « L'Exercice de la parenté », par Giulia Sissa",
+      ],
+    },
+    rationalite: {
+      value: 0.2,
+      label: "Inconsciente (structures symboliques de la pensée)",
+      justification:
+        "Comme chez Lévi-Strauss, les catégories qui organisent la hiérarchie des sexes opèrent au niveau de structures symboliques inconscientes (le corps, le sang, les humeurs), non d'un raisonnement individuel explicite.",
+      sources: [
+        "Persée, Françoise Héritier, Masculin/féminin. La pensée de la différence, Mots, 52, 1997",
+      ],
+    },
+  },
+
+  "christine-delphy": {
+    individuSociete: {
+      value: 0.1,
+      label: "Primat des rapports sociaux (classes de sexe)",
+      justification:
+        "Delphy pense les catégories « hommes » et « femmes » comme des classes sociales antagonistes au sens marxiste : ce sont les rapports sociaux d'exploitation qui constituent ces catégories, non l'inverse — une position holiste explicite.",
+      sources: [
+        "Delphy C., 1998, L'Ennemi principal, t. 1 : Économie politique du patriarcat",
+        "Cairn.info, « Christine Delphy : Penser le genre », Nouvelles Questions féministes, 2002",
+      ],
+    },
+    methode: {
+      value: 0.15,
+      label: "Explicative (matérialisme historique appliqué au genre)",
+      justification:
+        "Delphy revendique une méthode strictement matérialiste — l'analyse des rapports sociaux matériels de production — qu'elle oppose explicitement à toute explication naturaliste ou idéaliste de l'oppression des femmes.",
+      sources: [
+        "Delphy, 1982, « Un féminisme matérialiste est possible », Nouvelles Questions féministes, 4, p. 50-86",
+      ],
+    },
+    rationalite: {
+      value: 0.15,
+      label: "Faible (position déterminée par le rapport social d'exploitation)",
+      justification:
+        "Comme chez Marx, la situation des femmes s'explique d'abord par leur position dans un rapport social d'exploitation (le mode de production domestique), non par un calcul individuel.",
+      sources: [
+        "Cairn.info, « Christine Delphy : Penser le genre », Nouvelles Questions féministes, 2002",
+      ],
+    },
+  },
+
+  "andrew-abbott": {
+    individuSociete: {
+      value: 0.55,
+      label: "Relation (écologie de juridictions en compétition)",
+      justification:
+        "Abbott rejette explicitement le « paradigme des variables » et l'individualisme méthodologique au profit d'une vision relationnelle : ce sont les positions des groupes professionnels les uns par rapport aux autres, dans un système écologique, qui expliquent leur évolution.",
+      sources: [
+        "Abbott A., 2001, Time Matters: On Theory and Method (essai « Transcending General Linear Reality »)",
+        "Fabiani J.-L., 2003, « Pour en finir avec la réalité unilinéaire », Annales, 58, p. 549-565",
+      ],
+    },
+    methode: {
+      value: 0.65,
+      label: "Contextualiste et processuelle (plutôt que causale-linéaire)",
+      justification:
+        "Abbott promeut une « sociologie processuelle » attentive au contexte et à la séquence des événements, en rupture avec les modèles causaux linéaires standards, tout en développant des outils formels (analyse séquentielle).",
+      sources: [
+        "Cairn.info, « Contextes et temporalités dans la sociologie processuelle d'Andrew Abbott », Annales, 2016-3",
+      ],
+    },
+    rationalite: {
+      value: 0.55,
+      label: "Distribuée (compétition stratégique entre groupes, non entre individus isolés)",
+      justification:
+        "La stratégie n'est pas celle d'individus rationnels isolés mais de groupes professionnels en concurrence pour le contrôle de juridictions, dans un cadre relationnel plutôt qu'un modèle de l'acteur rationnel classique.",
+      sources: [
+        "Cairn.info, « L'occupation des territoires et la formation des collectifs », Sociologie, 2022-1",
+      ],
+    },
+  },
+
+  "anselm-strauss": {
+    individuSociete: {
+      value: 0.5,
+      label: "Relation (ordre négocié entre acteurs)",
+      justification:
+        "Strauss élabore la notion d'« ordre négocié » : l'organisation sociale (par exemple hospitalière) n'est ni une structure imposée ni le simple agrégat de choix individuels, mais le résultat toujours provisoire de négociations continues entre acteurs.",
+      sources: [
+        "Baszanger I. (dir.), 1992, La trame de la négociation. Sociologie qualitative et interactionnisme, L'Harmattan",
+      ],
+    },
+    methode: {
+      value: 0.8,
+      label: "Compréhensive empirique (grounded theory)",
+      justification:
+        "Avec Glaser, Strauss fonde la grounded theory : une méthode qui construit la théorie directement à partir de l'analyse comparative systématique des données de terrain, plutôt que de partir d'hypothèses déductives.",
+      sources: [
+        "Glaser B., Strauss A., 1967, The Discovery of Grounded Theory: Strategies for Qualitative Research",
+      ],
+    },
+    rationalite: {
+      value: 0.45,
+      label: "Située (contextes de conscience et négociation continue)",
+      justification:
+        "Dans Awareness of Dying, Strauss montre que le comportement des patients et du personnel soignant dépend du contexte de conscience partagé (ce que chacun sait et croit savoir), une rationalité toujours située et négociée plutôt que calculée à l'avance.",
+      sources: [
+        "Glaser B., Strauss A., 1965, Awareness of Dying, Aldine",
+      ],
+    },
+  },
 };

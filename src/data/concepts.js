@@ -593,4 +593,54 @@ export const concepts = [
     simpleDefinition:
       "Une controverse n'est pas un simple désaccord ou une polémique médiatique : c'est une dispute publique où les personnes qui s'opposent continuent de reconnaître à l'autre le droit de débattre, et où l'on argumente encore, sans basculer dans le pur rapport de force.",
   },
+  {
+    id: "valence-differentielle-sexes",
+    label: "Valence différentielle des sexes",
+    definition:
+      "Chez Françoise Héritier, quatrième invariant anthropologique, ajouté au « tripode social » de Lévi-Strauss (prohibition de l'inceste, forme reconnue d'union, division sexuelle des tâches) : la traduction systématique, dans toutes les sociétés connues, de la différence des sexes en hiérarchie de pouvoir des hommes sur les femmes.",
+    authors: ["francoise-heritier"],
+    x: 460, y: 200,
+    simpleDefinition:
+      "L'idée que, dans toutes les sociétés connues, la différence entre hommes et femmes se transforme presque toujours en hiérarchie : les femmes y sont dévalorisées par rapport aux hommes, même dans les sociétés qui semblent égalitaires.",
+  },
+  {
+    id: "patriarcat-mode-production",
+    label: "Patriarcat comme mode de production",
+    definition:
+      "Chez Christine Delphy, analyse matérialiste selon laquelle l'oppression des femmes ne relève pas de la nature mais d'un système économique structuré, distinct du capitalisme : le mode de production domestique, dans lequel le travail des femmes (ménager, reproductif, relationnel) est approprié gratuitement par les hommes au sein du mariage.",
+    authors: ["christine-delphy"],
+    x: 180, y: 500,
+    simpleDefinition:
+      "L'idée que l'oppression des femmes fonctionne comme un système économique, un peu comme le capitalisme selon Marx : le travail domestique des femmes est utilisé gratuitement par les hommes, ce qui constitue un mode de production à part entière.",
+  },
+  {
+    id: "grounded-theory",
+    label: "Grounded theory (théorie ancrée)",
+    definition:
+      "Chez Glaser et Strauss, méthode de recherche qualitative consistant à construire une théorie directement à partir de l'analyse systématique des données de terrain, par comparaisons constantes, plutôt qu'à partir d'hypothèses définies a priori et testées ensuite.",
+    authors: ["anselm-strauss"],
+    x: 650, y: 560,
+    simpleDefinition:
+      "Une méthode pour construire une théorie sociologique à partir de ce que l'on observe sur le terrain, plutôt que de partir d'une théorie toute faite qu'on irait ensuite vérifier.",
+  },
+  {
+    id: "ecologie-juridictions-professionnelles",
+    label: "Écologie des juridictions professionnelles",
+    definition:
+      "Chez Andrew Abbott, cadre d'analyse selon lequel les professions ne se définissent pas par leur institutionnalisation mais par leur position dans un système de compétition permanente pour le contrôle de « juridictions » — des territoires d'expertise et de travail que plusieurs groupes professionnels peuvent revendiquer simultanément.",
+    authors: ["andrew-abbott"],
+    x: 630, y: 680,
+    simpleDefinition:
+      "L'idée que les métiers (médecins, avocats, etc.) ne sont pas figés une fois pour toutes, mais se disputent en permanence des « territoires » de compétence, un peu comme des pays qui négocient leurs frontières.",
+  },
+  {
+    id: "banalite-du-mal",
+    label: "Banalité du mal",
+    definition:
+      "Chez Hannah Arendt, notion forgée à l'occasion du procès Eichmann à Jérusalem, selon laquelle les pires crimes ne procèdent pas nécessairement d'une motivation démoniaque ou idéologique profonde, mais peuvent résulter de la simple absence de pensée critique et de l'obéissance bureaucratique routinière d'un individu par ailleurs quelconque.",
+    authors: ["hannah-arendt"],
+    x: 1580, y: 500,
+    simpleDefinition:
+      "L'idée qu'on peut commettre des crimes terribles non pas parce qu'on est un monstre, mais simplement en obéissant aux ordres sans réfléchir, comme un rouage parmi d'autres dans une administration.",
+  },
 ];

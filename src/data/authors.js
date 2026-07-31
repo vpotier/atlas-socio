@@ -186,7 +186,7 @@ export const authors = [
     ],
 
     influences: ["Durkheim", "Weber", "Marx", "levi-strauss"],
-    heirs: ["Lahire", "Boltanski", "Wacquant"],
+    heirs: ["Lahire", "Boltanski", "Wacquant", "florence-weber"],
     themes: ["Sociologie de l'éducation et de la socialisation", "Sociologie de la famille", "Sociologie des classes sociales et de la stratification"],
 
     summary:
@@ -242,7 +242,7 @@ export const authors = [
     ],
 
     influences: ["Durkheim", "Frazer"],
-    heirs: ["Radcliffe-Brown", "talcott-parsons"],
+    heirs: ["Radcliffe-Brown", "talcott-parsons", "margaret-mead"],
     themes: ["Sociologie de la religion"],
 
     summary:
@@ -521,7 +521,7 @@ export const authors = [
     ],
 
     influences: ["Mead", "Thomas"],
-    heirs: ["erving-goffman", "becker"],
+    heirs: ["erving-goffman", "becker", "anselm-strauss"],
     themes: [],
 
     summary:
@@ -649,7 +649,7 @@ export const authors = [
     ],
 
     influences: ["Hughes", "herbert-blumer"],
-    heirs: ["nicolas-dodier"],
+    heirs: ["nicolas-dodier", "andrew-abbott"],
     themes: ["Sociologie de la déviance", "Sociologie du travail et des professions"],
 
     summary:
@@ -1071,7 +1071,7 @@ export const authors = [
     ],
 
     influences: ["peter-berger", "thomas-luckmann", "Bourdieu", "Hughes"],
-    heirs: [],
+    heirs: ["florence-weber"],
     themes: ["Sociologie du travail et des professions", "Sociologie de l'éducation et de la socialisation", "Sociologie de la famille"],
 
     summary:
@@ -1245,7 +1245,7 @@ export const authors = [
     ],
 
     influences: ["max-horkheimer", "theodor-w-adorno", "Weber", "Mead"],
-    heirs: ["Axel Honneth", "Nancy Fraser"],
+    heirs: ["Axel Honneth", "Nancy Fraser", "hannah-arendt"],
     themes: ["Sociologie politique et de l'État", "Sociologie des médias et industries culturelles"],
 
     summary:
@@ -1657,7 +1657,7 @@ export const authors = [
     ],
 
     influences: ["Saussure"],
-    heirs: ["Althusser", "bourdieu", "anthony-giddens"],
+    heirs: ["Althusser", "bourdieu", "anthony-giddens", "francoise-heritier"],
     themes: [],
 
     summary:
@@ -1823,7 +1823,7 @@ export const authors = [
     ],
 
     influences: ["Saint-Simon"],
-    heirs: ["althusser", "henri-lefebvre", "nicos-poulantzas"],
+    heirs: ["althusser", "henri-lefebvre", "nicos-poulantzas", "christine-delphy"],
     themes: ["Sociologie économique", "Sociologie politique et de l'État", "Sociologie des classes sociales et de la stratification"],
 
     summary:
@@ -2016,7 +2016,7 @@ export const authors = [
     ],
 
     influences: [],
-    heirs: [],
+    heirs: ["margaret-maruani"],
     themes: ["Études de genre"],
 
     summary:
@@ -2825,7 +2825,7 @@ export const authors = [
     ],
 
     influences: ["erving-goffman"],
-    heirs: [],
+    heirs: ["margaret-maruani"],
 
     summary:
       "Sociologue américaine, professeure émérite à Berkeley, elle fonde la sociologie des émotions en montrant que celles-ci sont socialement produites et gérées selon des « règles de sentiment » implicites. Son concept de travail émotionnel désigne l'effort requis, notamment dans les métiers de service, pour ajuster ses émotions ressenties et affichées aux attentes professionnelles.",
@@ -3000,7 +3000,7 @@ export const authors = [
     ],
 
     influences: ["robert-park"],
-    heirs: ["erving-goffman", "becker"],
+    heirs: ["erving-goffman", "becker", "andrew-abbott", "anselm-strauss"],
 
     summary:
       "Formé sous la direction de Robert Park, dont il complète et transmet l'héritage à la génération suivante, il fonde une sociologie du travail et des professions attentive aux divisions du monde social : entre simples métiers et professions constituées, entre tâches valorisantes et « sale boulot » délégué à d'autres. Il forme directement Erving Goffman et Howard Becker à Chicago.",
@@ -3733,6 +3733,396 @@ export const authors = [
     simple: {
       summary:
         "Nicolas Dodier étudie comment les médecins, les ouvriers ou les juges portent des jugements dans des situations complexes, en s'appuyant sur des règles qui ne sont jamais entièrement fixées à l'avance. Il s'est aussi intéressé à la manière dont les victimes de catastrophes collectives, comme des scandales sanitaires, s'organisent pour obtenir réparation.",
+    },
+  },
+  {
+    id: "margaret-mead",
+    name: "Margaret Mead",
+    school: "Anthropologie culturelle américaine (École de Boas)",
+    period: "1901–1978",
+    birthYear: 1901,
+    deathYear: 1978,
+    x: 980,
+    y: 550,
+    color: "#B87333",
+
+    concepts: ["Déterminisme culturel", "Construction culturelle du genre"],
+
+    works: [
+      {
+        citation: "Mead M., 1928, Coming of Age in Samoa [trad. fr. dans Mœurs et sexualité en Océanie, 1963], New York, William Morrow.",
+        sources: [
+          {
+            label: "Tcherkézoff S., 2001, Le mythe occidental de la sexualité polynésienne. Margaret Mead, Derek Freeman et Samoa, 1928-1999, PUF",
+            url: "https://shs.cairn.info/le-mythe-occidental-de-la-sexualite-polynesienne--9782130514084",
+          },
+        ],
+      },
+      {
+        citation: "Mead M., 1935, Sex and Temperament in Three Primitive Societies [trad. fr. dans Mœurs et sexualité en Océanie, 1963], New York, William Morrow.",
+        sources: [
+          {
+            label: "Bert C., 2016, « Margaret Mead (1901-1978). Le poids de la culture », in Les grands penseurs des Sciences Humaines, Éditions Sciences Humaines, p. 79-82",
+            url: "https://shs.cairn.info/les-grands-penseurs-des-sciences-humaines--9782361063825-page-79",
+          },
+        ],
+      },
+    ],
+
+    influences: ["bronislaw-malinowski"],
+    heirs: [],
+    themes: ["Anthropologie", "Sociologie du genre"],
+
+    summary:
+      "Anthropologue américaine, formée par Franz Boas, elle a mené des enquêtes de terrain en Océanie (Samoa, Nouvelle-Guinée) pour montrer que les comportements attribués à l'adolescence ou aux tempéraments masculin/féminin varient considérablement selon les cultures. Son œuvre, best-seller mondial, a nourri les débats nature/culture et les études de genre, tout en suscitant une controverse scientifique majeure (Derek Freeman, 1983) sur la fiabilité de son enquête samoane.",
+
+    constellation: "fonctionnalisme",
+    consensus: 3,
+    classificationNote:
+      "À ne pas confondre avec George Herbert Mead (interactionnisme symbolique), homonyme sans lien de parenté ni de filiation intellectuelle directe. Rattachée ici au fonctionnalisme par sa proximité méthodologique avec Malinowski (enquête de terrain intensive), bien que son objet — la construction culturelle du genre et de l'adolescence — l'inscrive aussi dans la généalogie des études de genre.",
+    sources: [],
+    simple: {
+      summary:
+        "Margaret Mead a voyagé chez les Samoans et en Nouvelle-Guinée pour montrer que ce qu'on croit « naturel » chez les hommes et les femmes — le caractère, la sexualité, les rôles — change énormément d'une culture à l'autre. Ses conclusions ont depuis été très débattues, mais elles ont profondément marqué les études de genre.",
+    },
+  },
+  {
+    id: "florence-weber",
+    name: "Florence Weber",
+    school: "Ethnographie et sociologie française contemporaine",
+    period: "1958–présent",
+    birthYear: 1958,
+    deathYear: null,
+    x: 1050,
+    y: 750,
+    color: "#8C4560",
+
+    concepts: ["Économie domestique", "Enquête de terrain (méthodologie)"],
+
+    works: [
+      {
+        citation: "Beaud S., Weber F., 1997, Guide de l'enquête de terrain. Produire et analyser des données ethnographiques, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Quemin A., 1999, recension, Revue française de sociologie, 40-2, p. 430-433",
+            url: "https://www.persee.fr/doc/rfsoc_0035-2969_1999_num_40_2_5182",
+          },
+        ],
+      },
+      {
+        citation: "Weber F., 2005, Le Sang, le nom, le quotidien. Une sociologie de la parenté pratique, La Courneuve, Aux lieux d'être.",
+        sources: [
+          {
+            label: "Weber F., 2013, texte de l'auteure elle-même, « Conclusion. L'économie domestique », in Penser la parenté aujourd'hui. La force du quotidien, Éditions Rue d'Ulm, p. 201-219",
+            url: "https://shs.cairn.info/penser-la-parente-aujourd-hui--9782728805013-page-201",
+          },
+        ],
+      },
+    ],
+
+    influences: ["claude-dubar", "bourdieu"],
+    heirs: [],
+    themes: ["Méthodologie qualitative", "Sociologie économique", "Sociologie de la famille"],
+
+    summary:
+      "Sociologue et anthropologue, professeure à l'ENS, spécialiste de l'économie domestique, de la parenté contemporaine et des cultures populaires. Coautrice avec Stéphane Beaud du Guide de l'enquête de terrain, devenu la référence méthodologique de plusieurs générations d'étudiants en sciences sociales en France.",
+
+    constellation: "le-constructivisme-social",
+    consensus: 3,
+    classificationNote:
+      "Rattachée ici au constructivisme social par sa proximité avec Dubar et l'étude des constructions sociales de la parenté et de l'identité ; ses travaux méthodologiques sur l'enquête de terrain la relient aussi directement à la tradition ethnographique bourdieusienne.",
+    sources: [],
+    simple: {
+      summary:
+        "Florence Weber a écrit LE manuel de référence pour apprendre à enquêter sur le terrain en sociologie. Elle étudie aussi comment les familles s'organisent au quotidien — qui garde qui, qui hérite de quoi — à la frontière entre l'argent et l'affection.",
+    },
+  },
+  {
+    id: "margaret-maruani",
+    name: "Margaret Maruani",
+    school: "Sociologie du travail et du genre",
+    period: "1954–2022",
+    birthYear: 1954,
+    deathYear: 2022,
+    x: 750,
+    y: 800,
+    color: "#3F7A6C",
+
+    concepts: ["Sous-emploi féminin", "Distinction travail/emploi"],
+
+    works: [
+      {
+        citation: "Maruani M., 2000, Travail et emploi des femmes, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Kergoat D., 2000, recension, Cahiers du Genre, 28, p. 161-163",
+            url: "https://www.persee.fr/doc/genre_1298-6046_2000_num_28_1_1129_t1_0161_0000_1",
+          },
+        ],
+      },
+      {
+        citation: "Maruani M. (dir.), 1998, Les Nouvelles frontières de l'inégalité. Hommes et femmes sur le marché du travail, Paris, La Découverte.",
+        sources: [
+          {
+            label: "Laufer J., Ravet H. (entretien avec Maruani), 2021, « Margaret Maruani, Le travail à l'épreuve du féminisme », Travail, genre et sociétés, 46, p. 5-25",
+            url: "https://shs.cairn.info/revue-travail-genre-et-societes-2021-2-page-5",
+          },
+        ],
+      },
+    ],
+
+    influences: ["hochschild", "judith-butler"],
+    heirs: [],
+    themes: ["Sociologie du travail et des professions", "Sociologie du genre"],
+
+    summary:
+      "Sociologue française, directrice de recherche émérite au CNRS, fondatrice en 1999 de la revue Travail, genre et sociétés et du réseau international MAGE. Ses travaux ont théorisé la distinction entre travail et emploi, et mis en évidence la persistance des inégalités entre hommes et femmes malgré la féminisation continue du salariat depuis les années 1960.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 3,
+    classificationNote:
+      "Placée à proximité de Hochschild et Butler pour sa contribution majeure à la sociologie française du genre, bien que sa méthode reste avant tout statistique et quantitative, plus proche de la sociologie du travail classique que de l'interactionnisme.",
+    sources: [],
+    simple: {
+      summary:
+        "Margaret Maruani a montré un paradoxe : depuis 40 ans, de plus en plus de femmes travaillent, mais les inégalités (salaires, temps partiel, chômage) ne disparaissent pas pour autant. Elle a fondé la revue de référence sur le travail et le genre en France.",
+    },
+  },
+  {
+    id: "hannah-arendt",
+    name: "Hannah Arendt",
+    school: "Théorie politique et philosophie de l'action",
+    period: "1906–1975",
+    birthYear: 1906,
+    deathYear: 1975,
+    x: 1550,
+    y: 550,
+    color: "#DBBA00",
+
+    concepts: ["Banalité du mal", "Espace public / Vita activa"],
+
+    works: [
+      {
+        citation: "Arendt H., 1951, The Origins of Totalitarianism [trad. fr. : Les Origines du totalitarisme], New York, Harcourt.",
+        sources: [
+          {
+            label: "Hermon-Belot R., 2003, recension de l'édition Quarto (avec Eichmann à Jérusalem), Archives de sciences sociales des religions, 122, p. 19",
+            url: "https://shs.cairn.info/revue-archives-de-sciences-sociales-des-religions-2003-2-page-19",
+          },
+        ],
+      },
+      {
+        citation: "Arendt H., 1958, The Human Condition [trad. fr. : Condition de l'homme moderne], Chicago, University of Chicago Press.",
+        sources: [
+          {
+            label: "Ricœur P., 1983/2014, « Préface à Condition de l'homme moderne », in Lectures, t. 1 : Autour du politique, Le Seuil, p. 43-66",
+            url: "https://shs.cairn.info/lectures-t-1-autour-du-politique--9782020136686-page-43",
+          },
+        ],
+      },
+    ],
+
+    influences: ["jürgen-habermas"],
+    heirs: [],
+    themes: ["Théorie politique", "Philosophie de l'action"],
+
+    summary:
+      "Philosophe et théoricienne politique d'origine allemande, réfugiée aux États-Unis après l'arrivée du nazisme. Ses Origines du totalitarisme (1951) proposent une analyse historique et conceptuelle inédite du nazisme et du stalinisme ; Condition de l'homme moderne (1958) développe une théorie de l'action et de l'espace public. Son reportage sur le procès Eichmann a introduit l'expression « banalité du mal », l'une des plus discutées du XXe siècle.",
+
+    constellation: "pont",
+    consensus: 4,
+    classificationNote:
+      "Auteure-pont : sa formation philosophique (Heidegger, Jaspers) et son objet (le politique) débordent le cadre strict de la sociologie, mais son influence sur la théorie critique et sur la sociologie de l'espace public (via Habermas notamment) justifie sa présence dans l'Atlas.",
+    sources: [],
+    simple: {
+      summary:
+        "Hannah Arendt a fui l'Allemagne nazie et a consacré sa vie à comprendre comment des sociétés entières basculent dans le totalitarisme. Elle est aussi connue pour le procès d'Eichmann, où elle a inventé l'expression « banalité du mal ».",
+    },
+  },
+  {
+    id: "francoise-heritier",
+    name: "Françoise Héritier",
+    school: "Structuralisme (anthropologie de la parenté et du genre)",
+    period: "1933–2017",
+    birthYear: 1933,
+    deathYear: 2017,
+    x: 420,
+    y: 250,
+    color: "#404954",
+
+    concepts: ["Valence différentielle des sexes"],
+
+    works: [
+      {
+        citation: "Héritier F., 1981, L'Exercice de la parenté, Paris, Gallimard/Le Seuil.",
+        sources: [
+          {
+            label: "Sissa G., notice biographique, Encyclopædia Universalis",
+            url: "https://www.universalis.fr/encyclopedie/francoise-heritier/2-l-exercice-de-la-parente/",
+          },
+        ],
+      },
+      {
+        citation: "Héritier F., 1996, Masculin/Féminin. La pensée de la différence, Paris, Odile Jacob.",
+        sources: [
+          {
+            label: "Texte intégral",
+            url: "https://shs.cairn.info/masculin-feminin--9782738103383",
+          },
+        ],
+      },
+    ],
+
+    influences: ["levi-strauss"],
+    heirs: [],
+    themes: ["Anthropologie", "Sociologie du genre"],
+
+    summary:
+      "Anthropologue française, elle succède à Claude Lévi-Strauss à la chaire d'anthropologie du Collège de France en 1982. Spécialiste des systèmes de parenté (notamment chez les Samo du Burkina Faso), elle développe la notion de « valence différentielle des sexes » : un quatrième invariant anthropologique, ajouté au « tripode social » de Lévi-Strauss, qui rend compte de la hiérarchie universelle entre les sexes.",
+
+    constellation: "structuralisme",
+    consensus: 4,
+    classificationNote:
+      "Héritière directe de la méthode structurale de Lévi-Strauss, qu'elle applique systématiquement à la question du genre ; sa position tranche avec celle de Christine Delphy (féminisme matérialiste), qui récuse toute lecture en termes d'invariants anthropologiques universels.",
+    sources: [],
+    simple: {
+      summary:
+        "Françoise Héritier a succédé à Lévi-Strauss au Collège de France. Elle a montré que dans toutes les sociétés connues, même les plus égalitaires en apparence, il existe une hiérarchie entre les sexes — qu'elle appelle la « valence différentielle des sexes ».",
+    },
+  },
+  {
+    id: "christine-delphy",
+    name: "Christine Delphy",
+    school: "Féminisme matérialiste",
+    period: "1941–présent",
+    birthYear: 1941,
+    deathYear: null,
+    x: 150,
+    y: 450,
+    color: "#7A3B30",
+
+    concepts: ["Patriarcat comme mode de production"],
+
+    works: [
+      {
+        citation: "Delphy C., 1998, L'Ennemi principal, t. 1 : Économie politique du patriarcat, Paris, Syllepse.",
+        sources: [
+          {
+            label: "Moreau de Bellaing L., 2000, recension, L'Homme et la société, 136-137, p. 211-212",
+            url: "https://www.persee.fr/doc/homso_0018-4306_2000_num_136_2_3661",
+          },
+        ],
+      },
+    ],
+
+    influences: ["marx"],
+    heirs: [],
+    themes: ["Sociologie du genre", "Sociologie marxiste"],
+
+    summary:
+      "Sociologue française, chercheuse au CNRS depuis 1966, cofondatrice avec Simone de Beauvoir de la revue Nouvelles Questions féministes. Figure du féminisme matérialiste, elle analyse l'oppression des femmes non comme un fait naturel mais comme un système d'exploitation économique structuré par le travail domestique gratuit, qu'elle qualifie de mode de production patriarcal distinct du capitalisme.",
+
+    constellation: "la-sociologie-marxiste",
+    consensus: 3,
+    classificationNote:
+      "Rattachée à la sociologie marxiste par sa méthode (analyse en termes de rapports de production), tout en l'appliquant à un objet — le genre — que Marx n'avait pas théorisé ; en tension explicite avec les approches anthropologiques universalistes comme celle de Françoise Héritier.",
+    sources: [],
+    simple: {
+      summary:
+        "Christine Delphy pense que la domination des femmes n'est pas « naturelle » mais fonctionne comme un système économique, un peu comme Marx analysait le capitalisme — avec le travail domestique gratuit comme rouage central. Elle a cofondé une revue féministe avec Simone de Beauvoir.",
+    },
+  },
+  {
+    id: "andrew-abbott",
+    name: "Andrew Abbott",
+    school: "École de Chicago (sociologie des professions et des méthodes)",
+    period: "1948–présent",
+    birthYear: 1948,
+    deathYear: null,
+    x: 600,
+    y: 650,
+    color: "#3F7A6C",
+
+    concepts: ["Écologie des juridictions professionnelles"],
+
+    works: [
+      {
+        citation: "Abbott A., 1988, The System of Professions. An Essay on the Division of Expert Labor, Chicago, University of Chicago Press.",
+        sources: [
+          {
+            label: "Fabiani J.-L., 2003, « Pour en finir avec la réalité unilinéaire. Le parcours méthodologique d'Andrew Abbott », Annales, 58, p. 549-565",
+            url: "https://shs.cairn.info/revue-annales-2003-3-page-549",
+          },
+        ],
+      },
+    ],
+
+    influences: ["hughes", "becker"],
+    heirs: [],
+    themes: ["Sociologie du travail et des professions", "Méthodologie"],
+
+    summary:
+      "Sociologue américain, professeur à l'Université de Chicago, il renouvelle la sociologie des professions en étudiant non pas chaque profession isolément mais le système entier des professions en concurrence pour le contrôle de « juridictions » d'expertise. Fondateur de l'analyse séquentielle en sciences sociales, il a aussi renouvelé la réflexion épistémologique sur les méthodes qualitatives et quantitatives.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 3,
+    classificationNote:
+      "Rattaché à la deuxième génération de l'École de Chicago par sa formation et son objet (les professions, déjà étudiées par Hughes), bien que son cadre théorique — une « écologie » des juridictions en compétition — s'écarte de l'interactionnisme symbolique classique.",
+    sources: [],
+    simple: {
+      summary:
+        "Andrew Abbott étudie comment les métiers (médecins, avocats, etc.) se disputent des territoires d'expertise, un peu comme des pays qui négocient leurs frontières. Il a aussi inventé des méthodes pour analyser mathématiquement des trajectoires de vie entières.",
+    },
+  },
+  {
+    id: "anselm-strauss",
+    name: "Anselm Strauss",
+    school: "Interactionnisme symbolique (École de Chicago, 2e génération)",
+    period: "1916–1996",
+    birthYear: 1916,
+    deathYear: 1996,
+    x: 620,
+    y: 600,
+    color: "#3F7A6C",
+
+    concepts: ["Ordre négocié", "Grounded theory (théorie ancrée)"],
+
+    works: [
+      {
+        citation: "Glaser B., Strauss A., 1965, Awareness of Dying, Chicago, Aldine.",
+        sources: [
+          {
+            label: "Baszanger I. (dir.), 1992, La trame de la négociation. Sociologie qualitative et interactionnisme, Paris, L'Harmattan (anthologie de textes traduits, avec introduction)",
+            url: "https://www.furet.com/livres/la-trame-de-la-negociation-anselm-strauss-9782738414113.html",
+          },
+        ],
+      },
+      {
+        citation: "Glaser B., Strauss A., 1967, The Discovery of Grounded Theory: Strategies for Qualitative Research, Chicago, Aldine.",
+        sources: [
+          {
+            label: "Baszanger I. (dir.), 1992, La trame de la négociation. Sociologie qualitative et interactionnisme, Paris, L'Harmattan (même recueil)",
+            url: "https://www.furet.com/livres/la-trame-de-la-negociation-anselm-strauss-9782738414113.html",
+          },
+        ],
+      },
+    ],
+
+    influences: ["herbert-blumer", "hughes"],
+    heirs: [],
+    themes: ["Sociologie de la médecine et de la santé", "Méthodologie qualitative"],
+
+    summary:
+      "Sociologue américain, représentant de la deuxième génération de l'École de Chicago, formé par Blumer et Hughes. Avec Barney Glaser, il cofonde la « grounded theory » (théorie ancrée), une méthode pour construire des théories directement à partir des données de terrain plutôt qu'à partir d'hypothèses préétablies. Ses travaux sur la mort à l'hôpital (Awareness of Dying) fondent la sociologie de la fin de vie.",
+
+    constellation: "l-interactionnisme-symbolique",
+    consensus: 4,
+    classificationNote:
+      "Chaînon entre la première génération de l'École de Chicago (Blumer, Hughes, ses maîtres directs) et la sociologie de la médecine contemporaine ; sa méthode, la grounded theory, est devenue un standard des méthodes qualitatives bien au-delà de l'interactionnisme.",
+    sources: [],
+    simple: {
+      summary:
+        "Anselm Strauss a étudié comment les hôpitaux gèrent l'annonce de la mort aux patients, et a coinventé une méthode (la « grounded theory ») pour construire des théories directement à partir du terrain, sans partir d'hypothèses toutes faites.",
     },
   },
 ];

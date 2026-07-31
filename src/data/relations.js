@@ -1784,4 +1784,160 @@ export const relations = [
     simpleExplanation:
       "Dodier doit aussi beaucoup à l'ethnométhodologie de Garfinkel, en particulier pour son attention aux méthodes concrètes par lesquelles les acteurs donnent sens à leurs situations de travail.",
   },
+  {
+    source: "margaret-mead",
+    target: "bronislaw-malinowski",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "Mead partage avec Malinowski la méthode de l'enquête de terrain intensive comme fondement de l'anthropologie moderne, tout en orientant ses travaux vers la question de la construction culturelle du genre et de l'adolescence plutôt que vers l'échange et la réciprocité.",
+    sources: ["Encyclopædia Universalis, article Margaret Mead"],
+    simpleExplanation:
+      "Mead et Malinowski partagent la même méthode : aller vivre longtemps sur le terrain pour comprendre une culture de l'intérieur, plutôt que d'en juger à distance.",
+  },
+  {
+    source: "florence-weber",
+    target: "claude-dubar",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "Florence Weber et Claude Dubar partagent un ancrage dans la sociologie française contemporaine attentive aux constructions sociales de l'identité et de la socialisation, appliquées l'une à la parenté et à l'économie domestique, l'autre au monde du travail.",
+    sources: ["Site ENS, Florence Weber"],
+    simpleExplanation:
+      "Florence Weber et Claude Dubar étudient tous deux, chacun à sa manière, comment les identités et les liens sociaux se construisent concrètement dans la vie quotidienne.",
+  },
+  {
+    source: "florence-weber",
+    target: "bourdieu",
+    type: "heritage",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "Le Guide de l'enquête de terrain de Beaud et Weber s'inscrit dans la tradition de l'ethnographie réflexive bourdieusienne, en particulier pour l'attention portée aux classes populaires et à la vigilance épistémologique du chercheur sur le terrain.",
+    sources: ["Quemin A., 1999, recension, Revue française de sociologie, 40-2"],
+    simpleExplanation:
+      "La méthode d'enquête de terrain de Florence Weber doit beaucoup à la tradition de vigilance critique sur soi-même que Bourdieu a établie en sociologie.",
+  },
+  {
+    source: "margaret-maruani",
+    target: "hochschild",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "Maruani et Hochschild partagent un objet commun — le travail des femmes et sa dévalorisation sociale — bien que la première privilégie l'analyse statistique du marché du travail et la seconde l'ethnographie du travail émotionnel.",
+    sources: ["AFS, notice Margaret Maruani (1954-2022)"],
+    simpleExplanation:
+      "Maruani et Hochschild étudient toutes deux comment le travail des femmes reste dévalorisé, l'une à travers les statistiques de l'emploi, l'autre à travers l'observation du travail émotionnel.",
+  },
+  {
+    source: "margaret-maruani",
+    target: "judith-butler",
+    type: "dialogue",
+    strength: 1,
+    consensus: "faible",
+    justification:
+      "Maruani mobilise la notion de genre dans ses travaux sur le marché du travail, dans un dialogue théorique large avec les études de genre dont Butler est une référence centrale, sans proximité méthodologique directe.",
+    sources: ["Cerlis, notice Margaret Maruani"],
+    simpleExplanation:
+      "Maruani utilise la notion de genre développée notamment par Butler, mais l'applique à l'étude concrète du marché du travail plutôt qu'à la théorie de l'identité.",
+  },
+  {
+    source: "hannah-arendt",
+    target: "jürgen-habermas",
+    type: "dialogue",
+    strength: 3,
+    consensus: "moyen",
+    justification:
+      "Habermas s'appuie explicitement et discute la conception arendtienne du pouvoir et de l'espace public communicationnel dans ses propres travaux sur la théorie de l'agir communicationnel et l'espace public.",
+    sources: ["Habermas J., 1977, « Hannah Arendt's Communications Concept of Power », Social Research, 44"],
+    simpleExplanation:
+      "Habermas reprend et discute les idées d'Arendt sur le pouvoir et l'espace public pour construire sa propre théorie de la communication en politique.",
+  },
+  {
+    source: "francoise-heritier",
+    target: "levi-strauss",
+    type: "heritage",
+    strength: 5,
+    consensus: "élevé",
+    justification:
+      "Héritier succède directement à Lévi-Strauss à la chaire d'anthropologie du Collège de France et reprend explicitement sa méthode structurale, qu'elle applique à la question du genre en ajoutant la « valence différentielle des sexes » comme quatrième pilier au « tripode social » lévi-straussien.",
+    sources: ["Encyclopædia Universalis, article Françoise Héritier"],
+    simpleExplanation:
+      "Françoise Héritier a pris la suite de Lévi-Strauss au Collège de France et a utilisé sa méthode pour étudier un sujet qu'il n'avait pas développé : la hiérarchie entre les sexes.",
+  },
+  {
+    source: "christine-delphy",
+    target: "francoise-heritier",
+    type: "tension",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "Delphy récuse la lecture en termes d'invariants anthropologiques universels défendue par Héritier, lui préférant une analyse strictement matérialiste et historique de l'oppression des femmes comme rapport social construit, non comme fait de nature transculturel.",
+    sources: ["Cairn.info, « À plusieurs voix sur Masculin/Féminin II »"],
+    simpleExplanation:
+      "Delphy conteste l'idée d'Héritier selon laquelle la hiérarchie entre les sexes serait un invariant universel : pour elle, cette hiérarchie est une construction sociale et économique, pas un fait de nature.",
+  },
+  {
+    source: "christine-delphy",
+    target: "marx",
+    type: "heritage",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Delphy transpose la méthode matérialiste marxiste — l'analyse en termes de rapports de production et d'exploitation — à l'oppression des femmes, qu'elle théorise comme un mode de production domestique distinct du mode de production capitaliste.",
+    sources: ["Wikipédia, article Christine Delphy"],
+    simpleExplanation:
+      "Delphy applique à l'oppression des femmes la même méthode que Marx utilisait pour analyser le capitalisme : chercher qui exploite le travail de qui.",
+  },
+  {
+    source: "andrew-abbott",
+    target: "hughes",
+    type: "heritage",
+    strength: 3,
+    consensus: "élevé",
+    justification:
+      "Abbott inscrit explicitement son étude du système des professions dans la continuité de la sociologie du travail et des professions initiée par Everett Hughes à l'École de Chicago, tout en la reformulant dans un cadre écologique et concurrentiel.",
+    sources: ["Cairn.info, « Contextes et temporalités dans la sociologie processuelle d'Andrew Abbott »"],
+    simpleExplanation:
+      "Abbott poursuit, en la renouvelant, l'étude des métiers et des professions initiée par Hughes à l'École de Chicago.",
+  },
+  {
+    source: "andrew-abbott",
+    target: "becker",
+    type: "dialogue",
+    strength: 2,
+    consensus: "moyen",
+    justification:
+      "Abbott partage avec Becker l'héritage méthodologique de l'École de Chicago (étude qualitative et empirique des mondes professionnels) tout en développant des outils formels et quantitatifs (analyse séquentielle) que Becker n'a pas mobilisés.",
+    sources: ["Fabiani J.-L., 2003, Annales, 58, p. 549-565"],
+    simpleExplanation:
+      "Abbott partage avec Becker la tradition d'enquête de l'École de Chicago, mais y ajoute des méthodes mathématiques pour analyser des trajectoires de vie entières.",
+  },
+  {
+    source: "anselm-strauss",
+    target: "herbert-blumer",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Strauss est formé directement par Blumer à l'Université de Chicago et reprend le cadre théorique de l'interactionnisme symbolique, qu'il prolonge vers l'analyse du travail, de la négociation et de l'ordre social négocié.",
+    sources: ["Baszanger I., 1998, « The Work Sites of an American Interactionist », Symbolic Interaction, 21"],
+    simpleExplanation:
+      "Strauss a été formé par Blumer et a repris ses idées sur l'interaction sociale, en les appliquant notamment au monde du travail et de l'hôpital.",
+  },
+  {
+    source: "anselm-strauss",
+    target: "hughes",
+    type: "heritage",
+    strength: 4,
+    consensus: "élevé",
+    justification:
+      "Hughes est le professeur direct de Strauss à Chicago ; l'attention de Strauss au travail, aux carrières et aux mondes professionnels prolonge directement les intuitions de Hughes sur le travail comme fait social central.",
+    sources: ["Baszanger I., 1998, « The Work Sites of an American Interactionist », Symbolic Interaction, 21"],
+    simpleExplanation:
+      "Hughes a été le professeur direct de Strauss et lui a transmis son attention au travail et aux carrières comme objets sociologiques centraux.",
+  },
 ];

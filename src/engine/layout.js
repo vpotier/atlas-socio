@@ -173,6 +173,66 @@ export function computeLayout(authors, concepts, relations) {
     authors.map((a) => [a.id, a.constellation])
   );
 
+  // ---------------------------------------------------------------------
+  // Cibles personnalisées pour les auteurs-ponts ("constellation" = "pont").
+  // Plutôt que de tous les attirer vers un seul centre partagé — ce qui les
+  // regroupe artificiellement alors qu'ils relient des courants et des
+  // époques très différents — chacun est attiré vers la moyenne pondérée
+  // des centres des constellations avec lesquelles IL a des relations
+  // réelles dans relations.js. Un pont sans relation cross-constellation
+  // repérée retombe sur le centre générique de "pont".
+  // ---------------------------------------------------------------------
+  const BRIDGE_CONSTELLATION = "pont";
+
+  const bridgeAuthorTargets = {};
+
+  authors
+    .filter((a) => a.constellation === BRIDGE_CONSTELLATION)
+    .forEach((a) => {
+      const linked = relations.filter(
+        (r) => r.source === a.id || r.target === a.id
+      );
+
+      let sumX = 0;
+      let sumY = 0;
+      let sumW = 0;
+
+      linked.forEach((r) => {
+        const otherId = r.source === a.id ? r.target : r.source;
+        const otherConst = authorConstellation.get(otherId);
+
+        if (!otherConst || otherConst === BRIDGE_CONSTELLATION) return;
+
+        const c = constellationCenters[otherConst];
+        if (!c) return;
+
+        const w = r.strength || 1;
+        sumX += c.x * w;
+        sumY += c.y * w;
+        sumW += w;
+      });
+
+      bridgeAuthorTargets[a.id] =
+        sumW > 0
+          ? { x: sumX / sumW, y: sumY / sumW }
+          : constellationCenters[BRIDGE_CONSTELLATION] ?? center;
+    });
+
+  // Cible de clustering effective d'un nœud (auteur ou concept) : celle
+  // de son auteur-pont personnalisé si applicable, sinon celle de sa
+  // constellation.
+  const clusterTarget = (d) => {
+    const anchorAuthorId =
+      d.kind === "author" ? d.id : d.homeAuthorId;
+
+    if (anchorAuthorId && bridgeAuthorTargets[anchorAuthorId]) {
+      return bridgeAuthorTargets[anchorAuthorId];
+    }
+
+    return constellationCenters[d.constellation] ?? center;
+  };
+
+
   // Degré de chaque auteur (nombre de relations où il apparaît, en
   // source ou en cible) : sert à la fois à agrandir visuellement les
   // auteurs les plus centraux et à leur donner davantage d'espace de
@@ -211,6 +271,7 @@ export function computeLayout(authors, concepts, relations) {
       kind: "concept",
       labelLength: c.label.length,
       constellation: authorConst,
+      homeAuthorId: c.authors[0],
       x: c2.x + (random() - 0.5) * 150,
       y: c2.y + (random() - 0.5) * 150,
     };
@@ -302,19 +363,13 @@ export function computeLayout(authors, concepts, relations) {
     .force(
       "clusterX",
       d3
-        .forceX((d) => {
-          const c = constellationCenters[d.constellation];
-          return c ? c.x : center.x;
-        })
+        .forceX((d) => clusterTarget(d).x)
         .strength(0.75)
     )
     .force(
       "clusterY",
       d3
-        .forceY((d) => {
-          const c = constellationCenters[d.constellation];
-          return c ? c.y : center.y;
-        })
+        .forceY((d) => clusterTarget(d).y)
         .strength(0.75)
     )
     .stop();
@@ -371,6 +426,37 @@ export function computeLayout(authors, concepts, relations) {
         n.y += uy * shortfall;
       });
     }
+  });
+
+  // Filet de sécurité final pour les CONCEPTS : quel que soit le résultat
+  // de la simulation de forces (collisions, liens concurrents, auteurs-
+  // ponts déplacés juste au-dessus...), chaque concept est réancré à une
+  // distance fixe et courte de son auteur de référence (le premier auteur
+  // listé dans concepts.js). On ne conserve QUE l'angle produit par la
+  // simulation — pour que les concepts d'un même auteur restent répartis
+  // autour de lui plutôt que superposés — mais plus jamais la distance :
+  // un concept ne peut structurellement plus déborder du halo de son
+  // auteur, même visuellement, même dans les cas les plus tendus du
+  // graphe (auteur très connecté, forte collision locale, etc.).
+  const authorFinalPositions = new Map();
+  authorNodes.forEach((n) =>
+    authorFinalPositions.set(n.id, { x: n.x, y: n.y })
+  );
+
+  const CONCEPT_ANCHOR_DISTANCE = 95;
+
+  conceptNodes.forEach((n) => {
+    const homeAuthor = authorFinalPositions.get(n.homeAuthorId);
+    if (!homeAuthor) return;
+
+    const dx = n.x - homeAuthor.x;
+    const dy = n.y - homeAuthor.y;
+    const dist = Math.hypot(dx, dy) || 1;
+    const ux = dx / dist;
+    const uy = dy / dist;
+
+    n.x = homeAuthor.x + ux * CONCEPT_ANCHOR_DISTANCE;
+    n.y = homeAuthor.y + uy * CONCEPT_ANCHOR_DISTANCE;
   });
 
   const authorXs = authorNodes.map((n) => n.x);

@@ -218,6 +218,32 @@ export function computeLayout(authors, concepts, relations) {
           : constellationCenters[BRIDGE_CONSTELLATION] ?? center;
     });
 
+  // Sécurité : une cible pondérée peut, par construction, tomber tout
+  // près du centre d'UNE des constellations qui l'attirent (voire
+  // dedans) — ce qui donnerait l'impression fausse qu'un auteur-pont
+  // "appartient" à cette constellation plutôt que de simplement pencher
+  // vers elle. On repousse donc chaque cible pour qu'elle reste à une
+  // distance minimale de TOUTE constellation non-pont, tout en
+  // conservant la direction (donc le sens) donnée par la moyenne
+  // pondérée.
+  const BRIDGE_SAFE_DISTANCE = 480;
+
+  Object.values(bridgeAuthorTargets).forEach((target) => {
+    Object.entries(constellationCenters).forEach(([constId, c]) => {
+      if (constId === BRIDGE_CONSTELLATION) return;
+
+      const dx = target.x - c.x;
+      const dy = target.y - c.y;
+      const dist = Math.hypot(dx, dy) || 1;
+
+      if (dist < BRIDGE_SAFE_DISTANCE) {
+        const push = BRIDGE_SAFE_DISTANCE - dist;
+        target.x += (dx / dist) * push;
+        target.y += (dy / dist) * push;
+      }
+    });
+  });
+
   // Cible de clustering effective d'un nœud (auteur ou concept) : celle
   // de son auteur-pont personnalisé si applicable, sinon celle de sa
   // constellation.
@@ -428,88 +454,126 @@ export function computeLayout(authors, concepts, relations) {
     }
   });
 
+  // Filet de sécurité pour les AUTEURS : la simulation (collisions avec
+  // des auteurs-ponts désormais mobiles, notamment) peut occasionnellement
+  // repousser un auteur loin de sa cible de clustering — au point de le
+  // faire sortir visuellement du halo de sa propre constellation. On
+  // ramène donc tout auteur dont la distance à sa cible dépasse un
+  // maximum raisonnable, en conservant la direction produite par la
+  // simulation.
+  const MAX_AUTHOR_DRIFT = 420;
+
+  authorNodes.forEach((n) => {
+    const target = clusterTarget(n);
+    const dx = n.x - target.x;
+    const dy = n.y - target.y;
+    const dist = Math.hypot(dx, dy) || 1;
+
+    if (dist > MAX_AUTHOR_DRIFT) {
+      const ux = dx / dist;
+      const uy = dy / dist;
+      n.x = target.x + ux * MAX_AUTHOR_DRIFT;
+      n.y = target.y + uy * MAX_AUTHOR_DRIFT;
+    }
+  });
+
+  // Deuxième filet de sécurité, spécifique aux auteurs-ponts : la
+  // poussée calculée plus haut (bridgeAuthorTargets) se base sur les
+  // centres MACRO des constellations, calculés avant que les auteurs
+  // individuels ne se stabilisent. Un auteur ordinaire peut, lui aussi,
+  // avoir dérivé par rapport à ce centre macro pendant la simulation —
+  // si bien que le centre RÉEL (le centroïde effectif de ses auteurs,
+  // une fois tout stabilisé par le clamp ci-dessus) peut être notablement
+  // différent, et donc plus proche d'un auteur-pont que prévu. On
+  // recalcule ici les centroïdes réels de chaque constellation à partir
+  // des positions désormais stabilisées, et on repousse au besoin chaque
+  // auteur-pont qui se retrouverait trop près de l'une d'elles — cette
+  // fois de façon garantie, puisque basée sur des positions réelles et
+  // non plus sur une estimation.
+  const BRIDGE_SAFE_DISTANCE_FINAL = 460;
+
+  const centroidGroups = {};
+  authorNodes
+    .filter((n) => n.constellation !== BRIDGE_CONSTELLATION)
+    .forEach((n) => {
+      if (!centroidGroups[n.constellation]) {
+        centroidGroups[n.constellation] = [];
+      }
+      centroidGroups[n.constellation].push(n);
+    });
+
+  const realCentroids = {};
+  Object.entries(centroidGroups).forEach(([id, list]) => {
+    realCentroids[id] = {
+      x: list.reduce((s, n) => s + n.x, 0) / list.length,
+      y: list.reduce((s, n) => s + n.y, 0) / list.length,
+    };
+  });
+
+  authorNodes
+    .filter((n) => n.constellation === BRIDGE_CONSTELLATION)
+    .forEach((n) => {
+      Object.values(realCentroids).forEach((c) => {
+        const dx = n.x - c.x;
+        const dy = n.y - c.y;
+        const dist = Math.hypot(dx, dy) || 1;
+
+        if (dist < BRIDGE_SAFE_DISTANCE_FINAL) {
+          const push = BRIDGE_SAFE_DISTANCE_FINAL - dist;
+          n.x += (dx / dist) * push;
+          n.y += (dy / dist) * push;
+        }
+      });
+    });
+
   // Filet de sécurité final pour les CONCEPTS : quel que soit le résultat
   // de la simulation de forces (collisions, liens concurrents, auteurs-
   // ponts déplacés juste au-dessus...), chaque concept est réancré à une
   // distance fixe et courte de son auteur de référence (le premier auteur
-  // listé dans concepts.js). On ne conserve QUE l'angle produit par la
-  // simulation — pour que les concepts d'un même auteur restent répartis
-  // autour de lui plutôt que superposés — mais plus jamais la distance :
-  // un concept ne peut structurellement plus déborder du halo de son
-  // auteur, même visuellement, même dans les cas les plus tendus du
-  // graphe (auteur très connecté, forte collision locale, etc.).
+  // listé dans concepts.js) — un concept ne peut structurellement plus
+  // déborder du halo de son auteur, même dans les cas les plus tendus du
+  // graphe.
+  //
+  // Les concepts d'un même auteur sont en plus répartis à intervalles
+  // RÉGULIERS autour de lui (plutôt que de conserver tels quels leurs
+  // angles individuels issus de la simulation) : sinon plusieurs concepts
+  // d'un même auteur pouvaient rester groupés du même côté et voir leurs
+  // étiquettes se chevaucher (c'était le cas des 4 concepts de Simmel).
+  // L'angle de départ du groupe reste néanmoins celui, moyen, trouvé par
+  // la simulation, pour rester cohérent avec l'espace libre alentour.
   const authorFinalPositions = new Map();
   authorNodes.forEach((n) =>
     authorFinalPositions.set(n.id, { x: n.x, y: n.y })
   );
 
-  const CONCEPT_ANCHOR_DISTANCE = 95;
+  const CONCEPT_ANCHOR_DISTANCE = 110;
 
+  const conceptsByAuthor = new Map();
   conceptNodes.forEach((n) => {
-    const homeAuthor = authorFinalPositions.get(n.homeAuthorId);
+    if (!conceptsByAuthor.has(n.homeAuthorId)) {
+      conceptsByAuthor.set(n.homeAuthorId, []);
+    }
+    conceptsByAuthor.get(n.homeAuthorId).push(n);
+  });
+
+  conceptsByAuthor.forEach((group, authorId) => {
+    const homeAuthor = authorFinalPositions.get(authorId);
     if (!homeAuthor) return;
 
-    const dx = n.x - homeAuthor.x;
-    const dy = n.y - homeAuthor.y;
-    const dist = Math.hypot(dx, dy) || 1;
-    const ux = dx / dist;
-    const uy = dy / dist;
+    const avgDx =
+      group.reduce((s, n) => s + (n.x - homeAuthor.x), 0) / group.length;
+    const avgDy =
+      group.reduce((s, n) => s + (n.y - homeAuthor.y), 0) / group.length;
+    const startAngle = Math.atan2(avgDy, avgDx);
 
-    n.x = homeAuthor.x + ux * CONCEPT_ANCHOR_DISTANCE;
-    n.y = homeAuthor.y + uy * CONCEPT_ANCHOR_DISTANCE;
+    group.forEach((n, i) => {
+      const angle = startAngle + (i / group.length) * 2 * Math.PI;
+      n.x = homeAuthor.x + Math.cos(angle) * CONCEPT_ANCHOR_DISTANCE;
+      n.y = homeAuthor.y + Math.sin(angle) * CONCEPT_ANCHOR_DISTANCE;
+    });
   });
 
   const authorXs = authorNodes.map((n) => n.x);
   const authorYs = authorNodes.map((n) => n.y);
 
-  const authorCentroidX =
-    authorXs.reduce((sum, x) => sum + x, 0) / authorXs.length;
-  const authorCentroidY =
-    authorYs.reduce((sum, y) => sum + y, 0) / authorYs.length;
-
-  const xs = nodes.map((n) => n.x);
-  const ys = nodes.map((n) => n.y);
-
-  const minX = Math.min(...xs);
-  const maxX = Math.max(...xs);
-  const minY = Math.min(...ys);
-  const maxY = Math.max(...ys);
-
-  // Canevas dimensionné simplement sur l'étendue réelle du contenu (pas
-  // de gonflement artificiel). Le centre du contenu (utilisé pour viser
-  // la caméra au chargement) est calculé et exposé séparément, sans
-  // supposer qu'il tombe pile au centre géométrique du canevas.
-  nodes.forEach((n) => {
-    n.x = n.x - minX + PADDING;
-    n.y = n.y - minY + PADDING;
-  });
-
-  const width = maxX - minX + PADDING * 2;
-  const height = maxY - minY + PADDING * 2;
-
-  const centerX = authorCentroidX - minX + PADDING;
-  const centerY = authorCentroidY - minY + PADDING;
-
-  const authorPositions = new Map();
-  const conceptPositions = new Map();
-
-  nodes.forEach((n) => {
-    if (n.kind === "author") {
-      authorPositions.set(n.id, { x: n.x, y: n.y, degree: n.degree });
-    } else {
-      conceptPositions.set(n.id.replace("concept:", ""), {
-        x: n.x,
-        y: n.y,
-      });
-    }
-  });
-
-  return {
-    authorPositions,
-    conceptPositions,
-    width,
-    height,
-    centerX,
-    centerY,
-  };
-}
+  const authorCen

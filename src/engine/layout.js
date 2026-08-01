@@ -576,4 +576,54 @@ export function computeLayout(authors, concepts, relations) {
   const authorXs = authorNodes.map((n) => n.x);
   const authorYs = authorNodes.map((n) => n.y);
 
-  const authorCen
+  const authorCentroidX =
+    authorXs.reduce((sum, x) => sum + x, 0) / authorXs.length;
+  const authorCentroidY =
+    authorYs.reduce((sum, y) => sum + y, 0) / authorYs.length;
+
+  const xs = nodes.map((n) => n.x);
+  const ys = nodes.map((n) => n.y);
+
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+
+  // Canevas dimensionné simplement sur l'étendue réelle du contenu (pas
+  // de gonflement artificiel). Le centre du contenu (utilisé pour viser
+  // la caméra au chargement) est calculé et exposé séparément, sans
+  // supposer qu'il tombe pile au centre géométrique du canevas.
+  nodes.forEach((n) => {
+    n.x = n.x - minX + PADDING;
+    n.y = n.y - minY + PADDING;
+  });
+
+  const width = maxX - minX + PADDING * 2;
+  const height = maxY - minY + PADDING * 2;
+
+  const centerX = authorCentroidX - minX + PADDING;
+  const centerY = authorCentroidY - minY + PADDING;
+
+  const authorPositions = new Map();
+  const conceptPositions = new Map();
+
+  nodes.forEach((n) => {
+    if (n.kind === "author") {
+      authorPositions.set(n.id, { x: n.x, y: n.y, degree: n.degree });
+    } else {
+      conceptPositions.set(n.id.replace("concept:", ""), {
+        x: n.x,
+        y: n.y,
+      });
+    }
+  });
+
+  return {
+    authorPositions,
+    conceptPositions,
+    width,
+    height,
+    centerX,
+    centerY,
+  };
+}

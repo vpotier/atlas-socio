@@ -56,14 +56,14 @@ export default function Clusters({
           centerSource.reduce((sum, m) => sum + m.y, 0) /
           centerSource.length;
 
-        const maxRadius = 140 + members.length * 28;
+        const maxRadius = 180 + members.length * 32;
 
         const radius = Math.min(
           Math.max(
             ...members.map((m) =>
               Math.hypot(m.x - cx, m.y - cy)
             )
-          ) + 90,
+          ) + 110,
           maxRadius
         );
 

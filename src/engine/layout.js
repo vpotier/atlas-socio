@@ -456,26 +456,106 @@ export function computeLayout(authors, concepts, relations) {
 
   // Filet de sécurité pour les AUTEURS : la simulation (collisions avec
   // des auteurs-ponts désormais mobiles, notamment) peut occasionnellement
-  // repousser un auteur loin de sa cible de clustering — au point de le
-  // faire sortir visuellement du halo de sa propre constellation. On
-  // ramène donc tout auteur dont la distance à sa cible dépasse un
-  // maximum raisonnable, en conservant la direction produite par la
-  // simulation.
+  // repousser un auteur loin de sa constellation — au point de le faire
+  // sortir visuellement de son propre halo. Le halo, lui, est dessiné
+  // dans Clusters.jsx à partir : (1) du centroïde des AUTEURS réellement
+  // obtenus (pas d'un centre macro théorique), et (2) d'un rayon maximal
+  // qui dépend du nombre de membres (auteurs + concepts) de la
+  // constellation — les petites constellations ont donc un halo plus
+  // serré. Pour que le clamp corresponde exactement à ce que le halo
+  // affichera, on reproduit ici le même calcul de rayon, et on clame
+  // chaque auteur par rapport au centroïde RÉEL de sa constellation (et
+  // non plus par rapport au centre macro pré-simulation).
+  const memberCountByConstellation = {};
+  authors.forEach((a) => {
+    memberCountByConstellation[a.constellation] =
+      (memberCountByConstellation[a.constellation] || 0) + 1;
+  });
+  concepts.forEach((c) => {
+    const hc = authorConstellation.get(c.authors[0]);
+    if (!hc) return;
+    memberCountByConstellation[hc] =
+      (memberCountByConstellation[hc] || 0) + 1;
+  });
+
+  // Doit rester cohérent avec la formule de maxRadius dans Clusters.jsx.
+  const haloMaxRadius = (constellationId) =>
+    180 + (memberCountByConstellation[constellationId] || 1) * 32;
+
+  // Marge réservée pour que les CONCEPTS d'un auteur, qui s'étendent
+  // eux-mêmes au-delà de lui (voir plus bas), restent également à
+  // l'intérieur du halo une fois l'auteur positionné.
+  const CONCEPT_CLEARANCE = 250; // >= rayon d'auteur max (174) + CONCEPT_BASE_CLEARANCE (70)
+
+  const computeRealCentroids = () => {
+    const groups = {};
+    authorNodes
+      .filter((n) => n.constellation !== BRIDGE_CONSTELLATION)
+      .forEach((n) => {
+        if (!groups[n.constellation]) groups[n.constellation] = [];
+        groups[n.constellation].push(n);
+      });
+
+    const result = {};
+    Object.entries(groups).forEach(([id, list]) => {
+      result[id] = {
+        x: list.reduce((s, n) => s + n.x, 0) / list.length,
+        y: list.reduce((s, n) => s + n.y, 0) / list.length,
+      };
+    });
+    return result;
+  };
+
+  // Deux passes : la première rapproche déjà les auteurs de leur propre
+  // centroïde réel (qui bouge légèrement à chaque auteur ramené vers le
+  // groupe) ; la seconde, sur un centroïde stabilisé, garantit le
+  // résultat final.
+  for (let pass = 0; pass < 2; pass++) {
+    const realCentroidsForClamp = computeRealCentroids();
+
+    authorNodes
+      .filter((n) => n.constellation !== BRIDGE_CONSTELLATION)
+      .forEach((n) => {
+        const c = realCentroidsForClamp[n.constellation];
+        if (!c) return;
+
+        const maxDrift = Math.max(
+          60,
+          haloMaxRadius(n.constellation) - CONCEPT_CLEARANCE
+        );
+
+        const dx = n.x - c.x;
+        const dy = n.y - c.y;
+        const dist = Math.hypot(dx, dy) || 1;
+
+        if (dist > maxDrift) {
+          const ux = dx / dist;
+          const uy = dy / dist;
+          n.x = c.x + ux * maxDrift;
+          n.y = c.y + uy * maxDrift;
+        }
+      });
+  }
+
+  // Les auteurs-ponts suivent leur propre logique (cible personnalisée),
+  // avec la même distance maximale générique qu'avant.
   const MAX_AUTHOR_DRIFT = 420;
 
-  authorNodes.forEach((n) => {
-    const target = clusterTarget(n);
-    const dx = n.x - target.x;
-    const dy = n.y - target.y;
-    const dist = Math.hypot(dx, dy) || 1;
+  authorNodes
+    .filter((n) => n.constellation === BRIDGE_CONSTELLATION)
+    .forEach((n) => {
+      const target = clusterTarget(n);
+      const dx = n.x - target.x;
+      const dy = n.y - target.y;
+      const dist = Math.hypot(dx, dy) || 1;
 
-    if (dist > MAX_AUTHOR_DRIFT) {
-      const ux = dx / dist;
-      const uy = dy / dist;
-      n.x = target.x + ux * MAX_AUTHOR_DRIFT;
-      n.y = target.y + uy * MAX_AUTHOR_DRIFT;
-    }
-  });
+      if (dist > MAX_AUTHOR_DRIFT) {
+        const ux = dx / dist;
+        const uy = dy / dist;
+        n.x = target.x + ux * MAX_AUTHOR_DRIFT;
+        n.y = target.y + uy * MAX_AUTHOR_DRIFT;
+      }
+    });
 
   // Deuxième filet de sécurité, spécifique aux auteurs-ponts : la
   // poussée calculée plus haut (bridgeAuthorTargets) se base sur les
@@ -492,23 +572,7 @@ export function computeLayout(authors, concepts, relations) {
   // non plus sur une estimation.
   const BRIDGE_SAFE_DISTANCE_FINAL = 460;
 
-  const centroidGroups = {};
-  authorNodes
-    .filter((n) => n.constellation !== BRIDGE_CONSTELLATION)
-    .forEach((n) => {
-      if (!centroidGroups[n.constellation]) {
-        centroidGroups[n.constellation] = [];
-      }
-      centroidGroups[n.constellation].push(n);
-    });
-
-  const realCentroids = {};
-  Object.entries(centroidGroups).forEach(([id, list]) => {
-    realCentroids[id] = {
-      x: list.reduce((s, n) => s + n.x, 0) / list.length,
-      y: list.reduce((s, n) => s + n.y, 0) / list.length,
-    };
-  });
+  const realCentroids = computeRealCentroids();
 
   authorNodes
     .filter((n) => n.constellation === BRIDGE_CONSTELLATION)
@@ -546,7 +610,16 @@ export function computeLayout(authors, concepts, relations) {
     authorFinalPositions.set(n.id, { x: n.x, y: n.y })
   );
 
-  const CONCEPT_ANCHOR_DISTANCE = 110;
+  // Distance de base entre un concept et son auteur, à laquelle s'ajoute
+  // le rayon effectif de l'auteur lui-même — le même calcul que celui
+  // utilisé pour son rayon de collision (voir plus haut). Sans ça, un
+  // concept ancré à une distance fixe pouvait se retrouver à l'intérieur
+  // même du cercle d'un auteur très connecté (donc visuellement plus
+  // grand), comme c'était le cas pour Horkheimer ou Lemieux.
+  const authorRadius = (authorId) =>
+    70 + Math.min(authorDegree.get(authorId) ?? 0, 26) * 4;
+
+  const CONCEPT_BASE_CLEARANCE = 70;
 
   const conceptsByAuthor = new Map();
   conceptNodes.forEach((n) => {
@@ -560,6 +633,9 @@ export function computeLayout(authors, concepts, relations) {
     const homeAuthor = authorFinalPositions.get(authorId);
     if (!homeAuthor) return;
 
+    const anchorDistance =
+      authorRadius(authorId) + CONCEPT_BASE_CLEARANCE;
+
     const avgDx =
       group.reduce((s, n) => s + (n.x - homeAuthor.x), 0) / group.length;
     const avgDy =
@@ -568,8 +644,8 @@ export function computeLayout(authors, concepts, relations) {
 
     group.forEach((n, i) => {
       const angle = startAngle + (i / group.length) * 2 * Math.PI;
-      n.x = homeAuthor.x + Math.cos(angle) * CONCEPT_ANCHOR_DISTANCE;
-      n.y = homeAuthor.y + Math.sin(angle) * CONCEPT_ANCHOR_DISTANCE;
+      n.x = homeAuthor.x + Math.cos(angle) * anchorDistance;
+      n.y = homeAuthor.y + Math.sin(angle) * anchorDistance;
     });
   });
 

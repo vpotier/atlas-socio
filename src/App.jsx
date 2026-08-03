@@ -5,6 +5,7 @@ import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";
 import FiltersPanel from "./components/FiltersPanel";
 import Legend from "./components/Legend";
+import RevisionMode from "./components/RevisionMode";
 import { useIsMobile } from "./hooks/useIsMobile";
 import { formatPerson, formatAuthorById } from "./utils/format";
 import { constellations } from "./engine/constellations";
@@ -35,6 +36,12 @@ export default function App() {
       // session en cours seulement, sans bloquer l'application.
     }
   }, [discoveryMode]);
+
+  // Mode "révision" : quiz de 10 questions à choix multiples tirées
+  // aléatoirement d'une banque générée à partir des auteur·ices et des
+  // concepts de l'atlas. S'affiche en plein écran par-dessus la carte ;
+  // aucun score n'est conservé d'une session à l'autre.
+  const [revisionMode, setRevisionMode] = useState(false);
 
   const [axisFilters, setAxisFilters] = useState({
     individuSociete: { enabled: false, value: 0.5 },
@@ -176,6 +183,38 @@ export default function App() {
             </button>
           </div>
 
+          <button
+            onClick={() => setRevisionMode(true)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 12,
+              width: "100%",
+              marginTop: 12,
+              padding: "10px 12px",
+              borderRadius: 8,
+              border: "1px solid var(--color-taupe)",
+              background: "var(--color-paper)",
+              cursor: "pointer",
+              textAlign: "left",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            <div>
+              <div style={{ fontWeight: 600, fontSize: 14, color: "var(--color-ink)" }}>
+                Mode révision
+              </div>
+              <div style={{ fontSize: 12, color: "var(--color-taupe)" }}>
+                Un quiz de 10 questions pour réviser auteur·ices et concepts
+              </div>
+            </div>
+
+            <span style={{ color: "var(--color-tardis)", fontWeight: 600, fontSize: 18 }}>
+              →
+            </span>
+          </button>
+
           <p style={{ marginTop: 20 }}>
             <a
               href="#"
@@ -302,6 +341,14 @@ export default function App() {
               sociologie. Il peut être activé ou désactivé à tout
               moment, le contenu complet reste toujours accessible juste
               à côté.
+            </li>
+            <li>
+              Un <strong>mode révision</strong>, également accessible
+              depuis ce panneau d'accueil, propose un quiz de 10
+              questions à choix multiples tirées aléatoirement d'une
+              banque portant sur les auteur·ices et les concepts de
+              l'atlas — idéal pour tester ses connaissances avant un
+              examen.
             </li>
           </ul>
 
@@ -960,6 +1007,8 @@ export default function App() {
         </aside>
       )}
     <Analytics />
+
+    {revisionMode && <RevisionMode onClose={() => setRevisionMode(false)} />}
     </div>
   );
 }

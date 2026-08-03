@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import Graph from "./components/Graph";
 import SearchBar from "./components/SearchBar";

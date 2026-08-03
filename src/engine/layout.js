@@ -762,14 +762,6 @@ export function computeLayout(authors, concepts, relations) {
     });
   }
 
-  const authorXs = authorNodes.map((n) => n.x);
-  const authorYs = authorNodes.map((n) => n.y);
-
-  const authorCentroidX =
-    authorXs.reduce((sum, x) => sum + x, 0) / authorXs.length;
-  const authorCentroidY =
-    authorYs.reduce((sum, y) => sum + y, 0) / authorYs.length;
-
   const xs = nodes.map((n) => n.x);
   const ys = nodes.map((n) => n.y);
 
@@ -790,8 +782,18 @@ export function computeLayout(authors, concepts, relations) {
   const width = maxX - minX + PADDING * 2;
   const height = maxY - minY + PADDING * 2;
 
-  const centerX = authorCentroidX - minX + PADDING;
-  const centerY = authorCentroidY - minY + PADDING;
+  // Le centre utilisé pour recentrer la caméra (voir resetView dans
+  // Graph.jsx) doit être le centre GÉOMÉTRIQUE exact de la boîte
+  // englobante — c'est-à-dire width/2, height/2 en coordonnées déjà
+  // translatées — et non un centre de masse (moyenne des positions des
+  // auteurs). Sinon, comme le zoom initial (fitScale) est lui calculé
+  // pour faire tenir toute la boîte englobante dans l'écran, un centre
+  // décalé par rapport au vrai milieu de cette boîte fait que le côté
+  // le plus éloigné du centre (ex. le haut, si beaucoup d'auteurs sont
+  // concentrés plus bas) se retrouve rogné à l'écran au lieu d'être
+  // entièrement visible.
+  const centerX = width / 2;
+  const centerY = height / 2;
 
   const authorPositions = new Map();
   const conceptPositions = new Map();

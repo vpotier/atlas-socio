@@ -590,6 +590,66 @@ export function computeLayout(authors, concepts, relations) {
       });
     });
 
+  // Rayon effectif d'un auteur — le même calcul que celui utilisé pour
+  // son rayon de collision pendant la simulation (auteurs très connectés
+  // = cercle plus grand).
+  const authorRadius = (authorId) =>
+    70 + Math.min(authorDegree.get(authorId) ?? 0, 26) * 4;
+
+  // Relaxation anti-chevauchement ENTRE AUTEURS. Les différents clamps
+  // ci-dessus (confinement dans le halo, cibles des auteurs-ponts...)
+  // rapprochent délibérément plusieurs auteurs d'un même point — mais
+  // sans jamais vérifier s'ils finissent par se marcher dessus au
+  // passage (cercles qui se touchent, noms qui se chevauchent). On fait
+  // donc tourner ici une petite relaxation itérative, comme pour les
+  // concepts plus bas : chaque auteur est repoussé par tout autre
+  // auteur trop proche (distance minimale = somme de leurs deux rayons
+  // + une marge pour laisser la place à leurs noms), tout en étant
+  // rappelé en douceur vers sa position actuelle pour ne pas s'échapper
+  // de son halo ou de sa cible de pont.
+  const AUTHOR_LABEL_MARGIN = 50;
+  const AUTHOR_RELAX_ITERATIONS = 120;
+  const AUTHOR_ANCHOR_PULL = 0.1;
+  const AUTHOR_RELAX_STEP = 0.3;
+
+  const authorAnchorsForRelax = new Map();
+  authorNodes.forEach((n) =>
+    authorAnchorsForRelax.set(n.id, { x: n.x, y: n.y })
+  );
+
+  for (let iter = 0; iter < AUTHOR_RELAX_ITERATIONS; iter++) {
+    authorNodes.forEach((n) => {
+      let fx = 0;
+      let fy = 0;
+
+      authorNodes.forEach((other) => {
+        if (other === n) return;
+
+        const minDist =
+          authorRadius(n.id) +
+          authorRadius(other.id) +
+          AUTHOR_LABEL_MARGIN;
+
+        const dx = n.x - other.x;
+        const dy = n.y - other.y;
+        const dist = Math.hypot(dx, dy) || 1;
+
+        if (dist < minDist) {
+          const push = (minDist - dist) / dist;
+          fx += dx * push * 0.5;
+          fy += dy * push * 0.5;
+        }
+      });
+
+      const anchor = authorAnchorsForRelax.get(n.id);
+      fx += (anchor.x - n.x) * AUTHOR_ANCHOR_PULL;
+      fy += (anchor.y - n.y) * AUTHOR_ANCHOR_PULL;
+
+      n.x += fx * AUTHOR_RELAX_STEP;
+      n.y += fy * AUTHOR_RELAX_STEP;
+    });
+  }
+
   // Filet de sécurité final pour les CONCEPTS : quel que soit le résultat
   // de la simulation de forces (collisions, liens concurrents, auteurs-
   // ponts déplacés juste au-dessus...), chaque concept est réancré à une
@@ -609,15 +669,6 @@ export function computeLayout(authors, concepts, relations) {
   authorNodes.forEach((n) =>
     authorFinalPositions.set(n.id, { x: n.x, y: n.y })
   );
-
-  // Distance de base entre un concept et son auteur, à laquelle s'ajoute
-  // le rayon effectif de l'auteur lui-même — le même calcul que celui
-  // utilisé pour son rayon de collision (voir plus haut). Sans ça, un
-  // concept ancré à une distance fixe pouvait se retrouver à l'intérieur
-  // même du cercle d'un auteur très connecté (donc visuellement plus
-  // grand), comme c'était le cas pour Horkheimer ou Lemieux.
-  const authorRadius = (authorId) =>
-    70 + Math.min(authorDegree.get(authorId) ?? 0, 26) * 4;
 
   const CONCEPT_BASE_CLEARANCE = 70;
 

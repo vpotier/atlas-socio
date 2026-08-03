@@ -5,6 +5,25 @@ import { useIsMobile } from "../hooks/useIsMobile";
 
 const QUESTIONS_PER_QUIZ = 10;
 
+const DIFFICULTY_OPTIONS = [
+  {
+    value: "facile",
+    label: "Facile",
+    description: "Les mauvaises réponses sont clairement différentes de la bonne — idéal pour une première révision.",
+  },
+  {
+    value: "mixte",
+    label: "Mixte",
+    recommended: true,
+    description: "Un mélange de questions faciles et difficiles, tirées au hasard.",
+  },
+  {
+    value: "difficile",
+    label: "Difficile",
+    description: "Les mauvaises réponses viennent du même courant théorique (ou du même auteur·ice) que la bonne — il faut connaître la nuance.",
+  },
+];
+
 const MESSAGES_BY_TIER = {
   low: [
     "Ce n'est qu'un début : reprenez un peu la carte et retentez votre chance, ça va venir !",
@@ -32,8 +51,16 @@ function shuffle(array) {
   return result;
 }
 
-function buildQuiz() {
-  const picked = shuffle(revisionQuestions).slice(0, QUESTIONS_PER_QUIZ);
+// "mixte" ne filtre pas : comme la banque contient à parts égales des
+// questions faciles et difficiles pour chaque auteur·ice/concept, un
+// tirage aléatoire dans l'ensemble donne déjà un mélange équilibré.
+function buildQuiz(difficulty) {
+  const pool =
+    difficulty === "mixte"
+      ? revisionQuestions
+      : revisionQuestions.filter((q) => q.difficulty === difficulty);
+
+  const picked = shuffle(pool).slice(0, QUESTIONS_PER_QUIZ);
 
   return picked.map((question) => ({
     ...question,
@@ -74,7 +101,10 @@ function pill(text) {
 export default function RevisionMode({ onClose }) {
   const isMobile = useIsMobile();
 
-  const [quiz, setQuiz] = useState(() => buildQuiz());
+  // Tant qu'aucun niveau n'a été choisi, `difficulty` reste null et on
+  // affiche l'écran de sélection plutôt que le quiz.
+  const [difficulty, setDifficulty] = useState(null);
+  const [quiz, setQuiz] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(null);
   const [score, setScore] = useState(0);
@@ -84,14 +114,24 @@ export default function RevisionMode({ onClose }) {
   // rendu) pour ne pas changer sous les yeux de l'étudiant·e.
   const [finishMessage, setFinishMessage] = useState("");
 
-  const currentQuestion = quiz[currentIndex];
-  const isLastQuestion = currentIndex === quiz.length - 1;
+  const currentQuestion = quiz?.[currentIndex];
+  const isLastQuestion = quiz ? currentIndex === quiz.length - 1 : false;
   const hasAnswered = selectedChoiceIndex !== null;
 
   const entityLabel = useMemo(() => {
     if (!currentQuestion) return "";
     return currentQuestion.entityType === "author" ? "Auteur·ice" : "Concept";
   }, [currentQuestion]);
+
+  function startQuiz(chosenDifficulty) {
+    setDifficulty(chosenDifficulty);
+    setQuiz(buildQuiz(chosenDifficulty));
+    setCurrentIndex(0);
+    setSelectedChoiceIndex(null);
+    setScore(0);
+    setFinished(false);
+    setFinishMessage("");
+  }
 
   function handleSelect(index) {
     if (hasAnswered) return;
@@ -117,12 +157,13 @@ export default function RevisionMode({ onClose }) {
   }
 
   function handleRestart() {
-    setQuiz(buildQuiz());
-    setCurrentIndex(0);
-    setSelectedChoiceIndex(null);
-    setScore(0);
+    startQuiz(difficulty);
+  }
+
+  function handleChangeDifficulty() {
+    setDifficulty(null);
+    setQuiz(null);
     setFinished(false);
-    setFinishMessage("");
   }
 
   const overlayStyle = {
@@ -175,6 +216,77 @@ export default function RevisionMode({ onClose }) {
     </button>
   );
 
+  // Écran 1 : choix du niveau de difficulté, avant toute question.
+  if (!quiz) {
+    return (
+      <div style={overlayStyle}>
+        <div style={{ ...cardStyle, position: "relative" }}>
+          {closeButton}
+
+          {pill("Mode révision")}
+
+          <h2 style={{ marginTop: 0 }}>Choisissez un niveau</h2>
+
+          <p style={{ color: "var(--color-taupe)", marginBottom: 24 }}>
+            10 questions à choix multiples, tirées au hasard parmi les
+            auteur·ices et les concepts de l'atlas.
+          </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {DIFFICULTY_OPTIONS.map((option) => (
+              <button
+                key={option.value}
+                onClick={() => startQuiz(option.value)}
+                style={{
+                  textAlign: "left",
+                  padding: "14px 16px",
+                  borderRadius: 8,
+                  border: "1px solid var(--color-taupe)",
+                  background: "var(--color-paper)",
+                  cursor: "pointer",
+                  fontFamily: "var(--font-body)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    fontWeight: 600,
+                    fontSize: 15,
+                    color: "var(--color-ink)",
+                    marginBottom: 4,
+                  }}
+                >
+                  {option.label}
+                  {option.recommended && (
+                    <span
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 600,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                        color: "var(--color-tardis)",
+                        border: "1px solid var(--color-tardis)",
+                        borderRadius: 3,
+                        padding: "1px 6px",
+                      }}
+                    >
+                      Recommandé
+                    </span>
+                  )}
+                </div>
+                <div style={{ fontSize: 13, color: "var(--color-taupe)" }}>
+                  {option.description}
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={overlayStyle}>
       <div style={{ ...cardStyle, position: "relative" }}>
@@ -197,6 +309,12 @@ export default function RevisionMode({ onClose }) {
               </h2>
               <span style={{ fontSize: 13, color: "var(--color-taupe)" }}>
                 {entityLabel}
+                {difficulty === "mixte" && (
+                  <>
+                    {" · "}
+                    {currentQuestion.difficulty === "difficile" ? "Difficile" : "Facile"}
+                  </>
+                )}
               </span>
             </div>
 
@@ -269,6 +387,7 @@ export default function RevisionMode({ onClose }) {
                       cursor: hasAnswered ? "default" : "pointer",
                       fontFamily: "var(--font-body)",
                       transition: "background .15s, border-color .15s",
+                      wordBreak: "break-word",
                     }}
                   >
                     {choice.text}
@@ -279,7 +398,29 @@ export default function RevisionMode({ onClose }) {
               })}
             </div>
 
-            <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 24 }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: 24,
+              }}
+            >
+              <button
+                onClick={handleChangeDifficulty}
+                style={{
+                  border: "none",
+                  background: "none",
+                  color: "var(--color-taupe)",
+                  fontSize: 13,
+                  cursor: "pointer",
+                  textDecoration: "underline",
+                  padding: 0,
+                }}
+              >
+                Changer de niveau
+              </button>
+
               <button
                 onClick={handleNext}
                 disabled={!hasAnswered}
@@ -332,6 +473,21 @@ export default function RevisionMode({ onClose }) {
                 }}
               >
                 Recommencer
+              </button>
+
+              <button
+                onClick={handleChangeDifficulty}
+                style={{
+                  padding: "10px 20px",
+                  borderRadius: 8,
+                  border: "1px solid var(--color-taupe)",
+                  background: "var(--color-paper)",
+                  color: "var(--color-ink)",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+              >
+                Changer de niveau
               </button>
 
               <button

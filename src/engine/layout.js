@@ -485,7 +485,7 @@ export function computeLayout(authors, concepts, relations) {
   // Marge réservée pour que les CONCEPTS d'un auteur, qui s'étendent
   // eux-mêmes au-delà de lui (voir plus bas), restent également à
   // l'intérieur du halo une fois l'auteur positionné.
-  const CONCEPT_CLEARANCE = 250; // >= rayon d'auteur max (174) + CONCEPT_BASE_CLEARANCE (70)
+  const CONCEPT_CLEARANCE = 300; // marge pour rayon auteur max (174) + ancrage (70) + relaxation anti-chevauchement (jusqu'à ~50)
 
   const computeRealCentroids = () => {
     const groups = {};
@@ -648,6 +648,68 @@ export function computeLayout(authors, concepts, relations) {
       n.y = homeAuthor.y + Math.sin(angle) * anchorDistance;
     });
   });
+
+  // Relaxation finale anti-chevauchement des LABELS. L'ancrage ci-dessus
+  // ne résout que les conflits entre concepts d'un MÊME auteur : deux
+  // concepts appartenant à deux auteurs différents mais géographiquement
+  // proches (un auteur-pont juste à côté d'une autre constellation, deux
+  // auteurs voisins au sein d'une même constellation...) peuvent encore
+  // se chevaucher, ou chevaucher le nom d'un auteur voisin qui n'est pas
+  // le leur. On fait donc tourner ici une petite relaxation itérative :
+  // chaque concept est repoussé par tout nœud proche qui n'est pas son
+  // propre auteur (auteurs ET autres concepts), tout en étant rappelé en
+  // douceur vers son point d'ancrage d'origine pour ne pas dériver loin
+  // de lui. Les positions des AUTEURS, elles, restent fixes : on ne
+  // relâche que les concepts, plus nombreux et déjà conçus pour flotter
+  // autour de leur auteur.
+  const LABEL_MIN_DISTANCE = 180;
+  const RELAX_ITERATIONS = 40;
+  const ANCHOR_PULL = 0.15;
+  const RELAX_STEP = 0.3;
+
+  const conceptAnchors = new Map();
+  conceptNodes.forEach((n) =>
+    conceptAnchors.set(n.id, { x: n.x, y: n.y })
+  );
+
+  const relaxObstacles = [...authorNodes, ...conceptNodes];
+
+  for (let iter = 0; iter < RELAX_ITERATIONS; iter++) {
+    conceptNodes.forEach((n) => {
+      let fx = 0;
+      let fy = 0;
+
+      relaxObstacles.forEach((other) => {
+        if (other === n) return;
+        if (other.kind === "author" && other.id === n.homeAuthorId) {
+          return;
+        }
+        if (
+          other.kind === "concept" &&
+          other.homeAuthorId === n.homeAuthorId
+        ) {
+          return;
+        }
+
+        const dx = n.x - other.x;
+        const dy = n.y - other.y;
+        const dist = Math.hypot(dx, dy) || 1;
+
+        if (dist < LABEL_MIN_DISTANCE) {
+          const push = (LABEL_MIN_DISTANCE - dist) / dist;
+          fx += dx * push * 0.5;
+          fy += dy * push * 0.5;
+        }
+      });
+
+      const anchor = conceptAnchors.get(n.id);
+      fx += (anchor.x - n.x) * ANCHOR_PULL;
+      fy += (anchor.y - n.y) * ANCHOR_PULL;
+
+      n.x += fx * RELAX_STEP;
+      n.y += fy * RELAX_STEP;
+    });
+  }
 
   const authorXs = authorNodes.map((n) => n.x);
   const authorYs = authorNodes.map((n) => n.y);

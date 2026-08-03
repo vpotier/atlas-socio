@@ -959,7 +959,7 @@ export default function App() {
           </div>
         </aside>
       )}
-    <<Analytics />
+    <Analytics />
     </div>
   );
 }

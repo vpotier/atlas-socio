@@ -29,6 +29,7 @@ import path from "node:path";
 
 import { concepts } from "../src/data/concepts.js";
 import { authors } from "../src/data/authors.js";
+import { conceptShortTexts, authorShortTexts } from "../src/data/revisionShortTexts.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUTPUT_PATH = path.join(__dirname, "../src/data/revisionQuestions.js");
@@ -41,56 +42,47 @@ const DISTRACTOR_COUNT = 3;
 // "difficile".
 const MAX_SAME_GROUP_DISTRACTORS = 2;
 
-// Longueur maximale d'un texte utilisé comme PROPOSITION DE RÉPONSE dans
-// le QCM (pas la question elle-même, qui peut rester longue puisqu'elle
-// ne s'affiche qu'une fois). La plupart des définitions/résumés de
-// l'atlas sont écrits comme une seule longue phrase (quasiment aucune
-// n'a de point avant la toute fin) : couper "à la fin d'une phrase" ne
-// fonctionne donc presque jamais. On coupe à la place à la fin d'une
-// PROPOSITION (virgule, point-virgule, deux-points) la plus proche sous
-// cette limite, pour arrêter la lecture sur une pause naturelle plutôt
-// qu'en plein milieu d'une idée.
-const MAX_CHOICE_LENGTH = 150;
+// Une PROPOSITION DE RÉPONSE ne doit jamais être un extrait tronqué (ni
+// coupé en plein milieu d'une idée, ni terminé par "…") : aucune
+// troncature mécanique ne peut à la fois rester courte ET ne jamais
+// couper une idée, tant que le texte source (définition ou résumé de
+// l'atlas) est une longue phrase unique — les deux objectifs sont
+// contradictoires par construction. La seule solution qui obtient les
+// deux à la fois : des propositions RÉÉCRITES à la main, volontairement
+// courtes et complètes, dans src/data/revisionShortTexts.js (une entrée
+// {facile, difficile} par concept et par auteur·ice). Ce script ne fait
+// que les assembler et vérifier qu'elles respectent bien la contrainte de
+// longueur — il ne raccourcit plus rien lui-même.
+const HARD_MAX_CHOICE_LENGTH = 110;
 
-function shorten(text, maxLen = MAX_CHOICE_LENGTH) {
-  if (text.length <= maxLen) return text;
-
-  const cut = text.slice(0, maxLen);
-
-  // 1) on cherche le dernier signe de ponctuation (. , ; :) avant la
-  // limite, tant qu'il ne coupe pas trop tôt (sinon la proposition
-  // devient trop courte pour rester informative).
-  let bestIndex = -1;
-  let bestChar = null;
-  for (const punct of [".", ",", ";", ":"]) {
-    const idx = cut.lastIndexOf(punct);
-    if (idx > bestIndex) {
-      bestIndex = idx;
-      bestChar = punct;
-    }
+function assertShortEnough(text, label) {
+  if (text.length > HARD_MAX_CHOICE_LENGTH) {
+    throw new Error(
+      `Proposition trop longue (${text.length} caractères > ${HARD_MAX_CHOICE_LENGTH}) pour ${label} : "${text}".\n` +
+        `Corrige l'entrée correspondante dans src/data/revisionShortTexts.js.`
+    );
   }
-
-  if (bestIndex > maxLen * 0.35) {
-    const truncated = cut.slice(0, bestIndex + 1);
-    // Un point final marque une phrase complète : pas besoin de "…".
-    // Une virgule/un point-virgule/deux-points marquent une pause en
-    // plein milieu d'une idée : on ajoute "…" pour que ce soit explicite.
-    return bestChar === "." ? truncated : `${truncated}…`;
-  }
-
-  // 2) filet de sécurité : aucune ponctuation utile trouvée, on recule
-  // jusqu'à la dernière frontière de mot pour ne jamais couper un mot en
-  // deux.
-  const lastSpace = cut.lastIndexOf(" ");
-  const safeCut = lastSpace > 0 ? cut.slice(0, lastSpace) : cut;
-
-  return `${safeCut.replace(/[,;:\s]+$/, "")}…`;
+  return text;
 }
 
-// Raccourcit spécifiquement un texte destiné à devenir une proposition de
-// réponse (jamais une question/prompt, qui peut rester complète).
-function shortenChoice(text) {
-  return shorten(text);
+function conceptChoice(concept, difficulty) {
+  const entry = conceptShortTexts[concept.id];
+  if (!entry || !entry[difficulty]) {
+    throw new Error(
+      `Aucun texte court "${difficulty}" pour le concept "${concept.id}" dans src/data/revisionShortTexts.js.`
+    );
+  }
+  return assertShortEnough(entry[difficulty], `le concept "${concept.id}" (${difficulty})`);
+}
+
+function authorChoice(author, difficulty) {
+  const entry = authorShortTexts[author.id];
+  if (!entry || !entry[difficulty]) {
+    throw new Error(
+      `Aucun texte court "${difficulty}" pour l'auteur·ice "${author.id}" dans src/data/revisionShortTexts.js.`
+    );
+  }
+  return assertShortEnough(entry[difficulty], `l'auteur·ice "${author.id}" (${difficulty})`);
 }
 
 function escapeRegExp(text) {
@@ -313,8 +305,8 @@ function buildConceptQuestions() {
       direction: "nameToDef",
       difficulty: "facile",
       prompt: `Complétez, en langage simple : chez ${authorNames}, le concept de « ${concept.label} » désigne :`,
-      correctAnswer: shortenChoice(redactConceptSelfReferences(concept.simpleDefinition, concept)),
-      distractors: easyDefDistractors.map((c) => shortenChoice(redactConceptSelfReferences(c.simpleDefinition, c))),
+      correctAnswer: redactConceptSelfReferences(conceptChoice(concept, "facile"), concept),
+      distractors: easyDefDistractors.map((c) => redactConceptSelfReferences(conceptChoice(c, "facile"), c)),
     });
 
     // --- DIFFICILE : formulation académique complète, distracteurs proches ---
@@ -336,8 +328,8 @@ function buildConceptQuestions() {
       direction: "nameToDef",
       difficulty: "difficile",
       prompt: `Complétez : chez ${authorNames}, le concept de « ${concept.label} » se définit comme :`,
-      correctAnswer: shortenChoice(redactConceptSelfReferences(concept.definition, concept)),
-      distractors: hardDefDistractors.map((c) => shortenChoice(redactConceptSelfReferences(c.definition, c))),
+      correctAnswer: redactConceptSelfReferences(conceptChoice(concept, "difficile"), concept),
+      distractors: hardDefDistractors.map((c) => redactConceptSelfReferences(conceptChoice(c, "difficile"), c)),
     });
   }
 
@@ -381,9 +373,9 @@ function buildAuthorQuestions() {
       direction: "nameToDef",
       difficulty: "facile",
       prompt: `Complétez, en langage simple : à propos de ${author.name}, on peut dire que :`,
-      correctAnswer: shortenChoice(redactAuthorSelfReferences(author.simple.summary, author)),
+      correctAnswer: redactAuthorSelfReferences(authorChoice(author, "facile"), author),
       distractors: easySummaryDistractors.map((a) =>
-        shortenChoice(redactAuthorSelfReferences(a.simple.summary, a))
+        redactAuthorSelfReferences(authorChoice(a, "facile"), a)
       ),
     });
 
@@ -418,8 +410,8 @@ function buildAuthorQuestions() {
       direction: "nameToDef",
       difficulty: "difficile",
       prompt: `Complétez : à propos de ${author.name}, on peut dire que :`,
-      correctAnswer: shortenChoice(redactAuthorSelfReferences(author.summary, author)),
-      distractors: hardSummaryDistractors.map((a) => shortenChoice(redactAuthorSelfReferences(a.summary, a))),
+      correctAnswer: redactAuthorSelfReferences(authorChoice(author, "difficile"), author),
+      distractors: hardSummaryDistractors.map((a) => redactAuthorSelfReferences(authorChoice(a, "difficile"), a)),
     });
   }
 

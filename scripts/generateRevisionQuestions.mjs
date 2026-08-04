@@ -43,37 +43,69 @@ const MAX_SAME_GROUP_DISTRACTORS = 2;
 
 // Longueur maximale d'un texte utilisé comme PROPOSITION DE RÉPONSE dans
 // le QCM (pas la question elle-même, qui peut rester longue puisqu'elle
-// ne s'affiche qu'une fois). Volontairement court : dans un quiz, 4
-// propositions à lire et comparer doivent tenir en un coup d'œil, sans
-// quoi la longueur du texte devient elle-même un obstacle, indépendant
-// de la difficulté de la notion.
-const MAX_CHOICE_LENGTH = 110;
+// ne s'affiche qu'une fois). La plupart des définitions/résumés de
+// l'atlas sont écrits comme une seule longue phrase (quasiment aucune
+// n'a de point avant la toute fin) : couper "à la fin d'une phrase" ne
+// fonctionne donc presque jamais. On coupe à la place à la fin d'une
+// PROPOSITION (virgule, point-virgule, deux-points) la plus proche sous
+// cette limite, pour arrêter la lecture sur une pause naturelle plutôt
+// qu'en plein milieu d'une idée.
+const MAX_CHOICE_LENGTH = 150;
 
-function shorten(text, maxLen) {
+function shorten(text, maxLen = MAX_CHOICE_LENGTH) {
   if (text.length <= maxLen) return text;
 
-  let cut = text.slice(0, maxLen);
+  const cut = text.slice(0, maxLen);
 
-  // 1) on essaie de couper proprement à la fin d'une phrase.
-  const lastPeriod = cut.lastIndexOf(". ");
-  if (lastPeriod > maxLen * 0.4) {
-    return cut.slice(0, lastPeriod + 1);
+  // 1) on cherche le dernier signe de ponctuation (. , ; :) avant la
+  // limite, tant qu'il ne coupe pas trop tôt (sinon la proposition
+  // devient trop courte pour rester informative).
+  let bestIndex = -1;
+  let bestChar = null;
+  for (const punct of [".", ",", ";", ":"]) {
+    const idx = cut.lastIndexOf(punct);
+    if (idx > bestIndex) {
+      bestIndex = idx;
+      bestChar = punct;
+    }
   }
 
-  // 2) sinon, on recule jusqu'à la dernière frontière de mot pour ne
-  // jamais couper un mot en deux.
+  if (bestIndex > maxLen * 0.35) {
+    const truncated = cut.slice(0, bestIndex + 1);
+    // Un point final marque une phrase complète : pas besoin de "…".
+    // Une virgule/un point-virgule/deux-points marquent une pause en
+    // plein milieu d'une idée : on ajoute "…" pour que ce soit explicite.
+    return bestChar === "." ? truncated : `${truncated}…`;
+  }
+
+  // 2) filet de sécurité : aucune ponctuation utile trouvée, on recule
+  // jusqu'à la dernière frontière de mot pour ne jamais couper un mot en
+  // deux.
   const lastSpace = cut.lastIndexOf(" ");
-  if (lastSpace > 0) {
-    cut = cut.slice(0, lastSpace);
-  }
+  const safeCut = lastSpace > 0 ? cut.slice(0, lastSpace) : cut;
 
-  return `${cut.replace(/[,;:\s]+$/, "")}…`;
+  return `${safeCut.replace(/[,;:\s]+$/, "")}…`;
 }
 
 // Raccourcit spécifiquement un texte destiné à devenir une proposition de
 // réponse (jamais une question/prompt, qui peut rester complète).
 function shortenChoice(text) {
-  return shorten(text, MAX_CHOICE_LENGTH);
+  return shorten(text);
+}
+
+function escapeRegExp(text) {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// Frontière de mot "sûre" pour du français : `\b` natif de JS ne
+// reconnaît que [A-Za-z0-9_] comme caractères de mot, donc un nom se
+// terminant par une lettre accentuée (ex. "Forsé") ne matche pas côté
+// droit — la lettre accentuée ET l'espace qui suit sont tous deux
+// considérés comme "hors-mot", donc aucune frontière n'est détectée. On
+// utilise `\p{L}` (Unicode) en lookaround pour couvrir aussi les lettres
+// accentuées.
+function nameBoundaryRegExp(name, flags = "") {
+  return new RegExp(`(?<![\\p{L}\\p{N}])${escapeRegExp(name)}(?![\\p{L}\\p{N}])`, `${flags}u`);
 }
 
 function shuffle(array) {
@@ -156,26 +188,31 @@ function authorsMentionEachOther(a, b) {
 
 // Les résumés (surtout `simple.summary`, écrit dans le style du mode
 // découverte) commencent quasi systématiquement par le nom de
-// l'auteur·ice ("Émile Durkheim pense que..."). Dans une question de type
-// "on donne le nom, on fait deviner le résumé", laisser ce nom en tête de
-// chaque proposition permet de repérer la bonne réponse par simple
-// reconnaissance du nom déjà donné dans la question, sans rien savoir du
-// contenu. On neutralise donc ce nom en tête de texte, pour les 4
-// propositions de la même manière.
-function stripLeadingName(text, author) {
-  const tokens = author.name.trim().split(/\s+/);
-  const candidates = [...new Set([author.name, tokens[tokens.length - 1], tokens[0]])].sort(
-    (a, b) => b.length - a.length
-  );
+// l'auteur·ice ("Émile Durkheim pense que...), et le reprennent souvent
+// une seconde fois plus loin dans le paragraphe ("...Durkheim est aussi
+// l'un des tout premiers..."). Dans une question de type "on donne le
+// nom, on fait deviner le résumé" (ou l'inverse : "on donne le résumé, on
+// fait deviner le nom"), laisser ce nom n'importe où dans le texte permet
+// de repérer la bonne réponse par simple reconnaissance du nom déjà donné
+// ailleurs dans la question, sans rien savoir du contenu. On neutralise
+// donc TOUTE occurrence du nom (complet ou nom de famille seul), pas
+// seulement celle en tête de phrase.
+function redactAuthorSelfReferences(text, author) {
+  const surname = author.name.trim().split(/\s+/).pop();
+  const variants = [...new Set([author.name, surname])].sort((a, b) => b.length - a.length);
 
-  for (const candidate of candidates) {
-    if (text.startsWith(candidate)) {
-      const rest = text.slice(candidate.length).replace(/^[,\s]+/, "");
-      return `Cette personne ${rest}`;
-    }
+  let result = text;
+  for (const variant of variants) {
+    const re = nameBoundaryRegExp(variant, "g");
+    result = result.replace(re, "cette personne");
   }
 
-  return text;
+  // Majuscule si le remplacement se retrouve en tout début de phrase.
+  if (result.startsWith("cette personne")) {
+    result = `Cette personne${result.slice("cette personne".length)}`;
+  }
+
+  return result;
 }
 
 // Assemble une liste de noms en français ("A", "A et B", "A, B et C").
@@ -188,14 +225,65 @@ function joinNames(names) {
 // Chaque concept doit explicitement rappeler à quel(s) auteur·ice(s) il
 // est rattaché : ça ancre le concept dans son contexte théorique plutôt
 // que de le traiter comme une définition hors-sol, et ça renforce le lien
-// concept ↔ auteur·ice que l'étudiant·e doit justement mémoriser.
-function authorNamesForConcept(concept) {
-  const names = concept.authors
-    .map((authorId) => authors.find((a) => a.id === authorId))
-    .filter(Boolean)
-    .map((a) => a.name);
+// concept ↔ auteur·ice que l'étudiant·e doit justement mémoriser. On garde
+// donc les objets auteur·ice (pas seulement leurs noms) pour pouvoir
+// ensuite neutraliser leur mention dans le texte de la définition
+// elle-même (voir `redactConceptSelfReferences`).
+function authorsForConcept(concept) {
+  return concept.authors.map((authorId) => authors.find((a) => a.id === authorId)).filter(Boolean);
+}
 
-  return joinNames(names);
+function authorNamesForConcept(concept) {
+  return joinNames(authorsForConcept(concept).map((a) => a.name));
+}
+
+// Certaines définitions de l'atlas sont rédigées en rappelant directement
+// l'auteur·ice ("Chez Simondon, processus par lequel...", "Pour Simmel,
+// l'étranger n'est ni...", "Figure sociale théorisée par Simmel : ...").
+// Comme le nom de l'auteur·ice concerné apparaît déjà, séparément, dans
+// la question elle-même (ex. "chez Gilbert Simondon, le concept de..."),
+// laisser ce même nom dans une PROPOSITION DE RÉPONSE révèle directement
+// si elle correspond ou non à la question — sans rien savoir du concept.
+// On neutralise donc toute mention de l'auteur·ice de rattachement dans
+// le texte, avant de l'utiliser comme proposition (ou, pour la lisibilité,
+// dans la citation affichée en question).
+function redactConceptSelfReferences(text, concept) {
+  const relatedAuthors = authorsForConcept(concept);
+  if (!relatedAuthors.length) return text;
+
+  let result = text;
+
+  // 1) on retire d'abord une éventuelle clause d'ouverture "Chez X, " /
+  // "Pour X, " (le cas le plus fréquent). On matche la structure de
+  // façon générique (n'importe quel nom propre jusqu'à la première
+  // virgule), plutôt que de reconstruire le nom exact attendu : certaines
+  // définitions citent un·e co-auteur·ice non modélisé·e séparément dans
+  // l'atlas (ex. « Chez Glaser et Strauss » alors que seul Strauss existe
+  // comme entrée auteur·ice), et la clause doit être retirée dans son
+  // ensemble malgré ça.
+  const leadingRe = /^(Chez|Pour)\s+[^,]+,\s*/i;
+  if (leadingRe.test(result)) {
+    result = result.replace(leadingRe, "");
+    result = result.charAt(0).toUpperCase() + result.slice(1);
+  }
+
+  // 2) toute mention restante (ailleurs dans la phrase) du nom complet ou
+  // du seul nom de famille est remplacée par une formule neutre.
+  for (const author of relatedAuthors) {
+    const surname = author.name.trim().split(/\s+/).pop();
+    for (const variant of new Set([author.name, surname])) {
+      const re = nameBoundaryRegExp(variant, "g");
+      result = result.replace(re, "cet·te auteur·ice");
+    }
+  }
+
+  // Majuscule si le remplacement se retrouve en tout début de phrase (ex.
+  // "Simmel montre que..." → "cet·te auteur·ice montre que...").
+  if (result.startsWith("cet·te auteur·ice")) {
+    result = `Cet·te auteur·ice${result.slice("cet·te auteur·ice".length)}`;
+  }
+
+  return result;
 }
 
 function buildConceptQuestions() {
@@ -213,7 +301,7 @@ function buildConceptQuestions() {
       entityType: "concept",
       direction: "defToName",
       difficulty: "facile",
-      prompt: `Chez ${authorNames} :\n\n« ${concept.simpleDefinition} »\n\nCette explication correspond au concept de :`,
+      prompt: `Chez ${authorNames} :\n\n« ${redactConceptSelfReferences(concept.simpleDefinition, concept)} »\n\nCette explication correspond au concept de :`,
       correctAnswer: concept.label,
       distractors: easyNameDistractors.map((c) => c.label),
     });
@@ -225,8 +313,8 @@ function buildConceptQuestions() {
       direction: "nameToDef",
       difficulty: "facile",
       prompt: `Complétez, en langage simple : chez ${authorNames}, le concept de « ${concept.label} » désigne :`,
-      correctAnswer: shortenChoice(concept.simpleDefinition),
-      distractors: easyDefDistractors.map((c) => shortenChoice(c.simpleDefinition)),
+      correctAnswer: shortenChoice(redactConceptSelfReferences(concept.simpleDefinition, concept)),
+      distractors: easyDefDistractors.map((c) => shortenChoice(redactConceptSelfReferences(c.simpleDefinition, c))),
     });
 
     // --- DIFFICILE : formulation académique complète, distracteurs proches ---
@@ -236,7 +324,7 @@ function buildConceptQuestions() {
       entityType: "concept",
       direction: "defToName",
       difficulty: "difficile",
-      prompt: `Chez ${authorNames} :\n\n« ${concept.definition} »\n\nCette définition correspond au concept de :`,
+      prompt: `Chez ${authorNames} :\n\n« ${redactConceptSelfReferences(concept.definition, concept)} »\n\nCette définition correspond au concept de :`,
       correctAnswer: concept.label,
       distractors: hardNameDistractors.map((c) => c.label),
     });
@@ -248,8 +336,8 @@ function buildConceptQuestions() {
       direction: "nameToDef",
       difficulty: "difficile",
       prompt: `Complétez : chez ${authorNames}, le concept de « ${concept.label} » se définit comme :`,
-      correctAnswer: shortenChoice(concept.definition),
-      distractors: hardDefDistractors.map((c) => shortenChoice(c.definition)),
+      correctAnswer: shortenChoice(redactConceptSelfReferences(concept.definition, concept)),
+      distractors: hardDefDistractors.map((c) => shortenChoice(redactConceptSelfReferences(c.definition, c))),
     });
   }
 
@@ -275,7 +363,7 @@ function buildAuthorQuestions() {
       entityType: "author",
       direction: "defToName",
       difficulty: "facile",
-      prompt: `« ${author.simple.summary} »\n\nCette description correspond à :`,
+      prompt: `« ${redactAuthorSelfReferences(author.simple.summary, author)} »\n\nCette description correspond à :`,
       correctAnswer: author.name,
       distractors: easyNameDistractors.map((a) => a.name),
     });
@@ -293,9 +381,9 @@ function buildAuthorQuestions() {
       direction: "nameToDef",
       difficulty: "facile",
       prompt: `Complétez, en langage simple : à propos de ${author.name}, on peut dire que :`,
-      correctAnswer: shortenChoice(stripLeadingName(author.simple.summary, author)),
+      correctAnswer: shortenChoice(redactAuthorSelfReferences(author.simple.summary, author)),
       distractors: easySummaryDistractors.map((a) =>
-        shortenChoice(stripLeadingName(a.simple.summary, a))
+        shortenChoice(redactAuthorSelfReferences(a.simple.summary, a))
       ),
     });
 
@@ -312,7 +400,7 @@ function buildAuthorQuestions() {
       entityType: "author",
       direction: "defToName",
       difficulty: "difficile",
-      prompt: `« ${author.summary} »\n\nCette description correspond à :`,
+      prompt: `« ${redactAuthorSelfReferences(author.summary, author)} »\n\nCette description correspond à :`,
       correctAnswer: author.name,
       distractors: hardNameDistractors.map((a) => a.name),
     });
@@ -330,8 +418,8 @@ function buildAuthorQuestions() {
       direction: "nameToDef",
       difficulty: "difficile",
       prompt: `Complétez : à propos de ${author.name}, on peut dire que :`,
-      correctAnswer: shortenChoice(stripLeadingName(author.summary, author)),
-      distractors: hardSummaryDistractors.map((a) => shortenChoice(stripLeadingName(a.summary, a))),
+      correctAnswer: shortenChoice(redactAuthorSelfReferences(author.summary, author)),
+      distractors: hardSummaryDistractors.map((a) => shortenChoice(redactAuthorSelfReferences(a.summary, a))),
     });
   }
 

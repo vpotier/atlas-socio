@@ -11,6 +11,7 @@ export default function FiltersPanel({
   setRelationTypeFilters,
 }) {
   const [open, setOpen] = useState(false);
+  const [infoOpenFor, setInfoOpenFor] = useState(null);
 
   const anyRelationTypeDisabled = Object.values(
     relationTypeFilters
@@ -127,23 +128,81 @@ export default function FiltersPanel({
 
             return (
               <div key={axisKey} style={{ marginBottom: 22 }}>
-                <label
+                <div
                   style={{
                     display: "flex",
                     alignItems: "center",
                     gap: 8,
-                    fontSize: 13,
                     marginBottom: 8,
-                    cursor: "pointer",
                   }}
                 >
-                  <input
-                    type="checkbox"
-                    checked={filter.enabled}
-                    onChange={() => toggleAxisEnabled(axisKey)}
-                  />
-                  <strong>{axisMeta.label}</strong>
-                </label>
+                  <label
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 8,
+                      fontSize: 13,
+                      cursor: "pointer",
+                      flex: 1,
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={filter.enabled}
+                      onChange={() => toggleAxisEnabled(axisKey)}
+                    />
+                    <strong>{axisMeta.label}</strong>
+                  </label>
+
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setInfoOpenFor((prev) =>
+                        prev === axisKey ? null : axisKey
+                      )
+                    }
+                    aria-label={`Qu'est-ce que l'axe ${axisMeta.label} ?`}
+                    title={`Qu'est-ce que l'axe ${axisMeta.label} ?`}
+                    style={{
+                      width: 18,
+                      height: 18,
+                      borderRadius: "50%",
+                      border: "1px solid var(--color-taupe)",
+                      background:
+                        infoOpenFor === axisKey
+                          ? "var(--color-tardis)"
+                          : "transparent",
+                      color:
+                        infoOpenFor === axisKey
+                          ? "#ede6d9"
+                          : "var(--color-taupe)",
+                      fontSize: 11,
+                      lineHeight: 1,
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      padding: 0,
+                      flexShrink: 0,
+                    }}
+                  >
+                    i
+                  </button>
+                </div>
+
+                {infoOpenFor === axisKey && (
+                  <p
+                    style={{
+                      margin: "0 0 10px 0",
+                      fontSize: 11.5,
+                      fontStyle: "italic",
+                      lineHeight: 1.5,
+                      color: "var(--color-taupe)",
+                    }}
+                  >
+                    {axisMeta.description}
+                  </p>
+                )}
 
                 <input
                   type="range"

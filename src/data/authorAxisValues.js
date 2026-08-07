@@ -238,7 +238,7 @@ export const authorAxisValues = {
 
   "eva-illouz": {
     individuSociete: {
-      value: 0.4,
+      value: 0.3,
       label: "Façonnée par les structures culturelles et économiques",
       justification:
         "Pour Illouz, même nos sentiments les plus intimes — l'amour en particulier — sont façonnés par des structures culturelles et économiques (industries culturelles, capitalisme), bien plus que par notre seule intériorité.",
@@ -262,7 +262,7 @@ export const authorAxisValues = {
 
   "talcott-parsons": {
     individuSociete: {
-      value: 0.3,
+      value: 0.42,
       label: "Entre action individuelle et système social",
       justification:
         "Parsons cherche dès 1937 à concilier l'action individuelle orientée par des valeurs (empruntée à Weber) et l'ordre social (emprunté à Durkheim), avant de déplacer son propre système théorique vers une conception plus systémique où l'acteur devient occupant de rôles au service du système social.",
@@ -697,7 +697,7 @@ export const authorAxisValues = {
 
   "james-coleman": {
     individuSociete: {
-      value: 0.9,
+      value: 0.8,
       label: "Individualisme strict — self-interest",
       justification:
         "La démarche de Coleman est qualifiée de « strictement individualiste » : l'acteur, mû par l'intérêt personnel, est le point de départ exclusif de toute explication sociale, sans que la théorie consacre d'effort à en justifier la pertinence.",
@@ -977,7 +977,7 @@ export const authorAxisValues = {
 
   "herbert-marcuse": {
     individuSociete: {
-      value: 0.25,
+      value: 0.1,
       label: "Aliénation sociale totale",
       justification:
         "Marcuse va plus loin que Fromm : pour lui, la société rend l'individu aliéné de façon si totale qu'il ne peut pas s'en libérer seul, même par la psychanalyse.",
@@ -1124,10 +1124,10 @@ export const authorAxisValues = {
 
   "bruno-latour": {
     individuSociete: {
-      value: 0.55,
-      label: "Relation — réseaux d'humains et de non-humains",
+      value: 0.97,
+      label: "Au-delà — symétrie humains/non-humains",
       justification:
-        "La théorie de l'acteur-réseau refuse à la fois l'individualisme et le holisme classiques : ce qui compte, ce sont les réseaux de relations entre humains ET objets (« actants »), sans hiérarchie de principe entre eux.",
+        "La théorie de l'acteur-réseau refuse à la fois l'individualisme et le holisme classiques : ce qui compte, ce sont les réseaux de relations entre humains ET objets (« actants »), sans hiérarchie de principe entre eux — ce qui sort du cadre même de l'axe individu/société, centré sur les seuls humains.",
       sources: ["Latour, 1993, Le Topofil de Boa Vista, Raisons pratiques, 4"],
     },
     methode: {
@@ -1151,10 +1151,10 @@ export const authorAxisValues = {
 
   "michel-callon": {
     individuSociete: {
-      value: 0.55,
-      label: "Relation — réseaux d'humains et de non-humains",
+      value: 0.97,
+      label: "Au-delà — symétrie humains/non-humains",
       justification:
-        "Callon partage avec Latour ce refus de choisir entre individu et société : le réseau de relations entre humains et objets est l'unité d'analyse de base.",
+        "Callon partage avec Latour ce refus de choisir entre individu et société : le réseau de relations entre humains et objets est l'unité d'analyse de base — une position qui déborde le cadre même de l'axe individu/société, centré sur les seuls humains.",
       sources: [
         "Callon, 1986, Éléments pour une sociologie de la traduction, L'Année sociologique, 36, 169-208",
       ],
@@ -1684,7 +1684,7 @@ export const authorAxisValues = {
 
   "margaret-mead": {
     individuSociete: {
-      value: 0.15,
+      value: 0.08,
       label: "Primat de la culture (déterminisme culturel)",
       justification:
         "Mead défend le déterminisme culturel : les traits de caractère, la sexualité ou le tempérament que l'on croit individuels ou biologiques sont en réalité façonnés par le modèle culturel dans lequel on grandit, contre les explications par la nature ou l'hérédité.",

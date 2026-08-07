@@ -7,16 +7,22 @@ export const axes = {
     label: "Individu / Société",
     leftLabel: "Primat de la société",
     rightLabel: "Primat de l'individu",
+    description:
+      "Qu'est-ce qui explique en dernier ressort les comportements sociaux ? À gauche, des structures qui dépassent et contraignent les individus, largement à leur insu. À droite, les choix et l'action des individus eux-mêmes. Au-delà du pôle « individu », certains courants (théorie de l'acteur-réseau) refusent même l'idée que seuls les humains comptent, et incluent les objets et les techniques, à égalité, dans l'explication.",
   },
   methode: {
     label: "Méthode",
     leftLabel: "Explicative (causale)",
     rightLabel: "Compréhensive",
+    description:
+      "Comment le sociologue construit-il son savoir ? Les approches « explicatives » cherchent des causes extérieures aux acteurs, un peu comme en sciences naturelles — soit en repérant des enchaînements de causes observables (« causale »), soit en reconstruisant des structures cachées, invisibles pour les acteurs eux-mêmes, comme des lois linguistiques ou économiques (« formalisée/structurale »). À l'inverse, les approches « compréhensives » cherchent à saisir le sens que les acteurs donnent eux-mêmes à leurs actions. « Description » pousse cette logique jusqu'au bout : suivre au plus près ce que font réellement les acteurs sur le terrain, sans grille théorique imposée à l'avance.",
   },
   rationalite: {
     label: "Rationalité de l'acteur",
     leftLabel: "Faible / déterminée",
     rightLabel: "Maximale / stratégique",
+    description:
+      "Quelle place ce courant accorde-t-il au calcul et à la réflexion des individus dans leurs actions ? À un pôle, le comportement est largement déterminé par des forces extérieures (habitudes, contraintes, inconscient) sans grand calcul conscient. À l'autre, les acteurs sont vus comme des stratèges rationnels, pesant consciemment coûts et bénéfices avant d'agir.",
   },
 };
 

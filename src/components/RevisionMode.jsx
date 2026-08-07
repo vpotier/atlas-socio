@@ -199,20 +199,30 @@ export default function RevisionMode({ onClose }) {
         position: "absolute",
         top: isMobile ? 16 : 24,
         right: isMobile ? 16 : 24,
-        border: "none",
+        border: "0.5px solid var(--color-taupe)",
         background: "var(--color-paper)",
         borderRadius: "50%",
         width: 32,
         height: 32,
         cursor: "pointer",
-        fontSize: 18,
-        lineHeight: "32px",
-        textAlign: "center",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         color: "var(--color-taupe)",
-        boxShadow: "0 1px 4px rgba(43,38,32,0.2)",
+        boxShadow: "0 1px 4px rgba(43,38,32,0.12)",
       }}
     >
-      ×
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+      >
+        <path d="M4 4l16 16M20 4L4 20" />
+      </svg>
     </button>
   );
 

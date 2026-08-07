@@ -130,7 +130,7 @@ export const constellations = {
       "Ce courant refuse de choisir entre structure et action individuelle : pour Giddens, les structures sociales sont à la fois ce qui rend possible l'action des individus et ce que cette action produit et reproduit en retour.",
   },
   structuralisme: {
-    label: "Structuralisme (auteurs-ponts)",
+    label: "Structuralisme",
     color: "#404954",
     period: "Années 1950–1970",
     definition:

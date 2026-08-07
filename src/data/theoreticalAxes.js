@@ -8,7 +8,7 @@ export const axes = {
     leftLabel: "Primat de la société",
     rightLabel: "Primat de l'individu",
     description:
-      "Qu'est-ce qui explique en dernier ressort les comportements sociaux ? À gauche, des structures qui dépassent et contraignent les individus, largement à leur insu. À droite, les choix et l'action des individus eux-mêmes. Au-delà du pôle « individu », certains courants (théorie de l'acteur-réseau) refusent même l'idée que seuls les humains comptent, et incluent les objets et les techniques, à égalité, dans l'explication.",
+      "Comment expliquer les comportements sociaux ? Ce gradient classe les auteur·ices partant, à gauche, de celles et ceux pour qui les structures sociales dépassent et contraignent les individus ; vers celles et ceux, à droite, qui théorisent le primat des choix et des actions individuelles sur les structures sociales. Au-delà du pôle « individu », certains courants (théorie de l'acteur-réseau) refusent même l'idée que seuls les humains comptent, et incluent les objets et les techniques, à égalité, dans l'explication.",
   },
   methode: {
     label: "Méthode",
@@ -22,7 +22,7 @@ export const axes = {
     leftLabel: "Faible / déterminée",
     rightLabel: "Maximale / stratégique",
     description:
-      "Quelle place ce courant accorde-t-il au calcul et à la réflexion des individus dans leurs actions ? À un pôle, le comportement est largement déterminé par des forces extérieures (habitudes, contraintes, inconscient) sans grand calcul conscient. À l'autre, les acteurs sont vus comme des stratèges rationnels, pesant consciemment coûts et bénéfices avant d'agir.",
+      "Quelle place accorder au calcul et à la réflexion des individus dans leurs actions ? Ce gradient distribue les auteur·ices selon qu'ils pensent (à gauche) que le comportement est largement déterminé par des forces extérieures (habitudes, contraintes, inconscient) sans grand calcul conscient ; ou selon qu'ils et elles pensent, à droite, que les acteurs sont vus comme des stratèges qui pèsent consciemment les coûts et les bénéfices avant d'agir.",
   },
 };
 

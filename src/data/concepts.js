@@ -393,7 +393,7 @@ export const concepts = [
     x: 180,
     y: 650,
     simpleDefinition:
-      "Forme de rationalité selon laquelle un individu agit en fonction de croyances qui lui paraissent, dans son contexte, bien fondées — même lorsque ces croyances se révèlent par la suite fausses.",
+      "Une personne peut croire une rumeur fausse tout en étant parfaitement rationnelle : vu les informations dont elle dispose et son contexte, cette croyance lui semble solide. Boudon utilise cette idée pour expliquer des comportements qu'un simple calcul coûts-avantages n'explique pas.",
   },
   {
     id: "double-transaction",
@@ -415,18 +415,18 @@ export const concepts = [
     x: 1250,
     y: 40,
     simpleDefinition:
-      "Forme de raison réduite à un pur calcul d'efficacité, trouver les meilleurs moyens pour atteindre un but donné, sans plus jamais se demander si ce but est lui-même souhaitable.",
+      "Optimiser une chaîne de production pour qu'elle soit la plus efficace possible, sans jamais se demander si ce qu'elle produit est souhaitable : c'est cette logique du « comment » qui écrase la question du « pourquoi » que Horkheimer et Adorno voient à l'œuvre partout dans la modernité — au point, selon eux, de rendre pensables les pires atrocités au nom du progrès.",
   },
   {
     id: "script-technique",
     label: "Script (scénario technique)",
     definition:
-      "Programme d'action inscrit par les concepteurs dans un objet technique : celui-ci attribue des rôles à certains types d'utilisateurs, en exclut d'autres — parfois sans que cela ait été voulu explicitement — et autorise certains usages plutôt que d'autres.",
+      "Programme d'action inscrit par les concepteurs dans un objet technique : celui-ci attribue des rôles à certains types d'utilisateurs, en exclut d'autres — parfois sans que cela ait été voulu explicitement — et autorise certains usages plutôt que d'autres. Chez Akrich, l'usager n'est cependant jamais un simple exécutant de ce script : il doit le décoder pour se l'approprier, et peut tout aussi bien s'y conformer que le détourner des fins prévues par les concepteurs.",
     authors: ["akrich"],
     x: 1350,
     y: 260,
     simpleDefinition:
-      "Programme d'action inscrit par les concepteurs dans un objet technique, qui prévoit certains usages et en exclut d'autres, parfois sans que cela ait été voulu explicitement.",
+      "Madeleine Akrich a étudié des kits d'éclairage solaire installés dans des villages au Sénégal. Sur le papier, un problème simple à résoudre : apporter de l'électricité. Mais les kits produisaient du courant continu, alors que les appareils électriques déjà présents dans les villages fonctionnaient en courant alternatif — un décalage entre ce que les concepteurs avaient prévu et la réalité des usages sur place, qui montre que le « programme » inscrit dans un objet ne suffit jamais à garantir son bon fonctionnement une fois transporté ailleurs.",
   },
   {
     id: "lecture-symptomale",
@@ -437,7 +437,7 @@ export const concepts = [
     x: 1180,
     y: 620,
     simpleDefinition:
-      "Méthode de lecture des textes qui ne s'arrête pas à ce qu'ils disent explicitement, mais interroge leurs silences et leurs manques, pour faire apparaître un problème que l'auteur n'arrive pas tout à fait à formuler lui-même.",
+      "Un peu comme un détective qui remarque moins ce qu'un témoin dit que ce qu'il évite de dire : cette méthode de lecture cherche, dans un texte, les trous, les hésitations et les contradictions plutôt que le message affiché — pour deviner une question que l'auteur n'arrive pas vraiment à poser clairement.",
   },
   {
     id: "regimes-de-justification",
@@ -459,7 +459,7 @@ export const concepts = [
     x: 260,
     y: 920,
     simpleDefinition:
-      "Changement soudain et durable dans le parcours de vie d'une personne, caractérisé par un fort degré d'imprévisibilité, à la différence des évolutions progressives et attendues.",
+      "Un accident, une rencontre imprévue, un licenciement soudain : certains événements font basculer une vie d'un coup, sans retour possible en arrière. La sociologie s'intéresse aussi à ces ruptures brutales, et pas seulement aux évolutions lentes et attendues (comme faire des études puis trouver un emploi).",
   },
   {
     id: "intervention-sociologique",
@@ -470,7 +470,7 @@ export const concepts = [
     x: 1420,
     y: 500,
     simpleDefinition:
-      "Méthode inventée par Touraine consistant à réunir un groupe de militants pendant plusieurs semaines pour les amener à s'auto-analyser collectivement, afin de faire apparaître le sens profond de leur engagement.",
+      "Touraine réunissait des militants d'un mouvement social (écologistes, syndicalistes...) pendant plusieurs semaines, pour les faire discuter ensemble et se demander eux-mêmes : au fond, pourquoi on se bat ? Le but : faire émerger le sens profond de leur lutte, que les militants eux-mêmes n'avaient pas toujours identifié clairement.",
   },
   {
     id: "imagination-sociologique",
@@ -481,7 +481,7 @@ export const concepts = [
     x: 1500,
     y: 550,
     simpleDefinition:
-      "Capacité à relier sa propre biographie individuelle aux structures sociales et historiques plus larges, pour comprendre que des difficultés vécues comme purement personnelles proviennent souvent de changements qui dépassent l'individu.",
+      "Perdre son emploi peut sembler être un échec purement personnel. Mais si des millions de personnes perdent leur emploi en même temps, le vrai problème est économique, pas individuel. C'est cette capacité à relier un problème vécu seul à ce qui se passe à grande échelle que Mills appelle l'imagination sociologique.",
   },
   {
     id: "travail-emotionnel",
@@ -525,7 +525,7 @@ export const concepts = [
     x: 1650,
     y: 800,
     simpleDefinition:
-      "Chez Simondon, processus par lequel l'individuel et le collectif se construisent en même temps, l'un ne précédant jamais l'autre.",
+      "Ni « les individus créent le groupe », ni « le groupe façonne les individus » : pour Simondon, une personne et le collectif auquel elle appartient (une langue, une culture) se construisent toujours ensemble, en même temps, sans que l'un vienne avant l'autre.",
   },
   {
     id: "sociologie-formelle",
